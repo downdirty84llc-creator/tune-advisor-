@@ -293,3 +293,133 @@ ceiling is capped — the pages work, but every visit is server-rendered.
 The two things still standing between this business and its first dollar are a
 provisioned Supabase database (to run the price-id SQL against) and the legal
 review. Neither is something Rev can clear.
+
+---
+
+## OPP-009 — Make the marketing layout cacheable · score 62
+
+Added 2026-07-31 after OPP-003's build verification came back negative. Numbered
+009 because 006 was vacated when the legal item was reclassified as gate G-1.
+
+**Sequencing note.** 62 is below OPP-003 (72) and OPP-004 (70), and that is
+honest — on its own this generates no revenue. But it is the enabler for
+OPP-003's entire organic ceiling, so it sequences with OPP-003 rather than by
+its own score, the same way the priority rule pulled OPP-001 to the front.
+
+| Factor                | Score | Reasoning                                                                          |
+| --------------------- | ----: | ---------------------------------------------------------------------------------- |
+| Revenue potential     |    11 | No direct revenue; uncaps the organic channel                                      |
+| Profitability         |    13 | Removes server render on every marketing hit; no ongoing cost                      |
+| Speed to cash         |     3 | Caching is immediate, revenue from it is not                                       |
+| Strategic fit         |    10 | Organic is the only acquisition channel that makes a $15 subscription viable       |
+| Automation potential  |     8 | Once fixed, every future marketing page inherits it                                |
+| Customer urgency      |     4 | No customer is asking for this                                                     |
+| Repeatability         |     8 | Applies to all seven cached routes plus 159 county pages                           |
+| Competitive advantage |     3 | Faster pages, better Core Web Vitals                                               |
+| Owner time required   |     5 | Fully delegable                                                                    |
+| Risk adjustment       |    −3 | Touches a header shared by three layouts; hydration and cookie-policy implications |
+
+### The twelve fields
+
+| Field                       | Content                                                                                                                                                                                                                                                                                                                                                                |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Opportunity**             | Seven marketing routes declare `revalidate` (300–900s) and all seven are dead, along with the 159 county pages. `SiteHeader` is an async server component calling `getSessionContext()`, which calls `cookies()`, which opts every route under the marketing layout out of static rendering. Every marketing hit is a server render that was meant to be a cache read. |
+| **Business fit**            | Prerequisite for OPP-003. Organic search is the only channel whose per-lead cost makes a $15–$99 subscription work.                                                                                                                                                                                                                                                    |
+| **Target customer**         | Anonymous search traffic — the audience that should never have needed a personalised header in the first place.                                                                                                                                                                                                                                                        |
+| **Offer**                   | Unchanged. This is infrastructure.                                                                                                                                                                                                                                                                                                                                     |
+| **Execution**               | Split the header by audience. Marketing gets a static shell; members keep the server-rendered one. Detail below.                                                                                                                                                                                                                                                       |
+| **Channels**                | None. Internal change.                                                                                                                                                                                                                                                                                                                                                 |
+| **Cost and budget ceiling** | **$0.** No new dependency, no new service. Engineering time only.                                                                                                                                                                                                                                                                                                      |
+| **Revenue potential**       | None directly. Removes the cap on OPP-003 and cuts server compute per marketing request. **Estimate based on mechanism, not a forecast** — there is still no traffic data.                                                                                                                                                                                             |
+| **Risks and safeguards**    | Detailed below; the material ones are a logged-out flash, one extra request per marketing page view, and a cookie-policy consequence.                                                                                                                                                                                                                                  |
+| **Success metrics**         | `npm run build` reports `○`/`●` rather than `ƒ` for the seven marketing routes and `/georgia/[county]`; Core Web Vitals LCP on county pages; server compute per marketing request.                                                                                                                                                                                     |
+| **Approval choices**        | Approve as planned · approve with changes · hold · reject                                                                                                                                                                                                                                                                                                              |
+| **After approval**          | Rev implements option A, verifies route classification at build, checks no member data appears in prerendered HTML, runs the full gate, formats only touched files, commits and pushes.                                                                                                                                                                                |
+
+### Verified constraint: partial prerendering is not available
+
+`MILESTONES.md` item 5 offers two routes — move the auth-dependent part to a
+client component, **or** adopt partial prerendering. The second is closed.
+Setting `experimental: { ppr: 'incremental' }` on the installed Next 15.5.22 and
+building fails outright:
+
+```
+[Error: The experimental feature "experimental.ppr" can only be enabled
+ when using the latest canary version of Next.js.]
+```
+
+Tested and reverted; `next.config.mjs` is unchanged. Taking PPR would mean
+moving a pre-launch product with billing and heavy RLS onto a Next canary
+release to win a caching improvement. That trade is not worth proposing, so this
+brief does not offer it.
+
+### What the header actually needs the session for
+
+Only four things, all in the right-hand cluster and the nav list:
+
+1. `PUBLIC_LINKS` vs `MEMBER_LINKS`
+2. `viewer.isStaff` — the Admin link
+3. `viewer.isAuthenticated` — "Log in / Join now" vs plan name and Upgrade
+4. `planName` — one string
+
+Everything else — logo, chrome, layout — is static. The dynamic surface is small,
+which is what makes this tractable.
+
+### Option A — static shell plus a client session island · recommended
+
+- `SiteHeader` becomes a **non-async** server component: static chrome plus
+  `PUBLIC_LINKS`. It renders the signed-out state, and nothing else.
+- A new `'use client'` component owns the session-dependent cluster. It renders
+  the signed-out state as its initial markup, then calls
+  **`GET /api/v1/auth/session`** — which already exists and already returns
+  exactly `authenticated`, `planCode`, `planName` and `isStaff` — and upgrades
+  itself if a session is found.
+- `(member)/layout.tsx` keeps today's async server header, renamed
+  `MemberHeader`. Member routes are per-user by definition and `next.config.mjs`
+  already sends `private, no-store` for them, so there is nothing to gain by
+  making them client-side and a real cost in doing so.
+
+This avoids the UX regression in option B: a signed-in member visiting a
+marketing page still gets their own nav, a moment later.
+
+**A security argument, not only a performance one.** Today the marketing pages
+embed session state in server-rendered HTML. Anyone who later made those routes
+cacheable without fixing this would put member-specific markup into a shared
+cache. Option A makes the prerendered HTML contain the signed-out state and
+nothing else, so caching becomes safe rather than merely faster. Verifying that
+no member data appears in the prerendered output is part of the acceptance.
+
+### Option B — two separate headers · simpler, worse
+
+A static `MarketingHeader` and a session-aware `MemberHeader`, with no client
+island. Less code and no flash, but a signed-in member on any marketing page
+sees the public nav with no route back to their dashboard. Rejected on that
+basis, though it is the correct fallback if the island proves troublesome.
+
+### Risks and how each is handled
+
+- **Flash of signed-out header.** Reserve the cluster's width and height so the
+  swap causes no layout shift, and do not animate it. Members see it briefly on
+  marketing pages only; the member area is unaffected.
+- **One extra request per marketing page view.** The island would fetch for
+  anonymous visitors too, who will never have a session. Supabase auth cookies
+  are `httpOnly`, so the client cannot check for one directly. Mitigation:
+  middleware already calls `getUser()` on every request, so it can set a
+  non-`httpOnly`, non-identifying hint cookie — a boolean, no user id, no token —
+  and the island fetches only when that cookie is present. Anonymous traffic
+  then costs nothing extra.
+- **That hint cookie has a legal consequence.** It is functional rather than
+  analytical, but `src/lib/legal/documents.ts` has a cookie policy and it must
+  list the cookie. **This lands inside G-1's scope**, so if the cookie mitigation
+  is taken, the cookie policy changes before that document goes to review — or
+  the mitigation is deferred and we accept the extra request. Flagging it rather
+  than letting a legal document silently drift out of date.
+- **Shared component, three call sites.** `reset-password/page.tsx` also renders
+  `SiteHeader`; it needs checking, not just the two layouts.
+
+### Explicitly out of scope
+
+The member layout stays server-rendered. Nothing about RLS, entitlements or the
+access model is touched. No caching headers change — the existing `no-store`
+rules for `/dashboard`, `/account`, `/saved`, `/admin` and `/api` stay exactly
+as they are.
