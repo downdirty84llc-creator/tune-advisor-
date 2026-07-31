@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Card, Pill, SectionHeading } from '@/components/ui/primitives';
 import { sampleUserIdList } from '@/lib/analytics/sample-data';
 import { getSessionContext } from '@/lib/auth/session';
+import { centsToDollars, monthlyRecurringRevenue } from '@/lib/billing/mrr';
 import { createServerSupabaseClient } from '@/lib/db/server';
 import { formatDate, formatMoney, titleCase } from '@/lib/format';
 
@@ -107,7 +108,7 @@ export default async function AdminDashboardPage() {
       supabase
         .from('subscriptions')
         .select(
-          'status, subscription_plans ( code, monthly_price, annual_price )',
+          'status, billing_interval, subscription_plans ( code, monthly_price, annual_price )',
         ),
     ).in('status', ['active', 'trialing']),
     supabase
@@ -117,14 +118,32 @@ export default async function AdminDashboardPage() {
       .limit(10),
   ]);
 
-  // Monthly recurring revenue, normalising annual plans to a monthly figure.
-  const mrr = (subscriptions.data ?? []).reduce((total, row) => {
-    const plan = Array.isArray(row.subscription_plans)
-      ? row.subscription_plans[0]
-      : row.subscription_plans;
-    if (!plan) return total;
-    return total + Number(plan.monthly_price ?? 0);
-  }, 0);
+  // Monthly recurring revenue. The arithmetic — and the reasoning about
+  // rounding and about an unrecognised billing interval — lives in
+  // `@/lib/billing/mrr` so it can be tested without a database. Note that
+  // `trialing` is included here because it is in the status filter above; that
+  // is a separate judgement about whether unpaid trials belong in MRR and is
+  // deliberately not changed by this calculation.
+  const mrr = monthlyRecurringRevenue(
+    (subscriptions.data ?? []).map(
+      (row: {
+        billing_interval?: string | null;
+        subscription_plans?:
+          | { monthly_price?: number | string | null; annual_price?: number | string | null }
+          | { monthly_price?: number | string | null; annual_price?: number | string | null }[]
+          | null;
+      }) => {
+        const plan = Array.isArray(row.subscription_plans)
+          ? row.subscription_plans[0]
+          : row.subscription_plans;
+        return {
+          billingInterval: row.billing_interval,
+          monthlyPrice: plan?.monthly_price,
+          annualPrice: plan?.annual_price,
+        };
+      },
+    ),
+  );
 
   const metrics = [
     { label: 'Drafts in progress', value: drafts, href: '/admin/opportunities?workflowStatus=draft' },
@@ -172,7 +191,7 @@ export default async function AdminDashboardPage() {
                   Monthly recurring revenue
                 </dt>
                 <dd className="text-xl font-semibold tabular-nums">
-                  {formatMoney(mrr)}
+                  {formatMoney(centsToDollars(mrr.cents))}
                 </dd>
               </div>
               <div className="flex items-baseline justify-between">

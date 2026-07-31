@@ -55,7 +55,7 @@ Node `>=20.9.0`.
 
 **Before you hand back any change, `npm run typecheck && npm run lint && npm test`
 must all pass.** As of the current HEAD all three are clean: typecheck silent,
-lint reports no warnings or errors, and Vitest runs **148 tests in 9 files, all
+lint reports no warnings or errors, and Vitest runs **176 tests in 11 files, all
 passing**. If your change makes any of these red, that is your change.
 
 `npm test` needs no database — every unit test is pure logic. Anything requiring
@@ -317,13 +317,15 @@ two. That ordering is intentional — do not swap it.
 `npm test` covers the places where a quiet mistake costs money or leaks paid
 content: score arithmetic and classification bands, subscription-status
 resolution including the past-due grace window, entitlement decisions per tier,
-alert matching and suppression keys, deadline lifecycle transitions, CSV escaping
-and formula-injection defence, filter parsing, and unsubscribe token signing and
+MRR arithmetic across billing intervals, alert matching and suppression keys,
+deadline lifecycle transitions, CSV escaping and formula-injection defence,
+filter parsing, the sample-data exclusion, and unsubscribe token signing and
 tampering.
 
 Current suites (`tests/unit/`): `scoring/score` (37), `access/plan-parity` (21),
-`access/entitlements` (18), `alerts/matching` (18), `access/subscription` (16),
-`opportunities/lifecycle` (13), `search/filters` (9), `email/unsubscribe` (8),
+`access/entitlements` (18), `alerts/matching` (18), `billing/mrr` (18),
+`access/subscription` (16), `opportunities/lifecycle` (13),
+`analytics/sample-data` (10), `search/filters` (9), `email/unsubscribe` (8),
 `exports/csv` (8).
 
 Add a unit test whenever you touch money, access, alerts, lifecycle transitions
