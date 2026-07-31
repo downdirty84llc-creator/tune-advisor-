@@ -217,11 +217,16 @@ Several choices exist to stop the product overstating what it knows:
   instructions to replace it via `npm run db:types` against a migrated database.
   Hand-maintaining a schema type across thirty-odd tables produces something
   confidently wrong the first time a migration lands.
-- **No admin opportunity editor UI.** The multi-step editor described in spec
-  15.2 is served by the API (`POST`/`PATCH /api/v1/admin/opportunities`) and the
-  review queue; the seven-step form itself is not built.
-- **No report builder UI.** Reports are created and published through the API;
-  the drag-and-drop composer in spec 15.4 is not built.
+- **No virus scanning on uploads.** Spec 20 says "where supported".
+  `attachments.scan_status` exists and defaults to `pending`; no scanner is
+  wired to it.
+- **No in-product MFA reset.** A staff member who loses their authenticator
+  needs intervention through Supabase directly; see `RUNBOOK.md`.
+
+The admin opportunity editor (spec 15.2) and the report builder (spec 15.4)
+were omissions until milestone 5 and 7 landed. Both are now built —
+`src/components/admin/opportunity-editor.tsx` and
+`src/components/admin/report-builder.tsx`.
 
 ---
 
