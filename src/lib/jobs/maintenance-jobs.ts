@@ -1,3 +1,4 @@
+import { excludeSampleUsersFilter } from '@/lib/analytics/sample-data';
 import { createAdminClient } from '@/lib/db/admin';
 import { runExportJob, type ExportJobRow } from '@/lib/exports/service';
 import { fromStripeStatus } from '@/lib/billing/subscription';
@@ -213,11 +214,28 @@ export const aggregateAnalyticsJob: JobDefinition = {
     const supabase = createAdminClient();
     const start = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 
-    const { data, error } = await supabase
+    // Seeded demo accounts must not move the numbers staff make decisions on.
+    // This client is service-role, so the lookup sees every profile regardless
+    // of RLS; in production the result is empty and the filter is skipped.
+    const { data: sampleProfiles, error: sampleError } = await supabase
+      .from('profiles')
+      .select('id')
+      .eq('is_sample', true);
+    if (sampleError) throw new Error(sampleError.message);
+
+    const sampleUserIds = (sampleProfiles ?? []).map(
+      (row: { id: string }) => row.id,
+    );
+    const excludeSample = excludeSampleUsersFilter(sampleUserIds);
+
+    let query = supabase
       .from('analytics_events')
       .select('event_name')
       .gte('occurred_at', start.toISOString())
       .limit(20000);
+    if (excludeSample) query = query.or(excludeSample);
+
+    const { data, error } = await query;
 
     if (error) throw new Error(error.message);
 
@@ -229,7 +247,13 @@ export const aggregateAnalyticsJob: JobDefinition = {
     return {
       processed: data?.length ?? 0,
       failed: 0,
-      detail: { windowStart: start.toISOString(), counts },
+      detail: {
+        windowStart: start.toISOString(),
+        counts,
+        // Recorded so a run that excluded nothing is distinguishable from a
+        // run with nothing to exclude.
+        sampleProfilesExcluded: sampleUserIds.length,
+      },
     };
   },
 };

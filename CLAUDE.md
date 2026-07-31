@@ -77,8 +77,10 @@ Seeded accounts use `SEED_PASSWORD` (default `ledger-demo-password-2026`):
 `free.member@`, `weekly.member@`, `detailed.member@`, `premium.member@`,
 `researcher@`, `reviewer@`, `editor@`, `support@`, `billing@`, `admin@` — all
 `@example.com`. Everything the seeder writes carries `is_sample = true`, is
-badged in the UI, is excluded from analytics, and the seeder **refuses to run**
-when `NEXT_PUBLIC_ENVIRONMENT=production` (`scripts/seed.ts:48`).
+badged in the UI, is carried into CSV exports, and is excluded from the admin
+dashboard's subscriber count and MRR and from the `aggregate-analytics` job via
+`src/lib/analytics/sample-data.ts`. The seeder **refuses to run** when
+`NEXT_PUBLIC_ENVIRONMENT=production` (`scripts/seed.ts:48`).
 
 ---
 
@@ -106,7 +108,7 @@ src/
     exports/            CSV generation and export jobs
     http/               Response helpers, rate limiting
     jobs/               Job definitions, registry, idempotent runner
-    legal/              The twelve legal documents
+    legal/              The ten legal and policy documents
     observability/      Sentry envelope reporting (no SDK)
     opportunities/      Lifecycle, workflow, query, serialisation, editor schema
     reports/            Dependency-free PDF writer
@@ -236,9 +238,15 @@ up to 2× across a boundary; that is an accepted trade for one indexed write).
 The limiter **fails open** and logs when it does — a database hiccup must not
 lock every member out of search.
 
-Marketing pages use `export const revalidate = <seconds>` (300–900). Member,
+Marketing pages use `export const revalidate = <seconds>` (300–900). The member,
 admin and API paths are marked `private, no-store` in `next.config.mjs` because
-their content is per-user and rank-dependent.
+their content is per-user and rank-dependent — one matcher,
+`/(dashboard|account|saved|opportunities|calendar|reports|admin|api)/:path*`.
+Next.js already sends no-store for a dynamically rendered route and all of these
+read cookies, so the header is belt-and-braces; the reason it is written out
+anyway is that the automatic behaviour follows from how a route happens to
+render, and a refactor that made one of them static would drop the header with
+nothing to notice. **Add new member routes to that group.**
 
 ---
 
@@ -343,10 +351,16 @@ knows. Do not "clean these up":**
   requirement is unknown.
 - **Ranges stay ranges.** `formatMoneyRange` renders "$250,000 – $400,000", never
   a midpoint, because a midpoint implies precision we do not have.
-- **Coordinates are absent rather than estimated** — `NULL` until a verified
-  centroid dataset is imported.
-- **Sample data is flagged** via `is_sample`, badged in the UI and carried into
-  CSV exports.
+- **Coordinates are absent rather than estimated.** `supabase/seed.sql` loads
+  approximate county-seat coordinates for the 24 launch counties, labelled in
+  the seed as suitable for centring a map and never for a distance presented as
+  precise. The other 135 counties stay `NULL` until a verified centroid dataset
+  is imported — no interpolation, no county-shaped guess.
+- **Sample data is flagged** via `is_sample`, badged in the UI, carried into CSV
+  exports, and kept out of the subscriber count, MRR and analytics aggregate
+  (`src/lib/analytics/sample-data.ts`). Note the one deliberate exception: the
+  `reports_read` policy lets `is_sample = true` bypass the rank check, so a demo
+  report displays at every tier. That is intentional — do not "fix" it.
 - **`sources.automation_allowed` cannot be set** without a recorded permissive
   `scraping_review_status` — a table constraint, not a policy document.
 
@@ -397,16 +411,12 @@ across thirty-odd tables produces something confidently wrong the first time a
 migration lands. Regenerate with `npm run db:types` against a migrated database
 rather than editing by hand.
 
-**Known documentation drift:** `docs/ARCHITECTURE.md` §11 still lists "no admin
-opportunity editor UI" and "no report builder UI" as deliberate omissions. Both
-were built in the most recent commit (`src/components/admin/opportunity-editor.tsx`,
-`report-builder.tsx`) and `docs/MILESTONES.md` records them as done. Trust
-`MILESTONES.md` here, and fix §11 if you are editing that file anyway.
-
 **Not built** (see `docs/MILESTONES.md` for the full accounting): Stripe products
-and prices plus the tier-by-tier test-payment matrix; legal review of the twelve
-documents in `src/lib/legal/documents.ts` (a hard launch blocker — each renders
-an "awaiting legal review" banner); virus scanning wired to
+and prices plus the tier-by-tier test-payment matrix; legal review of the ten
+documents in `src/lib/legal/documents.ts` (a hard launch blocker — seven of them
+render an "awaiting legal review" banner, and whether the other three are
+genuinely exempt is an open question on the launch checklist); virus scanning
+wired to
 `attachments.scan_status`; high-fidelity design sign-off; cached public landing
 pages (the session-aware header makes the route dynamic — deliberately not
 bodged); in-product super-administrator MFA reset.
