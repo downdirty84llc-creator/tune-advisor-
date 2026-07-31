@@ -25,17 +25,58 @@ refuses to run against production.
 
 ### Stripe
 
-1. Create four products matching the plan codes: `free`, `weekly`, `detailed`,
-   `premium`.
-2. Create monthly and annual prices for the three paid plans (spec 6:
-   $15/$150, $39/$390, $99/$990).
-3. Write the price ids onto `subscription_plans`:
+Steps 1 and 2 are **done** in the live account `acct_1QBl8ZINLKqe1c6g`
+("Down Dirty 84 llc"). They are recorded here so the wiring can be finished
+without rediscovering the identifiers.
+
+1. ~~Create four products matching the plan codes.~~ Done — each carries
+   `plan_code` and `access_rank` in metadata:
+
+   | Plan | Product |
+   | --- | --- |
+   | `free` | `prod_UzCmUxNZwISwan` |
+   | `weekly` | `prod_UzCmnGDe4j595N` |
+   | `detailed` | `prod_UzCmNJIUP1kEgY` |
+   | `premium` | `prod_UzCm77hAdOM052` |
+
+2. ~~Create monthly and annual prices for the three paid plans.~~ Done, at the
+   spec 6 amounts. Each price also carries a `lookup_key`, so it can be
+   resolved by name if an id is ever lost:
+
+   | Plan | Interval | Amount | Price id | Lookup key |
+   | --- | --- | --- | --- | --- |
+   | Weekly | monthly | $15 | `price_1TzEO3INLKqe1c6gLvq62WD1` | `gol_weekly_monthly` |
+   | Weekly | annual | $150 | `price_1TzEO7INLKqe1c6gH20i3Wo2` | `gol_weekly_annual` |
+   | Detailed | monthly | $39 | `price_1TzEOAINLKqe1c6ggOvRN5VP` | `gol_detailed_monthly` |
+   | Detailed | annual | $390 | `price_1TzEODINLKqe1c6gnKArkYcD` | `gol_detailed_annual` |
+   | Premium | monthly | $99 | `price_1TzEOJINLKqe1c6gYboc5ODU` | `gol_premium_monthly` |
+   | Premium | annual | $990 | `price_1TzEOMINLKqe1c6ghcReIVhO` | `gol_premium_annual` |
+
+   The free plan has no price, which is correct — nothing is charged for it and
+   checkout is never started for it.
+
+   Note these were created directly in **live** mode. There is no test-mode
+   equivalent, so the test-payment matrix below needs the same products
+   recreated against a test key before it can be run.
+
+3. Write the price ids onto `subscription_plans` — **still outstanding**, and
+   the reason checkout cannot yet complete:
 
    ```sql
-   update public.subscription_plans
-   set stripe_monthly_price_id = 'price_...',
-       stripe_annual_price_id  = 'price_...'
+   update public.subscription_plans set
+     stripe_monthly_price_id = 'price_1TzEO3INLKqe1c6gLvq62WD1',
+     stripe_annual_price_id  = 'price_1TzEO7INLKqe1c6gH20i3Wo2'
    where code = 'weekly';
+
+   update public.subscription_plans set
+     stripe_monthly_price_id = 'price_1TzEOAINLKqe1c6ggOvRN5VP',
+     stripe_annual_price_id  = 'price_1TzEODINLKqe1c6gnKArkYcD'
+   where code = 'detailed';
+
+   update public.subscription_plans set
+     stripe_monthly_price_id = 'price_1TzEOJINLKqe1c6gYboc5ODU',
+     stripe_annual_price_id  = 'price_1TzEOMINLKqe1c6ghcReIVhO'
+   where code = 'premium';
    ```
 
    The checkout endpoint returns a clear conflict rather than failing inside
@@ -45,6 +86,14 @@ refuses to run against production.
    `checkout.session.completed`, `customer.subscription.created|updated|deleted`
    and `invoice.payment_failed`. Put the signing secret in
    `STRIPE_WEBHOOK_SECRET`.
+
+   **Still outstanding — the account currently has no webhook endpoints at
+   all.** This is the failure that costs money rather than merely blocking a
+   launch: without it Checkout completes and the card is charged, but nothing
+   writes the subscription back, so the member's access rank never rises and
+   they have paid for a tier they cannot see. Do not take a live payment before
+   this exists. It cannot be created until the application has a public
+   hostname to point at.
 
 5. Pin the API version on the Stripe account. The client deliberately does not
    pin one in code, so upgrading is a deliberate dashboard action with a

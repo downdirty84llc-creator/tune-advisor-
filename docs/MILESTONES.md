@@ -113,8 +113,13 @@ See `RUNBOOK.md` for the checklist.
 
 ## What is still not built
 
-1. **Stripe products, prices and the test-payment matrix.** Needs a Stripe
-   account; everything on our side is ready for it.
+1. **Stripe wiring.** The products and all six prices now exist in the live
+   account at the spec 6 amounts — see `RUNBOOK.md` for the ids. Three things
+   remain: writing the price ids onto `subscription_plans`, creating the
+   webhook endpoint (the account has none, so a completed Checkout would charge
+   a card and never grant access), and recreating the products against a test
+   key so the test-payment matrix can actually be run. The first two need a
+   provisioned database and a public hostname respectively.
 2. **Legal review of all twelve documents.** A hard launch blocker. Each renders
    an "awaiting legal review" banner until cleared.
 3. **Virus scanning on uploads.** Spec 20 says "where supported". The
