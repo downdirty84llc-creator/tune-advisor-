@@ -232,6 +232,34 @@ export async function loadIndicatorPreviews(
   }
 }
 
+/**
+ * Active county slugs, for prerendering the county landing pages.
+ *
+ * Used by `generateStaticParams`. Returning an empty list is a safe outcome
+ * rather than a failure: `dynamicParams` stays on, so any county not
+ * prerendered is still rendered on first request and cached from then on. A
+ * build that cannot reach the database therefore ships a working site with a
+ * cold cache instead of failing.
+ */
+export async function loadActiveCountySlugs(): Promise<string[]> {
+  try {
+    const supabase = createPublicSupabaseClient();
+    const { data, error } = await supabase
+      .from('counties')
+      .select('slug')
+      .eq('is_active', true)
+      .order('slug');
+    if (error) throw new Error(error.message);
+
+    return (data ?? [])
+      .map((row) => (row as { slug: string | null }).slug)
+      .filter((slug): slug is string => Boolean(slug));
+  } catch (error) {
+    console.error('[public-data] county slug load failed', error);
+    return [];
+  }
+}
+
 export async function loadCountiesWithCounts(): Promise<
   Array<{ slug: string; name: string; count: number }>
 > {

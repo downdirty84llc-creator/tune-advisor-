@@ -316,6 +316,26 @@ Public loaders now use an anonymous, cookie-free client. Every projection they
 touch is already granted to `anon` and carries no paid content, so nothing is
 weakened. `sitemap.xml` became genuinely static as a result.
 
-The marketing pages themselves are still rendered per request, because the
-shared header is session-aware. That is a real, known gap against spec 23 and is
-recorded in `MILESTONES.md` rather than papered over.
+The marketing pages themselves were still rendered per request for a second
+reason: the shared header is session-aware, and `getSessionContext()` in a
+layout calls `cookies()`, which opts the entire subtree out of static rendering
+no matter what `revalidate` each page declares. One component held the whole
+acquisition surface dynamic.
+
+`SiteHeader` now takes the session as a **prop** instead of resolving it. The
+member area already resolves the session for its own redirect, so it passes
+what it has and renders server-side as before. Public pages render the
+signed-out header — correct for the visitor they are cached *for* — and
+`MarketingHeader` fills in the member view after hydration via
+`useClientSession`. `/pricing` gets the same treatment through `PlanGrid`,
+which was already a client component.
+
+The cost is one paint of the signed-out header for a signed-in member on a
+marketing page, which is where members spend least time and where there is no
+protected content to leak. Nothing gated moved into the browser: the member
+area is guarded by middleware, every API route re-checks entitlements, and RLS
+refuses paid rows regardless of what the header renders.
+
+`/support` remains deliberately dynamic — it prefills the form from the signed-in
+member's profile, which is worth a per-request render on a page nobody reaches
+from search.

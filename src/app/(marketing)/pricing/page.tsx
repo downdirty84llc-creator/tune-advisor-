@@ -2,9 +2,12 @@ import type { Metadata } from 'next';
 
 import { PlanGrid } from '@/components/pricing/plan-grid';
 import { SectionHeading } from '@/components/ui/primitives';
-import { getSessionContext } from '@/lib/auth/session';
 import { PLAN_FEATURE_DEFAULTS, type PlanCode } from '@/lib/access/ranks';
 import { loadPlans } from '@/lib/public-data';
+
+// Prices change rarely and the page is the top of the funnel; serve it from
+// cache and let PlanGrid mark the viewer's own plan client-side.
+export const revalidate = 900;
 
 export const metadata: Metadata = {
   title: 'Membership plans',
@@ -127,7 +130,7 @@ const BILLING_FAQ = [
 ];
 
 export default async function PricingPage() {
-  const [plans, session] = await Promise.all([loadPlans(), getSessionContext()]);
+  const plans = await loadPlans();
   const codes: PlanCode[] = ['free', 'weekly', 'detailed', 'premium'];
 
   return (
@@ -140,11 +143,7 @@ export default async function PricingPage() {
       </div>
 
       <div className="mt-10">
-        <PlanGrid
-          plans={plans}
-          isAuthenticated={session.viewer.isAuthenticated}
-          currentPlanCode={session.planCode}
-        />
+        <PlanGrid plans={plans} />
       </div>
 
       <section className="mt-16">

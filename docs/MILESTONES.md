@@ -96,6 +96,14 @@ counts, MRR, failed payments, editorial backlog and job-run observability.
 Both integrations are implemented without their vendor SDKs — see
 `ARCHITECTURE.md` §12 for why, and what that costs.
 
+Public-page caching is now closed as well. The marketing surface was rendering
+per request because the shared header resolved the session in the layout;
+`SiteHeader` now takes the session as a prop and public pages resolve it in the
+browser. `/`, `/pricing`, `/commercial-property`, `/funding`, `/insights`,
+`/pricing-reports`, `/sample-report`, `/how-it-works` and `/georgia/[county]`
+are prerendered and revalidated on their declared intervals. See
+`ARCHITECTURE.md` §15.
+
 ## Milestone 10 — Launch
 
 **Not started** — correctly, since it depends on the outstanding items below.
@@ -113,12 +121,6 @@ See `RUNBOOK.md` for the checklist.
    `attachments.scan_status` column exists and defaults to `pending`; no scanner
    is wired to it.
 4. **High-fidelity design and brand sign-off** (milestone 1).
-5. **Public landing pages are server-rendered per request, not cached.** The
-   marketing layout renders a session-aware header, which makes the whole route
-   dynamic. Spec 23 asks for these to be cached. Fixing it properly means moving
-   the auth-dependent part of the header to a client component or adopting
-   partial prerendering — worth doing before launch, and deliberately not
-   bodged in the meantime.
-6. **Super-administrator MFA reset.** A staff member who loses their
+5. **Super-administrator MFA reset.** A staff member who loses their
    authenticator currently needs intervention through Supabase directly; the
    in-product reset described on `/admin/security` is not built.

@@ -1,7 +1,28 @@
 import Link from 'next/link';
 
 import { ButtonLink } from '@/components/ui/primitives';
-import { getSessionContext } from '@/lib/auth/session';
+import type { PlanCode } from '@/lib/access/ranks';
+
+/**
+ * Site header.
+ *
+ * Deliberately takes the session as a **prop** rather than resolving it with
+ * `getSessionContext()`. Reading the session calls `cookies()`, and a layout
+ * that does so forces every route beneath it to render per request — which is
+ * how the whole marketing surface became dynamic despite each page declaring
+ * its own `revalidate` (ARCHITECTURE §15).
+ *
+ * The member area already resolves the session for its own redirect, so it
+ * passes what it has. The marketing layout renders the signed-out header at
+ * build time and swaps in the member view from the browser — see
+ * `marketing-header.tsx`.
+ */
+
+export interface HeaderSession {
+  isStaff: boolean;
+  planCode: PlanCode;
+  planName: string;
+}
 
 const PUBLIC_LINKS = [
   { href: '/commercial-property', label: 'Commercial Property' },
@@ -21,9 +42,8 @@ const MEMBER_LINKS = [
   { href: '/account', label: 'Account' },
 ];
 
-export async function SiteHeader() {
-  const { viewer, planName } = await getSessionContext();
-  const links = viewer.isAuthenticated ? MEMBER_LINKS : PUBLIC_LINKS;
+export function SiteHeader({ session }: { session: HeaderSession | null }) {
+  const links = session ? MEMBER_LINKS : PUBLIC_LINKS;
 
   return (
     <header className="border-b border-ink-200 bg-white">
@@ -56,7 +76,7 @@ export async function SiteHeader() {
                 </Link>
               </li>
             ))}
-            {viewer.isStaff ? (
+            {session?.isStaff ? (
               <li>
                 <Link
                   href="/admin"
@@ -70,12 +90,12 @@ export async function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          {viewer.isAuthenticated ? (
+          {session ? (
             <>
               <span className="hidden text-xs text-ink-500 sm:inline">
-                {planName}
+                {session.planName}
               </span>
-              {viewer.planCode !== 'premium' && !viewer.isStaff ? (
+              {session.planCode !== 'premium' && !session.isStaff ? (
                 <ButtonLink href="/pricing" variant="secondary" className="py-2">
                   Upgrade
                 </ButtonLink>

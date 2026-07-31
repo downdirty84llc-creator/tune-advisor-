@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Button, ButtonLink, Pill, cx } from '@/components/ui/primitives';
+import { useClientSession } from '@/lib/auth/use-session';
 import type { PlanSummary } from '@/lib/public-data';
 
 /**
@@ -11,16 +12,15 @@ import type { PlanSummary } from '@/lib/public-data';
  * The annual saving is computed from the two prices rather than hard-coded, so
  * an operator changing a price in the database cannot leave a stale "save 20%"
  * claim on the page.
+ *
+ * The viewer's own plan is resolved here rather than passed down from the
+ * page: /pricing is the top of the funnel and needs to stay cached, and a
+ * server-side session read would make it render per request. Marking the
+ * current plan is decoration — checkout itself re-checks who is asking.
  */
-export function PlanGrid({
-  plans,
-  isAuthenticated,
-  currentPlanCode,
-}: {
-  plans: readonly PlanSummary[];
-  isAuthenticated: boolean;
-  currentPlanCode: string;
-}) {
+export function PlanGrid({ plans }: { plans: readonly PlanSummary[] }) {
+  const { authenticated: isAuthenticated, planCode: currentPlanCode } =
+    useClientSession();
   const [interval, setInterval] = useState<'monthly' | 'annual'>('monthly');
   const [pending, setPending] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);

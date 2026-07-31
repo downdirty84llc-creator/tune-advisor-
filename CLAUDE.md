@@ -253,11 +253,17 @@ but do it deliberately and expect to fix real errors it surfaces.
 Tracked honestly in `docs/MILESTONES.md`; do not "fix" these by hiding them.
 Hard launch blockers are legal review of the twelve documents in
 `src/lib/legal/documents.ts` and creating the Stripe products/prices. Also
-outstanding: virus scanning on uploads, super-administrator MFA reset, brand
-sign-off, and public landing pages rendering per request rather than cached
-(the marketing layout's session-aware header makes the route dynamic — fixing
-it properly means a client component or partial prerendering, deliberately not
-bodged).
+outstanding: virus scanning on uploads, super-administrator MFA reset, and
+brand sign-off.
+
+**Keep the public pages static.** The marketing routes are prerendered and
+revalidated on their own intervals. A session read anywhere in that subtree —
+`getSessionContext()`, `createServerSupabaseClient()`, anything calling
+`cookies()` — silently makes the whole route dynamic again with no error to
+notice. Components that need the session to decorate a cached page use
+`useClientSession` (`src/lib/auth/use-session.ts`); `SiteHeader` takes its
+session as a prop for this reason. `next build` is the check: the marketing
+routes must show `○` or `●`, never `ƒ`.
 
 ## Business context — DD84 and the Atlas operating model
 

@@ -21,7 +21,8 @@ export const metadata: Metadata = {
 export default function ResetPasswordPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+      {/* Someone resetting a password is signed out by definition. */}
+      <SiteHeader session={null} />
       <main id="main" className="flex-1">
         <div className="mx-auto max-w-md px-4 py-14 sm:px-6">
           <Suspense>

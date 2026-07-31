@@ -3,15 +3,33 @@ import { notFound } from 'next/navigation';
 
 import { OpportunityCard } from '@/components/opportunities/opportunity-card';
 import { ButtonLink, SectionHeading } from '@/components/ui/primitives';
-import { createServerSupabaseClient } from '@/lib/db/server';
-import { loadPreviewOpportunities } from '@/lib/public-data';
+import { createPublicSupabaseClient } from '@/lib/db/public';
+import {
+  loadActiveCountySlugs,
+  loadPreviewOpportunities,
+} from '@/lib/public-data';
 
 export const revalidate = 900;
 
 type PageProps = { params: Promise<{ county: string }> };
 
+/**
+ * Prerenders the active counties. Without this the segment has no known params
+ * and every county renders on demand; `dynamicParams` remains on, so a county
+ * added after the build still works and is cached from its first request.
+ */
+export async function generateStaticParams() {
+  const slugs = await loadActiveCountySlugs();
+  return slugs.map((county) => ({ county }));
+}
+
+/**
+ * Counties are public reference data, already granted to `anon`. Reading them
+ * through the cookie-bound client called `cookies()` and made this page render
+ * per request in spite of the `revalidate` above.
+ */
 async function loadCounty(slug: string) {
-  const supabase = await createServerSupabaseClient();
+  const supabase = createPublicSupabaseClient();
   const { data } = await supabase
     .from('counties')
     .select('id, name, slug, fips_code, states ( name, abbreviation )')
