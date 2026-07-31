@@ -28,38 +28,46 @@ npm run dev                         # http://localhost:3000
 Seeded accounts (password from `SEED_PASSWORD`, default
 `ledger-demo-password-2026`):
 
-| Email                          | Role                   | Plan     |
-| ------------------------------ | ---------------------- | -------- |
-| `free.member@example.com`      | member                 | Free     |
-| `weekly.member@example.com`    | member                 | Weekly   |
-| `detailed.member@example.com`  | member                 | Detailed |
-| `premium.member@example.com`   | member                 | Premium  |
-| `researcher@example.com`       | researcher             | —        |
-| `reviewer@example.com`         | reviewer               | —        |
-| `editor@example.com`           | editor                 | —        |
-| `support@example.com`          | support representative | —        |
-| `billing@example.com`          | billing manager        | —        |
-| `admin@example.com`            | super administrator    | —        |
+| Email                         | Role                   | Plan     |
+| ----------------------------- | ---------------------- | -------- |
+| `free.member@example.com`     | member                 | Free     |
+| `weekly.member@example.com`   | member                 | Weekly   |
+| `detailed.member@example.com` | member                 | Detailed |
+| `premium.member@example.com`  | member                 | Premium  |
+| `researcher@example.com`      | researcher             | —        |
+| `reviewer@example.com`        | reviewer               | —        |
+| `editor@example.com`          | editor                 | —        |
+| `support@example.com`         | support representative | —        |
+| `billing@example.com`         | billing manager        | —        |
+| `admin@example.com`           | super administrator    | —        |
 
-Everything the seeder writes carries `is_sample = true`, is badged in the UI, and
-is excluded from production analytics. The seeder refuses to run when
+Everything the seeder writes carries `is_sample = true` on the profile,
+opportunity, indicator-value and report rows, is badged wherever it appears, and
+is carried through into CSV exports so a spreadsheet cannot quietly launder demo
+data into a real decision. The seeder refuses to run when
 `NEXT_PUBLIC_ENVIRONMENT=production`.
 
 ---
 
 ## Commands
 
-| Command                | What it does                                          |
-| ---------------------- | ----------------------------------------------------- |
-| `npm run dev`          | Development server                                     |
-| `npm run build`        | Production build                                       |
-| `npm run typecheck`    | `tsc --noEmit`                                         |
-| `npm run lint`         | ESLint                                                 |
-| `npm test`             | Unit and integration tests (Vitest)                    |
-| `npm run test:e2e`     | End-to-end tests (Playwright, needs a running app)     |
-| `npm run db:reset`     | Re-runs every migration and the reference-data seed    |
-| `npm run db:seed`      | Loads demo users and sample records                    |
-| `npm run db:types`     | Regenerates database types from a live schema          |
+| Command             | What it does                                        |
+| ------------------- | --------------------------------------------------- |
+| `npm run dev`       | Development server                                  |
+| `npm run build`     | Production build                                    |
+| `npm run typecheck` | `tsc --noEmit`                                      |
+| `npm run lint`      | ESLint                                              |
+| `npm test`          | Unit and integration tests (Vitest)                 |
+| `npm run test:e2e`  | End-to-end tests (Playwright)                       |
+| `npm run db:reset`  | Re-runs every migration and the reference-data seed |
+| `npm run db:seed`   | Loads demo users and sample records                 |
+| `npm run db:types`  | Regenerates database types from a live schema       |
+| `npm run format`    | Prettier over `ts,tsx,md,json,sql`                  |
+
+`npm run test:e2e` builds the app and starts it itself; point `E2E_BASE_URL` at
+a running instance to skip that and test the deployment instead. `npm test`
+needs no database, which is the reason database-dependent tests are kept out of
+`tests/unit/`.
 
 ---
 
@@ -84,9 +92,13 @@ The rule is enforced in **three independent places**, deliberately:
    the plan that would unlock the record rather than an opaque empty result.
 
 The TypeScript and SQL halves are kept in step by
-`tests/unit/access/subscription.test.ts` and
-`tests/unit/access/plan-parity.test.ts`, the latter of which diffs the compiled
-plan matrix against `supabase/seed.sql`.
+`tests/unit/access/plan-parity.test.ts`, which reads `supabase/seed.sql`
+directly and diffs every `feature_configuration` document against the compiled
+`PLAN_FEATURE_DEFAULTS`. It is the only test that crosses that boundary; change
+a limit in one place without the other and it fails.
+`tests/unit/access/subscription.test.ts` covers a different question — how
+account status, role, Stripe status and an administrative override resolve into
+one rank — and never reads SQL.
 
 Administrator permissions are decided by **role**, never by plan. A Premium
 member has rank 30 and no administrative access whatsoever.
@@ -108,11 +120,16 @@ src/
   lib/
     access/             Ranks, plan features, entitlement decisions
     alerts/             Alert matching and suppression
+    analytics/          First-party events, PostHog forwarding (no SDK)
+    auth/               Session context, MFA status
     billing/            Stripe client, subscription-status resolution
-    db/                 Supabase clients (session-scoped, service-role, browser)
+    db/                 Supabase clients (session-scoped, anonymous public,
+                        service-role, browser)
     email/              Provider abstraction, templates, unsubscribe tokens
     exports/            CSV generation and export jobs
+    http/               Response helpers, rate limiting
     jobs/               Background jobs and the idempotent runner
+    legal/              The legal and policy documents
     opportunities/      Lifecycle, workflow, query, serialisation
     observability/      Error reporting (Sentry envelope API, no SDK)
     reports/            Dependency-free PDF writer
@@ -122,9 +139,13 @@ supabase/
   migrations/           Schema, RLS, functions, triggers
   seed.sql              Reference data (plans, 159 counties, industries, sources)
 scripts/seed.ts         Demo users and sample records
-tests/                  Unit, integration and end-to-end tests
-docs/                   Architecture, runbook, milestone status
+tests/unit              Vitest, no database required
+tests/e2e               Playwright
+docs/                   Architecture, runbook, milestone status, DD84 operations
 ```
+
+`tests/integration/` is already in the Vitest `include` but has no files yet —
+that is where anything needing a live Postgres goes when it is written.
 
 ---
 
@@ -189,6 +210,6 @@ and row-level security still enforces every permission underneath.
 
 Milestones 2 through 9 of the specification are implemented; see
 `docs/MILESTONES.md` for the per-milestone breakdown and the six things that
-remain. Two are hard launch blockers: legal review of the twelve documents in
+remain. Two are hard launch blockers: legal review of the ten documents in
 `src/lib/legal/documents.ts`, and creating the Stripe products and prices so the
 tier-by-tier payment matrix can be run.

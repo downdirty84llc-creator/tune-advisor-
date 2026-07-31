@@ -44,11 +44,11 @@ RLS denial cannot express.
 
 ## 2. Three layers of enforcement
 
-| Layer | Enforces | Fails safe by |
-| --- | --- | --- |
-| Row-level security | Which rows exist for this key | Returning nothing |
-| `search_opportunities` | Which columns this rank may read | Returning NULL |
-| `src/lib/access` | Which capabilities this plan includes | Returning a decision with a reason |
+| Layer                  | Enforces                              | Fails safe by                      |
+| ---------------------- | ------------------------------------- | ---------------------------------- |
+| Row-level security     | Which rows exist for this key         | Returning nothing                  |
+| `search_opportunities` | Which columns this rank may read      | Returning NULL                     |
+| `src/lib/access`       | Which capabilities this plan includes | Returning a decision with a reason |
 
 A bug in any one is caught by the others. The cost is that the plan matrix
 exists twice — in `subscription_plans.feature_configuration` and in
@@ -65,7 +65,7 @@ folds together:
 - **Account status.** Suspended or closed drops to rank 0 immediately, including
   for staff. A suspended editor previews nothing.
 - **Role.** Staff resolve to rank 100 so they can preview every tier. Staff
-  *permissions* — publish, refund, suspend — are role checks and never rank
+  _permissions_ — publish, refund, suspend — are role checks and never rank
   checks, because "Premium member" must never imply "administrator".
 - **Subscription.** Active and trialing grant the plan rank. Cancelled keeps
   access to the period end, because it has been paid for. Past-due keeps access
@@ -170,6 +170,23 @@ moves live on dedicated action endpoints that re-check the role.
 subscriber is paying for, at the API rather than only in the form, so a record
 published through a script cannot skip it.
 
+The two admin surfaces on top of this — the seven-step opportunity editor
+(`src/components/admin/opportunity-editor.tsx`, spec 15.2) and the report
+composer (`src/components/admin/report-builder.tsx`, spec 15.4) — are clients of
+those endpoints, not a second implementation of the rules. The publish gate the
+editor draws is `missingPublishFields`, read back from the same API that would
+refuse the request; the editor's contribution is naming which step each missing
+field lives on, because "why can't I publish" is otherwise a support ticket.
+
+The composer departs from the specification in one place, recorded here because
+the specification asks for drag-and-drop by name: entries and sections reorder
+with explicit move-up / move-down buttons instead. Drag-and-drop is the nicer
+demo and the worse tool — unusable from a keyboard, awkward on a phone, and able
+to drop a record in the wrong place by accident. Buttons reorder the same list,
+are announced correctly by a screen reader, and cost nothing but a little screen
+area. If pointer dragging is added later it should be an addition to the
+buttons, not a replacement for them.
+
 ---
 
 ## 9. The audit log
@@ -210,18 +227,26 @@ Several choices exist to stop the product overstating what it knows:
 
 ## 11. Deliberate omissions
 
-- **No PostGIS dependency.** The extension is created opportunistically and the
-  schema degrades to a lat/long btree index if it is unavailable. Radius search
-  is not implemented; bounding-box narrowing is supported.
+- **No PostGIS dependency.** The extension is created opportunistically
+  (migration 0001, inside a `do` block that swallows the failure) and the schema
+  degrades to a partial lat/long btree index (migration 0014) if it is
+  unavailable.
+- **No geospatial query surface at all, yet.** Worth stating plainly, because
+  the index above implies more than exists: neither `search_opportunities` nor
+  `filterSchema` accepts a centre and radius or a bounding box, and no code path
+  reads `opportunities.latitude`. The index is groundwork for bounding-box
+  narrowing, not evidence of it. Geography is filtered by county and city, which
+  is how the records are sourced and how a Georgia buyer actually thinks.
 - **No generated database types.** `src/lib/db/types.ts` is honestly loose with
   instructions to replace it via `npm run db:types` against a migrated database.
   Hand-maintaining a schema type across thirty-odd tables produces something
   confidently wrong the first time a migration lands.
-- **No admin opportunity editor UI.** The multi-step editor described in spec
-  15.2 is served by the API (`POST`/`PATCH /api/v1/admin/opportunities`) and the
-  review queue; the seven-step form itself is not built.
-- **No report builder UI.** Reports are created and published through the API;
-  the drag-and-drop composer in spec 15.4 is not built.
+
+This list is shorter than it was. The admin opportunity editor and the report
+composer sat here as deliberate omissions until both were built; they are
+described in §8 now. An omission that stops being true has to leave, or the
+section becomes a record of what someone once intended rather than of what the
+system is.
 
 ---
 
@@ -259,7 +284,7 @@ domain's deliverability for everybody.
 
 `src/lib/email/unsubscribe.ts` mints an HMAC token over the user id and scope.
 The token carries no secret, cannot be forged, and — importantly — only ever
-turns email *off*. Possession of one grants no read access and enables nothing,
+turns email _off_. Possession of one grants no read access and enables nothing,
 so the usual objection to unauthenticated action links does not apply.
 
 Alert, deadline and weekly-report email carry `List-Unsubscribe` and
@@ -298,7 +323,7 @@ Two details worth knowing:
 
 `src/lib/db/public.ts` exists because of a subtle failure discovered during a
 build: the marketing pages read only public teaser views, but they were doing so
-through the *session-bound* client, which calls `cookies()`. That forces the
+through the _session-bound_ client, which calls `cookies()`. That forces the
 whole route to render per request, defeating the caching spec 23 asks for.
 
 Worse, the `try/catch` in those loaders was swallowing Next.js's

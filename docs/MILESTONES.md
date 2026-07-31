@@ -24,7 +24,7 @@ direction, or owner sign-off. That is a design engagement, not a code artefact.
 migrations, email/password and magic-link authentication, password reset (both
 halves of the flow on one page), Google sign-in wired in Supabase config,
 profiles created by database trigger, the full role system, public pages, and
-all twelve legal documents behind `/legal/[slug]`.
+the ten legal and policy documents behind `/legal/[slug]`.
 
 ## Milestone 3 — Billing and access
 
@@ -107,8 +107,17 @@ See `RUNBOOK.md` for the checklist.
 
 1. **Stripe products, prices and the test-payment matrix.** Needs a Stripe
    account; everything on our side is ready for it.
-2. **Legal review of all twelve documents.** A hard launch blocker. Each renders
-   an "awaiting legal review" banner until cleared.
+2. **Legal review of the documents in `src/lib/legal/documents.ts`.** A hard
+   launch blocker. There are ten, and seven of them carry
+   `requiresReview: true`, which is what renders the "awaiting legal review"
+   banner: terms, privacy, subscription terms, refunds, cookies, copyright and
+   disclaimers. The remaining three — editorial standards, corrections policy
+   and data source policy — are marked `false` and render no banner. They are
+   descriptions of our own editorial practice rather than agreements with the
+   member, which is a defensible reason to exempt them, but nobody has recorded
+   that decision anywhere. Either counsel confirms the exemption or the flags go
+   to `true`; leaving it implicit is the one option that should not survive
+   launch.
 3. **Virus scanning on uploads.** Spec 20 says "where supported". The
    `attachments.scan_status` column exists and defaults to `pending`; no scanner
    is wired to it.
