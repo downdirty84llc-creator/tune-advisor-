@@ -26,20 +26,32 @@ refuses to run against production.
 ### Stripe
 
 1. Create four products matching the plan codes: `free`, `weekly`, `detailed`,
-   `premium`.
+   `premium`. **Done in live mode** — the four products carry `plan_code` and
+   `access_rank` metadata.
 2. Create monthly and annual prices for the three paid plans (spec 6:
-   $15/$150, $39/$390, $99/$990).
-3. Write the price ids onto `subscription_plans`:
+   $15/$150, $39/$390, $99/$990). **Done in live mode** — six prices, each with
+   a `gol_<plan>_<interval>` lookup key.
+3. Write the price ids onto `subscription_plans`. Run the file for the Stripe
+   mode this environment uses:
 
-   ```sql
-   update public.subscription_plans
-   set stripe_monthly_price_id = 'price_...',
-       stripe_annual_price_id  = 'price_...'
-   where code = 'weekly';
+   ```bash
+   psql "$DATABASE_URL" -f supabase/stripe-prices.live.sql
    ```
+
+   These ids are kept out of `seed.sql` on purpose. `seed.sql` is
+   environment-neutral and every environment loads it; price ids are not, since
+   each environment has its own Stripe keys. A live price id installed into a
+   development database by `supabase db reset` would point that environment at
+   real money.
+
+   There is no `stripe-prices.test.sql` yet. Create one from a test-mode price
+   set before rehearsing payments — do not point a test environment at the live
+   ids in step 2.
 
    The checkout endpoint returns a clear conflict rather than failing inside
    Stripe when a price id is missing, so this step is safe to verify by trying it.
+   The verification query at the foot of the file names any tier that would
+   still 409.
 
 4. Add the webhook endpoint `POST /api/v1/webhooks/stripe` subscribed to
    `checkout.session.completed`, `customer.subscription.created|updated|deleted`

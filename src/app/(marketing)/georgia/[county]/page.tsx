@@ -3,15 +3,25 @@ import { notFound } from 'next/navigation';
 
 import { OpportunityCard } from '@/components/opportunities/opportunity-card';
 import { ButtonLink, SectionHeading } from '@/components/ui/primitives';
-import { createServerSupabaseClient } from '@/lib/db/server';
+import { createPublicSupabaseClient } from '@/lib/db/public';
 import { loadPreviewOpportunities } from '@/lib/public-data';
 
 export const revalidate = 900;
 
 type PageProps = { params: Promise<{ county: string }> };
 
+/**
+ * Anonymous, cookie-free client — not the session-bound one.
+ *
+ * This loader runs twice per request (generateMetadata, then the page). The
+ * session client calls cookies(), which opts the whole route out of static
+ * rendering, so using it here silently defeated the `revalidate` above and made
+ * all 159 county pages render per request. Counties carry no paid content and
+ * are already granted to anon, so nothing is weakened by reading them
+ * anonymously.
+ */
 async function loadCounty(slug: string) {
-  const supabase = await createServerSupabaseClient();
+  const supabase = createPublicSupabaseClient();
   const { data } = await supabase
     .from('counties')
     .select('id, name, slug, fips_code, states ( name, abbreviation )')
@@ -112,6 +122,60 @@ export default async function CountyPage({ params }: PageProps) {
                 opportunity={{ ...opportunity, isLocked: true }}
               />
             ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* A county with no published records would otherwise be a breadcrumb, a
+          heading, one sentence and a sign-up box — 159 of which differ only by
+          a place name. That is the shape search engines penalise, and it tells
+          a visitor nothing. Say what is actually monitored here instead. The
+          sitemap only lists counties that have records, so these pages are
+          reached by direct navigation and internal links rather than search. */}
+      {total === 0 ? (
+        <section className="mt-12 max-w-prose">
+          <SectionHeading
+            title={`What we monitor in ${county.name} County`}
+            description="The same sources and the same method as every other county in Georgia. Coverage does not depend on how much has published here so far."
+          />
+          <ul className="mt-4 space-y-3 text-ink-700">
+            <li>
+              <span className="font-medium text-ink-900">
+                Commercial property.
+              </span>{' '}
+              Surplus and disposal notices, development authority listings, tax
+              and foreclosure sales, and public solicitations affecting
+              commercial sites in {county.name} County.
+            </li>
+            <li>
+              <span className="font-medium text-ink-900">
+                Business funding.
+              </span>{' '}
+              State and federal programmes, local and regional incentives, and
+              grant or loan rounds whose eligibility reaches this county.
+            </li>
+            <li>
+              <span className="font-medium text-ink-900">
+                Verification and scoring.
+              </span>{' '}
+              Every record names its source and the date it was last checked,
+              and is scored against a published 100-point method before it
+              reaches a member.
+            </li>
+          </ul>
+          <p className="mt-5 text-sm text-ink-600">
+            No published records here yet is a statement about what has been
+            posted, not about how closely the county is watched. We do not
+            publish a record until it has been verified, so an empty county is
+            an honest one.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <ButtonLink href="/how-it-works" variant="secondary">
+              How records are verified and scored
+            </ButtonLink>
+            <ButtonLink href="/commercial-property" variant="ghost">
+              Counties with published records
+            </ButtonLink>
           </div>
         </section>
       ) : null}

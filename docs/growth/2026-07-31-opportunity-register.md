@@ -3,11 +3,12 @@
 **Agent:** Rev (Marketing & Revenue), operating under `docs/DD84-GROWTH-AGENT.md`
 **Date:** 2026-07-31
 **Venture:** Georgia Opportunity Ledger (Down Dirty 84 LLC)
-**Stage:** Discovery and validation complete. Awaiting owner decision.
+**Stage:** Approved as planned, 2026-07-31. OPP-001, OPP-002 and OPP-003
+executed. See the completion record at the foot of this file.
 
-**No external action has been taken.** No Stripe object was created, no page
-published, no message sent, no price changed. Everything below is a prepared
-plan under the §4 control loop, held at stage 4 (Request Approval).
+**No money was committed and no price was changed.** No Stripe object was
+created — the products and prices already existed. Nothing was published; the
+code changes sit on a branch awaiting the owner's deploy.
 
 ---
 
@@ -176,5 +177,119 @@ Recommended order: **OPP-001** (unblocks all revenue, needs owner at the Stripe
 dashboard), then **OPP-002** (same-day, stops active waste), then **G-1** into
 **OPP-003**.
 
-Rev is holding all seven at stage 4. Nothing external will happen until a
-decision is recorded here.
+Approved as planned on 2026-07-31 for OPP-001, OPP-002 and OPP-003.
+
+---
+
+## Completion record — 2026-07-31
+
+The §25 "PDF B" content: approved scope versus what was actually completed,
+with evidence and unresolved blockers. Two findings contradict the briefs they
+came from; both are corrected here rather than quietly left standing.
+
+### OPP-001 — Activate Stripe products and prices
+
+**Correction to the brief.** The brief assumed the Stripe objects did not
+exist. They do. A read of the live account found all four products and all six
+prices already created, with `plan_code` and `access_rank` metadata,
+`gol_<plan>_<interval>` lookup keys, and amounts matching the published matrix
+exactly. Rev created nothing and deliberately avoided creating duplicates.
+
+| Plan     | Interval | Price id                         |  Amount |
+| -------- | -------- | -------------------------------- | ------: |
+| weekly   | monthly  | `price_1TzEO3INLKqe1c6gLvq62WD1` |  $15.00 |
+| weekly   | annual   | `price_1TzEO7INLKqe1c6gH20i3Wo2` | $150.00 |
+| detailed | monthly  | `price_1TzEOAINLKqe1c6ggOvRN5VP` |  $39.00 |
+| detailed | annual   | `price_1TzEODINLKqe1c6gnKArkYcD` | $390.00 |
+| premium  | monthly  | `price_1TzEOJINLKqe1c6gYboc5ODU` |  $99.00 |
+| premium  | annual   | `price_1TzEOMINLKqe1c6ghcReIVhO` | $990.00 |
+
+All six are **live mode**. The real remaining gap was that nothing carried these
+ids into `subscription_plans`.
+
+**Completed.** `supabase/stripe-prices.live.sql` — idempotent updates for the
+three paid plans, plus a verification query naming any tier that would still 409. `docs/RUNBOOK.md` §Stripe updated to mark steps 1 and 2 done and to point
+step 3 at the file.
+
+**Deliberately not done:** these ids were kept out of `seed.sql`. Every
+environment loads `seed.sql`, and each environment has its own Stripe keys — a
+live price id installed into a development database by `supabase db reset`
+would aim that environment at real money. This is why no `stripe-prices.test.sql`
+was invented either; it must come from a genuine test-mode price set.
+
+**Unresolved, needs the owner.** The webhook endpoint, `STRIPE_WEBHOOK_SECRET`,
+the pinned API version and the tier-by-tier test-payment matrix all require a
+deployed application and dashboard access. There is also no Ledger Supabase
+project — the only project on the account is `Snoop`, INACTIVE and unrelated —
+so there is no live database to run the SQL against yet. **Checkout will still
+409 until a database exists and that file is run against it.**
+
+### OPP-002 — Re-point the pre-launch funnel
+
+**Completed as planned.** Homepage hero call to action is now "Start free" →
+`/register`, with the plans link demoted to inline text that states plainly
+that paid tiers are not open. `/pricing` carries a `role="note"` banner saying
+the same and pointing at free registration, styled with the project's own
+`signal.investigate` token rather than an imported colour. Both changes carry a
+comment saying to revert them as part of the paid launch, so they cannot
+outlive their reason.
+
+No launch date is stated anywhere, because we do not have one and a missed date
+costs more than no date.
+
+### OPP-003 — County programmatic SEO
+
+**Real defect found and fixed.** `loadCounty` in
+`src/app/(marketing)/georgia/[county]/page.tsx` used
+`createServerSupabaseClient()` — the session-bound client — which calls
+`cookies()`. It ran twice per request. This is precisely the trap documented in
+`docs/ARCHITECTURE.md` §15 and in `CLAUDE.md`, and it silently defeated the
+`revalidate = 900` declared at the top of the same file. Switched to
+`createPublicSupabaseClient()`, with a comment recording why.
+
+**Thin-content case addressed.** A county with no published records previously
+rendered a breadcrumb, a heading, one sentence and a sign-up box. It now
+explains what is monitored in that county, why an empty county is an honest one,
+and links to the method.
+
+**Correction to the brief.** The brief rated "159 near-identical thin pages" as
+the main risk. That was overstated: `sitemap.ts` draws from the
+`opportunity_facets` RPC, which only returns counties that actually have
+published records, so thin counties were never being submitted to search
+engines. They are reachable by direct navigation and internal links only.
+
+**Verified at build, and the result is negative.** `npm run build` still
+classifies `/georgia/[county]` as `ƒ` (Dynamic) — as it does every route under
+`(marketing)`. The client fix was necessary but not sufficient. The binding
+constraint is `SiteHeader` (`src/components/site/header.tsx` L24–25), an async
+server component calling `getSessionContext()`, which forces the entire
+marketing layout dynamic regardless of what any page does.
+
+**Not fixed, on purpose.** That is `MILESTONES.md` item 5, where the repository
+explicitly records that the fix means moving the auth-dependent part of the
+header to a client component or adopting partial prerendering, and that it is
+"deliberately not bodged in the meantime". Re-architecting the header is outside
+what was approved here. It needs its own brief.
+
+### Gate check
+
+**G-1 is untouched and still blocking.** All ten legal documents still carry an
+"awaiting legal review" banner. Nothing above published anything externally, so
+nothing crossed that gate.
+
+### Verification evidence
+
+`npm run typecheck` clean · `npm run lint` zero warnings · `npm test` 148 passing
+across 9 files · `npm run build` compiles successfully. Only touched files were
+formatted.
+
+### Next action
+
+One new brief is needed and not yet written: **make the marketing layout
+cacheable** by moving the session-dependent part of `SiteHeader` to a client
+component or adopting partial prerendering. Until that lands, OPP-003's organic
+ceiling is capped — the pages work, but every visit is server-rendered.
+
+The two things still standing between this business and its first dollar are a
+provisioned Supabase database (to run the price-id SQL against) and the legal
+review. Neither is something Rev can clear.

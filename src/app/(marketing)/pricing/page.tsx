@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import { PlanGrid } from '@/components/pricing/plan-grid';
 import { SectionHeading } from '@/components/ui/primitives';
@@ -30,7 +31,9 @@ const COMPARISON_ROWS: ReadonlyArray<{
   {
     label: 'Score explanation',
     render: (code) =>
-      PLAN_FEATURE_DEFAULTS[code].opportunityDetail === 'complete' ? 'Yes' : 'No',
+      PLAN_FEATURE_DEFAULTS[code].opportunityDetail === 'complete'
+        ? 'Yes'
+        : 'No',
   },
   {
     label: 'Saved opportunities',
@@ -49,7 +52,8 @@ const COMPARISON_ROWS: ReadonlyArray<{
   },
   {
     label: 'Immediate alerts',
-    render: (code) => (PLAN_FEATURE_DEFAULTS[code].immediateAlerts ? 'Yes' : 'No'),
+    render: (code) =>
+      PLAN_FEATURE_DEFAULTS[code].immediateAlerts ? 'Yes' : 'No',
   },
   {
     label: 'CSV export',
@@ -57,7 +61,8 @@ const COMPARISON_ROWS: ReadonlyArray<{
   },
   {
     label: 'Weekly report',
-    render: (code) => (PLAN_FEATURE_DEFAULTS[code].weeklyReports ? 'Yes' : 'Preview'),
+    render: (code) =>
+      PLAN_FEATURE_DEFAULTS[code].weeklyReports ? 'Yes' : 'Preview',
   },
   {
     label: 'Report archive',
@@ -68,7 +73,8 @@ const COMPARISON_ROWS: ReadonlyArray<{
   },
   {
     label: 'Deadline calendar',
-    render: (code) => (PLAN_FEATURE_DEFAULTS[code].deadlineCalendar ? 'Yes' : 'No'),
+    render: (code) =>
+      PLAN_FEATURE_DEFAULTS[code].deadlineCalendar ? 'Yes' : 'No',
   },
   {
     label: 'Pricing dashboard',
@@ -79,7 +85,8 @@ const COMPARISON_ROWS: ReadonlyArray<{
   },
   {
     label: 'Advanced filters',
-    render: (code) => (PLAN_FEATURE_DEFAULTS[code].advancedFilters ? 'Yes' : 'No'),
+    render: (code) =>
+      PLAN_FEATURE_DEFAULTS[code].advancedFilters ? 'Yes' : 'No',
   },
   {
     label: 'Custom alert preferences',
@@ -88,7 +95,8 @@ const COMPARISON_ROWS: ReadonlyArray<{
   },
   {
     label: 'Premium briefing',
-    render: (code) => (PLAN_FEATURE_DEFAULTS[code].premiumBriefing ? 'Yes' : 'No'),
+    render: (code) =>
+      PLAN_FEATURE_DEFAULTS[code].premiumBriefing ? 'Yes' : 'No',
   },
   {
     label: 'Results per page',
@@ -127,7 +135,10 @@ const BILLING_FAQ = [
 ];
 
 export default async function PricingPage() {
-  const [plans, session] = await Promise.all([loadPlans(), getSessionContext()]);
+  const [plans, session] = await Promise.all([
+    loadPlans(),
+    getSessionContext(),
+  ]);
   const codes: PlanCode[] = ['free', 'weekly', 'detailed', 'premium'];
 
   return (
@@ -136,6 +147,27 @@ export default async function PricingPage() {
         <h1 className="text-3xl sm:text-4xl">Membership plans</h1>
         <p className="mt-4 text-lg text-ink-700">
           Start free. Move up when the deadlines start mattering to you.
+        </p>
+      </div>
+
+      {/* Paid checkout cannot complete until the plans carry their Stripe price
+          ids, and a visitor who clicks through to a failure trusts us less than
+          one who was told. Says nothing about when — we do not know, and a
+          missed date costs more than no date. Remove this notice in the same
+          change that opens paid billing. */}
+      <div
+        role="note"
+        className="surface mx-auto mt-8 max-w-2xl border-l-4 border-l-signal-investigate px-5 py-4 text-sm"
+      >
+        <p className="font-semibold">Paid memberships are not open yet.</p>
+        <p className="mt-1 text-ink-700">
+          The tiers below are the plan, priced as they will launch. Free
+          membership is open now and everything you save on it carries over, so
+          the fastest way to be ready is to{' '}
+          <Link href="/register" className="underline underline-offset-2">
+            create a free account
+          </Link>{' '}
+          and start marking the counties and industries you follow.
         </p>
       </div>
 
@@ -181,7 +213,10 @@ export default async function PricingPage() {
             </thead>
             <tbody>
               {COMPARISON_ROWS.map((row) => (
-                <tr key={row.label} className="border-b border-ink-100 last:border-0">
+                <tr
+                  key={row.label}
+                  className="border-b border-ink-100 last:border-0"
+                >
                   <th scope="row" className="px-4 py-3 text-left font-medium">
                     {row.label}
                   </th>

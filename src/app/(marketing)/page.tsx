@@ -25,7 +25,11 @@ const CATEGORIES = [
       'Tax sales, sheriff sales, bank-owned inventory, development-authority ' +
       'sites and off-market indications — with the liens, zoning and ' +
       'registration deadlines attached.',
-    points: ['Auction and registration dates', 'Zoning and current use', 'Known liens and title notes'],
+    points: [
+      'Auction and registration dates',
+      'Zoning and current use',
+      'Known liens and title notes',
+    ],
   },
   {
     title: 'Business Funding',
@@ -34,7 +38,11 @@ const CATEGORIES = [
       'Grants, guaranteed loans, tax credits, workforce funding and ' +
       'procurement — sorted by who can actually qualify, not by who shouts ' +
       'loudest.',
-    points: ['Eligibility in plain language', 'Owner contribution and collateral', 'Real application deadlines'],
+    points: [
+      'Eligibility in plain language',
+      'Owner contribution and collateral',
+      'Real application deadlines',
+    ],
   },
   {
     title: 'Market Pricing',
@@ -42,7 +50,11 @@ const CATEGORIES = [
     description:
       'Construction inputs, industrial rents, vacancy, lending rates and ' +
       'permit activity — the numbers that decide whether a deal still works.',
-    points: ['Month-over-month movement', 'Named public sources', 'Interpretation, not just a chart'],
+    points: [
+      'Month-over-month movement',
+      'Named public sources',
+      'Interpretation, not just a chart',
+    ],
   },
 ];
 
@@ -149,13 +161,28 @@ export default async function HomePage() {
               opportunities, verify what we find, score it, and put the deadline
               in your calendar before it passes.
             </p>
+            {/* Free registration leads while paid checkout is still closed.
+                Sending the primary call to action to /pricing means every
+                visitor meets a checkout that cannot complete, so the free tier
+                — which is real, shipped and needs no Stripe — carries the hero
+                until the paid tiers open. Revert this ordering as part of the
+                paid launch. */}
             <div className="mt-7 flex flex-wrap gap-3">
-              <ButtonLink href="/pricing">See membership plans</ButtonLink>
+              <ButtonLink href="/register">Start free</ButtonLink>
               <ButtonLink href="/sample-report" variant="secondary">
                 Read a sample report
               </ButtonLink>
             </div>
-            <p className="mt-5 text-sm text-ink-500">
+            <p className="mt-5 text-sm text-ink-600">
+              Free membership is open now: previews across the database, the
+              published scoring method and the public weekly summary. Paid tiers
+              are not open yet —{' '}
+              <Link href="/pricing" className="underline underline-offset-2">
+                see what each one will include
+              </Link>
+              .
+            </p>
+            <p className="mt-4 text-sm text-ink-500">
               Every record names its source and the date we last verified it. No
               scraped listings, no recycled press releases, no guarantees we
               cannot keep.
@@ -259,11 +286,19 @@ export default async function HomePage() {
           {[
             { label: 'Active opportunities', value: stats.activeOpportunities },
             { label: 'Georgia counties covered', value: stats.countiesCovered },
-            { label: 'Records verified this week', value: stats.verifiedThisWeek },
-            { label: 'Deadlines in the next 14 days', value: stats.upcomingDeadlines },
+            {
+              label: 'Records verified this week',
+              value: stats.verifiedThisWeek,
+            },
+            {
+              label: 'Deadlines in the next 14 days',
+              value: stats.upcomingDeadlines,
+            },
           ].map((stat) => (
             <div key={stat.label}>
-              <p className="text-3xl font-semibold tabular-nums">{stat.value}</p>
+              <p className="text-3xl font-semibold tabular-nums">
+                {stat.value}
+              </p>
               <p className="mt-1 text-sm text-ink-300">{stat.label}</p>
             </div>
           ))}
@@ -385,7 +420,9 @@ export default async function HomePage() {
               </li>
             </ul>
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href="/sample-report">View a sample report</ButtonLink>
+              <ButtonLink href="/sample-report">
+                View a sample report
+              </ButtonLink>
               <ButtonLink href="/insights" variant="secondary">
                 Free insights
               </ButtonLink>
