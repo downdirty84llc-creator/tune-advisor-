@@ -172,7 +172,19 @@ subscriber is paying for, at the API rather than only in the form.
 
 `audit_logs` is append-only — there is no update or delete policy for anyone,
 including super administrators. Write entries via `log_admin_action`, never
-`write_audit_log` directly (execution on the latter is revoked from `PUBLIC`).
+`write_audit_log` directly.
+
+**Revoking a function grant on Supabase takes more than `from public`.**
+Supabase's default privileges grant `EXECUTE` explicitly to `anon`,
+`authenticated` and `service_role` on every function created in `public`, so
+`revoke ... from public` removes only the implicit grant and silently leaves
+the function callable with the anon key. Revoke from the roles by name and
+verify with `has_function_privilege` — migration `...002200` exists because
+`write_audit_log` and `check_rate_limit` were exposed this way. Never revoke a
+helper that an RLS policy calls (`is_staff`, `has_role`, `account_is_active`,
+`my_access_rank`, `can_view_opportunity`): policy expressions are checked
+against the querying role, so that turns the policy into an error, not a
+filter.
 
 ## Background jobs
 

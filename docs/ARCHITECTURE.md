@@ -185,6 +185,25 @@ functions to `PUBLIC` by default — which would let any signed-in member forge
 entries. Execution is therefore revoked, and the application calls
 `log_admin_action`, a guarded wrapper that checks `is_staff()` first.
 
+**That revoke was not enough on Supabase, and migration 0022 fixes it.**
+Supabase ships `alter default privileges in schema public grant all on
+functions to anon, authenticated, service_role`, so every function created in
+`public` also gets an *explicit* grant to those three roles. `revoke ... from
+public` drops only the implicit PUBLIC grant and leaves the explicit ones in
+place, so `write_audit_log` and `check_rate_limit` both stayed callable with
+the anon key — the key that ships in the browser bundle. The audit trail could
+be flooded with fabricated entries, and any visitor's rate-limit bucket could
+be exhausted to lock them out of signing in.
+
+The lesson generalises: on Supabase, **revoke from the roles by name**
+(`revoke execute on function … from anon, authenticated`), and verify with
+`has_function_privilege` rather than assuming. What must stay granted is the
+set of helpers called from RLS policy expressions — `is_staff`, `has_role`,
+`account_is_active`, `my_access_rank`, `can_view_opportunity` — because a
+policy's function calls are checked against the *querying* role, and revoking
+one turns every policy referencing it into a permission error instead of a
+filter.
+
 ---
 
 ## 10. Data honesty

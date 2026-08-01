@@ -12,6 +12,26 @@ the Stripe keys, not the storage buckets, not the analytics project.
 
 ### Database
 
+A project is provisioned and migrated:
+
+| | |
+| --- | --- |
+| Project ref | `bbgikfblcahhvrpxiqnd` |
+| API URL | `https://bbgikfblcahhvrpxiqnd.supabase.co` |
+| Region | `us-east-1` |
+| Migrations | all 22 applied |
+| Reference data | 4 plans, 159 counties, 82 cities, 12 industries, 12 sources, 12 indicators |
+
+Keys are in the dashboard under Settings → API. The anon key goes in
+`NEXT_PUBLIC_SUPABASE_ANON_KEY`; the service-role key in
+`SUPABASE_SERVICE_ROLE_KEY`, which must never carry the `NEXT_PUBLIC_` prefix.
+
+It holds no members and no opportunity records yet — those come from
+`npm run db:seed`, which needs the Auth admin API and writes everything with
+`is_sample = true`.
+
+To provision a further environment:
+
 ```bash
 supabase link --project-ref <ref>
 supabase db push                     # applies migrations in order
@@ -59,8 +79,8 @@ without rediscovering the identifiers.
    equivalent, so the test-payment matrix below needs the same products
    recreated against a test key before it can be run.
 
-3. Write the price ids onto `subscription_plans` — **still outstanding**, and
-   the reason checkout cannot yet complete:
+3. ~~Write the price ids onto `subscription_plans`.~~ Done on project
+   `bbgikfblcahhvrpxiqnd`. Re-run this against any further environment:
 
    ```sql
    update public.subscription_plans set

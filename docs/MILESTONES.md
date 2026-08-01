@@ -113,13 +113,16 @@ See `RUNBOOK.md` for the checklist.
 
 ## What is still not built
 
-1. **Stripe wiring.** The products and all six prices now exist in the live
-   account at the spec 6 amounts — see `RUNBOOK.md` for the ids. Three things
-   remain: writing the price ids onto `subscription_plans`, creating the
-   webhook endpoint (the account has none, so a completed Checkout would charge
-   a card and never grant access), and recreating the products against a test
-   key so the test-payment matrix can actually be run. The first two need a
-   provisioned database and a public hostname respectively.
+1. **Stripe webhook endpoint.** The account still has none. This is the one
+   that costs money rather than merely blocking a launch: a completed Checkout
+   charges the card while nothing writes the subscription back, leaving a
+   paying member at their old access rank. It cannot be created until the
+   application has a public hostname. Do not take a live payment first.
+
+   The rest of the Stripe chain is done — products, all six prices at the
+   spec 6 amounts, and the price ids written onto `subscription_plans` on the
+   provisioned project. The test-payment matrix still needs test-mode
+   equivalents, since the products were created directly in live mode.
 2. **Legal review of all twelve documents.** A hard launch blocker. Each renders
    an "awaiting legal review" banner until cleared.
 3. **Virus scanning on uploads.** Spec 20 says "where supported". The
