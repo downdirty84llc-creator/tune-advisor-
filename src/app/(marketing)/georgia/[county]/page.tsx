@@ -4,11 +4,32 @@ import { notFound } from 'next/navigation';
 import { OpportunityCard } from '@/components/opportunities/opportunity-card';
 import { ButtonLink, SectionHeading } from '@/components/ui/primitives';
 import { createPublicSupabaseClient } from '@/lib/db/public';
-import { loadPreviewOpportunities } from '@/lib/public-data';
+import {
+  loadCountiesWithCounts,
+  loadPreviewOpportunities,
+} from '@/lib/public-data';
 
 export const revalidate = 900;
 
 type PageProps = { params: Promise<{ county: string }> };
+
+/**
+ * Prerender the counties that actually hold published records.
+ *
+ * Deliberately not all 159. The facet query returns only counties with
+ * published records — the same set the sitemap submits — so those get built
+ * ahead of time, and the rest stay on-demand with `dynamicParams` doing the
+ * work and this file's `revalidate` caching the result. Building 159 pages when
+ * most of them say "nothing published here yet" would trade build time for
+ * nothing.
+ *
+ * The loader returns an empty array if the database is unreachable, so a build
+ * without one still succeeds and every county simply renders on demand.
+ */
+export async function generateStaticParams() {
+  const counties = await loadCountiesWithCounts();
+  return counties.map((county) => ({ county: county.slug }));
+}
 
 /**
  * Anonymous, cookie-free client — not the session-bound one.

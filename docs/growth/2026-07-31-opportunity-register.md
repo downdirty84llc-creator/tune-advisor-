@@ -3,8 +3,8 @@
 **Agent:** Rev (Marketing & Revenue), operating under `docs/DD84-GROWTH-AGENT.md`
 **Date:** 2026-07-31
 **Venture:** Georgia Opportunity Ledger (Down Dirty 84 LLC)
-**Stage:** Approved as planned, 2026-07-31. OPP-001, OPP-002 and OPP-003
-executed. See the completion record at the foot of this file.
+**Stage:** Approved as planned, 2026-07-31. OPP-001, OPP-002, OPP-003 and
+OPP-009 executed. See the completion records at the foot of this file.
 
 **No money was committed and no price was changed.** No Stripe object was
 created — the products and prices already existed. Nothing was published; the
@@ -423,3 +423,74 @@ The member layout stays server-rendered. Nothing about RLS, entitlements or the
 access model is touched. No caching headers change — the existing `no-store`
 rules for `/dashboard`, `/account`, `/saved`, `/admin` and `/api` stay exactly
 as they are.
+
+### Completion record — OPP-009
+
+Approved and executed 2026-07-31, option A as recommended.
+
+**Built.** `src/components/site/header-session.tsx` (`'use client'`) owns the
+nav list and the right-hand cluster, initial state signed-out, upgrading itself
+from `GET /api/v1/auth/session` on mount. `src/components/site/header.tsx` is now
+a plain non-async server component: chrome plus that island, no session access.
+`src/components/site/member-header.tsx` keeps the original server-resolved
+header, and `(member)/layout.tsx` uses it.
+
+`generateStaticParams` was added to the county route. It prerenders only the
+counties that hold published records — the same set the sitemap submits — and
+lets the rest render on demand under `dynamicParams` with this file's
+`revalidate` caching the result. Building 159 pages when most say "nothing
+published here yet" would trade build time for nothing.
+
+**Route classification, before and after.** All seven routes that declare
+`revalidate` now cache; before this change every one of them was `ƒ`.
+
+| Route                                                             | Before | After           |
+| ----------------------------------------------------------------- | ------ | --------------- |
+| `/`                                                               | ƒ      | ○ 5m            |
+| `/commercial-property`                                            | ƒ      | ○ 10m           |
+| `/funding`                                                        | ƒ      | ○ 10m           |
+| `/insights`                                                       | ƒ      | ○ 15m           |
+| `/pricing-reports`                                                | ƒ      | ○ 15m           |
+| `/sample-report`                                                  | ƒ      | ○ 15m           |
+| `/georgia/[county]`                                               | ƒ      | ● SSG           |
+| `/how-it-works`                                                   | ƒ      | ○               |
+| `/legal/[slug]`                                                   | ƒ      | ● SSG, 10 paths |
+| `/login`, `/register`, `/corrections/new`, `/auth/reset-password` | ƒ      | ○               |
+
+**Security acceptance met.** The prerendered homepage HTML was inspected
+directly: it contains "Log in" and "Join now", the public nav, and **no**
+`href="/dashboard"`, **no** `href="/admin"`, and no plan-name string. The only
+occurrence of the word "dashboard" is the homepage's own "Member dashboard"
+preview-panel label, which is static marketing copy. Nothing member-specific
+can reach a shared cache.
+
+**Honest limits.**
+
+- `/georgia/[county]` reports `●` but currently prerenders **zero** paths,
+  because there is no database to enumerate counties from. The classification
+  change is real and the route is now free of `cookies()`, so it caches on
+  demand; the build-time prerender of individual counties starts working when a
+  database exists.
+- `/pricing` is still `ƒ`, correctly. The page itself calls `getSessionContext()`
+  to tell `PlanGrid` which plan the viewer is on, and it never declared
+  `revalidate` — it was not one of the seven and was never meant to be cached.
+- `/support` and `/unsubscribed` remain `ƒ` for the same reason: no `revalidate`,
+  never in scope.
+
+**Deferred, and why.** The hint-cookie mitigation was **not** implemented. The
+island therefore issues one request to `/api/v1/auth/session` per marketing page
+view, including for anonymous visitors who will never have a session. The fix is
+a non-identifying boolean cookie set in middleware, but a new cookie has to be
+listed in the cookie policy, and that document is inside gate G-1's pending legal
+review. Adding an unlisted cookie to win a round trip is the wrong trade while
+the policy is being reviewed. The reasoning is recorded in a comment in
+`header-session.tsx` so it is not rediscovered from scratch.
+
+**Verification.** `npm run typecheck` clean · `npm run lint` zero warnings ·
+`npm test` 148 passing · `npm run build` compiles with no errors · route table
+inspected · prerendered HTML inspected.
+
+**Follow-up worth its own decision:** implement the hint cookie once the cookie
+policy is being revised anyway, and add `generateStaticParams` coverage checks
+once a database exists so a county with records cannot silently fall out of the
+prerendered set.

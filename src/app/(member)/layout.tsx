@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 import { SiteFooter } from '@/components/site/footer';
-import { SiteHeader } from '@/components/site/header';
+import { MemberHeader } from '@/components/site/member-header';
 import { getSessionContext } from '@/lib/auth/session';
 
 /**
@@ -26,7 +26,7 @@ export default async function MemberLayout({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+      <MemberHeader />
       {viewer.accountStatus === 'suspended' ? (
         <p className="bg-red-800 px-4 py-2 text-center text-sm text-white">
           Your account is suspended. Member content, exports and alerts are
