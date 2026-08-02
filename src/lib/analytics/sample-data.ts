@@ -53,6 +53,17 @@ export function countsTowardAnalytics(
  * modes of the alternatives are both worse: dropping it silently under-filters
  * (sample data leaks back into the numbers), and interpolating it blindly puts
  * caller-shaped text into a filter expression.
+ *
+ * The exact output shape matters and is pinned by a test: the admin dashboard
+ * passes it to `.not('user_id', 'in', …)` for the subscriber, revenue and
+ * failed-payment tiles, and all three stop filtering silently if it drifts.
+ *
+ * Note the deliberate asymmetry with `excludeSampleUsersFilter` below, which
+ * exists because the two tables mean different things by a null `user_id`.
+ * `subscriptions.user_id` is `not null`, so a bare `not.in` — which drops nulls
+ * — is correct there. `analytics_events.user_id` is nullable and a null means
+ * anonymous traffic from a real visitor, which must be kept. Do not unify
+ * these: one of the two tiles would start lying.
  */
 export function sampleUserIdList(sampleUserIds: readonly string[]): string {
   for (const id of sampleUserIds) {

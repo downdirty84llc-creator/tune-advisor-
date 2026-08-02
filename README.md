@@ -144,8 +144,14 @@ tests/e2e               Playwright
 docs/                   Architecture, runbook, milestone status, DD84 operations
 ```
 
-`tests/integration/` is already in the Vitest `include` but has no files yet —
-that is where anything needing a live Postgres goes when it is written.
+There is no integration suite. `npm test` is unit-only by design — no database,
+no network, no fixtures — which is what lets it run on every save and never fail
+for an environmental reason. The Vitest config used to glob a `tests/integration/`
+directory that has never existed; a pattern matching nothing reads as coverage
+that is present, so it was removed rather than filled. Filling it needs a live
+Postgres and therefore a decision about how CI gets one, and that decision has
+not been made. Until it is, database-backed behaviour is covered by
+`npm run test:e2e` against a built app.
 
 ---
 

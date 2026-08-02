@@ -164,6 +164,23 @@ export async function loadFacets(
 }
 
 /**
+ * Is this path segment a record id, or a slug?
+ *
+ * Exported because two lookups have to agree on the answer: the detail loader
+ * below, and the teaser fallback in the route that runs when the loader returns
+ * null. That fallback used to build its filter by interpolating the segment
+ * into a PostgREST `or()` expression, where `,` `.` and `()` are structural, so
+ * a crafted segment was read as filter syntax rather than as a value. Choosing
+ * the column here and passing the segment as a bound value removes the question
+ * rather than escaping it.
+ */
+export function isOpportunityId(idOrSlug: string): boolean {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+    idOrSlug,
+  );
+}
+
+/**
  * Full detail for one record, honouring the caller's row-level security.
  *
  * Returns `null` when the record is absent *or* the caller's rank is too low —
@@ -174,10 +191,7 @@ export async function loadOpportunityDetail(
   supabase: SupabaseClient,
   idOrSlug: string,
 ) {
-  const isUuid =
-    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-      idOrSlug,
-    );
+  const isUuid = isOpportunityId(idOrSlug);
 
   const query = supabase
     .from('opportunities')

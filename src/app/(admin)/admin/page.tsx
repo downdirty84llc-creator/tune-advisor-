@@ -91,7 +91,11 @@ export default async function AdminDashboardPage() {
       head('reports').in('status', ['draft', 'internal_review', 'approved']),
     ),
     countRows(
-      head('subscriptions').in('status', ['past_due', 'unpaid', 'incomplete']),
+      realSubscribers(head('subscriptions')).in('status', [
+        'past_due',
+        'unpaid',
+        'incomplete',
+      ]),
     ),
     countRows(
       realSubscribers(head('subscriptions')).in('status', [

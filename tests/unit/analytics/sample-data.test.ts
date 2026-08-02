@@ -57,6 +57,30 @@ describe('sampleUserIdList', () => {
   });
 });
 
+describe('sampleUserIdList — the shape the subscriber tiles depend on', () => {
+  // The admin dashboard hands this to `.not('user_id', 'in', …)` for the
+  // subscriber count, MRR and failed-payment tiles. PostgREST wants a
+  // parenthesised, comma-joined list with no padding; if the shape drifts, all
+  // three tiles stop excluding sample accounts without failing loudly.
+  it('is parenthesised, comma-joined and unpadded', () => {
+    const rendered = sampleUserIdList([SAMPLE_A, SAMPLE_B]);
+    expect(rendered.startsWith('(')).toBe(true);
+    expect(rendered.endsWith(')')).toBe(true);
+    expect(rendered).not.toMatch(/\s/);
+    expect(rendered.slice(1, -1).split(',')).toEqual([SAMPLE_A, SAMPLE_B]);
+  });
+
+  it('renders a single id without a trailing separator', () => {
+    expect(sampleUserIdList([SAMPLE_A])).toBe(`(${SAMPLE_A})`);
+  });
+
+  it('drops no ids — every sample account reaches the filter', () => {
+    const ids = [SAMPLE_A, SAMPLE_B, REAL];
+    const rendered = sampleUserIdList(ids);
+    for (const id of ids) expect(rendered).toContain(id);
+  });
+});
+
 describe('excludeSampleUsersFilter', () => {
   it('returns null when there is nothing to exclude', () => {
     // PostgREST reads `in.()` as a syntax error, so the caller must skip the

@@ -4,7 +4,10 @@ import { track } from '@/lib/analytics/events';
 import { getViewer } from '@/lib/auth/session';
 import { createServerSupabaseClient } from '@/lib/db/server';
 import { apiError, ok, withErrorHandling } from '@/lib/http/responses';
-import { loadOpportunityDetail } from '@/lib/opportunities/query';
+import {
+  isOpportunityId,
+  loadOpportunityDetail,
+} from '@/lib/opportunities/query';
 import { serializeOpportunity } from '@/lib/opportunities/serialize';
 
 export const dynamic = 'force-dynamic';
@@ -32,11 +35,16 @@ export const GET = withErrorHandling(
     if (!record) {
       // Row-level security may have filtered a real record. Fall back to the
       // teaser projection so a locked record still renders its upgrade prompt.
-      const { data: preview } = await supabase
-        .from('opportunity_previews')
-        .select('*')
-        .or(`slug.eq.${idOrSlug},id.eq.${idOrSlug}`)
-        .maybeSingle();
+      // Match on the one column the segment could be, rather than interpolating
+      // it into an `or()` expression — PostgREST parses `,` `.` and `()` there
+      // as structure, so a crafted segment became filter syntax instead of a
+      // value. `isOpportunityId` is the same discrimination the detail loader
+      // above already makes, so the two lookups cannot disagree about it.
+      const previewQuery = supabase.from('opportunity_previews').select('*');
+      const { data: preview } = await (isOpportunityId(idOrSlug)
+        ? previewQuery.eq('id', idOrSlug)
+        : previewQuery.eq('slug', idOrSlug)
+      ).maybeSingle();
 
       if (!preview) return apiError('not_found', 'Record not found.');
 
