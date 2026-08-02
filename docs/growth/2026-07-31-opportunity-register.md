@@ -17,20 +17,20 @@ code changes sit on a branch awaiting the owner's deploy.
 Every claim here was read out of this repository or a read-only API call. Facts
 are separated from estimates per §12 research standards.
 
-| #   | Fact                                                                                                                                                                                                                                       | Evidence                                                                                              |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
-| F1  | Published prices are Free $0, Weekly $15/mo · $150/yr, Detailed $39/mo · $390/yr, Premium $99/mo · $990/yr                                                                                                                                 | `supabase/seed.sql` L18–100                                                                           |
-| F2  | Detailed ($39) is the tier flagged `is_recommended`                                                                                                                                                                                        | `supabase/seed.sql` L72                                                                               |
-| F3  | **Paid checkout cannot complete.** `stripe_monthly_price_id` / `stripe_annual_price_id` are declared in migration `...000400` but never populated by `seed.sql`. The checkout route returns HTTP 409 `conflict` when a price id is missing | `src/app/api/v1/billing/create-checkout-session/route.ts` L59–75; `supabase/seed.sql` (no assignment) |
-| F4  | A live Stripe account exists: **"Down Dirty 84 llc"**, `acct_1QBl8ZINLKqe1c6g`                                                                                                                                                             | `get_stripe_account_info`, read-only                                                                  |
-| F5  | Free registration works with **zero** Stripe involvement — profile and free subscription rows are created by database triggers                                                                                                             | `src/app/api/v1/auth/register/route.ts` (0 references to Stripe)                                      |
-| F6  | The homepage's primary call to action is "See membership plans" → `/pricing` → a checkout that 409s                                                                                                                                        | `src/app/(marketing)/page.tsx` L153; F3                                                               |
-| F7  | There is **no email-only capture** anywhere on the marketing site. The only conversion path is full account registration                                                                                                                   | `src/app/(marketing)/**`, searched                                                                    |
-| F8  | 159 Georgia county landing pages exist at `/georgia/[county]`, with `revalidate = 900` and per-county metadata, and all are enumerated in the sitemap                                                                                      | `src/app/(marketing)/georgia/[county]/page.tsx` L9, L24; `src/app/sitemap.ts` L36–43                  |
-| F9  | Funnel telemetry already exists: `locked_content_viewed`, `upgrade_button_clicked`, `checkout_started`, `subscription_purchased`                                                                                                           | `src/lib/analytics/events.ts`                                                                         |
-| F10 | A weekly report distribution job runs Thursdays 12:00 UTC                                                                                                                                                                                  | `src/lib/jobs/registry.ts`; `vercel.json`                                                             |
-| F11 | All ten legal documents render an "awaiting legal review" banner                                                                                                                                                                           | `src/lib/legal/documents.ts`; `docs/MILESTONES.md`                                                    |
-| F12 | Nothing has been run against a live Supabase instance or live Stripe account                                                                                                                                                               | `docs/MILESTONES.md`                                                                                  |
+| #   | Fact                                                                                                                                                                                                                                                           | Evidence                                                                                              |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| F1  | Published prices are Free $0, Weekly $15/mo · $150/yr, Detailed $39/mo · $390/yr, Premium $99/mo · $990/yr                                                                                                                                                     | `supabase/seed.sql` L18–100                                                                           |
+| F2  | Detailed ($39) is the tier flagged `is_recommended`                                                                                                                                                                                                            | `supabase/seed.sql` L72                                                                               |
+| F3  | **Paid checkout cannot complete.** `stripe_monthly_price_id` / `stripe_annual_price_id` are declared in migration `...000400` but never populated by `seed.sql`. The checkout route returns HTTP 409 `conflict` when a price id is missing                     | `src/app/api/v1/billing/create-checkout-session/route.ts` L59–75; `supabase/seed.sql` (no assignment) |
+| F4  | A live Stripe account exists: **"Down Dirty 84 llc"**, `acct_1QBl8ZINLKqe1c6g`                                                                                                                                                                                 | `get_stripe_account_info`, read-only                                                                  |
+| F5  | Free registration works with **zero** Stripe involvement — profile and free subscription rows are created by database triggers                                                                                                                                 | `src/app/api/v1/auth/register/route.ts` (0 references to Stripe)                                      |
+| F6  | The homepage's primary call to action is "See membership plans" → `/pricing` → a checkout that 409s                                                                                                                                                            | `src/app/(marketing)/page.tsx` L153; F3                                                               |
+| F7  | There is **no email-only capture** anywhere on the marketing site. The only conversion path is full account registration                                                                                                                                       | `src/app/(marketing)/**`, searched                                                                    |
+| F8  | 159 Georgia county landing pages exist at `/georgia/[county]`, with `revalidate = 900` and per-county metadata, and all are enumerated in the sitemap                                                                                                          | `src/app/(marketing)/georgia/[county]/page.tsx` L9, L24; `src/app/sitemap.ts` L36–43                  |
+| F9  | ~~Funnel telemetry already exists~~ — **corrected 2026-07-31.** `locked_content_viewed` is genuinely tracked server-side, but `upgrade_button_clicked` was **declared and never fired** (zero call sites). Wired up as OPP-007's prerequisite; see that record | `src/lib/analytics/events.ts`; `src/lib/analytics/upgrade-source.ts`                                  |
+| F10 | A weekly report distribution job runs Thursdays 12:00 UTC                                                                                                                                                                                                      | `src/lib/jobs/registry.ts`; `vercel.json`                                                             |
+| F11 | All ten legal documents render an "awaiting legal review" banner                                                                                                                                                                                               | `src/lib/legal/documents.ts`; `docs/MILESTONES.md`                                                    |
+| F12 | Nothing has been run against a live Supabase instance or live Stripe account                                                                                                                                                                                   | `docs/MILESTONES.md`                                                                                  |
 
 ### The finding that governs everything else
 
@@ -494,3 +494,100 @@ inspected · prerendered HTML inspected.
 policy is being revised anyway, and add `generateStaticParams` coverage checks
 once a database exists so a county with records cannot silently fall out of the
 prerendered set.
+
+---
+
+## OPP-007 prerequisite — upgrade-intent telemetry
+
+Executed 2026-07-31 as the implementable half of OPP-007.
+
+### Correction: the telemetry did not exist
+
+The OPP-007 brief said upgrade telemetry "already exists", citing
+`upgrade_button_clicked` in `ANALYTICS_EVENTS`. That was wrong, and it is the
+third brief correction in this register.
+
+`upgrade_button_clicked` is **declared and never fired.** A search of `src/`
+finds it in exactly one place: the event-name array itself. There are no call
+sites. It would have reported zero forever.
+
+What does work is `locked_content_viewed`, tracked server-side in the
+opportunity and report API routes with `opportunityId`, `requiredRank` and
+`plan`. So the funnel recorded that a member _saw_ something locked, and later
+that they _started checkout_, with the step in between missing entirely.
+
+That gap is precisely the question OPP-007 exists to answer — which withheld
+feature actually drives an upgrade — so OPP-007's analysis was resting on data
+nobody was collecting.
+
+### Why this was worth doing before there is any traffic
+
+Telemetry cannot be backfilled. Every visitor who arrives before the event
+fires is a data point that is gone permanently. The analysis half of OPP-007
+still cannot run — there is no traffic and no database — but the capture has to
+be in place first, and it is cheap now and expensive to regret later.
+
+### What was built
+
+`src/lib/analytics/upgrade-source.ts` defines a fixed vocabulary of twelve
+upgrade origins, a type guard, and a helper that builds `/pricing?from=…&plan=…`.
+
+Every upgrade surface now carries its origin:
+
+| Surface                                            | Source                |
+| -------------------------------------------------- | --------------------- |
+| `LockedPanel` — whole record above tier            | `opportunity_locked`  |
+| `LockedPanel` — record readable, analysis withheld | `opportunity_partial` |
+| `LockedPanel` — whole report above tier            | `report_locked`       |
+| `LockedPanel` — report section withheld            | `report_section`      |
+| `LockedPanel` — deadline calendar                  | `deadline_calendar`   |
+| `LockedPanel` — public sample report               | `sample_report`       |
+| CSV export button                                  | `csv_export`          |
+| Saved-search button                                | `saved_search`        |
+| Save-opportunity button                            | `saved_opportunity`   |
+| Locked teaser on an opportunity card               | `opportunity_card`    |
+| Per-alert-type preferences                         | `alert_preferences`   |
+| The header's standing Upgrade button               | `header`              |
+
+`/pricing` reads the parameter, validates it against the list, and records
+`upgrade_button_clicked` with `source`, `requiredPlan` and the viewer's current
+`plan`.
+
+### Decisions worth stating
+
+**Captured server-side, not from a click handler.** This follows the decision
+in `docs/ARCHITECTURE.md` §12 — analytics are captured on the server precisely
+so an ad blocker cannot silently drop a funnel event. It also means no new API
+endpoint, no client-side event queue and no new dependency. The alternative, a
+`POST /api/v1/analytics/events` route, would have introduced a public write
+surface needing its own validation and rate limiting for no gain here.
+
+**The signal counts arrivals, not clicks.** A refresh or a back-and-forward
+re-fires it. For "which lock pushed people toward pricing", arrivals are the
+more useful denominator, but the distinction matters when reading the numbers
+and is recorded in the module.
+
+**The parameter is allowlisted.** `from` and `plan` come from a URL, so anyone
+can type anything into them. Both are validated before reaching
+`analytics_events` — `from` against the twelve sources, `plan` against
+`PLAN_CODES`. `tests/unit/analytics/upgrade-source.test.ts` covers the guard,
+including the `string[]` and `undefined` shapes a query string can produce, and
+confirms an absent plan is omitted rather than emitted as `plan=`, which would
+have split the funnel between "empty" and "unknown".
+
+**No caching was given up.** `/pricing` was already dynamic — it reads the
+session for the plan grid and never declared `revalidate`. A rebuild confirms
+every route from OPP-009 holds its classification, including `/sample-report`,
+which uses `LockedPanel` and stays static because the href helper is pure.
+
+### Verification
+
+`npm run typecheck` clean · `npm run lint` zero warnings · `npm test` **156
+passing across 10 files**, up from 148 across 9 · `npm run build` compiles with
+no errors and no route regressed.
+
+### Still blocked
+
+OPP-007's actual analysis — which lock drives upgrades, and whether $39 Detailed
+is the right recommended tier — needs traffic and a database. Neither exists.
+This change only guarantees the question will be answerable when they do.

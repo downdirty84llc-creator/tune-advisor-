@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/primitives';
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
 
 /**
  * Saves a record to the member's list.
@@ -64,7 +65,10 @@ export function SaveOpportunityButton({
         <p role="status" className="text-sm text-ink-600">
           {message}{' '}
           {needsUpgrade ? (
-            <a href="/pricing" className="font-medium text-ink-900 underline">
+            <a
+              href={upgradeHref('saved_opportunity')}
+              className="font-medium text-ink-900 underline"
+            >
               Compare plans
             </a>
           ) : null}

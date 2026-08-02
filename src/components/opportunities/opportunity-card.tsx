@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
+
 import {
   Pill,
   SampleDataBadge,
@@ -96,7 +98,9 @@ export function OpportunityCard({
         <ScoreBadge score={score} classification={classification} size="sm" />
       </div>
 
-      <p className="text-sm leading-relaxed text-ink-700">{summary ?? teaser}</p>
+      <p className="text-sm leading-relaxed text-ink-700">
+        {summary ?? teaser}
+      </p>
 
       <dl className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-ink-100 pt-3 text-sm sm:grid-cols-3">
         <div>
@@ -137,7 +141,10 @@ export function OpportunityCard({
         <p className="rounded-lg bg-ink-50 px-3 py-2 text-sm text-ink-600">
           The full analysis for this record is included with a higher membership
           tier.{' '}
-          <Link href="/pricing" className="font-medium text-ink-900 underline">
+          <Link
+            href={upgradeHref('opportunity_card')}
+            className="font-medium text-ink-900 underline"
+          >
             Compare plans
           </Link>
         </p>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { ButtonLink } from '@/components/ui/primitives';
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
 import { getSessionContext } from '@/lib/auth/session';
 
 /**
@@ -77,7 +78,11 @@ export async function MemberHeader() {
             {planName}
           </span>
           {viewer.planCode !== 'premium' && !viewer.isStaff ? (
-            <ButtonLink href="/pricing" variant="secondary" className="py-2">
+            <ButtonLink
+              href={upgradeHref('header')}
+              variant="secondary"
+              className="py-2"
+            >
               Upgrade
             </ButtonLink>
           ) : null}

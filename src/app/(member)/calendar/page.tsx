@@ -40,6 +40,7 @@ export default async function CalendarPage() {
         <div className="mt-8">
           <LockedPanel
             title="The deadline calendar is included from Weekly upward"
+            source="deadline_calendar"
             message={decision.message}
             requiredPlan={decision.requiredPlan}
             sections={[
@@ -136,8 +137,7 @@ export default async function CalendarPage() {
                 <ul className="surface mt-3 divide-y divide-ink-100">
                   {bucket.map((entry) => {
                     const locked =
-                      viewer.accessRank <
-                      entry.opportunity.minimum_access_rank;
+                      viewer.accessRank < entry.opportunity.minimum_access_rank;
                     return (
                       <li
                         key={entry.opportunity.id}

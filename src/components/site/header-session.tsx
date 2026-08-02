@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { ButtonLink } from '@/components/ui/primitives';
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
 
 /**
  * The session-dependent part of the marketing header.
@@ -133,7 +134,11 @@ export function HeaderSession() {
               {session.planName}
             </span>
             {session.planCode !== 'premium' && !session.isStaff ? (
-              <ButtonLink href="/pricing" variant="secondary" className="py-2">
+              <ButtonLink
+                href={upgradeHref('header')}
+                variant="secondary"
+                className="py-2"
+              >
                 Upgrade
               </ButtonLink>
             ) : null}

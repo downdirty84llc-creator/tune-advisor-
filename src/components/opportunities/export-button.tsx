@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/primitives';
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
 
 /**
  * Requests a CSV export.
@@ -29,7 +30,7 @@ export function ExportButton({
   if (!allowed) {
     return (
       <a
-        href="/pricing"
+        href={upgradeHref('csv_export')}
         className="inline-flex items-center rounded-lg border border-ink-200 px-3 py-2 text-sm text-ink-500 hover:border-ink-300 hover:text-ink-700"
       >
         {deniedMessage || 'CSV export is a Premium feature'}
@@ -54,7 +55,9 @@ export function ExportButton({
 
       if (!response.ok) {
         setStatus('error');
-        setMessage(payload?.error?.message ?? 'The export could not be started.');
+        setMessage(
+          payload?.error?.message ?? 'The export could not be started.',
+        );
         return;
       }
 
@@ -94,7 +97,10 @@ export function ExportButton({
         >
           {message}{' '}
           {downloadUrl ? (
-            <a href={downloadUrl} className="font-medium text-ink-900 underline">
+            <a
+              href={downloadUrl}
+              className="font-medium text-ink-900 underline"
+            >
               Download
             </a>
           ) : null}

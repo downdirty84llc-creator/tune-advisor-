@@ -35,9 +35,7 @@ export default async function SampleReportPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
       <Pill>Sample</Pill>
-      <h1 className="mt-3 text-3xl sm:text-4xl">
-        The weekly report, in full
-      </h1>
+      <h1 className="mt-3 text-3xl sm:text-4xl">The weekly report, in full</h1>
       <p className="mt-4 text-lg leading-relaxed text-ink-700">
         This is the structure every weekly report follows. One record is shown
         complete so you can see exactly what members read; the rest are shown as
@@ -51,8 +49,8 @@ export default async function SampleReportPage() {
             The week&rsquo;s ledger is weighted toward deadline pressure rather
             than new inventory: several programs close inside the next fortnight
             and two property registrations close sooner than their sale dates
-            suggest. Where a deadline and a sale date differ, the deadline is the
-            one that binds.
+            suggest. Where a deadline and a sale date differ, the deadline is
+            the one that binds.
           </p>
           <p>
             On pricing, the picture is mixed. Input costs remain the constraint
@@ -112,7 +110,8 @@ export default async function SampleReportPage() {
               >
                 <span className="text-sm font-medium">{item.title}</span>
                 <span className="text-xs text-ink-500">
-                  {item.county ?? 'Georgia'} · {formatDeadline(item.closingDate)}
+                  {item.county ?? 'Georgia'} ·{' '}
+                  {formatDeadline(item.closingDate)}
                 </span>
               </li>
             ))}
@@ -160,6 +159,7 @@ export default async function SampleReportPage() {
       <div className="mt-12">
         <LockedPanel
           title="The full report is included from Weekly upward"
+          source="sample_report"
           message="Weekly members receive this report every Thursday with summary detail. Detailed adds full analysis and score explanations; Premium adds immediate alerts, saved searches and CSV export."
           sections={[
             'Full analysis on every record',

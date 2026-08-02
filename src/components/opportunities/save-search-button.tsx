@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/primitives';
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
 import type { OpportunityFilters } from '@/lib/search/filters';
 
 /**
@@ -33,7 +34,7 @@ export function SaveSearchButton({
   if (!allowed) {
     return (
       <a
-        href="/pricing"
+        href={upgradeHref('saved_search')}
         className="inline-flex items-center rounded-lg border border-ink-200 px-3 py-2 text-sm text-ink-500 hover:border-ink-300 hover:text-ink-700"
         title={deniedMessage}
       >

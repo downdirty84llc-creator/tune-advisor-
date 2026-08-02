@@ -18,7 +18,9 @@ export const dynamic = 'force-dynamic';
 
 type PageProps = { params: Promise<{ slug: string }> };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const supabase = await createServerSupabaseClient();
   const { data } = await supabase
@@ -73,6 +75,7 @@ export default async function ReportPage({ params }: PageProps) {
         <div className="mt-8">
           <LockedPanel
             title="This report is above your current plan"
+            source="report_locked"
             message={decision.message}
             requiredPlan={decision.requiredPlan}
             sections={[
@@ -131,9 +134,11 @@ export default async function ReportPage({ params }: PageProps) {
         <section className="mt-10">
           <h2 className="text-xl">Executive summary</h2>
           <div className="prose-ledger mt-3">
-            {renderRichText(report.executive_summary).map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {renderRichText(report.executive_summary).map(
+              (paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ),
+            )}
           </div>
         </section>
       ) : null}
@@ -142,9 +147,11 @@ export default async function ReportPage({ params }: PageProps) {
         <section className="mt-10">
           <h2 className="text-xl">Market commentary</h2>
           <div className="prose-ledger mt-3">
-            {renderRichText(report.market_commentary).map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {renderRichText(report.market_commentary).map(
+              (paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ),
+            )}
           </div>
         </section>
       ) : null}
@@ -165,6 +172,7 @@ export default async function ReportPage({ params }: PageProps) {
               <div className="mt-3">
                 <LockedPanel
                   title={`${section.title} is included with a higher tier`}
+                  source="report_section"
                   message="This section of the report is available to members on a higher plan."
                 />
               </div>
@@ -183,7 +191,8 @@ export default async function ReportPage({ params }: PageProps) {
                 : entry.opportunities;
               if (!opportunity) return null;
               const unlocked =
-                viewer.isStaff || viewer.accessRank >= entry.minimum_access_rank;
+                viewer.isStaff ||
+                viewer.accessRank >= entry.minimum_access_rank;
 
               return (
                 <li key={opportunity.id} className="surface p-4">

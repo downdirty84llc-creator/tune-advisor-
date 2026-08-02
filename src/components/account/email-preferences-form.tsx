@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import { Button, Card, Pill } from '@/components/ui/primitives';
+import { upgradeHref } from '@/lib/analytics/upgrade-source';
 
 interface AlertPreference {
   id: string;
@@ -25,8 +26,7 @@ const ALERT_TYPES: ReadonlyArray<{
   {
     type: 'high_score',
     label: 'New matching records',
-    description:
-      'Sent as soon as a record matching your filters is published.',
+    description: 'Sent as soon as a record matching your filters is published.',
     requires: 'premium',
   },
   {
@@ -230,7 +230,7 @@ export function EmailPreferencesForm({
                     </span>
                     {!entitled ? (
                       <Link
-                        href="/pricing"
+                        href={upgradeHref('alert_preferences')}
                         className="mt-1 inline-block text-xs font-medium underline"
                       >
                         Included with a higher plan

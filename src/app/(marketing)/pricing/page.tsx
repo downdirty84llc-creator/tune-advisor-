@@ -3,8 +3,14 @@ import Link from 'next/link';
 
 import { PlanGrid } from '@/components/pricing/plan-grid';
 import { SectionHeading } from '@/components/ui/primitives';
+import { track } from '@/lib/analytics/events';
+import { isUpgradeSource } from '@/lib/analytics/upgrade-source';
 import { getSessionContext } from '@/lib/auth/session';
-import { PLAN_FEATURE_DEFAULTS, type PlanCode } from '@/lib/access/ranks';
+import {
+  PLAN_CODES,
+  PLAN_FEATURE_DEFAULTS,
+  type PlanCode,
+} from '@/lib/access/ranks';
 import { loadPlans } from '@/lib/public-data';
 
 export const metadata: Metadata = {
@@ -134,12 +140,43 @@ const BILLING_FAQ = [
   },
 ];
 
-export default async function PricingPage() {
-  const [plans, session] = await Promise.all([
+/**
+ * `searchParams` keeps this route dynamic, which it already was — the plan grid
+ * needs to know which tier the viewer is on, so this page was never one of the
+ * seven that declare `revalidate`. No caching is given up here.
+ */
+export default async function PricingPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const [plans, session, params] = await Promise.all([
     loadPlans(),
     getSessionContext(),
+    searchParams,
   ]);
   const codes: PlanCode[] = ['free', 'weekly', 'detailed', 'premium'];
+
+  // `upgrade_button_clicked` is recorded here rather than from a click handler,
+  // matching the server-side analytics decision in ARCHITECTURE.md §12. The
+  // source is validated against a fixed list first, so a hand-edited URL cannot
+  // write arbitrary strings into `analytics_events`.
+  const from = params.from;
+  if (isUpgradeSource(from)) {
+    const requiredPlan = params.plan;
+    await track('upgrade_button_clicked', {
+      userId: session.viewer.userId,
+      properties: {
+        source: from,
+        requiredPlan:
+          typeof requiredPlan === 'string' &&
+          PLAN_CODES.includes(requiredPlan as PlanCode)
+            ? requiredPlan
+            : null,
+        plan: session.planCode,
+      },
+    });
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">

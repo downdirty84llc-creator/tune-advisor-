@@ -2,6 +2,10 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 import {
+  upgradeHref,
+  type UpgradeSource,
+} from '@/lib/analytics/upgrade-source';
+import {
   classificationLabel,
   type ScoreClassification,
 } from '@/lib/scoring/score';
@@ -14,7 +18,9 @@ import {
  * every icon-like element carries text. Spec 22 requires both.
  */
 
-export function cx(...values: Array<string | false | null | undefined>): string {
+export function cx(
+  ...values: Array<string | false | null | undefined>
+): string {
   return values.filter(Boolean).join(' ');
 }
 
@@ -40,7 +46,9 @@ export function Button({
   className,
   type = 'button',
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant }) {
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: ButtonVariant;
+}) {
   return (
     <button
       type={type}
@@ -200,11 +208,18 @@ export function LockedPanel({
   message,
   requiredPlan,
   sections,
+  source,
 }: {
   title: string;
   message: string;
   requiredPlan?: string;
   sections?: readonly string[];
+  /**
+   * Which lock this panel is for. Carried to `/pricing`, which records
+   * `upgrade_button_clicked` server-side — without it that event never fires
+   * and "which withheld feature drives upgrades" stays unanswerable.
+   */
+  source?: UpgradeSource;
 }) {
   return (
     <div className="rounded-xl border border-dashed border-ink-300 bg-ink-50/70 p-6">
@@ -238,7 +253,9 @@ export function LockedPanel({
           ) : null}
 
           <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink href="/pricing">
+            <ButtonLink
+              href={source ? upgradeHref(source, requiredPlan) : '/pricing'}
+            >
               {requiredPlan ? `Compare plans` : 'See membership options'}
             </ButtonLink>
             <ButtonLink href="/how-it-works" variant="secondary">
@@ -269,7 +286,9 @@ export function EmptyState({
         {description}
       </p>
       {children ? (
-        <div className="mt-5 flex flex-wrap justify-center gap-3">{children}</div>
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          {children}
+        </div>
       ) : null}
     </div>
   );
@@ -277,13 +296,7 @@ export function EmptyState({
 
 // --- Data display ----------------------------------------------------------
 
-export function DataRow({
-  label,
-  value,
-}: {
-  label: string;
-  value: ReactNode;
-}) {
+export function DataRow({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-ink-100 py-2 last:border-0">
       <dt className="text-sm text-ink-600">{label}</dt>
@@ -310,7 +323,7 @@ export function Meter({
     <div>
       <div className="flex items-baseline justify-between gap-3 text-sm">
         <span className="text-ink-700">{label}</span>
-        <span className="font-medium text-ink-900 tabular-nums">
+        <span className="font-medium tabular-nums text-ink-900">
           {value}
           <span className="text-ink-400"> / {max}</span>
         </span>
