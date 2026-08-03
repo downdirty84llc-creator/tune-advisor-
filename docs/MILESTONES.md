@@ -24,7 +24,7 @@ direction, or owner sign-off. That is a design engagement, not a code artefact.
 migrations, email/password and magic-link authentication, password reset (both
 halves of the flow on one page), Google sign-in wired in Supabase config,
 profiles created by database trigger, the full role system, public pages, and
-all twelve legal documents behind `/legal/[slug]`.
+all ten legal documents behind `/legal/[slug]`.
 
 ## Milestone 3 — Billing and access
 
@@ -123,8 +123,26 @@ See `RUNBOOK.md` for the checklist.
    spec 6 amounts, and the price ids written onto `subscription_plans` on the
    provisioned project. The test-payment matrix still needs test-mode
    equivalents, since the products were created directly in live mode.
-2. **Legal review of all twelve documents.** A hard launch blocker. Each renders
-   an "awaiting legal review" banner until cleared.
+2. **Legal review of all ten documents.** A hard launch blocker. Seven of the
+   ten carry `requiresReview: true` and render an "awaiting legal review"
+   banner; the three editorial documents do not, which is itself a question for
+   counsel. `docs/LEGAL-REVIEW.md` is the packet.
+
+   **Settle these four before counsel starts** — each is a promise the software
+   does not currently keep, and the answer changes what they review:
+
+   - **Account deletion.** The Privacy Policy says a member can request it and
+     describes what it removes. `profiles.deletion_requested_at` exists and no
+     code reads or writes it.
+   - **Personal data export.** The Privacy Policy offers "an export of your
+     data". The export system produces opportunity CSVs — the paid product, not
+     a subject-access export.
+   - **Analytics opt-out.** The Privacy and Cookie policies both offer one.
+     There is no flag on `user_preferences`, no control, and `track()` checks no
+     consent before writing and forwarding to PostHog.
+   - **Refund workflow.** The Refund Policy describes billing-manager approval
+     and an audit entry per refund. There is no refund code at all; a refund
+     happens in the Stripe dashboard with neither control.
 3. **Virus scanning on uploads.** Spec 20 says "where supported". The
    `attachments.scan_status` column exists and defaults to `pending`; no scanner
    is wired to it.

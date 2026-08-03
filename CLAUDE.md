@@ -263,7 +263,7 @@ but do it deliberately and expect to fix real errors it surfaces.
 ## Known gaps
 
 Tracked honestly in `docs/MILESTONES.md`; do not "fix" these by hiding them.
-Hard launch blockers are legal review of the twelve documents in
+Hard launch blockers are legal review of the ten documents in
 `src/lib/legal/documents.ts` and creating the Stripe products/prices. Also
 outstanding: virus scanning on uploads, super-administrator MFA reset, and
 brand sign-off.

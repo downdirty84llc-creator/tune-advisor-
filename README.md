@@ -189,6 +189,6 @@ and row-level security still enforces every permission underneath.
 
 Milestones 2 through 9 of the specification are implemented; see
 `docs/MILESTONES.md` for the per-milestone breakdown and the six things that
-remain. Two are hard launch blockers: legal review of the twelve documents in
+remain. Two are hard launch blockers: legal review of the ten documents in
 `src/lib/legal/documents.ts`, and creating the Stripe products and prices so the
 tier-by-tier payment matrix can be run.
