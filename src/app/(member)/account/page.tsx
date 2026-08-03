@@ -37,9 +37,9 @@ const PRIVACY_CONTROLS = [
     href: '/support?topic=account_deletion',
   },
   {
-    title: 'Cookie preferences',
-    body: 'Analytics cookies can be switched off without losing any functionality.',
-    href: '/legal/cookies',
+    title: 'Analytics and cookie preferences',
+    body: 'Product analytics can be switched off without losing any functionality. Strictly necessary session cookies stay, because sign-in does not work without them.',
+    href: '/account/preferences',
   },
 ];
 

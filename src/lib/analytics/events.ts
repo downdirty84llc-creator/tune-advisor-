@@ -88,6 +88,54 @@ export function scrubProperties(
   return clean;
 }
 
+/**
+ * Consent lookup, memoised for a short window.
+ *
+ * A signed-in member generates several events per page, and each one would
+ * otherwise cost a round trip to read one boolean. The window is deliberately
+ * short: a member who switches analytics off should stop being recorded within
+ * seconds, not at the end of a session.
+ */
+const CONSENT_TTL_MS = 30_000;
+const consentCache = new Map<string, { allowed: boolean; expiresAt: number }>();
+
+export function clearAnalyticsConsentCache(): void {
+  consentCache.clear();
+}
+
+async function analyticsAllowedFor(userId: string): Promise<boolean> {
+  const cached = consentCache.get(userId);
+  if (cached && cached.expiresAt > Date.now()) return cached.allowed;
+
+  const supabase = createAdminClient();
+  const { data, error } = await supabase
+    .from('user_preferences')
+    .select('analytics_enabled')
+    .eq('user_id', userId)
+    .maybeSingle();
+
+  if (error) {
+    // Fail *closed*, unlike the rate limiter. If consent cannot be confirmed,
+    // recording the member anyway is the outcome the policy forbids, and the
+    // cost of the alternative is a lost event. The preferences row is created
+    // by trigger at signup, so a read failure here means the database is
+    // unwell and the insert below would fail regardless.
+    console.error('[analytics] consent lookup failed, not recording', {
+      userId,
+      error: error.message,
+    });
+    return false;
+  }
+
+  // A missing row is treated as consent, matching the column default that
+  // every existing account carries.
+  const allowed = (data as { analytics_enabled?: boolean } | null)
+    ?.analytics_enabled ?? true;
+
+  consentCache.set(userId, { allowed, expiresAt: Date.now() + CONSENT_TTL_MS });
+  return allowed;
+}
+
 export async function track(
   event: AnalyticsEvent,
   options: {
@@ -99,6 +147,10 @@ export async function track(
   const properties = scrubProperties(options.properties ?? {});
 
   try {
+    // Checked before anything is written or forwarded, so an opted-out member
+    // reaches neither destination.
+    if (options.userId && !(await analyticsAllowedFor(options.userId))) return;
+
     const supabase = createAdminClient();
     await supabase.from('analytics_events').insert({
       user_id: options.userId ?? null,

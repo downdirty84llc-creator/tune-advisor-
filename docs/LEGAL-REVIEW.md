@@ -12,7 +12,7 @@ advice should do it.
 
 ---
 
-## Before counsel opens this: four documents promise things the product does not do
+## Before counsel opens this: three documents still promise things the product does not do
 
 These are not drafting questions. They are representations to consumers that
 the software does not currently honour, and every one of them is cheaper to fix
@@ -22,7 +22,8 @@ is an affirmative misstatement rather than an omission.
 
 Each needs an owner decision — **build the feature, or change the sentence** —
 before counsel signs anything, because the answer changes what they are
-reviewing.
+reviewing. A fourth, the analytics opt-out, has since been built and is kept
+below with the resolution recorded.
 
 ### 1. Account deletion — promised, not built
 
@@ -43,21 +44,29 @@ paid research product. It is not a subject-access export of the member's own
 personal data, which is what this sentence describes and what a regulator would
 read it to mean.
 
-### 3. Analytics opt-out — promised twice, not built
+### 3. Analytics opt-out — ~~promised twice, not built~~ **now built**
 
 > *Privacy Policy:* "manage cookie preferences"
 > *Cookie Policy, "Analytics":* "You can opt out from your account without
 > losing any functionality."
 
-There is no opt-out. `user_preferences` carries `email_alerts_enabled` and
-`marketing_email_enabled` and **no analytics flag**. `track()` in
-`src/lib/analytics/events.ts` checks no consent state before writing to
-`analytics_events` and forwarding to PostHog. The account page has a card
-headed "Cookie preferences" whose only action is a link to the policy itself.
+**Resolved.** `user_preferences.analytics_enabled` (migration `…002300`,
+default `true`) is the flag; the control is on `/account/preferences`; and
+`track()` checks it before writing to `analytics_events` or forwarding to
+PostHog. The account page card now links to the control rather than to the
+policy describing it.
 
-Note this one interacts with the others: the copy says opting out costs no
-functionality, which is true and is a good position — it just needs the switch
-to exist.
+The consent lookup **fails closed** — the opposite of the rate limiter. If the
+preference cannot be read, the event is dropped, because recording a member
+whose consent cannot be confirmed is precisely what the policy forbids. It is
+memoised for thirty seconds so a page of events costs one read rather than
+several, and so an opt-out takes effect in seconds rather than at the end of a
+session.
+
+Counsel should still confirm the *wording*, and note the default is opt-out
+rather than opt-in — appropriate for first-party product analytics under US
+law, but not under an opt-in consent regime if members in such jurisdictions
+are ever in scope.
 
 ### 4. Refund workflow — described, not built
 

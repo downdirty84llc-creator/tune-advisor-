@@ -128,8 +128,9 @@ See `RUNBOOK.md` for the checklist.
    banner; the three editorial documents do not, which is itself a question for
    counsel. `docs/LEGAL-REVIEW.md` is the packet.
 
-   **Settle these four before counsel starts** — each is a promise the software
-   does not currently keep, and the answer changes what they review:
+   **Settle these three before counsel starts** — each is a promise the software
+   does not currently keep, and the answer changes what they review. The
+   analytics opt-out was the fourth and is now built (migration `…002300`):
 
    - **Account deletion.** The Privacy Policy says a member can request it and
      describes what it removes. `profiles.deletion_requested_at` exists and no
@@ -137,9 +138,6 @@ See `RUNBOOK.md` for the checklist.
    - **Personal data export.** The Privacy Policy offers "an export of your
      data". The export system produces opportunity CSVs — the paid product, not
      a subject-access export.
-   - **Analytics opt-out.** The Privacy and Cookie policies both offer one.
-     There is no flag on `user_preferences`, no control, and `track()` checks no
-     consent before writing and forwarding to PostHog.
    - **Refund workflow.** The Refund Policy describes billing-manager approval
      and an audit entry per refund. There is no refund code at all; a refund
      happens in the Stripe dashboard with neither control.
