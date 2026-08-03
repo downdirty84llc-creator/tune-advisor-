@@ -168,20 +168,34 @@ Note the zones are split — the apex is on a Google-Cloud-hosted builder,
 added wherever `downdirty84llc.com` is managed, which is not necessarily the
 Cloudflare account.
 
-Order of operations:
+Order of operations. Steps 1 to 3 are `scripts/deploy-vercel.sh`:
 
-1. Deploy to Vercel and confirm the generated `*.vercel.app` hostname serves the
-   app.
-2. Add the custom domain `ledger.downdirty84llc.com` in the Vercel project, and
-   create the DNS record Vercel specifies (a `CNAME` to `cname.vercel-dns.com`
-   for a subdomain). This must be an explicit record, not the wildcard.
-3. Wait for the certificate to issue, then confirm the apex site is *not* what
-   answers on the subdomain.
+```bash
+export SUPABASE_SERVICE_ROLE_KEY=...        # Supabase → Settings → API
+export NEXT_PUBLIC_SUPABASE_ANON_KEY=...    # same page
+export STRIPE_SECRET_KEY=sk_live_...        # Stripe → Developers → API keys
+./scripts/deploy-vercel.sh
+```
+
+It creates and links the project, sets every production environment variable,
+deploys, attaches the domain, and prints the DNS record to create. Re-running
+replaces variables rather than duplicating them. `CRON_SECRET` and
+`EMAIL_UNSUBSCRIBE_SECRET` are generated unless exported, so export them if you
+need the values to stay stable across runs.
+
+1. Deploy and confirm the generated `*.vercel.app` hostname serves the app.
+2. Attach `ledger.downdirty84llc.com` and create the DNS record that
+   `vercel domains inspect` prints — do not assume the target, it varies by
+   project. This must be an explicit record, not the wildcard.
+3. Wait for the certificate to issue, then confirm the app is what answers on
+   the subdomain rather than the marketing site.
 4. Only then create the Stripe webhook (step 4 of the Stripe section) against
-   `https://ledger.downdirty84llc.com/api/v1/webhooks/stripe`.
+   `https://ledger.downdirty84llc.com/api/v1/webhooks/stripe`, put its signing
+   secret in `STRIPE_WEBHOOK_SECRET`, and re-run the script so the value
+   reaches production.
 
-Environment variables to set on the Vercel project — everything in
-`.env.example`, with these already known:
+Environment variables the script sets — everything in `.env.example`, with
+these already known:
 
 | Variable | Value |
 | --- | --- |
