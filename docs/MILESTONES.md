@@ -105,13 +105,25 @@ See `RUNBOOK.md` for the checklist.
 
 ## What is still not built
 
-1. **Stripe products, prices and the test-payment matrix.** Needs a Stripe
-   account; everything on our side is ready for it.
+1. ~~**Stripe products, prices and the test-payment matrix.**~~ **Products,
+   prices and the database wiring are done** (2026-07-31). Four live products,
+   six live prices, and `subscription_plans` carries every product and price id
+   — verified against a live Supabase project, with all three paid tiers
+   reporting `ok`. Checkout no longer returns 409 for a missing price id.
+   **Still outstanding:** the webhook endpoint and `STRIPE_WEBHOOK_SECRET`, the
+   pinned API version, and the tier-by-tier test-payment matrix, all of which
+   need a deployed application.
 2. **Legal review of all twelve documents.** A hard launch blocker. Each renders
    an "awaiting legal review" banner until cleared.
-3. **Virus scanning on uploads.** Spec 20 says "where supported". The
-   `attachments.scan_status` column exists and defaults to `pending`; no scanner
-   is wired to it.
+3. **Virus scanning on uploads.** Spec 20 says "where supported". The database
+   half is now in place (migration `...002300`): `scanned_at`, `scan_detail`,
+   `scanner` and `scan_attempts`, a constraint restricting `scan_status` to the
+   six known values, a constraint requiring a reason on `infected`, a partial
+   index for the pending queue, and a read policy that shows members only
+   `clean` and `skipped` while staff see every status. **No scanner is wired to
+   it** — nothing moves a row out of `pending` — so uploads remain unreadable by
+   members until one is. The gate fails closed, which is the right direction,
+   but the item is not finished.
 4. **High-fidelity design and brand sign-off** (milestone 1).
 5. **Public landing pages are server-rendered per request, not cached.** The
    marketing layout renders a session-aware header, which makes the whole route

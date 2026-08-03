@@ -30,16 +30,23 @@
 begin;
 
 update public.subscription_plans set
+  stripe_product_id       = 'prod_UzCmUxNZwISwan'
+where code = 'free';
+
+update public.subscription_plans set
+  stripe_product_id       = 'prod_UzCmnGDe4j595N',
   stripe_monthly_price_id = 'price_1TzEO3INLKqe1c6gLvq62WD1',  -- $15/mo
   stripe_annual_price_id  = 'price_1TzEO7INLKqe1c6gH20i3Wo2'   -- $150/yr
 where code = 'weekly';
 
 update public.subscription_plans set
+  stripe_product_id       = 'prod_UzCmNJIUP1kEgY',
   stripe_monthly_price_id = 'price_1TzEOAINLKqe1c6ggOvRN5VP',  -- $39/mo
   stripe_annual_price_id  = 'price_1TzEODINLKqe1c6gnKArkYcD'   -- $390/yr
 where code = 'detailed';
 
 update public.subscription_plans set
+  stripe_product_id       = 'prod_UzCm77hAdOM052',
   stripe_monthly_price_id = 'price_1TzEOJINLKqe1c6gYboc5ODU',  -- $99/mo
   stripe_annual_price_id  = 'price_1TzEOMINLKqe1c6ghcReIVhO'   -- $990/yr
 where code = 'premium';

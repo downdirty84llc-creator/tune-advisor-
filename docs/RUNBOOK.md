@@ -18,6 +18,32 @@ supabase db push                     # applies migrations in order
 psql "$DATABASE_URL" -f supabase/seed.sql   # reference data only
 ```
 
+> **The live project's migration history does not match this repository.**
+>
+> A Supabase project exists — `georgia-opportunity-ledger`, ref
+> `bbgikfblcahhvrpxiqnd` — fully migrated and seeded, with 36 tables, 66 RLS
+> policies, 159 counties and every Stripe id populated.
+>
+> Its `supabase_migrations.schema_migrations` records **27** migrations under
+> versions in the `20260731…`/`20260801…` range. This repository holds 27 files
+> numbered `20260101…`. The schemas agree; the version numbers do not. **Running
+> `supabase db push` against that project will therefore try to re-apply
+> everything and fail on the first `create type`.**
+>
+> Six of those migrations existed only in the database until 2026-07-31 and have
+> now been recovered into `supabase/migrations/` as `...002200`–`...002700`
+> (search-vector trigger repair, attachment scanning, `stripe_product_id`,
+> function privileges, privileged-grant revocation, and `search_path` pinning).
+> Two of those are security hardening: without them a signed-in member could
+> call `write_audit_log` directly, and unpinned `SECURITY DEFINER` functions
+> resolve unqualified names through the caller's `search_path`.
+>
+> **Do not `db reset` or `db push` against the live project until the histories
+> are reconciled.** Reconciling means rewriting
+> `supabase_migrations.schema_migrations` so its versions match these filenames —
+> a deliberate act on a live database, not a side effect of a deploy. A fresh
+> environment created from this repository alone is unaffected and correct.
+
 `supabase/seed.sql` is idempotent: plans, states, counties, cities, industries,
 sources and indicator definitions all upsert on a natural key. It contains no
 demo users and no sample records — those come from `npm run db:seed`, which

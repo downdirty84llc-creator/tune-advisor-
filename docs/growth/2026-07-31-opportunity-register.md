@@ -591,3 +591,107 @@ no errors and no route regressed.
 OPP-007's actual analysis — which lock drives upgrades, and whether $39 Detailed
 is the right recommended tier — needs traffic and a database. Neither exists.
 This change only guarantees the question will be answerable when they do.
+
+---
+
+## Database provisioning — 2026-07-31
+
+Approved at $0/month (free tier, organisation `downdirty84llc@gmail.com's Org`,
+cost checked before proceeding).
+
+### The blocker is cleared
+
+**F3 — the headline finding of this entire register — is resolved.** Paid
+checkout no longer fails for a missing price id.
+
+A Supabase project `georgia-opportunity-ledger` (ref `bbgikfblcahhvrpxiqnd`,
+us-east-1) exists and is `ACTIVE_HEALTHY`. **Rev did not create it and did not
+apply the migrations** — the first `apply_migration` attempt failed with
+`type "user_role" already exists`, which is how the existing state was
+discovered. As with the Stripe objects, the work had been done already; the job
+was to verify it and reconcile the repository against it.
+
+Verified state: 36 tables, 36 enums, 66 RLS policies, 36 functions, 159
+counties, 1 state, 12 industries, 12 sources, 4 plans. Zero opportunities and
+zero auth users, so reference data is loaded and demo data is not.
+
+All four plans now report `ok`:
+
+| Plan     | Product               | Monthly         | Annual          |
+| -------- | --------------------- | --------------- | --------------- |
+| free     | `prod_UzCmUxNZwISwan` | —               | —               |
+| weekly   | `prod_UzCmnGDe4j595N` | `price_1TzEO3…` | `price_1TzEO7…` |
+| detailed | `prod_UzCmNJIUP1kEgY` | `price_1TzEOA…` | `price_1TzEOD…` |
+| premium  | `prod_UzCm77hAdOM052` | `price_1TzEOJ…` | `price_1TzEOM…` |
+
+The price ids were already populated and matched `stripe-prices.live.sql`
+exactly. The four `stripe_product_id` values were not, and Rev set them.
+
+### The serious finding: the repository was missing six migrations
+
+The live database recorded **27** migrations; this repository held **21**. The
+six that existed only in the database have been recovered into
+`supabase/migrations/` as `...002200`–`...002700`:
+
+| Recovered                           | What it does                                                                                                               |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `repair_search_vector_trigger`      | Resolves the target id per table so one trigger serves three tables                                                        |
+| `attachment_scanning`               | Scan columns, status constraint, pending-queue index, and a read policy showing members only `clean`/`skipped`             |
+| `stripe_product_id`                 | Column plus partial unique index                                                                                           |
+| `function_privileges`               | **Security.** Revokes EXECUTE on `write_audit_log`, the rate limiter, the access-rank resolvers and every trigger function |
+| `revoke_privileged_function_grants` | **Security.** Further revokes, including `anon` on `log_admin_action`                                                      |
+| `function_search_paths`             | **Security.** Pins `search_path` on 13 previously unpinned functions                                                       |
+
+**Why this mattered.** A `supabase db reset` from the repository would have
+silently reverted all six. Two are security hardening whose loss would be a real
+regression: Postgres grants EXECUTE to `PUBLIC` by default, so without
+`function_privileges` a signed-in member could call `write_audit_log` directly
+and forge entries — precisely the risk `docs/ARCHITECTURE.md` §9 describes — and
+an unpinned `SECURITY DEFINER` function resolves unqualified names through the
+caller's `search_path`, which is a privilege-escalation route.
+
+`attachment_scanning` also moves `MILESTONES.md` item 3 forward: the database
+half of virus scanning is real, and the gate fails closed. No scanner is wired,
+so the item is not finished.
+
+### Audit-log invariant checked, not assumed
+
+`log_admin_action` is `SECURITY DEFINER`, guards with `is_staff()`, and pins
+`search_path = public, extensions`. `write_audit_log` is revoked from `anon` and
+`authenticated`. The append-only guarantee in `ARCHITECTURE.md` §9 holds on the
+live database.
+
+### Security advisors — read before acting on them
+
+Supabase's linter reports four `security_definer_view` ERRORs and a set of
+`SECURITY DEFINER function executable` WARNs. **Most are this system's
+documented design, not defects.** `opportunity_previews`, `report_previews`,
+`market_indicator_previews` and `public_sources` are the deliberate redaction
+views from `ARCHITECTURE.md` §1, and `search_opportunities` _must_ be callable
+by `anon` — that is the entire column-level access mechanism. `log_admin_action`
+being callable by `authenticated` is intentional and guarded.
+
+One INFO notice is also correct as-is: `rate_limit_counters` has RLS enabled
+with no policy, which denies every API role. Only the service role touches it.
+A comment now says so on the table itself, so nobody "fixes" it.
+
+### Unresolved, and it will bite
+
+**The live project's migration versions do not match this repository's
+filenames** (`20260731…`/`20260801…` against `20260101…`). The schemas agree;
+the histories do not. **`supabase db push` against that project will try to
+re-apply everything and fail on the first `create type`.**
+
+Reconciling means rewriting `supabase_migrations.schema_migrations` on a live
+database. Rev has **not** done that — it is a deliberate act, not a side effect
+of a deploy — and it is now recorded in `docs/RUNBOOK.md`. A fresh environment
+built from this repository alone is unaffected.
+
+### Still standing between this and the first dollar
+
+1. **Deploy the application.** The webhook endpoint,
+   `STRIPE_WEBHOOK_SECRET`, the pinned API version and the tier-by-tier
+   test-payment matrix all need a running host.
+2. **G-1, legal review.** Untouched. Still blocks anything paid or
+   partner-facing.
+3. **Migration-history reconciliation**, above.
