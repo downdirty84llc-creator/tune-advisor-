@@ -119,6 +119,67 @@ without rediscovering the identifiers.
    pin one in code, so upgrading is a deliberate dashboard action with a
    test-mode rehearsal rather than a side effect of a dependency bump.
 
+### Deployment and the ledger subdomain
+
+The application is not deployed yet, and the Stripe webhook cannot be created
+until it has a public hostname. The intended host is
+`ledger.downdirty84llc.com`.
+
+**Nothing needs to be purchased.** `downdirty84llc.com` is already owned, so
+the ledger host is a subdomain — one DNS record.
+
+**One trap, found by resolving it.** The zone already answers for the
+subdomain:
+
+```
+downdirty84llc.com          -> 35.204.150.5
+ledger.downdirty84llc.com   -> 35.204.150.5   (same address; a wildcard is in play)
+shop.downdirty84llc.com     -> 23.227.38.74   (Shopify)
+dd84tuning.com              -> 104.18.26.246  (Cloudflare)
+```
+
+`ledger.` resolving today does **not** mean it is configured — a wildcard
+`*.downdirty84llc.com` record is catching it and sending it to the site that
+serves the apex. An explicit record for `ledger` overrides the wildcard, but
+until that record exists the subdomain will appear to "work" while serving the
+wrong site. Do not read a successful DNS lookup as proof the step is done;
+check what actually answers.
+
+Note the zones are split — the apex is on a Google-Cloud-hosted builder,
+`dd84tuning.com` is behind Cloudflare, `shop.` is Shopify. The record has to be
+added wherever `downdirty84llc.com` is managed, which is not necessarily the
+Cloudflare account.
+
+Order of operations:
+
+1. Deploy to Vercel and confirm the generated `*.vercel.app` hostname serves the
+   app.
+2. Add the custom domain `ledger.downdirty84llc.com` in the Vercel project, and
+   create the DNS record Vercel specifies (a `CNAME` to `cname.vercel-dns.com`
+   for a subdomain). This must be an explicit record, not the wildcard.
+3. Wait for the certificate to issue, then confirm the apex site is *not* what
+   answers on the subdomain.
+4. Only then create the Stripe webhook (step 4 of the Stripe section) against
+   `https://ledger.downdirty84llc.com/api/v1/webhooks/stripe`.
+
+Environment variables to set on the Vercel project — everything in
+`.env.example`, with these already known:
+
+| Variable | Value |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | `https://ledger.downdirty84llc.com` |
+| `NEXT_PUBLIC_ENVIRONMENT` | `production` |
+| `NEXT_PUBLIC_SUPABASE_URL` | `https://bbgikfblcahhvrpxiqnd.supabase.co` |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | the project's anon key (public by design) |
+| `SUPABASE_SERVICE_ROLE_KEY` | from the dashboard — **never** prefixed `NEXT_PUBLIC_` |
+| `STRIPE_SECRET_KEY` | live secret key for `acct_1QBl8ZINLKqe1c6g` |
+| `STRIPE_WEBHOOK_SECRET` | the signing secret, once the endpoint exists |
+| `CRON_SECRET` | generate a fresh random value; Vercel sends it to the job routes |
+| `EMAIL_UNSUBSCRIBE_SECRET` | generate its own value, separate from `CRON_SECRET` |
+
+The `STRIPE_PRICE_*` variables are only a seeding fallback; the price ids are
+already on `subscription_plans`, which is what checkout reads.
+
 ### Background jobs
 
 `vercel.json` declares all thirteen cron schedules. Set `CRON_SECRET`; Vercel
