@@ -77,7 +77,25 @@ without rediscovering the identifiers.
 
    Note these were created directly in **live** mode. There is no test-mode
    equivalent, so the test-payment matrix below needs the same products
-   recreated against a test key before it can be run.
+   recreated against a test key first. That is one command:
+
+   ```bash
+   STRIPE_SECRET_KEY=sk_test_... \
+   NEXT_PUBLIC_SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... \
+     npm run stripe:setup
+   ```
+
+   `scripts/stripe-setup.ts` creates the four products and six prices at the
+   amounts above and writes the resulting ids onto `subscription_plans`. It is
+   idempotent — products match on the `plan_code` metadata field, prices on
+   their `lookup_key` — so re-running reconciles instead of duplicating. If an
+   amount has drifted from the definition it reports the mismatch and leaves
+   the existing price alone: Stripe prices are immutable, and silently creating
+   a second one would leave two plausible prices and no indication which the
+   application charges.
+
+   It refuses a `sk_live_` key before making any network call unless
+   `STRIPE_SETUP_ALLOW_LIVE=1` is set.
 
 3. ~~Write the price ids onto `subscription_plans`.~~ Done on project
    `bbgikfblcahhvrpxiqnd`. Re-run this against any further environment:
