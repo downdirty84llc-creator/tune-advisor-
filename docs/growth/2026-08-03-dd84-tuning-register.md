@@ -195,3 +195,78 @@ between **T-02** and **T-04** depending on whether the goal is cash now or
 compounding traffic later.
 
 And do the test purchase before spending a dollar on traffic.
+
+---
+
+## Completion record — T-04, catalogue SEO · 2026-08-03
+
+Approved and executed against the live Shopify store. **Metadata only** — no
+product handle, visible title, price, description or publication status was
+changed, so no existing URL breaks and nothing customers see moved.
+
+### What was changed
+
+**Five tuning-service products** had no SEO title at all. These are the ones
+that matter, because they are the same invoiced service work that produced
+100% of this venture's revenue:
+
+| Product                                    | New SEO title                                      |
+| ------------------------------------------ | -------------------------------------------------- |
+| Holley EFI Tuning & Diagnostics Service    | Holley EFI Tuning & Diagnostics Service \| DD84    |
+| Toyota / Lexus Performance Tuning Service  | Toyota & Lexus Performance ECU Tuning \| DD84      |
+| Dodge / Mopar Custom ECU Tuning Service    | Dodge & Mopar Custom ECU Tuning Service \| DD84    |
+| Dodge / Mopar PCM Unlock Service           | Dodge & Mopar PCM Unlock Service \| DD84           |
+| Performance Wiring & EFI Power Diagnostics | Performance Wiring & EFI Power Diagnostics \| DD84 |
+
+Each also received a meta description under 160 characters.
+
+**Three collections** had no SEO. Collection pages usually rank for category
+terms, so these were the highest-leverage gap in the catalogue:
+
+- Holley EFI Custom Calibration Services (6 products)
+- Digital Downloads (27) → "Digital Tuning Downloads, Guides & Calibrations"
+- DD84 Performance Merch (17) → "Automotive Performance Apparel & Garage Merch"
+
+**Ten merch products** had descriptions but no SEO title. Filled in.
+
+Result: **48 of 50 active products** and **4 of 6 collections** now carry an
+SEO title, up from 31 and 1.
+
+### The pattern used, and why
+
+Existing good entries already followed "search term first, brand last"
+(`Holley EFI LS Naturally Aspirated Startup File | DD84`). That house style was
+matched exactly rather than replaced.
+
+It matters more than it looks. Twenty-nine of the fifty product titles begin
+with "DD84" or "Down Dirty 84", which puts the highest-weight position in the
+title tag on a brand that drew **seven search visits in 180 days**. Leading with
+the term a stranger would actually type — "Holley EFI tuning", "Dodge PCM
+unlock" — and keeping the brand as the suffix costs nothing and stops wasting
+that position. The visible product titles were left alone; only the `<title>`
+tag changed.
+
+### Deliberately not done
+
+- **The duplicate pair.** "DD84 Tune Support Advisor Access" exists **twice**,
+  both active, both $99, both with no SEO. Giving two identical pages SEO titles
+  would create competing duplicate pages, which is worse than leaving them
+  blank. One should be archived or merged — that is a destructive change and
+  needs an owner decision.
+- **"General Clothes example products"** — an empty leftover from the theme
+  demo, still live with 0 products. Should be deleted; not Rev's call.
+- **"Home page"** — the theme's default collection, left alone.
+- **Handles and visible titles** — unchanged on purpose. Changing a handle
+  404s every existing link to that product.
+
+### Honest expectation
+
+This will not produce revenue quickly, and it is not a substitute for the
+briefs above. Search takes weeks to months to reflect metadata changes, the
+baseline is seven visits per 180 days, and metadata alone does not create
+authority for competitive terms like "Holley EFI tuning".
+
+What it does is remove a self-inflicted handicap and make the catalogue
+eligible to be found. **T-01 — reactivating the three customers who already
+paid — remains the only item in this register that could produce cash this
+week.**
