@@ -3,12 +3,18 @@
 **Agent:** Rev (Marketing & Revenue), operating under `docs/DD84-GROWTH-AGENT.md`
 **Date:** 2026-07-31
 **Venture:** Georgia Opportunity Ledger (Down Dirty 84 LLC)
-**Stage:** Approved as planned, 2026-07-31. OPP-001, OPP-002, OPP-003 and
-OPP-009 executed. See the completion records at the foot of this file.
+**Stage:** Approved as planned, 2026-07-31. OPP-001, OPP-002, OPP-003, OPP-009
+and OPP-007's prerequisite executed; the database is provisioned and billing is
+wired. See the completion records at the foot of this file.
 
-**No money was committed and no price was changed.** No Stripe object was
-created — the products and prices already existed. Nothing was published; the
+**No money was committed and no price was changed.** The Stripe objects and the
+Supabase project both turned out to exist already — Rev created neither. The
+database is at $0/month on the free tier. Nothing was published externally; the
 code changes sit on a branch awaiting the owner's deploy.
+
+**Three facts below were corrected after being written** (F3, F9, F12), and
+three briefs contained errors that the work exposed. Those corrections are the
+most useful thing in this document.
 
 ---
 
@@ -17,34 +23,38 @@ code changes sit on a branch awaiting the owner's deploy.
 Every claim here was read out of this repository or a read-only API call. Facts
 are separated from estimates per §12 research standards.
 
-| #   | Fact                                                                                                                                                                                                                                                           | Evidence                                                                                              |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| F1  | Published prices are Free $0, Weekly $15/mo · $150/yr, Detailed $39/mo · $390/yr, Premium $99/mo · $990/yr                                                                                                                                                     | `supabase/seed.sql` L18–100                                                                           |
-| F2  | Detailed ($39) is the tier flagged `is_recommended`                                                                                                                                                                                                            | `supabase/seed.sql` L72                                                                               |
-| F3  | **Paid checkout cannot complete.** `stripe_monthly_price_id` / `stripe_annual_price_id` are declared in migration `...000400` but never populated by `seed.sql`. The checkout route returns HTTP 409 `conflict` when a price id is missing                     | `src/app/api/v1/billing/create-checkout-session/route.ts` L59–75; `supabase/seed.sql` (no assignment) |
-| F4  | A live Stripe account exists: **"Down Dirty 84 llc"**, `acct_1QBl8ZINLKqe1c6g`                                                                                                                                                                                 | `get_stripe_account_info`, read-only                                                                  |
-| F5  | Free registration works with **zero** Stripe involvement — profile and free subscription rows are created by database triggers                                                                                                                                 | `src/app/api/v1/auth/register/route.ts` (0 references to Stripe)                                      |
-| F6  | The homepage's primary call to action is "See membership plans" → `/pricing` → a checkout that 409s                                                                                                                                                            | `src/app/(marketing)/page.tsx` L153; F3                                                               |
-| F7  | There is **no email-only capture** anywhere on the marketing site. The only conversion path is full account registration                                                                                                                                       | `src/app/(marketing)/**`, searched                                                                    |
-| F8  | 159 Georgia county landing pages exist at `/georgia/[county]`, with `revalidate = 900` and per-county metadata, and all are enumerated in the sitemap                                                                                                          | `src/app/(marketing)/georgia/[county]/page.tsx` L9, L24; `src/app/sitemap.ts` L36–43                  |
-| F9  | ~~Funnel telemetry already exists~~ — **corrected 2026-07-31.** `locked_content_viewed` is genuinely tracked server-side, but `upgrade_button_clicked` was **declared and never fired** (zero call sites). Wired up as OPP-007's prerequisite; see that record | `src/lib/analytics/events.ts`; `src/lib/analytics/upgrade-source.ts`                                  |
-| F10 | A weekly report distribution job runs Thursdays 12:00 UTC                                                                                                                                                                                                      | `src/lib/jobs/registry.ts`; `vercel.json`                                                             |
-| F11 | All ten legal documents render an "awaiting legal review" banner                                                                                                                                                                                               | `src/lib/legal/documents.ts`; `docs/MILESTONES.md`                                                    |
-| F12 | Nothing has been run against a live Supabase instance or live Stripe account                                                                                                                                                                                   | `docs/MILESTONES.md`                                                                                  |
+| #   | Fact                                                                                                                                                                                                                                                                         | Evidence                                                                                                                 |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| F1  | Published prices are Free $0, Weekly $15/mo · $150/yr, Detailed $39/mo · $390/yr, Premium $99/mo · $990/yr                                                                                                                                                                   | `supabase/seed.sql` L18–100                                                                                              |
+| F2  | Detailed ($39) is the tier flagged `is_recommended`                                                                                                                                                                                                                          | `supabase/seed.sql` L72                                                                                                  |
+| F3  | ~~**Paid checkout cannot complete.**~~ **RESOLVED 2026-07-31.** Was true when written: the price-id columns were never populated, so checkout returned HTTP 409 for all three paid plans. The live database now carries every product and price id and all three report `ok` | `src/app/api/v1/billing/create-checkout-session/route.ts` L59–75; live `subscription_plans`; see the provisioning record |
+| F4  | A live Stripe account exists: **"Down Dirty 84 llc"**, `acct_1QBl8ZINLKqe1c6g`                                                                                                                                                                                               | `get_stripe_account_info`, read-only                                                                                     |
+| F5  | Free registration works with **zero** Stripe involvement — profile and free subscription rows are created by database triggers                                                                                                                                               | `src/app/api/v1/auth/register/route.ts` (0 references to Stripe)                                                         |
+| F6  | The homepage's primary call to action is "See membership plans" → `/pricing` → a checkout that 409s                                                                                                                                                                          | `src/app/(marketing)/page.tsx` L153; F3                                                                                  |
+| F7  | There is **no email-only capture** anywhere on the marketing site. The only conversion path is full account registration                                                                                                                                                     | `src/app/(marketing)/**`, searched                                                                                       |
+| F8  | 159 Georgia county landing pages exist at `/georgia/[county]`, with `revalidate = 900` and per-county metadata, and all are enumerated in the sitemap                                                                                                                        | `src/app/(marketing)/georgia/[county]/page.tsx` L9, L24; `src/app/sitemap.ts` L36–43                                     |
+| F9  | ~~Funnel telemetry already exists~~ — **corrected 2026-07-31.** `locked_content_viewed` is genuinely tracked server-side, but `upgrade_button_clicked` was **declared and never fired** (zero call sites). Wired up as OPP-007's prerequisite; see that record               | `src/lib/analytics/events.ts`; `src/lib/analytics/upgrade-source.ts`                                                     |
+| F10 | A weekly report distribution job runs Thursdays 12:00 UTC                                                                                                                                                                                                                    | `src/lib/jobs/registry.ts`; `vercel.json`                                                                                |
+| F11 | All ten legal documents render an "awaiting legal review" banner                                                                                                                                                                                                             | `src/lib/legal/documents.ts`; `docs/MILESTONES.md`                                                                       |
+| F12 | ~~Nothing has been run against a live Supabase instance or live Stripe account~~ — **superseded 2026-07-31.** A live Supabase project exists, fully migrated and seeded, and the live Stripe objects are wired to it. The application itself is still not deployed           | live project `bbgikfblcahhvrpxiqnd`; see the provisioning record                                                         |
 
-### The finding that governs everything else
+### The finding that governed everything else — now cleared
 
-**This business cannot accept a single dollar today.** F3 is not a caveat, it is
-the headline: every paid conversion attempt on every tier terminates in a 409.
+**As written:** this business could not accept a single dollar. Every paid
+conversion attempt on every tier terminated in a 409, so any acquisition spend
+would have converted at 0% — not "poorly", zero. That is why no
+paid-advertising brief appears below, and it remained the right call for as
+long as it held.
 
-The honest consequence: **any acquisition spend right now converts at 0% on paid
-tiers.** Not "poorly" — zero. Rev's §14 financial discipline says do not commit
-money into a funnel that cannot transact, so no paid-advertising brief appears
-below. Proposing ad spend this week would be the wrong recommendation, however
-much it would look like marketing work.
+**As of 2026-07-31 it no longer holds.** The database is provisioned and every
+plan carries its Stripe product and price ids. The reasoning stands as the
+record of why the register is shaped the way it is; the constraint is gone.
 
-F4 materially de-risks the fix: the Stripe account already exists, so this is
-product-and-price creation, not company onboarding.
+**What replaced it is smaller but real:** the application is not deployed, so
+the webhook, its signing secret and the test-payment matrix cannot be
+completed, and no member can reach checkout at all yet. Paid acquisition still
+has nothing to convert into. The order of work is unchanged — deploy, then
+legal, then spend.
 
 ---
 
