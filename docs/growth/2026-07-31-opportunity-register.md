@@ -705,3 +705,97 @@ built from this repository alone is unaffected.
 2. **G-1, legal review.** Untouched. Still blocks anything paid or
    partner-facing.
 3. **Migration-history reconciliation**, above.
+
+---
+
+## OPP-010 — Deploy the application
+
+Investigated 2026-07-31. **Not executed** — this needs two secrets Rev cannot
+read, and deploying is an outward-facing action.
+
+### State
+
+No Vercel project exists. Team `downdirty84llc-creator's projects`
+(`team_a5zEaV43TZGEAxcqY1GgilmG`) has zero projects, so unlike Stripe and
+Supabase this one genuinely starts from nothing.
+
+### The constraint that shapes the plan
+
+**Cron jobs are only active on production deployments** (Vercel documentation).
+All thirteen jobs in `vercel.json` — including weekly report distribution, alert
+matching and deadline evaluation — do nothing on a preview deployment.
+
+That looks like it collides with gate G-1: running in production would put a site
+whose ten legal documents all carry an "awaiting legal review" banner in front of
+search engines.
+
+**It does not, because the two "productions" are different things.** Vercel's
+production _deployment target_ is what activates cron. `NEXT_PUBLIC_ENVIRONMENT`
+is this application's own variable, and it is what `src/app/robots.ts` reads:
+anything other than `production` disallows every user agent. They are set
+independently.
+
+So: deploy to Vercel's production target with `NEXT_PUBLIC_ENVIRONMENT=staging`.
+Cron runs, nothing is indexed, the non-production banner shows, and the seeder
+is permitted (it refuses only when the variable says `production`). G-1 is not
+crossed.
+
+The site is still _reachable_ by anyone holding the URL, just not indexed. If
+that is not acceptable before legal clears, Vercel Deployment Protection closes
+it entirely and can be lifted later.
+
+### Environment variables
+
+Six are hard-required — `src/lib/env.ts` throws on a missing value, so a route
+that needs one fails at request time rather than at build.
+
+| Variable                              | Required | Value                                                                                                          |
+| ------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`            | yes      | `https://bbgikfblcahhvrpxiqnd.supabase.co`                                                                     |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY`       | yes      | Supabase → Settings → API. Public by design; it ships to the browser                                           |
+| `SUPABASE_SERVICE_ROLE_KEY`           | yes      | **Owner only.** Secret, bypasses RLS, never `NEXT_PUBLIC_`                                                     |
+| `STRIPE_SECRET_KEY`                   | yes      | **Owner only.** Secret                                                                                         |
+| `STRIPE_WEBHOOK_SECRET`               | yes      | Does not exist yet — see the ordering problem below                                                            |
+| `CRON_SECRET`                         | yes      | Generate: `openssl rand -base64 32`                                                                            |
+| `NEXT_PUBLIC_ENVIRONMENT`             | no       | `staging` until legal clears                                                                                   |
+| `NEXT_PUBLIC_SITE_URL`                | no       | The deployment URL, set after the first deploy                                                                 |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`  | no       | Stripe dashboard                                                                                               |
+| `EMAIL_PROVIDER`                      | no       | **`console`.** Prints instead of sending, so a test run cannot email real people                               |
+| `EMAIL_UNSUBSCRIBE_SECRET`            | no       | Generate separately from `CRON_SECRET`, or rotating one invalidates every unsubscribe link already in an inbox |
+| `STRIPE_PRICE_*` (six)                | no       | Already on `subscription_plans`; these are only a seeding fallback                                             |
+| `SENTRY_DSN`, `NEXT_PUBLIC_POSTHOG_*` | no       | Leave blank; both integrations no-op without them                                                              |
+| Storage buckets, `MAX_UPLOAD_BYTES`   | no       | Defaults are correct                                                                                           |
+
+### The ordering problem
+
+`STRIPE_WEBHOOK_SECRET` is required, but it only exists once the webhook
+endpoint is registered, and registering it needs a URL that only exists after a
+deploy. `required()` throws at request time rather than build time, so the
+sequence is:
+
+1. Deploy with a placeholder for `STRIPE_WEBHOOK_SECRET`. The build succeeds;
+   billing routes will fail until step 3, which is expected.
+2. Register `POST <url>/api/v1/webhooks/stripe` in Stripe for
+   `checkout.session.completed`,
+   `customer.subscription.created|updated|deleted` and
+   `invoice.payment_failed`.
+3. Replace the placeholder with the real signing secret and redeploy.
+4. Set `NEXT_PUBLIC_SITE_URL` to the deployment URL and redeploy.
+5. Pin the Stripe API version in the dashboard — deliberately not pinned in
+   code, so upgrading stays a conscious act.
+6. Run the tier-by-tier test-payment matrix. This is the last outstanding piece
+   of OPP-001.
+
+### Unverified
+
+Vercel's documentation search did not return per-plan cron limits, and the free
+plan may cap the number of cron jobs or their frequency. `vercel.json` declares
+thirteen, four of them every 5–30 minutes. **Check the current pricing page
+before assuming all thirteen will run** — this is stated as unverified rather
+than guessed at.
+
+### What Rev cannot do
+
+`SUPABASE_SERVICE_ROLE_KEY` and `STRIPE_SECRET_KEY` are secrets Rev has no read
+access to, so the deployment cannot be completed autonomously regardless of
+approval. The steps above are written to be handed straight to the dashboard.
