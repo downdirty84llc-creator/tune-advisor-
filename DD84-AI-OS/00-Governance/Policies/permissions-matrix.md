@@ -10,20 +10,20 @@ Least privilege is the default. A skill gets the narrowest access that lets it p
 
 ## Role-based access
 
-| System / action | Orchestrator (S01) | Specialist skills | Owner |
-|---|---|---|---|
-| Read customer and job records | Yes | Only assigned records | Yes |
-| Create / update records | Yes | Within assigned scope | Yes |
-| Send routine messages | Policy-controlled | Only approved templates and facts | Yes |
-| Publish content | Route only | Pre-approved content only | Yes |
-| Create quote | Assign and validate | Approved price book only | Yes |
-| Change price book | **No** | **No** | Yes |
-| Schedule appointment | Policy-controlled | Eligible slots only | Yes |
-| Issue refund or credit | **No** | **No** | Yes |
-| Purchase | Under approved threshold only | Request, or approved consumable only | Yes |
-| Release tune / calibration | **No** | **No** | Owner / authorized tuner only |
-| Delete records | **No** | **No** | Owner, with retention check |
-| Sign contract or legal response | **No** | **No** | Owner / counsel only |
+| System / action                 | Orchestrator (S01)            | Specialist skills                    | Owner                         |
+| ------------------------------- | ----------------------------- | ------------------------------------ | ----------------------------- |
+| Read customer and job records   | Yes                           | Only assigned records                | Yes                           |
+| Create / update records         | Yes                           | Within assigned scope                | Yes                           |
+| Send routine messages           | Policy-controlled             | Only approved templates and facts    | Yes                           |
+| Publish content                 | Route only                    | Pre-approved content only            | Yes                           |
+| Create quote                    | Assign and validate           | Approved price book only             | Yes                           |
+| Change price book               | **No**                        | **No**                               | Yes                           |
+| Schedule appointment            | Policy-controlled             | Eligible slots only                  | Yes                           |
+| Issue refund or credit          | **No**                        | **No**                               | Yes                           |
+| Purchase                        | Under approved threshold only | Request, or approved consumable only | Yes                           |
+| Release tune / calibration      | **No**                        | **No**                               | Owner / authorized tuner only |
+| Delete records                  | **No**                        | **No**                               | Owner, with retention check   |
+| Sign contract or legal response | **No**                        | **No**                               | Owner / counsel only          |
 
 ---
 

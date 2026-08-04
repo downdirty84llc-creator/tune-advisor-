@@ -6,17 +6,17 @@
 
 Every system in the stack must support export. A tool you cannot get your data out of is a tool that owns your business.
 
-| Data | Source system | Export format | Frequency | Verified |
-|---|---|---|---|---|
-| Customers and vehicles | CRM | | | |
-| Opportunities and quotes | CRM | | | |
-| Jobs, status, evidence | Job system | | | |
-| Customer files and versions | File storage | | | |
-| Payments and invoices | Payment processor | | | |
-| Accounting records | Accounting platform | | | |
-| Messages and threads | Communication platform | | | |
-| Audit log | Orchestration platform | | | |
-| Policies and knowledge | This repository | git | Every commit | ✅ |
+| Data                        | Source system          | Export format | Frequency    | Verified |
+| --------------------------- | ---------------------- | ------------- | ------------ | -------- |
+| Customers and vehicles      | CRM                    |               |              |          |
+| Opportunities and quotes    | CRM                    |               |              |          |
+| Jobs, status, evidence      | Job system             |               |              |          |
+| Customer files and versions | File storage           |               |              |          |
+| Payments and invoices       | Payment processor      |               |              |          |
+| Accounting records          | Accounting platform    |               |              |          |
+| Messages and threads        | Communication platform |               |              |          |
+| Audit log                   | Orchestration platform |               |              |          |
+| Policies and knowledge      | This repository        | git           | Every commit | ✅       |
 
 ---
 

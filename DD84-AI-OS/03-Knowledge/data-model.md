@@ -8,20 +8,20 @@ Automation fails when every tool uses different names and statuses. These object
 
 ## Objects and minimum fields
 
-| Object | Minimum fields |
-|---|---|
-| **Customer** | `customer_id`, name, phones, emails, preferred channel, location, consent, source, tags, lifetime value, risk notes |
-| **Vehicle / Build** | `vehicle_id`, year, make, model, engine, transmission, VIN last 8 (or full VIN under restricted access), modifications, fuel, tire size, goals |
-| **Lead / Opportunity** | `opportunity_id`, source, requested service, qualification status, fit score, value, probability, next action, lost reason |
-| **Quote** | `quote_id`, version, scope, exclusions, package, add-ons, travel, tax, deposit, total, expiration, approval status |
-| **Job** | `job_id`, service type, location, scheduled time, assigned person, prerequisites, status, risk class, blockers, evidence, release status |
-| **Message** | `message_id`, channel, thread, sender, timestamp, intent, sentiment, commitment, response status |
-| **Payment / Invoice** | `payment_id`, `invoice_id`, amount, status, method, fees, matched job, deposit balance, refund status |
-| **File / Artifact** | `file_id`, type, owner, job, version, checksum, release status, retention class, access level |
-| **Task / Approval** | `task_id`, owner, priority, due date, action, evidence, approval class, decision, completion proof |
-| **Campaign** | `campaign_id`, audience, offer, channels, spend, content, leads, attributed revenue, result, next test |
-| **Vendor / Order** | `vendor_id`, `order_id`, items, compatibility, cost, shipping, ETA, status, return window, linked job |
-| **Metric** | `metric_id`, date, definition, value, source system, target, variance, owner |
+| Object                 | Minimum fields                                                                                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Customer**           | `customer_id`, name, phones, emails, preferred channel, location, consent, source, tags, lifetime value, risk notes                            |
+| **Vehicle / Build**    | `vehicle_id`, year, make, model, engine, transmission, VIN last 8 (or full VIN under restricted access), modifications, fuel, tire size, goals |
+| **Lead / Opportunity** | `opportunity_id`, source, requested service, qualification status, fit score, value, probability, next action, lost reason                     |
+| **Quote**              | `quote_id`, version, scope, exclusions, package, add-ons, travel, tax, deposit, total, expiration, approval status                             |
+| **Job**                | `job_id`, service type, location, scheduled time, assigned person, prerequisites, status, risk class, blockers, evidence, release status       |
+| **Message**            | `message_id`, channel, thread, sender, timestamp, intent, sentiment, commitment, response status                                               |
+| **Payment / Invoice**  | `payment_id`, `invoice_id`, amount, status, method, fees, matched job, deposit balance, refund status                                          |
+| **File / Artifact**    | `file_id`, type, owner, job, version, checksum, release status, retention class, access level                                                  |
+| **Task / Approval**    | `task_id`, owner, priority, due date, action, evidence, approval class, decision, completion proof                                             |
+| **Campaign**           | `campaign_id`, audience, offer, channels, spend, content, leads, attributed revenue, result, next test                                         |
+| **Vendor / Order**     | `vendor_id`, `order_id`, items, compatibility, cost, shipping, ETA, status, return window, linked job                                          |
+| **Metric**             | `metric_id`, date, definition, value, source system, target, variance, owner                                                                   |
 
 ---
 
@@ -59,10 +59,10 @@ Target duplicate rate: **under 2%**.
 
 ## Access classes
 
-| Class | Examples | Who reads it |
-|---|---|---|
-| Open | Service catalog, published FAQ, listing copy | Any skill |
-| Customer | Contact, vehicle, job, message history | Assigned skills only |
-| Restricted | Full VIN, payment method details, dispute history | Finance skill and owner only |
-| Technical-restricted | Calibration files, read files, tune revisions | S06/S07 read; **owner alone releases** |
-| Secret | Credentials, API keys, tokens | Secrets manager only — never a record field |
+| Class                | Examples                                          | Who reads it                                |
+| -------------------- | ------------------------------------------------- | ------------------------------------------- |
+| Open                 | Service catalog, published FAQ, listing copy      | Any skill                                   |
+| Customer             | Contact, vehicle, job, message history            | Assigned skills only                        |
+| Restricted           | Full VIN, payment method details, dispute history | Finance skill and owner only                |
+| Technical-restricted | Calibration files, read files, tune revisions     | S06/S07 read; **owner alone releases**      |
+| Secret               | Credentials, API keys, tokens                     | Secrets manager only — never a record field |

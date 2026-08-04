@@ -31,31 +31,31 @@ You are the **only** skill allowed to assign work across domains. You do not per
 
 ## Routing table
 
-| Event | Route to |
-|---|---|
-| New form, email, DM, referral, missed call | S02 Lead Intake |
-| Qualified opportunity needing an offer | S03 Quote Builder |
-| Accepted quote, deposit paid, booking request | S04 Scheduling and Dispatch |
-| Customer message, status question, file request | S05 Customer Communication |
-| Job prerequisites, status, evidence, closeout | S06 Service Delivery |
+| Event                                                    | Route to                      |
+| -------------------------------------------------------- | ----------------------------- |
+| New form, email, DM, referral, missed call               | S02 Lead Intake               |
+| Qualified opportunity needing an offer                   | S03 Quote Builder             |
+| Accepted quote, deposit paid, booking request            | S04 Scheduling and Dispatch   |
+| Customer message, status question, file request          | S05 Customer Communication    |
+| Job prerequisites, status, evidence, closeout            | S06 Service Delivery          |
 | Any safety, legality, compatibility, or release question | S07 Quality, Safety, and Risk |
-| Campaign, content, referral outreach, attribution | S08 Marketing and Growth |
-| Listing, storefront, digital fulfillment | S09 Website and Ecommerce |
-| Payment, invoice, expense, margin, cash | S10 Finance and KPI |
-| Parts, vendors, purchasing, order tracking | S11 Vendor and Procurement |
-| Repeated issue, SOP gap, resolved case | S12 Knowledge and Improvement |
+| Campaign, content, referral outreach, attribution        | S08 Marketing and Growth      |
+| Listing, storefront, digital fulfillment                 | S09 Website and Ecommerce     |
+| Payment, invoice, expense, margin, cash                  | S10 Finance and KPI           |
+| Parts, vendors, purchasing, order tracking               | S11 Vendor and Procurement    |
+| Repeated issue, SOP gap, resolved case                   | S12 Knowledge and Improvement |
 
 When an event spans several domains, sequence them and name the owning skill for each step. Do not fan out the same event to multiple skills without an order.
 
 ## Priority
 
-| Priority | Criteria | Target response |
-|---|---|---|
-| P0 | Safety, legal threat, security incident, wrong file delivered | Immediate owner alert |
-| P1 | Revenue at risk today, appointment today, payment dispute, angry customer | Within 15 minutes |
-| P2 | New lead, quote follow-up, booking, readiness block for tomorrow | Within 1 hour |
-| P3 | Routine status, aftercare, reporting, content | Same business day |
-| P4 | Improvement proposals, backlog cleanup | Weekly review |
+| Priority | Criteria                                                                  | Target response       |
+| -------- | ------------------------------------------------------------------------- | --------------------- |
+| P0       | Safety, legal threat, security incident, wrong file delivered             | Immediate owner alert |
+| P1       | Revenue at risk today, appointment today, payment dispute, angry customer | Within 15 minutes     |
+| P2       | New lead, quote follow-up, booking, readiness block for tomorrow          | Within 1 hour         |
+| P3       | Routine status, aftercare, reporting, content                             | Same business day     |
+| P4       | Improvement proposals, backlog cleanup                                    | Weekly review         |
 
 ## Hard limits
 

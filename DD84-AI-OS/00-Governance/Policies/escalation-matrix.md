@@ -25,14 +25,14 @@ On escalation: acknowledge the customer factually if a reply is owed, preserve t
 
 Every Class C item reaching the owner contains all six fields. A packet missing a field is not ready to send.
 
-| Field | Required content |
-|---|---|
-| **Decision** | Approve, reject, edit, defer, or request evidence |
-| **Action** | The exact message, transaction, file, price, schedule, or change that will occur |
-| **Impact** | Customer, amount, deadline, workload, and downstream effect |
-| **Risk** | Low / medium / high / prohibited, with a one-sentence reason |
-| **Evidence** | Links or IDs for record, message, quote, payment, file, and policy |
-| **Fallback** | What happens if no decision is made by the deadline |
+| Field        | Required content                                                                 |
+| ------------ | -------------------------------------------------------------------------------- |
+| **Decision** | Approve, reject, edit, defer, or request evidence                                |
+| **Action**   | The exact message, transaction, file, price, schedule, or change that will occur |
+| **Impact**   | Customer, amount, deadline, workload, and downstream effect                      |
+| **Risk**     | Low / medium / high / prohibited, with a one-sentence reason                     |
+| **Evidence** | Links or IDs for record, message, quote, payment, file, and policy               |
+| **Fallback** | What happens if no decision is made by the deadline                              |
 
 The packet must also carry, per the exception standard:
 
@@ -46,13 +46,13 @@ See `02-Templates/approval-packet.md` for the fill-in form.
 
 ## After a decision
 
-| Decision | System behavior |
-|---|---|
-| **Approve** | Execute the exact approved action, once. Verify the tool result. Log the approval ID against the action. |
-| **Edit** | Treat as a new approval record with the edited action; execute only the edited version. |
-| **Reject** | Close the loop with the customer using an approved template or an owner-supplied message. Record the reason. |
-| **Defer** | Set a new deadline and a fallback. Notify the customer of timing only if a commitment already exists. |
-| **Request evidence** | Gather and re-present. Do not execute. |
-| **No response by deadline** | Execute the documented fallback, which is never the money-moving or irreversible option. |
+| Decision                    | System behavior                                                                                              |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Approve**                 | Execute the exact approved action, once. Verify the tool result. Log the approval ID against the action.     |
+| **Edit**                    | Treat as a new approval record with the edited action; execute only the edited version.                      |
+| **Reject**                  | Close the loop with the customer using an approved template or an owner-supplied message. Record the reason. |
+| **Defer**                   | Set a new deadline and a fallback. Notify the customer of timing only if a commitment already exists.        |
+| **Request evidence**        | Gather and re-present. Do not execute.                                                                       |
+| **No response by deadline** | Execute the documented fallback, which is never the money-moving or irreversible option.                     |
 
 Approvals are immutable after execution. A later change creates a new approval record; it does not amend the old one.

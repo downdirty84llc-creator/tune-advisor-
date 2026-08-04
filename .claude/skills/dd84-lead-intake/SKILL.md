@@ -25,17 +25,17 @@ Convert every legitimate inquiry into a complete opportunity record, or a docume
 
 ## Fit score
 
-| Signal | Weight |
-|---|---|
-| Platform is **Verified** in the compatibility register | High positive |
-| Clear, achievable desired outcome | High positive |
-| Within travel radius, or remote-eligible | Positive |
-| Budget readiness signaled | Positive |
-| Complete modification and condition picture | Positive |
-| Platform **Unknown** or **Limited** | Negative — escalate before quoting |
+| Signal                                                          | Weight                              |
+| --------------------------------------------------------------- | ----------------------------------- |
+| Platform is **Verified** in the compatibility register          | High positive                       |
+| Clear, achievable desired outcome                               | High positive                       |
+| Within travel radius, or remote-eligible                        | Positive                            |
+| Budget readiness signaled                                       | Positive                            |
+| Complete modification and condition picture                     | Positive                            |
+| Platform **Unknown** or **Limited**                             | Negative — escalate before quoting  |
 | Unrealistic expectation (guaranteed power, guaranteed timeline) | Negative — reset expectations first |
-| Unsafe current condition | Blocking |
-| Illegal request | Blocking — decline and document |
+| Unsafe current condition                                        | Blocking                            |
+| Illegal request                                                 | Blocking — decline and document     |
 
 ## Authority
 

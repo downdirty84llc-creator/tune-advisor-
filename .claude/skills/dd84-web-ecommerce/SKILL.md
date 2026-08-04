@@ -18,16 +18,16 @@ Maintain accurate, conversion-focused digital storefronts and automated delivery
 
 Every listing carries all eight fields. A listing missing one is incomplete and does not publish.
 
-| Field | Requirement |
-|---|---|
-| **Title** | Platform + application + primary outcome. No unsupported universal claims |
-| **Hero promise** | One clear result or use case, **with conditions** |
-| **Compatibility** | Supported year/model/controller/software **and exclusions**, from the register |
-| **What is included** | Exact files, service steps, revision count, support window, delivery method |
-| **Customer requirements** | Hardware, credits, software, fuel, logs, mechanical condition, submission process |
-| **Turnaround** | Policy-based typical **range**, not a guarantee when workload or customer response affects it |
-| **Risk and use** | Street/track context, safety, emissions, warranty, and customer responsibility language as applicable |
-| **Fulfillment** | Payment event creates job/order, file request, delivery queue, status updates, and follow-up |
+| Field                     | Requirement                                                                                           |
+| ------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Title**                 | Platform + application + primary outcome. No unsupported universal claims                             |
+| **Hero promise**          | One clear result or use case, **with conditions**                                                     |
+| **Compatibility**         | Supported year/model/controller/software **and exclusions**, from the register                        |
+| **What is included**      | Exact files, service steps, revision count, support window, delivery method                           |
+| **Customer requirements** | Hardware, credits, software, fuel, logs, mechanical condition, submission process                     |
+| **Turnaround**            | Policy-based typical **range**, not a guarantee when workload or customer response affects it         |
+| **Risk and use**          | Street/track context, safety, emissions, warranty, and customer responsibility language as applicable |
+| **Fulfillment**           | Payment event creates job/order, file request, delivery queue, status updates, and follow-up          |
 
 ## Fulfillment chain — verify it end to end
 

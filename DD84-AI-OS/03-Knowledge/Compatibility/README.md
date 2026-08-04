@@ -9,20 +9,20 @@ The authoritative record of what the business can actually service. Skills check
 ## Register template
 
 | Platform | Years | Engine | Transmission | Controller / ECU | Supported operations | Required hardware | Required software | Known limitations | Verified on job | Last verified |
-|---|---|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | | | |
+| -------- | ----- | ------ | ------------ | ---------------- | -------------------- | ----------------- | ----------------- | ----------------- | --------------- | ------------- |
+|          |       |        |              |                  |                      |                   |                   |                   |                 |               |
 
 ---
 
 ## Status values
 
-| Status | Meaning | What skills may say |
-|---|---|---|
-| **Verified** | Completed successfully on a real job, evidence in the job record | May quote and schedule normally |
-| **Supported — untested** | Vendor/tooling says yes, no completed job yet | Quote with an explicit verification step; flag elevated risk |
-| **Limited** | Works with documented constraints | Quote only with the constraints stated in writing |
-| **Not supported** | Known incompatible or out of scope | Decline politely, offer an alternative path |
-| **Unknown** | Absent from this register | **Escalate.** No autonomous quote, no compatibility claim |
+| Status                   | Meaning                                                          | What skills may say                                          |
+| ------------------------ | ---------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Verified**             | Completed successfully on a real job, evidence in the job record | May quote and schedule normally                              |
+| **Supported — untested** | Vendor/tooling says yes, no completed job yet                    | Quote with an explicit verification step; flag elevated risk |
+| **Limited**              | Works with documented constraints                                | Quote only with the constraints stated in writing            |
+| **Not supported**        | Known incompatible or out of scope                               | Decline politely, offer an alternative path                  |
+| **Unknown**              | Absent from this register                                        | **Escalate.** No autonomous quote, no compatibility claim    |
 
 ---
 

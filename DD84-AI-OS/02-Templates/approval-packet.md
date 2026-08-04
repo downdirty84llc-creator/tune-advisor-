@@ -56,11 +56,11 @@ Owner notes: ____________________________________________
 
 ## After the decision
 
-| Decision | What happens |
-|---|---|
-| Approve | Execute the exact approved action, once. Verify the tool result. Log the approval ID. |
-| Edit | New approval record with the edited action. Execute only the edited version. |
-| Reject | Close the loop using an approved template. Record the reason. |
-| Defer | New deadline + fallback. Notify the customer of timing only if a commitment exists. |
-| Request evidence | Gather and re-present. **Do not execute.** |
-| No response | Execute the documented fallback. |
+| Decision         | What happens                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| Approve          | Execute the exact approved action, once. Verify the tool result. Log the approval ID. |
+| Edit             | New approval record with the edited action. Execute only the edited version.          |
+| Reject           | Close the loop using an approved template. Record the reason.                         |
+| Defer            | New deadline + fallback. Notify the customer of timing only if a commitment exists.   |
+| Request evidence | Gather and re-present. **Do not execute.**                                            |
+| No response      | Execute the documented fallback.                                                      |

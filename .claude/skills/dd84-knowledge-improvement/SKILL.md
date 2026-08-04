@@ -21,16 +21,16 @@ Every entry ends by naming the specific SOP, FAQ, template, checklist, policy, o
 
 ## Inputs worth mining
 
-| Source | What to look for |
-|---|---|
-| Resolved cases | What the customer had to ask twice |
-| Owner decisions | A judgment call that could become a written rule |
-| Customer questions | The same question arriving a third time → it belongs in the FAQ |
-| Complaints and rework | Root cause, not the symptom |
-| Automation failures | Missing guardrail, ambiguous prompt, bad data |
-| Compatibility surprises | Register updates |
-| Quote losses | Lost reasons feeding pricing, offer, capacity, and website analysis |
-| Margin exceptions | Where estimates diverge from reality |
+| Source                  | What to look for                                                    |
+| ----------------------- | ------------------------------------------------------------------- |
+| Resolved cases          | What the customer had to ask twice                                  |
+| Owner decisions         | A judgment call that could become a written rule                    |
+| Customer questions      | The same question arriving a third time → it belongs in the FAQ     |
+| Complaints and rework   | Root cause, not the symptom                                         |
+| Automation failures     | Missing guardrail, ambiguous prompt, bad data                       |
+| Compatibility surprises | Register updates                                                    |
+| Quote losses            | Lost reasons feeding pricing, offer, capacity, and website analysis |
+| Margin exceptions       | Where estimates diverge from reality                                |
 
 ## Root cause, properly
 

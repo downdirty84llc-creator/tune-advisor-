@@ -29,11 +29,11 @@ An unverified outcome is reported as unverified. "I sent it" and "I attempted to
 
 ## Idempotency and retries
 
-| Operation type | Retry policy |
-|---|---|
-| Read-only | Retry up to 3 times with increasing delay |
-| Record create / update | Retry **only** with an idempotency key that prevents duplicates |
-| Message sending | Check the sent-log before retry. Never blindly resend |
+| Operation type                                         | Retry policy                                                                |
+| ------------------------------------------------------ | --------------------------------------------------------------------------- |
+| Read-only                                              | Retry up to 3 times with increasing delay                                   |
+| Record create / update                                 | Retry **only** with an idempotency key that prevents duplicates             |
+| Message sending                                        | Check the sent-log before retry. Never blindly resend                       |
 | Payments, refunds, purchases, deletions, file delivery | **No automatic retry** after an uncertain outcome. Create an exception task |
 
 After a final failure, preserve: the inputs, the error, the actions attempted, the affected records, and the safe manual recovery steps.

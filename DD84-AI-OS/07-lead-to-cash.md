@@ -4,15 +4,15 @@
 
 ## Workflow A — New inquiry to qualified opportunity
 
-| Step | Owner | Action | Automation rule |
-|---|---|---|---|
-| 1 | Orchestrator | Create event and customer/lead record | Autonomous |
-| 2 | Lead Intake | Extract vehicle, modifications, goal, location, desired timing, contact preference | Autonomous |
-| 3 | Lead Intake | Ask only missing high-value questions; send intake link when the gap list is large | Autonomous |
-| 4 | Risk | Flag unsupported platform, unsafe condition, illegal request, or unclear scope | Autonomous block / escalation |
-| 5 | Lead Intake | Assign fit score and recommended service path | Autonomous |
-| 6 | Sales | Create quote, or owner review packet | Guardrailed or approval |
-| 7 | Communication | Send quote and schedule the follow-up sequence | Autonomous after approved quote |
+| Step | Owner         | Action                                                                             | Automation rule                 |
+| ---- | ------------- | ---------------------------------------------------------------------------------- | ------------------------------- |
+| 1    | Orchestrator  | Create event and customer/lead record                                              | Autonomous                      |
+| 2    | Lead Intake   | Extract vehicle, modifications, goal, location, desired timing, contact preference | Autonomous                      |
+| 3    | Lead Intake   | Ask only missing high-value questions; send intake link when the gap list is large | Autonomous                      |
+| 4    | Risk          | Flag unsupported platform, unsafe condition, illegal request, or unclear scope     | Autonomous block / escalation   |
+| 5    | Lead Intake   | Assign fit score and recommended service path                                      | Autonomous                      |
+| 6    | Sales         | Create quote, or owner review packet                                               | Guardrailed or approval         |
+| 7    | Communication | Send quote and schedule the follow-up sequence                                     | Autonomous after approved quote |
 
 Required intake questions are in `03-Knowledge/intake-questions.md`.
 
@@ -32,13 +32,13 @@ Required intake questions are in `03-Knowledge/intake-questions.md`.
 
 ## Workflow C — Accounts receivable follow-up
 
-| Age | AI action | Escalation |
-|---|---|---|
-| **Due today** | Friendly reminder with invoice and payment path | None |
-| **1–3 days overdue** | Second reminder; confirm no technical or payment issue | Flag in daily brief |
-| **4–7 days overdue** | Firm reminder; pause new work or file delivery if policy permits | Owner sees amount and customer history |
-| **8–14 days overdue** | Prepare final notice and proposed next action | **Owner approval before send** |
-| **15+ days overdue** | No autonomous communication beyond the approved notice | Owner / legal / accounting decision |
+| Age                   | AI action                                                        | Escalation                             |
+| --------------------- | ---------------------------------------------------------------- | -------------------------------------- |
+| **Due today**         | Friendly reminder with invoice and payment path                  | None                                   |
+| **1–3 days overdue**  | Second reminder; confirm no technical or payment issue           | Flag in daily brief                    |
+| **4–7 days overdue**  | Firm reminder; pause new work or file delivery if policy permits | Owner sees amount and customer history |
+| **8–14 days overdue** | Prepare final notice and proposed next action                    | **Owner approval before send**         |
+| **15+ days overdue**  | No autonomous communication beyond the approved notice           | Owner / legal / accounting decision    |
 
 ---
 

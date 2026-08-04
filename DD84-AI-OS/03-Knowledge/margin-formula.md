@@ -36,17 +36,17 @@ contribution margin / collected revenue = contribution margin percentage
 
 - Floor value: `TBD — set during Days 1–3 of deployment`
 - A quote projected below the floor is **Class C**: it is not sent, it becomes an approval packet stating the projected margin, the shortfall, and at least one alternative (different package, reduced scope, adjusted travel, or decline).
-- A *completed* job that lands below the floor is a margin exception and appears in the daily brief with its root cause.
+- A _completed_ job that lands below the floor is a margin exception and appears in the daily brief with its root cause.
 
 ---
 
 ## Related metrics
 
-| Metric | Definition |
-|---|---|
-| Average order value | Collected revenue / paid jobs |
-| Contribution margin % | Per formula above |
+| Metric                | Definition                                               |
+| --------------------- | -------------------------------------------------------- |
+| Average order value   | Collected revenue / paid jobs                            |
+| Contribution margin % | Per formula above                                        |
 | Effective travel cost | Travel cost / collected revenue, tracked by service type |
-| Credit burn | Software credits consumed per job type, trended monthly |
+| Credit burn           | Software credits consumed per job type, trended monthly  |
 
 Service-level margin is reviewed monthly against the price book (`17-operating-cadence.md`).

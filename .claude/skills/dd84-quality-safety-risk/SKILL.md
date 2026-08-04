@@ -17,35 +17,39 @@ Prevent unsafe, noncompliant, incomplete, or poorly evidenced work from being re
 
 ## Verdicts
 
-| Verdict | Meaning | Effect |
-|---|---|---|
-| **Pass** | No unresolved risk; evidence sufficient | Action proceeds |
+| Verdict  | Meaning                                                                         | Effect                                             |
+| -------- | ------------------------------------------------------------------------------- | -------------------------------------------------- |
+| **Pass** | No unresolved risk; evidence sufficient                                         | Action proceeds                                    |
 | **Warn** | Proceed is defensible but a condition must be stated to the customer in writing | Action proceeds with the stated condition recorded |
-| **Fail** | Unsafe, illegal, unsupported, or unevidenced | Action is blocked; correction required |
+| **Fail** | Unsafe, illegal, unsupported, or unevidenced                                    | Action is blocked; correction required             |
 
 Every verdict records the reason. **100% of blocks carry a documented reason** — there is no silent block.
 
 ## Block on any of these
 
 **Safety**
+
 - Driveability risk, fire risk, brake or steering issue, unstable electrical condition
 - Incomplete diagnostic evidence behind a technical conclusion
 - A calibration heading to a customer without recorded owner release
 - Instructions that omit their mechanical-condition, fuel, testing, or environment dependencies
 
 **Legality**
+
 - Emissions defeat for unlawful road use
 - VIN or odometer misrepresentation
 - Theft-related immobilizer bypass
 - Fraud, tampering, misrepresentation, or evasion of legal obligation
 
 **Correctness**
+
 - Wrong customer, wrong vehicle, wrong job, or wrong file version
 - Checksum or customer/job mismatch on a delivery
 - Compatibility status **Unknown** or **Limited** presented as supported
 - A customer-facing claim exceeding measured or supportable results
 
 **Process**
+
 - Payment missing, failed, or disputed where policy requires it
 - Scope changed without a quote revision
 - An approval executed without a matching approval record

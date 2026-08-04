@@ -4,14 +4,14 @@
 
 ## Job readiness gate
 
-| Check | Pass condition | Block condition |
-|---|---|---|
-| **Scope** | Accepted quote matches the job record | Scope ambiguous, or changed without a revision |
-| **Payment** | Required deposit/payment status met | Payment missing, failed, or disputed |
-| **Vehicle/build data** | Required fields and files complete | Unknown engine, transmission, software, or modification state |
-| **Tools/access** | Required hardware, credits, software, cables, adapters, and access available | Missing tool, unsupported controller, locked module, or access uncertainty |
-| **Location/time** | Address, arrival window, travel buffer, and customer availability confirmed | Conflict, unsafe site, excessive travel, or no access |
-| **Risk** | No unresolved safety, legal, or compliance block | Unsafe condition, prohibited request, or incomplete diagnosis |
+| Check                  | Pass condition                                                               | Block condition                                                            |
+| ---------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Scope**              | Accepted quote matches the job record                                        | Scope ambiguous, or changed without a revision                             |
+| **Payment**            | Required deposit/payment status met                                          | Payment missing, failed, or disputed                                       |
+| **Vehicle/build data** | Required fields and files complete                                           | Unknown engine, transmission, software, or modification state              |
+| **Tools/access**       | Required hardware, credits, software, cables, adapters, and access available | Missing tool, unsupported controller, locked module, or access uncertainty |
+| **Location/time**      | Address, arrival window, travel buffer, and customer availability confirmed  | Conflict, unsafe site, excessive travel, or no access                      |
+| **Risk**               | No unresolved safety, legal, or compliance block                             | Unsafe condition, prohibited request, or incomplete diagnosis              |
 
 ---
 
@@ -42,13 +42,13 @@
 
 ## Complaint and service recovery workflow
 
-| Stage | AI action | Owner involvement |
-|---|---|---|
-| **Receive** | Acknowledge, preserve the exact message, identify job and urgency | Immediate alert for safety, legal, payment dispute, or public escalation |
-| **Stabilize** | Ask the customer to stop driving/using **only** when an approved safety protocol applies; avoid admitting liability | Owner decides technical instructions and liability-sensitive wording |
-| **Investigate** | Collect timeline, files, codes, photos, prior promises, and payment record | Owner reviews facts and test plan |
-| **Resolve** | Prepare options: inspection, correction, partial credit, refund request, or denial with evidence | **Owner approves all money and high-conflict responses** |
-| **Learn** | Record root cause and propose an SOP/template change | Owner approves policy change |
+| Stage           | AI action                                                                                                           | Owner involvement                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Receive**     | Acknowledge, preserve the exact message, identify job and urgency                                                   | Immediate alert for safety, legal, payment dispute, or public escalation |
+| **Stabilize**   | Ask the customer to stop driving/using **only** when an approved safety protocol applies; avoid admitting liability | Owner decides technical instructions and liability-sensitive wording     |
+| **Investigate** | Collect timeline, files, codes, photos, prior promises, and payment record                                          | Owner reviews facts and test plan                                        |
+| **Resolve**     | Prepare options: inspection, correction, partial credit, refund request, or denial with evidence                    | **Owner approves all money and high-conflict responses**                 |
+| **Learn**       | Record root cause and propose an SOP/template change                                                                | Owner approves policy change                                             |
 
 A complaint that ends without a lessons-learned entry will arrive again.
 

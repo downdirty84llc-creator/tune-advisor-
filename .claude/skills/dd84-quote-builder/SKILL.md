@@ -42,17 +42,17 @@ The packet states the projected margin, the shortfall or exception, the recommen
 
 ## Quote must contain
 
-| Section | Requirement |
-|---|---|
-| Scope | Exactly what is done, from the service catalog |
-| Deliverables | Files, revisions, support window, delivery method |
-| Exclusions | What is explicitly not included |
-| Prerequisites | What the customer must supply or do, and by when |
-| Price | Package + add-ons + travel + tax, itemized |
-| Deposit and terms | Amount, when due, what it reserves |
-| Turnaround | Range with conditions, never a guarantee |
-| Expiration | Date, with a stated consequence |
-| Next step | One payment path, one booking path |
+| Section           | Requirement                                       |
+| ----------------- | ------------------------------------------------- |
+| Scope             | Exactly what is done, from the service catalog    |
+| Deliverables      | Files, revisions, support window, delivery method |
+| Exclusions        | What is explicitly not included                   |
+| Prerequisites     | What the customer must supply or do, and by when  |
+| Price             | Package + add-ons + travel + tax, itemized        |
+| Deposit and terms | Amount, when due, what it reserves                |
+| Turnaround        | Range with conditions, never a guarantee          |
+| Expiration        | Date, with a stated consequence                   |
+| Next step         | One payment path, one booking path                |
 
 ## Output
 

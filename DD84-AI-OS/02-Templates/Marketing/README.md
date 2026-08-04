@@ -80,14 +80,14 @@ Monthly to active partners: proof of responsiveness and outcomes — **without p
 
 ## Result review — 7 and 30 days
 
-| Field | Value |
-|---|---|
-| Baseline | |
-| Result | |
-| Leads attributed | |
-| Revenue attributed | |
-| Margin on attributed revenue | |
-| Verdict | keep / revise / stop |
-| Next test | |
+| Field                        | Value                |
+| ---------------------------- | -------------------- |
+| Baseline                     |                      |
+| Result                       |                      |
+| Leads attributed             |                      |
+| Revenue attributed           |                      |
+| Margin on attributed revenue |                      |
+| Verdict                      | keep / revise / stop |
+| Next test                    |                      |
 
 Vanity metrics (reach, impressions, likes) are context, never the verdict.

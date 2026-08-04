@@ -23,6 +23,7 @@ S05 may answer customer questions **autonomously and verbatim-in-substance** fro
 ## Questions to document before go-live
 
 **Pricing and scope**
+
 - [ ] How much does a tune cost?
 - [ ] What's included in a tune?
 - [ ] Do you offer refunds?
@@ -30,6 +31,7 @@ S05 may answer customer questions **autonomously and verbatim-in-substance** fro
 - [ ] Do you price match?
 
 **Process**
+
 - [ ] How does remote tuning work?
 - [ ] What do you need from me to get started?
 - [ ] How long does it take?
@@ -38,17 +40,20 @@ S05 may answer customer questions **autonomously and verbatim-in-substance** fro
 - [ ] What happens if it doesn't run right?
 
 **Compatibility**
+
 - [ ] Do you support my vehicle?
 - [ ] Can you work with my existing tune?
 - [ ] What if my module is locked?
 
 **Results and expectations**
+
 - [ ] How much power will I gain?
 - [ ] Will this hurt my engine/transmission?
 - [ ] Is this legal / will it pass inspection?
 - [ ] Will this void my warranty?
 
 **Logistics**
+
 - [ ] Do you come to me?
 - [ ] What's the travel fee?
 - [ ] How do I book?

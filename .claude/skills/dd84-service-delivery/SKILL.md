@@ -18,14 +18,14 @@ Ensure every job has prerequisites, a clear scope, status, evidence, and closeou
 
 Run before any job starts. Every row must pass.
 
-| Check | Pass condition | Block condition |
-|---|---|---|
-| **Scope** | Accepted quote matches the job record | Scope ambiguous or changed without a revision |
-| **Payment** | Required deposit/payment status met | Payment missing, failed, or disputed |
-| **Vehicle/build data** | Required fields and files complete | Unknown engine, transmission, software, or modification state |
-| **Tools/access** | Required hardware, credits, software, cables, adapters, and access available | Missing tool, unsupported controller, locked module, or access uncertainty |
-| **Location/time** | Address, arrival window, travel buffer, customer availability confirmed | Conflict, unsafe site, excessive travel, or no access |
-| **Risk** | No unresolved safety, legal, or compliance block | Unsafe condition, prohibited request, or incomplete diagnosis |
+| Check                  | Pass condition                                                               | Block condition                                                            |
+| ---------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Scope**              | Accepted quote matches the job record                                        | Scope ambiguous or changed without a revision                              |
+| **Payment**            | Required deposit/payment status met                                          | Payment missing, failed, or disputed                                       |
+| **Vehicle/build data** | Required fields and files complete                                           | Unknown engine, transmission, software, or modification state              |
+| **Tools/access**       | Required hardware, credits, software, cables, adapters, and access available | Missing tool, unsupported controller, locked module, or access uncertainty |
+| **Location/time**      | Address, arrival window, travel buffer, customer availability confirmed      | Conflict, unsafe site, excessive travel, or no access                      |
+| **Risk**               | No unresolved safety, legal, or compliance block                             | Unsafe condition, prohibited request, or incomplete diagnosis              |
 
 A block records the **exact correction required** to clear it. A block with no stated correction is incomplete.
 

@@ -10,21 +10,21 @@ Defines what Down Dirty 84 LLC sells, what each service includes and excludes, a
 
 ### `SERVICE-ID` — Service name
 
-| Field | Value |
-|---|---|
-| **Delivery mode** | Remote / mobile / in-shop |
-| **Outcome** | What the customer actually gets |
-| **Included** | Exact files, service steps, revision count, support window, delivery method |
-| **Excluded** | Explicitly not included |
-| **Prerequisites** | Hardware, credits, software, cables, adapters, fuel, mechanical condition, access |
-| **Customer requirements** | What the customer must supply or do, and by when |
-| **Typical duration** | Working time, used for scheduling |
-| **Turnaround** | Policy-based range, never a guarantee when workload or customer response affects it |
-| **Supported platforms** | Cross-reference `03-Knowledge/Compatibility/` |
-| **Risk class** | Routine / elevated / safety-critical |
-| **Release gate** | Does this require owner release? (Any calibration: **yes**) |
-| **Evidence required at closeout** | Logs, photos, scan results, confirmations |
-| **Aftercare** | Instructions sent after completion |
+| Field                             | Value                                                                               |
+| --------------------------------- | ----------------------------------------------------------------------------------- |
+| **Delivery mode**                 | Remote / mobile / in-shop                                                           |
+| **Outcome**                       | What the customer actually gets                                                     |
+| **Included**                      | Exact files, service steps, revision count, support window, delivery method         |
+| **Excluded**                      | Explicitly not included                                                             |
+| **Prerequisites**                 | Hardware, credits, software, cables, adapters, fuel, mechanical condition, access   |
+| **Customer requirements**         | What the customer must supply or do, and by when                                    |
+| **Typical duration**              | Working time, used for scheduling                                                   |
+| **Turnaround**                    | Policy-based range, never a guarantee when workload or customer response affects it |
+| **Supported platforms**           | Cross-reference `03-Knowledge/Compatibility/`                                       |
+| **Risk class**                    | Routine / elevated / safety-critical                                                |
+| **Release gate**                  | Does this require owner release? (Any calibration: **yes**)                         |
+| **Evidence required at closeout** | Logs, photos, scan results, confirmations                                           |
+| **Aftercare**                     | Instructions sent after completion                                                  |
 
 ---
 

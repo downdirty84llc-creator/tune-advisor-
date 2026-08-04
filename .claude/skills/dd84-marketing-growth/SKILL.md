@@ -35,15 +35,15 @@ Create a measurable pipeline using approved offers and brand voice.
 
 ## Weekly campaign engine
 
-| Day | Deliverable | Approval rule |
-|---|---|---|
-| **Monday** | Offer and target audience brief; pipeline gap analysis | New offer requires approval |
-| **Tuesday** | Educational post/reel script from a common customer problem | Pre-approved factual templates may publish |
-| **Wednesday** | Proof post from completed work | Customer likeness/results require approval |
-| **Thursday** | Referral/partner outreach batch and follow-up tasks | Approved partner scripts autonomous |
-| **Friday** | Product/service spotlight, FAQ, booking CTA | Approved pricing only |
-| **Saturday** | Behind-the-scenes or project content | No private customer data |
-| **Sunday** | Performance report and next-week test recommendation | Internal only |
+| Day           | Deliverable                                                 | Approval rule                              |
+| ------------- | ----------------------------------------------------------- | ------------------------------------------ |
+| **Monday**    | Offer and target audience brief; pipeline gap analysis      | New offer requires approval                |
+| **Tuesday**   | Educational post/reel script from a common customer problem | Pre-approved factual templates may publish |
+| **Wednesday** | Proof post from completed work                              | Customer likeness/results require approval |
+| **Thursday**  | Referral/partner outreach batch and follow-up tasks         | Approved partner scripts autonomous        |
+| **Friday**    | Product/service spotlight, FAQ, booking CTA                 | Approved pricing only                      |
+| **Saturday**  | Behind-the-scenes or project content                        | No private customer data                   |
+| **Sunday**    | Performance report and next-week test recommendation        | Internal only                              |
 
 ## Content production workflow
 

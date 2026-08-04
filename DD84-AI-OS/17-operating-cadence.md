@@ -4,13 +4,13 @@
 
 ## Daily
 
-| Time / event | Automated output | Owner action |
-|---|---|---|
-| **Start of business day** | Cash, pipeline, appointments, readiness, exception brief | Approve or decide **only** the listed exceptions |
-| **New event** | Classify, route, act, or request approval | Respond only when escalated |
-| **Before appointment** | Readiness and travel packet | Verify physical and technical readiness |
-| **After job** | Closeout, invoice/receipt, follow-up, review/referral tasks | Confirm technical completion and release |
-| **End of day** | Open loops, overdue tasks, unmatched payments, tomorrow's readiness | Clear critical blockers |
+| Time / event              | Automated output                                                    | Owner action                                     |
+| ------------------------- | ------------------------------------------------------------------- | ------------------------------------------------ |
+| **Start of business day** | Cash, pipeline, appointments, readiness, exception brief            | Approve or decide **only** the listed exceptions |
+| **New event**             | Classify, route, act, or request approval                           | Respond only when escalated                      |
+| **Before appointment**    | Readiness and travel packet                                         | Verify physical and technical readiness          |
+| **After job**             | Closeout, invoice/receipt, follow-up, review/referral tasks         | Confirm technical completion and release         |
+| **End of day**            | Open loops, overdue tasks, unmatched payments, tomorrow's readiness | Clear critical blockers                          |
 
 The owner's daily contract: read one brief, make the listed decisions, verify readiness before appointments, confirm completion and release after jobs. Everything else runs.
 
@@ -44,11 +44,11 @@ The owner's daily contract: read one brief, make the listed decisions, verify re
 
 ## What each cadence is for
 
-| Cadence | Question it answers |
-|---|---|
-| **Daily** | What needs a decision today, and is anything on fire? |
-| **Weekly** | Where is the business leaking money and time, and what are we doing about it? |
-| **Monthly** | Are the prices, services, vendors, and system design still right? |
+| Cadence     | Question it answers                                                           |
+| ----------- | ----------------------------------------------------------------------------- |
+| **Daily**   | What needs a decision today, and is anything on fire?                         |
+| **Weekly**  | Where is the business leaking money and time, and what are we doing about it? |
+| **Monthly** | Are the prices, services, vendors, and system design still right?             |
 
 Mixing these is how businesses end up making pricing decisions in a panic on a Tuesday. Weekly reviews handle leaks; monthly reviews handle structure.
 

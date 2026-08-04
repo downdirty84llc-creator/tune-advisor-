@@ -8,14 +8,14 @@ These are the **only** allowed status values. Free-text status is prohibited whe
 
 ## Allowed statuses
 
-| Object | Allowed statuses |
-|---|---|
-| **Lead** | New \| Contacted \| Awaiting customer \| Qualified \| Quoted \| Won \| Lost \| Disqualified |
-| **Quote** | Draft \| Pending approval \| Sent \| Viewed \| Accepted \| Expired \| Declined \| Superseded |
-| **Job** | Unscheduled \| Awaiting deposit \| Scheduled \| Preparing \| Ready \| In progress \| Blocked \| QA \| Complete \| Closed |
-| **Payment** | Pending \| Authorized \| Paid \| Partially paid \| Failed \| Disputed \| Refunded \| Written off |
-| **Approval** | Not required \| Pending \| Approved \| Rejected \| Edited \| Deferred \| Expired |
-| **File release** | Draft \| QA blocked \| Owner review \| Released \| Delivered \| Superseded \| Archived |
+| Object           | Allowed statuses                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Lead**         | New \| Contacted \| Awaiting customer \| Qualified \| Quoted \| Won \| Lost \| Disqualified                              |
+| **Quote**        | Draft \| Pending approval \| Sent \| Viewed \| Accepted \| Expired \| Declined \| Superseded                             |
+| **Job**          | Unscheduled \| Awaiting deposit \| Scheduled \| Preparing \| Ready \| In progress \| Blocked \| QA \| Complete \| Closed |
+| **Payment**      | Pending \| Authorized \| Paid \| Partially paid \| Failed \| Disputed \| Refunded \| Written off                         |
+| **Approval**     | Not required \| Pending \| Approved \| Rejected \| Edited \| Deferred \| Expired                                         |
+| **File release** | Draft \| QA blocked \| Owner review \| Released \| Delivered \| Superseded \| Archived                                   |
 
 ---
 
@@ -23,7 +23,7 @@ These are the **only** allowed status values. Free-text status is prohibited whe
 
 **Job → Complete** is not an AI-assignable status. Only the owner confirms technical completion. AI may move a job to `QA` and prepare the closeout, no further.
 
-**File release → Released** is owner-only. AI may move a file to `Owner review` and may move it to `Delivered` *after* a release is recorded, matching checksum and customer/job. Nothing else.
+**File release → Released** is owner-only. AI may move a file to `Owner review` and may move it to `Delivered` _after_ a release is recorded, matching checksum and customer/job. Nothing else.
 
 **Lead → Lost** requires a recorded lost reason. Silence is not a lost reason; a quiet lead stays `Awaiting customer` with a reactivation task.
 

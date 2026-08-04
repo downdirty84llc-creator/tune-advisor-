@@ -1,20 +1,20 @@
 # 30-Day Deployment Schedule
 
-| Days | Build focus | Concrete deliverables |
-|---|---|---|
-| **1–3** | Governance and scope | Approve the 90/10 boundary, action classes, thresholds, risk policy, service catalog, current prices |
-| **4–6** | Data foundation | Canonical fields/statuses, CRM/job objects, ID rules, folder structure, retention classes |
-| **7–9** | Knowledge base | Load FAQs, intake questions, quote rules, travel rules, preparation instructions, templates, escalation rules |
-| **10–12** | Orchestrator | Event queue, priorities, assignments, approvals, audit log, daily exception report |
-| **13–15** | Lead and sales | Connect intake channels; build qualification, quote, follow-up, and lost-reason workflows |
-| **16–18** | Scheduling and communication | Connect calendar and messaging; reminders, readiness checks, conflict rules |
-| **19–21** | Job and quality | Job packets, file versioning, readiness, owner release, delivery, aftercare |
-| **22–23** | Payments and finance | Payment matching, invoices, A/R workflow, daily cash and weekly margin reports |
-| **24–25** | Marketing and ecommerce | Campaign IDs, content workflow, listing standard, fulfillment and abandoned-inquiry recovery |
-| **26–27** | Testing | Full test suite, permission tests, duplicate-event tests, failure drills, emergency stop |
-| **28** | Pilot | Limited segment or limited hours, with owner review of **every** external action |
-| **29** | Correct | Fix defects, tighten policies, update templates, repeat failed tests |
-| **30** | Go live | Enable approved Class A/B actions, start the daily brief, log baseline KPIs, schedule the 7-day audit |
+| Days      | Build focus                  | Concrete deliverables                                                                                         |
+| --------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **1–3**   | Governance and scope         | Approve the 90/10 boundary, action classes, thresholds, risk policy, service catalog, current prices          |
+| **4–6**   | Data foundation              | Canonical fields/statuses, CRM/job objects, ID rules, folder structure, retention classes                     |
+| **7–9**   | Knowledge base               | Load FAQs, intake questions, quote rules, travel rules, preparation instructions, templates, escalation rules |
+| **10–12** | Orchestrator                 | Event queue, priorities, assignments, approvals, audit log, daily exception report                            |
+| **13–15** | Lead and sales               | Connect intake channels; build qualification, quote, follow-up, and lost-reason workflows                     |
+| **16–18** | Scheduling and communication | Connect calendar and messaging; reminders, readiness checks, conflict rules                                   |
+| **19–21** | Job and quality              | Job packets, file versioning, readiness, owner release, delivery, aftercare                                   |
+| **22–23** | Payments and finance         | Payment matching, invoices, A/R workflow, daily cash and weekly margin reports                                |
+| **24–25** | Marketing and ecommerce      | Campaign IDs, content workflow, listing standard, fulfillment and abandoned-inquiry recovery                  |
+| **26–27** | Testing                      | Full test suite, permission tests, duplicate-event tests, failure drills, emergency stop                      |
+| **28**    | Pilot                        | Limited segment or limited hours, with owner review of **every** external action                              |
+| **29**    | Correct                      | Fix defects, tighten policies, update templates, repeat failed tests                                          |
+| **30**    | Go live                      | Enable approved Class A/B actions, start the daily brief, log baseline KPIs, schedule the 7-day audit         |
 
 ---
 

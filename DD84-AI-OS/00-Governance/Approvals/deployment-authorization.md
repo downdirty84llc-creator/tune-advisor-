@@ -7,16 +7,16 @@ Until every row is decided and the page is signed, the system operates in Stage 
 
 ## Approval items
 
-| Approval item | Decision / notes |
-|---|---|
-| 90/10 operating boundary | |
-| Autonomous and guardrailed action list | |
-| Owner approval thresholds | |
-| Human-only and prohibited actions | |
-| Current price book and service catalog | |
-| Security and access roles | |
-| Pilot scope and dates | |
-| Go-live authorization | |
+| Approval item                          | Decision / notes |
+| -------------------------------------- | ---------------- |
+| 90/10 operating boundary               |                  |
+| Autonomous and guardrailed action list |                  |
+| Owner approval thresholds              |                  |
+| Human-only and prohibited actions      |                  |
+| Current price book and service catalog |                  |
+| Security and access roles              |                  |
+| Pilot scope and dates                  |                  |
+| Go-live authorization                  |                  |
 
 ---
 
@@ -46,5 +46,5 @@ Version approved:  _______________________________________________
 Record every subsequent authority change here. Never edit a past row — append a new one.
 
 | Date | Change | Previous value | New value | Test evidence | Approved by |
-|---|---|---|---|---|---|
-| | | | | | |
+| ---- | ------ | -------------- | --------- | ------------- | ----------- |
+|      |        |                |           |               |             |

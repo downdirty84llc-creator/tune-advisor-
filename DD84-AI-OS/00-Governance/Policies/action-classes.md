@@ -12,12 +12,12 @@ If a skill cannot confidently classify an action, it defaults to **Class C (appr
 
 ## The four classes
 
-| Class | Meaning | AI authority | Examples |
-|---|---|---|---|
-| **A — Autonomous** | Low-risk, reversible, policy-defined | Execute and log | Create/update records, send acknowledgments, reminders, status checks, internal reports |
-| **B — Guardrailed** | Moderate impact but policy-defined | Execute within fixed limits; escalate exceptions | Approved-price quotes, standard scheduling, standard follow-ups, approved social content |
-| **C — Approval required** | Financial, reputational, technical, or contractual impact | Prepare a complete action packet and **wait** for owner approval | Discounts, refunds, public complaint response, calibration release, purchase above threshold |
-| **D — Human only** | Legally or physically restricted; irreversible or safety-critical | **No execution.** Support the human only | Sign contracts, give legal advice, test drive, install parts, release an unsafe vehicle, move money between accounts |
+| Class                     | Meaning                                                           | AI authority                                                     | Examples                                                                                                             |
+| ------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **A — Autonomous**        | Low-risk, reversible, policy-defined                              | Execute and log                                                  | Create/update records, send acknowledgments, reminders, status checks, internal reports                              |
+| **B — Guardrailed**       | Moderate impact but policy-defined                                | Execute within fixed limits; escalate exceptions                 | Approved-price quotes, standard scheduling, standard follow-ups, approved social content                             |
+| **C — Approval required** | Financial, reputational, technical, or contractual impact         | Prepare a complete action packet and **wait** for owner approval | Discounts, refunds, public complaint response, calibration release, purchase above threshold                         |
+| **D — Human only**        | Legally or physically restricted; irreversible or safety-critical | **No execution.** Support the human only                         | Sign contracts, give legal advice, test drive, install parts, release an unsafe vehicle, move money between accounts |
 
 ---
 

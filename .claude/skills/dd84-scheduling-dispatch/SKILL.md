@@ -47,27 +47,27 @@ Any unchecked box → escalate rather than book.
 
 ## Mobile dispatch packet
 
-| Section | Contents |
-|---|---|
-| Customer and vehicle | IDs, contact, arrival window |
-| Site | Address, parking/workspace, access, adult contact on site |
-| Conditions | Weather contingency, battery condition, required fuel level |
-| Route | Distance, travel time, buffer, tolls |
-| Scope | Exact work from the accepted quote |
-| Tools | Cables, adapters, chargers, hardware, credits |
-| Files | Which files must be on hand, and their versions |
-| Checks | Vehicle identity, condition, pre-existing issues to verify on arrival |
-| Prerequisites | Anything the customer was told to have ready |
+| Section              | Contents                                                              |
+| -------------------- | --------------------------------------------------------------------- |
+| Customer and vehicle | IDs, contact, arrival window                                          |
+| Site                 | Address, parking/workspace, access, adult contact on site             |
+| Conditions           | Weather contingency, battery condition, required fuel level           |
+| Route                | Distance, travel time, buffer, tolls                                  |
+| Scope                | Exact work from the accepted quote                                    |
+| Tools                | Cables, adapters, chargers, hardware, credits                         |
+| Files                | Which files must be on hand, and their versions                       |
+| Checks               | Vehicle identity, condition, pre-existing issues to verify on arrival |
+| Prerequisites        | Anything the customer was told to have ready                          |
 
 ## Reminder sequence
 
-| Timing | Message |
-|---|---|
-| On booking | Confirmation + preparation list + prerequisites |
-| 48h before (mobile) | Readiness check + site conditions confirmation |
-| 24h before | Reminder + explicit readiness confirmation request |
-| Morning of | Arrival window |
-| No 24h confirmation on a mobile job | **Escalate** — do not roll the truck on silence |
+| Timing                              | Message                                            |
+| ----------------------------------- | -------------------------------------------------- |
+| On booking                          | Confirmation + preparation list + prerequisites    |
+| 48h before (mobile)                 | Readiness check + site conditions confirmation     |
+| 24h before                          | Reminder + explicit readiness confirmation request |
+| Morning of                          | Arrival window                                     |
+| No 24h confirmation on a mobile job | **Escalate** — do not roll the truck on silence    |
 
 ## Output
 

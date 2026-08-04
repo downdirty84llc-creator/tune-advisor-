@@ -10,6 +10,7 @@ The goal is a complete opportunity record with the **fewest questions asked**. E
 ## The required set
 
 **Vehicle and condition**
+
 - Year, make, model, engine, transmission
 - Current operating condition — running, driveable, known faults
 - Complete modification list
@@ -17,22 +18,26 @@ The goal is a complete opportunity record with the **fewest questions asked**. E
 - Tire size, gear ratio, converter or clutch details when relevant
 
 **Software and history**
+
 - Existing tune / software state, and who did it
 - Diagnostic trouble codes present
 - Recent repairs
 - Available logs and files
 
 **Outcome**
+
 - Desired outcome: reliability, driveability, power, towing, track, fuel change, feature change, or diagnosis
 - What problem prompted the inquiry
 
 **Logistics**
+
 - Customer location
 - Mobile / in-shop / remote preference
 - Timing
 - Budget readiness
 
 **Acknowledgment**
+
 - Customer acknowledges that actual power and outcome depend on hardware condition, environment, fuel, and test data
 
 ---

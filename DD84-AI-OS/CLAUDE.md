@@ -12,7 +12,7 @@ Moving to Stage 1 requires a signed `00-Governance/Approvals/deployment-authoriz
 
 These rules are the point of the whole system. Do not soften them when editing, extending, or advising.
 
-1. **Never widen an authority boundary casually.** Any change to `00-Governance/Policies/action-classes.md`, `00-Governance/Policies/approval-thresholds.md`, or `00-Governance/Policies/permissions-matrix.md` is a Class C change: it needs a version bump, a stated reason, and an owner approval line. Never make an AI skill *more* permissive as an incidental part of another edit.
+1. **Never widen an authority boundary casually.** Any change to `00-Governance/Policies/action-classes.md`, `00-Governance/Policies/approval-thresholds.md`, or `00-Governance/Policies/permissions-matrix.md` is a Class C change: it needs a version bump, a stated reason, and an owner approval line. Never make an AI skill _more_ permissive as an incidental part of another edit.
 
 2. **The owner-only list is fixed.** Money movement, refunds, contracts, legal/tax advice, calibration release, data deletion, and declaring technical completion stay human. No skill file may grant these, however convenient.
 
@@ -27,11 +27,12 @@ These rules are the point of the whole system. Do not soften them when editing, 
 ## Conventions
 
 - **Skill files** live in `.claude/skills/dd84-*/SKILL.md` at the **repository root**, not inside this directory — Claude Code loads skills from there. Frontmatter needs `name` (matching the directory) and a `description` written so it triggers on the real situations the skill handles.
-- **Skills cite package files with the `DD84-AI-OS/` prefix**, since they live outside this directory. Files *within* the package cite each other package-relative. Keep both conventions intact when moving anything.
+- **Skills cite package files with the `DD84-AI-OS/` prefix**, since they live outside this directory. Files _within_ the package cite each other package-relative. Keep both conventions intact when moving anything.
 - **Policies** carry an ID (`GOV-00X`), a version, and an approver. Skills cite the policy version in their audit note.
 - **Statuses** come from `03-Knowledge/status-standards.md`. Free-text status is prohibited where an allowed value exists.
 - **Every record** needs an owner, a next action, and a next-action due date until it reaches a terminal status.
-- **Cross-references** use repo-relative paths so a skill can actually open what it cites.
+- **Cross-references** must resolve to a real path from wherever the citing file sits, so a skill can actually open what it cites.
+- **Markdown is Prettier-formatted.** CI runs `npm run format:check` over `**/*.{ts,tsx,md,json}`, and `.prettierignore` does not exclude Markdown. Run `npm run format` before committing changes here.
 
 ## When adding a skill
 

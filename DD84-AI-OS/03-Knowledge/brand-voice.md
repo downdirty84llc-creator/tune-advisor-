@@ -58,10 +58,10 @@ Customer-facing automation identifies the business clearly and does not misrepre
 
 ## Language to avoid
 
-| Avoid | Use instead |
-|---|---|
-| "Guaranteed +80hp" | "Customers on this platform typically see gains in the X–Y range depending on fuel, hardware condition, and environment" |
-| "Same-day turnaround" | "Typical turnaround is X–Y business days once we have your files" |
-| "Fits all trucks" | "Supported: [explicit list]. Not supported: [explicit list]" |
-| "This will fix your problem" | "Based on the codes and logs you sent, the likely cause is X. Confirming it requires Y" |
-| "We're not responsible" | Escalate — liability wording is owner-only |
+| Avoid                        | Use instead                                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| "Guaranteed +80hp"           | "Customers on this platform typically see gains in the X–Y range depending on fuel, hardware condition, and environment" |
+| "Same-day turnaround"        | "Typical turnaround is X–Y business days once we have your files"                                                        |
+| "Fits all trucks"            | "Supported: [explicit list]. Not supported: [explicit list]"                                                             |
+| "This will fix your problem" | "Based on the codes and logs you sent, the likely cause is X. Confirming it requires Y"                                  |
+| "We're not responsible"      | Escalate — liability wording is owner-only                                                                               |

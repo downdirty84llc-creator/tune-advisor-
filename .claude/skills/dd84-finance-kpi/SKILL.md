@@ -29,26 +29,26 @@ Financial records prepared here remain subject to owner and accountant review be
 
 ## Accounts receivable schedule
 
-| Age | Action | Escalation |
-|---|---|---|
-| **Due today** | Friendly reminder with invoice and payment path | None |
-| **1–3 days overdue** | Second reminder; confirm no technical or payment issue | Flag in daily brief |
-| **4–7 days overdue** | Firm reminder; pause new work or file delivery if policy permits | Owner sees amount and customer history |
-| **8–14 days overdue** | Prepare final notice and proposed next action | **Owner approval before send** |
-| **15+ days overdue** | No autonomous communication beyond the approved notice | Owner / legal / accounting decision |
+| Age                   | Action                                                           | Escalation                             |
+| --------------------- | ---------------------------------------------------------------- | -------------------------------------- |
+| **Due today**         | Friendly reminder with invoice and payment path                  | None                                   |
+| **1–3 days overdue**  | Second reminder; confirm no technical or payment issue           | Flag in daily brief                    |
+| **4–7 days overdue**  | Firm reminder; pause new work or file delivery if policy permits | Owner sees amount and customer history |
+| **8–14 days overdue** | Prepare final notice and proposed next action                    | **Owner approval before send**         |
+| **15+ days overdue**  | No autonomous communication beyond the approved notice           | Owner / legal / accounting decision    |
 
 ## Daily cash brief
 
-| Block | Contents |
-|---|---|
-| Collected today | Cleared payments only |
-| Deposits | Received and outstanding |
-| Pending invoices | With ages |
-| Failed payments | With retry status |
-| Refunds / disputes | Status and owner action needed |
-| Available operating cash | With freshness timestamp |
-| Planned purchases | Against remaining budget |
-| Budget exceptions | Anything unplanned |
+| Block                    | Contents                       |
+| ------------------------ | ------------------------------ |
+| Collected today          | Cleared payments only          |
+| Deposits                 | Received and outstanding       |
+| Pending invoices         | With ages                      |
+| Failed payments          | With retry status              |
+| Refunds / disputes       | Status and owner action needed |
+| Available operating cash | With freshness timestamp       |
+| Planned purchases        | Against remaining budget       |
+| Budget exceptions        | Anything unplanned             |
 
 ## Margin monitoring
 

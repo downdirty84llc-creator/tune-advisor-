@@ -21,54 +21,54 @@
 ### Core service packages
 
 | Package ID | Service | Scope summary | Price | Revision count | Support window | Margin floor % |
-|---|---|---|---|---|---|---|
-| | | | | | | |
+| ---------- | ------- | ------------- | ----- | -------------- | -------------- | -------------- |
+|            |         |               |       |                |                |                |
 
 ### Add-ons
 
 | Add-on ID | Description | Price | Applies to packages | Notes |
-|---|---|---|---|---|
-| | | | | |
+| --------- | ----------- | ----- | ------------------- | ----- |
+|           |             |       |                     |       |
 
 ### Diagnostics
 
 | Service ID | Description | Price / rate | Included time | Overage rate |
-|---|---|---|---|---|
-| | | | | |
+| ---------- | ----------- | ------------ | ------------- | ------------ |
+|            |             |              |               |              |
 
 ### Remote service
 
 | Service ID | Platform / controller scope | Price | Required hardware | Required customer files |
-|---|---|---|---|---|
-| | | | | |
+| ---------- | --------------------------- | ----- | ----------------- | ----------------------- |
+|            |                             |       |                   |                         |
 
 ### Travel and mobile
 
-| Item | Value |
-|---|---|
-| Travel radius (no fee) | |
-| Internal cost rate per mile | |
-| Customer travel fee formula | |
-| Minimum mobile call-out | |
-| Travel buffer between jobs | |
-| Out-of-radius policy | |
+| Item                        | Value |
+| --------------------------- | ----- |
+| Travel radius (no fee)      |       |
+| Internal cost rate per mile |       |
+| Customer travel fee formula |       |
+| Minimum mobile call-out     |       |
+| Travel buffer between jobs  |       |
+| Out-of-radius policy        |       |
 
 ### Deposits and terms
 
-| Item | Value |
-|---|---|
-| Standard deposit % | |
-| Deposit required above | |
-| Quote expiration window | |
-| Reschedule notice required | |
-| Cancellation policy | |
-| Refund policy | Owner approval on every refund — no exceptions |
+| Item                       | Value                                          |
+| -------------------------- | ---------------------------------------------- |
+| Standard deposit %         |                                                |
+| Deposit required above     |                                                |
+| Quote expiration window    |                                                |
+| Reschedule notice required |                                                |
+| Cancellation policy        |                                                |
+| Refund policy              | Owner approval on every refund — no exceptions |
 
 ### Active promotions
 
 | Promo ID | Offer | Max discount | Stacking allowed | Start | End | Approved by |
-|---|---|---|---|---|---|---|
-| | | | | | | |
+| -------- | ----- | ------------ | ---------------- | ----- | --- | ----------- |
+|          |       |              |                  |       |     |             |
 
 ---
 

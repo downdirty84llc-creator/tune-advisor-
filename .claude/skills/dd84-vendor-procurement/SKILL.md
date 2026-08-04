@@ -35,8 +35,8 @@ A cheaper unit price with slower shipping that misses a committed job date is th
 ## Comparison table — required before any escalated purchase
 
 | Vendor | Item / part number | Unit | Qty | Shipping | Landed cost | ETA | Compatibility evidence | Return window | Risk |
-|---|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | | |
+| ------ | ------------------ | ---- | --- | -------- | ----------- | --- | ---------------------- | ------------- | ---- |
+|        |                    |      |     |          |             |     |                        |               |      |
 
 Always include a recommendation **and at least one alternative**, per the exception packet standard.
 

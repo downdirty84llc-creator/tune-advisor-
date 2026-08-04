@@ -8,17 +8,17 @@
 
 ## Minimum security controls
 
-| Control | Full-spec requirement |
-|---|---|
-| **Identity** | Individual accounts; no shared owner password; multi-factor authentication |
-| **Service accounts** | Separate credentials per integration; least privilege; no personal master credentials in prompts |
-| **Secrets** | Stored in a secrets manager; never pasted into knowledge documents or logs |
-| **Access** | Role-based access to customer, financial, vehicle, and calibration data |
-| **Data minimization** | Collect only data needed for service, payment, support, and legal retention |
-| **Encryption** | Encrypted transport and storage through selected platforms |
-| **Audit** | Immutable log of reads/writes, messages, approvals, file release, payment events, and permission changes |
-| **Backups** | Automated export/backup with periodic restoration test |
-| **Retention** | Defined retention by customer, job, financial, marketing, and technical file class |
+| Control               | Full-spec requirement                                                                                    |
+| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Identity**          | Individual accounts; no shared owner password; multi-factor authentication                               |
+| **Service accounts**  | Separate credentials per integration; least privilege; no personal master credentials in prompts         |
+| **Secrets**           | Stored in a secrets manager; never pasted into knowledge documents or logs                               |
+| **Access**            | Role-based access to customer, financial, vehicle, and calibration data                                  |
+| **Data minimization** | Collect only data needed for service, payment, support, and legal retention                              |
+| **Encryption**        | Encrypted transport and storage through selected platforms                                               |
+| **Audit**             | Immutable log of reads/writes, messages, approvals, file release, payment events, and permission changes |
+| **Backups**           | Automated export/backup with periodic restoration test                                                   |
+| **Retention**         | Defined retention by customer, job, financial, marketing, and technical file class                       |
 | **Incident response** | Disable agent access, rotate credentials, preserve evidence, notify affected parties as legally required |
 
 ---
@@ -36,12 +36,12 @@
 
 ## Business continuity modes
 
-| Mode | When used | Behavior |
-|---|---|---|
-| **Normal** | All integrations healthy | Full autonomous / guardrailed execution |
-| **Degraded** | One noncritical integration unavailable | Continue safe work; queue writes; label data stale |
-| **Manual approval only** | Audit, messaging, payment, or record state is uncertain | No autonomous external writes; prepare tasks and drafts only |
-| **Emergency stop** | Security incident, duplicate sends, wrong file delivery, unsafe release, or corrupted data | Disable agents and tokens; preserve evidence; switch to manual SOP |
+| Mode                     | When used                                                                                  | Behavior                                                           |
+| ------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| **Normal**               | All integrations healthy                                                                   | Full autonomous / guardrailed execution                            |
+| **Degraded**             | One noncritical integration unavailable                                                    | Continue safe work; queue writes; label data stale                 |
+| **Manual approval only** | Audit, messaging, payment, or record state is uncertain                                    | No autonomous external writes; prepare tasks and drafts only       |
+| **Emergency stop**       | Security incident, duplicate sends, wrong file delivery, unsafe release, or corrupted data | Disable agents and tokens; preserve evidence; switch to manual SOP |
 
 Mode changes are announced by S01 in the daily brief and recorded in the audit log. Any skill that detects a mode-triggering condition raises it immediately rather than working around it.
 

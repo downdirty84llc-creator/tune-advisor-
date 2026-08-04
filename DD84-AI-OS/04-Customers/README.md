@@ -33,12 +33,12 @@ Live customer data lives here in production. This repository holds only the **st
 
 ## Retention and access
 
-| Class | Examples | Access | Retention |
-|---|---|---|---|
-| Customer | Contact, vehicle, job history | Assigned skills | Per policy |
-| Restricted | Full VIN, payment details, disputes | Finance + owner | Per policy |
-| Technical-restricted | Read files, calibrations, revisions | S06/S07 read; **owner releases** | Per policy |
-| Evidence | Logs, photos, scan results | Assigned skills | Through warranty/dispute window |
+| Class                | Examples                            | Access                           | Retention                       |
+| -------------------- | ----------------------------------- | -------------------------------- | ------------------------------- |
+| Customer             | Contact, vehicle, job history       | Assigned skills                  | Per policy                      |
+| Restricted           | Full VIN, payment details, disputes | Finance + owner                  | Per policy                      |
+| Technical-restricted | Read files, calibrations, revisions | S06/S07 read; **owner releases** | Per policy                      |
+| Evidence             | Logs, photos, scan results          | Assigned skills                  | Through warranty/dispute window |
 
 Retention classes are defined in `00-Governance/Policies/security-and-continuity.md`. Deletion is owner-only, with a retention check — no skill may delete customer, financial, or job data.
 

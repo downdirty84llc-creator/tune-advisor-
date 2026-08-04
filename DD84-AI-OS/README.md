@@ -10,13 +10,13 @@ This repository is the deployable form of the DD84 90% AI-Ran Business Skill Pac
 
 ## Start here
 
-| If you want to… | Read |
-|---|---|
-| Understand what AI may and may not do | `00-Governance/Policies/action-classes.md` |
-| See the numeric limits | `00-Governance/Policies/approval-thresholds.md` |
-| Authorize deployment | `00-Governance/Approvals/deployment-authorization.md` |
-| Know what to build first | `16-deployment-schedule.md` |
-| Know when it's safe to go live | `15-testing-and-go-live.md` |
+| If you want to…                       | Read                                                  |
+| ------------------------------------- | ----------------------------------------------------- |
+| Understand what AI may and may not do | `00-Governance/Policies/action-classes.md`            |
+| See the numeric limits                | `00-Governance/Policies/approval-thresholds.md`       |
+| Authorize deployment                  | `00-Governance/Approvals/deployment-authorization.md` |
+| Know what to build first              | `16-deployment-schedule.md`                           |
+| Know when it's safe to go live        | `15-testing-and-go-live.md`                           |
 
 ---
 
@@ -25,6 +25,7 @@ This repository is the deployable form of the DD84 90% AI-Ran Business Skill Pac
 **AI owns:** lead intake (95%) · quoting (90%) · scheduling (90%) · customer communication (90%) · marketing (85%) · ecommerce (90%) · finance operations (85%) · management reporting (95%)
 
 **The owner retains:**
+
 - Final release of safety-critical vehicle calibration or diagnostic conclusions
 - Discounts outside policy, refunds, chargebacks, financing, contracts, major spend
 - Legal, tax, insurance, employment, and regulatory decisions
@@ -39,20 +40,20 @@ This repository is the deployable form of the DD84 90% AI-Ran Business Skill Pac
 
 ## The 12 skills
 
-| ID | Skill | Invoke | Does |
-|---|---|---|---|
-| S01 | Ops Orchestrator | `/dd84-ops-orchestrator` | Routes every event, assigns action class and priority, enforces approvals |
-| S02 | Lead Intake | `/dd84-lead-intake` | Inquiry → complete scored opportunity, or documented disqualification |
-| S03 | Quote Builder | `/dd84-quote-builder` | Policy-compliant quotes from the approved price book |
-| S04 | Scheduling & Dispatch | `/dd84-scheduling-dispatch` | Eligible slots, travel buffers, reminders, mobile packets |
-| S05 | Customer Communication | `/dd84-customer-comms` | Routine replies, updates, aftercare — escalates the sensitive |
-| S06 | Service Delivery | `/dd84-service-delivery` | Readiness, file versioning, evidence, closeout |
-| S07 | Quality, Safety & Risk | `/dd84-quality-safety-risk` | **Blocks** unsafe, illegal, or unevidenced work |
-| S08 | Marketing & Growth | `/dd84-marketing-growth` | Campaigns, content, referral outreach, attribution |
-| S09 | Website & Ecommerce | `/dd84-web-ecommerce` | Listings, digital fulfillment, conversion |
-| S10 | Finance & KPI | `/dd84-finance-kpi` | Payment matching, margin, cash brief, scorecard |
-| S11 | Vendor & Procurement | `/dd84-vendor-procurement` | Sourcing, landed cost, order tracking |
-| S12 | Knowledge & Improvement | `/dd84-knowledge-improvement` | Turns cases and failures into better SOPs |
+| ID  | Skill                   | Invoke                        | Does                                                                      |
+| --- | ----------------------- | ----------------------------- | ------------------------------------------------------------------------- |
+| S01 | Ops Orchestrator        | `/dd84-ops-orchestrator`      | Routes every event, assigns action class and priority, enforces approvals |
+| S02 | Lead Intake             | `/dd84-lead-intake`           | Inquiry → complete scored opportunity, or documented disqualification     |
+| S03 | Quote Builder           | `/dd84-quote-builder`         | Policy-compliant quotes from the approved price book                      |
+| S04 | Scheduling & Dispatch   | `/dd84-scheduling-dispatch`   | Eligible slots, travel buffers, reminders, mobile packets                 |
+| S05 | Customer Communication  | `/dd84-customer-comms`        | Routine replies, updates, aftercare — escalates the sensitive             |
+| S06 | Service Delivery        | `/dd84-service-delivery`      | Readiness, file versioning, evidence, closeout                            |
+| S07 | Quality, Safety & Risk  | `/dd84-quality-safety-risk`   | **Blocks** unsafe, illegal, or unevidenced work                           |
+| S08 | Marketing & Growth      | `/dd84-marketing-growth`      | Campaigns, content, referral outreach, attribution                        |
+| S09 | Website & Ecommerce     | `/dd84-web-ecommerce`         | Listings, digital fulfillment, conversion                                 |
+| S10 | Finance & KPI           | `/dd84-finance-kpi`           | Payment matching, margin, cash brief, scorecard                           |
+| S11 | Vendor & Procurement    | `/dd84-vendor-procurement`    | Sourcing, landed cost, order tracking                                     |
+| S12 | Knowledge & Improvement | `/dd84-knowledge-improvement` | Turns cases and failures into better SOPs                                 |
 
 Skills live in `.claude/skills/`. Manifests, versions, and rollback records are in `01-Skills/manifests.md`.
 

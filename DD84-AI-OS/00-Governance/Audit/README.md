@@ -4,20 +4,20 @@ Every automated action lands here, or in the audit store this folder points to. 
 
 ## Required fields per entry
 
-| Field | Notes |
-|---|---|
-| `timestamp` | Source system time, with time zone |
-| `event_id` | The originating event |
-| `source` | Channel or scheduled trigger that produced the event |
-| `skill_id` | Which skill acted (S01–S12) |
-| `action_class` | A, B, C, or D as assigned before acting |
-| `policy_version` | Which policy version the decision was made under |
-| `tool_called` | Tool or integration invoked |
-| `tool_result` | Raw success/failure, not a paraphrase |
-| `record_ids` | Every record read or written |
-| `approval_id` | Present for every Class C execution; absent means it should not have run |
-| `outcome` | What actually changed |
-| `next_action` + `due_at` | Or an explicit close-the-loop marker |
+| Field                    | Notes                                                                    |
+| ------------------------ | ------------------------------------------------------------------------ |
+| `timestamp`              | Source system time, with time zone                                       |
+| `event_id`               | The originating event                                                    |
+| `source`                 | Channel or scheduled trigger that produced the event                     |
+| `skill_id`               | Which skill acted (S01–S12)                                              |
+| `action_class`           | A, B, C, or D as assigned before acting                                  |
+| `policy_version`         | Which policy version the decision was made under                         |
+| `tool_called`            | Tool or integration invoked                                              |
+| `tool_result`            | Raw success/failure, not a paraphrase                                    |
+| `record_ids`             | Every record read or written                                             |
+| `approval_id`            | Present for every Class C execution; absent means it should not have run |
+| `outcome`                | What actually changed                                                    |
+| `next_action` + `due_at` | Or an explicit close-the-loop marker                                     |
 
 ## Rules
 
@@ -29,9 +29,9 @@ Every automated action lands here, or in the audit store this folder points to. 
 
 ## Reviews
 
-| Cadence | What is reviewed |
-|---|---|
-| Daily | Exceptions, failures, blocked actions, unassigned events older than 15 minutes |
-| Weekly | Automation failures, false positives/negatives, permission changes |
-| Monthly | Credential/access review, backup restoration test, full audit sample |
-| Day 7 and Day 30 after go-live | Scheduled formal audits (see `15-testing-and-go-live.md`) |
+| Cadence                        | What is reviewed                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------ |
+| Daily                          | Exceptions, failures, blocked actions, unassigned events older than 15 minutes |
+| Weekly                         | Automation failures, false positives/negatives, permission changes             |
+| Monthly                        | Credential/access review, backup restoration test, full audit sample           |
+| Day 7 and Day 30 after go-live | Scheduled formal audits (see `15-testing-and-go-live.md`)                      |

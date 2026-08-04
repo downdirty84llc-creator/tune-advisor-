@@ -6,20 +6,20 @@ Use the tools already central to the business where possible. **The system desig
 
 ## Capability map
 
-| Capability | Required function | Implementation category | Chosen tool | Owner | Health check |
-|---|---|---|---|---|---|
-| **Orchestration** | Receive events, route tasks, call tools, enforce approval states | Agent platform + workflow automation engine | | | |
-| **CRM** | Customer, vehicle, opportunity, quote, activity, next action | CRM or structured database | | | |
-| **Job operations** | Job status, readiness, checklists, evidence, release state | Field service / job management, or custom DB | | | |
-| **Communication** | Email, SMS/DM where permitted, templates, thread history | Business email and messaging integrations | | | |
-| **Calendar** | Availability, travel buffers, appointments, reminders | Shared business calendar | | | |
-| **Files** | Versioned customer/job folders, access controls, retention | Business cloud storage | | | |
-| **Payments** | Checkout, invoice, deposit, payment status, dispute status | Payment processor + ecommerce platform | | | |
-| **Accounting prep** | Transaction feed, categorization, reconciliation queue, reports | Accounting platform or reporting DB | | | |
-| **Website / intake** | Structured forms, authentication, uploads, status, payment links | Current DD84 website/portal | | | |
-| **Ecommerce** | Products, digital fulfillment, order status, support | Current store platform | | | |
-| **Analytics** | Event tracking, dashboards, attribution, KPI history | BI/dashboard or database reports | | | |
-| **Secrets and access** | Credential vault, service accounts, rotation, least privilege | Password/secrets manager | | | |
+| Capability             | Required function                                                | Implementation category                      | Chosen tool | Owner | Health check |
+| ---------------------- | ---------------------------------------------------------------- | -------------------------------------------- | ----------- | ----- | ------------ |
+| **Orchestration**      | Receive events, route tasks, call tools, enforce approval states | Agent platform + workflow automation engine  |             |       |              |
+| **CRM**                | Customer, vehicle, opportunity, quote, activity, next action     | CRM or structured database                   |             |       |              |
+| **Job operations**     | Job status, readiness, checklists, evidence, release state       | Field service / job management, or custom DB |             |       |              |
+| **Communication**      | Email, SMS/DM where permitted, templates, thread history         | Business email and messaging integrations    |             |       |              |
+| **Calendar**           | Availability, travel buffers, appointments, reminders            | Shared business calendar                     |             |       |              |
+| **Files**              | Versioned customer/job folders, access controls, retention       | Business cloud storage                       |             |       |              |
+| **Payments**           | Checkout, invoice, deposit, payment status, dispute status       | Payment processor + ecommerce platform       |             |       |              |
+| **Accounting prep**    | Transaction feed, categorization, reconciliation queue, reports  | Accounting platform or reporting DB          |             |       |              |
+| **Website / intake**   | Structured forms, authentication, uploads, status, payment links | Current DD84 website/portal                  |             |       |              |
+| **Ecommerce**          | Products, digital fulfillment, order status, support             | Current store platform                       |             |       |              |
+| **Analytics**          | Event tracking, dashboards, attribution, KPI history             | BI/dashboard or database reports             |             |       |              |
+| **Secrets and access** | Credential vault, service accounts, rotation, least privilege    | Password/secrets manager                     |             |       |              |
 
 **Fill in the last three columns before go-live.** An integration with no named owner, no health check, and no documented fallback is an outage waiting to happen.
 
