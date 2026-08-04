@@ -150,14 +150,39 @@ The store has taken 20 sessions to checkout and completed zero. That is probably
 just low traffic — but do not point people at a checkout nobody has ever
 completed.
 
-**One merchandising change worth making first**, not done because it changes
-what customers see and needs a decision: reorder the home-page collection so the
-$49 Readiness Review leads it. Right now the first thing a stranger sees is a
-shop-to-shop support session, and the four deposits and add-ons above the
-Readiness Review only make sense to somebody who has already chosen to buy. The
-collection also mixes services with a gym bag and a framed poster, which reads
-as a hobby store rather than a tuning business. Say the word and Rev will
-reorder it.
+### Home-page merchandising — done 2026-08-03
+
+**The real cause was not the order, it was the sort.** The Home page collection
+was set to `BEST_SELLING`, and the store has **never had an order**. With no
+sales data to sort on, the sequence was effectively arbitrary — which is why the
+cheapest, easiest first purchase in the catalogue had settled at eighth of ten,
+below four deposits and add-ons that only make sense to somebody who has already
+decided to buy.
+
+Reordering alone would not have held. The collection was switched to `MANUAL`
+first, then ordered as the ladder:
+
+| #    | Product                                         | Price    |
+| ---- | ----------------------------------------------- | -------- |
+| 1    | Remote Tune Readiness Review                    | $49      |
+| 2    | ECU Tune File Review — GM / Ford / Dodge        | $99–199  |
+| 3    | Performance Shop Tuning Support Session         | $150–350 |
+| 4    | Holley EFI Fuse-Blowing & Power Loss Diagnostic | $125–350 |
+| 5    | Check Engine / No-Tune Diagnostic Deposit       | $75      |
+| 6    | Dodge PCM Removal & Reinstall Labor             | $75–150  |
+| 7    | PCM Service Booking Deposit                     | $100     |
+| 8    | Pops & Bangs Add-On                             | $50      |
+| 9–10 | Gym bag, framed poster                          | —        |
+
+Cheapest diagnostic entry first, then up the ladder; deposits and add-ons — which
+presuppose a decision already made — below them; merch last.
+
+**A gap this exposed, not yet fixed.** The five core tuning services that
+actually earned the money — GM, Ford, Dodge/Mopar, Toyota/Lexus and Holley EFI
+custom tuning, $350–$650 — are **not in the Home page collection at all**. The
+front page shows deposits and add-ons but not the work. Adding them is a
+different change from reordering and was not part of what was approved, so it is
+flagged rather than done.
 
 ---
 
