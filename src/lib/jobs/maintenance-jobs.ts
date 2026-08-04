@@ -1,3 +1,4 @@
+import { DELETION_GRACE_DAYS } from '@/lib/account/deletion';
 import { createAdminClient } from '@/lib/db/admin';
 import { runExportJob, type ExportJobRow } from '@/lib/exports/service';
 import { fromStripeStatus } from '@/lib/billing/subscription';
@@ -180,9 +181,11 @@ export const expireLapsedAccessJob: JobDefinition = {
 
 export const pruneJob: JobDefinition = {
   name: 'prune',
-  description: 'Removes spent rate-limit windows and expired export files.',
+  description:
+    'Removes spent rate-limit windows and expired export files, and purges ' +
+    'accounts whose deletion grace window has passed.',
   idempotencyKey: dailyKey,
-  handler: async ({ now }) => {
+  handler: async ({ now, note }) => {
     const supabase = createAdminClient();
 
     const { data: pruned } = await supabase.rpc('prune_rate_limit_counters');
@@ -194,12 +197,49 @@ export const pruneJob: JobDefinition = {
       .lt('expires_at', now.toISOString())
       .select('id, file_path');
 
+    // Account deletion is irreversible, so it happens here rather than at the
+    // moment of the request: a member has the whole grace window to change
+    // their mind, and a compromised session cannot destroy an account outright.
+    //
+    // Deleting the auth user is the whole operation. The cascade takes the
+    // profile, preferences, saved records, saved searches, alert preferences,
+    // notifications and the subscription cache; the audit trail, the billing
+    // ledger and support history survive with the member no longer named in
+    // them. See src/lib/account/deletion.ts.
+    const { data: due, error: dueError } = await supabase.rpc(
+      'accounts_due_for_purge',
+      { p_grace_days: DELETION_GRACE_DAYS },
+    );
+    if (dueError) throw new Error(dueError.message);
+
+    let purged = 0;
+    let purgeFailures = 0;
+
+    for (const row of (due ?? []) as Array<{ id: string }>) {
+      const { error } = await supabase.auth.admin.deleteUser(row.id);
+      if (error) {
+        // One stuck account must not stop the rest, and it will be retried
+        // tomorrow. The count is surfaced on the admin dashboard.
+        console.error('[prune] account purge failed', {
+          userId: row.id,
+          error: error.message,
+        });
+        purgeFailures += 1;
+        continue;
+      }
+      purged += 1;
+    }
+
+    note('accountsPurged', purged);
+
     return {
-      processed: (Number(pruned ?? 0) || 0) + (expired?.length ?? 0),
-      failed: 0,
+      processed: (Number(pruned ?? 0) || 0) + (expired?.length ?? 0) + purged,
+      failed: purgeFailures,
       detail: {
         rateLimitWindowsPruned: Number(pruned ?? 0) || 0,
         exportsExpired: expired?.length ?? 0,
+        accountsPurged: purged,
+        accountPurgeFailures: purgeFailures,
       },
     };
   },

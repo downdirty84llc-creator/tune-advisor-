@@ -37,6 +37,7 @@ export const ANALYTICS_EVENTS = [
   'source_link_clicked',
   'correction_submitted',
   'support_ticket_submitted',
+  'account_deletion_requested',
 ] as const;
 
 export type AnalyticsEvent = (typeof ANALYTICS_EVENTS)[number];

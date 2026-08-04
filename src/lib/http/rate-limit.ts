@@ -17,6 +17,11 @@ export const RATE_LIMITS = {
   reportGeneration: { limit: 20, windowSeconds: 3600 },
   adminPublish: { limit: 60, windowSeconds: 3600 },
   correction: { limit: 10, windowSeconds: 3600 },
+  // Destructive or data-disclosing, and neither is something a member needs to
+  // do repeatedly.
+  accountDeletion: { limit: 5, windowSeconds: 3600 },
+  dataExport: { limit: 3, windowSeconds: 3600 },
+  refund: { limit: 30, windowSeconds: 3600 },
 } as const;
 
 export type RateLimitAction = keyof typeof RATE_LIMITS;

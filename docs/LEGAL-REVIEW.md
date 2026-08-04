@@ -12,37 +12,62 @@ advice should do it.
 
 ---
 
-## Before counsel opens this: three documents still promise things the product does not do
+## Before counsel opens this: the four promise-vs-product gaps are now closed
 
-These are not drafting questions. They are representations to consumers that
-the software does not currently honour, and every one of them is cheaper to fix
-now than to explain later. A privacy policy is a binding statement; promising a
-right that does not exist is a worse position than having no policy, because it
-is an affirmative misstatement rather than an omission.
+This section recorded four places where the documents described behaviour the
+software did not have. All four have since been built rather than reworded, so
+counsel is now reviewing an accurate description — which was the point of
+settling them first. Each is kept below with what was built, because the
+implementation is what counsel is signing off, not the promise.
 
-Each needs an owner decision — **build the feature, or change the sentence** —
-before counsel signs anything, because the answer changes what they are
-reviewing. A fourth, the analytics opt-out, has since been built and is kept
-below with the resolution recorded.
+The remaining questions for counsel are further down and are ordinary drafting
+and jurisdiction questions.
 
-### 1. Account deletion — promised, not built
+### 1. Account deletion — ~~promised, not built~~ **now built**
 
 > *Privacy Policy, "Your controls":* "From your account you can … request
 > deletion of your account." … "A deletion request removes your profile,
 > preferences, saved records and saved searches."
 
-`profiles.deletion_requested_at` exists in the schema and **nothing in the
-codebase reads or writes it**. There is no endpoint, no UI, and no job. A
-member who follows this instruction finds nothing to click.
+**Resolved.** `POST /api/v1/account/deletion` records the request and closes
+the account immediately; `DELETE` withdraws it. The control is on the account
+page behind a typed `DELETE` confirmation.
 
-### 2. Data export — promised, not built
+Access ends at once — `effective_access_rank` returns 0 for any account that is
+not active — but the data survives a **30-day grace window**, after which the
+daily `prune` job purges it. That ordering is deliberate: deletion is
+irreversible, so a mistake or a compromised session should not destroy an
+account outright.
+
+The purge is a single `auth.users` delete. The cascade takes the profile,
+preferences, saved records, saved searches, alert preferences, notifications
+and the subscription cache; `audit_logs`, `billing_events`, `analytics_events`,
+`support_tickets` and `correction_requests` are `on delete set null`, so they
+survive **de-identified**. The append-only audit trail is not rewritten by
+someone closing their account, and the retention promise holds without a
+hand-maintained list of tables that would rot the first time one was added.
+
+Two guard details worth counsel knowing: a **suspended** account cannot use
+this route, so closing and reopening cannot be used to escape a suspension; and
+migration `…002400` widens the profile-privilege trigger by exactly two
+transitions on the caller's own row rather than by letting members set their own
+status.
+
+### 2. Data export — ~~promised, not built~~ **now built**
 
 > *Privacy Policy, "Your controls":* "you can … request an export of your data"
 
-The export system (`/api/v1/exports/*`) produces **opportunity CSVs** — the
-paid research product. It is not a subject-access export of the member's own
-personal data, which is what this sentence describes and what a regulator would
-read it to mean.
+**Resolved.** `GET /api/v1/account/data-export` returns the member's own
+record as a JSON download: profile, preferences, subscription summary, saved
+records and notes, saved searches, alert preferences, notifications, support
+tickets and correction requests. Distinct from `/api/v1/exports/opportunities`,
+which remains the paid research product.
+
+Everything is read through the **session-bound** client, so row-level security
+decides what is in the file — the endpoint cannot over-share even if a query is
+wrong. It is delivered inline rather than through the export-job pipeline,
+because storing a second copy of somebody's personal data in a bucket to hand
+them their own record is worse on both privacy and latency.
 
 ### 3. Analytics opt-out — ~~promised twice, not built~~ **now built**
 
@@ -68,15 +93,23 @@ rather than opt-in — appropriate for first-party product analytics under US
 law, but not under an opt-in consent regime if members in such jurisdictions
 are ever in scope.
 
-### 4. Refund workflow — described, not built
+### 4. Refund workflow — ~~described, not built~~ **now built**
 
 > *Refund Policy:* "Refunds are approved by a billing manager and every refund
 > action is recorded in the audit log."
 
-There is **no refund code anywhere** in `src/app/api/v1/` or
-`src/lib/billing/`. A refund today happens in the Stripe dashboard, which means
-no billing-manager role check and no `audit_logs` entry. The described control
-does not exist.
+**Resolved.** `POST /api/v1/admin/refunds` issues the refund through Stripe
+and writes the `billing.refunded` entry via `log_admin_action`, so both halves
+of the sentence are now true.
+
+Access is a **role** check — billing manager or super administrator. A Premium
+member has rank 30 and cannot reach it; a billing manager has no paid plan and
+can. The audit entry is written *after* Stripe confirms, so the trail can never
+claim a refund that did not happen; if the entry itself fails the response says
+`audited: false` rather than reporting clean.
+
+Refunds still require a note explaining the approval, which is stored on both
+the Stripe refund metadata and the audit entry.
 
 ---
 

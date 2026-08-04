@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { BillingPortalButton } from '@/components/account/billing-portal-button';
+import { PrivacyControls } from '@/components/account/privacy-controls';
 import {
   ButtonLink,
   Card,
@@ -9,6 +10,7 @@ import {
   Pill,
   SectionHeading,
 } from '@/components/ui/primitives';
+import { daysUntilPurge } from '@/lib/account/deletion';
 import { getSessionContext } from '@/lib/auth/session';
 import {
   needsPaymentAttention,
@@ -25,16 +27,6 @@ const PRIVACY_CONTROLS = [
     title: 'Email preferences',
     body: 'Choose which alerts, reminders and reports you receive.',
     href: '/account/email-preferences',
-  },
-  {
-    title: 'Export your data',
-    body: 'A machine-readable copy of your profile, preferences, saved records and notes.',
-    href: '/support?topic=data_export',
-  },
-  {
-    title: 'Delete your account',
-    body: 'Removes your profile, preferences, saved records and searches. Billing records we are required to retain are kept.',
-    href: '/support?topic=account_deletion',
   },
   {
     title: 'Analytics and cookie preferences',
@@ -57,6 +49,16 @@ export default async function AccountPage() {
     )
     .eq('user_id', viewer.userId)
     .maybeSingle();
+
+  const { data: profileRow } = await supabase
+    .from('profiles')
+    .select('deletion_requested_at')
+    .eq('id', viewer.userId)
+    .maybeSingle();
+
+  const deletionRequestedAt =
+    (profileRow as { deletion_requested_at?: string | null } | null)
+      ?.deletion_requested_at ?? null;
 
   const accessEnds = paidAccessEndsAt(session.subscription);
 
@@ -199,6 +201,17 @@ export default async function AccountPage() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-4">
+          <PrivacyControls
+            deletionRequestedAt={deletionRequestedAt}
+            daysRemaining={
+              deletionRequestedAt
+                ? daysUntilPurge(new Date(deletionRequestedAt))
+                : 0
+            }
+          />
+        </div>
       </section>
 
       <section className="mt-10">

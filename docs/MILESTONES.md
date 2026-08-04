@@ -128,19 +128,11 @@ See `RUNBOOK.md` for the checklist.
    banner; the three editorial documents do not, which is itself a question for
    counsel. `docs/LEGAL-REVIEW.md` is the packet.
 
-   **Settle these three before counsel starts** — each is a promise the software
-   does not currently keep, and the answer changes what they review. The
-   analytics opt-out was the fourth and is now built (migration `…002300`):
-
-   - **Account deletion.** The Privacy Policy says a member can request it and
-     describes what it removes. `profiles.deletion_requested_at` exists and no
-     code reads or writes it.
-   - **Personal data export.** The Privacy Policy offers "an export of your
-     data". The export system produces opportunity CSVs — the paid product, not
-     a subject-access export.
-   - **Refund workflow.** The Refund Policy describes billing-manager approval
-     and an audit entry per refund. There is no refund code at all; a refund
-     happens in the Stripe dashboard with neither control.
+   The four places where the documents promised behaviour the software did not
+   have are now closed — account deletion, subject-access export, the analytics
+   opt-out and the refund workflow are all built (migrations `…002300` and
+   `…002400`). Counsel is reviewing an accurate description, which was the
+   point of settling them first. What remains is the review itself.
 3. **Virus scanning on uploads.** Spec 20 says "where supported". The
    `attachments.scan_status` column exists and defaults to `pending`; no scanner
    is wired to it.
