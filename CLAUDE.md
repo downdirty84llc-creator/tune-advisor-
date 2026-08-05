@@ -55,12 +55,16 @@ Node `>=20.9.0`.
 
 **Before you hand back any change, `npm run typecheck && npm run lint && npm test`
 must all pass.** As of the current HEAD all three are clean: typecheck silent,
-lint reports no warnings or errors, and Vitest runs **176 tests in 11 files, all
+lint reports no warnings or errors, and Vitest runs **179 tests in 11 files, all
 passing**. If your change makes any of these red, that is your change.
 
-`npm test` needs no database — every unit test is pure logic. Anything requiring
-Postgres belongs in `tests/integration/` (the Vitest `include` already covers
-that directory) or in e2e.
+`npm test` needs no database — every unit test is pure logic, and the Vitest
+`include` is `tests/unit/**` only so it stays that way. There is no integration
+suite; the glob for one was removed because it matched nothing and read as
+coverage that existed. Database-backed behaviour is covered by
+`npm run test:e2e` against a built app. If you write tests needing a live
+Postgres, add the directory, restore the glob, and give it its own script rather
+than folding it into `npm test`.
 
 Local setup:
 
@@ -324,8 +328,8 @@ tampering.
 
 Current suites (`tests/unit/`): `scoring/score` (37), `access/plan-parity` (21),
 `access/entitlements` (18), `alerts/matching` (18), `billing/mrr` (18),
-`access/subscription` (16), `opportunities/lifecycle` (13),
-`analytics/sample-data` (10), `search/filters` (9), `email/unsubscribe` (8),
+`access/subscription` (16), `analytics/sample-data` (13),
+`opportunities/lifecycle` (13), `search/filters` (9), `email/unsubscribe` (8),
 `exports/csv` (8).
 
 Add a unit test whenever you touch money, access, alerts, lifecycle transitions
