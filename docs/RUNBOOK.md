@@ -237,10 +237,25 @@ Available jobs: `publish-scheduled`, `premium-alerts`, `saved-search-matching`,
 
 ### A staff member has lost their authenticator
 
-They are locked out of the admin area, not out of their account — they can still
-use the member side normally. Clear the enrolled factor through Supabase (Auth →
-the user → MFA factors), then have them re-enrol at `/admin/security`. There is
-no in-product reset yet; that gap is recorded in `MILESTONES.md`.
+They are locked out of the admin area, not out of their account — the member
+side still works normally.
+
+A super administrator resets them from the product:
+
+```
+POST /api/v1/admin/staff/{userId}/mfa-reset
+{ "reason": "Phone replaced, identity confirmed on a video call 2026-08-06" }
+```
+
+The reason is mandatory and lands in `audit_logs` as `user.mfa_reset`, naming
+both the administrator and the target. The staff member then enrols a new
+device at `/admin/security` the next time they open the admin area.
+
+The endpoint refuses to reset the caller's own factor, so a super administrator
+who has lost their own device needs a second super administrator. If there is
+only one, clear the factor through the Supabase dashboard (Auth → the user →
+MFA factors) — and treat having a single super administrator as the problem to
+fix, because that is the case with no in-product recovery.
 
 ### A member reports missing access after paying
 

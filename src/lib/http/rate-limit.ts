@@ -22,6 +22,9 @@ export const RATE_LIMITS = {
   accountDeletion: { limit: 5, windowSeconds: 3600 },
   dataExport: { limit: 3, windowSeconds: 3600 },
   refund: { limit: 30, windowSeconds: 3600 },
+  // Removing someone's second factor is the step an attacker needs after a
+  // password, so the ceiling is low enough that bulk use is conspicuous.
+  mfaReset: { limit: 10, windowSeconds: 3600 },
 } as const;
 
 export type RateLimitAction = keyof typeof RATE_LIMITS;

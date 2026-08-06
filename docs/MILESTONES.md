@@ -137,6 +137,11 @@ See `RUNBOOK.md` for the checklist.
    `attachments.scan_status` column exists and defaults to `pending`; no scanner
    is wired to it.
 4. **High-fidelity design and brand sign-off** (milestone 1).
-5. **Super-administrator MFA reset.** A staff member who loses their
-   authenticator currently needs intervention through Supabase directly; the
-   in-product reset described on `/admin/security` is not built.
+5. ~~**Super-administrator MFA reset.**~~ **Built.**
+   `POST /api/v1/admin/staff/{id}/mfa-reset` removes a locked-out staff
+   member's enrolled factors so they can re-enrol. Super administrator only,
+   never by rank, with a mandatory written reason and an audit entry naming
+   both parties. It deliberately refuses to target your own account: a super
+   administrator who loses their own device must be reset by another one, so
+   losing a phone never quietly removes the protection from the account that
+   most needs it.
