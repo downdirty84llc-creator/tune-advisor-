@@ -47,14 +47,14 @@ open tasks yet — no intake routine has run against a live connector.
 | T-19 | Stand up the operating record and seed it with current state        | ops        | High     | **In Verification** | Agent | A-08             | 2026-08-06   |
 | T-20 | Extend the Torque agent definition with the missing spec sections   | ops        | High     | Done                | Agent | A-08             | 2026-08-06   |
 | T-21 | Point CLAUDE.md §10 at the commands and the operating record        | ops        | Normal   | Done                | Agent | A-08             | 2026-08-06   |
-| T-22 | Verify and push the operations control plane                        | ops        | High     | In Progress         | Agent | A-08             | 2026-08-06   |
+| T-22 | Verify and push the operations control plane                        | ops        | High     | Done                | Agent | A-08             | 2026-08-06   |
 | T-23 | Schedule the six routines and confirm the first firing              | ops        | High     | Blocked             | Owner | owner-held       | 2026-08-08   |
 | T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 
-Counts: 13 Done · 2 In Verification · 1 In Progress · 3 Awaiting Approval ·
-1 Blocked · 4 Planned · 2 Backlog.
+Counts: 14 Done · 2 In Verification · 3 Awaiting Approval · 1 Blocked ·
+4 Planned · 2 Backlog.
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -514,8 +514,13 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Expected result** — 179 tests in 11 files still pass; the branch is updated.
 - **Completion proof required** — Real command output and the pushed commit hash,
   recorded in `OPERATING-LOG.md` **after** the push, not before.
-- **Status** In Progress · **Next action** — Append the verification output and
-  the commit hash to the operating log.
+- **Completion evidence** — Logs `OL-0008` (verification) and `OL-0009` (push).
+  Commit `fd50a82`; `origin/claude/claude-md-docs-jjveuq` confirmed at the same
+  hash after a fetch, rather than inferred from the push output. Typecheck
+  clean, lint clean, 179 tests in 11 files passing.
+- **Status** Done · **Next action** — T-23: the owner schedules the routines.
+  A run of `/dd84-daily-brief` against real connectors is the first genuine test
+  of T-18, and nothing here has had one yet.
 
 ## T-23 — Schedule the six routines and confirm the first firing
 

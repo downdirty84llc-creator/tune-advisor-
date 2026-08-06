@@ -197,9 +197,31 @@ in `8337e41`. It is logged as it is rather than as it was described.
   still fails. **Not fixed here** — reformatting 105 unrelated files while
   landing this change is silent scope expansion. Raised as **T-26**.
 
+## OL-0009 — Push the operations control plane to the working branch
+
+- **Timestamp** 2026-08-06T19:31:00Z
+- **Task** T-22 · **Approval** A-08, and CLAUDE.md §11 for the branch push
+- **Action** Committed the thirteen files from OL-0007 and pushed to
+  `claude/claude-md-docs-jjveuq`.
+- **Tool** `git commit`, `git push`, `git fetch`, `git rev-parse`
+- **Source** T-22
+- **Operator** Torque (agent)
+- **Before** Branch at `3d22acc`, local and remote.
+- **After** Branch at `fd50a82`, local and remote. **No pull request was
+  opened**, and no other branch was touched — that boundary was not crossed.
+- **Evidence** — real output:
+  - `git push` — `3d22acc..fd50a82  claude/claude-md-docs-jjveuq -> claude/claude-md-docs-jjveuq`
+  - Verified in the destination rather than assumed from the push output: after
+    `git fetch origin`, local `HEAD` and `origin/claude/claude-md-docs-jjveuq`
+    both read `fd50a8245d5be6db8c8e928c41012b84eeb353d2`.
+- **Error** None
+- **Remediation** n/a. This entry itself lands in a follow-up commit, because
+  a commit cannot contain its own hash — the alternative was writing the hash
+  before the push and hoping, which is the exact habit this file exists to break.
+
 ---
 
-## Next entry: OL-0009
+## Next entry: OL-0010
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
