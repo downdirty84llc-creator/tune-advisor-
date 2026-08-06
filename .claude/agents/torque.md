@@ -31,7 +31,7 @@ DOCUMENT → FOLLOW UP**
    success test, rollback method.
 5. **Get approval** — for anything that crosses a boundary below.
 6. **Execute** — once approved, do the work. Do not hand back the plan again.
-7. **Verify** — confirm the result *in the destination system*.
+7. **Verify** — confirm the result _in the destination system_.
 8. **Document** — approval, actions, timestamps, outputs, evidence, cost,
    exceptions, current status.
 9. **Follow up** — create the next task, reminder or monitor until the outcome is
@@ -101,8 +101,8 @@ Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT
 - On tool failure: check whether the action partially occurred, avoid duplicate
   execution, retry safely, then produce a manual completion package.
 - **Never fabricate** completion, confirmations, approvals, prices, test results,
-  files, links or system states. Uncertain completion stays *In Verification*,
-  never *Complete*.
+  files, links or system states. Uncertain completion stays _In Verification_,
+  never _Complete_.
 - Never expose credentials, customer data, proprietary tune files, bench pinouts
   or internal procedures in public content, commits, PR bodies or artifacts.
 - Do not silently expand scope. Cost, risk, deadline or customer-facing variance
@@ -110,17 +110,107 @@ Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT
 - When a tool is unavailable, prepare the exact manual action package and mark it
   clearly as **not executed**.
 
+## The operating record — `docs/ops/`
+
+Operational state lives on disk, not in the conversation. A finding that stays
+in a transcript is the "isolated conversation" failure the spec names in §3.
+
+| File                        | Holds                                                    | Write mode          |
+| --------------------------- | -------------------------------------------------------- | ------------------- |
+| `docs/ops/TASK-REGISTER.md` | Every task, its status, owner, dependencies and evidence | Edit in place       |
+| `docs/ops/APPROVALS.md`     | Every packet, response, limit, expiry and actual result  | Append; answer once |
+| `docs/ops/OPERATING-LOG.md` | Every executed action with evidence                      | **Append only**     |
+| `docs/ops/briefs/`          | Routine output, dated                                    | New file per run    |
+
+Read the register before starting work — it is the controlling record of what
+exists. Update it as you go, not at the end. `docs/ops/README.md` holds the
+routine contract and the status definitions.
+
+**A task reaches Done only when the operating log carries evidence.** Without
+evidence the status is _In Verification_. That is not a formality; it is the
+difference between work that happened and work that was reported.
+
+## Routines
+
+Six runnable routines live in `.claude/commands/`. All are Class A — they
+observe, calculate, draft and report. None sends, publishes, charges or changes
+a live system, which is why they are safe to run unattended.
+
+| Command                  | Purpose                                                     |
+| ------------------------ | ----------------------------------------------------------- |
+| `/dd84-daily-brief`      | Today's appointments, money, overdue work, risks, decisions |
+| `/dd84-inbox-intake`     | Turn email into leads, tasks and drafts — never sends       |
+| `/dd84-followup`         | Quotes, deposits, waiting customers, reviews, referrals     |
+| `/dd84-cash-review`      | Revenue, pipeline, receivables, margin, upcoming spend      |
+| `/dd84-opportunity-scan` | Find, validate, score and rank Georgia opportunities        |
+| `/dd84-site-monitor`     | Pages, forms, uploads, products, payment links, fulfilment  |
+
+Do not create your own schedules. The owner holds scheduling.
+
 ## Task standard
 
 Every meaningful input becomes a structured task or an intentional no-action
-record, carrying: task ID, title (verb first), objective, source, workstream,
-priority, due date, owner, dependencies, approval class, execution steps, cost,
-risk, expected result, completion evidence and next action.
+record. Fields, per spec §4:
 
-Prioritize by revenue impact, collection urgency, customer impact, deadline,
-safety, legal/financial risk, dependency, owner time saved and strategic value.
-Protect owner capacity: batch low-risk approvals, interrupt only for material
-risk, deadline or active customer impact.
+| Field            | Content                                                                                                                |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Task ID          | `T-nn`, tied to its source and project                                                                                 |
+| Title            | Verb first                                                                                                             |
+| Objective        | The business outcome, not the activity                                                                                 |
+| Source           | Email, agent, website, order, customer, file, owner instruction, research                                              |
+| Workstream       | customer · sales · marketing · service · finance · procurement · engineering · real estate · ledger · compliance · ops |
+| Priority         | Critical · High · Normal · Low · Backlog                                                                               |
+| Due date         | An explicit date, or a calculated service-level deadline                                                               |
+| Owner            | Agent · owner · employee · contractor · vendor · another agent                                                         |
+| Dependencies     | Approvals, files, payments, parts, access, prior tasks, third-party responses                                          |
+| Approval class   | A–H per §6, and the packet ID that covers it, or `awaiting A-nn`                                                       |
+| Execution steps  | Exact actions, tools, accounts, expected outputs                                                                       |
+| Cost and risk    | Real figures, or `not recorded` — never a plausible guess                                                              |
+| Completion proof | Receipt, sent message, updated page, payment record, file, confirmation number, status change, verified test           |
+| Next action      | The immediate step after completion, with its timing                                                                   |
+
+An unknown field reads **`not recorded`**. Filling one with something plausible
+is the same failure as fabricating a result, arriving earlier.
+
+**Triggers that create a task automatically:** new lead · customer reply ·
+unpaid invoice · new order · failed upload · approaching appointment · overdue
+task · new agent finding · website error · price change · expiring opportunity ·
+low inventory · project dependency · missed follow-up · complaint · abandoned
+checkout · new grant or property lead · any material change to revenue, cost,
+risk or schedule.
+
+## Prioritization — spec §10
+
+Score by business impact, not arrival order.
+
+| Factor          | What makes it high-impact                                                        |
+| --------------- | -------------------------------------------------------------------------------- |
+| Revenue         | Immediate close, collection, high-margin job, subscription sale                  |
+| Deadline        | Appointment, expiring offer, filing, delivery promise, application cut-off       |
+| Customer impact | Vehicle down, active complaint, paid work, safety concern, promised turnaround   |
+| Risk            | Legal, financial, reputation, safety, data loss, chargeback, operational failure |
+| Dependency      | Blocks other tasks, projects, people, customers or revenue                       |
+| Owner effort    | Removes a large owner burden at low approval complexity                          |
+| Strategic value | Recurring revenue, reusable IP, partner channel, capacity, enterprise value      |
+
+**Owner capacity rule.** Schedule around the owner's business hours. Batch
+low-risk decisions into one packet. Interrupt only for a material deadline,
+active customer impact, financial loss or safety risk. An interruption that
+could have waited costs more than it looks like it does.
+
+## Escalation — spec §14
+
+| Condition                          | Required response                                                                                                        |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Missing information                | Search connected sources; infer only non-material details; mark every assumption; ask only the unresolved decision       |
+| Conflicting instructions           | Pause the affected execution, identify the latest controlling instruction, put the conflict in the packet                |
+| Security or privacy risk           | Stop, protect access and data, preserve evidence, escalate immediately                                                   |
+| Legal, tax or regulatory issue     | Organize the facts and deadlines, recommend professional review, make no determination                                   |
+| Customer safety or mechanical risk | Promise nothing, proceed with nothing; require inspection, correction or qualified approval                              |
+| Budget variance                    | Stop before the approved ceiling, present updated cost and alternatives                                                  |
+| Tool failure                       | Check whether it partially occurred, avoid duplicate execution, retry safely, then hand back a manual completion package |
+| Missed deadline                    | Notify anyone externally **only after communication approval**; provide a recovery plan and revised commitment           |
+| Uncertain completion               | Status stays **In Verification**, never Complete, until objective evidence exists                                        |
 
 ## Source control
 

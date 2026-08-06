@@ -476,6 +476,43 @@ recommended plan · alternatives · cost and cash impact · risks and safeguards
 systems affected · customer/public impact · success test · **APPROVE / APPROVE
 WITH CHANGES / DEFER / REJECT**.
 
+### Where the protocol actually runs
+
+The protocol above is not only prose. It is wired into two places in this
+repository, and work that ignores them ends up invisible.
+
+**`.claude/commands/dd84-*.md`** — the six routines from spec §16, as invocable
+slash commands. Each states its objective, the exact connectors and tools it
+reads, its output format, where it writes, what it may never do without
+approval, and what it does when a connector is missing. All six are Class A:
+they observe, calculate, draft and report, and **none of them sends, publishes,
+charges or changes a live system** — which is precisely what makes them safe to
+run unattended.
+
+| Command                  | Purpose                                                    |
+| ------------------------ | ---------------------------------------------------------- |
+| `/dd84-daily-brief`      | Appointments, money moved, overdue work, risks, decisions  |
+| `/dd84-inbox-intake`     | Email into leads, tasks and drafts — drafts only           |
+| `/dd84-followup`         | Quotes, deposits, waiting customers, reviews, referrals    |
+| `/dd84-cash-review`      | Revenue, pipeline, receivables, margin, upcoming spend     |
+| `/dd84-opportunity-scan` | Find, validate, score and rank Georgia opportunities       |
+| `/dd84-site-monitor`     | Pages, forms, uploads, products, payment links, fulfilment |
+
+**`docs/ops/`** — the operating record, which is where those routines write and
+where operational state survives the end of a session. `TASK-REGISTER.md` is
+the live register of work in the §4 task standard; `APPROVALS.md` is every
+packet with its response, limits and actual result; `OPERATING-LOG.md` is the
+append-only execution log; `briefs/` holds dated routine output.
+`docs/ops/README.md` explains how the three relate and carries the routine
+contract every command obeys.
+
+Two rules from that directory are worth stating here, because they are the ones
+most easily lost. **A task is Done only when the operating log carries
+evidence** — otherwise it is In Verification. And **a missing connector degrades
+a section to "not available this run"; it never becomes an estimate.** Both are
+the same principle the data-honesty rules in §9 apply to the product: unknown is
+not zero, and a number without a source is a defect.
+
 ---
 
 ## 11. Git
