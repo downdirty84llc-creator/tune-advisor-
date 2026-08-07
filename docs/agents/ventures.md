@@ -49,25 +49,29 @@ digital tuning tools, and merchandise.
 
 ### Revenue — the single most important fact in this file
 
-| Metric                   | Value                                                                            | Verified   |
-| ------------------------ | -------------------------------------------------------------------------------- | ---------- |
-| All-time revenue         | **$3,507.86**                                                                    | 2026-08-03 |
-| Paid invoices            | 10                                                                               | 2026-08-03 |
-| Distinct customers       | **3**                                                                            | 2026-08-03 |
-| Average invoice          | $350.79                                                                          | 2026-08-03 |
-| Largest invoice          | $1,287.50                                                                        | 2026-08-03 |
-| Concentration            | One customer = 67% (6 invoices); two customers = 99%                             | 2026-08-03 |
-| **Last payment**         | **2025-09-12** — nothing collected since                                         | 2026-08-03 |
-| Shopify orders, all time | **0**                                                                            | 2026-08-03 |
-| Invoice-number gaps      | #1–4, 11, 12, 15, 16 have no successful charge. Possibly unpaid — **unresolved** | 2026-08-03 |
+| Metric                   | Value                                                | Verified   |
+| ------------------------ | ---------------------------------------------------- | ---------- |
+| All-time revenue         | **$3,507.86**                                        | 2026-08-03 |
+| Paid invoices            | 10                                                   | 2026-08-03 |
+| Distinct customers       | **3**                                                | 2026-08-03 |
+| Average invoice          | $350.79                                              | 2026-08-03 |
+| Largest invoice          | $1,287.50                                            | 2026-08-03 |
+| Concentration            | One customer = 67% (6 invoices); two customers = 99% | 2026-08-03 |
+| **Last payment**         | **2025-09-12** — nothing collected since             | 2026-08-03 |
+| Shopify orders, all time | **0**                                                | 2026-08-03 |
 
 **100% of revenue came from invoiced service work. 0% from the storefront.**
 Any plan that assumes self-serve digital products are the revenue model is
 arguing against the only evidence that exists.
 
 **What those invoices were actually for is `UNKNOWN`** — Stripe records amounts
-and invoice numbers, not line items. Rev must not guess which service earned the
-money.
+and invoice numbers, not line items.
+
+**Owner decision, 2026-08-07: the invoices are closed as a line of enquiry.**
+Do not chase the line items, and do not raise the gaps in invoice numbering.
+The `UNKNOWN` above still binds — Rev must not guess which service earned the
+money, and must not present a guess as the reason a service is worth leading
+with. It is simply not a question to keep asking.
 
 ### Traffic
 
@@ -179,10 +183,10 @@ recorded it. Establishing it is worth more than most campaigns — ask them.
 
 Rev should try to close these, and must not paper over them.
 
-1. What were the ten paid invoices for? Needs bookipay.
-2. Are invoice numbers #1–4, 11, 12, 15, 16 unpaid? Needs bookipay. **Would be
-   the fastest cash available.**
-3. Where did the three customers come from?
-4. What is on `dd84tuning.com`, and how does it relate to the Shopify store?
-5. Does the Shopify checkout actually complete? Needs one test purchase.
-6. Which social accounts exist, and who runs them?
+1. Where did the three customers come from?
+2. What is on `dd84tuning.com`, and how does it relate to the Shopify store?
+3. Does the Shopify checkout actually complete? Needs one test purchase.
+4. Which social accounts exist, and who runs them?
+
+**Closed by owner decision, 2026-08-07 — do not reopen:** what the ten invoices
+were for, and whether the gaps in invoice numbering represent unpaid invoices.

@@ -30,7 +30,7 @@ account. Nothing is estimated.
 | T2  | Revenue is concentrated: A = $2,350.79 (67%, 6 invoices), B = $1,118.37 (32%, 3), C = $38.70 (1%, 1)                                                                                                                                                              | as above                                   |
 | T3  | **The last payment was 2025-09-12 — roughly eleven months ago.** Nothing has been collected since                                                                                                                                                                 | as above                                   |
 | T4  | Every charge came through **bookipay** invoicing (`metadata.application`), not a storefront                                                                                                                                                                       | charge metadata                            |
-| T5  | Paid invoice numbers are 5–10, 13, 14, 17, 18. **Eight numbers are missing** (1–4, 11, 12, 15, 16) with no successful charge                                                                                                                                      | derived from charge descriptions           |
+| T5  | ~~Paid invoice numbers are 5–10, 13, 14, 17, 18; eight are missing~~ — **closed by owner decision 2026-08-07.** Accurate as recorded, but no longer a line of enquiry                                                                                             | derived from charge descriptions           |
 | T6  | The Shopify store has **0 orders and $0** in the last 365 days                                                                                                                                                                                                    | ShopifyQL `FROM sales`                     |
 | T7  | Store traffic: **397 sessions in Jan 2026**, then 34/29/26/38/29/19/2 — about one visitor a day                                                                                                                                                                   | ShopifyQL `FROM sessions TIMESERIES month` |
 | T8  | Last 180 days by source: direct 146, social 16, **search 7**, unknown 3, email 1                                                                                                                                                                                  | ShopifyQL `GROUP BY referrer_source`       |
@@ -86,19 +86,20 @@ Scored on the §9 ten-factor method, components shown.
 Rev /20 · Prof /15 · Spd /10 · Fit /10 · Auto /10 · Urg /10 · Rpt /10 · Adv /5 ·
 Time /5 (higher = less owner involvement) · Risk −15…+5.
 
-| ID   | Opportunity                                             | Rev | Prof | Spd | Fit | Auto | Urg | Rpt | Adv | Time | Risk | **Total** |
-| ---- | ------------------------------------------------------- | --: | ---: | --: | --: | ---: | --: | --: | --: | ---: | ---: | --------: |
-| T-02 | Resume the invoiced service motion as the primary model |  16 |   13 |   8 |  10 |    4 |   6 |   9 |   4 |    2 |   −2 |    **70** |
-| T-01 | Reactivate the three customers who already paid         |  14 |   14 |  10 |  10 |    3 |   6 |   8 |   4 |    2 |   −1 |    **70** |
-| T-04 | Make the catalogue findable at all                      |  13 |   13 |   2 |   9 |    8 |   3 |  10 |   3 |    4 |   −2 |    **63** |
-| T-06 | Ask the repeat customers for referrals                  |  10 |   13 |   7 |   9 |    3 |   4 |   7 |   4 |    2 |   −1 |    **58** |
-| T-05 | Consolidate the three web surfaces                      |   9 |   11 |   4 |   9 |    7 |   5 |   7 |   3 |    4 |   −2 |    **57** |
-| T-07 | Audit what those ten invoices were actually for         |   6 |    8 |   8 |  10 |    5 |   6 |   5 |   2 |    4 |   +2 |    **56** |
+| ID       | Opportunity                                                                                      | Rev | Prof | Spd | Fit | Auto | Urg | Rpt | Adv | Time | Risk | **Total** |
+| -------- | ------------------------------------------------------------------------------------------------ | --: | ---: | --: | --: | ---: | --: | --: | --: | ---: | ---: | --------: |
+| T-02     | Resume the invoiced service motion as the primary model                                          |  16 |   13 |   8 |  10 |    4 |   6 |   9 |   4 |    2 |   −2 |    **70** |
+| T-01     | Reactivate the three customers who already paid                                                  |  14 |   14 |  10 |  10 |    3 |   6 |   8 |   4 |    2 |   −1 |    **70** |
+| T-04     | Make the catalogue findable at all                                                               |  13 |   13 |   2 |   9 |    8 |   3 |  10 |   3 |    4 |   −2 |    **63** |
+| T-06     | Ask the repeat customers for referrals                                                           |  10 |   13 |   7 |   9 |    3 |   4 |   7 |   4 |    2 |   −1 |    **58** |
+| T-05     | Consolidate the three web surfaces                                                               |   9 |   11 |   4 |   9 |    7 |   5 |   7 |   3 |    4 |   −2 |    **57** |
+| ~~T-07~~ | ~~Audit what those ten invoices were actually for~~ — **withdrawn 2026-08-07 by owner decision** |   — |    — |   — |   — |    — |   — |   — |   — |    — |    — |     **—** |
 
 **Priority rule.** T-01 leads despite tying on score, because §9 puts urgent
 revenue recovery ahead of everything. It is also the only item that could
-produce cash this week. T-07 is scored low but **blocks T-02**, and it is nearly
-free, so it runs first in practice.
+produce cash this week. ~~T-07 blocks T-02 and runs first in practice.~~
+**T-07 was withdrawn on 2026-08-07 by owner decision**, so T-01 and T-02 proceed
+without it — see the note under T-07 for what that costs.
 
 ### Hygiene, not an opportunity
 
@@ -118,7 +119,7 @@ is not a revenue opportunity — but do it before spending anything on traffic.
 | **Opportunity**             | Three people have paid this business real money — one of them six times, totalling $2,350.79. **None has been invoiced in eleven months.** They are the warmest possible audience and they cost nothing to reach.                                                               |
 | **Business fit**            | DD84 Tuning service work: the exact thing they already bought.                                                                                                                                                                                                                  |
 | **Target customer**         | Customer A (6 invoices, $2,350.79), customer B (3, $1,118.37), customer C (1, $38.70). Names in Stripe.                                                                                                                                                                         |
-| **Offer**                   | Not a discount. A specific, relevant next service — which requires T-07 first, because we do not currently know what they bought.                                                                                                                                               |
+| **Offer**                   | Not a discount. A specific, relevant next service. With T-07 withdrawn, the owner supplies which service to lead with from their own memory of the work — Rev must not guess it.                                                                                                |
 | **Execution**               | Personal outreach from the owner, not a campaign. One message each, referencing their actual vehicle or prior job, proposing the logical next piece of work, with an invoice ready to send.                                                                                     |
 | **Channels**                | Direct: the contact method already on file in bookipay or Stripe. No advertising.                                                                                                                                                                                               |
 | **Cost and budget ceiling** | **$0.**                                                                                                                                                                                                                                                                         |
@@ -128,37 +129,39 @@ is not a revenue opportunity — but do it before spending anything on traffic.
 | **Approval choices**        | Approve as planned · approve with changes · hold · reject                                                                                                                                                                                                                       |
 | **After approval**          | Rev drafts the three messages for the owner to review and send. **Rev will not send them** — these are personal relationships and the owner's own voice is the asset.                                                                                                           |
 
-### T-07 — Audit what the ten invoices were actually for · 56 · runs first
+### ~~T-07 — Audit what the ten invoices were actually for~~ · withdrawn
 
-| Field                       | Content                                                                                                                                                                                                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opportunity**             | We know exactly how much was earned and by whom. We do not know **what was sold** — Stripe records only "#5", "#17" and a bookipay invoice id, with no line items. Every recommendation about which service to lead with is guesswork until this is answered. |
-| **Business fit**            | Prerequisite for T-01 and T-02.                                                                                                                                                                                                                               |
-| **Execution**               | Open the ten paid invoices in bookipay, record the line items, and match them against the current catalogue to see which of the 25+ products correspond to work that has actually sold.                                                                       |
-| **Channels**                | None. Internal research.                                                                                                                                                                                                                                      |
-| **Cost and budget ceiling** | **$0.**                                                                                                                                                                                                                                                       |
-| **Revenue potential**       | None directly. It is what makes the other briefs specific instead of generic.                                                                                                                                                                                 |
-| **Risks and safeguards**    | None material. Customer data stays out of version control.                                                                                                                                                                                                    |
-| **Success metrics**         | Ten invoices mapped to services; a ranked list of what has genuinely sold.                                                                                                                                                                                    |
-| **Approval choices**        | Approve as planned · approve with changes · hold · reject                                                                                                                                                                                                     |
-| **After approval**          | **Rev has no bookipay access**, so the owner must pull the line items. Rev will take it from there.                                                                                                                                                           |
+**Withdrawn 2026-08-07 by owner decision.** The invoices are closed as a line of
+enquiry and are not to be reopened.
+
+The brief argued that we know exactly how much was earned and by whom, but not
+**what was sold**, and that this made every "lead with this service"
+recommendation guesswork. That reasoning still stands — it is simply no longer
+being pursued.
+
+**What that costs, stated plainly so nobody is surprised later:** the ranked
+list of what has genuinely sold does not exist and will not be produced. T-01
+and T-02 therefore rely on the owner naming which services to lead with from
+memory. **Rev must not substitute a guess** — the registry's `UNKNOWN` on this
+still binds, and an invented answer here would be a fabrication, not an
+estimate.
 
 ### T-02 — Resume the invoiced service motion · 70
 
-| Field                       | Content                                                                                                                                                                                       |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opportunity**             | 100% of revenue this business has ever earned came from invoiced service work. 0% came from the self-serve catalogue, across 574 sessions. The evidence for which model works is one-sided.   |
-| **Business fit**            | The core tuning and diagnostic services.                                                                                                                                                      |
-| **Target customer**         | The same profile that already paid: owners and shops wanting hands-on calibration and diagnostic work, who expect a quote and an invoice rather than an add-to-cart.                          |
-| **Offer**                   | Named services at the prices already proven ($175–$1,287 observed), quoted per job.                                                                                                           |
-| **Execution**               | Re-establish intake → quote → invoice as the primary path, with the catalogue supporting it rather than replacing it. Requires T-07 to know which services to lead with.                      |
-| **Channels**                | Direct, referral, and whatever channel produced the original three customers — **currently unknown**, which is itself worth establishing.                                                     |
-| **Cost and budget ceiling** | **$0** for the motion itself. Any paid acquisition is a separate brief.                                                                                                                       |
-| **Revenue potential**       | Historic monthly run rate Feb–Sep 2025 was roughly $438/month across three customers. **That is history, not a projection**, and it came from a customer base too small to extrapolate.       |
-| **Risks and safeguards**    | Invoiced work does not scale without owner time, which is exactly why the catalogue was built; this brief argues for sequencing, not for abandoning the catalogue. Do not guarantee outcomes. |
-| **Success metrics**         | Quotes issued per month, quote-to-invoice rate, collected revenue, repeat rate.                                                                                                               |
-| **Approval choices**        | Approve as planned · approve with changes · hold · reject                                                                                                                                     |
-| **After approval**          | Rev builds the intake-to-invoice path and the follow-up rules, after T-07 answers what to lead with.                                                                                          |
+| Field                       | Content                                                                                                                                                                                            |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Opportunity**             | 100% of revenue this business has ever earned came from invoiced service work. 0% came from the self-serve catalogue, across 574 sessions. The evidence for which model works is one-sided.        |
+| **Business fit**            | The core tuning and diagnostic services.                                                                                                                                                           |
+| **Target customer**         | The same profile that already paid: owners and shops wanting hands-on calibration and diagnostic work, who expect a quote and an invoice rather than an add-to-cart.                               |
+| **Offer**                   | Named services at the prices already proven ($175–$1,287 observed), quoted per job.                                                                                                                |
+| **Execution**               | Re-establish intake → quote → invoice as the primary path, with the catalogue supporting it rather than replacing it. Which services to lead with comes from the owner, not from an invoice audit. |
+| **Channels**                | Direct, referral, and whatever channel produced the original three customers — **currently unknown**, which is itself worth establishing.                                                          |
+| **Cost and budget ceiling** | **$0** for the motion itself. Any paid acquisition is a separate brief.                                                                                                                            |
+| **Revenue potential**       | Historic monthly run rate Feb–Sep 2025 was roughly $438/month across three customers. **That is history, not a projection**, and it came from a customer base too small to extrapolate.            |
+| **Risks and safeguards**    | Invoiced work does not scale without owner time, which is exactly why the catalogue was built; this brief argues for sequencing, not for abandoning the catalogue. Do not guarantee outcomes.      |
+| **Success metrics**         | Quotes issued per month, quote-to-invoice rate, collected revenue, repeat rate.                                                                                                                    |
+| **Approval choices**        | Approve as planned · approve with changes · hold · reject                                                                                                                                          |
+| **After approval**          | Rev builds the intake-to-invoice path and the follow-up rules, once the owner names the services to lead with.                                                                                     |
 
 ### Remaining queue — summaries
 
@@ -178,21 +181,19 @@ is not a revenue opportunity — but do it before spending anything on traffic.
 
 ## Open questions Rev could not answer
 
-1. **What were the ten invoices for?** No line items in Stripe (T-07).
-2. **Where did the three customers come from?** No attribution exists for
+1. **Where did the three customers come from?** No attribution exists for
    invoiced work.
-3. **Are the eight missing invoice numbers unpaid?** #1–4, #11, #12, #15 and #16
-   have no successful charge. They may be drafts, voided, or paid another way —
-   **or they may be unpaid invoices, which would be the fastest cash in this
-   document.** Requires bookipay access to check.
-4. **What is on dd84tuning.com?** It returns 403 to automated fetches.
+2. **What is on dd84tuning.com?** It returns 403 to automated fetches.
+
+**Closed by owner decision 2026-08-07, do not reopen:** what the ten invoices
+were for, and whether the gaps in invoice numbering represent unpaid invoices.
 
 ## What Rev is asking for
 
-Run **T-07** first — it is free and it makes everything else specific. Then
-**T-01**, which is the only item that can produce revenue this week. Then decide
-between **T-02** and **T-04** depending on whether the goal is cash now or
-compounding traffic later.
+Run **T-01** first — it is the only item that can produce revenue this week, and
+with T-07 withdrawn there is nothing left blocking it. Then decide between
+**T-02** and **T-04** depending on whether the goal is cash now or compounding
+traffic later.
 
 And do the test purchase before spending a dollar on traffic.
 
