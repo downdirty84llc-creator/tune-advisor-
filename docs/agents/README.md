@@ -27,10 +27,28 @@ run it.
 /rev-discovery        # full discovery pass for a venture
 ```
 
-**Unattended.** Point a scheduled Routine at `/rev-daily-brief`. It is read-only
-by design — it can write a brief and commit it, and nothing else. That is
-deliberate: an agent that runs while nobody is watching should not be able to
-spend money or publish.
+**Unattended.** A Routine — _Rev — weekly growth brief (DD84)_,
+`trig_014f6Hv1ccKeGHj8mZ59MB2v` — fires Mondays at 11:00 UTC (7am EDT) into a
+fresh session, with push and email notification. It is read-only by design: it
+can write a brief and commit it, and nothing else. An agent that runs while
+nobody is watching should not be able to spend money or publish.
+
+**Weekly, not daily, on purpose.** §26 specifies a daily operating brief. At the
+current activity level — about one visitor a day and no orders — a daily brief
+would say "nothing changed" almost every time, and the skill itself warns that
+an inflated brief trains the owner to ignore it. Move it to daily the moment
+there is real order flow.
+
+> **Known limitation: the Routine has no connectors.** It was created from a
+> session that could not pass its MCP grants through, so the fired session runs
+> **without** the Shopify, Stripe and Supabase tools. It can read the repository
+> and compare records, but **it cannot pull live sales, session or charge data**
+> — which is most of the value.
+>
+> **The fix:** recreate the Routine from the claude.ai Routines UI, or from a
+> session that holds those connectors, so the grant is stored with it. Until
+> then, treat the weekly brief as a repository digest rather than a live report,
+> and run `/rev-daily-brief` by hand when you want real numbers.
 
 ## The safety model, in one line
 
