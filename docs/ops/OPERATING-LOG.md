@@ -221,7 +221,47 @@ in `8337e41`. It is logged as it is rather than as it was described.
 
 ---
 
-## Next entry: OL-0010
+## OL-0010 — 2026-08-10 · Verify the Stripe billing configuration
+
+- **Task** T-11 · **Approval** A-05, approved 2026-08-10
+- **Action** Read the live Stripe account and the live Supabase project to
+  establish the billing configuration's actual state before creating anything.
+  **Nothing was created, updated or deleted.**
+- **Tool** `mcp__Stripe__get_stripe_account_info`, `stripe_api_read`
+  (`GetProducts`, `GetPrices`, `GetWebhookEndpoints`),
+  `mcp__Supabase__list_projects`, `execute_sql` (select only)
+- **Source** Owner instruction "finalize stripe and review approved"
+- **Operator** Claude (coordinator), not the Torque subagent — the subagent
+  terminated on an account session limit before it could record this, which is
+  why the entry is written here directly.
+- **Before** The register and `MILESTONES.md` both asserted the products did not
+  exist and that `stripe_monthly_price_id` / `stripe_annual_price_id` were null.
+  Both assertions were **stale**.
+- **After** Unchanged — this was a read-only pass. The record now matches
+  reality.
+- **Evidence**
+  - Account `acct_1QBl8ZINLKqe1c6g`, display name "Down Dirty 84 llc".
+  - Four products created 2026-07-29 with `plan_code` / `access_rank` /
+    `product_line` metadata, `livemode: true`.
+  - Six recurring prices, `livemode: true`, amounts in cents:
+    `gol_weekly_monthly` 1500 · `gol_weekly_annual` 15000 ·
+    `gol_detailed_monthly` 3900 · `gol_detailed_annual` 39000 ·
+    `gol_premium_monthly` 9900 · `gol_premium_annual` 99000. Every amount
+    matches `supabase/seed.sql`.
+  - Live project `bbgikfblcahhvrpxiqnd` (georgia-opportunity-ledger,
+    ACTIVE_HEALTHY). `select` on `public.subscription_plans` returned all six
+    price ids populated. Each was resolved back to its Stripe price and the
+    amount confirmed — verified in both directions rather than trusting one.
+  - `GetWebhookEndpoints` returned `{"data":[]}` — **no endpoint registered**.
+- **Error** None.
+- **Remediation** n/a. Two variances raised rather than worked around: the
+  connector is live-only so the approved test-mode-first sequence cannot be run
+  by an agent, and the absent webhook endpoint became **T-27**. Neither was
+  silently absorbed into the approved scope.
+
+---
+
+## Next entry: OL-0011
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

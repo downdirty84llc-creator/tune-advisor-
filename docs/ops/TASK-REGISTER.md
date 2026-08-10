@@ -36,9 +36,9 @@ open tasks yet — no intake routine has run against a live connector.
 | T-08 | Remove the phantom integration-test glob from the Vitest config     | ledger     | Normal   | Done                | Agent | S-01             | 2026-08-02   |
 | T-09 | Close the PostgREST filter injection in the opportunity fallback    | ledger     | High     | Done                | Agent | S-01             | 2026-08-02   |
 | T-10 | Correct the test counts and integration-suite claim in CLAUDE.md    | ops        | Normal   | Done                | Agent | S-01             | 2026-08-05   |
-| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical | Awaiting Approval   | Owner | **A-05 pending** | 2026-08-20   |
+| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical | Partly Done         | Owner | A-05 approved    | 2026-08-20   |
 | T-12 | Record the sample-data exclusion rule in CLAUDE.md                  | ops        | Normal   | Done                | Agent | A-03             | 2026-07-31   |
-| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical | Awaiting Approval   | Owner | **A-06 pending** | 2026-08-27   |
+| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical | Blocked             | Owner | A-06 approved    | 2026-08-27   |
 | T-14 | Wire virus scanning to `attachments.scan_status`                    | ledger     | High     | Awaiting Approval   | Owner | **A-07 pending** | 2026-09-03   |
 | T-15 | Make the public landing pages cacheable again                       | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-09-03   |
 | T-16 | Build in-product super-administrator MFA reset                      | ledger     | Normal   | Backlog             | Agent | S-01 to prepare  | not recorded |
@@ -52,24 +52,36 @@ open tasks yet — no intake routine has run against a live connector.
 | T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
+| T-27 | Register the Stripe webhook endpoint against the deployed host      | finance    | Critical | Blocked             | Owner | A-05 approved    | 2026-08-13   |
 
-Counts: 14 Done · 2 In Verification · 3 Awaiting Approval · 1 Blocked ·
-4 Planned · 2 Backlog.
+Counts: 14 Done · 1 Partly Done · 2 In Verification · 1 Awaiting Approval ·
+3 Blocked · 4 Planned · 2 Backlog.
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
-finding that would otherwise have been mentioned once in a reply and lost.
+finding that would otherwise have been mentioned once in a reply and lost. T-27
+is the same thing happening again: verifying an approval before executing it
+found the approved work already done, and surfaced the real gap sitting behind
+it.
+
+**A-05 and A-06 were both answered on 2026-08-10.** Neither task closed as a
+result. T-11 turned out to be largely already done and its remaining leg is not
+an agent task; T-13's approval authorises engaging counsel, which only the owner
+can do. An answered packet is not a finished task.
 
 ---
 
 ## Open items, by what they are waiting on
 
-| Waiting on                | Tasks                        |
-| ------------------------- | ---------------------------- |
-| Owner approval            | T-11, T-13, T-14             |
-| Owner action (scheduling) | T-23                         |
-| Owner confirmation        | T-19                         |
-| A seeded or live database | T-06                         |
-| Agent execution capacity  | T-15, T-16, T-24, T-25, T-26 |
+| Waiting on                         | Tasks                        |
+| ---------------------------------- | ---------------------------- |
+| Owner approval                     | T-14                         |
+| Owner action (engaging counsel)    | T-13                         |
+| Owner action (scheduling)          | T-23                         |
+| Owner input (deployed host)        | T-27                         |
+| Owner or developer, test-mode keys | T-11                         |
+| Owner confirmation                 | T-19                         |
+| A seeded or live database          | T-06                         |
+| Agent execution capacity           | T-15, T-16, T-24, T-25, T-26 |
 
 ---
 
@@ -292,6 +304,20 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Risk** — Wrong price IDs silently grant the wrong rank. Rollback: prices can
   be archived, not deleted; the plan rows can be reverted to null.
 - **Expected result** — Every tier is purchasable and the granted rank matches.
+- **Status 2026-08-10 — Partly Done. Steps 1 and 2 were already complete before
+  approval arrived; step 3 is not an agent task.** Verified read-only against
+  the live account and database, evidence in OL-0010: four products and six
+  prices exist with amounts matching `seed.sql`, and all six ids are already
+  populated on `subscription_plans`, checked in both directions. Nothing was
+  created — doing so would have duplicated live products on a revenue-bearing
+  account.
+- **Re-scoped** — The matrix (step 3) requires **test-mode keys**. Every object
+  in the connected account reads `livemode: true` and no test-mode path is
+  reachable from an agent session, so this leg belongs to the owner or a
+  developer, not to Torque. Recording that here rather than leaving a step
+  perpetually "pending" against an agent that cannot perform it.
+- **Blocking gap moved to T-27** — the missing webhook endpoint, which is now
+  the real obstacle in the billing path rather than the products.
 - **Completion proof required** — Stripe dashboard product and price IDs, one
   `billing_events` row per event, a screenshot of each tier's billing page.
 - **Status** Awaiting Approval · **Next action** — Owner answers A-05.
@@ -615,3 +641,46 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Status** Planned · **Next action** — Step 1. **Not fixed during T-22**:
   reformatting 105 unrelated files while landing the operations control plane
   would be silent scope expansion, which §11 of the spec forbids.
+
+---
+
+## T-27 — Register the Stripe webhook endpoint against the deployed host
+
+- **Objective** — Close the one remaining gap in the billing path. Products,
+  prices and the plan-column wiring are all in place; without a webhook the
+  application never learns that a purchase happened.
+- **Source** — Verification pass OL-0010, 2026-08-10.
+  `GET /v1/webhook_endpoints` on `acct_1QBl8ZINLKqe1c6g` returned an empty list.
+- **Workstream** finance · **Priority** **Critical** · **Owner** Owner ·
+  **Due** 2026-08-13 (proposed)
+- **Dependencies** — **The deployed host URL.** This is the only missing input;
+  the agent does not have it and will not guess one. Everything else is ready.
+- **Approval class** — **F (system change)**. Covered in principle by A-05, but
+  A-05's Limits block explicitly excludes registering an endpoint against an
+  unverified host, so confirm the host before executing.
+- **Why this is the binding constraint** — Checkout would succeed and the
+  customer would be charged, while `subscriptions` stayed empty and
+  `effectiveAccessRank` returned free-tier. The member pays and gets nothing.
+  That is worse than checkout failing cleanly, because the failure is silent and
+  lands on the customer rather than on us.
+- **Execution steps** — (1) Confirm the deployed host; (2) create the endpoint at
+  `POST https://<host>/api/v1/webhooks/stripe` subscribed to exactly the five
+  events the handler switches on — `checkout.session.completed`,
+  `customer.subscription.created`, `customer.subscription.updated`,
+  `customer.subscription.deleted`, `invoice.payment_failed`; (3) put the signing
+  secret in `STRIPE_WEBHOOK_SECRET` in the production environment — **the secret
+  never enters this repository, a commit message or a log entry**; (4) send a
+  test event and confirm exactly one `billing_events` row appears with the
+  matching `stripe_event_id`.
+- **Cost** — None.
+- **Risk** — A wrong URL fails closed and silently: Stripe retries, the app never
+  hears, and the symptom appears as "member paid but has no access". Subscribing
+  to more events than the handler switches on is harmless but noisy. Rollback:
+  delete the endpoint.
+- **Completion proof required** — The endpoint listed by
+  `GET /v1/webhook_endpoints` with the five events, plus one `billing_events`
+  row written by a real test event. **Not the creation response alone** — the
+  destination check is the proof.
+- **Status** Blocked on the host URL · **Next action** — Owner supplies the
+  deployed host, or confirms the application is not yet deployed, in which case
+  this task waits on deployment rather than on a decision.

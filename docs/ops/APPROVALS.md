@@ -30,13 +30,18 @@ and actual result.
 | A-02 | Correct drifted documentation and the legal-review flags  | B     | **Approved**            | T-04 T-05                          |
 | A-03 | Exclude demo accounts from owner-facing revenue reporting | E-adj | **Approved**            | T-06 T-12                          |
 | A-04 | Correct the annual MRR arithmetic                         | E-adj | **Approved**            | T-07                               |
-| A-05 | Create Stripe products and prices; run the payment matrix | E + F | **Pending**             | T-11                               |
+| A-05 | Create Stripe products and prices; run the payment matrix | E + F | **Approved**            | T-11 T-27                          |
 | A-06 | Commission legal review of the ten legal documents        | G     | **Pending**             | T-13                               |
 | A-07 | Subscribe to an upload virus-scanning service             | E + F | **Pending**             | T-14                               |
 | A-08 | Build the operations control plane                        | B     | **Approved**            | T-18 T-19 T-20 T-21 T-22           |
 
-**Three packets are with the owner: A-05, A-06, A-07.** A-05 and A-06 both block
-launch. A-07 does not block launch but does block accepting uploads safely.
+**A-05 and A-06 were answered on 2026-08-10; A-07 remains with the owner.** A-05
+turned out to be already satisfied in the live account — see its Actual result,
+and note the two variances it recorded, one of which (T-27, the missing webhook
+endpoint) is now the binding gap in the billing path. A-06 is approved, but the
+agent neither engages counsel nor makes any legal determination; what it
+produces is the briefing package for the owner to send. A-07 does not block
+launch but does block accepting uploads safely.
 
 ---
 
@@ -257,9 +262,49 @@ row per webhook; the granted rank matches the plan on every transition.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._
-**Affected records** — T-11.
-**Actual result** — Not executed.
+**Response** — **APPROVED**, 2026-08-10, owner ("finalize stripe and review
+approved").
+
+**Affected records** — T-11, T-27.
+
+**Actual result** — **Approved, and found already satisfied on inspection. No
+object was created.**
+
+Reading the destination before writing — the execution standard in §11 — showed
+the work already done in the live account `acct_1QBl8ZINLKqe1c6g`
+("Down Dirty 84 llc"), created 2026-07-29:
+
+- Four products, each carrying `plan_code`, `access_rank` and `product_line`
+  metadata: Free Preview (0), Weekly (10), Detailed (20), Premium (30).
+- Six recurring prices, amounts in cents, matching `supabase/seed.sql` exactly:
+  `gol_weekly_monthly` 1500, `gol_weekly_annual` 15000,
+  `gol_detailed_monthly` 3900, `gol_detailed_annual` 39000,
+  `gol_premium_monthly` 9900, `gol_premium_annual` 99000.
+- All six ids already written onto `public.subscription_plans` in the live
+  Supabase project `bbgikfblcahhvrpxiqnd`, verified in **both** directions: each
+  stored id was resolved back to its Stripe price and the amount checked.
+
+Creating anything would have duplicated live products on a revenue-bearing
+account. The deduplication rule in §9 is why this was read first.
+
+**Two variances recorded against the plan above, neither of them executed:**
+
+1. **The plan's test-mode-first sequence is not executable by an agent here.**
+   Every object returns `livemode: true` and the connector exposes no test-mode
+   path. Step 5's ordering is therefore moot and steps 1–3 were already live
+   when approval arrived. **T-11's matrix leg (now T-02-equivalent) is re-scoped
+   to the owner or a developer holding test-mode keys** — see T-11.
+2. **No webhook endpoint exists.** `GET /v1/webhook_endpoints` returned an empty
+   list. Checkout would complete and the application would never learn of it,
+   because `checkout.session.completed` and `customer.subscription.*` have
+   nowhere to land. Raised as **T-27**, blocked on the deployed host URL, which
+   the agent does not have. This is now the binding gap in the billing path —
+   not the products.
+
+**Limits** — This approval covered creating products and prices and populating
+the plan columns. It did **not** authorise a live charge, publishing prices to
+customers, or registering a webhook against an unverified host. Those remain
+separate decisions.
 
 ---
 
