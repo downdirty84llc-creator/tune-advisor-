@@ -214,7 +214,7 @@ already on `subscription_plans`, which is what checkout reads.
 
 ### Background jobs
 
-`vercel.json` declares all thirteen cron schedules. Set `CRON_SECRET`; Vercel
+`vercel.json` declares all fourteen cron schedules. Set `CRON_SECRET`; Vercel
 sends it automatically as a bearer token when the variable is present. Jobs
 accept both `GET` (what Vercel Cron sends) and `POST`.
 
@@ -226,7 +226,7 @@ curl -X POST -H "Authorization: Bearer $CRON_SECRET" \
 ```
 
 Available jobs: `publish-scheduled`, `premium-alerts`, `saved-search-matching`,
-`process-exports`, `evaluate-deadlines`, `deadline-reminders`,
+`process-exports`, `scan-attachments`, `evaluate-deadlines`, `deadline-reminders`,
 `reverification-reminders`, `stale-source-reminders`, `expire-lapsed-access`,
 `sync-subscriptions`, `aggregate-analytics`, `prune`,
 `distribute-weekly-report`.

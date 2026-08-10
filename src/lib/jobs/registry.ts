@@ -17,6 +17,7 @@ import {
   syncSubscriptionsJob,
 } from '@/lib/jobs/maintenance-jobs';
 import { distributeWeeklyReportJob } from '@/lib/jobs/report-jobs';
+import { scanAttachmentsJob } from '@/lib/jobs/scan-jobs';
 import type { JobDefinition } from '@/lib/jobs/runner';
 
 /**
@@ -36,6 +37,7 @@ export const JOBS: readonly ScheduledJob[] = [
   { definition: premiumAlertsJob, schedule: '*/15 * * * *' },
   { definition: savedSearchMatchingJob, schedule: '*/30 * * * *' },
   { definition: processExportsJob, schedule: '*/5 * * * *' },
+  { definition: scanAttachmentsJob, schedule: '*/10 * * * *' },
   { definition: evaluateDeadlinesJob, schedule: '10 5 * * *' },
   { definition: deadlineRemindersJob, schedule: '0 13 * * *' },
   { definition: reverificationRemindersJob, schedule: '30 5 * * *' },

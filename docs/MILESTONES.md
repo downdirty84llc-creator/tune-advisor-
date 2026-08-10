@@ -133,9 +133,22 @@ See `RUNBOOK.md` for the checklist.
    opt-out and the refund workflow are all built (migrations `…002300` and
    `…002400`). Counsel is reviewing an accurate description, which was the
    point of settling them first. What remains is the review itself.
-3. **Virus scanning on uploads.** Spec 20 says "where supported". The
-   `attachments.scan_status` column exists and defaults to `pending`; no scanner
-   is wired to it.
+3. **Attachment uploads.** Scanning is built; the upload and download surface
+   is not. The `attachments` table, storage bucket and RLS policies exist, but
+   nothing in `src/` reads or writes them — there is no upload endpoint and no
+   download endpoint. The earlier note here said only the scanner was missing,
+   which understated it.
+
+   What is built: `canServeAttachment()` serves a file only when the scan
+   status is exactly `clean` and refuses anything unrecognised; the
+   `scan-attachments` job (every ten minutes) moves `pending` files on through
+   a provider behind `VIRUS_SCAN_PROVIDER`; and migration `…002500` constrains
+   the column so an unwritable state cannot be stored. With no provider
+   configured every attachment stays `pending` and is therefore never served —
+   the feature is off, not bypassed.
+
+   When the upload and download endpoints are added, the download must call
+   `canServeAttachment()` and refuse on anything but `clean`, staff included.
 4. **High-fidelity design and brand sign-off** (milestone 1).
 5. ~~**Super-administrator MFA reset.**~~ **Built.**
    `POST /api/v1/admin/staff/{id}/mfa-reset` removes a locked-out staff
