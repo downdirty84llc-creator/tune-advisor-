@@ -3,9 +3,14 @@
  *
  * These are drafted to describe how the product actually behaves — the access
  * rules, the billing behaviour, the retention posture — so that a lawyer is
- * reviewing an accurate description rather than writing from scratch. Every
- * document is marked as requiring review, and the launch checklist blocks
- * production on that review being signed off.
+ * reviewing an accurate description rather than writing from scratch. The
+ * launch checklist blocks production on that review being signed off.
+ *
+ * Seven of the ten carry `requiresReview: true` and render the banner. The
+ * three that do not — editorial standards, corrections, data sources — describe
+ * our own practice rather than binding the member to anything, so nothing turns
+ * on counsel's wording. That exemption has not been confirmed by counsel; the
+ * runbook carries it as an open decision rather than a settled one.
  */
 
 export interface LegalSection {

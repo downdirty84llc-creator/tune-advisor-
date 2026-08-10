@@ -172,9 +172,14 @@ Spec 28, milestone 10. Every line needs a name against it.
 
 ### Blocking
 
-- [ ] **Legal review of all twelve documents** in `src/lib/legal/documents.ts`.
-      Each is marked `requiresReview: true` and renders an "awaiting legal
+- [ ] **Legal review of the ten documents** in `src/lib/legal/documents.ts`.
+      Seven are marked `requiresReview: true` and render an "awaiting legal
       review" banner until cleared. This is the hard blocker.
+- [ ] Decide, on the record, whether the three documents marked
+      `requiresReview: false` — editorial standards, corrections policy, data
+      source policy — are genuinely exempt from counsel review. They render no
+      banner today and no note explains why, so the current state reads as an
+      oversight whether or not it is one.
 - [ ] Stripe live mode: products, prices, webhook endpoint, price ids written to
       `subscription_plans`.
 - [ ] Tier-by-tier test payment verifying each plan grants the correct access

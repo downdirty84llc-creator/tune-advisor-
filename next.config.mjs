@@ -32,8 +32,13 @@ const nextConfig = {
       },
       {
         // Nothing under these paths may be cached by a shared cache: they are
-        // per-user and access-rank dependent (spec 23).
-        source: '/(dashboard|account|saved|admin|api)/:path*',
+        // per-user and access-rank dependent (spec 23). Next.js already sends
+        // no-store for a dynamically rendered route, and every route here reads
+        // cookies — but the automatic behaviour follows from how a route
+        // happens to render, and a refactor that made one of them static would
+        // remove the header silently. This list is the deliberate statement.
+        source:
+          '/(dashboard|account|saved|opportunities|calendar|reports|admin|api)/:path*',
         headers: [
           {
             key: 'Cache-Control',
