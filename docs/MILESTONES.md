@@ -11,12 +11,22 @@ against a live Supabase instance or live Stripe account.
 
 **Partial.** A working design system exists (`tailwind.config.ts`,
 `src/app/globals.css`, `src/components/ui/primitives.tsx`) with a defined
-palette, type scale, and accessible primitives: focus-visible rings, meters with
-`role="meter"` and text labels, badges that never carry status by colour alone,
-reduced-motion support.
+palette and type scale.
 
-Not delivered: high-fidelity comparative design work, a confirmed brand
-direction, or owner sign-off. That is a design engagement, not a code artefact.
+The four accessibility claims made here were previously asserted rather than
+checked. They have now been verified against the code:
+
+| Claim | Verified |
+| --- | --- |
+| Focus-visible rings | `:focus-visible` is a global rule in `globals.css`, so it covers every interactive element rather than each component remembering to opt in |
+| Meters carry role and text | `role="meter"` with `aria-valuenow` / `aria-valuemin` / `aria-valuemax`, plus a visible label |
+| Status never by colour alone | `Pill` types `children` as required, so the compiler refuses a badge that is colour and nothing else |
+| Reduced motion respected | `@media (prefers-reduced-motion: reduce)` collapses animation and transition durations globally |
+
+Still not delivered, and none of it is a code artefact: high-fidelity
+comparative design work, a confirmed brand direction, and **owner sign-off**.
+Sign-off is the owner's to give — it is recorded here when given, with the
+date, and the launch checklist item in `RUNBOOK.md` stays unticked until then.
 
 ## Milestone 2 — Foundation
 
