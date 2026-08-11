@@ -53,9 +53,10 @@ open tasks yet — no intake routine has run against a live connector.
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-27 | Register the Stripe webhook endpoint against the deployed host      | finance    | Critical | Blocked             | Owner | A-05 approved    | 2026-08-13   |
+| T-28 | Deploy the application to a live host                               | ledger     | Critical | Blocked             | Owner | **A-09 pending** | 2026-08-14   |
 
 Counts: 14 Done · 1 Partly Done · 2 In Verification · 1 Awaiting Approval ·
-3 Blocked · 4 Planned · 2 Backlog.
+4 Blocked · 4 Planned · 2 Backlog.
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost. T-27
@@ -78,6 +79,7 @@ can do. An answered packet is not a finished task.
 | Owner action (engaging counsel)    | T-13                         |
 | Owner action (scheduling)          | T-23                         |
 | Owner input (deployed host)        | T-27                         |
+| Hosting account, no agent tooling  | T-28                         |
 | Owner or developer, test-mode keys | T-11                         |
 | Owner confirmation                 | T-19                         |
 | A seeded or live database          | T-06                         |
@@ -684,3 +686,43 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Status** Blocked on the host URL · **Next action** — Owner supplies the
   deployed host, or confirms the application is not yet deployed, in which case
   this task waits on deployment rather than on a decision.
+
+---
+
+## T-28 — Deploy the application to a live host
+
+- **Objective** — Put the Ledger on a real host. T-27 (the Stripe webhook) is
+  blocked on this, and so is every remaining live verification in the register.
+- **Source** — Owner instruction, 2026-08-10 ("Create a website"), after the
+  webhook question established that nothing is deployed.
+- **Workstream** ledger · **Priority** **Critical** · **Owner** Owner ·
+  **Due** 2026-08-14 (proposed)
+- **Dependencies** — A hosting account. **No Vercel or Netlify tooling is
+  attached to the agent session**, so this cannot be executed by Torque at all;
+  it is not a matter of approval.
+- **Approval class** — **F (system change)**. New packet **A-09**.
+- **State verified, not assumed** — the production database is ready: 36 tables,
+  36 with RLS enabled, 4 plans and 159 counties seeded, in project
+  `bbgikfblcahhvrpxiqnd`. Stripe products, prices and the plan-column wiring are
+  live and correct (OL-0010). The production build passes and generates 29
+  static pages. What is missing is hosting and environment variables — not code.
+- **Execution steps** — Written out in full in `docs/ops/DEPLOYMENT-PACKAGE.md`,
+  **marked NOT EXECUTED**. Five steps: create the project (setting the
+  production branch to `claude/georgia-opportunity-ledger-kfpt4c`, since there is
+  no `main`); set environment variables; deploy and verify in the destination;
+  register the webhook; confirm the thirteen crons.
+- **Cost** — Hosting plan, **not recorded**. Obtaining that figure is part of
+  A-09; it is not estimated here.
+- **Risk** — Deploying with a wrong or missing Supabase key produces a
+  permanently blank homepage rather than an error, because the public loaders
+  fail closed. Step 3's checks exist to catch exactly that. Rollback: promote the
+  previous deployment.
+- **Completion proof required** — The production URL serving `/`, `/pricing` and
+  `/legal/terms`; `curl -I` on `/dashboard` returning the no-store header (which
+  also closes T-07's outstanding check); thirteen crons listed; and one
+  `billing_events` row from a Stripe test event.
+- **Status** Blocked · **Next action** — Owner creates the hosting project, or
+  attaches Vercel to an agent session so the deploy can be driven from here.
+- **Deploying is not launching.** `opportunities` is 0 and seven legal documents
+  still render the review banner. A live site with an empty database and
+  unreviewed terms is not a product you would announce.
