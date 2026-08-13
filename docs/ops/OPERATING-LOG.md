@@ -221,7 +221,85 @@ in `8337e41`. It is logged as it is rather than as it was described.
 
 ---
 
-## Next entry: OL-0010
+## OL-0010 — Merge the Rev branch and the Torque branch into one
+
+- **Timestamp** 2026-08-13T14:52:00Z
+- **Task** T-23 · **Approval** A-09
+- **Action** Merged `origin/claude/claude-md-docs-jjveuq` into
+  `claude/claude-md-docs-cqvhy6`, resolved two conflicting files by hand, ran the
+  verification chain, and pushed.
+- **Tool** `git merge`, `git commit`, `git push`, `npm run typecheck`,
+  `npm run lint`, `npm test`, `npx prettier --check`
+- **Source** Owner instruction, 2026-08-13.
+- **Operator** Claude (agent), acting on both agents' records
+- **Before** Two divergent branches from merge base `90ba2f5`. Torque's branch
+  carried `src/lib/billing/mrr.ts`, `src/lib/analytics/sample-data.ts`, admin
+  fixes and 339 lines of tests that Rev's branch did not have. Rev's branch
+  carried six recovered migrations, the public-client caching fix and the upgrade
+  telemetry that Torque's did not.
+- **After** One branch, `claude/claude-md-docs-cqvhy6`, at merge commit
+  `8251ec3`, carrying both. `claude/claude-md-docs-jjveuq` is now stale and is
+  an ancestor of the merged tip — nothing on it was lost.
+- **Evidence** — real output:
+  - Conflicts were confined to two files, `CLAUDE.md` (add/add) and
+    `docs/MILESTONES.md`; all source files merged automatically.
+  - `CLAUDE.md` resolved to Torque's version, then patched with the facts only
+    Rev's side knew: 27 migrations rather than 21, `supabase/stripe-prices.live.sql`,
+    the `docs/agents/` and `docs/growth/` trees, and the security note on
+    migrations 0022–0027.
+  - `docs/MILESTONES.md` resolved by combining both: Rev's Stripe-done and
+    attachment-scanning items, with Torque's more precise finding that **ten**
+    legal documents exist and **seven** carry `requiresReview: true`.
+  - `npm run typecheck` — `tsc --noEmit`, exit 0, no diagnostics.
+  - `npm run lint` — `✔ No ESLint warnings or errors`.
+  - `npm test` — `Test Files 12 passed (12)`, `Tests 187 passed (187)`,
+    duration 1.50s. Both agents' suites run together and both pass.
+  - `npx prettier --check CLAUDE.md docs/MILESTONES.md` —
+    `All matched files use Prettier code style!`
+  - `git push` — `5411c75..8251ec3  claude/claude-md-docs-cqvhy6 -> claude/claude-md-docs-cqvhy6`.
+    No pull request was opened; no other branch was pushed to.
+- **Error** None.
+- **Remediation** The merged `CLAUDE.md` still claimed **179 tests in 11 files**,
+  which was true of Torque's branch alone and false of the merge. Corrected to
+  **187 tests in 12 files** before committing, against the actual `npm test`
+  output rather than by adding the two numbers.
+
+## OL-0011 — Converge the schedule on one branch and retire the overlapping Routine
+
+- **Timestamp** 2026-08-13T15:05:00Z
+- **Task** T-23 · **Approval** A-09
+- **Action** Updated the four Torque Routines to check out and push to the merged
+  branch, and deleted Rev's weekly growth brief Routine.
+- **Tool** `update_trigger` ×4, `delete_trigger` ×1, `list_triggers`
+- **Source** A-09
+- **Operator** Claude (agent)
+- **Before** Five DD84 Routines. Four Torque Routines pulled and pushed
+  `claude/claude-md-docs-jjveuq`; Rev's weekly brief pulled
+  `claude/claude-md-docs-cqvhy6`. Rev's fired Mondays 11:00 UTC, 25 minutes
+  before Torque's Monday opportunity scan, reporting much of the same ground.
+- **After** Four Routines, all on `claude/claude-md-docs-cqvhy6`. Each prompt now
+  carries a branch note explaining that jjveuq is stale, and an explicit
+  instruction not to write into `docs/growth/` — the two ledgers stay separate on
+  the shared branch.
+- **Evidence** — real output. `list_triggers` after the change returns four DD84
+  Routines, each with the merged branch in its prompt and `updated_at` on
+  2026-08-10–13; `trig_014f6Hv1ccKeGHj8mZ59MB2v` returns
+  `deleted trigger trig_014f6Hv1ccKeGHj8mZ59MB2v` and no longer appears.
+  Rev's deleted prompt is preserved verbatim in `docs/agents/README.md` so the
+  Routine can be recreated.
+- **Error** None from the change itself.
+- **Remediation** A separate finding, not caused here and not fixed here: the
+  four Torque Routines have been firing since 2026-08-07 — most recently
+  2026-08-13 at 10:25 and 10:50 UTC — and **`docs/ops/briefs/` still contains
+  nothing but its README**. No routine run has ever committed a brief or an
+  operating-log entry. This is precisely the failure T-23 named in advance: "a
+  routine that fires but writes nothing looks like a routine that found nothing."
+  Raised as **T-27**. The two firings that happened today ran against jjveuq,
+  before the repoint, so the next scheduled run is the first real test.
+
+---
+
+## Next entry: OL-0012
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

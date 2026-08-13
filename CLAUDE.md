@@ -454,11 +454,27 @@ and storefront work. Its spec is `docs/DD84-GROWTH-AGENT.md`, its definition is
 `.claude/agents/rev.md`, its verified business context is
 `docs/agents/ventures.md`, and its record is `docs/growth/`.
 
-They were built independently and merged afterwards. **Keep their records
-separate** — `docs/ops/` and `docs/growth/` are different ledgers, and merging
-them loses the distinction between what was operated and what was proposed.
-Both stop at an approval gate before anything that spends money, publishes, or
-reaches a customer.
+They were built independently, on separate branches, each unaware of the other,
+and were merged on 2026-08-13. Three things follow, and all three are easy to
+undo by accident:
+
+- **One branch.** `claude/claude-md-docs-jjveuq` is merged and stale. Do not
+  check it out and do not push to it — everything Torque wrote is on the merged
+  branch, and reviving jjveuq re-creates the divergence.
+- **Two ledgers, still separate.** `docs/ops/` is what was operated,
+  `docs/growth/` is what was proposed. Read across them freely; never write
+  across them. Merging them loses exactly the distinction that makes either
+  useful.
+- **One schedule, Torque's.** Four Routines: inbox intake and daily brief on
+  weekdays, cash review on Fridays, Georgia opportunity scan on Mondays. Rev has
+  none — its weekly brief was retired as duplicative of the daily command brief,
+  and Rev now runs on demand (`@rev`, `/rev-discovery`, `/rev-daily-brief`).
+  `docs/agents/README.md` carries the reasoning and the deleted prompt.
+  **The Routines have never actually committed a brief** — see `docs/ops/`
+  T-27 before treating the cadence as coverage.
+
+Both agents stop at an approval gate before anything that spends money,
+publishes, or reaches a customer.
 
 ### Torque — the DD84 operating protocol for agents
 

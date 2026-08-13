@@ -27,66 +27,122 @@ run it.
 /rev-discovery        # full discovery pass for a venture
 ```
 
-**Unattended.** A Routine — _Rev — weekly growth brief (DD84)_,
-`trig_014f6Hv1ccKeGHj8mZ59MB2v` — fires Mondays at 11:00 UTC (7am EDT) into a
-fresh session, with push and email notification. It is read-only by design: it
-can write a brief and commit it, and nothing else. An agent that runs while
-nobody is watching should not be able to spend money or publish.
+**Unattended — nothing, as of 2026-08-13.** Rev has no scheduled Routine. Its
+weekly growth brief was retired when the two agent branches were merged; the
+reasoning and the deleted prompt are in the next section. Rev runs on demand.
 
-**Weekly, not daily, on purpose.** §26 specifies a daily operating brief. At the
-current activity level — about one visitor a day and no orders — a daily brief
-would say "nothing changed" almost every time, and the skill itself warns that
-an inflated brief trains the owner to ignore it. Move it to daily the moment
-there is real order flow.
+## Rev and Torque — resolved 2026-08-13
 
-> **Known limitation: the Routine has no connectors.** The fired session runs
-> **without** Shopify, Stripe and Supabase, so it can read the repository and
-> compare records but **cannot pull live sales, session or charge data** — which
-> is most of the value.
->
-> **Retried 2026-08-07 and confirmed unfixable from here.** Passing `connectors`
-> to `create_trigger` returns _"the connectors parameter is not available for
-> this organization"_. It is not a session-grant problem; the parameter is
-> closed to this tool entirely.
->
-> **It is fixable, and there is proof.** An older Routine on this account —
-> _Weekly Georgia Opportunity Ledger summary_, `created_via: http_api` — does
-> carry connectors (Canva, Gmail, Google Calendar, Google Drive, PayPal, Shopify,
-> Stripe). Routines created through the **claude.ai Routines UI** hold their
-> grants; ones created through this MCP tool do not.
->
-> **The fix:** recreate the weekly brief from the claude.ai Routines UI. Until
-> then it is a repository digest, and `/rev-daily-brief` run by hand is the way
-> to get real numbers.
+**There is a second agent on this account.** Torque is the _Operations Execution
+Agent_, created within minutes of Rev and, until 2026-08-13, running on its own
+branch in complete ignorance of it. Two agents writing overlapping briefs to two
+branches produce contradictory records, and the contradiction is not obvious
+until someone acts on the wrong one. Here is what was done about it, and why.
 
-## Overlap with Torque — read before adding more automation
+**One branch.** `claude/claude-md-docs-jjveuq` was merged into
+`claude/claude-md-docs-cqvhy6`. This was not tidying: each branch held real work
+the other lacked. Torque's side carried `src/lib/billing/mrr.ts`,
+`src/lib/analytics/sample-data.ts` and 339 lines of tests; Rev's carried six
+recovered migrations — two of them security hardening — the public-client caching
+fix and the upgrade telemetry. Either branch shipped alone would have lost the
+other half. The merged branch is the only live one; **jjveuq is stale, and
+nothing on it was lost — it is an ancestor of the merged tip.**
 
-**There is a second agent system on this account**, created within minutes of
-Rev and running on a different branch:
+**Two ledgers, still separate.** `docs/ops/` is what was operated;
+`docs/growth/` is what was proposed. They share a branch and nothing else. Each
+Torque Routine prompt now says explicitly that it may read `docs/growth/` and
+must not write into it.
 
-| Routine                              | Schedule              | Agent   |
-| ------------------------------------ | --------------------- | ------- |
-| DD84 Daily Command Brief             | Weekdays 10:50 UTC    | Torque  |
-| DD84 Inbox and Lead Intake           | Weekdays 10:20 UTC    | Torque  |
-| DD84 Weekly Cash and Revenue Review  | Fridays 11:10 UTC     | Torque  |
-| DD84 Weekly Georgia Opportunity Scan | Mondays 11:25 UTC     | Torque  |
-| **Rev — weekly growth brief**        | **Mondays 11:00 UTC** | **Rev** |
+**One schedule.** Rev's weekly Routine is deleted.
 
-Torque is the _Operations Execution Agent_. It works on branch
-`claude/claude-md-docs-jjveuq` with its own structure — `docs/ops/`,
-`TASK-REGISTER.md`, `APPROVALS.md`, `OPERATING-LOG.md` — and its own class-based
-authority model. Rev works on `claude/claude-md-docs-cqvhy6` with `docs/growth/`.
+| Routine                              | Schedule           | Agent  |
+| ------------------------------------ | ------------------ | ------ |
+| DD84 Inbox and Lead Intake           | Weekdays 10:20 UTC | Torque |
+| DD84 Daily Command Brief             | Weekdays 10:50 UTC | Torque |
+| DD84 Weekly Cash and Revenue Review  | Fridays 11:10 UTC  | Torque |
+| DD84 Weekly Georgia Opportunity Scan | Mondays 11:25 UTC  | Torque |
 
-**They do not know about each other, and they overlap.** Torque's daily command
-brief already reports money moved, approvals pending and priorities; Rev's
-weekly brief reports much of the same. Rev's Monday 11:00 sits 25 minutes before
-Torque's Monday scan.
+**Why Rev's Routine went rather than Torque's.** Three reasons, in order of
+weight. Torque's daily command brief already reports money moved, approvals
+pending and today's priorities — most of what Rev's weekly brief reported. Rev's
+Monday 11:00 sat 25 minutes ahead of Torque's Monday scan, so the two would read
+the same ground and could disagree. And the fired Rev session had **no
+connectors**, so it could not pull live Shopify or Stripe numbers anyway — the
+part that carried the value. Rev's actual value has come from work asked for by
+name: discovering that the Ledger could not take payment, that revenue stopped
+eleven months ago, that a funnel event had never fired. None of that came out of
+a schedule.
 
-This was not a deliberate design — Rev was built without knowledge of Torque.
-**Before adding any further automation, decide whether these merge, divide by
-remit, or one is retired.** Two agents writing overlapping briefs to two
-branches will produce contradictory records, and the contradiction will not be
-obvious until someone acts on the wrong one.
+> **The connector limitation, recorded because it still applies to Torque.**
+> Passing `connectors` to `create_trigger` returns _"the connectors parameter is
+> not available for this organization"_ — retried 2026-08-07 and confirmed. It is
+> not a session-grant problem; the parameter is closed to this tool. **It is
+> fixable and there is proof:** an older Routine on this account,
+> `created_via: http_api`, does carry Canva, Gmail, Google Calendar, Google
+> Drive, PayPal, Shopify and Stripe. Routines created through the **claude.ai
+> Routines UI** hold their grants; ones created through the MCP tool do not.
+> Torque's four Routines were created through the MCP tool, so they inherit the
+> same blindness — which is why their prompts insist that an unreachable
+> connector makes a section "not available this run" rather than an estimate.
+
+**To bring Rev's brief back**, recreate it from the claude.ai Routines UI so it
+holds connectors, and move it off Monday morning. The deleted prompt, verbatim:
+
+<details>
+<summary>Rev — weekly growth brief (DD84), Mondays 11:00 UTC, deleted 2026-08-13</summary>
+
+```
+Run the Rev weekly growth brief for Down Dirty 84 LLC.
+
+You are Rev, the marketing and revenue agent. The repository
+downdirty84llc-creator/tune-advisor- (branch claude/claude-md-docs-cqvhy6)
+contains everything you need:
+
+1. Read `.claude/agents/rev.md` — your operating instructions and authority limits.
+2. Read `docs/agents/ventures.md` — the venture registry of verified business facts.
+3. Read the newest files in `docs/growth/` and `docs/growth/briefs/`.
+4. Follow `.claude/skills/rev-daily-brief/SKILL.md` and produce the brief.
+
+This run is READ-ONLY. You may read APIs, read the repository, write a brief to
+`docs/growth/briefs/YYYY-MM-DD-weekly-brief.md`, and commit and push that file.
+You may also update a stale figure in `docs/agents/ventures.md` with its new
+verification date.
+
+You must NOT: publish anything, send any message to any customer, spend
+anything, create or change a Stripe object, change a price, or alter the live
+Shopify storefront. If something urgent surfaces, say so loudly in the brief and
+stop — escalation is the output, not action.
+
+Pull live numbers where the connectors are available (Shopify sales, sessions
+and funnel; Stripe charges) and compare against the previous brief. The change
+is the story.
+
+Lead with money: revenue in the period, orders, and days since the last payment
+(the last one was 2025-09-12).
+
+Then: what moved, approvals waiting, any new customer or order with its next
+action and date, problems, and exactly one next highest-value action.
+
+If genuinely nothing changed, say so in three lines. Do not inflate a quiet week
+— a brief that manufactures significance trains the owner to ignore it.
+```
+
+</details>
+
+> **Before trusting the schedule at all, read `docs/ops/` T-27.** All four Torque
+> Routines have been firing since 2026-08-07 — twice on 2026-08-13 alone — and
+> `docs/ops/briefs/` contains nothing but its README. **No routine run has ever
+> committed a brief.** The cadence above describes what is scheduled, not what
+> has been delivered.
+
+**One more Routine exists and is nobody's.** _Weekly Georgia Opportunity Ledger
+summary_ (`trig_01FxDef9B5snYTW42FfcMEbD`, Mondays 09:00 UTC) predates both
+agents, targets the dead branch `claude/kind-keller`, holds live connectors
+including Gmail, and its step 6 instructs it to **"email the summary to paid
+subscribers."** The Ledger is not deployed and has zero users, so there is
+nobody to mail today — but an unattended Routine with a mail connector and a
+standing instruction to send is the one genuine safety problem in the list, and
+it is outside both agents' authority to touch. **Owner decision needed.**
 
 ## The safety model, in one line
 

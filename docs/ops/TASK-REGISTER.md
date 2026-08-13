@@ -538,7 +538,14 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   not just for output.
 - **Expected result** — Six scheduled routines, each with a first run recorded.
 - **Completion proof required** — One `OL-` entry per routine's first firing.
-- **Status** Blocked (on owner) · **Next action** — Owner schedules.
+- **Status** In Verification · **Next action** — Confirm the next scheduled run
+  writes a brief. **Partly done, 2026-08-13.** The owner scheduled four of the
+  six routines — daily brief, inbox intake, cash review and opportunity scan —
+  on 2026-08-07. Follow-up and site monitor are still unscheduled. All four were
+  repointed at the merged branch under A-09 (OL-0011). **The completion proof is
+  still missing:** this task requires one `OL-` entry per routine's first
+  firing, and no routine run has yet written one. See T-27 — that gap is now its
+  own task, and T-23 cannot close until it is resolved.
 
 ## T-24 — Build the weekly marketing opportunity scan routine
 
@@ -615,3 +622,44 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Status** Planned · **Next action** — Step 1. **Not fixed during T-22**:
   reformatting 105 unrelated files while landing the operations control plane
   would be silent scope expansion, which §11 of the spec forbids.
+
+## T-27 — Routines fire but commit nothing
+
+- **Objective** — Find out why four scheduled routines have run for a week
+  without writing a single brief, and make the next run leave evidence.
+- **Source** — Agent finding while executing A-09 on 2026-08-13.
+- **Workstream** ops · **Priority** **High** · **Owner** Agent ·
+  **Due** 2026-08-15
+- **Dependencies** — none. It blocks T-23.
+- **Approval class** — A. Diagnosis reads logs and repository state; it changes
+  no live system. Any fix that alters a Routine's schedule or permissions comes
+  back to the owner, since A-09's grant was consumed on execution.
+- **The finding, precisely** — `list_triggers` reports `last_fired_at` values
+  through 2026-08-13 for all four Torque Routines: the daily brief at 10:50 UTC
+  and the inbox intake at 10:25 UTC that morning, the opportunity scan on
+  2026-08-10, the cash review on 2026-08-07. Against that,
+  `git log -- docs/ops/` on the merged branch shows exactly two commits, both
+  written by hand during T-22, and `docs/ops/briefs/` contains only its README.
+  **Zero briefs exist.** The routines are being invoked and producing nothing
+  that survives the session.
+- **Candidate causes, none confirmed** — (1) the fired session cannot push,
+  because it lacks credentials for the branch or the push is refused; (2) it
+  runs but the working directory is empty and the clone step fails, so it never
+  reaches the repository; (3) it produces the brief in its reply and treats
+  the reply as the deliverable, never committing; (4) no connector is reachable,
+  and the session stops rather than degrading each section to "not available
+  this run" and writing the brief anyway. **(3) and (4) are failures of the
+  prompt; (1) and (2) are failures of the environment**, and the fix differs.
+- **Execution steps** — (1) Read the session transcript of the 2026-08-13 10:50
+  daily-brief firing and establish which of the four it was — this is one lookup
+  and it settles the question; (2) fix the cause: an environment fault goes to
+  the owner, a prompt fault is a `update_trigger` edit; (3) fire one Routine
+  manually with `fire_trigger` and watch for the commit; (4) record an `OL-`
+  entry with the resulting commit hash, which is also the proof T-23 needs.
+- **Cost** — none. **Risk** — low to diagnose. The real risk is leaving it: four
+  Routines firing daily into nothing is worse than no automation, because the
+  schedule reads as coverage that does not exist.
+- **Expected result** — One scheduled run that ends with a dated brief committed
+  to `docs/ops/briefs/` and an entry in `OPERATING-LOG.md`.
+- **Completion proof required** — The commit hash of a routine-written brief.
+- **Status** Planned · **Next action** — Step 1.

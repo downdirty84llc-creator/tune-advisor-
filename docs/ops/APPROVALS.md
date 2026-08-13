@@ -414,3 +414,52 @@ by the agent — the owner holds scheduling. No pull request.
 **Actual result** — Executed. Verification output and the commit hash are
 recorded in `OPERATING-LOG.md`. T-19 remains In Verification pending the owner's
 confirmation that the seeded register matches their own record.
+
+---
+
+## A-09 — Merge the two agent branches and converge the schedule
+
+**Decision requested** — Merge `claude/claude-md-docs-jjveuq` (Torque) into
+`claude/claude-md-docs-cqvhy6` (Rev), repoint the four scheduled Torque routines
+at the merged branch, and retire Rev's weekly Routine.
+**Business objective** — One record. Two agents were built independently within
+minutes of each other, each on its own branch, each holding code and documents
+the other lacked. Left alone they produce two divergent accounts of the same
+business, and the divergence is invisible until someone acts on the wrong one.
+**Source and context** — Owner instruction, 2026-08-13: "resolve it", then
+"Approve" against the plan below.
+**Recommended plan** — (1) `git merge` Torque's branch into Rev's, resolving the
+two conflicting files by hand; (2) run the full verification chain; (3) push;
+(4) `update_trigger` on the four Torque routines so they check out and push to
+the merged branch, with an explicit instruction not to write into the other
+agent's ledger; (5) `delete_trigger` on Rev's weekly growth brief.
+**Alternatives** — Keep both branches and reconcile by hand each week: rejected,
+it is manual work that grows. Retire Torque and keep Rev: rejected, Torque holds
+the operating record and `mrr.ts`, and operations is the larger remit. Keep Rev's
+Routine and merely move it off the Monday collision: rejected — the fired session
+has no connectors, so it could not read live sales anyway, and Torque's daily
+brief already reports money moved, approvals pending and priorities.
+**Cost and cash impact** — None.
+**Risks and safeguards** — Three. A bad merge could lose Torque's work, so the
+merge was taken with `--no-ff` semantics and every conflicting hunk resolved by
+reading both sides rather than taking one wholesale. Merging the two ledgers
+would destroy the distinction between what was operated and what was proposed, so
+`docs/ops/` and `docs/growth/` stay separate and each routine prompt now says so
+explicitly. And deleting a Routine is not undoable, so Rev's prompt is preserved
+verbatim in `docs/agents/README.md` for recreation.
+**Systems affected** — This repository, and the account's scheduled Routines.
+No connector is written to; no customer-facing system changes.
+**Customer/public impact** — None.
+**Success test** — One branch carrying both agents' work; `npm run typecheck &&
+npm run lint && npm test` green; four routines pointing at the merged branch; the
+overlapping Routine gone; no pull request opened.
+
+**Response** — **APPROVED**, 2026-08-13.
+**Limits** — Supersedes the A-08 limit "no scheduled triggers are to be created
+by the agent" **for these five specific Routines only** — four updates and one
+deletion, all named above. It grants no standing scheduling authority; creating a
+new Routine still goes back to the owner.
+**Expiration** — Consumed on execution.
+**Affected records** — T-23, T-27.
+**Actual result** — Executed 2026-08-13. Evidence in `OPERATING-LOG.md`
+OL-0010 and OL-0011.
