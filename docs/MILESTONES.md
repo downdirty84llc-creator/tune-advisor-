@@ -143,22 +143,31 @@ See `RUNBOOK.md` for the checklist.
    opt-out and the refund workflow are all built (migrations `…002300` and
    `…002400`). Counsel is reviewing an accurate description, which was the
    point of settling them first. What remains is the review itself.
-3. **Attachment uploads.** Scanning is built; the upload and download surface
-   is not. The `attachments` table, storage bucket and RLS policies exist, but
-   nothing in `src/` reads or writes them — there is no upload endpoint and no
-   download endpoint. The earlier note here said only the scanner was missing,
-   which understated it.
+3. ~~**Attachment uploads.**~~ **Built, with the scanner still switched off.**
+   `POST /api/v1/admin/attachments` takes a multipart upload from any of the
+   four content roles — a role check, never a rank check — validates size and
+   type in `src/lib/attachments/storage.ts` before anything reaches the bucket
+   so a rejected file gets a 422 naming the accepted formats rather than a
+   constraint violation surfacing as a 500, stores the object under a path
+   carrying 128 bits of randomness, and writes the row through
+   `log_admin_action`. `scan_status` is left at its `pending` default: the API
+   never asserts a scan result it has not got.
 
-   What is built: `canServeAttachment()` serves a file only when the scan
-   status is exactly `clean` and refuses anything unrecognised; the
-   `scan-attachments` job (every ten minutes) moves `pending` files on through
-   a provider behind `VIRUS_SCAN_PROVIDER`; and migration `…002500` constrains
-   the column so an unwritable state cannot be stored. With no provider
-   configured every attachment stays `pending` and is therefore never served —
-   the feature is off, not bypassed.
+   `GET /api/v1/attachments/{id}` reads the row through the session-bound
+   client so `attachments_read` decides visibility, calls
+   `canServeAttachment()` and refuses anything but `clean` — staff included,
+   with no bypass — then mints a signed URL that lives two minutes. Migration
+   `…002600` adds the storage policy that lets a member's own session do that
+   signing, and it re-checks both the row's visibility and its scan status, so
+   a member holding a bucket path cannot step around the gate by asking
+   storage directly.
 
-   When the upload and download endpoints are added, the download must call
-   `canServeAttachment()` and refuse on anything but `clean`, staff included.
+   The honest remainder: no administrator UI yet (the endpoints are the
+   surface), no delete endpoint, and — the one that matters — with no
+   `VIRUS_SCAN_PROVIDER` configured every attachment stays `pending` and is
+   therefore never downloadable. The feature is off, not bypassed, but that
+   means an uploaded file is currently unreachable until a scanner is
+   configured. Configuring one is a launch task, not a code change.
 4. **High-fidelity design and brand sign-off** (milestone 1).
 5. ~~**Super-administrator MFA reset.**~~ **Built.**
    `POST /api/v1/admin/staff/{id}/mfa-reset` removes a locked-out staff

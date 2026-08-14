@@ -17,6 +17,11 @@ export const RATE_LIMITS = {
   reportGeneration: { limit: 20, windowSeconds: 3600 },
   adminPublish: { limit: 60, windowSeconds: 3600 },
   correction: { limit: 10, windowSeconds: 3600 },
+  // Staff-only, and each call writes up to 25 MB into storage and queues a
+  // vendor scan. Generous enough that attaching a folder of documents to a
+  // record never stalls, tight enough that a compromised staff session cannot
+  // fill the bucket unnoticed.
+  attachmentUpload: { limit: 60, windowSeconds: 3600 },
   // Destructive or data-disclosing, and neither is something a member needs to
   // do repeatedly.
   accountDeletion: { limit: 5, windowSeconds: 3600 },
