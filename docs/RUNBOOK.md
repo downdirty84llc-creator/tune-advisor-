@@ -107,6 +107,95 @@ Available jobs: `publish-scheduled`, `premium-alerts`, `saved-search-matching`,
 `sync-subscriptions`, `aggregate-analytics`, `prune`,
 `distribute-weekly-report`.
 
+### Hosting (Vercel)
+
+**No deployment exists yet.** The Vercel team
+`downdirty84llc-creators-projects` (`team_a5zEaV43TZGEAxcqY1GgilmG`) was
+confirmed to exist on 2026-08-13; whether it already contains a project for this
+repository was **not** confirmed, because the connector dropped mid-check. Check
+before creating a second one.
+
+**The build is green and needs no secrets.** Verified 2026-08-13 on the merged
+branch: `npm run build` exits 0 with only the four `NEXT_PUBLIC_*` values set,
+producing 7 static/SSG marketing routes and the rest server-rendered on demand.
+Nothing is prerendered that needs a service-role key, so a missing secret is a
+**runtime** failure on the routes that use it, not a failed build. Do not read a
+successful build as a working deployment.
+
+#### Two things will stop a first deploy
+
+**1. Five cron entries are sub-daily, and Hobby rejects those at deploy time.**
+Vercel allows 100 cron jobs per project on every plan, but **on Hobby a cron may
+only run once per day — an expression like `*/30 * * * *` fails the deployment
+with an error** rather than being silently downgraded. `vercel.json` currently
+declares five that would be refused:
+
+| Job                     | Schedule       |
+| ----------------------- | -------------- |
+| `process-exports`       | `*/5 * * * *`  |
+| `publish-scheduled`     | `*/15 * * * *` |
+| `premium-alerts`        | `*/15 * * * *` |
+| `saved-search-matching` | `*/30 * * * *` |
+| `sync-subscriptions`    | `0 */6 * * *`  |
+
+So the first deploy needs **either** a Pro plan **or** a deliberate decision to
+run those five daily. Downgrading them is not free and should not be done
+quietly: `process-exports` at daily means a member waits up to a day for a CSV,
+and `premium-alerts` at daily removes the "immediate" from the tier that is sold
+as immediate alerts. If the plan is Hobby, the honest options are to pay for Pro,
+or to change what the Premium tier promises. Whichever is chosen, `registry.ts`
+and `vercel.json` must move together — see CLAUDE.md §7.
+
+**2. Three secrets exist only with the owner.** `serverEnv()` throws on a missing
+required value, so the route fails rather than degrading.
+
+| Variable                             | Required | Who has it         | What breaks without it                         |
+| ------------------------------------ | -------- | ------------------ | ---------------------------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`           | yes      | known              | everything                                     |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY`      | yes      | known              | everything                                     |
+| `SUPABASE_SERVICE_ROLE_KEY`          | yes      | **owner only**     | webhook, all thirteen jobs, seeder             |
+| `STRIPE_SECRET_KEY`                  | yes      | **owner only**     | checkout, portal, subscription sync            |
+| `STRIPE_WEBHOOK_SECRET`              | yes      | **owner only**     | webhook rejects everything; paid access stalls |
+| `CRON_SECRET`                        | yes      | generate a new one | every job returns 401                          |
+| `NEXT_PUBLIC_SITE_URL`               | no       | set it anyway      | links and `sitemap.xml` point at localhost     |
+| `NEXT_PUBLIC_ENVIRONMENT`            | no       | see below          | defaults to `development`                      |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | no       | owner              | client-side Stripe surfaces                    |
+| `EMAIL_PROVIDER` / `EMAIL_API_KEY`   | no       | owner              | falls back to `console` — no mail is sent      |
+| `EMAIL_UNSUBSCRIBE_SECRET`           | no       | generate           | falls back to `CRON_SECRET` — see checklist    |
+| `SENTRY_DSN`                         | no       | owner              | errors go unreported                           |
+
+The Supabase values for the live project (`bbgikfblcahhvrpxiqnd`,
+ACTIVE_HEALTHY, us-east-1) are readable from the Supabase dashboard or MCP;
+`NEXT_PUBLIC_SUPABASE_URL` is `https://bbgikfblcahhvrpxiqnd.supabase.co`. The
+service-role key is deliberately not recorded here or anywhere else in the
+repository.
+
+#### Set `NEXT_PUBLIC_ENVIRONMENT` to `staging` for the first deploy
+
+Not `production`. The value gates more than a banner: `robots.ts` returns
+`disallow: /` for anything that is not `production`, so a staging value keeps the
+site out of search results. That is what you want while **seven of the ten legal
+documents still render an "awaiting legal review" banner** — a deploy is not a
+launch, and the launch checklist below is the thing that clears it. Flip to
+`production` when that checklist is signed off, not before.
+
+#### Order of operations
+
+1. Confirm whether a project already exists on the team.
+2. Decide the cron question above — plan, or schedules.
+3. Create the project from the GitHub repository; set the production branch
+   deliberately (there is no `main`; the remote default is
+   `claude/georgia-opportunity-ledger-kfpt4c`).
+4. Set the environment variables. `CRON_SECRET` and `EMAIL_UNSUBSCRIBE_SECRET`
+   should be freshly generated and different from each other.
+5. Deploy, then add the Stripe webhook endpoint at
+   `POST /api/v1/webhooks/stripe` — its signing secret cannot be known until a
+   host exists, so `STRIPE_WEBHOOK_SECRET` is set on a second pass and needs a
+   redeploy.
+6. Verify against the destination rather than the deploy log: load the homepage,
+   check `/robots.txt` disallows everything, and confirm `job_runs` gains a row
+   after the first cron fires.
+
 ---
 
 ## Operational procedures
