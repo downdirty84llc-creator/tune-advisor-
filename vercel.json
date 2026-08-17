@@ -55,6 +55,18 @@
       "schedule": "*/20 * * * *"
     },
     {
+      "path": "/api/v1/jobs/check-sources",
+      "schedule": "20 * * * *"
+    },
+    {
+      "path": "/api/v1/jobs/ingest-grants-gov",
+      "schedule": "15 6 * * *"
+    },
+    {
+      "path": "/api/v1/jobs/draft-weekly-report",
+      "schedule": "0 8 * * 1"
+    },
+    {
       "path": "/api/v1/jobs/distribute-weekly-report",
       "schedule": "0 12 * * 4"
     }

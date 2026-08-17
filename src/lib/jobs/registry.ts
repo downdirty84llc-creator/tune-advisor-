@@ -3,6 +3,7 @@ import {
   premiumAlertsJob,
   savedSearchMatchingJob,
 } from '@/lib/jobs/alert-jobs';
+import { checkSourcesJob, ingestGrantsGovJob } from '@/lib/jobs/ingestion-jobs';
 import {
   evaluateDeadlinesJob,
   publishScheduledJob,
@@ -17,6 +18,7 @@ import {
   syncSubscriptionsJob,
 } from '@/lib/jobs/maintenance-jobs';
 import { scanAttachmentsJob } from '@/lib/jobs/file-jobs';
+import { draftWeeklyReportJob } from '@/lib/jobs/report-assembly-jobs';
 import { distributeWeeklyReportJob } from '@/lib/jobs/report-jobs';
 import type { JobDefinition } from '@/lib/jobs/runner';
 
@@ -46,6 +48,11 @@ export const JOBS: readonly ScheduledJob[] = [
   { definition: aggregateAnalyticsJob, schedule: '15 6 * * *' },
   { definition: pruneJob, schedule: '45 6 * * *' },
   { definition: scanAttachmentsJob, schedule: '*/20 * * * *' },
+  { definition: checkSourcesJob, schedule: '20 * * * *' },
+  { definition: ingestGrantsGovJob, schedule: '15 6 * * *' },
+  // Mondays at 08:00 UTC — early in the week, so an editor has until
+  // Thursday's send to review, score and publish or schedule the draft.
+  { definition: draftWeeklyReportJob, schedule: '0 8 * * 1' },
   // Thursdays at 12:00 UTC — mid-morning Eastern, when the weekly lands.
   { definition: distributeWeeklyReportJob, schedule: '0 12 * * 4' },
 ];
