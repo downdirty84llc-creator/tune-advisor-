@@ -39,13 +39,45 @@ digital tuning tools, and merchandise.
 
 ### Systems
 
-| System          | Identifier                                                                                              | Verified   |
-| --------------- | ------------------------------------------------------------------------------------------------------- | ---------- |
-| Shopify store   | `shop.downdirty84llc.com` (`49qz1e-0r.myshopify.com`), Basic plan, USD, EDT                             | 2026-08-03 |
-| Stripe          | `acct_1QBl8ZINLKqe1c6g` — "Down Dirty 84 llc"                                                           | 2026-08-03 |
-| Invoicing       | **bookipay** — every historic payment came through it. Rev has **no API access** to it                  | 2026-08-03 |
-| Separate site   | `dd84tuning.com` — **not** the Shopify store. Returns HTTP 403 to automated fetches; contents `UNKNOWN` | 2026-08-03 |
-| Print-on-demand | Printify, District Photo, Sensaria, Printed Mint, MWW, Duplium, Lumient, Fulfill Engine, Deco Slides    | 2026-08-03 |
+| System          | Identifier                                                                                           | Verified              |
+| --------------- | ---------------------------------------------------------------------------------------------------- | --------------------- |
+| **Front door**  | **`dd84tuning.com`, built and hosted on Manus. Everything runs through it** — see below              | 2026-08-13 _(stated)_ |
+| Shopify store   | `shop.downdirty84llc.com` (`49qz1e-0r.myshopify.com`), Basic plan, USD, EDT                          | 2026-08-03            |
+| Stripe          | `acct_1QBl8ZINLKqe1c6g` — "Down Dirty 84 llc"                                                        | 2026-08-03            |
+| Invoicing       | **bookipay** — every historic payment came through it. Rev has **no API access** to it               | 2026-08-03            |
+| Print-on-demand | Printify, District Photo, Sensaria, Printed Mint, MWW, Duplium, Lumient, Fulfill Engine, Deco Slides | 2026-08-03            |
+
+### The front door — and why every traffic figure below is suspect
+
+**Owner statement, 2026-08-13: `dd84tuning.com` is a Manus site, and everything
+runs through it — the tuning business, the Ledger, and traffic into the Shopify
+store.** Shopify is a checkout behind it, not the shop window.
+
+**This is `stated`, not `verified`, and cannot currently be verified by Rev.**
+`dd84tuning.com` is blocked by this environment's network egress proxy, and there
+is no Manus connector on this account. Rev can read neither the site nor its
+analytics. Until that changes, **anything about the front door is the owner's
+word, recorded as such** — which is a legitimate source, and is still not the
+same as a reading.
+
+**What this invalidates.** Every traffic and channel figure in this file was read
+from Shopify. If Shopify is the second step, those numbers describe the back half
+of the funnel and say nothing about the front. They remain true of Shopify and
+must stop being quoted as if they described the business.
+
+> **Correction — the 2026-08-03 diagnosis was measured on the wrong surface.**
+> Rev concluded that DD84 Tuning's problem was **invisibility**, and rested it on
+> Shopify's 7 organic search visits in 180 days. That figure is real, but it
+> measures a page that may never have been the landing surface. **If the audience
+> arrives at `dd84tuning.com`, the business is not invisible — Rev was looking at
+> the wrong window.** The finding that survives untouched is the money: 0 Shopify
+> orders all time, and no payment collected since 2025-09-12. Those come from
+> Stripe and Shopify order records, not from traffic attribution.
+
+**The most valuable unknown in this file is now the Manus site's analytics.**
+Sessions, sources and conversions for `dd84tuning.com` would settle in one
+reading what the Shopify numbers cannot: whether anyone is arriving at all, and
+what they do next. Ask for it before commissioning any further marketing work.
 
 ### Revenue — the single most important fact in this file
 
@@ -75,13 +107,23 @@ with. It is simply not a question to keep asking.
 
 ### Traffic
 
+**Shopify only. This is the back half of the funnel** — see "The front door"
+above. `dd84tuning.com`'s own traffic is unread and is the figure that matters.
+
 | Metric                       | Value                                                                                                                                          | Verified   |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | Sessions, trailing 12 months | 574 (397 of them in the Jan 2026 launch month)                                                                                                 | 2026-08-03 |
-| Recent run rate              | ~19–38/month — about one visitor a day                                                                                                         | 2026-08-03 |
+| Recent run rate              | ~19–38/month — about one visitor a day **reaching Shopify**                                                                                    | 2026-08-03 |
 | Sources, last 180 days       | direct 146, social 16, **search 7**, unknown 3, email 1                                                                                        | 2026-08-03 |
 | Funnel, trailing 12 months   | 574 sessions → 23 carts → 20 reached checkout → **0 completed**                                                                                | 2026-08-03 |
 | Checkout status              | **Not indicted, not cleared.** Inventory, payments, login-at-checkout and US shipping rates all verified correct. Needs one real test purchase | 2026-08-03 |
+
+**Read "direct 146" again in this light.** A referral that arrives without a
+referrer header lands in `direct`, and a link from the Manus front door may well
+do exactly that. So `direct` is not necessarily people typing the URL — it may be
+the front door doing its job. **This is a hypothesis with two candidate causes and
+no evidence separating them**, and it is not to be reported as a finding until
+the Manus analytics are read.
 
 ### Catalogue and price ladder
 
@@ -133,7 +175,8 @@ pricing in Georgia. Code lives in this repository.
 | -------------- | ------------------------------------------------------------------------------------ | ---------- |
 | Supabase       | `bbgikfblcahhvrpxiqnd` — ACTIVE_HEALTHY, us-east-1, free tier                        | 2026-07-31 |
 | Stripe         | Same account. 4 products, 6 prices, all live mode, all wired to `subscription_plans` | 2026-07-31 |
-| Hosting        | **None.** No Vercel project exists                                                   | 2026-07-31 |
+| Hosting        | **None — not deployed anywhere.** Owner's intent, 2026-08-13: run it through the     |            |
+|                | Manus front door. Feasibility unestablished — see open question 4 and `RUNBOOK.md`   | 2026-08-13 |
 | Reference data | 159 counties, 12 industries, 12 sources loaded. 0 opportunities, 0 users             | 2026-07-31 |
 
 ### Plans
@@ -165,17 +208,24 @@ not predictions. This is enforced in code and copy, not just a footer.
 
 ## Channels
 
-| Channel                     | State                                                       | Verified   |
-| --------------------------- | ----------------------------------------------------------- | ---------- |
-| Shopify storefront          | Live, transacting capability unproven                       | 2026-08-03 |
-| Stripe + bookipay invoicing | Live, dormant 11 months                                     | 2026-08-03 |
-| Organic search              | Effectively zero (7 visits / 180 days)                      | 2026-08-03 |
-| Social                      | Minimal (16 visits / 180 days). Accounts `UNKNOWN`          | 2026-08-03 |
-| Email                       | Effectively unused (1 visit / 180 days). No list size known | 2026-08-03 |
-| Paid advertising            | **Never used. No account, no budget, no approval**          | 2026-08-03 |
+| Channel                     | State                                                                        | Verified              |
+| --------------------------- | ---------------------------------------------------------------------------- | --------------------- |
+| **Manus front door**        | **Live. The entry point for everything. Traffic and conversion unread**      | 2026-08-13 _(stated)_ |
+| Shopify storefront          | Live as a checkout behind the front door; transacting capability unproven    | 2026-08-03            |
+| Stripe + bookipay invoicing | Live, dormant 11 months                                                      | 2026-08-03            |
+| Organic search              | **Unknown.** 7 visits/180d _to Shopify_; the front door's own search traffic |                       |
+|                             | has never been read                                                          | 2026-08-13            |
+| Social                      | Minimal (16 visits / 180 days _to Shopify_). Accounts `UNKNOWN`              | 2026-08-03            |
+| Email                       | Effectively unused (1 visit / 180 days _to Shopify_). No list size known     | 2026-08-03            |
+| Paid advertising            | **Never used. No account, no budget, no approval**                           | 2026-08-03            |
 
 **The channel that produced the three paying customers is `UNKNOWN`.** Nobody
 recorded it. Establishing it is worth more than most campaigns — ask them.
+
+**"Organic search: effectively zero" was downgraded to `UNKNOWN` on 2026-08-13**,
+not because new evidence contradicted it but because the evidence behind it was
+found to describe the wrong page. That is the correct direction for a claim whose
+support has been withdrawn: it goes back to unknown, not to its opposite.
 
 ---
 
@@ -184,9 +234,22 @@ recorded it. Establishing it is worth more than most campaigns — ask them.
 Rev should try to close these, and must not paper over them.
 
 1. Where did the three customers come from?
-2. What is on `dd84tuning.com`, and how does it relate to the Shopify store?
-3. Does the Shopify checkout actually complete? Needs one test purchase.
-4. Which social accounts exist, and who runs them?
+2. ~~What is on `dd84tuning.com`, and how does it relate to the Shopify store?~~
+   **Answered by the owner, 2026-08-13:** it is a Manus site and it is the front
+   door; Shopify sits behind it. Rev could not verify this and cannot at present.
+3. **What do the Manus analytics say?** Sessions, sources and conversions for
+   `dd84tuning.com`. This is now the highest-value unknown in the file — it
+   settles whether the business has an audience problem or a conversion problem,
+   which the Shopify numbers cannot. **Rev cannot read it: the domain is blocked
+   by the network egress proxy and no Manus connector exists on this account.**
+   Either connect Manus, or export the figures by hand.
+4. **Can Manus host the Ledger at all?** The owner wants it there. It is a
+   Next.js app needing server-side rendering, per-request auth, and thirteen cron
+   jobs. Whether Manus supports that — or only static pages — is unestablished,
+   and it decides whether the Vercel plan in `docs/RUNBOOK.md` is replaced or
+   kept. **Do not assume either way.**
+5. Does the Shopify checkout actually complete? Needs one test purchase.
+6. Which social accounts exist, and who runs them?
 
 **Closed by owner decision, 2026-08-07 — do not reopen:** what the ten invoices
 were for, and whether the gaps in invoice numbering represent unpaid invoices.

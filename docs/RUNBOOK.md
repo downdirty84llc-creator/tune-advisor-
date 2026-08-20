@@ -109,6 +109,15 @@ Available jobs: `publish-scheduled`, `premium-alerts`, `saved-search-matching`,
 
 ### Hosting (Vercel)
 
+> **This procedure is on hold as of 2026-08-13.** The owner's intent is to run
+> the Ledger through the Manus front door at `dd84tuning.com` rather than Vercel
+> (`docs/agents/ventures.md`, open question 4). **Whether Manus can host this app
+> is unestablished** — it is a Next.js application needing server-side rendering,
+> per-request authentication and thirteen cron jobs, and a host that serves static
+> pages only cannot run it. Establish that before following the steps below or
+> discarding them. Everything here stays accurate for Vercel and costs nothing to
+> keep.
+
 **No deployment exists yet.** The Vercel team
 `downdirty84llc-creators-projects` (`team_a5zEaV43TZGEAxcqY1GgilmG`) was
 confirmed to exist on 2026-08-13; whether it already contains a project for this
