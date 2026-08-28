@@ -642,24 +642,64 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   written by hand during T-22, and `docs/ops/briefs/` contains only its README.
   **Zero briefs exist.** The routines are being invoked and producing nothing
   that survives the session.
-- **Candidate causes, none confirmed** — (1) the fired session cannot push,
-  because it lacks credentials for the branch or the push is refused; (2) it
-  runs but the working directory is empty and the clone step fails, so it never
-  reaches the repository; (3) it produces the brief in its reply and treats
-  the reply as the deliverable, never committing; (4) no connector is reachable,
-  and the session stops rather than degrading each section to "not available
-  this run" and writing the brief anyway. **(3) and (4) are failures of the
-  prompt; (1) and (2) are failures of the environment**, and the fix differs.
-- **Execution steps** — (1) Read the session transcript of the 2026-08-13 10:50
-  daily-brief firing and establish which of the four it was — this is one lookup
-  and it settles the question; (2) fix the cause: an environment fault goes to
-  the owner, a prompt fault is a `update_trigger` edit; (3) fire one Routine
-  manually with `fire_trigger` and watch for the commit; (4) record an `OL-`
-  entry with the resulting commit hash, which is also the proof T-23 needs.
-- **Cost** — none. **Risk** — low to diagnose. The real risk is leaving it: four
-  Routines firing daily into nothing is worse than no automation, because the
-  schedule reads as coverage that does not exist.
+- **Updated 2026-08-28. Two more weeks of the same.** Every routine has kept
+  firing on schedule and every run reports `ROUTINE_RUN_STATUS_SUCCEEDED` —
+  inbox intake as recently as 2026-08-28 10:20, the daily brief 2026-08-27,
+  the opportunity scan 2026-08-24, the cash review 2026-08-21. The newest commit
+  on the branch is still a hand-written one. **`SUCCEEDED` means the session
+  finished, not that it delivered.**
+
+### Root cause — confirmed 2026-08-28
+
+**The fired sessions have no repository attached.** They are created without a
+git source and without an outcome branch, so there is nothing to commit to and
+nothing to push with. The agent does the work and has nowhere to put it.
+
+The evidence, in the order that settles it:
+
+1. **The fired session's own record.** `get_session` on the 2026-08-28 inbox
+   intake (`cse_01G1uzjS1oNsmD3ZCvVq8FQx`) returns a `session_context` of exactly
+   `{autofix_on_pr_create, permission_mode}` — **no `sources`, no `outcomes`**.
+   The 2026-08-27 daily brief (`cse_01X8sfFM64UdniNEnDZJMMtx`) is the same.
+2. **The control.** The one Routine on this account that _does_ carry
+   `sources` and `outcomes` in its session context is
+   _Weekly Georgia Opportunity Ledger summary_ — the only one with
+   `created_via: http_api`, i.e. created from the claude.ai Routines UI. The four
+   that deliver nothing are all `created_via: meta_mcp`.
+3. **The tool cannot express it.** `create_trigger` has no `source_url` or
+   `outcome_branch` parameter, and `update_trigger` accepts only `name`,
+   `prompt`, `cron_expression`, `run_once_at`, `enabled` and `model`. **So this
+   cannot be repaired by editing the existing Routines** — the missing thing is
+   not in the editable surface.
+4. **It is not permissions and not a prompt fault.** Both sampled sessions ran
+   with `permission_mode: auto`, and both did the work: the 2026-08-28 run spent
+   **$1.77 and produced 22,888 output tokens**, the 2026-08-27 run $0.86 and
+   13,824. That is a written brief in each case. It went into the reply and died
+   with the session.
+
+**This is the same root cause as the connector gap** recorded in
+`docs/agents/README.md`: a Routine minted through the MCP tool is impoverished
+relative to one minted in the claude.ai UI — no connectors, and no repository.
+One remedy fixes both.
+
+- **Cost of leaving it** — real and recurring. Two sampled runs cost $2.63
+  between them and produced nothing that survives. The routines have fired on
+  this pattern since 2026-08-07. **No total is claimed here** — only the sampled
+  runs were read, and a number without a source is a defect.
+- **Risk** — the schedule reads as coverage that does not exist. That is worse
+  than no automation, because it invites someone to trust an operating record
+  that was never written.
+- **The fix is the owner's, and there are two.** Recorded as **A-10**.
+  **Recommended:** recreate the four Routines from the claude.ai Routines UI with
+  the repository and branch attached — one trip, and it fixes the connector gap
+  at the same time, which is most of what the cash review and inbox intake are
+  for. **Alternative:** rebind them to fire into a persistent session that
+  already holds the checkout via `create_trigger`'s `persistent_session_id`.
+  That is inside the agent's reach but fragile — it depends on one session
+  surviving, and its context grows without bound.
 - **Expected result** — One scheduled run that ends with a dated brief committed
   to `docs/ops/briefs/` and an entry in `OPERATING-LOG.md`.
 - **Completion proof required** — The commit hash of a routine-written brief.
-- **Status** Planned · **Next action** — Step 1.
+- **Status** **Blocked (on owner)** · **Next action** — A-10. Diagnosis is
+  complete; the remedy is outside the agent's authority and, for the recommended
+  option, outside its tools.

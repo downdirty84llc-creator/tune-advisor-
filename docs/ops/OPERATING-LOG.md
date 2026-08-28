@@ -299,7 +299,48 @@ in `8337e41`. It is logged as it is rather than as it was described.
 
 ---
 
-## Next entry: OL-0012
+## OL-0012 — Diagnose why the Routines deliver nothing
+
+- **Timestamp** 2026-08-28T11:05:00Z
+- **Task** T-27 · **Approval** none needed — Class A, reads only
+- **Action** Established the root cause of four Routines firing on schedule and
+  committing nothing, and raised the remedy as A-10. **Nothing was changed.**
+- **Tool** `list_triggers`, `get_session` ×2, `git fetch`, `git log`
+- **Source** T-27, opened 2026-08-13
+- **Operator** Claude (agent)
+- **Before** T-27 listed four candidate causes and confirmed none.
+- **After** Root cause confirmed: the fired sessions have **no repository
+  attached**. Blocked on the owner as A-10, because the fix is outside both the
+  agent's authority and its tools.
+- **Evidence** — real output:
+  - `git log` — newest commit on `claude/claude-md-docs-cqvhy6` is `4e9342a`,
+    hand-written. Nothing from any routine run, over three weeks.
+  - `list_triggers` — all four fired recently and **all report
+    `ROUTINE_RUN_STATUS_SUCCEEDED`**: inbox intake 2026-08-28T10:20, daily brief
+    2026-08-27T10:50, opportunity scan 2026-08-24T11:25, cash review
+    2026-08-21T11:21.
+  - `get_session cse_01G1uzjS1oNsmD3ZCvVq8FQx` (2026-08-28 inbox intake) —
+    `session_context` is `{autofix_on_pr_create, permission_mode}`. **No
+    `sources`. No `outcomes`.** Usage: `cost_usd 1.7659456`,
+    `output_tokens 22888`.
+  - `get_session cse_01X8sfFM64UdniNEnDZJMMtx` (2026-08-27 daily brief) — same
+    shape. `cost_usd 0.858726`, `output_tokens 13824`. Ran 10:50→18:25.
+  - The control: `trig_01FxDef9B5snYTW42FfcMEbD`, the only Routine with
+    `created_via: http_api`, **does** carry `sources` and `outcomes` — plus seven
+    `mcp_connections`. The four that deliver nothing are all `created_via:
+meta_mcp`.
+- **Error** None — the diagnosis completed.
+- **Remediation** Not applied, and deliberately not attempted. `create_trigger`
+  has no git-source parameter and `update_trigger` cannot add one, so the
+  recommended fix is not merely unapproved but **outside the agent's tools**.
+  Raised as A-10. Two prior hypotheses in T-27 are now dead and were struck
+  rather than quietly dropped: it is not a permissions failure
+  (`permission_mode: auto` on both sampled runs) and not a prompt failure (both
+  runs produced a brief-sized body of work).
+
+---
+
+## Next entry: OL-0013
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

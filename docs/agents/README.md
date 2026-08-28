@@ -129,11 +129,19 @@ If genuinely nothing changed, say so in three lines. Do not inflate a quiet week
 
 </details>
 
-> **Before trusting the schedule at all, read `docs/ops/` T-27.** All four Torque
-> Routines have been firing since 2026-08-07 — twice on 2026-08-13 alone — and
-> `docs/ops/briefs/` contains nothing but its README. **No routine run has ever
-> committed a brief.** The cadence above describes what is scheduled, not what
-> has been delivered.
+> **The schedule above has never delivered anything. Read `docs/ops/` T-27
+> before trusting it.** All four Routines have fired on cadence since
+> 2026-08-07 — most recently 2026-08-28 — every run reporting `SUCCEEDED`, and
+> `docs/ops/briefs/` still contains nothing but its README.
+>
+> **Root cause, confirmed 2026-08-28: it is the same defect as the connector gap
+> below.** A Routine minted through the MCP `create_trigger` tool gets no
+> connectors **and no repository** — its fired sessions carry no `sources` and no
+> `outcomes`, so there is nothing to commit to and nothing to push with. The
+> agent does the work (one sampled run: $1.77, 22,888 output tokens) and it dies
+> with the session. The one Routine on this account that _does_ hold a repository
+> is the one created in the claude.ai UI. **Recreating the four Routines there
+> fixes both problems at once** — that is approval packet A-10.
 
 **One more Routine exists and is nobody's.** _Weekly Georgia Opportunity Ledger
 summary_ (`trig_01FxDef9B5snYTW42FfcMEbD`, Mondays 09:00 UTC) predates both

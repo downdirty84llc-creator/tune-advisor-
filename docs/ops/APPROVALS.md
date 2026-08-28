@@ -463,3 +463,54 @@ new Routine still goes back to the owner.
 **Affected records** — T-23, T-27.
 **Actual result** — Executed 2026-08-13. Evidence in `OPERATING-LOG.md`
 OL-0010 and OL-0011.
+
+---
+
+## A-10 — Give the Routines a repository to write to
+
+**Decision requested** — Recreate the four Torque Routines from the claude.ai
+Routines UI with the repository and branch attached, so their briefs survive the
+session.
+**Business objective** — The operating record. Four Routines have fired on
+schedule since 2026-08-07 and delivered nothing to the repository; the schedule
+currently reads as coverage that does not exist.
+**Source and context** — T-27, root cause confirmed 2026-08-28. The fired
+sessions carry no `sources` and no `outcomes` — no repository, no push target.
+The one Routine that does carry them is the only one created from the claude.ai
+UI rather than the MCP tool.
+**Recommended plan** — In the claude.ai Routines UI, create four Routines with
+the repository `downdirty84llc-creator/tune-advisor-` and branch
+`claude/claude-md-docs-cqvhy6` attached, and the connectors the routine needs
+(Gmail for intake; Stripe and Shopify for the cash review). Copy each prompt
+verbatim from the existing Routine, then delete the MCP-created original so the
+schedule is not doubled. The prompts are correct and tested; only the container
+they run in is wrong.
+**Alternatives** — (1) Rebind to a persistent session with
+`persistent_session_id`: inside the agent's reach, but it depends on one session
+surviving indefinitely and its context grows without bound. (2) Change the
+contract so routines report by notification only and abandon the written record:
+rejected — `docs/ops/` exists precisely because operational state carried in
+transcripts is the failure the specification names in §3. (3) Leave it: rejected,
+it spends money on discarded work and misrepresents what is covered.
+**Cost and cash impact** — Stops a recurring waste. Two sampled runs cost $2.63
+between them for output that was discarded; the pattern has run since 2026-08-07.
+No total is claimed — only two runs were read.
+**Risks and safeguards** — The recreated Routines will hold **live connectors**,
+which the MCP-created ones never did. Every routine is Class A and says so in its
+own prompt — observe, calculate, draft, report — but this is the first time those
+prohibitions will be load-bearing rather than theoretical. Recommend reading the
+first run of each before trusting the cadence.
+**Systems affected** — Scheduled Routines only. No customer-facing system.
+**Customer/public impact** — None.
+**Success test** — One scheduled run ends with a dated brief committed to
+`docs/ops/briefs/` and an entry in `OPERATING-LOG.md`. That commit hash is also
+the completion proof T-23 has been waiting on.
+
+**Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response** — _awaiting owner._
+**Affected records** — T-23, T-27.
+**Actual result** — Not executed. **The recommended option cannot be executed by
+the agent at all**: `create_trigger` has no parameter for a git source, and
+`update_trigger` cannot add one to an existing Routine. This one needs hands on
+the claude.ai UI.
