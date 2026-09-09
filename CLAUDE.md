@@ -46,7 +46,7 @@ Node `>=20.9.0`.
 | `npm run build`                   | Production build                                                     |
 | `npm run typecheck`               | `tsc --noEmit`                                                       |
 | `npm run lint`                    | ESLint (`next lint`)                                                 |
-| `npm test`                        | Unit + integration tests (Vitest, node env)                          |
+| `npm test`                        | Unit tests (Vitest, node env)                                |
 | `npm run test:e2e`                | Playwright; builds and starts the app unless `E2E_BASE_URL` is set   |
 | `npm run db:reset`                | Re-runs every migration, then `supabase/seed.sql`                    |
 | `npm run db:seed`                 | Demo users and sample records (`scripts/seed.ts`)                    |
