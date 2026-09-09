@@ -37,10 +37,12 @@ export default async function AdminDashboardPage() {
   // reads neither and sees zero either way. That equivalence is what stops the
   // filter from being silently empty while the numbers it filters are not; if
   // either policy is ever widened, this has to be revisited.
-  const { data: sampleProfiles } = await supabase
+  const { data: sampleProfiles, error: sampleProfilesError } = await supabase
     .from('profiles')
     .select('id')
     .eq('is_sample', true);
+  if (sampleProfilesError) throw new Error(sampleProfilesError.message);
+
   const sampleUserIds = (sampleProfiles ?? []).map(
     (row: { id: string }) => row.id,
   );
