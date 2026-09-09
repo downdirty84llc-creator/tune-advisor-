@@ -57,7 +57,7 @@ data into a real decision. The seeder refuses to run when
 | `npm run build`     | Production build                                    |
 | `npm run typecheck` | `tsc --noEmit`                                      |
 | `npm run lint`      | ESLint                                              |
-| `npm test`          | Unit and integration tests (Vitest)                 |
+| `npm test`          | Unit tests (Vitest)                              |
 | `npm run test:e2e`  | End-to-end tests (Playwright)                       |
 | `npm run db:reset`  | Re-runs every migration and the reference-data seed |
 | `npm run db:seed`   | Loads demo users and sample records                 |
