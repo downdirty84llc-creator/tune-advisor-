@@ -80,7 +80,7 @@ thirteen cron schedules, and the app is Next.js 15 on the App Router.
    This changed after this package was first written, and getting it wrong ships
    the wrong application. As of 2026-09-09 the repository has **nine branches**,
    and `main` now exists — it did not before. But `main` sits at `81c5a68`,
-   "Build the Georgia Opportunity Ledger platform", which is the *first* commit:
+   "Build the Georgia Opportunity Ledger platform", which is the _first_ commit:
    it predates milestones 5–9 and every correction in this workstream. Vercel
    will default to `main` and silently deploy that.
 
@@ -91,6 +91,7 @@ thirteen cron schedules, and the app is Next.js 15 on the App Router.
    since it was the default. **Consolidating onto one branch before deploying is
    the right move** — nine branches with three different notions of "current" is
    how the wrong build reaches production.
+
 3. Framework preset: Next.js. Build command, output directory and install
    command are all the defaults — do not override them.
 4. Node version 20 or later (`package.json` requires `>=20.9.0`).
