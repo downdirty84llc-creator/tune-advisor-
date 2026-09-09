@@ -29,15 +29,68 @@ and `profiles` is 0. Nobody has signed up and no record has been published. See
 
 ---
 
+## Step 0 — Install the Vercel GitHub App _(blocking; owner only)_
+
+**Attempted 2026-09-09 and refused.** `create_git_project` against
+`downdirty84llc-creator/tune-advisor-` returned:
+
+> `bad_request` — "To link a GitHub repository, you need to install the GitHub
+> integration first."
+
+Vercel will not link a repository until its GitHub App is installed on the
+account that owns it. That is an app installation, so an agent cannot do it — it
+needs a signed-in human clicking Install.
+
+1. Go to **https://github.com/apps/vercel** and install it.
+2. Grant access to `downdirty84llc-creator/tune-advisor-`. "Only select
+   repositories" is enough and is the narrower grant.
+3. Once installed, project creation and every step below can be driven
+   automatically.
+
+The Vercel team is `downdirty84llc-creators-projects`
+(`team_a5zEaV43TZGEAxcqY1GgilmG`), on the **hobby** plan, with **no projects
+yet** — confirmed 2026-09-09.
+
+**Check the plan's cron allowance before relying on step 5.** `vercel.json`
+declares thirteen cron jobs, several sub-hourly (`*/5`, `*/15`). Schedules of
+that shape and number generally need a paid plan. The exact Hobby limits could
+not be confirmed from the documentation available here and are **deliberately
+not stated rather than guessed** — check Vercel's pricing page. If Hobby is too
+small, the two honest options are upgrading, or moving the jobs to an external
+scheduler that calls the same `/api/v1/jobs/*` endpoints with `CRON_SECRET`;
+those endpoints do not care who invokes them.
+
+### Alternative considered and rejected
+
+`deploy_to_vercel` can push a file tree directly with no Git link. Rejected: it
+uploads a detached copy of the source with no connection to the repository, so
+nothing redeploys on push and the deployed code starts drifting immediately.
+Installing the app once is cheaper than that permanently.
+
+---
+
 ## Step 1 — Create the hosting project
 
 Vercel is what the repository is built for: `vercel.json` already declares all
 thirteen cron schedules, and the app is Next.js 15 on the App Router.
 
 1. Import `downdirty84llc-creator/tune-advisor-` into Vercel.
-2. **Set the production branch to `claude/georgia-opportunity-ledger-kfpt4c`** —
-   there is no `main` in this repository, and the import will otherwise fail
-   looking for one. This is the single most likely thing to go wrong.
+2. **Set the production branch deliberately. Do not accept the default.**
+
+   This changed after this package was first written, and getting it wrong ships
+   the wrong application. As of 2026-09-09 the repository has **nine branches**,
+   and `main` now exists — it did not before. But `main` sits at `81c5a68`,
+   "Build the Georgia Opportunity Ledger platform", which is the *first* commit:
+   it predates milestones 5–9 and every correction in this workstream. Vercel
+   will default to `main` and silently deploy that.
+
+   Pick the branch that actually carries the work you intend to ship, and check
+   its head commit before deploying rather than trusting the name. At the time of
+   writing, `claude/claude-md-docs-jjveuq` (`ac799a0`) carries this workstream,
+   and `claude/georgia-opportunity-ledger-kfpt4c` (`f33e667`) has also moved on
+   since it was the default. **Consolidating onto one branch before deploying is
+   the right move** — nine branches with three different notions of "current" is
+   how the wrong build reaches production.
 3. Framework preset: Next.js. Build command, output directory and install
    command are all the defaults — do not override them.
 4. Node version 20 or later (`package.json` requires `>=20.9.0`).

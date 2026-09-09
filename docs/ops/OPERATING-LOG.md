@@ -265,3 +265,46 @@ in `8337e41`. It is logged as it is rather than as it was described.
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
+
+---
+
+## OL-0011 — 2026-09-09 · Attempt the Vercel deployment; blocked at the GitHub App
+
+- **Task** T-28 · **Approval** Owner instruction, "not blocked anymore"
+- **Action** Attempted to create the Vercel project linked to the repository.
+  **Refused by Vercel.** No project was created and nothing was deployed.
+- **Tool** `mcp__Vercel__list_teams`, `list_projects`, `create_git_project`,
+  `search_vercel_documentation`
+- **Source** Owner instruction following the deployment package
+- **Operator** Claude (coordinator)
+- **Before** No Vercel projects on the account.
+- **After** Unchanged. `create_git_project` returned HTTP 400 `bad_request`:
+  "To link a GitHub repository, you need to install the GitHub integration
+  first." The Vercel GitHub App is not installed on the repository owner.
+- **Evidence**
+  - Team `downdirty84llc-creators-projects`
+    (`team_a5zEaV43TZGEAxcqY1GgilmG`), plan **hobby**.
+  - `list_projects` returned `{"projects": []}` — nothing pre-existing.
+  - Remedy recorded as step 0 of `DEPLOYMENT-PACKAGE.md`:
+    https://github.com/apps/vercel
+- **Error** Vercel API 400, quoted above. Not worked around.
+- **Remediation** `deploy_to_vercel` would have bypassed the Git link by
+  uploading a detached file tree. **Deliberately not used** — it deploys a copy
+  with no connection to the repository, so nothing redeploys on push and the
+  deployed code drifts from source immediately. Recorded as a rejected
+  alternative rather than taken as a shortcut.
+
+### Two findings from the same pass, both correcting the record
+
+1. **`main` now exists, and the repository has nine branches.** It did not a
+   month ago, and `CLAUDE.md` §0 still says there is no `main`. `main` points at
+   `81c5a68` — the first commit, predating milestones 5–9 and this entire
+   workstream. Vercel defaults to `main`, so an unattended import would have
+   deployed a months-old application. The deployment package now says to set the
+   production branch deliberately and check its head commit.
+2. **Three commits landed on `claude/claude-md-docs-jjveuq` from outside this
+   workstream** — `dbe7b4a`, `c6dbc38`, `ac799a0`. The branch head is `ac799a0`,
+   not `5652e1e`. They have not been reviewed here.
+
+Both are logged rather than fixed: correcting `CLAUDE.md` §0 needs the owner's
+word, and consolidating nine branches is a decision, not a chore.
