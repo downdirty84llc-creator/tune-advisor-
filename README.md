@@ -1,5 +1,16 @@
 # Georgia Opportunity Ledger
 
+> ## ⚠️ Retired — moved to [`georgia-opportunity-ledger`](https://github.com/downdirty84llc-creator/georgia-opportunity-ledger)
+>
+> This copy is **out of date and will mislead you.** The maintained application
+> is in `downdirty84llc-creator/georgia-opportunity-ledger` on `main`, which is
+> ahead of this one: the attachment scanner is wired there, the in-product
+> super-administrator MFA reset exists, and it carries four migrations this copy
+> never had.
+>
+> The DD84 agent platform was the one thing that lived only here, and it moved
+> on 2026-09-09. Nothing is left behind. Read this repository as history.
+
 A subscription intelligence platform for commercial property, business funding
 and market pricing in Georgia. Public and authorised sources are monitored,
 verified, scored against a published 100-point method, and distributed to

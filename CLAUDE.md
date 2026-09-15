@@ -1,5 +1,24 @@
 # CLAUDE.md
 
+> # ⚠️ THIS REPOSITORY IS RETIRED — 2026-09-15
+>
+> **The Georgia Opportunity Ledger lives in
+> `downdirty84llc-creator/georgia-opportunity-ledger`, branch `main`.** Work
+> there. Do not take application code from here, and do not restore this branch.
+>
+> This copy ran **behind** the canonical one and will mislead you: no attachment
+> scanner wired, no in-product super-administrator MFA reset, four fewer
+> migrations, and a `docs/MILESTONES.md` that lists two things as unbuilt which
+> were in fact built. The DD84 agent platform — `docs/agents/`, `docs/ops/`,
+> `docs/growth/`, `.claude/` — was the one thing that existed only here, and it
+> was moved on 2026-09-09.
+>
+> Everything below is kept as the record of how this copy was built and what was
+> decided in it. **It is history, not instructions.** The live guide is
+> `CLAUDE.md` in the canonical repository.
+
+---
+
 Guidance for AI assistants working in this repository.
 
 ---
