@@ -23,10 +23,15 @@ checked. They have now been verified against the code:
 | Status never by colour alone | `Pill` types `children` as required, so the compiler refuses a badge that is colour and nothing else |
 | Reduced motion respected | `@media (prefers-reduced-motion: reduce)` collapses animation and transition durations globally |
 
-Still not delivered, and none of it is a code artefact: high-fidelity
-comparative design work, a confirmed brand direction, and **owner sign-off**.
-Sign-off is the owner's to give — it is recorded here when given, with the
-date, and the launch checklist item in `RUNBOOK.md` stays unticked until then.
+**Design sign-off: given by the owner (Mark Lester) on 2026-09-15.** The
+design system and current visual direction are accepted as they stand, and the
+launch checklist item in `RUNBOOK.md` is ticked accordingly.
+
+What the sign-off covers is the design as built — the palette, type scale,
+primitives and the accessibility properties verified above. It does not
+retrospectively create the high-fidelity comparative design work that was never
+commissioned; that was an option not taken, not an outstanding task. If a brand
+refresh is wanted later it is new work, not a gap being carried.
 
 ## Milestone 2 — Foundation
 

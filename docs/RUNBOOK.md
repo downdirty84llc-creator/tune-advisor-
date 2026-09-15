@@ -312,9 +312,13 @@ Spec 28, milestone 10. Every line needs a name against it.
 ### Blocking
 
 - [ ] **Legal review of all ten documents** in `src/lib/legal/documents.ts`.
-      See `docs/LEGAL-REVIEW.md` for the packet and the four gaps to settle first.
-      Each is marked `requiresReview: true` and renders an "awaiting legal
-      review" banner until cleared. This is the hard blocker.
+      See `docs/LEGAL-REVIEW.md` for the packet. The four places where a
+      document promised behaviour the software did not have are now closed, so
+      counsel is reviewing an accurate description. Seven are marked
+      `requiresReview: true` and render an "awaiting legal review" banner until
+      cleared. This is the hard blocker.
+- [x] **Design and brand sign-off** — given by the owner on 2026-09-15. See
+      `MILESTONES.md`, milestone 1, for what the sign-off covers.
 - [ ] Stripe live mode: products, prices, webhook endpoint, price ids written to
       `subscription_plans`.
 - [ ] Tier-by-tier test payment verifying each plan grants the correct access

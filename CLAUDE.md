@@ -62,14 +62,14 @@ src/lib/
   email/         Provider abstraction, templates, unsubscribe tokens
   exports/       CSV generation and export jobs
   http/          Response envelope, rate limiting
-  jobs/          13 background jobs, registry, idempotent runner
+  jobs/          14 background jobs, registry, idempotent runner
   observability/ Sentry via envelope API (no SDK)
   opportunities/ Lifecycle, workflow, query, serialisation, editor schema
   reports/       Dependency-free PDF writer
   scoring/       The 100-point score
   search/        Filter schema, sorting, cursor pagination
 supabase/
-  migrations/    21 files, ordered by timestamp prefix
+  migrations/    26 files, ordered by timestamp prefix
   seed.sql       Reference data — idempotent, upserts on natural keys
 tests/unit/      Vitest, mirrors src/lib structure
 tests/e2e/       Playwright across desktop/iPhone/Android/tablet
@@ -188,7 +188,7 @@ filter.
 
 ## Background jobs
 
-Thirteen jobs in `src/lib/jobs/`, registered in `registry.ts` with their cron
+Fourteen jobs in `src/lib/jobs/`, registered in `registry.ts` with their cron
 expressions, exposed at `POST|GET /api/v1/jobs/{job}`, scheduled in
 `vercel.json`. **`registry.ts` and `vercel.json` must stay in step** — adding a
 job means editing both, plus the job list in `docs/RUNBOOK.md`.
@@ -263,10 +263,24 @@ but do it deliberately and expect to fix real errors it surfaces.
 ## Known gaps
 
 Tracked honestly in `docs/MILESTONES.md`; do not "fix" these by hiding them.
-Hard launch blockers are legal review of the ten documents in
-`src/lib/legal/documents.ts` and creating the Stripe products/prices. Also
-outstanding: virus scanning on uploads, super-administrator MFA reset, and
-brand sign-off.
+
+Two hard launch blockers remain:
+
+- **Legal review** of the ten documents in `src/lib/legal/documents.ts`.
+  `docs/LEGAL-REVIEW.md` is the packet. The four places where a document
+  promised behaviour the software did not have are closed, so counsel is
+  reviewing an accurate description.
+- **The Stripe webhook endpoint.** Products, all six prices and the price ids
+  on `subscription_plans` are done; the account has no webhook, which is the
+  one that costs money rather than merely blocking a launch — Checkout would
+  charge a card while nothing wrote the subscription back. It needs a public
+  hostname first.
+
+Closed since this list was first written: virus scanning (built, and the
+serving gate refuses anything not `clean`), super-administrator MFA reset,
+account deletion, subject-access export, the refund workflow, the analytics
+opt-out, and public-page caching. Brand sign-off was given by the owner on
+2026-09-15.
 
 **Keep the public pages static.** The marketing routes are prerendered and
 revalidated on their own intervals. A session read anywhere in that subtree —
