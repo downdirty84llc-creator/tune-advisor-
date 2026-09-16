@@ -1,15 +1,20 @@
 # Georgia Opportunity Ledger
 
-> ## ⚠️ Retired — moved to [`georgia-opportunity-ledger`](https://github.com/downdirty84llc-creator/georgia-opportunity-ledger)
+> ## ⚠️ The Ledger code here is stale — the DD84 agent platform is not
 >
-> This copy is **out of date and will mislead you.** The maintained application
-> is in `downdirty84llc-creator/georgia-opportunity-ledger` on `main`, which is
-> ahead of this one: the attachment scanner is wired there, the in-product
-> super-administrator MFA reset exists, and it carries four migrations this copy
-> never had.
+> **The Georgia Opportunity Ledger application** is maintained at
+> [`georgia-opportunity-ledger`](https://github.com/downdirty84llc-creator/georgia-opportunity-ledger)
+> on `main`, which is ahead of this copy: the attachment scanner is wired there,
+> the super-administrator MFA reset exists, and it carries migrations this copy
+> never had. Do not take Ledger application code from here.
 >
-> The DD84 agent platform was the one thing that lived only here, and it moved
-> on 2026-09-09. Nothing is left behind. Read this repository as history.
+> **The DD84 agent platform lives here and is current** — `docs/agents/`,
+> `docs/ops/`, `docs/growth/` and `.claude/`. DD84 is a separate business from
+> the Ledger, and keeping them apart is deliberate.
+>
+> _Corrected 2026-09-16: an earlier banner said the agent platform had moved to
+> the Ledger repository. That move was reversed; only the Ledger-only code fixes
+> went across._
 
 A subscription intelligence platform for commercial property, business funding
 and market pricing in Georgia. Public and authorised sources are monitored,

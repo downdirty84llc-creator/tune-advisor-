@@ -1,21 +1,29 @@
 # CLAUDE.md
 
-> # ⚠️ THIS REPOSITORY IS RETIRED — 2026-09-15
+> # ⚠️ The Ledger application here is stale — the agent platform is not
 >
-> **The Georgia Opportunity Ledger lives in
-> `downdirty84llc-creator/georgia-opportunity-ledger`, branch `main`.** Work
-> there. Do not take application code from here, and do not restore this branch.
+> **Two different things live in this repository, and they have different
+> statuses. Read both lines before acting.**
 >
-> This copy ran **behind** the canonical one and will mislead you: no attachment
-> scanner wired, no in-product super-administrator MFA reset, four fewer
-> migrations, and a `docs/MILESTONES.md` that lists two things as unbuilt which
-> were in fact built. The DD84 agent platform — `docs/agents/`, `docs/ops/`,
-> `docs/growth/`, `.claude/` — was the one thing that existed only here, and it
-> was moved on 2026-09-09.
+> **The Georgia Opportunity Ledger application is stale.** Its maintained home is
+> `downdirty84llc-creator/georgia-opportunity-ledger` on `main`, which is ahead:
+> the attachment scanner is wired there, the in-product super-administrator MFA
+> reset exists, and it carries migrations this copy never had. **Do not take
+> Ledger application code from here.** Two of its `MILESTONES.md` entries are
+> wrong for that reason — virus scanning and the MFA reset are listed as unbuilt
+> and are built there.
 >
-> Everything below is kept as the record of how this copy was built and what was
-> decided in it. **It is history, not instructions.** The live guide is
-> `CLAUDE.md` in the canonical repository.
+> **The DD84 agent platform stays here, and this is its home.** `docs/agents/`,
+> `docs/ops/`, `docs/growth/`, the DD84 specs and `.claude/` are live, not
+> archived. DD84 is an automotive tuning company and the Ledger is a separate
+> business; they share git ancestry by accident of how the repositories were
+> created, and mixing them was reversed on 2026-09-16 by owner decision.
+>
+> **Correction, 2026-09-16.** An earlier version of this banner said the agent
+> platform had moved to the Ledger repository. It was moved on 2026-09-09 and
+> that move was **reversed** — only the Ledger-only code fixes went across, as
+> `claude/ledger-accuracy-fixes`. The platform never left. Anything relying on
+> the earlier banner is reading a decision that was undone.
 
 ---
 
