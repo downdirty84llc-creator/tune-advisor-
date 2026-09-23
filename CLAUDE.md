@@ -458,7 +458,17 @@ across thirty-odd tables produces something confidently wrong the first time a
 migration lands. Regenerate with `npm run db:types` against a migrated database
 rather than editing by hand.
 
-**Not built** (see `docs/MILESTONES.md` for the full accounting): Stripe products
+**Not built — STALE, and wrong in two places.** This list, and
+`docs/MILESTONES.md` behind it, describe the Ledger copy in *this* repository,
+which is no longer the maintained one. In the Ledger's own repository the virus
+scanner **is** wired and the super-administrator MFA reset **is** built. The
+legal-document count below is wrong too: the real figure there is **twelve
+documents, nine requiring review**, not ten and seven. Read
+`docs/MILESTONES.md` in `downdirty84llc-creator/georgia-opportunity-ledger`
+instead of what follows. Kept, not deleted, because T-29 is the owner's decision
+about this whole source tree.
+
+(see `docs/MILESTONES.md` for the full accounting): Stripe products
 and prices plus the tier-by-tier test-payment matrix; legal review of the ten
 documents in `src/lib/legal/documents.ts` (a hard launch blocker — seven of them
 render an "awaiting legal review" banner, and whether the other three are
@@ -498,7 +508,10 @@ undo by accident:
   and Rev now runs on demand (`@rev`, `/rev-discovery`, `/rev-daily-brief`).
   `docs/agents/README.md` carries the reasoning and the deleted prompt.
   **The Routines have never actually committed a brief** — see `docs/ops/`
-  T-27 before treating the cadence as coverage.
+  T-27 before treating the cadence as coverage. Their prompts point at **this**
+  repository and branch. Between 2026-09-09 and 2026-09-23 they wrongly pointed
+  at the Ledger's repository; corrected in OL-0014. If you change where the
+  agent platform lives, the four prompts are part of the change.
 
 Both agents stop at an approval gate before anything that spends money,
 publishes, or reaches a customer.

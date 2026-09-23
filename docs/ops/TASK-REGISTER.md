@@ -703,3 +703,47 @@ One remedy fixes both.
 - **Status** **Blocked (on owner)** · **Next action** — A-10. Diagnosis is
   complete; the remedy is outside the agent's authority and, for the recommended
   option, outside its tools.
+
+## T-28 — Settle where the Ledger and the agent platform each live
+
+- **Objective** — End the two-copy confusion between this repository and the
+  Ledger's, without merging two separate businesses into one codebase.
+- **Source** — Write access granted 2026-09-09; divergence found the same day.
+- **Workstream** ops · **Priority** High · **Owner** Agent · **Approval** A-11.
+- **Outcome** — The Ledger application is maintained in
+  `downdirty84llc-creator/georgia-opportunity-ledger` on `main`. The DD84 agent
+  platform stays here. Three Ledger-only modules crossed over and landed as
+  `a228f3d`; nothing of DD84's did.
+- **Corrections this produced** — Two, both recorded rather than quietly fixed.
+  The `MILESTONES.md` in this repository lists virus scanning and the
+  super-administrator MFA reset as unbuilt; **both are built in the Ledger's own
+  repository**, and its MILESTONES was already accurate. And the legal-document
+  count quoted from here — "ten documents, seven requiring review" — is wrong for
+  the Ledger, which has **twelve, nine requiring review**.
+- **Completion proof** — `a228f3d` on the Ledger's `main`, gate green; PR #2 and
+  #3 closed.
+- **Status** **Done**, 2026-09-23 · Evidence: OL-0013, OL-0015.
+
+## T-29 — The Ledger application copy in this repository is stale
+
+- **Objective** — Decide what happens to the Ledger source tree still sitting in
+  this repository, now that it is not the maintained copy.
+- **Source** — Agent finding, 2026-09-23, while closing T-28.
+- **Workstream** ops · **Priority** Normal · **Owner** **Owner** ·
+  **Due** not set
+- **Approval class** — **Owner's.** Deleting a source tree from a repository is
+  not an agent's call, and GitHub will not let the default branch be deleted,
+  which is the reason the copy exists at all.
+- **The finding** — `src/`, `supabase/`, `docs/ARCHITECTURE.md`,
+  `docs/MILESTONES.md` and `docs/RUNBOOK.md` here describe a Ledger that is four
+  migrations and several features behind the real one. The CLAUDE.md banner says
+  so, but a banner is read by whoever opens that file and by nobody else. Anyone
+  landing on `src/` from a search will not see it.
+- **Options** — (1) leave it, banner only — cheapest, and the trap stays;
+  (2) delete the Ledger source from this branch, keeping the agent platform —
+  removes the trap, and the history is still in git; (3) archive the whole
+  repository once the platform moves somewhere of its own.
+- **Risk of leaving it** — Low but real, and it has already happened once: this
+  agent quoted the stale MILESTONES and the stale legal-document count as current
+  fact, in writing, more than once.
+- **Status** Planned · **Next action** — Owner picks an option.

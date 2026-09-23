@@ -514,3 +514,40 @@ the completion proof T-23 has been waiting on.
 the agent at all**: `create_trigger` has no parameter for a git source, and
 `update_trigger` cannot add one to an existing Routine. This one needs hands on
 the claude.ai UI.
+
+---
+
+## A-11 — Consolidate onto the Ledger repository (APPROVED, then NARROWED)
+
+**Decision requested** — Treat the Ledger's own repository as canonical, move the
+DD84 agent platform into it, and retire this branch.
+**Source and context** — Write access to
+`downdirty84llc-creator/georgia-opportunity-ledger` was granted 2026-09-09.
+Inspection showed it ahead of this copy on the application, and holding none of
+the agent platform.
+**Cost and cash impact** — None.
+**Systems affected** — Two repositories. No connector, no production system.
+
+**Response — first** — **APPROVED**, 2026-09-09, on the question "which of two
+divergent copies of the Ledger is canonical".
+
+**Response — revised** — **NARROWED**, 2026-09-16. The owner chose "split it":
+the Ledger-only code fixes go across; the DD84 agent platform stays here.
+
+**Why it was narrowed, recorded because the failure was in the asking.** The
+question put to the owner was about two copies of the Ledger. It was **not**
+about whether DD84's revenue and customer records belonged inside another
+company's repository, which is what the change did. A CLAUDE.md added to the
+Ledger's `main` on 2026-09-15 by another session stated that the two businesses
+were separated deliberately and that the consolidation must not be merged
+without the owner saying so in as many words. That was correct, and the approval
+obtained did not meet it. **An approval is only as good as the question; this one
+described a smaller change than it made.**
+
+**Limits** — Ledger-only code may cross. DD84 material may not. Neither
+repository's `main` is to be treated as the other's.
+**Expiration** — Consumed.
+**Affected records** — T-28, T-29.
+**Actual result** — Executed as narrowed. Ledger `main` at `a228f3d` carries the
+three modules; the agent platform never left this repository. Evidence in
+`OPERATING-LOG.md` OL-0013 and OL-0015.

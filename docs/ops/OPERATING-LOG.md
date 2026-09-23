@@ -340,7 +340,93 @@ meta_mcp`.
 
 ---
 
-## Next entry: OL-0013
+## OL-0013 — Consolidation onto the Ledger repository, and its reversal
+
+- **Timestamp** 2026-09-09 to 2026-09-16 (recorded 2026-09-23)
+- **Task** T-28 · **Approval** A-11, later narrowed by the owner
+- **Action** The DD84 agent platform was copied into
+  `downdirty84llc-creator/georgia-opportunity-ledger`, and then taken back out.
+- **Tool** `add_repo`, `git clone`, `cp`, the verification gate, `git push`,
+  `create_pull_request`, `update_pull_request`
+- **Source** Owner decision 2026-09-09 that the Ledger repository was canonical;
+  owner decision 2026-09-16 to split the change instead.
+- **Operator** Claude (agent)
+- **Before** DD84's platform here; the Ledger application ahead in its own
+  repository; four modules present here and absent there.
+- **After** **Unchanged here.** The platform never left. In the Ledger
+  repository only the three Ledger-only modules landed.
+- **Evidence** PR #2 (consolidation) closed unmerged; PR #3 (fixes) closed once
+  its commit reached `main` as `a228f3d`.
+- **Error** **The consolidation was the wrong call, and the error was in how it
+  was put to the owner.** The question asked was which of two divergent copies
+  of the Ledger was canonical. It never asked whether DD84's revenue and
+  customer records belonged in another company's repository — which is what the
+  change actually did. The owner approved the question that was asked. A
+  CLAUDE.md added to the Ledger's `main` on 2026-09-15 by another session caught
+  it, stating that the two businesses were separated deliberately and that the
+  consolidation branch must not be merged without the owner saying so in as many
+  words.
+- **Remediation** Split and reversed on 2026-09-16 with the owner's decision.
+  **This entry is being written on 2026-09-23, two weeks late**, because the
+  original OL-0013 and OL-0014 were appended to the copy of `docs/ops/` inside
+  the Ledger repository, on a branch that is now closed. They were never in
+  DD84's own record. An operating log that lives on a branch nobody merges is
+  not an operating log.
+
+## OL-0014 — Repoint the Routines back to DD84
+
+- **Timestamp** 2026-09-23T11:05:00Z
+- **Task** T-27 · **Approval** none required — prompt text only, no schedule,
+  authority or connector changed
+- **Action** Corrected all four Routine prompts, which had been left pointing at
+  the Ledger's repository after the consolidation was reversed.
+- **Tool** `update_trigger` ×4, `git ls-tree`
+- **Operator** Claude (agent)
+- **Before** All four told Torque to check out the Ledger repository, read
+  `.claude/agents/torque.md` and write to `docs/ops/`.
+- **After** All four name `tune-advisor-`, branch `claude/claude-md-docs-cqvhy6`,
+  and say explicitly not to clone, read or push the Ledger repository.
+- **Evidence** `git ls-tree origin/main --name-only docs/` on the Ledger
+  repository returns only `ACCESSIBILITY-AUDIT.md`, `ARCHITECTURE.md`,
+  `MILESTONES.md`, `RUNBOOK.md`. No `docs/ops/`, no `.claude/`, no `dd84-*`
+  commands. The prompts named a repository containing none of what they
+  instructed the agent to read.
+- **Error** **The agent's own defect, live for one week**, introduced when the
+  prompts were repointed for the consolidation and not repointed back when it
+  was reversed.
+- **Remediation** Corrected. Two things worth keeping. It changed nothing
+  observable, because the Routines cannot commit anywhere — **T-27 masked it
+  completely**, and a defect visible only once another defect is fixed is the
+  kind that ships. And had A-10 been completed during that week, four unattended
+  sessions holding live connectors would have tried to write DD84 revenue and
+  customer records into another company's repository. **The order these were
+  fixed in mattered, and that was luck, not design.**
+
+## OL-0015 — Land the Ledger-only fixes on the Ledger's main
+
+- **Timestamp** 2026-09-23T10:58:00Z
+- **Task** T-28 · **Approval** owner instruction 2026-09-23, plus the Ledger
+  repository's own standing instruction to work directly on `main`
+- **Action** Rebased the MRR and sample-data fixes onto the Ledger's `main`,
+  which had moved 17 commits, and pushed.
+- **Tool** `git rebase`, `npm ci`, the full gate, `git push`
+- **Operator** Claude (agent)
+- **Before** PR #3 open and conflicted.
+- **After** Ledger `main` at `a228f3d`; PR #2 and #3 both closed.
+- **Evidence** typecheck silent; lint clean; `format:check` clean;
+  `schedules:check` 16 files match; `npm test` 312 passed in 28 files;
+  `npm run build` compiled. `HEAD` and `origin/main` both
+  `a228f3dedb255cf118146e1224c5302f59012c34`, checked in the destination.
+- **Error** None. Two conflicts during the rebase were resolved by keeping both
+  sides, not by taking one: an import block, and a test count that neither side
+  had right afterwards (measured: 312).
+- **Remediation** n/a. Recorded here because the work started as a DD84
+  consolidation. **The Ledger keeps its own records; this does not substitute
+  for them.**
+
+---
+
+## Next entry: OL-0016
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
