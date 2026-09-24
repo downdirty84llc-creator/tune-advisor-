@@ -1,3 +1,20 @@
+> # ⚠️ Stale copy — do not deploy or develop here
+>
+> This is `main` of `downdirty84llc-creator/tune-advisor-`, an abandoned copy of
+> the Georgia Opportunity Ledger. **The live project is
+> [`downdirty84llc-creator/georgia-opportunity-ledger`](https://github.com/downdirty84llc-creator/georgia-opportunity-ledger).**
+>
+> This branch forked just before the admin dashboard's revenue figures were
+> fixed, so it still counts annual subscribers at the monthly price and still
+> counts seeded demo accounts as real subscribers. It is the repository's default
+> branch, which means deploy tooling picks it automatically — that is the risk
+> this notice exists to head off.
+>
+> It is kept because a GitHub default branch cannot be deleted, and because
+> `tune-advisor-` is the DD84 automotive business's own repository. The DD84
+> agent platform on `claude/claude-md-docs-jjveuq` belongs here and stays here.
+> The Ledger does not. See `CLAUDE.md` for the verified comparison.
+
 # Georgia Opportunity Ledger
 
 A subscription intelligence platform for commercial property, business funding

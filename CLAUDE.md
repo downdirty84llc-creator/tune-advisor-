@@ -1,4 +1,46 @@
+> # ⚠️ STOP — you are on the stale copy
+>
+> **This branch is `main` of `downdirty84llc-creator/tune-advisor-`. It is the
+> abandoned copy this file warns about two paragraphs down.** The text below was
+> written for the canonical repository and copied here with the code, so it
+> describes itself as canonical. In this location that is false, and it is the
+> trap: a reader who believes it works on the wrong branch.
+>
+> **The Georgia Opportunity Ledger lives at
+> `downdirty84llc-creator/georgia-opportunity-ledger`. Work there.**
+>
+> Verified 2026-09-24 by comparing this branch against that repository:
+>
+> |                                    | This branch (`34b081b`) | Canonical (`a228f3d`) |
+> | ---------------------------------- | ----------------------- | --------------------- |
+> | Tracked files                      | 267                     | 290                   |
+> | Migrations                         | 32                      | 32                    |
+> | `src/lib/billing/mrr.ts`           | **absent**              | present               |
+> | `src/lib/analytics/sample-data.ts` | **absent**              | present               |
+>
+> Both were last committed on 2026-09-16, so this is not months of drift — it is
+> a fork that stopped immediately before the commit "Fix two wrong numbers on the
+> admin dashboard". **Those two numbers are still wrong here:**
+>
+> - `src/app/(admin)/admin/page.tsx:99` sums `monthly_price` for every active
+>   subscription and never selects `billing_interval`, so an annual Premium
+>   subscriber is counted at $99/month rather than the $82.50 they actually pay.
+> - Nothing filters `is_sample`, so seeded demo accounts are counted in the
+>   subscriber total and in MRR.
+>
+> **Do not deploy this branch.** It is the default branch, so Vercel and most
+> import flows select it automatically; that is the most likely way it reaches
+> production. Nothing here is fixed in place — the fix is to work in the
+> canonical repository, where both defects already are fixed.
+>
+> Flagged, not deleted: GitHub will not let a default branch be removed, and the
+> DD84 agent platform on `claude/claude-md-docs-jjveuq` in this repository is
+> deliberately kept here rather than merged into the Ledger.
+
 # Working in this repository
+
+> The heading below is inaccurate on this branch — see the warning above. It is
+> left unedited so this file still diffs cleanly against the canonical copy.
 
 ## This repository is canonical. Use only this one.
 
