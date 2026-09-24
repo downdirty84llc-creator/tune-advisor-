@@ -308,3 +308,48 @@ run entry goes at the bottom of this file and nothing above it is touched.
 
 Both are logged rather than fixed: correcting `CLAUDE.md` §0 needs the owner's
 word, and consolidating nine branches is a decision, not a chore.
+
+---
+
+## OL-0012 — 2026-09-24 · Two owner decisions; flag the stale default branch
+
+- **Task** T-29, T-30 · **Approval** Owner instruction, "leave the agent platform
+  in tune-advisor- and flag the stale main"
+- **Action** Cloned the canonical Ledger repository to establish ground truth,
+  then added a warning banner to `CLAUDE.md` and `README.md` on
+  `tune-advisor-`'s `main`. **Additive documentation only — 59 insertions, zero
+  deletions, no code touched.**
+- **Tool** `add_repo`, `git clone`, `diff`, `git commit`, `git push`
+- **Source** Owner instruction
+- **Operator** Claude (coordinator)
+- **Before** `tune-advisor-` `main` at `34b081b`, opening with the heading "This
+  repository is canonical. Use only this one." — text written for the Ledger and
+  copied here with the code.
+- **After** `main` at `3e22f41`, warning first in both files. Verified in the
+  destination: local `HEAD` and `origin/main` both read
+  `3e22f41e0377684032275e87079980689d29ba4c`.
+- **Evidence** — compared against the canonical repository
+  `downdirty84llc-creator/georgia-opportunity-ledger` at `a228f3d`:
+  - Both last committed **2026-09-16**; both carry **32 migrations**. This is a
+    fork, not months of drift — it stopped immediately before the commit "Fix
+    two wrong numbers on the admin dashboard".
+  - 267 tracked files here against 290 there.
+  - `src/lib/billing/mrr.ts` and `src/lib/analytics/sample-data.ts` absent here,
+    present there.
+  - `src/app/(admin)/admin/page.tsx:99` still reads
+    `total + Number(plan.monthly_price ?? 0)` with no `billing_interval` in the
+    select, and nothing filters `is_sample`.
+- **Error** None.
+- **Remediation** n/a. The defects were **not** fixed in place: they are already
+  fixed in the canonical repository, and patching an abandoned branch would make
+  it look maintained. Flagging is the correction; the branch survives only
+  because GitHub will not delete a default branch.
+
+### Correction to OL-0011 and to this session's earlier reading
+
+OL-0011 recorded `main` as carrying two live bugs. That was read inside
+`tune-advisor-` and generalised too far. **The canonical Ledger has both fixes**
+— `sample-data.ts` is byte-identical to the copy on this branch and `mrr.ts`
+differs only by one Prettier line wrap. The bugs are real, but only on the
+abandoned copy, which is a staleness problem rather than a product defect. The
+proposed port of those fixes is therefore withdrawn: there was nothing to port.

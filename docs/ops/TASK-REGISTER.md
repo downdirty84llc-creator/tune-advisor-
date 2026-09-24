@@ -54,6 +54,8 @@ open tasks yet — no intake routine has run against a live connector.
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-27 | Register the Stripe webhook endpoint against the deployed host      | finance    | Critical | Blocked             | Owner | A-05 approved    | 2026-08-13   |
 | T-28 | Deploy the application to a live host                               | ledger     | Critical | Blocked             | Owner | **A-09 pending** | 2026-08-14   |
+| T-29 | Keep the DD84 agent platform in tune-advisor-, unmerged             | ops        | High     | Done                | Owner | owner decision   | 2026-09-24   |
+| T-30 | Flag tune-advisor- main as the stale copy                           | ops        | High     | Done                | Agent | owner decision   | 2026-09-24   |
 
 Counts: 14 Done · 1 Partly Done · 2 In Verification · 1 Awaiting Approval ·
 4 Blocked · 4 Planned · 2 Backlog.
@@ -726,3 +728,48 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Deploying is not launching.** `opportunities` is 0 and seven legal documents
   still render the review banner. A live site with an empty database and
   unreviewed terms is not a product you would announce.
+
+---
+
+## T-29 — Keep the DD84 agent platform in `tune-advisor-`, unmerged
+
+- **Objective** — Settle where the Torque agent, the six routines, the operations
+  spec and `docs/ops/` live, so no future session re-opens it.
+- **Source** — Owner instruction 2026-09-24.
+- **Workstream** ops · **Priority** High · **Owner** Owner · **Due** 2026-09-24
+- **Decision** — They stay on `claude/claude-md-docs-jjveuq` in
+  `downdirty84llc-creator/tune-advisor-`, which is DD84's own repository. They
+  are **not** merged into the Ledger.
+- **Why this is the right home** — the Ledger's `CLAUDE.md` states the two
+  businesses were separated deliberately, and that the branch reversing it "must
+  not be merged without the owner saying so in as many words." The agent platform
+  governs DD84 operations; the Ledger is one workstream inside it, not its
+  container.
+- **Standing rule this creates** — a future session that finds the agent files
+  and the Ledger in separate repositories should **leave them that way**. Their
+  separation is a decision with a date, not an oversight to tidy up.
+- **Completion evidence** — Log `OL-0012`.
+- **Status** Done · **Next action** — none.
+
+## T-30 — Flag `tune-advisor-` `main` as the stale copy
+
+- **Objective** — Stop the abandoned default branch being read as current or
+  picked up by deploy tooling.
+- **Source** — Owner instruction 2026-09-24; discovery in `OL-0011`/`OL-0012`.
+- **Workstream** ops · **Priority** High · **Owner** Agent · **Due** 2026-09-24
+- **The specific hazard** — the branch's `CLAUDE.md` opened with "This repository
+  is canonical. Use only this one." Copied from the Ledger, true there, false
+  here. Compounding it, this is the **default branch**, so Vercel and most import
+  flows select it without being asked.
+- **What was done** — a warning above the existing content of `CLAUDE.md` and
+  `README.md` on `main`, carrying the verified comparison and naming the two
+  wrong numbers. Additive only: 59 insertions, no deletions, no code changed.
+- **What was deliberately not done** — the two defects were not patched on that
+  branch. They are already fixed in the canonical repository, and fixing an
+  abandoned copy makes it look maintained, which is the opposite of the goal.
+  The misleading heading was left unedited so the file still diffs cleanly
+  against the canonical copy.
+- **Completion evidence** — Commit `3e22f41` on `origin/main`, confirmed by
+  `rev-parse` matching local and remote. Log `OL-0012`.
+- **Status** Done · **Next action** — none, unless GitHub later permits changing
+  or removing the default branch, at which point archiving beats flagging.
