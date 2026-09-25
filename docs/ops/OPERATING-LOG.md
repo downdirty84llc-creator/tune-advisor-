@@ -353,3 +353,42 @@ OL-0011 recorded `main` as carrying two live bugs. That was read inside
 differs only by one Prettier line wrap. The bugs are real, but only on the
 abandoned copy, which is a staleness problem rather than a product defect. The
 proposed port of those fixes is therefore withdrawn: there was nothing to port.
+
+---
+
+## OL-0013 — 2026-09-25 · Audit the unattended send routine; disable refused
+
+- **Task** T-31 · **Approval** Owner instruction, "check what it's been sending",
+  then "yes" to disabling it
+- **Action** Audited what the Routine "Weekly Georgia Opportunity Ledger
+  summary" (`trig_01FxDef9B5snYTW42FfcMEbD`) has actually sent, then attempted to
+  disable it. **The audit completed; the disable was refused.**
+- **Tool** `list_triggers`, `mcp__Gmail__search_threads`,
+  `mcp__Gmail__list_drafts`, `update_trigger`
+- **Source** Discovered during the 2026-09-25 update check. Created 2026-07-30
+  via `http_api` — before the DD84 agent platform existed — with seven connectors
+  attached (Gmail, Stripe, Shopify, PayPal, Canva, Calendar, Drive). Its prompt
+  ends "…then email the summary to paid subscribers."
+- **Operator** Claude (coordinator)
+- **Finding — it has never sent anything.** Checked the four Monday fire windows
+  against sent mail (the Routine fires 09:00 UTC):
+  - **2026-09-21** — 8 sent messages, all owner-written DD84 facility
+    correspondence at 14:22 and 15:21–15:22. Nothing near 09:00.
+  - **2026-09-14, 2026-09-07, 2026-08-31** — zero sent messages on those days.
+  - No drafts either. Every draft in the mailbox is accounted for and none is a
+    Ledger summary; the four dated 2026-08-19 are DD84 Build Review **templates**
+    addressed to the owner with `[First name]` / `[Vehicle]` placeholders intact.
+- **Why it sent nothing** — the Ledger database holds **zero profiles**, so "paid
+  subscribers" resolves to an empty list. Four runs reported SUCCEEDED by doing
+  nothing. **That is luck, not design:** the first real subscriber turns this into
+  an unattended external send, which the spec puts in Class C and which every
+  other routine here is built to refuse.
+- **Error** `update_trigger` refused: _"this routine was created via `http_api`,
+  not by an agent. Agents can only update routines they created."_ No change was
+  made; the Routine remains **enabled**.
+- **Remediation — owner action, one click.** Disable it at
+  https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD. Disabling is
+  reversible and loses nothing: it has produced no email and no committed brief.
+  Not attempted by any other route — an agent working around a permission
+  boundary deliberately placed in front of a sending tool would be the wrong
+  instinct, whatever the intent.

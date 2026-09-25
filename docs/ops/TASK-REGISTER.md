@@ -56,6 +56,7 @@ open tasks yet — no intake routine has run against a live connector.
 | T-28 | Deploy the application to a live host                               | ledger     | Critical | Blocked             | Owner | **A-09 pending** | 2026-08-14   |
 | T-29 | Keep the DD84 agent platform in tune-advisor-, unmerged             | ops        | High     | Done                | Owner | owner decision   | 2026-09-24   |
 | T-30 | Flag tune-advisor- main as the stale copy                           | ops        | High     | Done                | Agent | owner decision   | 2026-09-24   |
+| T-31 | Disable the unattended Ledger subscriber-email Routine              | ops        | High     | Blocked             | Owner | owner decision   | 2026-09-25   |
 
 Counts: 14 Done · 1 Partly Done · 2 In Verification · 1 Awaiting Approval ·
 4 Blocked · 4 Planned · 2 Backlog.
@@ -773,3 +774,32 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   `rev-parse` matching local and remote. Log `OL-0012`.
 - **Status** Done · **Next action** — none, unless GitHub later permits changing
   or removing the default branch, at which point archiving beats flagging.
+
+---
+
+## T-31 — Disable the unattended Ledger subscriber-email Routine
+
+- **Objective** — Remove the one scheduled job on this account that can send
+  external email with no approval step.
+- **Source** — `OL-0013`, 2026-09-25.
+- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due** 2026-09-25
+- **The Routine** — "Weekly Georgia Opportunity Ledger summary",
+  `trig_01FxDef9B5snYTW42FfcMEbD`, Mondays 09:00 UTC, created 2026-07-30 via
+  `http_api` with seven connectors including Gmail and Stripe. Its prompt ends
+  with an unconditional "email the summary to paid subscribers".
+- **Audited, not assumed** — it has sent nothing in four weeks of green runs. No
+  sent mail in any fire window, no drafts. The Ledger has zero profiles, so the
+  subscriber list is empty and the send is a no-op.
+- **Why it still matters** — the protection is an empty database, not a rule. One
+  real subscriber turns a weekly no-op into a weekly unattended send, from a
+  product that has not launched, using a session link from July. Every routine
+  built afterwards is Class A by construction; this one predates them.
+- **Why the agent cannot do it** — `update_trigger` refuses: a Routine created via
+  `http_api` can only be edited by its owner. That boundary was not worked around.
+- **The action** — disable at
+  https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD. Reversible;
+  nothing is lost. Deleting outright is also reasonable — it has produced no
+  artefact anyone depends on.
+- **Completion proof required** — `list_triggers` showing `enabled: false`, or the
+  Routine absent.
+- **Status** Blocked on owner action · **Next action** — one click, by the owner.
