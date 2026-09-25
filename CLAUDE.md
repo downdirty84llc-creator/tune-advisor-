@@ -31,7 +31,7 @@ application is a trap. Before deleting it, every file was compared against the
 canonical repository: the six recovered migrations differ only inside
 `COMMENT ON` string literals, with identical SQL, and the two security-hardening
 ones are byte-identical once comments are stripped. Nothing was lost. The
-evidence is in `docs/ops/OPERATING-LOG.md` OL-0017.
+evidence is in `docs/ops/OPERATING-LOG.md` OL-0016.
 
 > **The repository's default branch still carries the old Ledger copy.**
 > `claude/georgia-opportunity-ledger-kfpt4c` is the default and cannot be
