@@ -1,3 +1,25 @@
+> # ⛔ SUPERSEDED BRANCH — do not append to this record
+>
+> **This is `claude/claude-md-docs-jjveuq`. The operating record moved to
+> `claude/claude-md-docs-cqvhy6` on 2026-09-25, by owner decision.**
+>
+> Every entry in this directory was carried across. This branch's OL-0010…OL-0015
+> are **OL-0017…OL-0022** there, its A-11 is **A-12**, and its T-31 is **T-30** —
+> each renumbered entry names the number it had here. Nothing was dropped.
+>
+> **If you are a routine or a session and you have landed here, stop and switch
+> branches before writing anything.** Appending here is how this record split in
+> two the first time: both branches were truthful, and between them A-05 spent
+> six weeks reading "awaiting owner" after the owner had answered. Two records
+> are worse than either one alone.
+>
+> The four Torque Routines already point at `cqvhy6`. This branch is kept only so
+> the commits that cite its entry numbers still resolve.
+>
+> Consolidation is recorded as **T-31** on `cqvhy6`.
+
+---
+
 # DD84 operating record
 
 This directory is the operating record for **Torque**, the DD84 operations
