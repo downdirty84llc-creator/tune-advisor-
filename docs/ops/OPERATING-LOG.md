@@ -392,3 +392,35 @@ proposed port of those fixes is therefore withdrawn: there was nothing to port.
   Not attempted by any other route — an agent working around a permission
   boundary deliberately placed in front of a sending tool would be the wrong
   instinct, whatever the intent.
+
+---
+
+## OL-0014 — 2026-09-25 · Verify the reported disable; delete also refused
+
+- **Task** T-31 · **Approval** Owner said "disabled it", then "just delete it"
+- **Action** Verified the reported disable in the destination, then attempted to
+  delete. **Both the disable and the delete are refused to agents; the Routine is
+  unchanged and still enabled.**
+- **Tool** `get_trigger`, `list_triggers`, `delete_trigger`
+- **Operator** Claude (coordinator)
+- **The disable did not take.** `get_trigger` on
+  `trig_01FxDef9B5snYTW42FfcMEbD` returns `enabled: true`,
+  `next_run_at: 2026-09-28T09:00:53Z`, and — decisively —
+  `updated_at: 2026-07-30T16:31:25`, **identical to `created_at`**. Nothing has
+  modified the Routine since creation; a saved change would have moved that
+  timestamp. Reported as not done rather than accepted, because the timestamp is
+  checkable and the report was not.
+- **Nothing else was toggled by mistake** — all four DD84 Routines remain
+  `enabled: true` with `updated_at` 2026-09-23, unchanged.
+- **Error** `delete_trigger` refused with the same rule as `update_trigger`:
+  _"this routine was created via `http_api`, not by an agent. Agents can only
+  delete routines they created."_
+- **Remediation — owner only, no agent path exists.** Delete or disable at
+  https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD, then confirm the
+  state sticks after a refresh. If the UI will not save, the fallbacks are
+  revoking the OAuth token the Routine runs on (`api_token_hint`
+  `sk-ant-oat01-1o2fMrgy...OQAA`, issued 2026-07-30) or detaching the Gmail
+  connector, either of which removes its ability to send.
+- **Residual risk while it stands** — low but not zero. It fires Monday
+  2026-09-28 at 09:00 UTC and sends nothing only because the Ledger has zero
+  subscribers. The safeguard is an empty table, not a rule.
