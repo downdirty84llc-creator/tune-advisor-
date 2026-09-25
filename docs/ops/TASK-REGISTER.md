@@ -57,6 +57,7 @@ open tasks yet — no intake routine has run against a live connector.
 | T-29 | Keep the DD84 agent platform in tune-advisor-, unmerged             | ops        | High     | Done                | Owner | owner decision   | 2026-09-24   |
 | T-30 | Flag tune-advisor- main as the stale copy                           | ops        | High     | Done                | Agent | owner decision   | 2026-09-24   |
 | T-31 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High     | **Accepted Risk**   | Owner | A-11 accepted    | 2026-09-25   |
+| T-32 | Consolidate the two diverged operating records onto one branch      | ops        | High     | Awaiting Approval   | Owner | **A-12 pending** | 2026-09-26   |
 
 Counts: 14 Done · 1 Partly Done · 2 In Verification · 1 Awaiting Approval ·
 4 Blocked · 4 Planned · 2 Backlog.
@@ -835,3 +836,64 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   subscriber, or the Routines UI starts saving for HTTP-API-created Routines.
   Worth reporting the UI failure to Anthropic: anything created that way is
   currently unmanageable by its owner.
+
+---
+
+## T-32 — Consolidate the two diverged operating records onto one branch
+
+- **Objective** — One operating record. Two branches are independently appending
+  to a file whose entire value is that it is append-only and unique.
+- **Source** — Message from the `claude/claude-md-docs-cqvhy6` session,
+  2026-09-25, relayed via a scheduled trigger. Claims verified in `OL-0015`.
+- **Workstream** ops · **Priority** High · **Owner** **Owner** ·
+  **Due** 2026-09-26 (proposed)
+- **Approval class** — B, but it rewrites the shared record and discards or
+  renumbers history, so it goes to the owner as **A-12** rather than being taken
+  as routine maintenance.
+
+### The state, verified not assumed
+
+|                       | `claude/claude-md-docs-jjveuq` (this branch) | `claude/claude-md-docs-cqvhy6`        |
+| --------------------- | -------------------------------------------- | ------------------------------------- |
+| Tracked files         | 267                                          | **28**                                |
+| Ledger `src/` present | yes                                          | **no — deleted by owner instruction** |
+| Operating-log entries | OL-0001…OL-0015                              | OL-0001…OL-0016                       |
+| Routines point here   | no                                           | **yes, all four**                     |
+
+**OL-0011 through OL-0016 name different events on the two branches.** So do
+entries in `APPROVALS.md` — both branches independently created an **A-11**, and
+`cqvhy6` has a **T-28** and **T-29** that are not the T-28/T-29 here. A merge
+today conflicts in all three control files at once.
+
+### Recommendation — consolidate onto `cqvhy6`
+
+Not because its record is better, but because three things already point at it
+and only one points here:
+
+1. **All four Torque Routines name `cqvhy6`.** Briefs, when A-10 is fixed, will
+   land there. Consolidating the other way means re-pointing four Routines the
+   owner has already corrected once this month.
+2. **`cqvhy6` carries the owner's deletion decision.** The Ledger tree is gone
+   from it; this branch still carries all 241 files of it. Merging this branch
+   into that one risks reintroducing what was deliberately removed — the merge
+   must take deletions from `cqvhy6` wherever they conflict.
+3. **This branch's unique value is small and portable** — the T-29/T-30/T-31
+   decisions, the A-11 acceptance, the `main` staleness flag, and the correction
+   in `OL-0015`. Roughly eight commits, all documentation.
+
+**Renumber rather than pretend.** Where OL numbers collide, the entries from this
+branch get new numbers appended after `cqvhy6`'s highest, each carrying a line
+naming its original number so `74adc67`, `84e310e` and `75e7ca0` remain findable.
+The same for the duplicate `A-11`. Nothing is deleted to make the sequence tidy.
+
+- **Cost** — none. **Risk** — a careless merge silently restores the deleted
+  Ledger tree, or loses an append-only entry. Both are avoided by taking
+  `cqvhy6` as the base and cherry-picking, rather than merging this branch into
+  it wholesale.
+- **Completion proof required** — one branch carrying every entry from both, no
+  duplicate OL or A numbers, `cqvhy6` still at 28 files plus whatever this branch
+  legitimately adds, and the superseded branch marked in `CLAUDE.md` so a future
+  session does not append to it.
+- **Status** Awaiting owner decision (**A-12**) · **Next action** — the owner
+  chooses the surviving branch. The other session has said it is holding off on
+  anything that widens the gap, and this session is doing the same.

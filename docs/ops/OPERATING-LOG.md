@@ -424,3 +424,67 @@ proposed port of those fixes is therefore withdrawn: there was nothing to port.
 - **Residual risk while it stands** — low but not zero. It fires Monday
   2026-09-28 at 09:00 UTC and sends nothing only because the Ledger has zero
   subscribers. The safeguard is an empty table, not a rule.
+
+---
+
+## OL-0015 — 2026-09-25 · Correction: the port was withdrawn on a false inference
+
+> **Numbering collision, unresolved.** A different OL-0015 exists on
+> `claude/claude-md-docs-cqvhy6`. That branch and this one have both been
+> appending to this file independently; **OL-0011 through OL-0016 now name
+> different events depending on which branch you read.** Renumbering is pending
+> the owner's decision on consolidation — see the end of this entry. Do not treat
+> an OL number as unique until that is settled.
+
+- **Task** T-19, T-32 · **Approval** none needed; correcting this session's own
+  record
+- **Action** Verified a correction sent by the other DD84 session and found it
+  right. **This corrects OL-0012 and commit `74adc67`.**
+- **Tool** `mcp__github__get_commit`, `git ls-tree`, `git show`
+- **Operator** Claude (coordinator)
+
+**What OL-0012 and `74adc67` claimed** — that cloning the canonical Ledger showed
+both fixes already present, so "the proposed port is therefore withdrawn: there
+was nothing to port", and that the bugs were "real, but only on the abandoned
+copy".
+
+**What is actually true.** The observation was right and the inference was wrong.
+The fixes were present on 2026-09-24 **because the other session had landed them
+the day before**, not because they had always been there. Verified against the
+GitHub API rather than taken on report:
+
+- Commit `a228f3d` in `downdirty84llc-creator/georgia-opportunity-ledger`,
+  "Fix two wrong numbers on the admin dashboard".
+- **Author date `2026-09-16T15:43:24Z`; committer date `2026-09-23T10:58:48Z`.**
+  It was rebased before landing, which is why the author date reads a week
+  earlier — and is what made it look pre-existing to a clone taken on the 24th.
+- In that commit `src/lib/analytics/sample-data.ts` and `src/lib/billing/mrr.ts`
+  are both `status: "added"`. **They did not exist in the canonical repository
+  before it.** `admin/page.tsx` is modified +64/−16.
+
+**Why this mattered enough to correct.** As written, the record told a future
+session those defects were never real in the canonical repository. They were:
+MRR overstated by roughly 17% per annual subscriber, and seeded demo accounts
+moving four admin tiles including revenue, until 2026-09-23. A reader who
+believed the old entry would conclude the canonical repo had never needed the
+fix and might not check it again.
+
+**The methodological error, stated plainly so it is not repeated.** A file being
+present is evidence about the present, not about the past. `git log` on the file,
+or the committer date rather than the author date, would have shown it. The
+byte-identical `sample-data.ts` was the clue and was misread as coincidence: it
+was identical _because it came from this platform_.
+
+**Conduct note** — the other session did not edit this file, and said so. That is
+correct: an append-only record belongs to the branch that writes it, and one
+session rewriting another's log would destroy the property that makes it worth
+keeping.
+
+**Verified alongside it, both confirmed:** `cqvhy6` is down to 28 tracked files
+with no `src/` at all, and the OL numbering collides as described.
+
+**Open, and the owner's to settle — T-32.** Two branches are appending to one
+append-only log. Whoever merges second hits a conflict in the file whose whole
+purpose is that it cannot conflict. The other session proposes consolidating onto
+`cqvhy6`. That is a reasonable proposal and is not an agent's decision to take
+unilaterally; it is recorded as T-32 and put to the owner.
