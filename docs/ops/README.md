@@ -93,8 +93,8 @@ core, and it is what makes the routines safe to run unattended.
    `TASK-REGISTER.md` so that it neither duplicates an existing task nor reports
    an item already closed.
 6. **Uncertainty is stated, not smoothed.** Where a routine is unsure whether an
-   item is a duplicate, whether a payment cleared, or whether a page is genuinely
-   broken, it says so and proposes the check that would resolve it.
+   item is a duplicate, whether a payment cleared, or whether a page is
+   genuinely broken, it says so and proposes the check that would resolve it.
 
 ### Where routine output goes
 

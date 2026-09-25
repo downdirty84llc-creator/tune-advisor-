@@ -1,9 +1,9 @@
 # Campaign Kit — "Ready To Tune?" · DD84 Tuning
 
-**Agent:** Rev (Marketing & Revenue) · **Date:** 2026-08-03
-**Status:** Prepared, not published. §14 permits organic content and internal
-drafts to be prepared automatically; publishing follows the approved channel
-policy. **Nothing here has been posted, sent or paid for.**
+**Agent:** Rev (Marketing & Revenue) · **Date:** 2026-08-03 **Status:**
+Prepared, not published. §14 permits organic content and internal drafts to be
+prepared automatically; publishing follows the approved channel policy.
+**Nothing here has been posted, sent or paid for.**
 
 Built to §13 — a campaign is strategy, creative, conversion path, lead data,
 follow-up, tracking, operations, optimisation and documentation. An
@@ -20,7 +20,8 @@ Three facts from the register decide this:
   digital products. Ten invoices, three customers, $3,507.86 — and $0 from the
   storefront across 574 sessions.
 - **The audience does not know DD84 exists.** Seven search visits in 180 days,
-  84% of traffic direct. This is not a persuasion problem, it is a reach problem.
+  84% of traffic direct. This is not a persuasion problem, it is a reach
+  problem.
 - **A perfect entry product already exists and is badly placed:** _Remote Tune
   Readiness Review_, $49 basic / $75 with datalog check. It is on the home-page
   collection — but **eighth of ten**, behind PCM removal labour, a Pops & Bangs
@@ -29,8 +30,8 @@ Three facts from the register decide this:
   already decided to buy.
 
 So the campaign does not sell tuning. **It sells the question people already ask
-themselves before they spend $500** — *is my build actually ready?* — and answers
-it for $49.
+themselves before they spend $500** — _is my build actually ready?_ — and
+answers it for $49.
 
 ### The ladder
 
@@ -42,9 +43,9 @@ it for $49.
 | Adjacent  | Wiring & EFI power diagnostics, PCM unlock            | $75–$300  | What the review often uncovers                       |
 | Recurring | Shop-to-shop support session                          | $150–$350 | Repeat revenue from professionals                    |
 
-The $49 review is the whole mechanism. It is cheap enough to buy on impulse,
-it produces a written finding, and that finding *is* the sales conversation for
-the $400 job — without a single unprovable claim.
+The $49 review is the whole mechanism. It is cheap enough to buy on impulse, it
+produces a written finding, and that finding _is_ the sales conversation for the
+$400 job — without a single unprovable claim.
 
 ---
 
@@ -78,8 +79,8 @@ Leads with competence, not discount. For technical forums and long-form posts.
 > Half the "my tune is bad" posts I read are not tuning problems.
 >
 > They're a lean cylinder from a vacuum leak, a MAF that's reading fine at idle
-> and lying at 4,000 RPM, a ground that drops half a volt under load, or a
-> cam card that never made it into the VE table.
+> and lying at 4,000 RPM, a ground that drops half a volt under load, or a cam
+> card that never made it into the VE table.
 >
 > A tuner who takes your money without checking that first is going to hand the
 > car back running exactly the same.
@@ -92,7 +93,8 @@ Leads with competence, not discount. For technical forums and long-form posts.
 
 **Short ad copy (under 125 characters)**
 
-- Send the datalog. Find out what's actually wrong before you pay for a tune. $49.
+- Send the datalog. Find out what's actually wrong before you pay for a tune.
+  $49.
 - Cam swap idle bad? It might not be the tune. $49 readiness review.
 
 **Call to action:** _Send your datalog — $49 readiness review_
@@ -174,8 +176,8 @@ first, then ordered as the ladder:
 | 8    | Pops & Bangs Add-On                             | $50      |
 | 9–10 | Gym bag, framed poster                          | —        |
 
-Cheapest diagnostic entry first, then up the ladder; deposits and add-ons — which
-presuppose a decision already made — below them; merch last.
+Cheapest diagnostic entry first, then up the ladder; deposits and add-ons —
+which presuppose a decision already made — below them; merch last.
 
 **A gap this exposed, not yet fixed.** The five core tuning services that
 actually earned the money — GM, Ford, Dodge/Mopar, Toyota/Lexus and Holley EFI
@@ -211,9 +213,9 @@ owner, a next action and a date.
 
 This is where the money is, and it is the step most people skip.
 
-**On purchase (same day):** confirm, and ask for exactly what's needed — datalog,
-build sheet, cam card, ECU/PCM type. Nothing else. Every extra question loses
-people.
+**On purchase (same day):** confirm, and ask for exactly what's needed —
+datalog, build sheet, cam card, ECU/PCM type. Nothing else. Every extra question
+loses people.
 
 **On delivery of the review (the core moment):** deliver the finding in writing,
 in plain language, split into three lists:
@@ -226,7 +228,8 @@ in plain language, split into three lists:
 Then, and only then, one sentence: _"If you want me to do the calibration side,
 here's what that looks like and what it costs."_ No pressure, no countdown.
 
-**Day 3, if no reply:** one message. "Any questions on the findings?" Nothing else.
+**Day 3, if no reply:** one message. "Any questions on the findings?" Nothing
+else.
 
 **Day 10:** if they said they'd fix mechanical issues first — "How did the
 [specific item] turn out?" This is a real question about their car, not a
@@ -253,8 +256,8 @@ UTM scheme, applied to every link:
 Shopify records `referrer_source` already. The `utm_content` split is what tells
 you which angle works — without it the whole test is unreadable.
 
-**Baseline to beat, measured today:** 173 sessions per 180 days, 84% direct,
-7 from search, 0 orders, $0.
+**Baseline to beat, measured today:** 173 sessions per 180 days, 84% direct, 7
+from search, 0 orders, $0.
 
 ---
 
@@ -293,15 +296,15 @@ input is time.
 
 Paid advertising is deliberately **not** proposed. §14 requires approval of
 platform, objective, budget ceiling and period, and none of that is worth
-requesting until the offer has proven it can convert someone who isn't already
-a friend.
+requesting until the offer has proven it can convert someone who isn't already a
+friend.
 
 ---
 
 ## 12. Honest limits
 
-- **This is a reach problem and reach takes time.** Nothing here produces revenue
-  this week.
+- **This is a reach problem and reach takes time.** Nothing here produces
+  revenue this week.
 - **The fastest revenue is still T-01** — three people have paid before, one of
   them six times, and nobody has invoiced them in eleven months. This campaign
   is for after that, not instead of it.

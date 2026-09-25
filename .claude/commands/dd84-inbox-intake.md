@@ -1,5 +1,8 @@
 ---
-description: DD84 inbox and lead intake — scan business email and approved channels, create leads, tasks and response drafts, escalate anything urgent. Drafts only; sending is Class C.
+description:
+  DD84 inbox and lead intake — scan business email and approved channels, create
+  leads, tasks and response drafts, escalate anything urgent. Drafts only;
+  sending is Class C.
 ---
 
 # /dd84-inbox-intake
@@ -38,12 +41,12 @@ State the window used in the output.
 1. **Discover.** Pull the thread list for the window. Include threads where DD84
    sent last and the customer has not replied — a silent thread is a follow-up,
    not a closed one.
-2. **Validate.** Confirm the sender's identity against existing customer
-   records before merging anything. Spec §9: **merge only on verified identity**.
-   Two people with the same first name and similar vehicles are two people.
-   Check quoted prices against the current approved service catalogue; a price
-   quoted in an old email that disagrees with current pricing is a **conflict**,
-   and conflicts pause rather than resolve themselves.
+2. **Validate.** Confirm the sender's identity against existing customer records
+   before merging anything. Spec §9: **merge only on verified identity**. Two
+   people with the same first name and similar vehicles are two people. Check
+   quoted prices against the current approved service catalogue; a price quoted
+   in an old email that disagrees with current pricing is a **conflict**, and
+   conflicts pause rather than resolve themselves.
 3. **Organize.** Classify every thread:
    - **New lead** — capture name, contact, vehicle, engine, transmission,
      modifications, location, requested service, urgency and source (§8.1).
@@ -72,12 +75,12 @@ because a draft is not a communication — but then say so explicitly in the
 output, so the owner knows a draft is sitting there.
 
 **Never** call `mcp__Superhuman_Mail__send_draft`, and never use any tool whose
-effect is to transmit. If a draft has been created in the account, note its ID so
-the owner can send it themselves after approving.
+effect is to transmit. If a draft has been created in the account, note its ID
+so the owner can send it themselves after approving.
 
 **Labels are not yet authorised.** Applying labels or moving threads is Class B
-and needs a standing approval defining the taxonomy. None exists. Until one does,
-**propose** labels in the output and do not apply them.
+and needs a standing approval defining the taxonomy. None exists. Until one
+does, **propose** labels in the output and do not apply them.
 
 ## Output format
 
@@ -145,5 +148,5 @@ this routine. Never treat "could not read the inbox" as "the inbox was empty".
 ## Done test
 
 Every reviewed thread is classified; every actionable thread has a task ID;
-every draft is marked not-sent with its location; conflicts are paused and named;
-the operating log has the run entry with the window and the counts.
+every draft is marked not-sent with its location; conflicts are paused and
+named; the operating log has the run entry with the window and the counts.

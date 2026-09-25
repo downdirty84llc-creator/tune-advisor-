@@ -1,5 +1,8 @@
 ---
-description: DD84 Georgia opportunity scan — find, validate, score and rank real estate, funding, commercial, partnership and small-business opportunities. Scores candidates; publishes nothing.
+description:
+  DD84 Georgia opportunity scan — find, validate, score and rank real estate,
+  funding, commercial, partnership and small-business opportunities. Scores
+  candidates; publishes nothing.
 ---
 
 # /dd84-opportunity-scan
@@ -23,8 +26,8 @@ strategic fit second.
 This repository _is_ the Georgia Opportunity Ledger, and the Ledger has an
 editorial workflow that deliberately separates duties: a researcher drafts and
 submits, a reviewer approves and scores, an editor publishes. Nobody carries a
-record from draft to publication alone
-(`src/lib/opportunities/workflow.ts`, CLAUDE.md §6).
+record from draft to publication alone (`src/lib/opportunities/workflow.ts`,
+CLAUDE.md §6).
 
 **This routine is a researcher, and only a researcher.** It produces candidate
 records in a markdown brief. It does not insert rows, does not move
@@ -55,9 +58,9 @@ Use the published method exactly as implemented — the components and maxima in
 `src/lib/scoring/score.ts` are fixed by specification because scores are
 compared across records and across weeks:
 
-financial value 25 · accessibility 20 · time sensitivity 15 · source
-reliability 15 · capital requirement 10 · complexity 10 · risk 5 — and the
-classification bands that follow from the total.
+financial value 25 · accessibility 20 · time sensitivity 15 · source reliability
+15 · capital requirement 10 · complexity 10 · risk 5 — and the classification
+bands that follow from the total.
 
 Three rules the product enforces and this routine inherits:
 
@@ -101,7 +104,8 @@ Three rules the product enforces and this routine inherits:
 
 ## Output format
 
-Write to `docs/ops/briefs/YYYY-MM-DD-opportunity-scan.md` and print in the reply:
+Write to `docs/ops/briefs/YYYY-MM-DD-opportunity-scan.md` and print in the
+reply:
 
 ```
 # DD84 Georgia opportunity scan — <date>
@@ -164,8 +168,8 @@ Where two sources disagree, or where the primary source could not be reached.
 Name it. If the **Ledger database** could not be read, deduplicate against the
 register and prior briefs and say plainly that a database-level duplicate check
 did not happen — a duplicate opportunity record is a recoverable annoyance, a
-silent one is not. If a **primary source** could not be fetched, the candidate is
-still listed but its source reliability component is scored low **for that
+silent one is not. If a **primary source** could not be fetched, the candidate
+is still listed but its source reliability component is scored low **for that
 reason**, stated in the breakdown, rather than being scored as if the source had
 been read.
 

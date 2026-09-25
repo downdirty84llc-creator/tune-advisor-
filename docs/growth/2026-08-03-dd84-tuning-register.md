@@ -1,9 +1,9 @@
 # Opportunity Register — DD84 Tuning
 
-**Agent:** Rev (Marketing & Revenue), operating under `docs/DD84-GROWTH-AGENT.md`
-**Date:** 2026-08-03
-**Venture:** DD84 Tuning (Down Dirty 84 LLC)
-**Stage:** Discovery and validation complete. Awaiting owner decision.
+**Agent:** Rev (Marketing & Revenue), operating under
+`docs/DD84-GROWTH-AGENT.md` **Date:** 2026-08-03 **Venture:** DD84 Tuning (Down
+Dirty 84 LLC) **Stage:** Discovery and validation complete. Awaiting owner
+decision.
 
 > **Why this file is in this repository.** It concerns a different venture from
 > the Georgia Opportunity Ledger. DD84 Tuning has no repository of its own, and
@@ -59,8 +59,8 @@ The sequence is unambiguous:
 
 The catalogue is not the problem in the way it first appears. The problem is
 that the motion which demonstrably made money — invoice a named customer for
-work — was abandoned, and the motion that replaced it has no audience pointed
-at it. Seven search visits in six months is not a conversion problem. It is
+work — was abandoned, and the motion that replaced it has no audience pointed at
+it. Seven search visits in six months is not a conversion problem. It is
 invisibility.
 
 ### A correction to my own earlier diagnosis
@@ -97,8 +97,8 @@ Time /5 (higher = less owner involvement) · Risk −15…+5.
 
 **Priority rule.** T-01 leads despite tying on score, because §9 puts urgent
 revenue recovery ahead of everything. It is also the only item that could
-produce cash this week. ~~T-07 blocks T-02 and runs first in practice.~~
-**T-07 was withdrawn on 2026-08-07 by owner decision**, so T-01 and T-02 proceed
+produce cash this week. ~~T-07 blocks T-02 and runs first in practice.~~ **T-07
+was withdrawn on 2026-08-07 by owner decision**, so T-01 and T-02 proceed
 without it — see the note under T-07 for what that costs.
 
 ### Hygiene, not an opportunity
@@ -173,9 +173,9 @@ estimate.
   times. People who buy six times know other people with the same problem. Ask
   only after T-01 has re-established contact.
 - **T-05 · Consolidate the three surfaces (57).** dd84tuning.com, the Shopify
-  store and the Stripe/bookipay invoicing are three disconnected places.
-  Traffic landing on one cannot buy on another, and revenue is tracked in two
-  systems that do not talk.
+  store and the Stripe/bookipay invoicing are three disconnected places. Traffic
+  landing on one cannot buy on another, and revenue is tracked in two systems
+  that do not talk.
 
 ---
 
@@ -208,8 +208,8 @@ changed, so no existing URL breaks and nothing customers see moved.
 ### What was changed
 
 **Five tuning-service products** had no SEO title at all. These are the ones
-that matter, because they are the same invoiced service work that produced
-100% of this venture's revenue:
+that matter, because they are the same invoiced service work that produced 100%
+of this venture's revenue:
 
 | Product                                    | New SEO title                                      |
 | ------------------------------------------ | -------------------------------------------------- |
@@ -230,8 +230,8 @@ terms, so these were the highest-leverage gap in the catalogue:
 
 **Ten merch products** had descriptions but no SEO title. Filled in.
 
-Result: **48 of 50 active products** and **4 of 6 collections** now carry an
-SEO title, up from 31 and 1.
+Result: **48 of 50 active products** and **4 of 6 collections** now carry an SEO
+title, up from 31 and 1.
 
 ### The pattern used, and why
 
@@ -257,17 +257,16 @@ tag changed.
 - **"General Clothes example products"** — an empty leftover from the theme
   demo, still live with 0 products. Should be deleted; not Rev's call.
 - **"Home page"** — the theme's default collection, left alone.
-- **Handles and visible titles** — unchanged on purpose. Changing a handle
-  404s every existing link to that product.
+- **Handles and visible titles** — unchanged on purpose. Changing a handle 404s
+  every existing link to that product.
 
 ### Honest expectation
 
-This will not produce revenue quickly, and it is not a substitute for the
-briefs above. Search takes weeks to months to reflect metadata changes, the
-baseline is seven visits per 180 days, and metadata alone does not create
-authority for competitive terms like "Holley EFI tuning".
+This will not produce revenue quickly, and it is not a substitute for the briefs
+above. Search takes weeks to months to reflect metadata changes, the baseline is
+seven visits per 180 days, and metadata alone does not create authority for
+competitive terms like "Holley EFI tuning".
 
-What it does is remove a self-inflicted handicap and make the catalogue
-eligible to be found. **T-01 — reactivating the three customers who already
-paid — remains the only item in this register that could produce cash this
-week.**
+What it does is remove a self-inflicted handicap and make the catalogue eligible
+to be found. **T-01 — reactivating the three customers who already paid —
+remains the only item in this register that could produce cash this week.**

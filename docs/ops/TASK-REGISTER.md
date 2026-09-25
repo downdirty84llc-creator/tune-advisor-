@@ -4,9 +4,9 @@ The live register of operational work, in the task standard of
 `docs/DD84-OPERATIONS-AGENT.md` §4. This file is controlling. A task that exists
 only in a chat transcript does not exist.
 
-- **Seeded** 2026-08-06 from repository evidence — `git log`, `docs/MILESTONES.md`,
-  `docs/RUNBOOK.md`, `CLAUDE.md` — plus the statuses the owner stated for T-06,
-  T-12, T-18, T-19, T-20 and packets A-05 to A-07.
+- **Seeded** 2026-08-06 from repository evidence — `git log`,
+  `docs/MILESTONES.md`, `docs/RUNBOOK.md`, `CLAUDE.md` — plus the statuses the
+  owner stated for T-06, T-12, T-18, T-19, T-20 and packets A-05 to A-07.
 - Fields that could not be sourced from an artifact read **`not recorded`**
   rather than a plausible guess. Filling one in is a task of its own.
 - **Due dates on tasks that are not yet approved are Torque's proposal, not an
@@ -53,8 +53,8 @@ open tasks yet — no intake routine has run against a live connector.
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 
-Counts: 14 Done · 2 In Verification · 3 Awaiting Approval · 1 Blocked ·
-4 Planned · 2 Backlog.
+Counts: 14 Done · 2 In Verification · 3 Awaiting Approval · 1 Blocked · 4
+Planned · 2 Backlog.
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -81,8 +81,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Workstream** ops · **Priority** High · **Owner** Agent · **Due** 2026-07-31
 - **Dependencies** — Owner supplying the PDF.
 - **Approval class** — B (internal maintenance), covered by A-01.
-- **Execution steps** — Transcribe to `docs/DD84-OPERATIONS-AGENT.md`, preserving
-  section numbering; mark the PDF as authoritative.
+- **Execution steps** — Transcribe to `docs/DD84-OPERATIONS-AGENT.md`,
+  preserving section numbering; mark the PDF as authoritative.
 - **Cost** — none. **Risk** — transcription drift from the PDF; mitigated by the
   header note requiring the file to be updated when the PDF is revised.
 - **Expected result** — The full 18-section spec in the repository.
@@ -122,8 +122,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Cost** — none. **Risk** — a definition that states the persona but omits the
   machinery, which is exactly what T-20 later corrected.
 - **Expected result** — An invocable agent definition.
-- **Completion evidence** — Commit `6468118`, `.claude/agents/torque.md`
-  (138 lines). Log `OL-0001`.
+- **Completion evidence** — Commit `6468118`, `.claude/agents/torque.md` (138
+  lines). Log `OL-0001`.
 - **Status** Done · **Next action** — Superseded in scope by T-20.
 
 ## T-04 — Correct documentation that had drifted away from the code
@@ -132,14 +132,16 @@ finding that would otherwise have been mentioned once in a reply and lost.
   that the documentation can be trusted as a source.
 - **Source** — Agent review of README, ARCHITECTURE, MILESTONES, RUNBOOK against
   the implementation.
-- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due** 2026-07-31
+- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due**
+  2026-07-31
 - **Dependencies** — none.
 - **Approval class** — B, covered by A-02.
 - **Execution steps** — Diff each claim against the code; correct or delete the
   ones that failed; state the residual honestly.
 - **Cost** — none. **Risk** — none material; documentation-only.
 - **Expected result** — Documentation that matches the code.
-- **Completion evidence** — Commit `a489144`, five files, +122/−57. Log `OL-0002`.
+- **Completion evidence** — Commit `a489144`, five files, +122/−57. Log
+  `OL-0002`.
 - **Status** Done · **Next action** — Recurrence handled by T-10.
 
 ## T-05 — Record the true legal-review flags on the ten legal documents
@@ -148,7 +150,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
   than implied, so the launch blocker is visible.
 - **Source** — Review of `src/lib/legal/documents.ts` against
   `docs/MILESTONES.md`.
-- **Workstream** compliance · **Priority** High · **Owner** Agent · **Due** 2026-07-31
+- **Workstream** compliance · **Priority** High · **Owner** Agent · **Due**
+  2026-07-31
 - **Dependencies** — none.
 - **Approval class** — A (record-keeping only — no legal determination made),
   covered by A-02.
@@ -171,7 +174,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
   is a number the owner would make decisions on.
 - **Source** — Agent finding while reviewing `scripts/seed.ts` against the admin
   dashboard queries.
-- **Workstream** finance · **Priority** High · **Owner** Agent · **Due** 2026-08-08
+- **Workstream** finance · **Priority** High · **Owner** Agent · **Due**
+  2026-08-08
 - **Dependencies** — none for the code; a seeded database for verification.
 - **Approval class** — **E-adjacent** (changes owner-facing revenue reporting).
   Approved under **A-03**, 2026-07-31.
@@ -179,10 +183,12 @@ finding that would otherwise have been mentioned once in a reply and lost.
   exclusion predicate and the filter builders; (2) apply to the subscriber,
   revenue and — under T-09's commit — failed-payment tiles; (3) apply to the
   `aggregate-analytics` job; (4) badge sample rows in the UI and carry the flag
-  into CSV exports; (5) 13 unit tests, extended to 16 by the failed-payment tile.
+  into CSV exports; (5) 13 unit tests, extended to 16 by the failed-payment
+  tile.
 - **Cost** — none. **Risk** — the two exclusion helpers are deliberately
-  asymmetric because `analytics_events.user_id` is nullable and a null means real
-  anonymous traffic; unifying them would make one tile wrong. Pinned by tests.
+  asymmetric because `analytics_events.user_id` is nullable and a null means
+  real anonymous traffic; unifying them would make one tile wrong. Pinned by
+  tests.
 - **Expected result** — Dashboard subscriber count, MRR and failed-payment tile
   count only real accounts.
 - **Completion evidence** — Commits `1039582` and `8337e41`; tests
@@ -193,14 +199,16 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Status** **In Verification** · **Next action** — `supabase start`,
   `supabase db reset`, `npm run db:seed`, then read `/admin` and confirm the
   subscriber count and MRR both read zero with only demo accounts present.
-  Record the observation in `OPERATING-LOG.md`; only then does this move to Done.
+  Record the observation in `OPERATING-LOG.md`; only then does this move to
+  Done.
 
 ## T-07 — Count annual subscribers at a twelfth of the annual price
 
 - **Objective** — Report monthly recurring revenue truthfully. Counting an
   annual subscriber at the monthly price overstated MRR.
 - **Source** — Agent review of the admin dashboard revenue tile.
-- **Workstream** finance · **Priority** High · **Owner** Agent · **Due** 2026-07-31
+- **Workstream** finance · **Priority** High · **Owner** Agent · **Due**
+  2026-07-31
 - **Dependencies** — T-06 (shares the dashboard query path).
 - **Approval class** — E-adjacent. Approved under **A-04**, 2026-07-31.
 - **Execution steps** — Extract the arithmetic into `src/lib/billing/mrr.ts`;
@@ -219,23 +227,25 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Stop the test configuration implying a layer of coverage that
   has never existed.
 - **Source** — Agent review of `vitest.config.ts` against the filesystem.
-- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due** 2026-08-02
+- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due**
+  2026-08-02
 - **Dependencies** — none.
 - **Approval class** — B, covered by S-01.
-- **Execution steps** — Drop `tests/integration/**` from `include`; record in the
-  config why it was removed rather than filled.
+- **Execution steps** — Drop `tests/integration/**` from `include`; record in
+  the config why it was removed rather than filled.
 - **Cost** — none. **Risk** — none; the directory never existed.
 - **Expected result** — `npm test` claims only the coverage it has.
 - **Completion evidence** — Commit `8337e41`, `vitest.config.ts`. Log `OL-0005`.
-- **Status** Done · **Next action** — If a database-backed suite is ever written,
-  it gets its own directory, glob and script.
+- **Status** Done · **Next action** — If a database-backed suite is ever
+  written, it gets its own directory, glob and script.
 
 ## T-09 — Close the PostgREST filter injection in the opportunity fallback
 
 - **Objective** — Remove a filter-injection pattern from the API surface before
   it is copied into a route where the blast radius is not small.
 - **Source** — Agent security review of the API surface.
-- **Workstream** ledger · **Priority** High · **Owner** Agent · **Due** 2026-08-02
+- **Workstream** ledger · **Priority** High · **Owner** Agent · **Due**
+  2026-08-02
 - **Dependencies** — none.
 - **Approval class** — B, covered by S-01.
 - **Execution steps** — Replace the interpolated `.or()` in
@@ -249,8 +259,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
   **not a disclosure one**. Fixed because the pattern gets copied.
 - **Expected result** — A crafted path segment is treated as a value.
 - **Completion evidence** — Commit `8337e41`; the same commit records the parts
-  of the surface reviewed and found correct, so they are not re-reviewed.
-  Log `OL-0005`.
+  of the surface reviewed and found correct, so they are not re-reviewed. Log
+  `OL-0005`.
 - **Status** Done · **Next action** — none.
 
 ## T-10 — Correct the test counts and integration-suite claim in CLAUDE.md
@@ -258,7 +268,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Keep the one file every agent reads first accurate about what
   the test suite actually is.
 - **Source** — Agent verification of CLAUDE.md against a real `npm test` run.
-- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due** 2026-08-05
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-08-05
 - **Dependencies** — T-08.
 - **Approval class** — B, covered by S-01.
 - **Execution steps** — Run the suite; write the real counts; remove the
@@ -274,18 +285,18 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Unblock billing. Nothing can be sold until the products exist
   and the tier-by-tier payment matrix has been run.
 - **Source** — `docs/MILESTONES.md` "What is still not built", item 1.
-- **Workstream** finance · **Priority** **Critical** · **Owner** Owner ·
-  **Due** 2026-08-20 (proposed)
+- **Workstream** finance · **Priority** **Critical** · **Owner** Owner · **Due**
+  2026-08-20 (proposed)
 - **Dependencies** — A Stripe account with live and test keys; owner decision on
   final pricing.
 - **Approval class** — **E (financial) and F (system change)**. Blocked on
   **A-05**, pending.
 - **Execution steps (prepared, not executed)** — (1) Create four products and
-  eight prices (monthly and annual per tier) in Stripe **test mode** first;
-  (2) populate `stripe_monthly_price_id` / `stripe_annual_price_id` on
+  eight prices (monthly and annual per tier) in Stripe **test mode** first; (2)
+  populate `stripe_monthly_price_id` / `stripe_annual_price_id` on
   `subscription_plans`; (3) run checkout for each tier with test cards, plus
-  upgrade, downgrade, cancel-at-period-end, past-due and reactivation;
-  (4) confirm each webhook lands one `billing_events` row and the right
+  upgrade, downgrade, cancel-at-period-end, past-due and reactivation; (4)
+  confirm each webhook lands one `billing_events` row and the right
   `effectiveAccessRank`; (5) repeat the read-only checks in live mode.
 - **Cost** — Stripe fees on test transactions are zero; live-mode verification
   costs the processing fee on any real charge made to test it.
@@ -301,7 +312,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Stop a future agent "cleaning up" the demo-data exclusion and
   silently reinflating the subscriber count and MRR.
 - **Source** — T-06.
-- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due** 2026-07-31
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-07-31
 - **Dependencies** — T-06.
 - **Approval class** — B, covered by A-03.
 - **Execution steps** — Add the rule to the CLAUDE.md data-honesty section,
@@ -320,15 +332,15 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Workstream** compliance · **Priority** **Critical** · **Owner** Owner ·
   **Due** 2026-08-27 (proposed)
 - **Dependencies** — Owner engaging counsel; a budget.
-- **Approval class** — **G (legal)**. Blocked on **A-06**, pending.
-  **Torque makes no legal determination and gives no legal advice.**
+- **Approval class** — **G (legal)**. Blocked on **A-06**, pending. **Torque
+  makes no legal determination and gives no legal advice.**
 - **Execution steps (prepared, not executed)** — (1) Export the ten documents
   from `src/lib/legal/documents.ts` into a review pack; (2) attach the specific
   question for each — for terms, privacy, subscription terms, refunds, cookies,
   copyright and disclaimers, "is this fit to publish"; for editorial standards,
   corrections policy and data source policy, "are these genuinely exempt as
-  descriptions of our own practice rather than agreements with the member";
-  (3) record counsel's answer per document; (4) flip `requiresReview` only on a
+  descriptions of our own practice rather than agreements with the member"; (3)
+  record counsel's answer per document; (4) flip `requiresReview` only on a
   recorded answer.
 - **Cost** — Counsel fee, **not recorded** — obtaining a quote is part of A-06.
 - **Risk** — Launching on unreviewed terms is a legal and reputational exposure.
@@ -343,8 +355,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Stop accepting member uploads into a column that says
   `pending` forever.
 - **Source** — `docs/MILESTONES.md` item 3.
-- **Workstream** ledger · **Priority** High · **Owner** Owner ·
-  **Due** 2026-09-03 (proposed)
+- **Workstream** ledger · **Priority** High · **Owner** Owner · **Due**
+  2026-09-03 (proposed)
 - **Dependencies** — Choice of scanning service; a paid subscription.
 - **Approval class** — **E (recurring spend)** and **F (integration)**. Blocked
   on **A-07**, pending.
@@ -363,10 +375,11 @@ finding that would otherwise have been mentioned once in a reply and lost.
 ## T-15 — Make the public landing pages cacheable again
 
 - **Objective** — Restore caching on the marketing routes, which currently
-  render per request because the marketing layout renders a session-aware header.
+  render per request because the marketing layout renders a session-aware
+  header.
 - **Source** — `docs/MILESTONES.md` item 5.
-- **Workstream** ledger · **Priority** Normal · **Owner** Agent ·
-  **Due** 2026-09-03 (proposed)
+- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due**
+  2026-09-03 (proposed)
 - **Dependencies** — none to prepare; a deploy needs approval.
 - **Approval class** — A to prepare (S-01); **F to deploy**.
 - **Execution steps** — Move the auth-dependent part of the header into a client
@@ -374,7 +387,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
   use `db/public.ts` and stay cookie-free; verify `revalidate` takes effect.
 - **Cost** — none. **Risk** — a bodged fix that swallows Next.js's
   `DynamicServerError` produces a permanently blank homepage with nothing
-  logged. That failure has happened here before; it is why `db/public.ts` exists.
+  logged. That failure has happened here before; it is why `db/public.ts`
+  exists.
 - **Expected result** — Marketing routes render statically with a working
   session-aware header.
 - **Completion proof required** — Build output showing the routes as static, and
@@ -387,8 +401,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Remove the need to touch Supabase directly when a staff member
   loses their authenticator.
 - **Source** — `docs/MILESTONES.md` item 6.
-- **Workstream** ledger · **Priority** Normal · **Owner** Agent ·
-  **Due** not recorded
+- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due** not
+  recorded
 - **Dependencies** — none.
 - **Approval class** — A to prepare (S-01); **F to deploy** — it changes an
   authentication path.
@@ -407,8 +421,8 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Objective** — Close milestone 1, which is partial: a working design system
   exists, but there is no confirmed brand direction or owner sign-off.
 - **Source** — `docs/MILESTONES.md` milestone 1 and item 4.
-- **Workstream** design · **Priority** Low · **Owner** Owner ·
-  **Due** not recorded
+- **Workstream** design · **Priority** Low · **Owner** Owner · **Due** not
+  recorded
 - **Dependencies** — Owner decision; a budget; possibly an external designer.
 - **Approval class** — **E** if it involves spend. No packet raised yet — it is
   below the launch blockers and raising it now would spend owner attention on
@@ -427,10 +441,11 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Workstream** ops · **Priority** High · **Owner** Agent · **Due** 2026-08-06
 - **Dependencies** — T-19 for the files they write into.
 - **Approval class** — B, covered by **A-08**.
-- **Execution steps** — Write `.claude/commands/dd84-{daily-brief,inbox-intake,
-followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
-  objective, its connectors and the exact tool calls, its output format, where it
-  writes, what it may never do without approval, and its degradation rule.
+- **Execution steps** — Write
+  `.claude/commands/dd84-{daily-brief,inbox-intake, followup,cash-review,opportunity-scan,site-monitor}.md`;
+  each states its objective, its connectors and the exact tool calls, its output
+  format, where it writes, what it may never do without approval, and its
+  degradation rule.
 - **Cost** — none. **Risk** — a routine that fabricates a section when a
   connector is missing would be worse than no routine at all; the degradation
   rule is stated in every file and in the shared contract in `README.md`.
@@ -447,9 +462,9 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Workstream** ops · **Priority** High · **Owner** Agent · **Due** 2026-08-06
 - **Dependencies** — none.
 - **Approval class** — B, covered by **A-08**.
-- **Execution steps** — Create `docs/ops/` with `README.md`,
-  `TASK-REGISTER.md`, `APPROVALS.md`, `OPERATING-LOG.md` and `briefs/`; seed each
-  from repository evidence and the owner's stated statuses.
+- **Execution steps** — Create `docs/ops/` with `README.md`, `TASK-REGISTER.md`,
+  `APPROVALS.md`, `OPERATING-LOG.md` and `briefs/`; seed each from repository
+  evidence and the owner's stated statuses.
 - **Cost** — none. **Risk** — **a seeded register that is wrong is worse than an
   empty one**, because everything downstream trusts it.
 - **Expected result** — Three linked files that a routine can read and update.
@@ -459,8 +474,8 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   inside the repository that no task is missing** — work that was discussed but
   never touched a file leaves no trace here.
 - **Status** **In Verification** · **Next action** — Owner reads the summary
-  table and confirms it matches their own record, or names what is missing.
-  Only then does this move to Done.
+  table and confirms it matches their own record, or names what is missing. Only
+  then does this move to Done.
 
 ## T-20 — Extend the Torque agent definition with the missing spec sections
 
@@ -486,7 +501,8 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   agent reads first.
 - **Source** — Owner instruction, 2026-08-06, which explicitly authorised this
   one CLAUDE.md edit.
-- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due** 2026-08-06
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-08-06
 - **Dependencies** — T-18, T-19.
 - **Approval class** — B, covered by **A-08**, with the stated limit: additive
   only, §10 only, and §11 and the existing §10 protocol text untouched.
@@ -512,14 +528,14 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Cost** — none. **Risk** — a markdown-only change should not move the suite;
   if it does, the change is wrong and is reverted rather than explained away.
 - **Expected result** — 179 tests in 11 files still pass; the branch is updated.
-- **Completion proof required** — Real command output and the pushed commit hash,
-  recorded in `OPERATING-LOG.md` **after** the push, not before.
+- **Completion proof required** — Real command output and the pushed commit
+  hash, recorded in `OPERATING-LOG.md` **after** the push, not before.
 - **Completion evidence** — Logs `OL-0008` (verification) and `OL-0009` (push).
   Commit `fd50a82`; `origin/claude/claude-md-docs-jjveuq` confirmed at the same
   hash after a fetch, rather than inferred from the push output. Typecheck
   clean, lint clean, 179 tests in 11 files passing.
-- **Status** Done · **Next action** — T-23: the owner schedules the routines.
-  A run of `/dd84-daily-brief` against real connectors is the first genuine test
+- **Status** Done · **Next action** — T-23: the owner schedules the routines. A
+  run of `/dd84-daily-brief` against real connectors is the first genuine test
   of T-18, and nothing here has had one yet.
 
 ## T-23 — Schedule the six routines and confirm the first firing
@@ -527,15 +543,16 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Objective** — Get the routines running on a cadence rather than on demand.
 - **Source** — Owner instruction, 2026-08-06: "Do not create scheduled triggers
   yourself. I am handling scheduling."
-- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due** 2026-08-08
+- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due**
+  2026-08-08
 - **Dependencies** — T-18.
 - **Approval class** — Owner-held. **Torque must not create its own schedule.**
 - **Execution steps (owner)** — Create a trigger per routine at the cadence in
   `docs/ops/README.md`; confirm the first firing writes a brief and an operating
   log entry.
 - **Cost** — none. **Risk** — a routine that fires but writes nothing looks like
-  a routine that found nothing. The first firing must be checked for a log entry,
-  not just for output.
+  a routine that found nothing. The first firing must be checked for a log
+  entry, not just for output.
 - **Expected result** — Six scheduled routines, each with a first run recorded.
 - **Completion proof required** — One `OL-` entry per routine's first firing.
 - **Status** In Verification · **Next action** — Confirm the next scheduled run
@@ -552,18 +569,20 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Objective** — Close the gap between spec §16's eight routines and the six
   that exist.
 - **Source** — Spec §16; gap identified while executing T-18.
-- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due** 2026-08-13
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-08-13
 - **Dependencies** — Confirmation of which advertising accounts exist, which
   Supermetrics can answer, and which are authorised.
 - **Approval class** — A to build; the routine itself will be Class A.
 - **Execution steps** — Ranked campaigns, partnerships, offers, content and
-  outreach tied to capacity and measurable revenue, per spec §8.3; read spend and
-  conversion through Supermetrics; **prepare, never publish**.
+  outreach tied to capacity and measurable revenue, per spec §8.3; read spend
+  and conversion through Supermetrics; **prepare, never publish**.
 - **Cost** — none to build. **Risk** — recommending spend without capacity data
   produces leads the shop cannot service.
 - **Expected result** — `.claude/commands/dd84-marketing-scan.md`.
 - **Status** Planned · **Next action** — Confirm the authorised ad accounts
-  first; building it against imagined accounts is how a routine learns to invent.
+  first; building it against imagined accounts is how a routine learns to
+  invent.
 
 ## T-25 — Build the project status control routine
 
@@ -571,7 +590,8 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   product development and equipment purchases reviewed for milestones, blockers,
   costs and decisions.
 - **Source** — Spec §16 and §8.7.
-- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due** 2026-08-13
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-08-13
 - **Dependencies** — A project record per active build. None exists yet; the
   register currently holds software tasks only.
 - **Approval class** — A to build; the routine itself will be Class A.
@@ -591,8 +611,8 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   its own formatting and what `npm run format:check` actually reports.
 - **Source** — Agent finding while running the verification chain for T-22 on
   2026-08-06.
-- **Workstream** ledger · **Priority** Normal · **Owner** Agent ·
-  **Due** 2026-08-13 (proposed)
+- **Workstream** ledger · **Priority** Normal · **Owner** Agent · **Due**
+  2026-08-13 (proposed)
 - **Dependencies** — none.
 - **Approval class** — A to investigate (S-01). A reformat touching 105 files is
   a large diff over code nobody is changing, so **the decision to run it is the
@@ -628,8 +648,8 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
 - **Objective** — Find out why four scheduled routines have run for a week
   without writing a single brief, and make the next run leave evidence.
 - **Source** — Agent finding while executing A-09 on 2026-08-13.
-- **Workstream** ops · **Priority** **High** · **Owner** Agent ·
-  **Due** 2026-08-15
+- **Workstream** ops · **Priority** **High** · **Owner** Agent · **Due**
+  2026-08-15
 - **Dependencies** — none. It blocks T-23.
 - **Approval class** — A. Diagnosis reads logs and repository state; it changes
   no live system. Any fix that alters a Routine's schedule or permissions comes
@@ -644,9 +664,9 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   that survives the session.
 - **Updated 2026-08-28. Two more weeks of the same.** Every routine has kept
   firing on schedule and every run reports `ROUTINE_RUN_STATUS_SUCCEEDED` —
-  inbox intake as recently as 2026-08-28 10:20, the daily brief 2026-08-27,
-  the opportunity scan 2026-08-24, the cash review 2026-08-21. The newest commit
-  on the branch is still a hand-written one. **`SUCCEEDED` means the session
+  inbox intake as recently as 2026-08-28 10:20, the daily brief 2026-08-27, the
+  opportunity scan 2026-08-24, the cash review 2026-08-21. The newest commit on
+  the branch is still a hand-written one. **`SUCCEEDED` means the session
   finished, not that it delivered.**
 
 ### Root cause — confirmed 2026-08-28
@@ -658,14 +678,15 @@ nothing to push with. The agent does the work and has nowhere to put it.
 The evidence, in the order that settles it:
 
 1. **The fired session's own record.** `get_session` on the 2026-08-28 inbox
-   intake (`cse_01G1uzjS1oNsmD3ZCvVq8FQx`) returns a `session_context` of exactly
-   `{autofix_on_pr_create, permission_mode}` — **no `sources`, no `outcomes`**.
-   The 2026-08-27 daily brief (`cse_01X8sfFM64UdniNEnDZJMMtx`) is the same.
-2. **The control.** The one Routine on this account that _does_ carry
-   `sources` and `outcomes` in its session context is
-   _Weekly Georgia Opportunity Ledger summary_ — the only one with
-   `created_via: http_api`, i.e. created from the claude.ai Routines UI. The four
-   that deliver nothing are all `created_via: meta_mcp`.
+   intake (`cse_01G1uzjS1oNsmD3ZCvVq8FQx`) returns a `session_context` of
+   exactly `{autofix_on_pr_create, permission_mode}` — **no `sources`, no
+   `outcomes`**. The 2026-08-27 daily brief (`cse_01X8sfFM64UdniNEnDZJMMtx`) is
+   the same.
+2. **The control.** The one Routine on this account that _does_ carry `sources`
+   and `outcomes` in its session context is _Weekly Georgia Opportunity Ledger
+   summary_ — the only one with `created_via: http_api`, i.e. created from the
+   claude.ai Routines UI. The four that deliver nothing are all
+   `created_via: meta_mcp`.
 3. **The tool cannot express it.** `create_trigger` has no `source_url` or
    `outcome_branch` parameter, and `update_trigger` accepts only `name`,
    `prompt`, `cron_expression`, `run_once_at`, `enabled` and `model`. **So this
@@ -690,10 +711,10 @@ One remedy fixes both.
   than no automation, because it invites someone to trust an operating record
   that was never written.
 - **The fix is the owner's, and there are two.** Recorded as **A-10**.
-  **Recommended:** recreate the four Routines from the claude.ai Routines UI with
-  the repository and branch attached — one trip, and it fixes the connector gap
-  at the same time, which is most of what the cash review and inbox intake are
-  for. **Alternative:** rebind them to fire into a persistent session that
+  **Recommended:** recreate the four Routines from the claude.ai Routines UI
+  with the repository and branch attached — one trip, and it fixes the connector
+  gap at the same time, which is most of what the cash review and inbox intake
+  are for. **Alternative:** rebind them to fire into a persistent session that
   already holds the checkout via `create_trigger`'s `persistent_session_id`.
   That is inside the agent's reach but fragile — it depends on one session
   surviving, and its context grows without bound.
@@ -718,8 +739,8 @@ One remedy fixes both.
   The `MILESTONES.md` in this repository lists virus scanning and the
   super-administrator MFA reset as unbuilt; **both are built in the Ledger's own
   repository**, and its MILESTONES was already accurate. And the legal-document
-  count quoted from here — "ten documents, seven requiring review" — is wrong for
-  the Ledger, which has **twelve, nine requiring review**.
+  count quoted from here — "ten documents, seven requiring review" — is wrong
+  for the Ledger, which has **twelve, nine requiring review**.
 - **Completion proof** — `a228f3d` on the Ledger's `main`, gate green; PR #2 and
   #3 closed.
 - **Status** **Done**, 2026-09-23 · Evidence: OL-0013, OL-0015.
@@ -729,8 +750,8 @@ One remedy fixes both.
 - **Objective** — Decide what happens to the Ledger source tree still sitting in
   this repository, now that it is not the maintained copy.
 - **Source** — Agent finding, 2026-09-23, while closing T-28.
-- **Workstream** ops · **Priority** Normal · **Owner** **Owner** ·
-  **Due** not set
+- **Workstream** ops · **Priority** Normal · **Owner** **Owner** · **Due** not
+  set
 - **Approval class** — **Owner's.** Deleting a source tree from a repository is
   not an agent's call, and GitHub will not let the default branch be deleted,
   which is the reason the copy exists at all.
@@ -739,11 +760,19 @@ One remedy fixes both.
   migrations and several features behind the real one. The CLAUDE.md banner says
   so, but a banner is read by whoever opens that file and by nobody else. Anyone
   landing on `src/` from a search will not see it.
-- **Options** — (1) leave it, banner only — cheapest, and the trap stays;
-  (2) delete the Ledger source from this branch, keeping the agent platform —
+- **Options** — (1) leave it, banner only — cheapest, and the trap stays; (2)
+  delete the Ledger source from this branch, keeping the agent platform —
   removes the trap, and the history is still in git; (3) archive the whole
   repository once the platform moves somewhere of its own.
 - **Risk of leaving it** — Low but real, and it has already happened once: this
-  agent quoted the stale MILESTONES and the stale legal-document count as current
-  fact, in writing, more than once.
-- **Status** Planned · **Next action** — Owner picks an option.
+  agent quoted the stale MILESTONES and the stale legal-document count as
+  current fact, in writing, more than once.
+- **Status** **Partly done**, 2026-09-25 · Option 2 executed: the Ledger source
+  is gone from this branch (OL-0016), audited file by file first. **Two owner
+  actions remain and the task cannot close without them** — repoint this
+  repository's default branch away from
+  `claude/georgia-opportunity-ledger-kfpt4c` and delete it, and delete the two
+  spent branches in the Ledger's repository, one of which still carries DD84's
+  revenue and customer records. Neither is reachable from a session: GitHub will
+  not delete a default branch, and this environment's git proxy refuses deletion
+  pushes.

@@ -43,10 +43,10 @@ until someone acts on the wrong one. Here is what was done about it, and why.
 `claude/claude-md-docs-cqvhy6`. This was not tidying: each branch held real work
 the other lacked. Torque's side carried `src/lib/billing/mrr.ts`,
 `src/lib/analytics/sample-data.ts` and 339 lines of tests; Rev's carried six
-recovered migrations — two of them security hardening — the public-client caching
-fix and the upgrade telemetry. Either branch shipped alone would have lost the
-other half. The merged branch is the only live one; **jjveuq is stale, and
-nothing on it was lost — it is an ancestor of the merged tip.**
+recovered migrations — two of them security hardening — the public-client
+caching fix and the upgrade telemetry. Either branch shipped alone would have
+lost the other half. The merged branch is the only live one; **jjveuq is stale,
+and nothing on it was lost — it is an ancestor of the merged tip.**
 
 **Two ledgers, still separate.** `docs/ops/` is what was operated;
 `docs/growth/` is what was proposed. They share a branch and nothing else. Each
@@ -75,8 +75,8 @@ a schedule.
 
 > **The connector limitation, recorded because it still applies to Torque.**
 > Passing `connectors` to `create_trigger` returns _"the connectors parameter is
-> not available for this organization"_ — retried 2026-08-07 and confirmed. It is
-> not a session-grant problem; the parameter is closed to this tool. **It is
+> not available for this organization"_ — retried 2026-08-07 and confirmed. It
+> is not a session-grant problem; the parameter is closed to this tool. **It is
 > fixable and there is proof:** an older Routine on this account,
 > `created_via: http_api`, does carry Canva, Gmail, Google Calendar, Google
 > Drive, PayPal, Shopify and Stripe. Routines created through the **claude.ai
@@ -130,18 +130,18 @@ If genuinely nothing changed, say so in three lines. Do not inflate a quiet week
 </details>
 
 > **The schedule above has never delivered anything. Read `docs/ops/` T-27
-> before trusting it.** All four Routines have fired on cadence since
-> 2026-08-07 — most recently 2026-08-28 — every run reporting `SUCCEEDED`, and
+> before trusting it.** All four Routines have fired on cadence since 2026-08-07
+> — most recently 2026-08-28 — every run reporting `SUCCEEDED`, and
 > `docs/ops/briefs/` still contains nothing but its README.
 >
 > **Root cause, confirmed 2026-08-28: it is the same defect as the connector gap
 > below.** A Routine minted through the MCP `create_trigger` tool gets no
-> connectors **and no repository** — its fired sessions carry no `sources` and no
-> `outcomes`, so there is nothing to commit to and nothing to push with. The
+> connectors **and no repository** — its fired sessions carry no `sources` and
+> no `outcomes`, so there is nothing to commit to and nothing to push with. The
 > agent does the work (one sampled run: $1.77, 22,888 output tokens) and it dies
-> with the session. The one Routine on this account that _does_ hold a repository
-> is the one created in the claude.ai UI. **Recreating the four Routines there
-> fixes both problems at once** — that is approval packet A-10.
+> with the session. The one Routine on this account that _does_ hold a
+> repository is the one created in the claude.ai UI. **Recreating the four
+> Routines there fixes both problems at once** — that is approval packet A-10.
 
 **One more Routine exists and is nobody's.** _Weekly Georgia Opportunity Ledger
 summary_ (`trig_01FxDef9B5snYTW42FfcMEbD`, Mondays 09:00 UTC) predates both

@@ -1,5 +1,8 @@
 ---
-description: DD84 revenue and cash review — revenue closed, pending pipeline, unpaid invoices, job margin, upcoming expenses and the corrective actions each one implies. Reads payment systems; moves no money.
+description:
+  DD84 revenue and cash review — revenue closed, pending pipeline, unpaid
+  invoices, job margin, upcoming expenses and the corrective actions each one
+  implies. Reads payment systems; moves no money.
 ---
 
 # /dd84-cash-review
@@ -46,14 +49,15 @@ those, it becomes a packet.
      match it, report both figures separately and say they may overlap.
    - **Net of refunds and disputes.** Gross revenue that ignores a chargeback is
      a lie with a delay on it.
-   - **Recurring against one-off.** Report them apart. They forecast differently.
+   - **Recurring against one-off.** Report them apart. They forecast
+     differently.
 3. **Organize.** Attach revenue to the job, product or subscription that
    produced it. Revenue that cannot be attributed is reported as unattributed —
    that is itself a finding about how the business records work.
 4. **Calculate margin** per job or product where the cost inputs exist: parts,
-   software credits, travel, labour hours (§8.5). Where an input is missing, show
-   the margin as **incomplete** with the missing input named. Do not assume a
-   labour rate. Do not assume a travel cost.
+   software credits, travel, labour hours (§8.5). Where an input is missing,
+   show the margin as **incomplete** with the missing input named. Do not assume
+   a labour rate. Do not assume a travel cost.
 5. **Look forward.** Upcoming expenses, subscription renewals, cash commitments
    from approved packets, and any payout timing that matters.
 6. **Recommend corrective actions.** Each one names the task it becomes and

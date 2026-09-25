@@ -1,5 +1,8 @@
 ---
-description: DD84 website and checkout monitor — critical service pages, forms, uploads, products, payment links and fulfilment instructions checked for failures and inconsistencies. Reports faults; fixes nothing live.
+description:
+  DD84 website and checkout monitor — critical service pages, forms, uploads,
+  products, payment links and fulfilment instructions checked for failures and
+  inconsistencies. Reports faults; fixes nothing live.
 ---
 
 # /dd84-site-monitor
@@ -47,9 +50,10 @@ immediately rather than saved for the report:
 
 **Never** call `mcp__Netlify__netlify-project-services-updater`,
 `netlify-deploy-services-updater`, `netlify-extension-services-updater`, any
-Shopify mutation (`update-product`, `create-product`, `bulk-update-product-status`,
-`set-inventory`, `create-discount`, `graphql_mutation`), or any Stripe or PayPal
-write tool. Reading is the whole job.
+Shopify mutation (`update-product`, `create-product`,
+`bulk-update-product-status`, `set-inventory`, `create-discount`,
+`graphql_mutation`), or any Stripe or PayPal write tool. Reading is the whole
+job.
 
 ## Procedure
 

@@ -1,237 +1,74 @@
-# Georgia Opportunity Ledger
+# DD84 agent platform
 
-> ## ⚠️ The Ledger code here is stale — the DD84 agent platform is not
+The operating system for **Down Dirty 84 LLC**'s two agents — Torque and Rev —
+and the record they write to. Markdown and configuration. There is no
+application here, nothing to build, nothing to deploy.
+
+DD84 is an automotive performance-tuning business: ECU and EFI calibration,
+diagnostics, PCM services, digital tuning tools and merchandise.
+
+> ### The Georgia Opportunity Ledger is no longer here
 >
-> **The Georgia Opportunity Ledger application** is maintained at
+> That application — a separate business — was originally built in this
+> repository and now lives in
 > [`georgia-opportunity-ledger`](https://github.com/downdirty84llc-creator/georgia-opportunity-ledger)
-> on `main`, which is ahead of this copy: the attachment scanner is wired there,
-> the super-administrator MFA reset exists, and it carries migrations this copy
-> never had. Do not take Ledger application code from here.
+> on `main`. **Its source tree was deleted from this branch on 2026-09-25**
+> after every file was compared against the canonical copy; nothing was lost.
 >
-> **The DD84 agent platform lives here and is current** — `docs/agents/`,
-> `docs/ops/`, `docs/growth/` and `.claude/`. DD84 is a separate business from
-> the Ledger, and keeping them apart is deliberate.
->
-> _Corrected 2026-09-16: an earlier banner said the agent platform had moved to
-> the Ledger repository. That move was reversed; only the Ledger-only code fixes
-> went across._
-
-A subscription intelligence platform for commercial property, business funding
-and market pricing in Georgia. Public and authorised sources are monitored,
-verified, scored against a published 100-point method, and distributed to
-subscribers through a searchable database, a weekly report, immediate alerts and
-a deadline calendar.
-
-**Not** a brokerage, an MLS, a lender, an investment adviser, a legal service or
-an appraisal service. Nothing it publishes guarantees eligibility, financing or
-performance — that constraint is written into the product, not just the footer.
+> **The repository's default branch still holds the old copy.** Only this branch
+> (`claude/claude-md-docs-cqvhy6`) is clean, so the repository's front page
+> still shows a Next.js application. That is a pending owner action, not an
+> oversight.
 
 ---
 
-## Quick start
+## The two agents
 
-```bash
-npm install
-cp .env.example .env.local          # fill in Supabase and Stripe values
+|               | **Torque**                         | **Rev**                                      |
+| ------------- | ---------------------------------- | -------------------------------------------- |
+| Remit         | Operations                         | Marketing and revenue                        |
+| Specification | `docs/DD84-OPERATIONS-AGENT.md`    | `docs/DD84-GROWTH-AGENT.md`                  |
+| Definition    | `.claude/agents/torque.md`         | `.claude/agents/rev.md`                      |
+| Record        | `docs/ops/`                        | `docs/growth/`                               |
+| Invoked by    | `/dd84-*` commands, four schedules | `@rev`, `/rev-discovery`, `/rev-daily-brief` |
 
-supabase start                      # local Postgres + Auth + Storage
-supabase db reset                   # runs migrations, then supabase/seed.sql
-npm run db:seed                     # demo users, sample records, sample reports
+**Read across the two records freely; never write across them.** `docs/ops/` is
+what was operated; `docs/growth/` is what was proposed.
 
-npm run dev                         # http://localhost:3000
-```
+Both stop at an approval gate before anything that spends money, publishes, or
+reaches a customer. `.claude/settings.json` enforces it mechanically — reads run
+unattended, anything that costs money or reaches a customer asks first — and the
+agent definitions enforce it again in instructions.
 
-Seeded accounts (password from `SEED_PASSWORD`, default
-`ledger-demo-password-2026`):
+## Start here
 
-| Email                         | Role                   | Plan     |
-| ----------------------------- | ---------------------- | -------- |
-| `free.member@example.com`     | member                 | Free     |
-| `weekly.member@example.com`   | member                 | Weekly   |
-| `detailed.member@example.com` | member                 | Detailed |
-| `premium.member@example.com`  | member                 | Premium  |
-| `researcher@example.com`      | researcher             | —        |
-| `reviewer@example.com`        | reviewer               | —        |
-| `editor@example.com`          | editor                 | —        |
-| `support@example.com`         | support representative | —        |
-| `billing@example.com`         | billing manager        | —        |
-| `admin@example.com`           | super administrator    | —        |
+1. **`docs/agents/ventures.md`** — the verified business context. Read it before
+   making any claim about the business. Every figure carries a verification
+   date; anything older than 30 days gets re-checked against the live system.
+2. **`docs/ops/TASK-REGISTER.md`** — what is outstanding and who it waits on.
+3. **`docs/ops/APPROVALS.md`** — every packet, its response, its limits and what
+   actually happened.
+4. **`docs/ops/OPERATING-LOG.md`** — the append-only execution log. A task is
+   Done only when this file carries evidence.
 
-Everything the seeder writes carries `is_sample = true` on the profile,
-opportunity, indicator-value and report rows, is badged wherever it appears, and
-is carried through into CSV exports so a spreadsheet cannot quietly launder demo
-data into a real decision. The seeder refuses to run when
-`NEXT_PUBLIC_ENVIRONMENT=production`.
+## The scheduled routines do not work yet
 
----
+Four Routines fire on a weekday and weekly cadence. **None has ever committed a
+brief.** They run, report success, produce real work, and lose it — the fired
+sessions are created with no repository attached. Diagnosed in `docs/ops/` T-27;
+the fix is approval **A-10** and needs a person in the claude.ai Routines UI.
 
-## Commands
+Treat the schedule as scheduled, not as coverage. An empty `docs/ops/briefs/`
+does not mean nothing was found.
 
-| Command             | What it does                                        |
-| ------------------- | --------------------------------------------------- |
-| `npm run dev`       | Development server                                  |
-| `npm run build`     | Production build                                    |
-| `npm run typecheck` | `tsc --noEmit`                                      |
-| `npm run lint`      | ESLint                                              |
-| `npm test`          | Unit and integration tests (Vitest)                 |
-| `npm run test:e2e`  | End-to-end tests (Playwright)                       |
-| `npm run db:reset`  | Re-runs every migration and the reference-data seed |
-| `npm run db:seed`   | Loads demo users and sample records                 |
-| `npm run db:types`  | Regenerates database types from a live schema       |
-| `npm run format`    | Prettier over `ts,tsx,md,json,sql`                  |
+## What this platform is for
 
-`npm run test:e2e` builds the app and starts it itself; point `E2E_BASE_URL` at
-a running instance to skip that and test the deployment instead. `npm test`
-needs no database, which is the reason database-dependent tests are kept out of
-`tests/unit/`.
+Finding revenue and telling the truth about it. In practice that has meant
+discovering that a product could not take payment at all, that DD84's revenue
+stopped eleven months ago, that a funnel event had never once fired, and that a
+dashboard was overstating recurring revenue by about 17% per annual subscriber.
+None of those were in the brief that started the work.
 
----
-
-## How access control works
-
-This is the part to understand before changing anything.
-
-A **rank** is a single integer answering "how much of a record may this account
-read": Free 0, Weekly 10, Detailed 20, Premium 30, staff 100. Ranks are compared
-with `>=` against an opportunity's `minimum_access_rank`, and they are spaced ten
-apart so a tier can be inserted later without renumbering published content.
-
-The rule is enforced in **three independent places**, deliberately:
-
-1. **Row-level security** on every table. A leaked anon key gets nothing it
-   should not have, whatever the application does.
-2. **`public.search_opportunities`**, a `SECURITY DEFINER` function that applies
-   column-level redaction — RLS is row-level and cannot express "this member may
-   see the title but not the financials", which is exactly what the upsell
-   requires.
-3. **`src/lib/access`** in TypeScript, so the API can return a useful 402 with
-   the plan that would unlock the record rather than an opaque empty result.
-
-The TypeScript and SQL halves are kept in step by
-`tests/unit/access/plan-parity.test.ts`, which reads `supabase/seed.sql`
-directly and diffs every `feature_configuration` document against the compiled
-`PLAN_FEATURE_DEFAULTS`. It is the only test that crosses that boundary; change
-a limit in one place without the other and it fails.
-`tests/unit/access/subscription.test.ts` covers a different question — how
-account status, role, Stripe status and an administrative override resolve into
-one rank — and never reads SQL.
-
-Administrator permissions are decided by **role**, never by plan. A Premium
-member has rank 30 and no administrative access whatsoever.
-
----
-
-## Repository layout
-
-```
-src/
-  app/
-    (marketing)/        Public pages: home, pricing, landing, legal, auth
-    (member)/           Dashboard, search, detail, saved, calendar, reports,
-                        account (profile, preferences, billing, email)
-    (admin)/            Dashboard, review queue, seven-step opportunity editor,
-                        report builder, sources, audit log, MFA setup
-    api/v1/             Versioned API (spec section 10)
-  components/           UI primitives and feature components
-  lib/
-    access/             Ranks, plan features, entitlement decisions
-    alerts/             Alert matching and suppression
-    analytics/          First-party events, PostHog forwarding (no SDK)
-    auth/               Session context, MFA status
-    billing/            Stripe client, subscription-status resolution
-    db/                 Supabase clients (session-scoped, anonymous public,
-                        service-role, browser)
-    email/              Provider abstraction, templates, unsubscribe tokens
-    exports/            CSV generation and export jobs
-    http/               Response helpers, rate limiting
-    jobs/               Background jobs and the idempotent runner
-    legal/              The legal and policy documents
-    opportunities/      Lifecycle, workflow, query, serialisation
-    observability/      Error reporting (Sentry envelope API, no SDK)
-    reports/            Dependency-free PDF writer
-    scoring/            The 100-point score
-    search/             Filter schema, sorting, cursor pagination
-supabase/
-  migrations/           Schema, RLS, functions, triggers
-  seed.sql              Reference data (plans, 159 counties, industries, sources)
-scripts/seed.ts         Demo users and sample records
-tests/unit              Vitest, no database required
-tests/e2e               Playwright
-docs/                   Architecture, runbook, milestone status, DD84 operations
-```
-
-There is no integration suite. `npm test` is unit-only by design — no database,
-no network, no fixtures — which is what lets it run on every save and never fail
-for an environmental reason. The Vitest config used to glob a `tests/integration/`
-directory that has never existed; a pattern matching nothing reads as coverage
-that is present, so it was removed rather than filled. Filling it needs a live
-Postgres and therefore a decision about how CI gets one, and that decision has
-not been made. Until it is, database-backed behaviour is covered by
-`npm run test:e2e` against a built app.
-
----
-
-## Environments
-
-Development, staging and production each use their **own** database
-credentials, auth credentials, Stripe keys, email keys, storage buckets, API
-secrets and analytics project. Production data is never copied into development
-without sanitisation.
-
-Staging and production are separated by more than configuration: `robots.ts`
-blocks indexing outside production, the seeder refuses to run in production, and
-a banner marks every non-production page.
-
----
-
-## Deployment
-
-- **Application** — Vercel. `vercel.json` declares the cron schedule for all
-  thirteen background jobs.
-- **Database, auth and storage** — Supabase Postgres.
-- **Payments** — Stripe. Checkout, the customer portal and every card detail
-  live in Stripe; this application never receives a card number.
-- **Email** — Resend or Postmark behind `src/lib/email/client.ts`. Locally the
-  `console` provider prints instead of sending, so a test run cannot email real
-  people.
-
-Background jobs authenticate with `CRON_SECRET`, compared in constant time.
-Every run writes a `job_runs` row visible on the admin dashboard, and jobs that
-must run once per window claim an idempotency key so a double-fire cannot send a
-second round of emails.
-
-See `docs/RUNBOOK.md` for the launch checklist and operational procedures.
-
----
-
-## Testing
-
-`npm test` runs 148 unit tests covering the parts where a quiet mistake costs
-money or leaks paid content: score arithmetic and classification bands,
-subscription-status resolution including the past-due grace window, entitlement
-decisions per tier, alert matching and suppression keys, deadline lifecycle
-transitions, CSV escaping and formula-injection defence, filter parsing, and
-unsubscribe token signing and tampering.
-
-`npm run test:e2e` runs Playwright against a built app across desktop, iPhone,
-Android and tablet viewports.
-
----
-
-## Administrator two-factor
-
-Every staff role must enrol a TOTP factor before the admin area opens, and must
-have presented it in the current session. Enrolment lives at `/admin/security`,
-which is exempt from its own gate. The check fails open on an unexpected error —
-a Supabase outage should not be indistinguishable from a missing second factor,
-and row-level security still enforces every permission underneath.
-
----
-
-## Status
-
-Milestones 2 through 9 of the specification are implemented; see
-`docs/MILESTONES.md` for the per-milestone breakdown and the six things that
-remain. Two are hard launch blockers: legal review of the ten documents in
-`src/lib/legal/documents.ts`, and creating the Stripe products and prices so the
-tier-by-tier payment matrix can be run.
+**Corrections are the deliverable, not an embarrassment.** Every register here
+carries the claims that turned out wrong, struck through with the reasoning that
+drove them. Read those first.

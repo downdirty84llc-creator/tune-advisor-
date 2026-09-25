@@ -1,11 +1,11 @@
 ---
 name: rev-discovery
 description: >-
-  Run Rev's full opportunity discovery pass for a Down Dirty 84 venture —
-  gather live evidence, score opportunities on the ten-factor method, and write
+  Run Rev's full opportunity discovery pass for a Down Dirty 84 venture — gather
+  live evidence, score opportunities on the ten-factor method, and write
   decision-ready approval briefs into an opportunity register. Use when asked to
-  find growth opportunities, run discovery, build a register, or work out what to
-  do next for a venture. Stops at the approval gate; executes nothing.
+  find growth opportunities, run discovery, build a register, or work out what
+  to do next for a venture. Stops at the approval gate; executes nothing.
 ---
 
 # Rev — Discovery Pass
@@ -62,7 +62,8 @@ regardless of score — and say when you have.
 To `docs/growth/YYYY-MM-DD-<venture>-register.md`:
 
 1. **Verified facts table**, every row citing its source.
-2. **The finding that governs everything else** — the constraint, stated plainly.
+2. **The finding that governs everything else** — the constraint, stated
+   plainly.
 3. **Scored queue** with all components visible.
 4. **Full twelve-field briefs** for the top three.
 5. **Summaries** for the rest.

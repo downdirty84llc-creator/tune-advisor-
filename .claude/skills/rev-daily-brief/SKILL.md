@@ -57,7 +57,8 @@ cannot transact.
 ### 3. Compare against the last brief
 
 The change is the story. A number on its own is noise; a number that moved is a
-signal. Call out anything that moved materially and say what you think caused it.
+signal. Call out anything that moved materially and say what you think caused
+it.
 
 **A first sale, a first search visitor, or a returning customer outranks
 everything else in the brief.**

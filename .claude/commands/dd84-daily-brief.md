@@ -1,5 +1,8 @@
 ---
-description: DD84 daily command brief — appointments, revenue tasks, overdue items, customer risks, approvals needed and the top three execution priorities for today.
+description:
+  DD84 daily command brief — appointments, revenue tasks, overdue items,
+  customer risks, approvals needed and the top three execution priorities for
+  today.
 ---
 
 # /dd84-daily-brief
@@ -44,16 +47,15 @@ page and say so — a brief that arrives late is a brief nobody reads.
 3. **Organize.** Attach every item to a task ID where one exists. Items with no
    task get one — create it in the register under the next free `T-nn`.
 4. **Plan.** Choose the top three execution priorities using the §10 factors:
-   revenue, deadline, customer impact, risk, dependency, owner effort,
-   strategic value. Three, not five. If everything is a priority the brief has
-   failed.
+   revenue, deadline, customer impact, risk, dependency, owner effort, strategic
+   value. Three, not five. If everything is a priority the brief has failed.
 5. **Report.** Write the output below.
 6. **Document.** Append a run entry to `docs/ops/OPERATING-LOG.md`.
 
 ## Output format
 
-Write exactly this structure to
-`docs/ops/briefs/YYYY-MM-DD-daily-brief.md` and print it in the reply:
+Write exactly this structure to `docs/ops/briefs/YYYY-MM-DD-daily-brief.md` and
+print it in the reply:
 
 ```
 # DD84 daily command brief — <date>

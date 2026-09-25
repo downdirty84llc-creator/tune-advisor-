@@ -1,5 +1,8 @@
 ---
-description: DD84 customer follow-up engine — quotes, deposits, waiting customers, completed jobs and review or referral opportunities that need chasing. Prepares every follow-up; sends none.
+description:
+  DD84 customer follow-up engine — quotes, deposits, waiting customers,
+  completed jobs and review or referral opportunities that need chasing.
+  Prepares every follow-up; sends none.
 ---
 
 # /dd84-followup
@@ -21,8 +24,7 @@ follow-up.
 
 ## The lifecycle it walks
 
-`New → Qualified → Quote Prepared → Approval Needed → Scheduled → In Progress →
-Waiting → Complete → Paid → Follow-up`
+`New → Qualified → Quote Prepared → Approval Needed → Scheduled → In Progress → Waiting → Complete → Paid → Follow-up`
 
 Every customer record sits at one of these. The routine's job is to find records
 that have sat too long at one stage, and records that have quietly fallen out of
@@ -60,8 +62,8 @@ levels** — until the owner sets them, report them as proposed and say so.
    against the systems above.
 2. **Validate — this is the step that matters most here.** Never chase a
    customer for a payment the payment system says arrived. Before any collection
-   follow-up, confirm in Stripe **and** PayPal, and in Shopify if the sale was an
-   order. If either system is unreachable, the item is reported as **needs
+   follow-up, confirm in Stripe **and** PayPal, and in Shopify if the sale was
+   an order. If either system is unreachable, the item is reported as **needs
    payment confirmation** and no chase is drafted. Chasing a customer who has
    already paid costs more trust than the follow-up recovers.
 3. **Organize.** Group by stage, then by value. A stalled high-value quote
@@ -132,9 +134,9 @@ system and what would confirm it.
 Name it and continue — but with one hard rule: **a follow-up that asks for money
 is not drafted unless a payment system confirmed the item is genuinely open.**
 If Stripe and PayPal are both unreachable, the money section reports the
-candidates and drafts nothing. Everything else — review requests, waiting-on-file
-chases, question replies — proceeds normally, because being wrong about those
-costs an apology rather than a customer.
+candidates and drafts nothing. Everything else — review requests,
+waiting-on-file chases, question replies — proceeds normally, because being
+wrong about those costs an apology rather than a customer.
 
 ## Done test
 

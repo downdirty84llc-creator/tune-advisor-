@@ -1,9 +1,9 @@
 # Routine output
 
-Each routine run writes its report here as
-`YYYY-MM-DD-<routine>.md` — for example `2026-08-07-daily-brief.md`. A routine
-that runs more than once a day appends a `-2`, `-3` suffix rather than
-overwriting: two runs found two different states, and both are evidence.
+Each routine run writes its report here as `YYYY-MM-DD-<routine>.md` — for
+example `2026-08-07-daily-brief.md`. A routine that runs more than once a day
+appends a `-2`, `-3` suffix rather than overwriting: two runs found two
+different states, and both are evidence.
 
 **These files are outputs, not sources.** When a brief disagrees with
 `../TASK-REGISTER.md`, the register is controlling — that is the source

@@ -1,11 +1,11 @@
 # Opportunity Register — Georgia Opportunity Ledger
 
-**Agent:** Rev (Marketing & Revenue), operating under `docs/DD84-GROWTH-AGENT.md`
-**Date:** 2026-07-31
-**Venture:** Georgia Opportunity Ledger (Down Dirty 84 LLC)
-**Stage:** Approved as planned, 2026-07-31. OPP-001, OPP-002, OPP-003, OPP-009
-and OPP-007's prerequisite executed; the database is provisioned and billing is
-wired. See the completion records at the foot of this file.
+**Agent:** Rev (Marketing & Revenue), operating under
+`docs/DD84-GROWTH-AGENT.md` **Date:** 2026-07-31 **Venture:** Georgia
+Opportunity Ledger (Down Dirty 84 LLC) **Stage:** Approved as planned,
+2026-07-31. OPP-001, OPP-002, OPP-003, OPP-009 and OPP-007's prerequisite
+executed; the database is provisioned and billing is wired. See the completion
+records at the foot of this file.
 
 **No money was committed and no price was changed.** The Stripe objects and the
 Supabase project both turned out to exist already — Rev created neither. The
@@ -42,19 +42,18 @@ are separated from estimates per §12 research standards.
 
 **As written:** this business could not accept a single dollar. Every paid
 conversion attempt on every tier terminated in a 409, so any acquisition spend
-would have converted at 0% — not "poorly", zero. That is why no
-paid-advertising brief appears below, and it remained the right call for as
-long as it held.
+would have converted at 0% — not "poorly", zero. That is why no paid-advertising
+brief appears below, and it remained the right call for as long as it held.
 
 **As of 2026-07-31 it no longer holds.** The database is provisioned and every
 plan carries its Stripe product and price ids. The reasoning stands as the
 record of why the register is shaped the way it is; the constraint is gone.
 
 **What replaced it is smaller but real:** the application is not deployed, so
-the webhook, its signing secret and the test-payment matrix cannot be
-completed, and no member can reach checkout at all yet. Paid acquisition still
-has nothing to convert into. The order of work is unchanged — deploy, then
-legal, then spend.
+the webhook, its signing secret and the test-payment matrix cannot be completed,
+and no member can reach checkout at all yet. Paid acquisition still has nothing
+to convert into. The order of work is unchanged — deploy, then legal, then
+spend.
 
 ---
 
@@ -99,8 +98,8 @@ preparation and free-tier capture are unaffected.
 
 ## Approval briefs
 
-Each follows the §5 twelve-field structure. Decision options are always:
-approve as planned · approve with changes · hold · reject.
+Each follows the §5 twelve-field structure. Decision options are always: approve
+as planned · approve with changes · hold · reject.
 
 ### OPP-001 — Activate Stripe products and prices · score 73 · **urgent revenue**
 
@@ -155,25 +154,25 @@ approve as planned · approve with changes · hold · reject.
 
 ### Remaining queue — summaries
 
-- **OPP-004 · Weekly report as the free-tier lead magnet (70).** The distribution
-  job already runs Thursdays (F10) and the templates exist. A recurring free
-  digest is the natural retention instrument for an intelligence product and the
-  most credible demonstration of what a paid tier buys. Blocked in practice until
-  there is real published inventory to report on — sending a weekly built from
-  `is_sample` records would violate §15. Consent and unsubscribe are already
-  handled correctly (RFC 8058, no login required).
-- **OPP-005 · Broker / SBDC / chamber referral pipeline (63).** The highest-value
-  partner set for this product, and the most legally delicate: the product is
-  explicitly not a brokerage and every partner-facing claim has to stay on the
-  right side of that. Requires outreach, which is an external action, so it needs
-  its own approval and should wait for G-1.
-- **OPP-007 · Validate packaging from existing telemetry (61).** `locked_content_viewed`
-  and `upgrade_button_clicked` are already instrumented (F9). Before treating
-  $39 Detailed as settled, measure which locked feature actually drives upgrade
-  intent. Near-zero cost, and it is the only item here that can de-risk pricing
-  with evidence rather than opinion.
-- **OPP-008 · Sample report as proof asset (60).** `/sample-report` exists and is
-  the strongest single proof of value on the site. Currently a secondary CTA.
+- **OPP-004 · Weekly report as the free-tier lead magnet (70).** The
+  distribution job already runs Thursdays (F10) and the templates exist. A
+  recurring free digest is the natural retention instrument for an intelligence
+  product and the most credible demonstration of what a paid tier buys. Blocked
+  in practice until there is real published inventory to report on — sending a
+  weekly built from `is_sample` records would violate §15. Consent and
+  unsubscribe are already handled correctly (RFC 8058, no login required).
+- **OPP-005 · Broker / SBDC / chamber referral pipeline (63).** The
+  highest-value partner set for this product, and the most legally delicate: the
+  product is explicitly not a brokerage and every partner-facing claim has to
+  stay on the right side of that. Requires outreach, which is an external
+  action, so it needs its own approval and should wait for G-1.
+- **OPP-007 · Validate packaging from existing telemetry (61).**
+  `locked_content_viewed` and `upgrade_button_clicked` are already instrumented
+  (F9). Before treating $39 Detailed as settled, measure which locked feature
+  actually drives upgrade intent. Near-zero cost, and it is the only item here
+  that can de-risk pricing with evidence rather than opinion.
+- **OPP-008 · Sample report as proof asset (60).** `/sample-report` exists and
+  is the strongest single proof of value on the site. Currently a secondary CTA.
 
 ---
 
@@ -193,15 +192,15 @@ Approved as planned on 2026-07-31 for OPP-001, OPP-002 and OPP-003.
 
 ## Completion record — 2026-07-31
 
-The §25 "PDF B" content: approved scope versus what was actually completed,
-with evidence and unresolved blockers. Two findings contradict the briefs they
-came from; both are corrected here rather than quietly left standing.
+The §25 "PDF B" content: approved scope versus what was actually completed, with
+evidence and unresolved blockers. Two findings contradict the briefs they came
+from; both are corrected here rather than quietly left standing.
 
 ### OPP-001 — Activate Stripe products and prices
 
-**Correction to the brief.** The brief assumed the Stripe objects did not
-exist. They do. A read of the live account found all four products and all six
-prices already created, with `plan_code` and `access_rank` metadata,
+**Correction to the brief.** The brief assumed the Stripe objects did not exist.
+They do. A read of the live account found all four products and all six prices
+already created, with `plan_code` and `access_rank` metadata,
 `gol_<plan>_<interval>` lookup keys, and amounts matching the published matrix
 exactly. Rev created nothing and deliberately avoided creating duplicates.
 
@@ -218,14 +217,15 @@ All six are **live mode**. The real remaining gap was that nothing carried these
 ids into `subscription_plans`.
 
 **Completed.** `supabase/stripe-prices.live.sql` — idempotent updates for the
-three paid plans, plus a verification query naming any tier that would still 409. `docs/RUNBOOK.md` §Stripe updated to mark steps 1 and 2 done and to point
-step 3 at the file.
+three paid plans, plus a verification query naming any tier that would
+still 409. `docs/RUNBOOK.md` §Stripe updated to mark steps 1 and 2 done and to
+point step 3 at the file.
 
 **Deliberately not done:** these ids were kept out of `seed.sql`. Every
 environment loads `seed.sql`, and each environment has its own Stripe keys — a
-live price id installed into a development database by `supabase db reset`
-would aim that environment at real money. This is why no `stripe-prices.test.sql`
-was invented either; it must come from a genuine test-mode price set.
+live price id installed into a development database by `supabase db reset` would
+aim that environment at real money. This is why no `stripe-prices.test.sql` was
+invented either; it must come from a genuine test-mode price set.
 
 **Unresolved, needs the owner.** The webhook endpoint, `STRIPE_WEBHOOK_SECRET`,
 the pinned API version and the tier-by-tier test-payment matrix all require a
@@ -237,12 +237,12 @@ so there is no live database to run the SQL against yet. **Checkout will still
 ### OPP-002 — Re-point the pre-launch funnel
 
 **Completed as planned.** Homepage hero call to action is now "Start free" →
-`/register`, with the plans link demoted to inline text that states plainly
-that paid tiers are not open. `/pricing` carries a `role="note"` banner saying
-the same and pointing at free registration, styled with the project's own
+`/register`, with the plans link demoted to inline text that states plainly that
+paid tiers are not open. `/pricing` carries a `role="note"` banner saying the
+same and pointing at free registration, styled with the project's own
 `signal.investigate` token rather than an imported colour. Both changes carry a
-comment saying to revert them as part of the paid launch, so they cannot
-outlive their reason.
+comment saying to revert them as part of the paid launch, so they cannot outlive
+their reason.
 
 No launch date is stated anywhere, because we do not have one and a missed date
 costs more than no date.
@@ -289,9 +289,9 @@ nothing crossed that gate.
 
 ### Verification evidence
 
-`npm run typecheck` clean · `npm run lint` zero warnings · `npm test` 148 passing
-across 9 files · `npm run build` compiles successfully. Only touched files were
-formatted.
+`npm run typecheck` clean · `npm run lint` zero warnings · `npm test` 148
+passing across 9 files · `npm run build` compiles successfully. Only touched
+files were formatted.
 
 ### Next action
 
@@ -372,8 +372,8 @@ Only four things, all in the right-hand cluster and the nav list:
 3. `viewer.isAuthenticated` — "Log in / Join now" vs plan name and Upgrade
 4. `planName` — one string
 
-Everything else — logo, chrome, layout — is static. The dynamic surface is small,
-which is what makes this tractable.
+Everything else — logo, chrome, layout — is static. The dynamic surface is
+small, which is what makes this tractable.
 
 ### Option A — static shell plus a client session island · recommended
 
@@ -415,15 +415,15 @@ basis, though it is the correct fallback if the island proves troublesome.
   anonymous visitors too, who will never have a session. Supabase auth cookies
   are `httpOnly`, so the client cannot check for one directly. Mitigation:
   middleware already calls `getUser()` on every request, so it can set a
-  non-`httpOnly`, non-identifying hint cookie — a boolean, no user id, no token —
-  and the island fetches only when that cookie is present. Anonymous traffic
+  non-`httpOnly`, non-identifying hint cookie — a boolean, no user id, no token
+  — and the island fetches only when that cookie is present. Anonymous traffic
   then costs nothing extra.
 - **That hint cookie has a legal consequence.** It is functional rather than
   analytical, but `src/lib/legal/documents.ts` has a cookie policy and it must
-  list the cookie. **This lands inside G-1's scope**, so if the cookie mitigation
-  is taken, the cookie policy changes before that document goes to review — or
-  the mitigation is deferred and we accept the extra request. Flagging it rather
-  than letting a legal document silently drift out of date.
+  list the cookie. **This lands inside G-1's scope**, so if the cookie
+  mitigation is taken, the cookie policy changes before that document goes to
+  review — or the mitigation is deferred and we accept the extra request.
+  Flagging it rather than letting a legal document silently drift out of date.
 - **Shared component, three call sites.** `reset-password/page.tsx` also renders
   `SiteHeader`; it needs checking, not just the two layouts.
 
@@ -440,10 +440,10 @@ Approved and executed 2026-07-31, option A as recommended.
 
 **Built.** `src/components/site/header-session.tsx` (`'use client'`) owns the
 nav list and the right-hand cluster, initial state signed-out, upgrading itself
-from `GET /api/v1/auth/session` on mount. `src/components/site/header.tsx` is now
-a plain non-async server component: chrome plus that island, no session access.
-`src/components/site/member-header.tsx` keeps the original server-resolved
-header, and `(member)/layout.tsx` uses it.
+from `GET /api/v1/auth/session` on mount. `src/components/site/header.tsx` is
+now a plain non-async server component: chrome plus that island, no session
+access. `src/components/site/member-header.tsx` keeps the original
+server-resolved header, and `(member)/layout.tsx` uses it.
 
 `generateStaticParams` was added to the county route. It prerenders only the
 counties that hold published records — the same set the sitemap submits — and
@@ -471,8 +471,8 @@ published here yet" would trade build time for nothing.
 directly: it contains "Log in" and "Join now", the public nav, and **no**
 `href="/dashboard"`, **no** `href="/admin"`, and no plan-name string. The only
 occurrence of the word "dashboard" is the homepage's own "Member dashboard"
-preview-panel label, which is static marketing copy. Nothing member-specific
-can reach a shared cache.
+preview-panel label, which is static marketing copy. Nothing member-specific can
+reach a shared cache.
 
 **Honest limits.**
 
@@ -481,19 +481,20 @@ can reach a shared cache.
   change is real and the route is now free of `cookies()`, so it caches on
   demand; the build-time prerender of individual counties starts working when a
   database exists.
-- `/pricing` is still `ƒ`, correctly. The page itself calls `getSessionContext()`
-  to tell `PlanGrid` which plan the viewer is on, and it never declared
-  `revalidate` — it was not one of the seven and was never meant to be cached.
-- `/support` and `/unsubscribed` remain `ƒ` for the same reason: no `revalidate`,
-  never in scope.
+- `/pricing` is still `ƒ`, correctly. The page itself calls
+  `getSessionContext()` to tell `PlanGrid` which plan the viewer is on, and it
+  never declared `revalidate` — it was not one of the seven and was never meant
+  to be cached.
+- `/support` and `/unsubscribed` remain `ƒ` for the same reason: no
+  `revalidate`, never in scope.
 
 **Deferred, and why.** The hint-cookie mitigation was **not** implemented. The
 island therefore issues one request to `/api/v1/auth/session` per marketing page
 view, including for anonymous visitors who will never have a session. The fix is
 a non-identifying boolean cookie set in middleware, but a new cookie has to be
-listed in the cookie policy, and that document is inside gate G-1's pending legal
-review. Adding an unlisted cookie to win a round trip is the wrong trade while
-the policy is being reviewed. The reasoning is recorded in a comment in
+listed in the cookie policy, and that document is inside gate G-1's pending
+legal review. Adding an unlisted cookie to win a round trip is the wrong trade
+while the policy is being reviewed. The reasoning is recorded in a comment in
 `header-session.tsx` so it is not rediscovered from scratch.
 
 **Verification.** `npm run typecheck` clean · `npm run lint` zero warnings ·
@@ -532,15 +533,16 @@ nobody was collecting.
 
 ### Why this was worth doing before there is any traffic
 
-Telemetry cannot be backfilled. Every visitor who arrives before the event
-fires is a data point that is gone permanently. The analysis half of OPP-007
-still cannot run — there is no traffic and no database — but the capture has to
-be in place first, and it is cheap now and expensive to regret later.
+Telemetry cannot be backfilled. Every visitor who arrives before the event fires
+is a data point that is gone permanently. The analysis half of OPP-007 still
+cannot run — there is no traffic and no database — but the capture has to be in
+place first, and it is cheap now and expensive to regret later.
 
 ### What was built
 
 `src/lib/analytics/upgrade-source.ts` defines a fixed vocabulary of twelve
-upgrade origins, a type guard, and a helper that builds `/pricing?from=…&plan=…`.
+upgrade origins, a type guard, and a helper that builds
+`/pricing?from=…&plan=…`.
 
 Every upgrade surface now carries its origin:
 
@@ -565,9 +567,9 @@ Every upgrade surface now carries its origin:
 
 ### Decisions worth stating
 
-**Captured server-side, not from a click handler.** This follows the decision
-in `docs/ARCHITECTURE.md` §12 — analytics are captured on the server precisely
-so an ad blocker cannot silently drop a funnel event. It also means no new API
+**Captured server-side, not from a click handler.** This follows the decision in
+`docs/ARCHITECTURE.md` §12 — analytics are captured on the server precisely so
+an ad blocker cannot silently drop a funnel event. It also means no new API
 endpoint, no client-side event queue and no new dependency. The alternative, a
 `POST /api/v1/analytics/events` route, would have introduced a public write
 surface needing its own validation and rate limiting for no gain here.
@@ -682,8 +684,8 @@ by `anon` — that is the entire column-level access mechanism. `log_admin_actio
 being callable by `authenticated` is intentional and guarded.
 
 One INFO notice is also correct as-is: `rate_limit_counters` has RLS enabled
-with no policy, which denies every API role. Only the service role touches it.
-A comment now says so on the table itself, so nobody "fixes" it.
+with no policy, which denies every API role. Only the service role touches it. A
+comment now says so on the table itself, so nobody "fixes" it.
 
 ### Unresolved, and it will bite
 
@@ -699,9 +701,9 @@ built from this repository alone is unaffected.
 
 ### Still standing between this and the first dollar
 
-1. **Deploy the application.** The webhook endpoint,
-   `STRIPE_WEBHOOK_SECRET`, the pinned API version and the tier-by-tier
-   test-payment matrix all need a running host.
+1. **Deploy the application.** The webhook endpoint, `STRIPE_WEBHOOK_SECRET`,
+   the pinned API version and the tier-by-tier test-payment matrix all need a
+   running host.
 2. **G-1, legal review.** Untouched. Still blocks anything paid or
    partner-facing.
 3. **Migration-history reconciliation**, above.
@@ -725,9 +727,9 @@ Supabase this one genuinely starts from nothing.
 All thirteen jobs in `vercel.json` — including weekly report distribution, alert
 matching and deadline evaluation — do nothing on a preview deployment.
 
-That looks like it collides with gate G-1: running in production would put a site
-whose ten legal documents all carry an "awaiting legal review" banner in front of
-search engines.
+That looks like it collides with gate G-1: running in production would put a
+site whose ten legal documents all carry an "awaiting legal review" banner in
+front of search engines.
 
 **It does not, because the two "productions" are different things.** Vercel's
 production _deployment target_ is what activates cron. `NEXT_PUBLIC_ENVIRONMENT`
@@ -776,9 +778,8 @@ sequence is:
 1. Deploy with a placeholder for `STRIPE_WEBHOOK_SECRET`. The build succeeds;
    billing routes will fail until step 3, which is expected.
 2. Register `POST <url>/api/v1/webhooks/stripe` in Stripe for
-   `checkout.session.completed`,
-   `customer.subscription.created|updated|deleted` and
-   `invoice.payment_failed`.
+   `checkout.session.completed`, `customer.subscription.created|updated|deleted`
+   and `invoice.payment_failed`.
 3. Replace the placeholder with the real signing secret and redeploy.
 4. Set `NEXT_PUBLIC_SITE_URL` to the deployment URL and redeploy.
 5. Pin the Stripe API version in the dashboard — deliberately not pinned in

@@ -11,8 +11,8 @@ and actual result.
   result** blocks are edited, and only once, when the owner answers and when
   execution completes.
 - An approval authorises **exactly** what its Limits block says. Any variance —
-  cost, scope, systems touched, customer impact — is a new packet, not a
-  liberal reading of an old one.
+  cost, scope, systems touched, customer impact — is a new packet, not a liberal
+  reading of an old one.
 - An expired approval is dead. Re-request rather than execute late.
 - **Seeded 2026-08-06** from repository evidence and the owner's stated
   decisions. Response dates for A-01 to A-04 are taken from the commit dates of
@@ -60,13 +60,12 @@ other branch; touching production Supabase or Stripe; running the seeder outside
 a local environment; any deletion or irreversible change; anything in classes C
 through H.
 
-**Response** — Approved, standing, by authorship of CLAUDE.md §10/§11
-(commit `6468118`, 2026-07-31).
-**Expiration** — None; revised whenever CLAUDE.md §10 or §11 is revised.
-**Affected records** — T-08, T-09, T-10, T-15 (prepare only), T-16 (prepare
-only), T-24, T-25.
-**Actual result** — Used seven times to date. Each use is recorded against its
-task in `TASK-REGISTER.md` and its commit in `OPERATING-LOG.md`.
+**Response** — Approved, standing, by authorship of CLAUDE.md §10/§11 (commit
+`6468118`, 2026-07-31). **Expiration** — None; revised whenever CLAUDE.md §10 or
+§11 is revised. **Affected records** — T-08, T-09, T-10, T-15 (prepare only),
+T-16 (prepare only), T-24, T-25. **Actual result** — Used seven times to date.
+Each use is recorded against its task in `TASK-REGISTER.md` and its commit in
+`OPERATING-LOG.md`.
 
 ---
 
@@ -75,59 +74,49 @@ task in `TASK-REGISTER.md` and its commit in `OPERATING-LOG.md`.
 **Decision requested** — Commit the owner's operations specification, a
 repository orientation guide and a Torque agent definition to the repository.
 **Business objective** — Owner time saved: every future agent session starts
-oriented instead of rediscovering the same constraints.
-**Source and context** — Owner-supplied PDF specification, July 2026.
-**Recommended plan** — Transcribe the spec to `docs/`, write `CLAUDE.md`, write
-`.claude/agents/torque.md`.
+oriented instead of rediscovering the same constraints. **Source and context** —
+Owner-supplied PDF specification, July 2026. **Recommended plan** — Transcribe
+the spec to `docs/`, write `CLAUDE.md`, write `.claude/agents/torque.md`.
 **Alternatives** — Leave the spec as a PDF outside the repository: rejected,
-because a PDF is neither searchable nor diffable by an agent.
-**Cost and cash impact** — None.
-**Risks and safeguards** — Transcription drift from the authoritative PDF;
-mitigated by a header note naming the PDF as controlling.
-**Systems affected** — This repository only.
-**Customer/public impact** — None. The repository is not public-facing.
-**Success test** — A new session can answer "what may I do without asking" from
-the repository alone.
+because a PDF is neither searchable nor diffable by an agent. **Cost and cash
+impact** — None. **Risks and safeguards** — Transcription drift from the
+authoritative PDF; mitigated by a header note naming the PDF as controlling.
+**Systems affected** — This repository only. **Customer/public impact** — None.
+The repository is not public-facing. **Success test** — A new session can answer
+"what may I do without asking" from the repository alone.
 
-**Response** — **APPROVED**, 2026-07-31.
-**Limits** — Documentation only; no code behaviour changes.
-**Expiration** — Consumed on execution.
-**Affected records** — T-01, T-02, T-03.
-**Actual result** — Executed and verified. Commit `6468118`, three files, 1,106
-lines added. Log `OL-0001`.
+**Response** — **APPROVED**, 2026-07-31. **Limits** — Documentation only; no
+code behaviour changes. **Expiration** — Consumed on execution. **Affected
+records** — T-01, T-02, T-03. **Actual result** — Executed and verified. Commit
+`6468118`, three files, 1,106 lines added. Log `OL-0001`.
 
 ---
 
 ## A-02 — Correct drifted documentation and the legal-review flags
 
 **Decision requested** — Correct claims in README, ARCHITECTURE, MILESTONES and
-RUNBOOK that the code did not support, and set the legal-review flags truthfully.
-**Business objective** — Risk control. Documentation that overstates what is
-built produces launch decisions made on false information.
-**Source and context** — Agent review of each documented claim against the
-implementation.
+RUNBOOK that the code did not support, and set the legal-review flags
+truthfully. **Business objective** — Risk control. Documentation that overstates
+what is built produces launch decisions made on false information. **Source and
+context** — Agent review of each documented claim against the implementation.
 **Recommended plan** — Diff every claim; correct or delete the failures; state
-the residual honestly in MILESTONES.
-**Alternatives** — Leave it and fix at launch: rejected, since the drift was
-already being cited in planning.
-**Cost and cash impact** — None.
-**Risks and safeguards** — Setting `requiresReview` truthfully makes seven
-documents render an "awaiting legal review" banner, which is a visible admission.
-That is the correct behaviour and is why it needed an owner decision rather than
-a silent edit.
-**Systems affected** — Repository documentation and
-`src/lib/legal/documents.ts`.
-**Customer/public impact** — The banner is member-visible on `/legal/[slug]`.
-**Success test** — Every remaining claim in the docs is verifiable against code.
+the residual honestly in MILESTONES. **Alternatives** — Leave it and fix at
+launch: rejected, since the drift was already being cited in planning. **Cost
+and cash impact** — None. **Risks and safeguards** — Setting `requiresReview`
+truthfully makes seven documents render an "awaiting legal review" banner, which
+is a visible admission. That is the correct behaviour and is why it needed an
+owner decision rather than a silent edit. **Systems affected** — Repository
+documentation and `src/lib/legal/documents.ts`. **Customer/public impact** — The
+banner is member-visible on `/legal/[slug]`. **Success test** — Every remaining
+claim in the docs is verifiable against code.
 
 **Response** — **APPROVED**, 2026-07-31, including the visible banner.
 **Limits** — No change to document _text_; flags and documentation only. Torque
-made no legal determination.
-**Expiration** — Consumed on execution.
-**Affected records** — T-04, T-05.
-**Actual result** — Executed and verified. Commit `a489144`, five files,
-+122/−57. The exemption claimed for three documents was written down as an open
-question rather than resolved, and became T-13. Log `OL-0002`.
+made no legal determination. **Expiration** — Consumed on execution. **Affected
+records** — T-04, T-05. **Actual result** — Executed and verified. Commit
+`a489144`, five files, +122/−57. The exemption claimed for three documents was
+written down as an open question rather than resolved, and became T-13. Log
+`OL-0002`.
 
 ---
 
@@ -136,66 +125,55 @@ question rather than resolved, and became T-13. Log `OL-0002`.
 **Decision requested** — Change what the admin dashboard, MRR and the analytics
 aggregate count, so seeded demo accounts stop being reported as real business.
 **Business objective** — Revenue accuracy. The subscriber count and MRR are
-numbers the owner would make decisions on.
-**Source and context** — Agent finding: `scripts/seed.ts` writes ten demo
-accounts, all flagged `is_sample`, and the dashboard counted them.
-**Recommended plan** — A single exclusion predicate in
-`src/lib/analytics/sample-data.ts`, applied to the subscriber, revenue and
-analytics paths, badged in the UI, carried into CSV exports, with unit tests.
-**Alternatives** — Stop seeding demo data: rejected, because the demo accounts
-are needed to exercise every tier. Filter at read time in each caller: rejected,
-because it drifts.
-**Cost and cash impact** — None.
-**Risks and safeguards** — The two filter helpers must stay asymmetric:
+numbers the owner would make decisions on. **Source and context** — Agent
+finding: `scripts/seed.ts` writes ten demo accounts, all flagged `is_sample`,
+and the dashboard counted them. **Recommended plan** — A single exclusion
+predicate in `src/lib/analytics/sample-data.ts`, applied to the subscriber,
+revenue and analytics paths, badged in the UI, carried into CSV exports, with
+unit tests. **Alternatives** — Stop seeding demo data: rejected, because the
+demo accounts are needed to exercise every tier. Filter at read time in each
+caller: rejected, because it drifts. **Cost and cash impact** — None. **Risks
+and safeguards** — The two filter helpers must stay asymmetric:
 `analytics_events.user_id` is nullable and a null means real anonymous traffic
 that must be kept, while `subscriptions.user_id` is not null. Unifying them
-would make one tile wrong. Tests pin the rendered filter shape.
-**Systems affected** — Admin dashboard, `aggregate-analytics` job, CSV export.
-No production system — nothing here has run against a live database.
-**Customer/public impact** — None. Administrator-facing only.
-**Success test** — With only demo accounts present, the subscriber count and MRR
-read zero.
+would make one tile wrong. Tests pin the rendered filter shape. **Systems
+affected** — Admin dashboard, `aggregate-analytics` job, CSV export. No
+production system — nothing here has run against a live database.
+**Customer/public impact** — None. Administrator-facing only. **Success test** —
+With only demo accounts present, the subscriber count and MRR read zero.
 
-**Response** — **APPROVED**, 2026-07-31.
-**Limits** — Reporting only. No change to what the seeder writes, and no change
-to member-visible behaviour beyond the sample badge.
-**Expiration** — Consumed on execution.
-**Affected records** — T-06, T-12.
-**Actual result** — **Partially verified.** Code executed and unit-tested
-(commits `1039582`, `8337e41`; 16 tests). The success test above has **not** been
-run, because it needs a seeded database and nothing here has been run against
-one. T-06 therefore stands at **In Verification**, not Done. Logs `OL-0003`,
-`OL-0005`.
+**Response** — **APPROVED**, 2026-07-31. **Limits** — Reporting only. No change
+to what the seeder writes, and no change to member-visible behaviour beyond the
+sample badge. **Expiration** — Consumed on execution. **Affected records** —
+T-06, T-12. **Actual result** — **Partially verified.** Code executed and
+unit-tested (commits `1039582`, `8337e41`; 16 tests). The success test above has
+**not** been run, because it needs a seeded database and nothing here has been
+run against one. T-06 therefore stands at **In Verification**, not Done. Logs
+`OL-0003`, `OL-0005`.
 
 ---
 
 ## A-04 — Correct the annual MRR arithmetic
 
 **Decision requested** — Count an annual subscriber at a twelfth of the annual
-price rather than at the monthly price.
-**Business objective** — Revenue accuracy; the previous arithmetic overstated
-monthly recurring revenue.
-**Source and context** — Agent review of the admin revenue tile against
-`subscription_plans` intervals.
-**Recommended plan** — Extract the arithmetic to `src/lib/billing/mrr.ts`,
-normalise every interval to monthly, cover with fixtures.
-**Alternatives** — Report annual and monthly separately: rejected, because MRR
-is a single comparable figure and splitting it moves the problem to the reader.
-**Cost and cash impact** — None directly; it changes a figure the owner plans
-against, downwards.
-**Risks and safeguards** — Cent-boundary rounding; covered by 18 unit tests.
-**Systems affected** — Admin dashboard only.
-**Customer/public impact** — None.
-**Success test** — The arithmetic matches hand-calculated fixtures across every
-interval.
+price rather than at the monthly price. **Business objective** — Revenue
+accuracy; the previous arithmetic overstated monthly recurring revenue. **Source
+and context** — Agent review of the admin revenue tile against
+`subscription_plans` intervals. **Recommended plan** — Extract the arithmetic to
+`src/lib/billing/mrr.ts`, normalise every interval to monthly, cover with
+fixtures. **Alternatives** — Report annual and monthly separately: rejected,
+because MRR is a single comparable figure and splitting it moves the problem to
+the reader. **Cost and cash impact** — None directly; it changes a figure the
+owner plans against, downwards. **Risks and safeguards** — Cent-boundary
+rounding; covered by 18 unit tests. **Systems affected** — Admin dashboard only.
+**Customer/public impact** — None. **Success test** — The arithmetic matches
+hand-calculated fixtures across every interval.
 
-**Response** — **APPROVED**, 2026-07-31.
-**Limits** — Arithmetic only; no change to pricing, plans or billing behaviour.
-**Expiration** — Consumed on execution.
-**Affected records** — T-07.
-**Actual result** — Executed and verified against the stated success test.
-Commit `5ae44fa`; 18 tests pass. Reconciliation against live Stripe data is a
-different test and belongs to A-05. Log `OL-0004`.
+**Response** — **APPROVED**, 2026-07-31. **Limits** — Arithmetic only; no change
+to pricing, plans or billing behaviour. **Expiration** — Consumed on execution.
+**Affected records** — T-07. **Actual result** — Executed and verified against
+the stated success test. Commit `5ae44fa`; 18 tests pass. Reconciliation against
+live Stripe data is a different test and belongs to A-05. Log `OL-0004`.
 
 ---
 
@@ -237,9 +215,9 @@ null.
 
 **Cost and cash impact** — Test mode: none. Live-mode read-only verification:
 none. If the owner also wants a real end-to-end live charge, that costs the
-processing fee at whatever rate the DD84 Stripe account carries — **not
-recorded here; confirm the account's actual rate before the live leg** rather
-than assuming a published rate.
+processing fee at whatever rate the DD84 Stripe account carries — **not recorded
+here; confirm the account's actual rate before the live leg** rather than
+assuming a published rate.
 
 **Risks and safeguards** — A wrong price ID silently grants the wrong access
 rank, which is a paid-content leak rather than a visible failure; step 4 exists
@@ -257,9 +235,8 @@ row per webhook; the granted rank matches the plan on every transition.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._
-**Affected records** — T-11.
-**Actual result** — Not executed.
+**Response** — _awaiting owner._ **Affected records** — T-11. **Actual result**
+— Not executed.
 
 ---
 
@@ -318,10 +295,8 @@ here, before launch.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._
-**Affected records** — T-13, and by dependency the launch checklist in
-`docs/RUNBOOK.md`.
-**Actual result** — Not executed.
+**Response** — _awaiting owner._ **Affected records** — T-13, and by dependency
+the launch checklist in `docs/RUNBOOK.md`. **Actual result** — Not executed.
 
 ---
 
@@ -367,14 +342,13 @@ path, and a new third-party integration.
 **Customer/public impact** — Members would see a short "scanning" state before a
 download becomes available.
 
-**Success test** — An EICAR upload is marked `infected` and blocked; a clean file
-is marked `clean` and downloads.
+**Success test** — An EICAR upload is marked `infected` and blocked; a clean
+file is marked `clean` and downloads.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._
-**Affected records** — T-14.
-**Actual result** — Not executed.
+**Response** — _awaiting owner._ **Affected records** — T-14. **Actual result**
+— Not executed.
 
 ---
 
@@ -382,38 +356,35 @@ is marked `clean` and downloads.
 
 **Decision requested** — Build the routines as runnable commands, stand up the
 operating record on disk, extend the Torque definition, and add one additive
-section to CLAUDE.md §10.
-**Business objective** — Owner capacity. The agent currently carries operational
-state in conversation transcripts, which is the "isolated conversations" failure
-the specification names in §3.
-**Source and context** — Owner instruction, 2026-08-06.
-**Recommended plan** — Six command files in `.claude/commands/`; `docs/ops/`
-with register, approvals and an append-only execution log; the missing spec
-sections added to `.claude/agents/torque.md`; a pointer added to CLAUDE.md §10.
-**Alternatives** — Keep carrying state in transcripts: rejected, it is the
-problem. Build a database-backed task system: rejected as disproportionate —
-markdown in the repository is diffable, reviewable and needs no runtime.
-**Cost and cash impact** — None.
-**Risks and safeguards** — Two real ones. A routine that fabricates a section
-when a connector is missing would be worse than no routine, so the degradation
-rule is stated in the shared contract and in every command file. And a seeded
-register that is wrong is worse than an empty one, so unsourceable fields read
-`not recorded` and T-19 stays In Verification until the owner confirms it.
-**Systems affected** — This repository only. No connector is written to.
-**Customer/public impact** — None.
-**Success test** — Six invocable commands; three linked operating-record files;
+section to CLAUDE.md §10. **Business objective** — Owner capacity. The agent
+currently carries operational state in conversation transcripts, which is the
+"isolated conversations" failure the specification names in §3. **Source and
+context** — Owner instruction, 2026-08-06. **Recommended plan** — Six command
+files in `.claude/commands/`; `docs/ops/` with register, approvals and an
+append-only execution log; the missing spec sections added to
+`.claude/agents/torque.md`; a pointer added to CLAUDE.md §10. **Alternatives** —
+Keep carrying state in transcripts: rejected, it is the problem. Build a
+database-backed task system: rejected as disproportionate — markdown in the
+repository is diffable, reviewable and needs no runtime. **Cost and cash
+impact** — None. **Risks and safeguards** — Two real ones. A routine that
+fabricates a section when a connector is missing would be worse than no routine,
+so the degradation rule is stated in the shared contract and in every command
+file. And a seeded register that is wrong is worse than an empty one, so
+unsourceable fields read `not recorded` and T-19 stays In Verification until the
+owner confirms it. **Systems affected** — This repository only. No connector is
+written to. **Customer/public impact** — None. **Success test** — Six invocable
+commands; three linked operating-record files;
 `npm run typecheck && npm run lint && npm test` still green at 179 tests in 11
 files; the branch pushed with no pull request opened.
 
-**Response** — **APPROVED**, 2026-08-06.
-**Limits** — The CLAUDE.md edit is **additive, §10 only**; §11 and the existing
-§10 protocol text are not to be touched. No scheduled triggers are to be created
-by the agent — the owner holds scheduling. No pull request.
-**Expiration** — Consumed on execution.
-**Affected records** — T-18, T-19, T-20, T-21, T-22.
-**Actual result** — Executed. Verification output and the commit hash are
-recorded in `OPERATING-LOG.md`. T-19 remains In Verification pending the owner's
-confirmation that the seeded register matches their own record.
+**Response** — **APPROVED**, 2026-08-06. **Limits** — The CLAUDE.md edit is
+**additive, §10 only**; §11 and the existing §10 protocol text are not to be
+touched. No scheduled triggers are to be created by the agent — the owner holds
+scheduling. No pull request. **Expiration** — Consumed on execution. **Affected
+records** — T-18, T-19, T-20, T-21, T-22. **Actual result** — Executed.
+Verification output and the commit hash are recorded in `OPERATING-LOG.md`. T-19
+remains In Verification pending the owner's confirmation that the seeded
+register matches their own record.
 
 ---
 
@@ -421,47 +392,43 @@ confirmation that the seeded register matches their own record.
 
 **Decision requested** — Merge `claude/claude-md-docs-jjveuq` (Torque) into
 `claude/claude-md-docs-cqvhy6` (Rev), repoint the four scheduled Torque routines
-at the merged branch, and retire Rev's weekly Routine.
-**Business objective** — One record. Two agents were built independently within
-minutes of each other, each on its own branch, each holding code and documents
-the other lacked. Left alone they produce two divergent accounts of the same
-business, and the divergence is invisible until someone acts on the wrong one.
-**Source and context** — Owner instruction, 2026-08-13: "resolve it", then
-"Approve" against the plan below.
-**Recommended plan** — (1) `git merge` Torque's branch into Rev's, resolving the
-two conflicting files by hand; (2) run the full verification chain; (3) push;
-(4) `update_trigger` on the four Torque routines so they check out and push to
-the merged branch, with an explicit instruction not to write into the other
-agent's ledger; (5) `delete_trigger` on Rev's weekly growth brief.
-**Alternatives** — Keep both branches and reconcile by hand each week: rejected,
-it is manual work that grows. Retire Torque and keep Rev: rejected, Torque holds
-the operating record and `mrr.ts`, and operations is the larger remit. Keep Rev's
-Routine and merely move it off the Monday collision: rejected — the fired session
-has no connectors, so it could not read live sales anyway, and Torque's daily
-brief already reports money moved, approvals pending and priorities.
-**Cost and cash impact** — None.
-**Risks and safeguards** — Three. A bad merge could lose Torque's work, so the
-merge was taken with `--no-ff` semantics and every conflicting hunk resolved by
-reading both sides rather than taking one wholesale. Merging the two ledgers
-would destroy the distinction between what was operated and what was proposed, so
-`docs/ops/` and `docs/growth/` stay separate and each routine prompt now says so
-explicitly. And deleting a Routine is not undoable, so Rev's prompt is preserved
-verbatim in `docs/agents/README.md` for recreation.
-**Systems affected** — This repository, and the account's scheduled Routines.
-No connector is written to; no customer-facing system changes.
-**Customer/public impact** — None.
-**Success test** — One branch carrying both agents' work; `npm run typecheck &&
-npm run lint && npm test` green; four routines pointing at the merged branch; the
-overlapping Routine gone; no pull request opened.
+at the merged branch, and retire Rev's weekly Routine. **Business objective** —
+One record. Two agents were built independently within minutes of each other,
+each on its own branch, each holding code and documents the other lacked. Left
+alone they produce two divergent accounts of the same business, and the
+divergence is invisible until someone acts on the wrong one. **Source and
+context** — Owner instruction, 2026-08-13: "resolve it", then "Approve" against
+the plan below. **Recommended plan** — (1) `git merge` Torque's branch into
+Rev's, resolving the two conflicting files by hand; (2) run the full
+verification chain; (3) push; (4) `update_trigger` on the four Torque routines
+so they check out and push to the merged branch, with an explicit instruction
+not to write into the other agent's ledger; (5) `delete_trigger` on Rev's weekly
+growth brief. **Alternatives** — Keep both branches and reconcile by hand each
+week: rejected, it is manual work that grows. Retire Torque and keep Rev:
+rejected, Torque holds the operating record and `mrr.ts`, and operations is the
+larger remit. Keep Rev's Routine and merely move it off the Monday collision:
+rejected — the fired session has no connectors, so it could not read live sales
+anyway, and Torque's daily brief already reports money moved, approvals pending
+and priorities. **Cost and cash impact** — None. **Risks and safeguards** —
+Three. A bad merge could lose Torque's work, so the merge was taken with
+`--no-ff` semantics and every conflicting hunk resolved by reading both sides
+rather than taking one wholesale. Merging the two ledgers would destroy the
+distinction between what was operated and what was proposed, so `docs/ops/` and
+`docs/growth/` stay separate and each routine prompt now says so explicitly. And
+deleting a Routine is not undoable, so Rev's prompt is preserved verbatim in
+`docs/agents/README.md` for recreation. **Systems affected** — This repository,
+and the account's scheduled Routines. No connector is written to; no
+customer-facing system changes. **Customer/public impact** — None. **Success
+test** — One branch carrying both agents' work;
+`npm run typecheck && npm run lint && npm test` green; four routines pointing at
+the merged branch; the overlapping Routine gone; no pull request opened.
 
-**Response** — **APPROVED**, 2026-08-13.
-**Limits** — Supersedes the A-08 limit "no scheduled triggers are to be created
-by the agent" **for these five specific Routines only** — four updates and one
-deletion, all named above. It grants no standing scheduling authority; creating a
-new Routine still goes back to the owner.
-**Expiration** — Consumed on execution.
-**Affected records** — T-23, T-27.
-**Actual result** — Executed 2026-08-13. Evidence in `OPERATING-LOG.md`
+**Response** — **APPROVED**, 2026-08-13. **Limits** — Supersedes the A-08 limit
+"no scheduled triggers are to be created by the agent" **for these five specific
+Routines only** — four updates and one deletion, all named above. It grants no
+standing scheduling authority; creating a new Routine still goes back to the
+owner. **Expiration** — Consumed on execution. **Affected records** — T-23,
+T-27. **Actual result** — Executed 2026-08-13. Evidence in `OPERATING-LOG.md`
 OL-0010 and OL-0011.
 
 ---
@@ -470,48 +437,43 @@ OL-0010 and OL-0011.
 
 **Decision requested** — Recreate the four Torque Routines from the claude.ai
 Routines UI with the repository and branch attached, so their briefs survive the
-session.
-**Business objective** — The operating record. Four Routines have fired on
-schedule since 2026-08-07 and delivered nothing to the repository; the schedule
-currently reads as coverage that does not exist.
-**Source and context** — T-27, root cause confirmed 2026-08-28. The fired
-sessions carry no `sources` and no `outcomes` — no repository, no push target.
-The one Routine that does carry them is the only one created from the claude.ai
-UI rather than the MCP tool.
-**Recommended plan** — In the claude.ai Routines UI, create four Routines with
-the repository `downdirty84llc-creator/tune-advisor-` and branch
+session. **Business objective** — The operating record. Four Routines have fired
+on schedule since 2026-08-07 and delivered nothing to the repository; the
+schedule currently reads as coverage that does not exist. **Source and context**
+— T-27, root cause confirmed 2026-08-28. The fired sessions carry no `sources`
+and no `outcomes` — no repository, no push target. The one Routine that does
+carry them is the only one created from the claude.ai UI rather than the MCP
+tool. **Recommended plan** — In the claude.ai Routines UI, create four Routines
+with the repository `downdirty84llc-creator/tune-advisor-` and branch
 `claude/claude-md-docs-cqvhy6` attached, and the connectors the routine needs
 (Gmail for intake; Stripe and Shopify for the cash review). Copy each prompt
 verbatim from the existing Routine, then delete the MCP-created original so the
 schedule is not doubled. The prompts are correct and tested; only the container
-they run in is wrong.
-**Alternatives** — (1) Rebind to a persistent session with
+they run in is wrong. **Alternatives** — (1) Rebind to a persistent session with
 `persistent_session_id`: inside the agent's reach, but it depends on one session
 surviving indefinitely and its context grows without bound. (2) Change the
 contract so routines report by notification only and abandon the written record:
 rejected — `docs/ops/` exists precisely because operational state carried in
-transcripts is the failure the specification names in §3. (3) Leave it: rejected,
-it spends money on discarded work and misrepresents what is covered.
+transcripts is the failure the specification names in §3. (3) Leave it:
+rejected, it spends money on discarded work and misrepresents what is covered.
 **Cost and cash impact** — Stops a recurring waste. Two sampled runs cost $2.63
-between them for output that was discarded; the pattern has run since 2026-08-07.
-No total is claimed — only two runs were read.
-**Risks and safeguards** — The recreated Routines will hold **live connectors**,
-which the MCP-created ones never did. Every routine is Class A and says so in its
-own prompt — observe, calculate, draft, report — but this is the first time those
+between them for output that was discarded; the pattern has run since
+2026-08-07. No total is claimed — only two runs were read. **Risks and
+safeguards** — The recreated Routines will hold **live connectors**, which the
+MCP-created ones never did. Every routine is Class A and says so in its own
+prompt — observe, calculate, draft, report — but this is the first time those
 prohibitions will be load-bearing rather than theoretical. Recommend reading the
-first run of each before trusting the cadence.
-**Systems affected** — Scheduled Routines only. No customer-facing system.
-**Customer/public impact** — None.
+first run of each before trusting the cadence. **Systems affected** — Scheduled
+Routines only. No customer-facing system. **Customer/public impact** — None.
 **Success test** — One scheduled run ends with a dated brief committed to
 `docs/ops/briefs/` and an entry in `OPERATING-LOG.md`. That commit hash is also
 the completion proof T-23 has been waiting on.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._
-**Affected records** — T-23, T-27.
-**Actual result** — Not executed. **The recommended option cannot be executed by
-the agent at all**: `create_trigger` has no parameter for a git source, and
+**Response** — _awaiting owner._ **Affected records** — T-23, T-27. **Actual
+result** — Not executed. **The recommended option cannot be executed by the
+agent at all**: `create_trigger` has no parameter for a git source, and
 `update_trigger` cannot add one to an existing Routine. This one needs hands on
 the claude.ai UI.
 
@@ -519,13 +481,11 @@ the claude.ai UI.
 
 ## A-11 — Consolidate onto the Ledger repository (APPROVED, then NARROWED)
 
-**Decision requested** — Treat the Ledger's own repository as canonical, move the
-DD84 agent platform into it, and retire this branch.
-**Source and context** — Write access to
-`downdirty84llc-creator/georgia-opportunity-ledger` was granted 2026-09-09.
-Inspection showed it ahead of this copy on the application, and holding none of
-the agent platform.
-**Cost and cash impact** — None.
+**Decision requested** — Treat the Ledger's own repository as canonical, move
+the DD84 agent platform into it, and retire this branch. **Source and context**
+— Write access to `downdirty84llc-creator/georgia-opportunity-ledger` was
+granted 2026-09-09. Inspection showed it ahead of this copy on the application,
+and holding none of the agent platform. **Cost and cash impact** — None.
 **Systems affected** — Two repositories. No connector, no production system.
 
 **Response — first** — **APPROVED**, 2026-09-09, on the question "which of two
@@ -541,13 +501,11 @@ company's repository, which is what the change did. A CLAUDE.md added to the
 Ledger's `main` on 2026-09-15 by another session stated that the two businesses
 were separated deliberately and that the consolidation must not be merged
 without the owner saying so in as many words. That was correct, and the approval
-obtained did not meet it. **An approval is only as good as the question; this one
-described a smaller change than it made.**
+obtained did not meet it. **An approval is only as good as the question; this
+one described a smaller change than it made.**
 
 **Limits** — Ledger-only code may cross. DD84 material may not. Neither
-repository's `main` is to be treated as the other's.
-**Expiration** — Consumed.
-**Affected records** — T-28, T-29.
-**Actual result** — Executed as narrowed. Ledger `main` at `a228f3d` carries the
-three modules; the agent platform never left this repository. Evidence in
-`OPERATING-LOG.md` OL-0013 and OL-0015.
+repository's `main` is to be treated as the other's. **Expiration** — Consumed.
+**Affected records** — T-28, T-29. **Actual result** — Executed as narrowed.
+Ledger `main` at `a228f3d` carries the three modules; the agent platform never
+left this repository. Evidence in `OPERATING-LOG.md` OL-0013 and OL-0015.

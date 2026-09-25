@@ -54,25 +54,26 @@ runs through it — the tuning business, the Ledger, and traffic into the Shopif
 store.** Shopify is a checkout behind it, not the shop window.
 
 **This is `stated`, not `verified`, and cannot currently be verified by Rev.**
-`dd84tuning.com` is blocked by this environment's network egress proxy, and there
-is no Manus connector on this account. Rev can read neither the site nor its
-analytics. Until that changes, **anything about the front door is the owner's
-word, recorded as such** — which is a legitimate source, and is still not the
-same as a reading.
+`dd84tuning.com` is blocked by this environment's network egress proxy, and
+there is no Manus connector on this account. Rev can read neither the site nor
+its analytics. Until that changes, **anything about the front door is the
+owner's word, recorded as such** — which is a legitimate source, and is still
+not the same as a reading.
 
-**What this invalidates.** Every traffic and channel figure in this file was read
-from Shopify. If Shopify is the second step, those numbers describe the back half
-of the funnel and say nothing about the front. They remain true of Shopify and
-must stop being quoted as if they described the business.
+**What this invalidates.** Every traffic and channel figure in this file was
+read from Shopify. If Shopify is the second step, those numbers describe the
+back half of the funnel and say nothing about the front. They remain true of
+Shopify and must stop being quoted as if they described the business.
 
 > **Correction — the 2026-08-03 diagnosis was measured on the wrong surface.**
-> Rev concluded that DD84 Tuning's problem was **invisibility**, and rested it on
-> Shopify's 7 organic search visits in 180 days. That figure is real, but it
-> measures a page that may never have been the landing surface. **If the audience
-> arrives at `dd84tuning.com`, the business is not invisible — Rev was looking at
-> the wrong window.** The finding that survives untouched is the money: 0 Shopify
-> orders all time, and no payment collected since 2025-09-12. Those come from
-> Stripe and Shopify order records, not from traffic attribution.
+> Rev concluded that DD84 Tuning's problem was **invisibility**, and rested it
+> on Shopify's 7 organic search visits in 180 days. That figure is real, but it
+> measures a page that may never have been the landing surface. **If the
+> audience arrives at `dd84tuning.com`, the business is not invisible — Rev was
+> looking at the wrong window.** The finding that survives untouched is the
+> money: 0 Shopify orders all time, and no payment collected since 2025-09-12.
+> Those come from Stripe and Shopify order records, not from traffic
+> attribution.
 
 **The most valuable unknown in this file is now the Manus site's analytics.**
 Sessions, sources and conversions for `dd84tuning.com` would settle in one
@@ -92,18 +93,18 @@ what they do next. Ask for it before commissioning any further marketing work.
 | **Last payment**         | **2025-09-12** — nothing collected since             | 2026-08-03 |
 | Shopify orders, all time | **0**                                                | 2026-08-03 |
 
-**100% of revenue came from invoiced service work. 0% from the storefront.**
-Any plan that assumes self-serve digital products are the revenue model is
-arguing against the only evidence that exists.
+**100% of revenue came from invoiced service work. 0% from the storefront.** Any
+plan that assumes self-serve digital products are the revenue model is arguing
+against the only evidence that exists.
 
 **What those invoices were actually for is `UNKNOWN`** — Stripe records amounts
 and invoice numbers, not line items.
 
-**Owner decision, 2026-08-07: the invoices are closed as a line of enquiry.**
-Do not chase the line items, and do not raise the gaps in invoice numbering.
-The `UNKNOWN` above still binds — Rev must not guess which service earned the
-money, and must not present a guess as the reason a service is worth leading
-with. It is simply not a question to keep asking.
+**Owner decision, 2026-08-07: the invoices are closed as a line of enquiry.** Do
+not chase the line items, and do not raise the gaps in invoice numbering. The
+`UNKNOWN` above still binds — Rev must not guess which service earned the money,
+and must not present a guess as the reason a service is worth leading with. It
+is simply not a question to keep asking.
 
 ### Traffic
 
@@ -120,10 +121,10 @@ above. `dd84tuning.com`'s own traffic is unread and is the figure that matters.
 
 **Read "direct 146" again in this light.** A referral that arrives without a
 referrer header lands in `direct`, and a link from the Manus front door may well
-do exactly that. So `direct` is not necessarily people typing the URL — it may be
-the front door doing its job. **This is a hypothesis with two candidate causes and
-no evidence separating them**, and it is not to be reported as a finding until
-the Manus analytics are read.
+do exactly that. So `direct` is not necessarily people typing the URL — it may
+be the front door doing its job. **This is a hypothesis with two candidate
+causes and no evidence separating them**, and it is not to be reported as a
+finding until the Manus analytics are read.
 
 ### Catalogue and price ladder
 
@@ -144,10 +145,10 @@ the Manus analytics are read.
 
 ### Capabilities
 
-GM Gen III/IV/V LS and LT · Holley EFI (HP, Dominator, Terminator X) ·
-HP Tuners · Ford Coyote and EcoBoost · Dodge/Mopar HEMI and PCM unlock ·
-Toyota/Lexus · 4L60E and 4L80E transmission calibration · cam swaps ·
-boost control · performance wiring and EFI power diagnostics · datalog review.
+GM Gen III/IV/V LS and LT · Holley EFI (HP, Dominator, Terminator X) · HP Tuners
+· Ford Coyote and EcoBoost · Dodge/Mopar HEMI and PCM unlock · Toyota/Lexus ·
+4L60E and 4L80E transmission calibration · cam swaps · boost control ·
+performance wiring and EFI power diagnostics · datalog review.
 
 ### Restrictions — non-negotiable
 
@@ -191,9 +192,9 @@ pricing in Georgia. Code lives in this repository.
 ### Blockers
 
 1. **Not deployed.** No webhook, no signing secret, no test-payment matrix.
-2. **Legal review pending** on all ten documents in `src/lib/legal/documents.ts`.
-   Each renders an "awaiting legal review" banner. **No paid or partner-facing
-   campaign may launch until this clears.**
+2. **Legal review pending** on all ten documents in
+   `src/lib/legal/documents.ts`. Each renders an "awaiting legal review" banner.
+   **No paid or partner-facing campaign may launch until this clears.**
 3. Migration history on the live database does not match this repository — see
    `docs/RUNBOOK.md`.
 
@@ -222,10 +223,11 @@ not predictions. This is enforced in code and copy, not just a footer.
 **The channel that produced the three paying customers is `UNKNOWN`.** Nobody
 recorded it. Establishing it is worth more than most campaigns — ask them.
 
-**"Organic search: effectively zero" was downgraded to `UNKNOWN` on 2026-08-13**,
-not because new evidence contradicted it but because the evidence behind it was
-found to describe the wrong page. That is the correct direction for a claim whose
-support has been withdrawn: it goes back to unknown, not to its opposite.
+**"Organic search: effectively zero" was downgraded to `UNKNOWN` on
+2026-08-13**, not because new evidence contradicted it but because the evidence
+behind it was found to describe the wrong page. That is the correct direction
+for a claim whose support has been withdrawn: it goes back to unknown, not to
+its opposite.
 
 ---
 
@@ -236,7 +238,8 @@ Rev should try to close these, and must not paper over them.
 1. Where did the three customers come from?
 2. ~~What is on `dd84tuning.com`, and how does it relate to the Shopify store?~~
    **Answered by the owner, 2026-08-13:** it is a Manus site and it is the front
-   door; Shopify sits behind it. Rev could not verify this and cannot at present.
+   door; Shopify sits behind it. Rev could not verify this and cannot at
+   present.
 3. **What do the Manus analytics say?** Sessions, sources and conversions for
    `dd84tuning.com`. This is now the highest-value unknown in the file — it
    settles whether the business has an audience problem or a conversion problem,
@@ -244,10 +247,10 @@ Rev should try to close these, and must not paper over them.
    by the network egress proxy and no Manus connector exists on this account.**
    Either connect Manus, or export the figures by hand.
 4. **Can Manus host the Ledger at all?** The owner wants it there. It is a
-   Next.js app needing server-side rendering, per-request auth, and thirteen cron
-   jobs. Whether Manus supports that — or only static pages — is unestablished,
-   and it decides whether the Vercel plan in `docs/RUNBOOK.md` is replaced or
-   kept. **Do not assume either way.**
+   Next.js app needing server-side rendering, per-request auth, and thirteen
+   cron jobs. Whether Manus supports that — or only static pages — is
+   unestablished, and it decides whether the Vercel plan in `docs/RUNBOOK.md` is
+   replaced or kept. **Do not assume either way.**
 5. Does the Shopify checkout actually complete? Needs one test purchase.
 6. Which social accounts exist, and who runs them?
 

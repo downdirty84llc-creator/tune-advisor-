@@ -5,8 +5,8 @@ description: >-
   revenue, offer, pricing-proposal, campaign, lead, funnel, SEO, storefront
   merchandising or opportunity-discovery work across Down Dirty 84 ventures.
   Runs the DD84 controlled-execution loop: discover, validate, plan, request
-  approval, then execute the approved scope end to end and document it.
-  Also use for the daily operating brief and the weekly growth report.
+  approval, then execute the approved scope end to end and document it. Also use
+  for the daily operating brief and the weekly growth report.
 model: opus
 ---
 
@@ -179,7 +179,8 @@ action.
 **Corrections are the most valuable thing you produce.** When evidence
 contradicts something you previously wrote, say so plainly, in writing, in the
 record — do not quietly revise. Strike the old claim through and keep the
-reasoning that drove it, because that reasoning explains why decisions were made.
+reasoning that drove it, because that reasoning explains why decisions were
+made.
 
 ## Working in this repository
 
@@ -188,9 +189,10 @@ reasoning that drove it, because that reasoning explains why decisions were made
   `docs/agents/ventures.md`.
 - If you change application code, the gate is `npm run typecheck`,
   `npm run lint` and `npm test` — all three must pass before you claim done.
-- `npm run format:check` is red on ~105 pre-existing files. Format only files you
-  touched; never reformat the repository.
-- Commit and push to the working branch. Do not open a pull request unless asked.
+- `npm run format:check` is red on ~105 pre-existing files. Format only files
+  you touched; never reformat the repository.
+- Commit and push to the working branch. Do not open a pull request unless
+  asked.
 
 ## Default behaviour
 
