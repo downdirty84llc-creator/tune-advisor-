@@ -52,9 +52,14 @@ open tasks yet — no intake routine has run against a live connector.
 | T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
+| T-27 | Routines fire but commit nothing                                    | ops        | High     | Blocked             | Owner | **A-10 pending** | not set      |
+| T-28 | Settle where the Ledger and the agent platform each live            | ops        | High     | Done                | Agent | A-11             | 2026-09-23   |
+| T-29 | The Ledger application copy in this repository is stale             | ops        | Normal   | Partly Done         | Owner | A-11             | not set      |
+| T-30 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High     | **Accepted Risk**   | Owner | A-12 accepted    | 2026-09-25   |
+| T-31 | Consolidate the two diverged operating records onto one branch      | ops        | High     | Done                | Agent | owner decision   | 2026-09-25   |
 
-Counts: 14 Done · 2 In Verification · 3 Awaiting Approval · 1 Blocked · 4
-Planned · 2 Backlog.
+Counts: 16 Done · 1 Partly Done · 1 Accepted Risk · 2 In Verification · 2
+Awaiting Approval · 2 Blocked · 4 Planned · 2 Backlog.
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -63,13 +68,17 @@ finding that would otherwise have been mentioned once in a reply and lost.
 
 ## Open items, by what they are waiting on
 
-| Waiting on                | Tasks                        |
-| ------------------------- | ---------------------------- |
-| Owner approval            | T-11, T-13, T-14             |
-| Owner action (scheduling) | T-23                         |
-| Owner confirmation        | T-19                         |
-| A seeded or live database | T-06                         |
-| Agent execution capacity  | T-15, T-16, T-24, T-25, T-26 |
+| Waiting on                          | Tasks                        |
+| ----------------------------------- | ---------------------------- |
+| Owner approval (A-10 — the big one) | T-27                         |
+| Owner approval                      | T-14                         |
+| Owner action (engaging counsel)     | T-13                         |
+| Owner or developer, test-mode keys  | T-11                         |
+| Owner decision                      | T-29                         |
+| Owner confirmation                  | T-19                         |
+| A seeded or live database           | T-06                         |
+| Agent execution capacity            | T-15, T-16, T-24, T-25, T-26 |
+| Nobody — accepted risk              | T-30                         |
 
 ---
 
@@ -776,3 +785,140 @@ One remedy fixes both.
   revenue and customer records. Neither is reachable from a session: GitHub will
   not delete a default branch, and this environment's git proxy refuses deletion
   pushes.
+
+## T-30 — Unattended Ledger subscriber-email Routine — cannot be removed
+
+> Originally **T-31** on `claude/claude-md-docs-jjveuq`; renumbered on
+> consolidation, where T-31 is the consolidation itself. Its approval, formerly
+> A-11 there, is **A-12** here.
+
+- **Objective** — Remove the one scheduled job on this account that can send
+  external email with no approval step.
+- **Source** — OL-0020, 2026-09-25.
+- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due**
+  2026-09-25
+- **The Routine** — "Weekly Georgia Opportunity Ledger summary",
+  `trig_01FxDef9B5snYTW42FfcMEbD`, Mondays 09:00 UTC, created 2026-07-30 via
+  `http_api` with seven connectors including Gmail and Stripe. Its prompt ends
+  with an unconditional "email the summary to paid subscribers".
+- **Audited, not assumed** — it has sent nothing in four weeks of green runs. No
+  sent mail in any fire window, no drafts. The Ledger has zero profiles, so the
+  subscriber list is empty and the send is a no-op.
+- **Why it still matters** — the protection is an empty database, not a rule.
+  One real subscriber turns a weekly no-op into a weekly unattended send, from a
+  product that has not launched, using a session link from July. Every routine
+  built afterwards is Class A by construction; this one predates them.
+- **Why the agent cannot do it** — `update_trigger` refuses: a Routine created
+  via `http_api` can only be edited by its owner. That boundary was not worked
+  around.
+- **The action** — disable at
+  https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD. Reversible;
+  nothing is lost. Deleting outright is also reasonable — it has produced no
+  artefact anyone depends on.
+- **Completion proof required** — `list_triggers` showing `enabled: false`, or
+  the Routine absent.
+- **Status 2026-09-25 — ACCEPTED RISK, by owner decision A-12.** Not Done, and
+  deliberately not closed. The Routine is still there and still fires.
+- **Three removal attempts, all refused or ineffective.** `update_trigger` and
+  `delete_trigger` are both refused to agents — a Routine created via `http_api`
+  can only be changed by its owner. The owner then reported disabling it, and
+  later deleting it; `get_trigger` after each returned the object unchanged,
+  with `updated_at` still `2026-07-30T16:31:25`, identical to `created_at` and
+  not moved by a fraction of a second across all three checks. A deleted Routine
+  returns not-found. **Nothing has modified this Routine since it was created.**
+- **Most likely cause** — it is an orphan. Created through the HTTP API under
+  its own OAuth token (`api_token_hint` `sk-ant-oat01-1o2fMrgy...OQAA`), it
+  appears not to be editable from the Routines UI either, which is why two
+  different owner actions both silently failed to persist.
+- **Why accepting is defensible** — the only harmful thing it can do is send,
+  and sending resolves to an empty list: the Ledger database holds zero
+  profiles. Four green runs have sent nothing, verified against sent mail and
+  drafts in OL-0020. The cost of leaving it is a weekly no-op.
+- **What makes this stop being acceptable — the single trigger condition.** The
+  **first real Ledger subscriber**. At that moment the weekly no-op becomes a
+  weekly unattended external send, from an unlaunched product, with no approval
+  step. **Anyone reading this register at that point must treat T-30 as reopened
+  and urgent, without waiting to be told.** The safeguard today is an empty
+  table, not a rule — and tables fill.
+- **Two routes that bypass the broken UI, if it needs killing later** — revoke
+  the OAuth token it runs under, which fails every future run at authentication
+  and is scoped to this Routine alone; or detach the Gmail connector, which is
+  blunter because other things use Gmail. Neither was attempted: removing a
+  credential is irreversible for whatever else might hold it, and that is the
+  owner's call, not an agent's.
+- **Status** Accepted Risk · **Next action** — none, unless the Ledger gains a
+  subscriber, or the Routines UI starts saving for HTTP-API-created Routines.
+  Worth reporting the UI failure to Anthropic: anything created that way is
+  currently unmanageable by its owner.
+
+---
+
+---
+
+## T-31 — Consolidate the two diverged operating records onto one branch
+
+- **Objective** — One operating record. Two branches had been appending
+  independently to files whose entire value is that they are append-only and
+  unique.
+- **Source** — Message from the `claude/claude-md-docs-cqvhy6` session,
+  2026-09-25; claims verified before acting, in OL-0022.
+- **Workstream** ops · **Priority** High · **Owner** Agent · **Due** 2026-09-25
+- **Decision** — **Owner chose this branch, 2026-09-25 ("use cqvhy6").** The
+  other branch, `claude/claude-md-docs-jjveuq`, is superseded at `f315ab2`.
+
+### What the divergence actually was
+
+|                     | `jjveuq`                             | `cqvhy6` (this branch)   |
+| ------------------- | ------------------------------------ | ------------------------ |
+| Tracked files       | 267, including the whole Ledger tree | 28, DD84 only            |
+| Operating log       | OL-0001…OL-0015                      | OL-0001…OL-0016          |
+| Approvals           | had its own **A-11**                 | had a different **A-11** |
+| Routines point here | no                                   | yes, all four            |
+
+OL-0001…OL-0009 were identical — shared ancestry. Everything after diverged.
+
+### How it was merged, and the one rule followed throughout
+
+**This branch was the base; nothing was merged into it.** A `git merge` would
+have restored the 241-file Ledger tree the owner had just had deleted. The six
+unique entries were carried across by hand instead.
+
+- **Log** — `jjveuq`'s OL-0010…OL-0015 are now **OL-0017…OL-0022**, in original
+  order, each carrying a note of the number it had so the commits referencing it
+  stay findable. Cross-references inside them were repointed; nothing was
+  reworded, shortened or dropped. **Two of the six record mistakes and their
+  corrections** — those are exactly the entries a consolidation is tempted to
+  lose, and the reason the file is append-only.
+- **Approvals** — `jjveuq`'s A-11 became **A-12**. More importantly, **A-05 and
+  A-06 were answered by the owner on 2026-08-10 and still read "awaiting owner"
+  here**, six weeks later, because the answers were recorded on the other
+  branch. Both now carry their responses and their findings.
+- **Register** — its T-31 became **T-30**. Its T-29 and T-30 duplicated this
+  branch's T-28 and T-29 in substance and were **not** imported as separate
+  tasks; the decisions were the same ones, reached twice.
+
+### What was deliberately left behind
+
+- **The Ledger tree, and `ARCHITECTURE.md` / `MILESTONES.md` / `RUNBOOK.md`.**
+  Deleted from this branch on purpose; re-importing them would undo T-29.
+- **`docs/ops/DEPLOYMENT-PACKAGE.md`** — a full Vercel deployment procedure for
+  the Ledger, written on `jjveuq`. It is Ledger content and this repository is
+  DD84-only, so it is **not** copied here. It is not lost: it lives at
+  `jjveuq:docs/ops/DEPLOYMENT-PACKAGE.md`, commit `f315ab2`, and belongs in
+  `downdirty84llc-creator/georgia-opportunity-ledger` if anyone wants it. Its
+  two useful findings — the Vercel GitHub App must be installed before a
+  repository can be linked, and the hobby-plan cron and duration limits — are
+  already recorded in OL-0018 and in this branch's `CLAUDE.md`.
+- **T-27 (webhook) and T-28 (deploy) as they existed on `jjveuq`** — both Ledger
+  scope. Their substance is preserved in A-05's findings above rather than as
+  DD84 tasks in a DD84 register.
+
+- **Completion proof** — every OL entry from both branches present with no
+  duplicate number; no duplicate A number; this branch still DD84-only with no
+  `src/`; `jjveuq` marked superseded so nothing appends to it again.
+- **Status** **Done**, 2026-09-25 · Evidence: this commit and OL-0017…OL-0022.
+- **Standing rule this creates** — **there is one operating record, and it is on
+  this branch.** A session that finds itself on `jjveuq` should stop and move,
+  not append. Two truthful logs still add up to a false one; A-05 spent six
+  weeks reading "awaiting owner" after the owner had answered, and that is what
+  a second record costs.

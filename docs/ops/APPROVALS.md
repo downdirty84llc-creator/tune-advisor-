@@ -30,13 +30,23 @@ and actual result.
 | A-02 | Correct drifted documentation and the legal-review flags  | B     | **Approved**            | T-04 T-05                          |
 | A-03 | Exclude demo accounts from owner-facing revenue reporting | E-adj | **Approved**            | T-06 T-12                          |
 | A-04 | Correct the annual MRR arithmetic                         | E-adj | **Approved**            | T-07                               |
-| A-05 | Create Stripe products and prices; run the payment matrix | E + F | **Pending**             | T-11                               |
-| A-06 | Commission legal review of the ten legal documents        | G     | **Pending**             | T-13                               |
+| A-05 | Create Stripe products and prices; run the payment matrix | E + F | **Approved**            | T-11                               |
+| A-06 | Commission legal review of the legal documents            | G     | **Approved**            | T-13                               |
 | A-07 | Subscribe to an upload virus-scanning service             | E + F | **Pending**             | T-14                               |
 | A-08 | Build the operations control plane                        | B     | **Approved**            | T-18 T-19 T-20 T-21 T-22           |
+| A-09 | Merge the two agent branches and converge the schedule    | B     | **Approved**            | T-23 T-24 T-25 T-26                |
+| A-10 | Give the Routines a repository to write to                | B     | **Pending**             | T-27                               |
+| A-11 | Consolidate onto the Ledger repository                    | F     | **Approved, narrowed**  | T-28 T-29                          |
+| A-12 | Accept the unremovable send Routine as a recorded risk    | C-adj | **Accepted**            | T-30                               |
 
-**Three packets are with the owner: A-05, A-06, A-07.** A-05 and A-06 both block
-launch. A-07 does not block launch but does block accepting uploads safely.
+**One packet is with the owner: A-10** — the Routines still have no repository
+to write to, which is why no brief has ever been committed. A-07 is also
+unanswered but does not block launch; it blocks accepting uploads safely.
+
+**A-05 and A-06 were answered on 2026-08-10** and read "awaiting owner" on this
+branch until 2026-09-25, because the answers were recorded on the other branch.
+That six-week gap is the clearest argument for the single record this
+consolidation creates — two truthful logs still add up to a false one.
 
 ---
 
@@ -235,8 +245,42 @@ row per webhook; the granted rank matches the plan on every transition.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._ **Affected records** — T-11. **Actual result**
-— Not executed.
+**Response** — **APPROVED**, 2026-08-10, owner ("finalize stripe and review
+approved"). _Recorded on `claude/claude-md-docs-jjveuq` at the time; imported
+here on consolidation 2026-09-25 (T-31), where this block still read "awaiting
+owner" six weeks after the decision._
+
+**Affected records** — T-11, and the webhook gap below.
+
+**Actual result** — **Approved, and found already satisfied on inspection. No
+object was created.** Reading the destination first — the execution standard in
+§11 — showed the work already done in live account `acct_1QBl8ZINLKqe1c6g`: four
+products with `plan_code` / `access_rank` metadata, six recurring prices
+matching `seed.sql` to the cent (1500/15000, 3900/39000, 9900/99000), and all
+six ids already on `public.subscription_plans`, verified in both directions.
+Creating anything would have duplicated live products on a revenue-bearing
+account. Full evidence in OL-0017.
+
+**Two variances recorded rather than absorbed:**
+
+1. **The connector is live-only** — every object reads `livemode: true` and no
+   test-mode path is reachable from an agent session. The plan's "test mode
+   first" sequence is therefore not executable by an agent at all, and the
+   tier-by-tier payment matrix belongs to whoever holds test-mode keys.
+2. **No webhook endpoint exists.** `GET /v1/webhook_endpoints` returned empty.
+   Checkout would complete and the application would never learn of it — the
+   customer is charged, `subscriptions` stays empty, and they have paid for
+   nothing. That is the binding gap in the billing path, not the products.
+
+**Limits** — covered creating products and prices and populating the plan
+columns. Did **not** authorise a live charge, publishing prices to customers, or
+registering a webhook against an unverified host.
+
+**Scope note added on consolidation** — this is Ledger work, and the Ledger is
+no longer maintained in this repository. Both variances belong with
+`downdirty84llc-creator/georgia-opportunity-ledger`; they are kept here because
+the approval was answered here and an approval record is not rewritten to suit a
+later reorganisation.
 
 ---
 
@@ -295,8 +339,38 @@ here, before launch.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting owner._ **Affected records** — T-13, and by dependency
-the launch checklist in `docs/RUNBOOK.md`. **Actual result** — Not executed.
+**Response** — **APPROVED**, 2026-08-10, owner ("finalize stripe and review
+approved"). _Recorded on `claude/claude-md-docs-jjveuq` at the time; imported
+here on consolidation 2026-09-25 (T-31), where this block still read "awaiting
+owner" six weeks after the decision._
+
+**Affected records** — T-13.
+
+**Actual result** — **Approved; not executed, and not an agent task.** Engaging
+counsel is Class C and Class G: it is external communication and it needs the
+owner's signature. What approval unlocks for an agent is the briefing package —
+each document mapped to the system behaviour it describes, so counsel verifies
+drafting against real behaviour rather than drafting from scratch. **That
+package was never built.** The session that would have written it hit an account
+limit, and the work was not picked up again.
+
+**Two corrections to this packet's own wording**, both found after it was
+written:
+
+1. **The document count in the title is wrong for the Ledger.** It says ten,
+   with seven requiring review. That was read from the stale copy in this
+   repository. The canonical Ledger carries **twelve documents, nine requiring
+   review** — established while closing T-28 and pinned by
+   `tests/unit/legal/documents.test.ts` there. The title is left as written
+   because a packet is not rewritten after the fact; this note is the
+   correction.
+2. **No fee was ever quoted.** An earlier agent estimate of 6–12 hours of
+   counsel time appeared in conversation and is **not** recorded as a cost here,
+   because nobody asked a lawyer. Treat the cost as unknown.
+
+**Scope note added on consolidation** — Ledger work, tracked in this repository
+only because the approval was answered here. The documents themselves live in
+`downdirty84llc-creator/georgia-opportunity-ledger`.
 
 ---
 
@@ -509,3 +583,52 @@ repository's `main` is to be treated as the other's. **Expiration** — Consumed
 **Affected records** — T-28, T-29. **Actual result** — Executed as narrowed.
 Ledger `main` at `a228f3d` carries the three modules; the agent platform never
 left this repository. Evidence in `OPERATING-LOG.md` OL-0013 and OL-0015.
+
+---
+
+## A-12 — Accept the residual risk of the unremovable send Routine
+
+> Originally **A-11** on `claude/claude-md-docs-jjveuq`. Renumbered on
+> consolidation (T-31) because this branch already had a different A-11. Content
+> unchanged; the task it points at is now **T-30**.
+
+**Status: ACCEPTED, 2026-09-25, owner ("just note it as accepted risk").**
+
+**Decision requested** — Whether to keep trying to remove the Routine "Weekly
+Georgia Opportunity Ledger summary" (`trig_01FxDef9B5snYTW42FfcMEbD`), or accept
+that it stays and record why.
+
+**Business objective** — Stop spending owner attention on a control that cannot
+currently be actuated, without letting the underlying exposure go unrecorded.
+
+**Source and context** — OL-0020, OL-0021, T-30. The Routine fires Mondays 09:00
+UTC with Gmail, Stripe, Shopify and PayPal attached, and its prompt ends with an
+unconditional "email the summary to paid subscribers". Agents cannot disable or
+delete it — both operations are refused for a Routine created via `http_api`.
+Two owner attempts, reported as done, left `updated_at` identical to
+`created_at`; nothing has modified it since 2026-07-30.
+
+**What was accepted** — The Routine remains enabled and will keep firing weekly.
+
+**Evidence the exposure is currently theoretical** — it has never sent anything.
+Verified in OL-0020 against sent mail across four fire windows and against every
+draft in the mailbox. The Ledger holds zero profiles, so the subscriber list is
+empty and the send is a no-op.
+
+**Limits of this acceptance — read these before treating it as settled:**
+
+- It covers **only** the present state, in which the Ledger has **no
+  subscribers**. It is not a standing approval to send.
+- **The first real subscriber voids it.** T-30 reopens at that moment, at high
+  priority, whether or not anyone re-raises it.
+- It is not approval for the Routine's content, its July session link, or its
+  connector grants — none of which has been reviewed.
+
+**Rejected alternatives** — Revoking the Routine's OAuth token, or detaching the
+Gmail connector. Both would work and both were left alone: revoking a credential
+is irreversible for anything else holding it, which is an owner decision rather
+than an agent's, and neither was asked for.
+
+**Success test** — A future reader can tell from the register that this Routine
+survives by decision rather than by oversight, and knows the one condition that
+reopens it.

@@ -492,7 +492,312 @@ written in `8337e41`. It is logged as it is rather than as it was described.
 
 ---
 
-## Next entry: OL-0017
+## Imported from `claude/claude-md-docs-jjveuq` — 2026-09-25
+
+The six entries that follow were written on the other DD84 branch while both
+branches were appending to this file independently. The owner chose this branch
+as the single record on 2026-09-25 (T-31). They are reproduced here in their
+original order, renumbered from OL-0010…OL-0015 to OL-0017…OL-0022, each keeping
+a note of the number it had so the commits that reference it stay findable.
+
+**Nothing was dropped, shortened or reworded to fit.** Two entries record
+mistakes made on that branch and their corrections; those are exactly the
+entries a consolidation is most tempted to lose, and they are the reason this
+file is append-only.
+
+---
+
+## OL-0017 — 2026-08-10 · Verify the Stripe billing configuration
+
+> Originally **OL-0010** on `claude/claude-md-docs-jjveuq`, renumbered here when
+> the two records were consolidated (T-31). Content unchanged except
+> cross-references.
+
+- **Task** T-11 · **Approval** A-05, approved 2026-08-10
+- **Action** Read the live Stripe account and the live Supabase project to
+  establish the billing configuration's actual state before creating anything.
+  **Nothing was created, updated or deleted.**
+- **Tool** `mcp__Stripe__get_stripe_account_info`, `stripe_api_read`
+  (`GetProducts`, `GetPrices`, `GetWebhookEndpoints`),
+  `mcp__Supabase__list_projects`, `execute_sql` (select only)
+- **Source** Owner instruction "finalize stripe and review approved"
+- **Operator** Claude (coordinator), not the Torque subagent — the subagent
+  terminated on an account session limit before it could record this, which is
+  why the entry is written here directly.
+- **Before** The register and `MILESTONES.md` both asserted the products did not
+  exist and that `stripe_monthly_price_id` / `stripe_annual_price_id` were null.
+  Both assertions were **stale**.
+- **After** Unchanged — this was a read-only pass. The record now matches
+  reality.
+- **Evidence**
+  - Account `acct_1QBl8ZINLKqe1c6g`, display name "Down Dirty 84 llc".
+  - Four products created 2026-07-29 with `plan_code` / `access_rank` /
+    `product_line` metadata, `livemode: true`.
+  - Six recurring prices, `livemode: true`, amounts in cents:
+    `gol_weekly_monthly` 1500 · `gol_weekly_annual` 15000 ·
+    `gol_detailed_monthly` 3900 · `gol_detailed_annual` 39000 ·
+    `gol_premium_monthly` 9900 · `gol_premium_annual` 99000. Every amount
+    matches `supabase/seed.sql`.
+  - Live project `bbgikfblcahhvrpxiqnd` (georgia-opportunity-ledger,
+    ACTIVE_HEALTHY). `select` on `public.subscription_plans` returned all six
+    price ids populated. Each was resolved back to its Stripe price and the
+    amount confirmed — verified in both directions rather than trusting one.
+  - `GetWebhookEndpoints` returned `{"data":[]}` — **no endpoint registered**.
+- **Error** None.
+- **Remediation** n/a. Two variances raised rather than worked around: the
+  connector is live-only so the approved test-mode-first sequence cannot be run
+  by an agent, and the absent webhook endpoint became **T-27**. Neither was
+  silently absorbed into the approved scope.
+
+---
+
+## OL-0018 — 2026-09-09 · Attempt the Vercel deployment; blocked at the GitHub App
+
+> Originally **OL-0011** on `claude/claude-md-docs-jjveuq`, renumbered here when
+> the two records were consolidated (T-31). Content unchanged except
+> cross-references.
+
+- **Task** T-28 · **Approval** Owner instruction, "not blocked anymore"
+- **Action** Attempted to create the Vercel project linked to the repository.
+  **Refused by Vercel.** No project was created and nothing was deployed.
+- **Tool** `mcp__Vercel__list_teams`, `list_projects`, `create_git_project`,
+  `search_vercel_documentation`
+- **Source** Owner instruction following the deployment package
+- **Operator** Claude (coordinator)
+- **Before** No Vercel projects on the account.
+- **After** Unchanged. `create_git_project` returned HTTP 400 `bad_request`: "To
+  link a GitHub repository, you need to install the GitHub integration first."
+  The Vercel GitHub App is not installed on the repository owner.
+- **Evidence**
+  - Team `downdirty84llc-creators-projects` (`team_a5zEaV43TZGEAxcqY1GgilmG`),
+    plan **hobby**.
+  - `list_projects` returned `{"projects": []}` — nothing pre-existing.
+  - Remedy recorded as step 0 of `DEPLOYMENT-PACKAGE.md`:
+    https://github.com/apps/vercel
+- **Error** Vercel API 400, quoted above. Not worked around.
+- **Remediation** `deploy_to_vercel` would have bypassed the Git link by
+  uploading a detached file tree. **Deliberately not used** — it deploys a copy
+  with no connection to the repository, so nothing redeploys on push and the
+  deployed code drifts from source immediately. Recorded as a rejected
+  alternative rather than taken as a shortcut.
+
+### Two findings from the same pass, both correcting the record
+
+1. **`main` now exists, and the repository has nine branches.** It did not a
+   month ago, and `CLAUDE.md` §0 still says there is no `main`. `main` points at
+   `81c5a68` — the first commit, predating milestones 5–9 and this entire
+   workstream. Vercel defaults to `main`, so an unattended import would have
+   deployed a months-old application. The deployment package now says to set the
+   production branch deliberately and check its head commit.
+2. **Three commits landed on `claude/claude-md-docs-jjveuq` from outside this
+   workstream** — `dbe7b4a`, `c6dbc38`, `ac799a0`. The branch head is `ac799a0`,
+   not `5652e1e`. They have not been reviewed here.
+
+Both are logged rather than fixed: correcting `CLAUDE.md` §0 needs the owner's
+word, and consolidating nine branches is a decision, not a chore.
+
+---
+
+## OL-0019 — 2026-09-24 · Two owner decisions; flag the stale default branch
+
+> Originally **OL-0012** on `claude/claude-md-docs-jjveuq`, renumbered here when
+> the two records were consolidated (T-31). Content unchanged except
+> cross-references.
+
+- **Task** T-29, T-30 · **Approval** Owner instruction, "leave the agent
+  platform in tune-advisor- and flag the stale main"
+- **Action** Cloned the canonical Ledger repository to establish ground truth,
+  then added a warning banner to `CLAUDE.md` and `README.md` on
+  `tune-advisor-`'s `main`. **Additive documentation only — 59 insertions, zero
+  deletions, no code touched.**
+- **Tool** `add_repo`, `git clone`, `diff`, `git commit`, `git push`
+- **Source** Owner instruction
+- **Operator** Claude (coordinator)
+- **Before** `tune-advisor-` `main` at `34b081b`, opening with the heading "This
+  repository is canonical. Use only this one." — text written for the Ledger and
+  copied here with the code.
+- **After** `main` at `3e22f41`, warning first in both files. Verified in the
+  destination: local `HEAD` and `origin/main` both read
+  `3e22f41e0377684032275e87079980689d29ba4c`.
+- **Evidence** — compared against the canonical repository
+  `downdirty84llc-creator/georgia-opportunity-ledger` at `a228f3d`:
+  - Both last committed **2026-09-16**; both carry **32 migrations**. This is a
+    fork, not months of drift — it stopped immediately before the commit "Fix
+    two wrong numbers on the admin dashboard".
+  - 267 tracked files here against 290 there.
+  - `src/lib/billing/mrr.ts` and `src/lib/analytics/sample-data.ts` absent here,
+    present there.
+  - `src/app/(admin)/admin/page.tsx:99` still reads
+    `total + Number(plan.monthly_price ?? 0)` with no `billing_interval` in the
+    select, and nothing filters `is_sample`.
+- **Error** None.
+- **Remediation** n/a. The defects were **not** fixed in place: they are already
+  fixed in the canonical repository, and patching an abandoned branch would make
+  it look maintained. Flagging is the correction; the branch survives only
+  because GitHub will not delete a default branch.
+
+### Correction to OL-0018 (originally OL-0011) and to that session's earlier reading
+
+OL-0018 recorded `main` as carrying two live bugs. That was read inside
+`tune-advisor-` and generalised too far. **The canonical Ledger has both fixes**
+— `sample-data.ts` is byte-identical to the copy on this branch and `mrr.ts`
+differs only by one Prettier line wrap. The bugs are real, but only on the
+abandoned copy, which is a staleness problem rather than a product defect. The
+proposed port of those fixes is therefore withdrawn: there was nothing to port.
+
+---
+
+## OL-0020 — 2026-09-25 · Audit the unattended send routine; disable refused
+
+> Originally **OL-0013** on `claude/claude-md-docs-jjveuq`, renumbered here when
+> the two records were consolidated (T-31). Content unchanged except
+> cross-references.
+
+- **Task** T-31 · **Approval** Owner instruction, "check what it's been
+  sending", then "yes" to disabling it
+- **Action** Audited what the Routine "Weekly Georgia Opportunity Ledger
+  summary" (`trig_01FxDef9B5snYTW42FfcMEbD`) has actually sent, then attempted
+  to disable it. **The audit completed; the disable was refused.**
+- **Tool** `list_triggers`, `mcp__Gmail__search_threads`,
+  `mcp__Gmail__list_drafts`, `update_trigger`
+- **Source** Discovered during the 2026-09-25 update check. Created 2026-07-30
+  via `http_api` — before the DD84 agent platform existed — with seven
+  connectors attached (Gmail, Stripe, Shopify, PayPal, Canva, Calendar, Drive).
+  Its prompt ends "…then email the summary to paid subscribers."
+- **Operator** Claude (coordinator)
+- **Finding — it has never sent anything.** Checked the four Monday fire windows
+  against sent mail (the Routine fires 09:00 UTC):
+  - **2026-09-21** — 8 sent messages, all owner-written DD84 facility
+    correspondence at 14:22 and 15:21–15:22. Nothing near 09:00.
+  - **2026-09-14, 2026-09-07, 2026-08-31** — zero sent messages on those days.
+  - No drafts either. Every draft in the mailbox is accounted for and none is a
+    Ledger summary; the four dated 2026-08-19 are DD84 Build Review
+    **templates** addressed to the owner with `[First name]` / `[Vehicle]`
+    placeholders intact.
+- **Why it sent nothing** — the Ledger database holds **zero profiles**, so
+  "paid subscribers" resolves to an empty list. Four runs reported SUCCEEDED by
+  doing nothing. **That is luck, not design:** the first real subscriber turns
+  this into an unattended external send, which the spec puts in Class C and
+  which every other routine here is built to refuse.
+- **Error** `update_trigger` refused: _"this routine was created via `http_api`,
+  not by an agent. Agents can only update routines they created."_ No change was
+  made; the Routine remains **enabled**.
+- **Remediation — owner action, one click.** Disable it at
+  https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD. Disabling is
+  reversible and loses nothing: it has produced no email and no committed brief.
+  Not attempted by any other route — an agent working around a permission
+  boundary deliberately placed in front of a sending tool would be the wrong
+  instinct, whatever the intent.
+
+---
+
+## OL-0021 — 2026-09-25 · Verify the reported disable; delete also refused
+
+> Originally **OL-0014** on `claude/claude-md-docs-jjveuq`, renumbered here when
+> the two records were consolidated (T-31). Content unchanged except
+> cross-references.
+
+- **Task** T-31 · **Approval** Owner said "disabled it", then "just delete it"
+- **Action** Verified the reported disable in the destination, then attempted to
+  delete. **Both the disable and the delete are refused to agents; the Routine
+  is unchanged and still enabled.**
+- **Tool** `get_trigger`, `list_triggers`, `delete_trigger`
+- **Operator** Claude (coordinator)
+- **The disable did not take.** `get_trigger` on `trig_01FxDef9B5snYTW42FfcMEbD`
+  returns `enabled: true`, `next_run_at: 2026-09-28T09:00:53Z`, and — decisively
+  — `updated_at: 2026-07-30T16:31:25`, **identical to `created_at`**. Nothing
+  has modified the Routine since creation; a saved change would have moved that
+  timestamp. Reported as not done rather than accepted, because the timestamp is
+  checkable and the report was not.
+- **Nothing else was toggled by mistake** — all four DD84 Routines remain
+  `enabled: true` with `updated_at` 2026-09-23, unchanged.
+- **Error** `delete_trigger` refused with the same rule as `update_trigger`:
+  _"this routine was created via `http_api`, not by an agent. Agents can only
+  delete routines they created."_
+- **Remediation — owner only, no agent path exists.** Delete or disable at
+  https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD, then confirm
+  the state sticks after a refresh. If the UI will not save, the fallbacks are
+  revoking the OAuth token the Routine runs on (`api_token_hint`
+  `sk-ant-oat01-1o2fMrgy...OQAA`, issued 2026-07-30) or detaching the Gmail
+  connector, either of which removes its ability to send.
+- **Residual risk while it stands** — low but not zero. It fires Monday
+  2026-09-28 at 09:00 UTC and sends nothing only because the Ledger has zero
+  subscribers. The safeguard is an empty table, not a rule.
+
+---
+
+## OL-0022 — 2026-09-25 · Correction: the port was withdrawn on a false inference
+
+> Originally **OL-0015** on `claude/claude-md-docs-jjveuq`, renumbered here when
+> the two records were consolidated (T-31). Content unchanged except
+> cross-references.
+
+> **Numbering collision — resolved.** When written, this entry and five others
+> carried numbers that already named different events on
+> `claude/claude-md-docs-cqvhy6`. The owner chose this branch as the single
+> record on 2026-09-25; those six entries were renumbered OL-0017…OL-0022 on
+> consolidation, each keeping a note of the number it had. Nothing was dropped
+> to tidy the sequence. See T-31.
+
+- **Task** T-19, T-32 · **Approval** none needed; correcting this session's own
+  record
+- **Action** Verified a correction sent by the other DD84 session and found it
+  right. **This corrects OL-0019 (originally OL-0012) and commit `74adc67`.**
+- **Tool** `mcp__github__get_commit`, `git ls-tree`, `git show`
+- **Operator** Claude (coordinator)
+
+**What OL-0019 and `74adc67` claimed** — that cloning the canonical Ledger
+showed both fixes already present, so "the proposed port is therefore withdrawn:
+there was nothing to port", and that the bugs were "real, but only on the
+abandoned copy".
+
+**What is actually true.** The observation was right and the inference was
+wrong. The fixes were present on 2026-09-24 **because the other session had
+landed them the day before**, not because they had always been there. Verified
+against the GitHub API rather than taken on report:
+
+- Commit `a228f3d` in `downdirty84llc-creator/georgia-opportunity-ledger`, "Fix
+  two wrong numbers on the admin dashboard".
+- **Author date `2026-09-16T15:43:24Z`; committer date `2026-09-23T10:58:48Z`.**
+  It was rebased before landing, which is why the author date reads a week
+  earlier — and is what made it look pre-existing to a clone taken on the 24th.
+- In that commit `src/lib/analytics/sample-data.ts` and `src/lib/billing/mrr.ts`
+  are both `status: "added"`. **They did not exist in the canonical repository
+  before it.** `admin/page.tsx` is modified +64/−16.
+
+**Why this mattered enough to correct.** As written, the record told a future
+session those defects were never real in the canonical repository. They were:
+MRR overstated by roughly 17% per annual subscriber, and seeded demo accounts
+moving four admin tiles including revenue, until 2026-09-23. A reader who
+believed the old entry would conclude the canonical repo had never needed the
+fix and might not check it again.
+
+**The methodological error, stated plainly so it is not repeated.** A file being
+present is evidence about the present, not about the past. `git log` on the
+file, or the committer date rather than the author date, would have shown it.
+The byte-identical `sample-data.ts` was the clue and was misread as coincidence:
+it was identical _because it came from this platform_.
+
+**Conduct note** — the other session did not edit this file, and said so. That
+is correct: an append-only record belongs to the branch that writes it, and one
+session rewriting another's log would destroy the property that makes it worth
+keeping.
+
+**Verified alongside it, both confirmed:** `cqvhy6` is down to 28 tracked files
+with no `src/` at all, and the OL numbering collides as described.
+
+**Open, and the owner's to settle — T-32.** Two branches are appending to one
+append-only log. Whoever merges second hits a conflict in the file whose whole
+purpose is that it cannot conflict. The other session proposes consolidating
+onto `cqvhy6`. That is a reasonable proposal and is not an agent's decision to
+take unilaterally; it is recorded as T-32 and put to the owner.
+
+---
+
+## Next entry: OL-0023
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
+
+**One record now.** `claude/claude-md-docs-jjveuq` is superseded and must not be
+appended to — see T-31.
