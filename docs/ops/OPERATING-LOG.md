@@ -739,7 +739,7 @@ proposed port of those fixes is therefore withdrawn: there was nothing to port.
 > consolidation, each keeping a note of the number it had. Nothing was dropped
 > to tidy the sequence. See T-31.
 
-- **Task** T-19, T-32 · **Approval** none needed; correcting this session's own
+- **Task** T-19, T-31 · **Approval** none needed; correcting this session's own
   record
 - **Action** Verified a correction sent by the other DD84 session and found it
   right. **This corrects OL-0019 (originally OL-0012) and commit `74adc67`.**
@@ -786,21 +786,12 @@ keeping.
 **Verified alongside it, both confirmed:** `cqvhy6` is down to 28 tracked files
 with no `src/` at all, and the OL numbering collides as described.
 
-**Open, and the owner's to settle — T-32.** Two branches are appending to one
-append-only log. Whoever merges second hits a conflict in the file whose whole
-purpose is that it cannot conflict. The other session proposes consolidating
-onto `cqvhy6`. That is a reasonable proposal and is not an agent's decision to
-take unilaterally; it is recorded as T-32 and put to the owner.
-
----
-
-## Next entry: OL-0024
-
-The next routine run or executed action appends here. If you are a routine: your
-run entry goes at the bottom of this file and nothing above it is touched.
-
-**One record now.** `claude/claude-md-docs-jjveuq` is superseded and must not be
-appended to — see T-31.
+**Open, and the owner's to settle — T-31** (numbered T-32 on the superseded
+`jjveuq` branch, where this entry was written). Two branches are appending to
+one append-only log. Whoever merges second hits a conflict in the file whose
+whole purpose is that it cannot conflict. The other session proposes
+consolidating onto `cqvhy6`. That is a reasonable proposal and is not an agent's
+decision to take unilaterally; it is recorded as T-31 and put to the owner.
 
 ---
 
@@ -854,3 +845,57 @@ actually have.** It is in their tool list; a repository is not.
   **The operating record still only advances when a session with the repository
   writes to it.** T-27 stays open on A-10; this narrows the damage rather than
   closing the task.
+
+---
+
+## OL-0024 — Repair three task references the consolidation left dangling
+
+- **Timestamp** 2026-09-25T11:15:00Z
+- **Task** T-31 · **Approval** none needed — Class B, correcting pointers inside
+  this repository's own record
+- **Action** Changed three references to `T-32` into `T-31` in entries carried
+  over from `jjveuq`, and noted the old number where the prose reads as history.
+- **Tool** `grep`, `comm`, `git show`
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** `docs/ops/` cited `T-32` three times. **No such task exists on this
+  branch.** The consolidation renumbered `jjveuq`'s T-31 to T-30 and its T-32 to
+  T-31, updated the headings, and updated one reference — the same entry reads
+  "See T-31" two lines above a "**Task** T-19, T-32" field — but missed three.
+- **After** Every `T-`, `A-` and `OL-` reference in `docs/ops/` resolves to a
+  heading that exists.
+- **Evidence** — the check was a set difference rather than a search, so it
+  could not miss a number nobody thought to look for: every referenced id minus
+  every heading id, per prefix. Before: `T-32` and `OL-0023` unmatched.
+  `OL-0023` is the "Next entry" placeholder and correctly has no heading yet —
+  **not a defect, and it would have been one to "fix"**. After the change the
+  only unmatched id is that placeholder.
+- **Error** None introduced. The underlying mistake was the consolidation's, and
+  it is the ordinary failure mode of renumbering: headings are easy to find,
+  references to them are not.
+- **Remediation** Editing these lines is a deliberate exception to the
+  append-only rule and is narrower than it looks. The consolidation had already
+  rewritten these entries' numbers; this finishes that operation rather than
+  revising history, and the alternative — appending a note saying "where these
+  entries say T-32, read T-31" — leaves a pointer that resolves to nothing for
+  anyone who does not read to the end. Where the surrounding prose reads as a
+  record of what was decided, the old number is kept in parentheses so a
+  citation from a `jjveuq` commit still lands.
+
+---
+
+- **Numbering** Written as OL-0023 and renumbered to OL-0024 on landing: the
+  other session pushed its own OL-0023 fifteen minutes earlier. **That is this
+  entry's own subject happening again** — two sessions appending live to one
+  append-only file, which consolidating onto a single branch narrowed but did
+  not remove. Recorded rather than quietly renumbered, because the collision is
+  the evidence for T-31's remaining risk.
+
+---
+
+## Next entry: OL-0025
+
+The next routine run or executed action appends here. If you are a routine: your
+run entry goes at the bottom of this file and nothing above it is touched.
+
+**One record now.** `claude/claude-md-docs-jjveuq` is superseded and must not be
+appended to — see T-31.
