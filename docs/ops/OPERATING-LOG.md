@@ -794,10 +794,63 @@ take unilaterally; it is recorded as T-32 and put to the owner.
 
 ---
 
-## Next entry: OL-0023
+## Next entry: OL-0024
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
 
 **One record now.** `claude/claude-md-docs-jjveuq` is superseded and must not be
 appended to — see T-31.
+
+---
+
+## OL-0023 — 2026-09-25 · Give the Routines a durable output path that needs no repository
+
+- **Task** T-27 · **Approval** Owner instruction, "fix A-10"
+- **Action** Re-verified why the Routines commit nothing, established that the
+  repository half is still owner-only, then **removed the data loss** by giving
+  all four an output path that does not need a repository. All four prompts
+  updated and confirmed in the destination.
+- **Tool** `get_session`, `update_trigger` ×4
+- **Operator** Claude (coordinator)
+
+**Diagnosis re-verified, not assumed.** A-10's root cause was recorded on
+2026-08-28; it is a month old, so it was checked rather than repeated. Session
+`session_01AVGZKmA9TpaePUTDatFWry` — the inbox intake that fired at 10:20 today
+— carries **no `sources` field at all**. It ran in
+`env_01JXSFPtHkXwcq1W3c9DWk8a`, the same environment as an interactive session
+that does have repositories attached, which confirms the repository is a
+property of the session and not of the environment. Its tool list is Bash,
+Write, Edit, Read, Glob, Grep, Agent, NotebookEdit, WebFetch, WebSearch,
+TaskStop, SearchMcpRegistry, SuggestConnectors, ListConnectors, **Artifact** —
+no `add_repo`, so it cannot attach one itself, and no credentials to clone with.
+**A-10's remedy stands: the repository must be attached at creation, from the
+claude.ai Routines UI.**
+
+**What was fixed instead, and why it is worth doing separately.** The run above
+used 132k tokens and cost $1.11 to produce a brief that went nowhere. The loss
+was never the missing repository; it was that the output had no second home.
+Each of the four prompts now ends with an explicit three-step fallback: say in
+the first sentence that the commit failed and do not report success; **publish
+the output as an Artifact**, which survives the session where a reply does not;
+and paste the full text into the reply as a third line of defence. The closing
+line is "Never discard output because you could not commit it."
+
+**Artifact was chosen because it is the only durable sink the fired sessions
+actually have.** It is in their tool list; a repository is not.
+
+- **Class check** — publishing an Artifact is internal reporting to the owner,
+  not a Class D publication, and each prompt says so explicitly so no future run
+  refuses the step for the wrong reason. The two routines that handle sensitive
+  material carry an added instruction: the cash review and the intake mark their
+  Artifacts private to the owner, and the intake is told to keep customer
+  personal data out of the title.
+- **Verified in the destination** — all four `update_trigger` calls returned
+  `updated_at: 2026-09-25T11:1x`, moved from 2026-09-23. Prompts read back
+  correct.
+- **Error** None.
+- **What this does not fix** — briefs still will not reach `docs/ops/briefs/`,
+  and the routines still cannot update the register or this log themselves.
+  **The operating record still only advances when a session with the repository
+  writes to it.** T-27 stays open on A-10; this narrows the damage rather than
+  closing the task.

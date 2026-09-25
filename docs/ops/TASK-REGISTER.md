@@ -730,9 +730,38 @@ One remedy fixes both.
 - **Expected result** — One scheduled run that ends with a dated brief committed
   to `docs/ops/briefs/` and an entry in `OPERATING-LOG.md`.
 - **Completion proof required** — The commit hash of a routine-written brief.
-- **Status** **Blocked (on owner)** · **Next action** — A-10. Diagnosis is
-  complete; the remedy is outside the agent's authority and, for the recommended
-  option, outside its tools.
+
+### 2026-09-25 — diagnosis re-verified, and the data loss stopped
+
+The root cause was recorded on 2026-08-28 and was a month old, so it was checked
+again rather than repeated. It holds. Session `session_01AVGZKmA9TpaePUTDatFWry`
+— this morning's intake — carries **no `sources` field at all**, in the same
+environment as an interactive session that does have repositories attached. The
+repository is a property of the session, not the environment. The fired
+session's tool list has no `add_repo` and no credentials to clone with, so it
+cannot attach one itself. **A-10 remains the remedy and remains owner-only.**
+
+**What was fixed without waiting for it.** That run cost $1.11 and 132k tokens
+to produce a brief that went nowhere. The loss was never the missing repository
+— it was that the output had no second home. All four prompts now carry a
+three-step fallback: say in the first sentence that the commit failed and do not
+report success; **publish the output as an Artifact**, which survives the
+session where a reply does not; and paste the full text into the reply as well.
+Artifact was chosen because it is the only durable sink these sessions actually
+have — it is in their tool list and a repository is not. Evidence: OL-0023.
+
+**Still true after the fix, and the reason this task stays open:** briefs do not
+reach `docs/ops/briefs/`, and the routines cannot update this register or the
+log. **The operating record still advances only when a session holding the
+repository writes to it.** The change narrows the damage; it does not close the
+task.
+
+- **Status** **Blocked (on owner)** · **Next action** — A-10, unchanged:
+  recreate the four Routines from the claude.ai Routines UI with the repository
+  `downdirty84llc-creator/tune-advisor-` and branch
+  `claude/claude-md-docs-cqvhy6` attached, copy each prompt across verbatim —
+  they are current as of 2026-09-25 — then delete the agent-created originals so
+  the schedule is not doubled.
 
 ## T-28 — Settle where the Ledger and the agent platform each live
 
