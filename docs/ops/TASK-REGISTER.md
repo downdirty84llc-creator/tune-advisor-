@@ -56,7 +56,7 @@ open tasks yet — no intake routine has run against a live connector.
 | T-28 | Deploy the application to a live host                               | ledger     | Critical | Blocked             | Owner | **A-09 pending** | 2026-08-14   |
 | T-29 | Keep the DD84 agent platform in tune-advisor-, unmerged             | ops        | High     | Done                | Owner | owner decision   | 2026-09-24   |
 | T-30 | Flag tune-advisor- main as the stale copy                           | ops        | High     | Done                | Agent | owner decision   | 2026-09-24   |
-| T-31 | Disable the unattended Ledger subscriber-email Routine              | ops        | High     | Blocked             | Owner | owner decision   | 2026-09-25   |
+| T-31 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High     | **Accepted Risk**   | Owner | A-11 accepted    | 2026-09-25   |
 
 Counts: 14 Done · 1 Partly Done · 2 In Verification · 1 Awaiting Approval ·
 4 Blocked · 4 Planned · 2 Backlog.
@@ -802,4 +802,36 @@ followup,cash-review,opportunity-scan,site-monitor}.md`; each states its
   artefact anyone depends on.
 - **Completion proof required** — `list_triggers` showing `enabled: false`, or the
   Routine absent.
-- **Status** Blocked on owner action · **Next action** — one click, by the owner.
+- **Status 2026-09-25 — ACCEPTED RISK, by owner decision A-11.** Not Done, and
+  deliberately not closed. The Routine is still there and still fires.
+- **Three removal attempts, all refused or ineffective.** `update_trigger` and
+  `delete_trigger` are both refused to agents — a Routine created via `http_api`
+  can only be changed by its owner. The owner then reported disabling it, and
+  later deleting it; `get_trigger` after each returned the object unchanged, with
+  `updated_at` still `2026-07-30T16:31:25`, identical to `created_at` and not
+  moved by a fraction of a second across all three checks. A deleted Routine
+  returns not-found. **Nothing has modified this Routine since it was created.**
+- **Most likely cause** — it is an orphan. Created through the HTTP API under its
+  own OAuth token (`api_token_hint` `sk-ant-oat01-1o2fMrgy...OQAA`), it appears
+  not to be editable from the Routines UI either, which is why two different
+  owner actions both silently failed to persist.
+- **Why accepting is defensible** — the only harmful thing it can do is send, and
+  sending resolves to an empty list: the Ledger database holds zero profiles.
+  Four green runs have sent nothing, verified against sent mail and drafts in
+  `OL-0013`. The cost of leaving it is a weekly no-op.
+- **What makes this stop being acceptable — the single trigger condition.** The
+  **first real Ledger subscriber**. At that moment the weekly no-op becomes a
+  weekly unattended external send, from an unlaunched product, with no approval
+  step. **Anyone reading this register at that point must treat T-31 as reopened
+  and urgent, without waiting to be told.** The safeguard today is an empty
+  table, not a rule — and tables fill.
+- **Two routes that bypass the broken UI, if it needs killing later** — revoke
+  the OAuth token it runs under, which fails every future run at authentication
+  and is scoped to this Routine alone; or detach the Gmail connector, which is
+  blunter because other things use Gmail. Neither was attempted: removing a
+  credential is irreversible for whatever else might hold it, and that is the
+  owner's call, not an agent's.
+- **Status** Accepted Risk · **Next action** — none, unless the Ledger gains a
+  subscriber, or the Routines UI starts saving for HTTP-API-created Routines.
+  Worth reporting the UI failure to Anthropic: anything created that way is
+  currently unmanageable by its owner.

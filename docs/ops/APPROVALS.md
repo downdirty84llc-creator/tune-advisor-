@@ -459,3 +459,48 @@ by the agent — the owner holds scheduling. No pull request.
 **Actual result** — Executed. Verification output and the commit hash are
 recorded in `OPERATING-LOG.md`. T-19 remains In Verification pending the owner's
 confirmation that the seeded register matches their own record.
+
+---
+
+## A-11 — Accept the residual risk of the unremovable send Routine
+
+**Status: ACCEPTED, 2026-09-25, owner ("just note it as accepted risk").**
+
+**Decision requested** — Whether to keep trying to remove the Routine "Weekly
+Georgia Opportunity Ledger summary" (`trig_01FxDef9B5snYTW42FfcMEbD`), or accept
+that it stays and record why.
+
+**Business objective** — Stop spending owner attention on a control that cannot
+currently be actuated, without letting the underlying exposure go unrecorded.
+
+**Source and context** — `OL-0013`, `OL-0014`, T-31. The Routine fires Mondays
+09:00 UTC with Gmail, Stripe, Shopify and PayPal attached, and its prompt ends
+with an unconditional "email the summary to paid subscribers". Agents cannot
+disable or delete it — both operations are refused for a Routine created via
+`http_api`. Two owner attempts, reported as done, left `updated_at` identical to
+`created_at`; nothing has modified it since 2026-07-30.
+
+**What was accepted** — The Routine remains enabled and will keep firing weekly.
+
+**Evidence the exposure is currently theoretical** — it has never sent anything.
+Verified in `OL-0013` against sent mail across four fire windows and against
+every draft in the mailbox. The Ledger holds zero profiles, so the subscriber
+list is empty and the send is a no-op.
+
+**Limits of this acceptance — read these before treating it as settled:**
+
+- It covers **only** the present state, in which the Ledger has **no
+  subscribers**. It is not a standing approval to send.
+- **The first real subscriber voids it.** T-31 reopens at that moment, at high
+  priority, whether or not anyone re-raises it.
+- It is not approval for the Routine's content, its July session link, or its
+  connector grants — none of which has been reviewed.
+
+**Rejected alternatives** — Revoking the Routine's OAuth token, or detaching the
+Gmail connector. Both would work and both were left alone: revoking a credential
+is irreversible for anything else holding it, which is an owner decision rather
+than an agent's, and neither was asked for.
+
+**Success test** — A future reader can tell from the register that this Routine
+survives by decision rather than by oversight, and knows the one condition that
+reopens it.
