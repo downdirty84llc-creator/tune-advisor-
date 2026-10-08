@@ -1130,7 +1130,115 @@ summary table is part of the write, not a follow-up.
 
 ---
 
-## OL-0029 — 2026-10-08 · First inbox intake; the register had been blind to the actual business
+## OL-0029 — Stopgap for A-10: route the Routines through a session that holds the repository
+
+- **Timestamp** 2026-10-08T15:45:00Z
+- **Task** T-27 · **Approval** **A-14**, owner, 2026-10-08 (written as A-13;
+  renumbered — the host's brief took A-13 for the public-repository decision,
+  which is the same question as T-32)
+- **Action** Created a dedicated host session with the repository attached,
+  bound four new Routines to it, and disabled the four that fire into fresh
+  sessions.
+- **Tool** `create_session`, `create_trigger` ×4, `update_trigger` ×4
+- **Operator** Claude (agent), cqvhy6 session
+- **Numbering** Written as OL-0028; renumbered on landing because the host
+  session took OL-0028 for the brief it wrote while this was being prepared.
+  Second collision in two weeks, same cause — see OL-0024.
+- **Before** Four Routines firing into fresh sessions with no `sources` and no
+  `outcomes`, producing briefs that died with the session. Seven weeks of it.
+- **After**
+  - Host session `session_01MadzgqZSAWtvberqr3hMpN`. Confirmed `RUNNING`,
+    `connected`, on `claude/claude-md-docs-cqvhy6`, and — the point of the
+    exercise — its `session_context` carries **both** `sources` and `outcomes`.
+  - Four Routines, `persist_session: true`, bound to it on the same cadences:
+    daily brief `trig_01Uw62JeMqdK6DaLatfk3BXX`, intake
+    `trig_01UdMtZvf1BdVuYoucd6UY7N`, cash review
+    `trig_01Y9G9LUVQR752W4uop2jZfL`, scan `trig_01UPEmQbHN6vzC4PKse2zf23`.
+  - The four originals **disabled** and renamed "(superseded — no repo
+    attached)" so the reason shows in the Routines list, not only here:
+    `trig_01HjWAenzqupA25xtHq4pAQ1`, `trig_01BVhKWk82BUsapTnqCRWUu8`,
+    `trig_01MMB7e5vWPPpCf295CcUxgK`, `trig_013EAHBLcjpi7N8wyqo5SfAq`.
+- **Why a separate session** — binding them to the owner's own conversation
+  would have put roughly twenty firings a week into it. `create_session` accepts
+  `source_url`, `source_revision` and `outcome_branch`, so a purpose-built host
+  is both cleaner and closer in shape to what the real fix will be.
+- **Each prompt carries the branch-pointer check from OL-0026**, because the
+  host inherits the hazard that bit this session earlier today: a container
+  reset left a branch of this name on a `main` commit holding the stale Ledger
+  tree, with a **clean `git status`**. The prompts give the tell — 28 tracked
+  files, no `src/` — and the recovery.
+- **Three ways this is worse than the real fix, stated rather than glossed:** it
+  depends on one session surviving; its context grows without bound; and all
+  four serialise through it. **A-10 stays open.**
+- **Evidence** Each `create_trigger` returned `enabled: true`,
+  `persist_session: true` and the host's id; each `update_trigger` returned
+  `enabled: false`. Read back from the calls, not assumed.
+- **What happened next, and what it does and does not show** — the host session
+  wrote the first brief ever to reach `docs/ops/briefs/` (`dbd6c21`, OL-0028)
+  before this entry was finished. **That is proof the routine works when given a
+  checkout. It is not proof the schedule delivers** — that run was driven by
+  hand, and A-10's success test is a _scheduled_ firing that commits. The host
+  said so itself, in the brief's own opening paragraph, which is the right place
+  for it. The first scheduled test is the intake at **2026-10-09T10:20Z**. T-27
+  stays In Verification until then.
+- **One deviation worth recording.** The host's setup prompt told it to confirm
+  the checkout, read the contract, and **stop** — explicitly not to run routines
+  or write briefs. It ran the full brief anyway. The output is good and
+  correctly labelled, so no harm done, but an unattended host that exceeds its
+  brief on its first turn is worth knowing about before it is trusted with
+  twenty firings a week.
+- **Rollback, written down because whoever needs it will be in a hurry** — if
+  the host dies, `update_trigger enabled=true` on the four original ids. They
+  are intact, their prompts are current, and they publish Artifacts, so they
+  degrade to not-losing-the-work rather than to nothing.
+
+---
+
+## OL-0030 — Owner approves Option 1 on A-13; the change itself is not reachable
+
+- **Timestamp** 2026-10-08T16:05:00Z
+- **Task** T-32, T-29 · **Approval** **A-13, answered** — the owner chose Option
+  1, "make it private", on 2026-10-08
+- **Action** Recorded the decision, then attempted it. **The decision is made;
+  the change is not.**
+- **Tool** `gh api` (PATCH, then GET to re-read), `ToolSearch`
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** A-13 PENDING; `tune-advisor-` public, with DD84's revenue position,
+  customer concentration and several system identifiers readable by anyone.
+- **After** A-13 answered and T-32 moved from "awaiting owner" to "decided,
+  awaiting the owner's hand". **Visibility unchanged: `private: False`.**
+- **Evidence** — attempted immediately after the decision rather than deferred:
+  - `gh api -X PATCH … -f private=true` → **HTTP 403**, "Repository settings
+    writes are not permitted through this proxy".
+  - Re-read after the attempt: `private: False`. Nothing changed.
+  - `ToolSearch` for a repository-settings tool → the GitHub MCP server has
+    `create_repository` (which takes a `private` flag but **creates a new
+    repository**, not this one), `fork_repository`, collaborator and file tools.
+    **No way to alter an existing repository's visibility.**
+  - This is the third attempt at this exact call across two turns, and the
+    fourth settings write refused in total (OL-0026, OL-0027). **It is a policy
+    boundary, not a transient failure, and no further attempt will change it.**
+- **Error** None. Worth being exact about what happened: the owner gave a clear
+  instruction, it was attempted at once, and it could not be carried out. That
+  is not the same as the instruction being refused, and it is not the same as it
+  being done — **A-13 reads ANSWERED but NOT EXECUTED**, and the register says
+  so in both places rather than in neither.
+- **Remediation** The owner flips it at
+  `https://github.com/downdirty84llc-creator/tune-advisor-/settings`, "Change
+  repository visibility" at the foot of the page. **Then verify the agents still
+  function**, because this is the one option with a mechanical consequence: the
+  host session and the four bound Routines clone and push this repository
+  through the session's GitHub proxy. A private repository ought to stay
+  reachable to a session already connected to it — but that is an expectation,
+  not a reading, and the honest test is one scheduled firing landing a commit.
+  Next opportunity **2026-10-09T10:20Z**. If it breaks, suspect this first; the
+  fix would be a repository-access grant, not anything in `docs/ops/`.
+- **Not covered** — `georgia-opportunity-ledger` is also public. It holds no
+  DD84 material, so it was never part of this packet and remains undecided.
+
+---
+
+## OL-0031 — 2026-10-08 · First inbox intake; the register had been blind to the actual business
 
 - **Timestamp** 2026-10-08T16:04:00Z
 - **Task** T-37…T-44 created by this run; T-13 cross-referenced · **Approval**
@@ -1143,7 +1251,7 @@ summary table is part of the write, not a follow-up.
 - **Before** 36 tasks. No `service`, `real estate` or `sales` task had ever
   existed. The register's own note said those workstreams were empty.
 - **After** 44 tasks, three new workstreams,
-  `docs/ops/briefs/ 2026-10-08-inbox-intake.md`, packet A-14 pending.
+  `docs/ops/briefs/ 2026-10-08-inbox-intake.md`, packet A-15 pending.
 - **Window** `newer_than:2d`, the first-run default. **No prior intake entry
   exists in this log**, so there was no last-run timestamp to measure from.
 
@@ -1192,7 +1300,7 @@ report — which the routine's own contract calls worse than no routine at all.
 GDOT (reply on `1a1133f549956cc3`) and Georgia SBDC (reply on
 `1a112caffaba4e6d`), both reproduced in full in the brief. **Zero Gmail drafts
 were created**: the routine prefers the output file, and a fifteenth draft would
-have joined the T-42 backlog it had just found. Covered by **A-14**.
+have joined the T-42 backlog it had just found. Covered by **A-15**.
 
 **No draft was written for the Arman thread, deliberately.** That is the most
 commercially live thread in the mailbox and the omission is the point — see
@@ -1215,7 +1323,7 @@ question rather than asserted as unbilled.
   draft in the account sent, edited or deleted. **No draft body in the T-42
   backlog was opened** — metadata only.
 - **Remediation** Not applicable; nothing failed. Outstanding and owner-side:
-  **A-14** (two sends, one counterparty waiting since 2026-10-06), the owner's
+  **A-15** (two sends, one counterparty waiting since 2026-10-06), the owner's
   O2 determination on T-37, the GDOT layout decision on T-38, and the five
   suspicious drafts in T-42.
 - **Worth stating plainly** — the register described a business with no
@@ -1226,9 +1334,66 @@ question rather than asserted as unbilled.
   trusted as a picture of the business.** That is the connector gap in A-10,
   priced in operational terms rather than in discarded tokens.
 
+### Landed late, after a sibling session had pushed — three numbering collisions
+
+The push of this entry was **rejected**: `claude/claude-md-docs-cqvhy6` had
+moved while the intake was running. Two commits from another session, `4efcf35`
+and `a6aa97b`, had landed the A-10 stopgap and the owner's answer on A-13. **The
+remote was read before anything was merged**, and the remote won every collision
+because it arrived first:
+
+| Minted here                | Landed as             | Why                                               |
+| -------------------------- | --------------------- | ------------------------------------------------- |
+| `OL-0029` (this entry)     | **`OL-0031`**         | The sibling took 0029 and 0030                    |
+| `A-14` (the two drafts)    | **`A-15`**            | The sibling's stopgap packet took A-14            |
+| `A-13` (public repository) | **`A-13`, unchanged** | Minted here first; the sibling renumbered its own |
+
+**No entry was edited or merged into another, and nothing was renumbered to make
+the sequence look tidier.** The log stays append-only: the sibling's two entries
+sit above this one in arrival order, and every cross-reference in the register
+and in `APPROVALS.md` was repointed from A-14 to A-15.
+
+### Two reconciliations the merge exposed
+
+Both are the **same defect this morning's daily brief recorded** — the summary
+table drifting from `APPROVALS.md` — recurring within three hours, from the
+other direction. That is worth more than the fixes.
+
+1. **T-32's row still read `Awaiting Owner · A-13 pending`** after the sibling
+   recorded the owner choosing Option 1. Corrected to **Decided — owner's
+   hand**, because the decision is made and the repository is **still public**:
+   the setting is unreachable from a session and needs the owner in the GitHub
+   UI. **Answered is not done, and the row now says which.**
+2. **T-27's row still read `Blocked`** while the sibling's own OL-0029 said it
+   "stays In Verification". A-14 executed the stopgap, so Blocked was wrong.
+   Corrected to **In Verification**, with the success test restated: **one
+   scheduled firing landing a commit, first opportunity 2026-10-09T10:20Z.**
+
+**The generalisable point:** two sessions appending to one record is the
+divergence T-31 spent a day undoing, in miniature and within an hour. It was
+survivable here only because both sessions wrote to the same branch and the
+second one read before writing. **A third concurrent session would not be.**
+
+### A correction to the sibling entry, offered rather than asserted
+
+OL-0029 records that "the host exceeded its setup prompt, which told it to
+verify the checkout and stop", and reasonably asks whether such a host should be
+trusted with twenty firings a week. **The premise is wrong, and the record
+should not carry it uncorrected.**
+
+The setup prompt did say verify and stop, and this session did stop. **The owner
+then invoked `/dd84-daily-brief` and `/dd84-inbox-intake` as explicit
+instructions**, in that order, in their own words. Both briefs were directed
+work, not self-started work. The sibling could not see those turns — it saw only
+a brief appear from a session whose prompt said stop, and from that vantage the
+inference was a fair one to draw and worth writing down.
+
+**Neither entry is edited.** This note is the correction, and the trust question
+it raised is still a good one — just not evidenced by this.
+
 ---
 
-## Next entry: OL-0030
+## Next entry: OL-0032
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

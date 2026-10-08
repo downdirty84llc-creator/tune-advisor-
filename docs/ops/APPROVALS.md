@@ -23,37 +23,52 @@ and actual result.
 
 ## Status board
 
-| ID   | Decision                                                                    | Class | Status                  | Covers                             |
-| ---- | --------------------------------------------------------------------------- | ----- | ----------------------- | ---------------------------------- |
-| S-01 | Standing approval for local repository work                                 | A/B   | **Approved** (standing) | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
-| A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition                    | B     | **Approved**            | T-01 T-02 T-03                     |
-| A-02 | Correct drifted documentation and the legal-review flags                    | B     | **Approved**            | T-04 T-05                          |
-| A-03 | Exclude demo accounts from owner-facing revenue reporting                   | E-adj | **Approved**            | T-06 T-12                          |
-| A-04 | Correct the annual MRR arithmetic                                           | E-adj | **Approved**            | T-07                               |
-| A-05 | Create Stripe products and prices; run the payment matrix                   | E + F | **Approved**            | T-11                               |
-| A-06 | Commission legal review of the legal documents                              | G     | **Approved**            | T-13                               |
-| A-07 | Subscribe to an upload virus-scanning service                               | E + F | **Pending**             | T-14                               |
-| A-08 | Build the operations control plane                                          | B     | **Approved**            | T-18 T-19 T-20 T-21 T-22           |
-| A-09 | Merge the two agent branches and converge the schedule                      | B     | **Approved**            | T-23 T-24 T-25 T-26                |
-| A-10 | Give the Routines a repository to write to                                  | B     | **Pending**             | T-27                               |
-| A-11 | Consolidate onto the Ledger repository                                      | F     | **Approved, narrowed**  | T-28 T-29                          |
-| A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**            | T-30                               |
-| A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Pending**             | T-32, blocks T-29                  |
-| A-14 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**             | T-38 T-39                          |
+| ID   | Decision                                                                    | Class | Status                      | Covers                             |
+| ---- | --------------------------------------------------------------------------- | ----- | --------------------------- | ---------------------------------- |
+| S-01 | Standing approval for local repository work                                 | A/B   | **Approved** (standing)     | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
+| A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition                    | B     | **Approved**                | T-01 T-02 T-03                     |
+| A-02 | Correct drifted documentation and the legal-review flags                    | B     | **Approved**                | T-04 T-05                          |
+| A-03 | Exclude demo accounts from owner-facing revenue reporting                   | E-adj | **Approved**                | T-06 T-12                          |
+| A-04 | Correct the annual MRR arithmetic                                           | E-adj | **Approved**                | T-07                               |
+| A-05 | Create Stripe products and prices; run the payment matrix                   | E + F | **Approved**                | T-11                               |
+| A-06 | Commission legal review of the legal documents                              | G     | **Approved**                | T-13                               |
+| A-07 | Subscribe to an upload virus-scanning service                               | E + F | **Pending**                 | T-14                               |
+| A-08 | Build the operations control plane                                          | B     | **Approved**                | T-18 T-19 T-20 T-21 T-22           |
+| A-09 | Merge the two agent branches and converge the schedule                      | B     | **Approved**                | T-23 T-24 T-25 T-26                |
+| A-10 | Give the Routines a repository to write to                                  | B     | **Pending**                 | T-27                               |
+| A-11 | Consolidate onto the Ledger repository                                      | F     | **Approved, narrowed**      | T-28 T-29                          |
+| A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**                | T-30                               |
+| A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed) | T-32, blocks T-29                  |
+| A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                | T-27                               |
+| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**                 | T-38 T-39                          |
 
-**Four packets are with the owner: A-14, A-10, A-13 and A-07.** **A-14 is the
-only one with a human counterparty waiting**, and it should be answered first
-for that reason alone.
+**Two packets are with the owner: A-15 and A-07.** **A-15 is the only one with a
+human counterparty waiting** — a GDOT engineer since 2026-10-06 — and should be
+answered first for that reason alone. A-07 has been open since 2026-08-06 and
+blocks nothing urgent.
 
-- **A-14** — raised 2026-10-08 by the first intake run. Two drafts, both written
-  in full, neither sent. A state engineer has been waiting since 2026-10-06.
-- **A-10** — the Routines still have no repository to write to, which is why no
-  brief had ever been committed before 2026-10-08, and the one that exists was
-  written by a session driven by hand rather than by the schedule.
-- **A-13** — raised 2026-10-08 by the first daily-brief run. The decision in
-  T-32 was already recorded and already waiting; it had **no packet**, so it was
-  not visible in the one place this file exists to make decisions visible. That
-  is the defect the packet fixes, independent of which option is chosen.
+- **A-15** — raised 2026-10-08 by the first intake run. Two drafts, both written
+  in full, neither sent, neither placed in the mail account.
+- **A-13 — ANSWERED, NOT DONE.** The owner chose Option 1, make `tune-advisor-`
+  private. **The repository is still public**: the setting is not reachable from
+  a session (403 through the proxy, three routes tried) and needs the owner's
+  hand in the GitHub UI. T-32 therefore reads "decided, awaiting the owner's
+  hand", not Done.
+- **A-10 — still open**, and A-14 is explicitly not a substitute for it. A-14
+  binds the four Routines to a host session that holds the repository; that is a
+  stopgap with three stated weaknesses and it grants no standing scheduling
+  authority. The real fix is still recreating the Routines from the claude.ai
+  UI.
+
+> **Three packets were raised and answered within one hour on 2026-10-08, by two
+> sessions working the same record concurrently, and the numbering collided.**
+> A-13 (this session's daily brief) and A-14 (the sibling session's Routine
+> stopgap) were both minted as "A-13"; the drafts packet was both "A-14" and is
+> now **A-15**. The collisions were resolved on landing, in favour of whichever
+> reached the branch first, and every cross-reference was repointed. **Nothing
+> was renumbered to suit a tidier story and no packet was merged into another.**
+> If a fourth number looks skipped, it is not — see OL-0031.
+
 - **A-07** — unanswered since 2026-08-06. Does not block launch; it blocks
   accepting uploads safely.
 
@@ -651,7 +666,8 @@ reopens it.
 
 ## A-13 — Decide the visibility of a public repository holding DD84's revenue figures
 
-**Status: PENDING — raised 2026-10-08 by the first `/dd84-daily-brief` run.**
+**Status: ANSWERED 2026-10-08 — Option 1 approved by the owner. NOT YET
+EXECUTED; an agent cannot perform it.**
 
 **Decision requested** — Choose one of three dispositions for the fact that
 `downdirty84llc-creator/tune-advisor-` is a **public** repository and
@@ -738,12 +754,69 @@ the account; the proxy in front of it refuses. This needs the GitHub UI.
 **Reply with: APPROVE (option 1) / APPROVE WITH CHANGES (option 2 or 3) / DEFER
 / REJECT**
 
-**Response** — _awaiting owner._ **Affected records** — T-32, and T-29 which it
-blocks. **Actual result** — Not executed.
+**Response** — **APPROVE (option 1)**, owner, 2026-10-08: "make it private".
+**Limits** — Covers `tune-advisor-` only. `georgia-opportunity-ledger` is a
+separate question and was not put to the owner. **Affected records** — T-32, and
+T-29 which it blocks. **Actual result** — **Approved but not executed, and not
+executable from a session.**
+`gh api -X PATCH /repos/downdirty84llc-creator/tune-advisor- -f private=true`
+was attempted again immediately after the decision and returned **HTTP 403,
+"Repository settings writes are not permitted through this proxy"**; visibility
+re-read afterwards as `private: False`. The GitHub MCP server has no
+repository-settings tool — `create_repository` takes a `private` flag but
+creates a new repository, which is not this. Three distinct routes, all closed.
+**The owner must flip it** at
+https://github.com/downdirty84llc-creator/tune-advisor-/settings — "Change
+repository visibility" at the foot of the page. **After it is flipped, verify
+the agents still work**, because this is the one option with a mechanical
+consequence: the host session `session_01MadzgqZSAWtvberqr3hMpN` and the four
+bound Routines clone and push this repository through the session's GitHub
+proxy. A private repository should remain reachable to a session already
+connected to it, but that is an expectation, not a reading. The check is one
+scheduled firing landing a commit — next opportunity **2026-10-09T10:20Z**. If
+it fails, that is the cause to suspect first, and the fix is a repository-access
+grant rather than anything in `docs/ops/`.
 
 ---
 
-## A-14 — Send two prepared replies: GDOT District 1, and the Georgia SBDC
+## A-14 — Route the Routines through a repository-holding session
+
+**Decision requested** — Stand up a dedicated session with the repository
+attached and bind the four Torque Routines to it, as an interim measure while
+A-10 remains outstanding. **Business objective** — Stop losing the work. Every
+firing since 2026-08-07 produced a brief and discarded it; one sampled run cost
+$1.77 for output nobody could read. **Source and context** — Offered to the
+owner on 2026-10-08 with its downsides stated, after four owner-only actions
+were confirmed unreachable (OL-0027). The owner asked for it in as many words.
+**Recommended plan** — `create_session` with `source_url`, `source_revision` and
+`outcome_branch`; four `create_trigger` calls with `persistent_session_id`; the
+four originals disabled rather than deleted. **Alternatives** — Bind to the
+owner's own session: rejected, twenty firings a week into the conversation they
+work in. Leave the originals enabled too: rejected, every routine would run
+twice and write two briefs. Keep waiting for A-10: rejected by the owner, and it
+is 41 days outstanding. **Cost and cash impact** — A long-lived session consumes
+usage. It replaces four fresh sessions a day rather than adding to them, and the
+originals are off. **Risks and safeguards** — Stated in OL-0029 and not
+softened: one session is a single point of failure, its context grows without
+bound, and the four serialise. The safeguard is that **nothing was deleted** —
+the originals are disabled with current prompts and a one-call rollback.
+**Systems affected** — Scheduled Routines and one new session. No connector, no
+customer-facing system, no repository content. **Customer/public impact** —
+None. **Success test** — A dated brief in `docs/ops/briefs/` **from a scheduled
+firing**, with a commit behind it. A hand-driven run does not satisfy it.
+
+**Response** — **APPROVED**, 2026-10-08. **Limits** — Interim only. It does not
+close A-10 and grants no standing scheduling authority; A-08 reserved that to
+the owner and this is one named exception. **Expiration** — Superseded the
+moment A-10 is done, at which point these four Routines should be deleted rather
+than left beside the real ones. **Affected records** — T-27, A-10. **Actual
+result** — Executed 2026-10-08; evidence in OL-0029. **The success test is not
+yet met**: the first brief in `docs/ops/briefs/` came from a hand-driven run,
+not a schedule. First scheduled test 2026-10-09T10:20Z.
+
+---
+
+## A-15 — Send two prepared replies: GDOT District 1, and the Georgia SBDC
 
 **Status: PENDING — raised 2026-10-08 by the first `/dd84-inbox-intake` run.**
 

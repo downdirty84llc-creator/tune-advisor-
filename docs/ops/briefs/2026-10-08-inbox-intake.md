@@ -118,6 +118,10 @@ here is a decision, not a draft.**
 
 ## Drafts prepared — NOT SENT
 
+**Both are covered by packet A-15 in `APPROVALS.md`** — one decision, two sends.
+(Raised as A-14; renumbered on landing because a sibling session had taken that
+number for the A-10 stopgap. See OL-0031.)
+
 Both drafts live **in this file only.** No Gmail draft was created — the routine
 prefers the output file, and the mailbox already holds a 14-draft backlog (see
 below) that a fifteenth would disappear into. **Say the word and either will be
