@@ -1194,7 +1194,51 @@ summary table is part of the write, not a follow-up.
 
 ---
 
-## Next entry: OL-0030
+## OL-0030 — Owner approves Option 1 on A-13; the change itself is not reachable
+
+- **Timestamp** 2026-10-08T16:05:00Z
+- **Task** T-32, T-29 · **Approval** **A-13, answered** — the owner chose Option
+  1, "make it private", on 2026-10-08
+- **Action** Recorded the decision, then attempted it. **The decision is made;
+  the change is not.**
+- **Tool** `gh api` (PATCH, then GET to re-read), `ToolSearch`
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** A-13 PENDING; `tune-advisor-` public, with DD84's revenue position,
+  customer concentration and several system identifiers readable by anyone.
+- **After** A-13 answered and T-32 moved from "awaiting owner" to "decided,
+  awaiting the owner's hand". **Visibility unchanged: `private: False`.**
+- **Evidence** — attempted immediately after the decision rather than deferred:
+  - `gh api -X PATCH … -f private=true` → **HTTP 403**, "Repository settings
+    writes are not permitted through this proxy".
+  - Re-read after the attempt: `private: False`. Nothing changed.
+  - `ToolSearch` for a repository-settings tool → the GitHub MCP server has
+    `create_repository` (which takes a `private` flag but **creates a new
+    repository**, not this one), `fork_repository`, collaborator and file tools.
+    **No way to alter an existing repository's visibility.**
+  - This is the third attempt at this exact call across two turns, and the
+    fourth settings write refused in total (OL-0026, OL-0027). **It is a policy
+    boundary, not a transient failure, and no further attempt will change it.**
+- **Error** None. Worth being exact about what happened: the owner gave a clear
+  instruction, it was attempted at once, and it could not be carried out. That
+  is not the same as the instruction being refused, and it is not the same as it
+  being done — **A-13 reads ANSWERED but NOT EXECUTED**, and the register says
+  so in both places rather than in neither.
+- **Remediation** The owner flips it at
+  `https://github.com/downdirty84llc-creator/tune-advisor-/settings`, "Change
+  repository visibility" at the foot of the page. **Then verify the agents still
+  function**, because this is the one option with a mechanical consequence: the
+  host session and the four bound Routines clone and push this repository
+  through the session's GitHub proxy. A private repository ought to stay
+  reachable to a session already connected to it — but that is an expectation,
+  not a reading, and the honest test is one scheduled firing landing a commit.
+  Next opportunity **2026-10-09T10:20Z**. If it breaks, suspect this first; the
+  fix would be a repository-access grant, not anything in `docs/ops/`.
+- **Not covered** — `georgia-opportunity-ledger` is also public. It holds no
+  DD84 material, so it was never part of this packet and remains undecided.
+
+---
+
+## Next entry: OL-0031
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

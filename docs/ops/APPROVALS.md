@@ -646,7 +646,8 @@ reopens it.
 
 ## A-13 — Decide the visibility of a public repository holding DD84's revenue figures
 
-**Status: PENDING — raised 2026-10-08 by the first `/dd84-daily-brief` run.**
+**Status: ANSWERED 2026-10-08 — Option 1 approved by the owner. NOT YET
+EXECUTED; an agent cannot perform it.**
 
 **Decision requested** — Choose one of three dispositions for the fact that
 `downdirty84llc-creator/tune-advisor-` is a **public** repository and
@@ -733,8 +734,28 @@ the account; the proxy in front of it refuses. This needs the GitHub UI.
 **Reply with: APPROVE (option 1) / APPROVE WITH CHANGES (option 2 or 3) / DEFER
 / REJECT**
 
-**Response** — _awaiting owner._ **Affected records** — T-32, and T-29 which it
-blocks. **Actual result** — Not executed.
+**Response** — **APPROVE (option 1)**, owner, 2026-10-08: "make it private".
+**Limits** — Covers `tune-advisor-` only. `georgia-opportunity-ledger` is a
+separate question and was not put to the owner. **Affected records** — T-32, and
+T-29 which it blocks. **Actual result** — **Approved but not executed, and not
+executable from a session.**
+`gh api -X PATCH /repos/downdirty84llc-creator/tune-advisor- -f private=true`
+was attempted again immediately after the decision and returned **HTTP 403,
+"Repository settings writes are not permitted through this proxy"**; visibility
+re-read afterwards as `private: False`. The GitHub MCP server has no
+repository-settings tool — `create_repository` takes a `private` flag but
+creates a new repository, which is not this. Three distinct routes, all closed.
+**The owner must flip it** at
+https://github.com/downdirty84llc-creator/tune-advisor-/settings — "Change
+repository visibility" at the foot of the page. **After it is flipped, verify
+the agents still work**, because this is the one option with a mechanical
+consequence: the host session `session_01MadzgqZSAWtvberqr3hMpN` and the four
+bound Routines clone and push this repository through the session's GitHub
+proxy. A private repository should remain reachable to a session already
+connected to it, but that is an expectation, not a reading. The check is one
+scheduled firing landing a commit — next opportunity **2026-10-09T10:20Z**. If
+it fails, that is the cause to suspect first, and the fix is a repository-access
+grant rather than anything in `docs/ops/`.
 
 ---
 
