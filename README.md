@@ -6,14 +6,20 @@
 >
 > This branch forked just before the admin dashboard's revenue figures were
 > fixed, so it still counts annual subscribers at the monthly price and still
-> counts seeded demo accounts as real subscribers. It is the repository's default
-> branch, which means deploy tooling picks it automatically — that is the risk
-> this notice exists to head off.
+> counts seeded demo accounts as real subscribers.
+>
+> **Corrected 2026-10-08:** an earlier version of this notice said `main` was the
+> repository's default branch. It is not — the default is
+> `claude/georgia-opportunity-ledger-kfpt4c`, which holds the same stale code and
+> **carries no warning**. If deploy tooling picks a branch here automatically, it
+> picks that one, not this one.
 >
 > It is kept because a GitHub default branch cannot be deleted, and because
 > `tune-advisor-` is the DD84 automotive business's own repository. The DD84
-> agent platform on `claude/claude-md-docs-jjveuq` belongs here and stays here.
-> The Ledger does not. See `CLAUDE.md` for the verified comparison.
+> agent platform belongs here and stays here — on
+> `claude/claude-md-docs-cqvhy6` since the records were consolidated on
+> 2026-09-25, **not** `claude/claude-md-docs-jjveuq`, which is superseded. The
+> Ledger does not belong here. See `CLAUDE.md` for the verified comparison.
 
 # Georgia Opportunity Ledger
 

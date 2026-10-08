@@ -28,14 +28,32 @@
 > - Nothing filters `is_sample`, so seeded demo accounts are counted in the
 >   subscriber total and in MRR.
 >
-> **Do not deploy this branch.** It is the default branch, so Vercel and most
-> import flows select it automatically; that is the most likely way it reaches
-> production. Nothing here is fixed in place — the fix is to work in the
-> canonical repository, where both defects already are fixed.
+> **Do not deploy this branch.** Nothing here is fixed in place — the fix is to
+> work in the canonical repository, where both defects already are fixed.
+>
+> **Corrected 2026-10-08. This notice was wrong about two things.**
+>
+> **It is not the default branch.** It said so, and that was the reason given for
+> the warning being here. The default is
+> `claude/georgia-opportunity-ledger-kfpt4c`, confirmed by
+> `git ls-remote --symref origin HEAD`. `main` is that branch plus this notice
+> and nothing else — identical trees otherwise, which is why the comparison above
+> cites `34b081b` rather than `main`'s own hash. **So the branch Vercel and most
+> import flows actually select carries no warning at all.** That is the real
+> exposure and it is not fixed by this file; it needs the owner either to
+> repoint the default at a clean branch or to accept the same notice on
+> `kfpt4c`.
+>
+> **The DD84 agent platform is on `claude/claude-md-docs-cqvhy6`, not
+> `claude/claude-md-docs-jjveuq`.** jjveuq was correct when this was written on
+> 2026-09-24 and stopped being correct the next day: the two diverged operating
+> records were consolidated onto cqvhy6 on 2026-09-25, and jjveuq carries a
+> "superseded — do not append" notice at the top of its `docs/ops/README.md`.
+> A reader sent to jjveuq lands on a dead record.
 >
 > Flagged, not deleted: GitHub will not let a default branch be removed, and the
-> DD84 agent platform on `claude/claude-md-docs-jjveuq` in this repository is
-> deliberately kept here rather than merged into the Ledger.
+> DD84 agent platform in this repository is deliberately kept here rather than
+> merged into the Ledger.
 
 # Working in this repository
 
