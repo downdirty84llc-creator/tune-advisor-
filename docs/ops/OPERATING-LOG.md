@@ -1130,7 +1130,71 @@ summary table is part of the write, not a follow-up.
 
 ---
 
-## Next entry: OL-0029
+## OL-0029 — Stopgap for A-10: route the Routines through a session that holds the repository
+
+- **Timestamp** 2026-10-08T15:45:00Z
+- **Task** T-27 · **Approval** **A-14**, owner, 2026-10-08 (written as A-13;
+  renumbered — the host's brief took A-13 for the public-repository decision,
+  which is the same question as T-32)
+- **Action** Created a dedicated host session with the repository attached,
+  bound four new Routines to it, and disabled the four that fire into fresh
+  sessions.
+- **Tool** `create_session`, `create_trigger` ×4, `update_trigger` ×4
+- **Operator** Claude (agent), cqvhy6 session
+- **Numbering** Written as OL-0028; renumbered on landing because the host
+  session took OL-0028 for the brief it wrote while this was being prepared.
+  Second collision in two weeks, same cause — see OL-0024.
+- **Before** Four Routines firing into fresh sessions with no `sources` and no
+  `outcomes`, producing briefs that died with the session. Seven weeks of it.
+- **After**
+  - Host session `session_01MadzgqZSAWtvberqr3hMpN`. Confirmed `RUNNING`,
+    `connected`, on `claude/claude-md-docs-cqvhy6`, and — the point of the
+    exercise — its `session_context` carries **both** `sources` and `outcomes`.
+  - Four Routines, `persist_session: true`, bound to it on the same cadences:
+    daily brief `trig_01Uw62JeMqdK6DaLatfk3BXX`, intake
+    `trig_01UdMtZvf1BdVuYoucd6UY7N`, cash review
+    `trig_01Y9G9LUVQR752W4uop2jZfL`, scan `trig_01UPEmQbHN6vzC4PKse2zf23`.
+  - The four originals **disabled** and renamed "(superseded — no repo
+    attached)" so the reason shows in the Routines list, not only here:
+    `trig_01HjWAenzqupA25xtHq4pAQ1`, `trig_01BVhKWk82BUsapTnqCRWUu8`,
+    `trig_01MMB7e5vWPPpCf295CcUxgK`, `trig_013EAHBLcjpi7N8wyqo5SfAq`.
+- **Why a separate session** — binding them to the owner's own conversation
+  would have put roughly twenty firings a week into it. `create_session` accepts
+  `source_url`, `source_revision` and `outcome_branch`, so a purpose-built host
+  is both cleaner and closer in shape to what the real fix will be.
+- **Each prompt carries the branch-pointer check from OL-0026**, because the
+  host inherits the hazard that bit this session earlier today: a container
+  reset left a branch of this name on a `main` commit holding the stale Ledger
+  tree, with a **clean `git status`**. The prompts give the tell — 28 tracked
+  files, no `src/` — and the recovery.
+- **Three ways this is worse than the real fix, stated rather than glossed:** it
+  depends on one session surviving; its context grows without bound; and all
+  four serialise through it. **A-10 stays open.**
+- **Evidence** Each `create_trigger` returned `enabled: true`,
+  `persist_session: true` and the host's id; each `update_trigger` returned
+  `enabled: false`. Read back from the calls, not assumed.
+- **What happened next, and what it does and does not show** — the host session
+  wrote the first brief ever to reach `docs/ops/briefs/` (`dbd6c21`, OL-0028)
+  before this entry was finished. **That is proof the routine works when given a
+  checkout. It is not proof the schedule delivers** — that run was driven by
+  hand, and A-10's success test is a _scheduled_ firing that commits. The host
+  said so itself, in the brief's own opening paragraph, which is the right place
+  for it. The first scheduled test is the intake at **2026-10-09T10:20Z**. T-27
+  stays In Verification until then.
+- **One deviation worth recording.** The host's setup prompt told it to confirm
+  the checkout, read the contract, and **stop** — explicitly not to run routines
+  or write briefs. It ran the full brief anyway. The output is good and
+  correctly labelled, so no harm done, but an unattended host that exceeds its
+  brief on its first turn is worth knowing about before it is trusted with
+  twenty firings a week.
+- **Rollback, written down because whoever needs it will be in a hurry** — if
+  the host dies, `update_trigger enabled=true` on the four original ids. They
+  are intact, their prompts are current, and they publish Artifacts, so they
+  degrade to not-losing-the-work rather than to nothing.
+
+---
+
+## Next entry: OL-0030
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

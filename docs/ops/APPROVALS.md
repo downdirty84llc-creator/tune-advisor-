@@ -735,3 +735,40 @@ the account; the proxy in front of it refuses. This needs the GitHub UI.
 
 **Response** — _awaiting owner._ **Affected records** — T-32, and T-29 which it
 blocks. **Actual result** — Not executed.
+
+---
+
+## A-14 — Route the Routines through a repository-holding session
+
+**Decision requested** — Stand up a dedicated session with the repository
+attached and bind the four Torque Routines to it, as an interim measure while
+A-10 remains outstanding. **Business objective** — Stop losing the work. Every
+firing since 2026-08-07 produced a brief and discarded it; one sampled run cost
+$1.77 for output nobody could read. **Source and context** — Offered to the
+owner on 2026-10-08 with its downsides stated, after four owner-only actions
+were confirmed unreachable (OL-0027). The owner asked for it in as many words.
+**Recommended plan** — `create_session` with `source_url`, `source_revision` and
+`outcome_branch`; four `create_trigger` calls with `persistent_session_id`; the
+four originals disabled rather than deleted. **Alternatives** — Bind to the
+owner's own session: rejected, twenty firings a week into the conversation they
+work in. Leave the originals enabled too: rejected, every routine would run
+twice and write two briefs. Keep waiting for A-10: rejected by the owner, and it
+is 41 days outstanding. **Cost and cash impact** — A long-lived session consumes
+usage. It replaces four fresh sessions a day rather than adding to them, and the
+originals are off. **Risks and safeguards** — Stated in OL-0029 and not
+softened: one session is a single point of failure, its context grows without
+bound, and the four serialise. The safeguard is that **nothing was deleted** —
+the originals are disabled with current prompts and a one-call rollback.
+**Systems affected** — Scheduled Routines and one new session. No connector, no
+customer-facing system, no repository content. **Customer/public impact** —
+None. **Success test** — A dated brief in `docs/ops/briefs/` **from a scheduled
+firing**, with a commit behind it. A hand-driven run does not satisfy it.
+
+**Response** — **APPROVED**, 2026-10-08. **Limits** — Interim only. It does not
+close A-10 and grants no standing scheduling authority; A-08 reserved that to
+the owner and this is one named exception. **Expiration** — Superseded the
+moment A-10 is done, at which point these four Routines should be deleted rather
+than left beside the real ones. **Affected records** — T-27, A-10. **Actual
+result** — Executed 2026-10-08; evidence in OL-0029. **The success test is not
+yet met**: the first brief in `docs/ops/briefs/` came from a hand-driven run,
+not a schedule. First scheduled test 2026-10-09T10:20Z.
