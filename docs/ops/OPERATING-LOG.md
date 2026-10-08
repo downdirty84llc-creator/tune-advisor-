@@ -892,7 +892,84 @@ actually have.** It is in their tool list; a repository is not.
 
 ---
 
-## Next entry: OL-0025
+## OL-0025 — Correct two wrong claims in `main`'s stale-copy banner
+
+- **Timestamp** 2026-10-08T10:40:00Z
+- **Task** T-29 · **Approval** Owner, 2026-10-08, asked for the correction in as
+  many words after being told it meant a commit to `main`
+- **Action** Fixed two false statements in the stale-copy notice on
+  `tune-advisor-` `main`, in `CLAUDE.md` and `README.md`.
+- **Tool** `git ls-remote --symref`, `git diff`, `git push`
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** The notice said (a) "It is the default branch, so Vercel and most
+  import flows select it automatically", given as the reason the warning
+  belonged on `main`, and (b) that the DD84 agent platform is on
+  `claude/claude-md-docs-jjveuq`.
+- **After** `main` at `b9aa4b3`. Both corrected, dated, and written as
+  corrections rather than edited silently.
+- **Evidence** — `git ls-remote --symref origin HEAD` returns
+  `refs/heads/claude/georgia-opportunity-ledger-kfpt4c`. `main`'s parent is
+  `34b081b`, which **is** `kfpt4c`, and `git diff kfpt4c main` shows only
+  `CLAUDE.md` and `README.md` — so `main` is the default branch plus the notice
+  and nothing else. That also explains why the notice's own comparison table
+  cites `34b081b` rather than `main`'s hash: whoever wrote it measured `kfpt4c`
+  and committed to `main`.
+- **Error** Not this session's, but worth naming because it defeated the
+  notice's purpose. **The warning was placed on the one branch nobody selects by
+  accident, and the branch deploy tooling actually picks carries none.** A
+  warning is only as useful as its location, and "this is the default branch" is
+  a claim worth checking rather than assuming. The jjveuq pointer was true when
+  written on 2026-09-24 and false the next day, once the records consolidated
+  onto cqvhy6 — a reader following it lands on a dead record.
+- **Remediation** The notice now says plainly that it cannot fix the real
+  exposure. Pushing docs to `main` crosses this repository's own "that copy is
+  not to be updated" rule; that rule exists to stop Ledger code being developed
+  here, and the owner authorised this specific docs-only case. No source file
+  was touched.
+
+## OL-0026 — Option 1 is blocked: neither the default-branch repoint nor any branch deletion is reachable
+
+- **Timestamp** 2026-10-08T10:50:00Z
+- **Task** T-29, T-32 · **Approval** Owner chose Option 1 on 2026-10-08 —
+  repoint the default at a clean branch, then delete the stale one
+- **Action** Attempted both halves. **Neither was executed.** Recorded with the
+  exact refusals so a later session does not repeat all four attempts.
+- **Tool** `gh api` (PATCH and DELETE), `git push --delete`, GitHub MCP tool
+  search
+- **Operator** Claude (agent)
+- **Before** Default branch `claude/georgia-opportunity-ledger-kfpt4c`; four
+  branches queued for deletion across two repositories.
+- **After** **Unchanged.** Default still `kfpt4c`; all four branches still
+  exist.
+- **Evidence** — four independent routes, each refused for its own stated
+  reason:
+  - `gh api -X PATCH /repos/.../tune-advisor- -f default_branch=…` → **HTTP
+    403**, "Repository settings writes are not permitted through this proxy".
+  - `gh api -X DELETE /repos/.../git/refs/heads/…` → **HTTP 403**, "Write access
+    to this GitHub API path is not permitted through this proxy".
+  - `git push origin --delete …` → `send-pack: unexpected disconnect`; the proxy
+    itself reports healthy with no relay failures, so the relay does not carry
+    zero-length pushes.
+  - GitHub MCP server → has `create_branch` and `delete_file`; **no delete-ref
+    tool exists.** Confirmed by search, not assumed.
+  - `gh api /repos/.../tune-advisor-` reports `admin: true`. **The permission is
+    present; the proxy in front of it refuses.** More access on the owner's side
+    would not change this — it needs a person in the GitHub UI.
+- **Error** None introduced. The ordering constraint is real and worth keeping:
+  `kfpt4c` **cannot** be deleted while it is the default, so the repoint must
+  come first.
+- **Remediation** Handed back as a manual package: repoint the default to
+  `claude/claude-md-docs-cqvhy6`, then delete `kfpt4c`, then delete
+  `claude/consolidate-agent-platform` and `claude/ledger-accuracy-fixes` in the
+  Ledger repository. Both of the latter were **re-verified spent on
+  2026-10-08**, two weeks after the first check: `src/lib/billing/mrr.ts` is
+  present on the Ledger's `main`, and all 24 DD84 files are on cqvhy6. **Do not
+  do step 1 before reading T-32** — the repoint changes what a public front page
+  shows.
+
+---
+
+## Next entry: OL-0027
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

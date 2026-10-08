@@ -805,10 +805,14 @@ task.
 - **Risk of leaving it** — Low but real, and it has already happened once: this
   agent quoted the stale MILESTONES and the stale legal-document count as
   current fact, in writing, more than once.
-- **Status** **Partly done**, 2026-09-25 · Option 2 executed: the Ledger source
-  is gone from this branch (OL-0016), audited file by file first. **Two owner
-  actions remain and the task cannot close without them** — repoint this
-  repository's default branch away from
+- **Status** **Blocked (on owner)**, re-confirmed 2026-10-08 · The owner chose
+  the repoint on 2026-10-08 and **it could not be executed** — four routes
+  refused, evidence in OL-0026, and the permission is present while the proxy in
+  front of it is not. **Step 1 is also gated on T-32**, which found both
+  repositories are public. Previously: Partly done, 2026-09-25 · Option 2
+  executed: the Ledger source is gone from this branch (OL-0016), audited file
+  by file first. **Two owner actions remain and the task cannot close without
+  them** — repoint this repository's default branch away from
   `claude/georgia-opportunity-ledger-kfpt4c` and delete it, and delete the two
   spent branches in the Ledger's repository, one of which still carries DD84's
   revenue and customer records. Neither is reachable from a session: GitHub will
@@ -951,3 +955,50 @@ unique entries were carried across by hand instead.
   not append. Two truthful logs still add up to a false one; A-05 spent six
   weeks reading "awaiting owner" after the owner had answered, and that is what
   a second record costs.
+
+## T-32 — Both repositories are public, and the venture registry is in one of them
+
+- **Objective** — Get a deliberate owner decision on whether DD84's revenue
+  figures and system identifiers should be readable by anyone, before anything
+  makes them more prominent.
+- **Source** — Agent finding, 2026-10-08, while checking whether the default
+  branch could be repointed (T-29). The visibility was not the thing being
+  looked for.
+- **Workstream** compliance · **Priority** **High** · **Owner** **Owner** ·
+  **Due** before T-29 step 1
+- **Dependencies** — **Blocks T-29.** Repointing the default at
+  `claude/claude-md-docs-cqvhy6` puts `docs/agents/ventures.md` on the public
+  front page of `tune-advisor-`.
+- **Approval class** — Owner's. Repository visibility is a Class G setting and
+  the content question is a judgement about the business, not a technical one.
+- **The finding** — `gh api` reports **both**
+  `downdirty84llc-creator/tune-advisor-` and
+  `downdirty84llc-creator/georgia-opportunity-ledger` as `private: false`.
+  `docs/agents/ventures.md` on this branch carries, in one table each: all-time
+  revenue, paid invoice count, distinct customer count, **customer concentration
+  as a percentage**, average and largest invoice, the date of the last payment,
+  the Stripe account id, the Supabase project ref, the Shopify store identifiers
+  and the owner's email address.
+- **What this is and is not** — **No credentials and no customer names.** The
+  registry was written under the §23 rule that keeps customer detail out of
+  version control, and that rule held. What is exposed is the business's own
+  financial position and its concentration risk, which is ordinarily the kind of
+  thing a competitor or an acquirer would have to ask for.
+- **Honest about the timing** — this is **not** caused by the repoint and is not
+  new. The repository has been public throughout; the figures have been readable
+  since 2026-08-03. The repoint would move them from findable to first-read,
+  which is a difference of degree, and it is the reason to decide now rather
+  than the reason it matters.
+- **Options** — (1) **Make `tune-advisor-` private.** One setting; nothing else
+  changes and the registry keeps the figures the agents need. Recommended. (2)
+  Strip the revenue table and identifiers out of `ventures.md` into something
+  not version-controlled — **this costs real capability**: the registry exists
+  so an agent does not re-derive or invent these numbers, and §5 of CLAUDE.md
+  turns on them being present and dated. (3) Accept it on the record, which at
+  least makes it a decision rather than an oversight.
+- **Note on the other repository** — `georgia-opportunity-ledger` is also public
+  and is a separate question, not covered here. It holds no DD84 material; what
+  it does hold is a product whose legal documents still carry "awaiting legal
+  review" banners.
+- **Status** **Awaiting owner** · **Next action** — Decide option 1, 2 or 3.
+  **T-29 step 1 should wait for it.**
