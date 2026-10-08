@@ -1082,18 +1082,16 @@ unique entries were carried across by hand instead.
   and is a separate question, not covered here. It holds no DD84 material; what
   it does hold is a product whose legal documents still carry "awaiting legal
   review" banners.
-- **Status** **Decided, awaiting the owner's hand**, 2026-10-08 · The owner
-  chose **Option 1 — make the repository private** (A-13). **It is not done**:
-  the change is a repository setting, and three routes are closed to a session —
-  `gh api -X PATCH` returns 403 "repository settings writes are not permitted
-  through this proxy", the GitHub MCP server has no repository-settings tool,
-  and nothing else reaches it. **Next action** — the owner flips it at
-  `/settings` → Change repository visibility, then confirms
-  `gh api /repos/…/tune-advisor-` reports `private: true`. **T-29 is no longer
-  gated on the decision, only on the execution.** Formalised as packet **A-13**
-  on 2026-10-08 by the first daily-brief run: the decision was real and recorded
-  here, but it had no packet, so it was not appearing in the one place the owner
-  looks for pending decisions.
+- **Status** **Closed**, 2026-10-08 · **Option 3 — the owner accepts the
+  exposure on the record.** Option 1 was answered first, then the owner asked
+  for the reasoning and chose to accept; both answers are in A-13. The
+  repository stays public. **T-29 is no longer gated on this.**
+- **What this decision changes going forward** — it sets a standing rule rather
+  than closing a question. This repository is public **by decision**, so nothing
+  may be added to it that would be harmful in public: no credentials, no
+  customer names, emails or payment details, no tune files or bench pinouts.
+  **The registry's existing figures are accepted; a new category of sensitive
+  material is not covered by this decision and would need its own.**
 
 ---
 

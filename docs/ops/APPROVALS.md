@@ -666,8 +666,8 @@ reopens it.
 
 ## A-13 — Decide the visibility of a public repository holding DD84's revenue figures
 
-**Status: ANSWERED 2026-10-08 — Option 1 approved by the owner. NOT YET
-EXECUTED; an agent cannot perform it.**
+**Status: CLOSED 2026-10-08 — Option 3. The owner accepts the exposure on the
+record. No action pending.**
 
 **Decision requested** — Choose one of three dispositions for the fact that
 `downdirty84llc-creator/tune-advisor-` is a **public** repository and
@@ -754,10 +754,26 @@ the account; the proxy in front of it refuses. This needs the GitHub UI.
 **Reply with: APPROVE (option 1) / APPROVE WITH CHANGES (option 2 or 3) / DEFER
 / REJECT**
 
-**Response** — **APPROVE (option 1)**, owner, 2026-10-08: "make it private".
-**Limits** — Covers `tune-advisor-` only. `georgia-opportunity-ledger` is a
-separate question and was not put to the owner. **Affected records** — T-32, and
-T-29 which it blocks. **Actual result** — **Approved but not executed, and not
+**Response — final: APPROVE WITH CHANGES (option 3)**, owner, 2026-10-08: "dont
+need to". The repository stays public and the exposure is accepted.
+
+**The owner answered twice and both answers are kept**, because the sequence is
+the useful part and overwriting it would hide a reversal. First Option 1, "make
+it private", which could not be executed from a session — three routes refused,
+see OL-0030. The owner then asked why it was needed, and on being given the case
+without the urgency chose to accept it. The case, as put: **no credentials, no
+API keys, no customer names, emails or payment details are exposed**; the one
+argument that holds is **negotiating asymmetry**, since a supplier, partner or
+acquirer can read the revenue position before talking to you; and going private
+carried a real cost, being the only option that might break the host session's
+ability to clone and push. Accepting is a reasonable reading — the figures are
+small, nothing is secret, and a random public repository is unlikely to be read.
+
+**Do not re-raise this.** It was raised twice, by two sessions independently,
+and answered. Re-opening it needs a new fact, not the same heuristic. **Limits**
+— Covers `tune-advisor-` only. `georgia-opportunity-ledger` is a separate
+question and was not put to the owner. **Affected records** — T-32, and T-29
+which it blocks. **Actual result** — **Approved but not executed, and not
 executable from a session.**
 `gh api -X PATCH /repos/downdirty84llc-creator/tune-advisor- -f private=true`
 was attempted again immediately after the decision and returned **HTTP 403,
@@ -767,15 +783,17 @@ repository-settings tool — `create_repository` takes a `private` flag but
 creates a new repository, which is not this. Three distinct routes, all closed.
 **The owner must flip it** at
 https://github.com/downdirty84llc-creator/tune-advisor-/settings — "Change
-repository visibility" at the foot of the page. **After it is flipped, verify
-the agents still work**, because this is the one option with a mechanical
-consequence: the host session `session_01MadzgqZSAWtvberqr3hMpN` and the four
-bound Routines clone and push this repository through the session's GitHub
-proxy. A private repository should remain reachable to a session already
-connected to it, but that is an expectation, not a reading. The check is one
-scheduled firing landing a commit — next opportunity **2026-10-09T10:20Z**. If
-it fails, that is the cause to suspect first, and the fix is a repository-access
-grant rather than anything in `docs/ops/`.
+repository visibility" at the foot of the page. **Not flipped, by decision.**
+The check below is kept only because it names a risk the stopgap still carries
+if visibility is ever revisited: verify the agents still work**, because this is
+the one option with a mechanical consequence: the host session
+`session_01MadzgqZSAWtvberqr3hMpN` and the four bound Routines clone and push
+this repository through the session's GitHub proxy. A private repository should
+remain reachable to a session already connected to it, but that is an
+expectation, not a reading. The check is one scheduled firing landing a commit —
+next opportunity **2026-10-09T10:20Z\*\*. If it fails, that is the cause to
+suspect first, and the fix is a repository-access grant rather than anything in
+`docs/ops/`.
 
 ---
 

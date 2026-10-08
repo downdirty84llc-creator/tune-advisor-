@@ -1393,10 +1393,49 @@ it raised is still a good one — just not evidenced by this.
 
 ---
 
-## Next entry: OL-0032
+## OL-0032 — A-13 closed as Option 3; the exposure is accepted and becomes a rule
 
-The next routine run or executed action appends here. If you are a routine: your
-run entry goes at the bottom of this file and nothing above it is touched.
+- **Timestamp** 2026-10-08T16:25:00Z
+- **Task** T-32, T-29 · **Approval** **A-13, closed** — Option 3
+- **Action** Recorded the owner's final answer, closed T-32, and turned the
+  decision into a standing rule in `CLAUDE.md` §5.
+- **Tool** `gh api` (two independent reads), `Edit`
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** A-13 answered Option 1 ("make it private"), unexecutable from a
+  session. The agent had raised it twice and was about to re-check it again on a
+  scheduled wake.
+- **After** A-13 **CLOSED, Option 3**: the repository stays public and the
+  exposure is accepted. T-32 closed. `CLAUDE.md` §5 now states that this
+  repository is public by decision, with what may never be added to it.
+- **Both answers are kept rather than overwritten.** The owner said "make it
+  private", then asked why it was needed, then said "dont need to". The reversal
+  is the useful part of the record; flattening it to the final answer would hide
+  that the question was examined.
+- **What the owner was told, since the decision rests on it** — that **no
+  credentials, API keys, customer names, emails or payment details are
+  exposed**; that the one argument which holds is **negotiating asymmetry**, a
+  supplier or acquirer being able to read the revenue position first; and that
+  going private was the **only option with a mechanical cost**, being the one
+  that might break the host session's clone and push. Three weaker arguments
+  were named as weak and not leaned on.
+- **Evidence that it is in fact public**, read twice by independent means before
+  the decision: the authenticated API returns
+  `private: false, visibility: public`, and an **unauthenticated** request to
+  the same endpoint returns **HTTP 200** — a private repository returns 404
+  there. `updated_at` reads 2026-09-16, three weeks before, so no settings write
+  had landed at all.
+- **Error** None, but one thing to own: the agent raised this with more urgency
+  than the facts carried, twice, before being asked for the reasoning. **The
+  finding was worth surfacing; the framing overstated it.** No credential or
+  customer data was ever at risk, and that should have led the first telling
+  rather than the third.
+- **Remediation** The decision is now a rule rather than a closed ticket, which
+  is the only part that persists usefully: A-13 covers **what was exposed on
+  2026-10-08**, not whatever is added later. A new category of sensitive
+  material needs its own packet. The scheduled wake for 2026-10-09T11:10Z has
+  had the visibility re-check removed so it does not re-raise a settled
+  question.
 
-**One record now.** `claude/claude-md-docs-jjveuq` is superseded and must not be
-appended to — see T-31.
+---
+
+## Next entry: OL-0033

@@ -178,6 +178,23 @@ unattended.
 
 ## 5. The rules that are easiest to lose
 
+**This repository is PUBLIC, by the owner's decision (A-13, 2026-10-08).** Not
+by oversight, and not pending a change — it was raised twice, by two sessions
+independently, and accepted on the record. So treat everything here as
+world-readable, because it is:
+
+- **Never add credentials, API keys or tokens.** Nothing here is secret today
+  and that is the property to preserve.
+- **Never add customer names, email addresses, phone numbers or payment
+  details.** `docs/agents/ventures.md` carries DD84's revenue figures and system
+  identifiers and that is accepted; **customer identity is not, and the decision
+  does not extend to it.**
+- **Never add tune files, bench pinouts or internal technical procedures.**
+- **A new category of sensitive material needs its own decision.** A-13 covers
+  what was exposed on 2026-10-08, not whatever gets added later. If a routine
+  wants to write something that would be awkward in public, that is an approval
+  packet, not a judgement call.
+
 **A task is Done only when `OPERATING-LOG.md` carries evidence.** Otherwise it
 is In Verification. A commit hash, a command's real output, a figure read from a
 live system — not an assertion that it worked.
