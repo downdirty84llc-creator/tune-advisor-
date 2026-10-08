@@ -39,9 +39,14 @@ and actual result.
 | A-11 | Consolidate onto the Ledger repository                                      | F     | **Approved, narrowed**  | T-28 T-29                          |
 | A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**            | T-30                               |
 | A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Pending**             | T-32, blocks T-29                  |
+| A-14 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**             | T-38 T-39                          |
 
-**Three packets are with the owner: A-10, A-13 and A-07.**
+**Four packets are with the owner: A-14, A-10, A-13 and A-07.** **A-14 is the
+only one with a human counterparty waiting**, and it should be answered first
+for that reason alone.
 
+- **A-14** — raised 2026-10-08 by the first intake run. Two drafts, both written
+  in full, neither sent. A state engineer has been waiting since 2026-10-06.
 - **A-10** — the Routines still have no repository to write to, which is why no
   brief had ever been committed before 2026-10-08, and the one that exists was
   written by a session driven by hand rather than by the schedule.
@@ -735,3 +740,110 @@ the account; the proxy in front of it refuses. This needs the GitHub UI.
 
 **Response** — _awaiting owner._ **Affected records** — T-32, and T-29 which it
 blocks. **Actual result** — Not executed.
+
+---
+
+## A-14 — Send two prepared replies: GDOT District 1, and the Georgia SBDC
+
+**Status: PENDING — raised 2026-10-08 by the first `/dd84-inbox-intake` run.**
+
+**Decision requested** — Authority to send **two** replies, written in full and
+reproduced verbatim in `docs/ops/briefs/2026-10-08-inbox-intake.md`. Batched
+into one packet so this is one decision rather than two.
+
+**Business objective** — Keep a favourable state-agency permit review moving,
+and recover a free advisory relationship that bears directly on financing the
+shop building. Neither costs anything to send.
+
+**Source and context** — Gmail threads `1a0cf82b91d1352c` (GDOT, 4 messages
+since 2026-09-23) and `1a112caffaba4e6d` (Georgia SBDC, 2026-10-06). **The GDOT
+message had been sitting unread for 42 hours** when the intake found it.
+
+### Draft 1 — GDOT District 1 Traffic Operations
+
+**To** `NNembhard@dot.ga.gov`, **cc** `HBoyle@dot.ga.gov`. Reply on message
+`1a1133f549956cc3`, subject `Re: Driveway Concept Review`.
+
+**What GDOT said** — the plan needs more detail for a full review; _"if the
+plans… can meet all GDOT requirements we should not have any issues
+permitting"_; and **due to the median on SR 72, right-in/right-out is the only
+permittable driveway** for parcel 0059 038. A review checklist is attached.
+
+**What the draft does** — thanks them, accepts the right-in/right-out constraint
+as their stated position, confirms the checklist is in hand, and asks **three
+questions whose answers determine what a surveyor is paid to produce**:
+preferred throat width and radii; whether a boundary/topographic survey with
+sight distance suffices or a traffic statement is also expected; and whether
+railroad coordination must precede the driveway application or can run in
+parallel. It restates that none of this is an access permit.
+
+**What it does not do** — propose a design, make any engineering claim, commit
+to a date, or commit a dollar.
+
+### Draft 2 — Georgia SBDC
+
+**To** `djones@georgiasbdc.org`. Reply on message `1a112caffaba4e6d`, subject
+`Re: Meeting Today`.
+
+**What the draft does** — apologises for missing the 2026-10-06 15:30 session,
+says the owner will book a new slot through the adviser's own Calendly link, and
+gives enough context for the session to be useful: the tuning business, the
+owner-occupied shop with a dyno in Colbert, the live GDOT review, and that the
+areas wanted are financing the building and what lenders will expect to see.
+
+**What it does not do** — propose a time, book anything, or quote a figure.
+**The calendar was read, never written.**
+
+**Alternatives**
+
+- **Send only the GDOT reply.** Defensible — it is the one with a counterparty
+  waiting. The SBDC note costs nothing extra and the adviser has already chased
+  once.
+- **Owner rewrites both from scratch.** Always available, and the right choice
+  if the voice is wrong. The drafts are a starting point, not a submission.
+- **Send neither.** The GDOT thread then continues to age, having already lost
+  42 hours. Included because it is the honest baseline, not as a straw man.
+- **Rejected: adding a third draft replying to Arman Olgun** (T-37). His thread
+  is the most commercially live in the mailbox and was **deliberately left
+  without a draft** — the next message must either send a revised tune file or
+  resolve a contradiction between DD84's stated O2 diagnosis and the hardware
+  the customer has since verified. Both are technical determinations about a
+  running engine. `ventures.md` forbids fabricating a diagnosis or guaranteeing
+  a result, so the blocker there is the owner's judgement, not a missing draft.
+
+**Cost and cash impact** — **None.** Neither message commits money. What they
+unblock does: the survey and civil design behind T-38 are Class **E** and have
+no packet, and no figure has been quoted for either.
+
+**Risks and safeguards**
+
+- **Both counterparties are external and one is a state agency**, which is why
+  this is Class C and why nothing was sent. Tone and factual accuracy were kept
+  to what the threads themselves establish.
+- **The GDOT draft accepts a constraint.** It agrees right-in/right-out is the
+  permittable configuration. That is quoting GDOT back to GDOT, not conceding
+  anything, and the layout consequences stay the owner's decision in T-38.
+- **The checklist PDF is unread** — no attachment-download tool is loaded in
+  this session. The draft therefore says the checklist is in hand and asks
+  questions around it, and **makes no claim about what it contains.**
+- **The SBDC draft discloses the shop plan and the GDOT review.** Both are
+  already in a thread with a state agency and neither is confidential, but the
+  owner should confirm they are happy for an SBDC adviser to hold that context.
+
+**Systems affected** — Gmail outbound only. **No draft was created in the mail
+account** — both live in the brief file, so there is nothing sitting in Gmail
+that could be sent by accident. On approval they can either be sent by hand or
+placed in the account as real drafts with their IDs recorded.
+
+**Customer/public impact** — Neither recipient is a customer. One is a Georgia
+DOT engineer, one a state-funded business adviser.
+
+**Success test** — Both messages sent, and GDOT's answers to the three questions
+recorded in T-38 so the surveyor's scope is set by the reviewer rather than
+guessed.
+
+**Reply with: APPROVE (both) / APPROVE WITH CHANGES (name which, and what) /
+DEFER / REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-38, T-39. **Actual
+result** — Not executed. Nothing sent.

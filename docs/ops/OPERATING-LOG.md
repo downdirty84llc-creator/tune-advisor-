@@ -1130,7 +1130,105 @@ summary table is part of the write, not a follow-up.
 
 ---
 
-## Next entry: OL-0029
+## OL-0029 — 2026-10-08 · First inbox intake; the register had been blind to the actual business
+
+- **Timestamp** 2026-10-08T16:04:00Z
+- **Task** T-37…T-44 created by this run; T-13 cross-referenced · **Approval**
+  S-01 (Class A routine). Owner invoked `/dd84-inbox-intake` directly.
+- **Action** Ran the inbox and lead intake. Reviewed 57 unique threads, created
+  eight tasks, wrote two drafts, raised one Class C packet, named two conflicts.
+- **Tool** `mcp__Gmail__search_threads` ×3, `get_thread` ×2, `list_drafts`,
+  `list_labels`; `mcp__Shopify__list-customers`; `Read`/`Write`/`Bash`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 36 tasks. No `service`, `real estate` or `sales` task had ever
+  existed. The register's own note said those workstreams were empty.
+- **After** 44 tasks, three new workstreams,
+  `docs/ops/briefs/ 2026-10-08-inbox-intake.md`, packet A-14 pending.
+- **Window** `newer_than:2d`, the first-run default. **No prior intake entry
+  exists in this log**, so there was no last-run timestamp to measure from.
+
+### The finding that matters more than the eight tasks
+
+**The first query returned 25 threads and not one was from a human.**
+`in:inbox newer_than:2d`, sorted by recency, is entirely marketing on this
+mailbox. A second query, `category:primary`, returned — **inside the same
+two-day window** — an active customer tuning job and a state-agency permit
+response, the two most valuable items in the inbox.
+
+The mailbox holds **22,192 threads and 20,756 unread**;
+`[Superhuman]/AI/Marketing` alone carries 1,627 messages. **A single-query
+intake on this account will report an empty inbox while a customer waits.** That
+is T-44, and it is a defect in the routine this run was executing. Had the run
+stopped after its first query, it would have filed a clean, confident, wrong
+report — which the routine's own contract calls worse than no routine at all.
+
+### What was actually in there
+
+| Thread                                         | What it is                                                                                                                        | Became   |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `C10 Terminator X Max - DL Files`, 22 messages | **Live customer job.** Arman Olgun, LM7 C10, Terminator X Max V3 b110, AFR fault. DD84 has built a revised tune and is holding it | **T-37** |
+| `Driveway Concept Review`, 4 messages          | **GDOT District 1 answered**: permit likely, but **right-in/right-out only** due to the SR 72 median. **Unread 42 hours**         | **T-38** |
+| `Meeting Today`                                | Georgia SBDC session **missed** 2026-10-06; reschedule offered                                                                    | **T-39** |
+| Play Console `[Action Needed]`                 | Developer account closes in 60 days                                                                                               | **T-40** |
+| r/LSSwapTheWorld ×2                            | Two people DD84 helped free; one said they'd be in touch                                                                          | **T-41** |
+| `list_drafts`                                  | **14 unsent drafts**, incl. a state regulator today and an SBA 504 lender 9 days old                                              | **T-42** |
+| Search Console                                 | **`downdirty84llc.com`** indexing — a domain `ventures.md` does not contain                                                       | **T-43** |
+
+### Two conflicts, both paused, neither resolved
+
+1. **DD84 told Arman his Bosch O2 sensor was the limiting factor and that an OEM
+   Holley sensor was needed. He then verified the sensor _is_ the Holley Bosch
+   4.9 LSU.** The remedy no longer follows from the cause. **No replacement
+   diagnosis was offered and no tune file was sent** — it is a technical
+   determination about a customer's running engine, and `ventures.md` forbids
+   fabricating one. Handed to the owner.
+2. **`ventures.md` names `dd84tuning.com` as the front door; Search Console
+   reports on `downdirty84llc.com`.** The live system is controlling. **Nothing
+   was changed** — `ventures.md` is Rev's file and this record does not write
+   across.
+
+### Drafts — two, neither sent, neither placed in the account
+
+GDOT (reply on `1a1133f549956cc3`) and Georgia SBDC (reply on
+`1a112caffaba4e6d`), both reproduced in full in the brief. **Zero Gmail drafts
+were created**: the routine prefers the output file, and a fifteenth draft would
+have joined the T-42 backlog it had just found. Covered by **A-14**.
+
+**No draft was written for the Arman thread, deliberately.** That is the most
+commercially live thread in the mailbox and the omission is the point — see
+conflict 1.
+
+### Identity, checked rather than assumed
+
+Shopify holds **no customer** for `arman.olgun@gmail.com`. Stripe and bookipay
+were unreachable. So **whether DD84's most active correspondent is one of its
+three known customers is unknown**, and §9 forbids merging on less than verified
+identity. He is recorded as an active correspondent of unknown purchase history
+— not as a fourth customer, and not as one of the three. **Whether he has paid
+for 22 messages of diagnostic work is also unknown**, and is flagged as a
+question rather than asserted as unbilled.
+
+- **Error** None introduced. **Class A held absolutely**: nothing sent,
+  forwarded or replied to; no label applied; no thread moved, archived or
+  trashed; no calendar event read beyond the daily brief's read and none created
+  or changed; no customer record merged; no price quoted; no date promised; no
+  draft in the account sent, edited or deleted. **No draft body in the T-42
+  backlog was opened** — metadata only.
+- **Remediation** Not applicable; nothing failed. Outstanding and owner-side:
+  **A-14** (two sends, one counterparty waiting since 2026-10-06), the owner's
+  O2 determination on T-37, the GDOT layout decision on T-38, and the five
+  suspicious drafts in T-42.
+- **Worth stating plainly** — the register described a business with no
+  customers, no property work and no leads, because no routine had ever read the
+  mailbox. One run against live Gmail found a customer mid-job, a permit review
+  going well, a missed adviser meeting, a 60-day deadline and fourteen unsent
+  letters. **The register was not wrong about what it held; it was wrong to be
+  trusted as a picture of the business.** That is the connector gap in A-10,
+  priced in operational terms rather than in discarded tokens.
+
+---
+
+## Next entry: OL-0030
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.

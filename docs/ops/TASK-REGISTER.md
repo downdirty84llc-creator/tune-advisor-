@@ -16,9 +16,17 @@ only in a chat transcript does not exist.
   `OPERATING-LOG.md`.** Without it the status is In Verification.
 
 Workstreams in use: `ledger` (Georgia Opportunity Ledger software), `ops`
-(operating system for the agent itself), `finance`, `compliance`, `design`.
-Customer, service, marketing, procurement and real-estate workstreams have no
-open tasks yet — no intake routine has run against a live connector.
+(operating system for the agent itself), `finance`, `compliance`, `design`, and
+since 2026-10-08 `service`, `real estate` and `sales`.
+
+> **That changed on 2026-10-08, and the change is the point.** This note used to
+> read "Customer, service, marketing, procurement and real-estate workstreams
+> have no open tasks yet — no intake routine has run against a live connector."
+> The first intake run against live Gmail found an **active customer tuning
+> job** (T-37), a **live GDOT access review on a shop site** (T-38) and two lead
+> candidates (T-41) — none of which existed anywhere in this register. The
+> absence was never evidence; it was the connector gap. `marketing` and
+> `procurement` are still empty, and that is now the only claim this note makes.
 
 ---
 
@@ -62,9 +70,22 @@ open tasks yet — no intake routine has run against a live connector.
 | T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                  | ops        | Normal   | Planned             | Agent | A to diagnose    | 2026-10-13   |
 | T-35 | Three stale pull requests, one from the superseded branch           | ops        | High     | **Awaiting Owner**  | Owner | none yet         | not set      |
 | T-36 | No readable path to DD84's own revenue figures                      | finance    | High     | Planned             | Agent | A to prepare     | 2026-10-15   |
+| T-37 | Arman Olgun — C10 Terminator X Max AFR fault                        | service    | High     | **In Progress**     | Owner | A to prepare     | 2026-10-10   |
+| T-38 | GDOT access review — right-in/right-out on the Colbert site         | real est.  | High     | **In Progress**     | Owner | **A-14 pending** | 2026-10-10   |
+| T-39 | Reschedule the missed Georgia SBDC session                          | finance    | Normal   | Awaiting Approval   | Owner | **A-14 pending** | 2026-10-10   |
+| T-40 | Google Play developer account at risk of closure                    | ops        | Normal   | Planned             | Owner | A to diagnose    | 2026-12-06   |
+| T-41 | Two r/LSSwapTheWorld lead candidates                                | sales      | Normal   | Planned             | Owner | C to contact     | not set      |
+| T-42 | Fourteen unsent drafts, five of them to likely loan fraud           | ops        | High     | **Awaiting Owner**  | Owner | none yet         | 2026-10-10   |
+| T-43 | `downdirty84llc.com` is live and absent from the venture registry   | ops        | Normal   | Planned             | Owner | A to prepare     | not set      |
+| T-44 | One inbox query is not an intake; fix the routine's search          | ops        | Normal   | Planned             | Agent | A to prepare     | 2026-10-15   |
 
-Counts: 16 Done · 1 Accepted Risk · 3 In Verification · 1 Awaiting Approval · 2
-Awaiting Owner · 4 Blocked · 7 Planned · 2 Backlog. **36 tasks.**
+**T-37 to T-44 all came from one intake run** against a mailbox no routine had
+ever read. Seven of the eight concern a customer, a permit, money or a deadline,
+and **none existed in this register an hour earlier.**
+
+Counts: 16 Done · 1 Accepted Risk · 3 In Verification · 2 In Progress · 2
+Awaiting Approval · 3 Awaiting Owner · 4 Blocked · 11 Planned · 2 Backlog. **44
+tasks.**
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -111,6 +132,9 @@ this table is part of the write.** Evidence: OL-0028.
 | Owner confirmation                      | T-19                                     |
 | A seeded or live database               | T-06                                     |
 | A readable payment system               | T-36                                     |
+| Owner approval (A-14 — the drafts)      | T-38, T-39                               |
+| A customer (checklist, on a work trip)  | T-37                                     |
+| Owner decision                          | T-41, T-42, T-43                         |
 | Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34 |
 | Nobody — accepted risk                  | T-30                                     |
 
@@ -1220,3 +1244,336 @@ unique entries were carried across by hand instead.
 - **Status** Planned · **Next action** — Step 1. **Until it closes, every
   routine that reports money must degrade that section rather than quote
   2026-08-03 as if it were today.**
+
+---
+
+## T-37 — Arman Olgun: C10 Terminator X Max AFR fault
+
+- **Objective** — Get a live customer's erratic AFR resolved, decide whether the
+  revised tune file can go out on its current reasoning, and establish whether
+  this work is billed.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. Gmail thread
+  `1a1082503004a073`, "C10 Terminator X Max - DL Files", **22 messages**
+  2026-10-04 → 2026-10-07.
+- **Workstream** service · **Priority** High · **Owner** **Owner** · **Due**
+  2026-10-10 (for the owner's determination; the customer's checklist has no
+  date)
+- **Customer record (§8.1 fields, missing ones marked missing)**
+  - Name **Arman Olgun**, signs "Bear Bone" · `arman.olgun@gmail.com` ·
+    330-565-0230
+  - Vehicle **Chevrolet C10** · Engine **LM7 from a 2000 Silverado** ·
+    Transmission **missing** · Location **missing**
+  - ECU **Holley Terminator X Max**, software **V3 build 110** · Injectors **GM
+    12613412**, cleaned to rule out a clog · Fuel pump and rails **stock** ·
+    Wideband **Bosch 4.9 LSU**
+  - Requested service — datalog review and calibration of an AFR fault
+  - Source of the enquiry **missing** — and it is the one field `ventures.md`
+    most wants, since the channel that produces DD84's customers is recorded as
+    `UNKNOWN`. **Ask him.**
+- **Customer status — UNVERIFIED, and deliberately not merged.** Shopify holds
+  **no customer** with that email; Stripe and bookipay were unreachable this
+  run. Spec §9 permits a merge only on verified identity, so he is recorded as
+  an active correspondent of unknown purchase history. **He is not counted as
+  one of the three known customers and not counted as a fourth.**
+- **Approval class** — A to prepare. **Sending anything is C.** Supplying a tune
+  file for a running engine is **safety-adjacent** and is the owner's, not an
+  agent's.
+- **Where it stands** — DD84 sent last on 2026-10-07T13:24Z: _"just get back to
+  me as soon as you are able to go through the checklist. Safe travels."_ Arman
+  is on a work trip and said he would run the checks on return. **Waiting is
+  correct here**; this task is not about chasing him.
+
+### The blocker is a contradiction, not a delay
+
+On 2026-10-06T11:33Z DD84 told him the Bosch O2 sensor was the limiting factor
+"due to incorrect resistance" and that an **OEM Holley** sensor was required. On
+2026-10-07T01:35Z he checked and reported: _"I did verify it is the **Holley
+Bosch 4.9 LSU**."_
+
+**If the sensor is already the Holley part, the remedy no longer follows from
+the cause, and the root cause is open again.** Both statements can be true — a
+correct part can be failed, miswired or contaminated — which is exactly why this
+needs the owner. **Torque has not resolved it, has not offered a replacement
+diagnosis, and will not:** `ventures.md` forbids fabricating a diagnosis or
+guaranteeing a result, and this is a customer's running engine.
+
+**No draft was written for this thread** for the same reason. The next message
+must either send the revised tune file or answer the contradiction, and both are
+technical determinations.
+
+### The second finding: no payment appears anywhere
+
+**Twenty-two messages, three datalog round-trips, a diagnosis and a newly built
+tune file — and no invoice, deposit, price or payment link is mentioned once.**
+Against the catalogue the work sits between _ECU Tune File Review_
+($99/$149/$199) and _Holley EFI Tuning & Diagnostics_ ($350/$450/$650).
+
+**Whether he has paid is unknown and is not asserted.** Stripe and bookipay are
+the systems that would know and neither was readable (T-36). **This is flagged
+as a question, not as unbilled work.** It matters because DD84 has collected
+nothing since 2025-09-12.
+
+- **Cost and risk** — No cost to prepare. The risk is reputational and
+  mechanical: sending a tune built on a superseded diagnosis.
+- **Completion proof required** — The owner's determination on the O2 question
+  recorded here, the payment position established from a live system, and the
+  customer's reply to the checklist.
+- **Status** **In Progress** · **Next action** — Owner answers one question:
+  given that the sensor is the Holley 4.9 LSU, does the revised tune file still
+  go out as built? Then decide the billing position.
+
+## T-38 — GDOT access review: right-in/right-out on the Colbert shop site
+
+- **Objective** — Keep a live state-agency permit review moving, and get the
+  revised access layout decided before any survey or civil-design money is
+  spent.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. Gmail thread
+  `1a0cf82b91d1352c`, 4 messages, 2026-09-23 → 2026-10-06.
+- **Workstream** real estate · **Priority** High · **Owner** **Owner** · **Due**
+  2026-10-10 for the reply; GDOT set no deadline
+- **The project, as the thread describes it** — parcel **0059 038, 0 Highway 72
+  W, Colbert, GA 30628**. A proposed **36 ft × 50 ft owner-occupied Down Dirty
+  84 automotive tuning/dyno shop**, bay-door and customer side facing SR 72, a
+  24-foot conceptual connection at the apparent existing apron, railroad
+  corridor behind the site. **None of this appeared anywhere in this register
+  before today.**
+- **Counterparty** — Nakia Nembhard, Civil Engineer 3, GDOT District 1 Traffic
+  Operations, Gainesville. Cc Hunter Boyle. Office (770) 533-8496.
+- **Approval class** — Replying is **C** (external communication to a state
+  agency), covered by the pending **A-14**. Paying for a survey or civil design
+  is **E** and has no packet.
+
+### What GDOT actually said, 2026-10-06T22:04:31Z
+
+Quoted rather than paraphrased, because the constraint matters:
+
+> "Currently the plan needs a bit more detail to give a full in depth review. If
+> the plans of the driveway that is being proposed can meet all GDOT
+> requirements we should not have any issues permitting. **Due to the median in
+> the state route a right in right out will be the only permittable driveway for
+> that property.**"
+
+**Two things follow, and they pull in opposite directions.**
+
+1. **The permit is not in doubt** — "we should not have any issues permitting"
+   is as encouraging as a reviewer gets before seeing a full plan set. The
+   owner's 2026-10-06 message explicitly wanted this answer _before_ paying for
+   survey or civil design. **That gate has opened.**
+2. **Right-in/right-out excludes left turns out of the site.** The concept
+   submitted on 2026-09-24 did not assume that. For a shop where customers
+   arrive in modified vehicles and sometimes on trailers, **how traffic actually
+   enters and leaves is a design question the owner has to answer**, not a
+   detail to hand a surveyor.
+
+- **The checklist attachment is UNREAD.** `D1TO Full Permit Review V1.7.pdf`
+  arrived with that message. No attachment-download tool is loaded in this
+  session, so **its contents are unknown and are not guessed.** Reading it is
+  step 1 — it defines what the next submission must contain.
+- **Thread hygiene finding** — the thread carries the label
+  `[Superhuman]/AI/Waiting`. **It is not waiting any more.** A stale label on a
+  permit thread is worse than none, because it is trusted. Proposed relabel to
+  `DD84 Dyno Facility Outreach` (13 messages, same project); **not applied** —
+  Class B, no taxonomy approval exists.
+- **Cost and risk** — No cost to reply. **The money at stake is the survey and
+  civil design**, figures **not recorded** — nobody has quoted them. The risk of
+  delay is that a favourable reviewer's attention is a perishable asset, and the
+  message has already sat unread for 42 hours.
+- **Execution steps** — (1) Read the checklist PDF; (2) owner decides the
+  revised right-in/right-out layout and what it does to the bay-door
+  orientation; (3) send the reply in A-14, which asks the three questions that
+  determine the surveyor's scope; (4) raise an **E** packet for the survey and
+  civil design once their cost is quoted; (5) establish whether railroad
+  coordination runs before or in parallel.
+- **Completion proof required** — GDOT's written answer to the three questions,
+  and a revised concept sheet showing right-in/right-out.
+- **Status** **In Progress** · **Next action** — Step 1, then A-14.
+
+## T-39 — Reschedule the missed Georgia SBDC session
+
+- **Objective** — Recover a free advisory relationship that is directly on point
+  for financing the shop building.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. Gmail `1a112caffaba4e6d`.
+- **Workstream** finance · **Priority** Normal · **Owner** **Owner** · **Due**
+  2026-10-10
+- **The finding** — `djones@georgiasbdc.org`, 2026-10-06T19:56Z, marked
+  IMPORTANT and read: _"We had a meeting scheduled for today at 3:30 pm. If you
+  would like to reschedule, please use the Calendly link below."_ **The meeting
+  was missed and the reply is two days overdue.**
+- **Why it is worth a task rather than a shrug** — the Georgia SBDC is free,
+  state-funded, and advises on exactly the two things in front of this business:
+  financing a building and what a lender expects to see. T-38 is a shop site and
+  there are **two unsent drafts to an SBA 504 lender** sitting in the mailbox
+  (T-42). The session is the cheapest input available to either.
+- **Approval class** — **C** to reply, covered by pending **A-14**. **Booking
+  the slot is the owner's** — this routine does not write to the calendar, and
+  the draft deliberately says the owner will book rather than proposing a time.
+- **Cost and risk** — No cost. The risk of leaving it is that advisers stop
+  chasing no-shows.
+- **Completion proof required** — A booked Calendly slot, visible on the
+  calendar.
+- **Status** Awaiting Approval · **Next action** — A-14, then the owner books.
+
+## T-40 — Google Play developer account at risk of closure
+
+- **Objective** — Keep or deliberately abandon a developer account, rather than
+  losing it to a clock nobody is watching.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. Gmail `1a116c8c96396572`,
+  2026-10-07T14:33Z.
+- **Workstream** ops · **Priority** Normal · **Owner** **Owner** · **Due**
+  **2026-12-06** (60 days from notice, per the email)
+- **The finding** — _"Your developer account is at risk of being closed because
+  it's not being used… You have 60 days to fix issues with your Play Console
+  developer account, Down Dirty 84."_
+- **What is not known, and is not guessed** — what the account was for, whether
+  anything was ever published to it, and whether DD84 wants it. **The register
+  and `ventures.md` do not mention a mobile app anywhere.** This may well be
+  worth letting lapse; that is a decision, not a default.
+- **Approval class** — A to investigate. Any action inside the Play Console is
+  the owner's.
+- **Cost and risk** — No cost either way. The risk is a 60-day clock on an asset
+  of unknown value, which is precisely the kind of deadline that is remembered
+  on day 59.
+- **Completion proof required** — A recorded decision: keep and remediate, or
+  let it close.
+- **Status** Planned · **Next action** — Owner says whether the account matters.
+  If it does not, close this as **No Action** with that reason rather than
+  letting it expire silently.
+
+## T-41 — Two r/LSSwapTheWorld lead candidates
+
+- **Objective** — Convert two warm strangers into a qualified enquiry, or decide
+  deliberately not to.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. Reddit notifications
+  `1a11ba74d5e738c8` (2026-10-08) and `1a1116eadb1da434` (2026-10-06/07).
+- **Workstream** sales · **Priority** Normal · **Owner** **Owner** · **Due** not
+  set
+- **The two**
+  - **u/Traveller930** — after DD84 advised buying on condition rather than
+    mileage and checking compression/leakdown, replied _"I will be in touch! Im
+    not far off in NC either, thank you!"_ **They volunteered to make contact.**
+  - **u/CausionWitFlossin** — DD84 advised chasing the main power path before
+    buying a starter or changing the tune on a dead dash. They reported back:
+    _"So it was my starter wires man… the guy that swapped my engine and
+    installed harness did so much cuts n everything."_ **The free diagnosis was
+    correct, and the vehicle has a botched third-party harness** — which is
+    DD84's _Wiring & EFI power diagnostics_ service, $75–$250.
+- **Every §8.1 field except the handle is missing** — no name, email, phone,
+  vehicle, engine, transmission, location beyond "NC", service request or
+  budget. **Recorded as missing, not inferred.**
+- **Approval class** — **C to contact.** No message is drafted here.
+- **The restriction that decides the approach** — `ventures.md`: technical
+  forums generally ban unmarked solicitation; lead with the answer, disclose the
+  commercial interest, link only when relevant. **DD84 has already led with the
+  answer in both threads, which is the right order and the reason these two are
+  warm at all.** A cold DM pitch would spend that credibility.
+- **Cost and risk** — No cost. The risk is a subreddit ban for solicitation,
+  which would close a channel that is currently producing the only inbound
+  interest DD84 has.
+- **Completion proof required** — Either a contactable enquiry with the §8.1
+  fields filled, or a recorded decision not to pursue.
+- **Status** Planned · **Next action** — Owner decides whether and how to follow
+  up. **Worth asking u/CausionWitFlossin nothing at all and simply leaving the
+  correct answer standing** — it is already the best advertisement in the
+  thread.
+
+## T-42 — Fourteen unsent drafts, five of them to likely loan fraud
+
+- **Objective** — Clear a backlog of prepared-but-unsent work, and get five
+  risky drafts looked at before any of them is sent.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. `mcp__Gmail__list_drafts`.
+- **Workstream** ops · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-10
+- **The finding** — **14 drafts, none sent.** Metadata only was read; **no draft
+  body was opened.**
+  - `grecmail@grec.state.ga.us` — Georgia Real Estate Commission, created
+    **2026-10-08T15:30:55Z**, roughly 25 seconds before the daily brief read the
+    mailbox. **Today's, and unsent.**
+  - `TChristopher@gacdc.com` cc `Loans@gacdc.com` — Georgia CDC, an SBA 504
+    lender. 2026-09-29, **9 days unsent.** Directly relevant to T-38 and T-39.
+  - `ericw@keensbuildings.com` — steel buildings, 2026-09-29. On point for the
+    36 × 50 shop.
+  - `clientservice@legalplans.com` — 2026-09-25.
+  - **Five to consumer free-mail addresses** — `lenderbright006@gmail.com` ×2,
+    `legendgrowth6@gmail.com`, `ewhere261@gmail.com`,
+    `ayubagoodness377@gmail.com`.
+  - Five self-addressed drafts, 2026-08-19 and 2026-09-04. Probably notes.
+- **The risk, stated carefully** — those five have **the shape** of advance-fee
+  loan fraud: lender-sounding names on consumer Gmail accounts. **Torque has not
+  read them and makes no accusation about any specific sender.** The reason it
+  is High rather than Normal is the combination: a business actively seeking
+  building finance (T-38, T-39, the GACDC drafts) is the exact target profile
+  for that fraud, and there are five replies half-written.
+- **Approval class** — Reviewing is A. **Sending any of these is C**, and none
+  is covered by A-14, which covers only the two drafts written today.
+- **Cost and risk** — No cost to review. The downside of an advance-fee scam is
+  money out the door and bank details disclosed.
+- **Completion proof required** — Each of the 14 either sent (under its own
+  approval), deleted, or recorded as deliberately parked.
+- **Status** **Awaiting Owner** · **Next action** — Owner reads the five
+  free-mail drafts first. **The GACDC one is the opposite problem** — a real
+  lender, nine days waiting.
+
+## T-43 — `downdirty84llc.com` is live and absent from the venture registry
+
+- **Objective** — Establish what DD84's web estate actually is, so the registry
+  stops describing part of it.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08. Google Search Console
+  notification `1a1154876e345907`, 2026-10-07T07:33Z: _"New reasons prevent
+  pages from being indexed on site **downdirty84llc.com**"_, reason "Alternate
+  page with proper canonical".
+- **Workstream** ops · **Priority** Normal · **Owner** **Owner** · **Due** not
+  set
+- **The finding** — `ventures.md` records the front door as **`dd84tuning.com`**
+  (a Manus site) with Shopify behind it, and `shop.downdirty84llc.com` as the
+  Shopify domain. **`downdirty84llc.com` as a site in its own right, verified in
+  Search Console, appears nowhere.** Search Console does not report on sites
+  nobody owns.
+- **Why it is an ops task and not a marketing one** — the registry's accuracy is
+  the issue. **The SEO substance belongs to Rev**, and `docs/agents/ventures.md`
+  is Rev's file: Torque reads across the two records and does not write across
+  them. **Nothing was changed in `ventures.md`.**
+- **This compounds an existing hole.** `ventures.md` already names the Manus
+  site's analytics as "the most valuable unknown in this file", unreadable
+  because the domain is blocked by this environment's egress proxy. **There are
+  now at least three domains and readable analytics for none of them.**
+- **Cost and risk** — No cost. The risk is that any traffic claim about DD84 is
+  measured on the wrong surface, which `ventures.md` already records happening
+  once on 2026-08-03.
+- **Completion proof required** — A list of DD84's live domains, what each
+  serves, and which has analytics — handed to Rev for the registry.
+- **Status** Planned · **Next action** — Owner confirms what
+  `downdirty84llc.com` is.
+
+## T-44 — One inbox query is not an intake; fix the routine's search
+
+- **Objective** — Stop the intake routine from missing real work on a mailbox
+  this noisy.
+- **Source** — `/dd84-inbox-intake`, 2026-10-08, failing at its own job and
+  noticing.
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-10-15
+- **The finding, which is about the routine and not the mailbox** — the first
+  query of the run, `in:inbox newer_than:2d`, returned 25 threads of which **not
+  one was from a human**. A second query, `category:primary`, surfaced an active
+  customer tuning job (T-37) and a state-agency permit response (T-38) — the two
+  most valuable items in the mailbox, **both inside the same two-day window the
+  first query had supposedly covered.**
+- **Why it happened** — ~201 inbox threads arrive in two days and the great
+  majority are marketing. A 25-result page sorted by recency is all marketing.
+  The mailbox holds **22,192 threads and 20,756 unread**;
+  `[Superhuman]/AI/ Marketing` alone carries 1,627 messages.
+- **The fix, which is cheap** — amend `.claude/commands/dd84-inbox-intake.md` so
+  the discovery step runs **several targeted queries rather than one broad
+  one**: `category:primary`, `is:important`, `in:sent` for threads awaiting a
+  reply, the existing `[Superhuman]/AI/Respond` and `/Waiting` labels, and only
+  then a general sweep. **Also add a draft-backlog read** — `list_drafts` found
+  T-42, and the routine never asked for it.
+- **Cost and risk** — None. The risk of not doing it is that the next intake
+  reports "no customer threads" on a mailbox containing a live customer job,
+  which is the failure the routine's own contract calls worse than no routine.
+- **Completion proof required** — The amended command file, and one intake run
+  that surfaces T-37's thread from the primary sweep rather than from a
+  follow-up query.
+- **Status** Planned · **Next action** — Amend the command file. **This is the
+  routine's first real run and it found a defect in itself; that is the run
+  working, not failing.**
