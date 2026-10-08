@@ -969,7 +969,64 @@ actually have.** It is in their tool list; a repository is not.
 
 ---
 
-## Next entry: OL-0027
+## OL-0027 — Attempt all four queued owner actions first-hand; all four refused
+
+- **Timestamp** 2026-10-08T11:05:00Z
+- **Task** T-27, T-29, T-30, T-32 · **Approval** Owner, 2026-10-08: "complete
+  the next four queues"
+- **Action** Attempted each of the four outstanding items directly rather than
+  repeating what an earlier session or an earlier turn had reported. **None
+  completed.** Each refusal is recorded with the call that produced it.
+- **Tool** `update_trigger`, `gh api` (PATCH ×2, DELETE), `git push --delete`
+- **Operator** Claude (agent), cqvhy6 session
+- **Why attempted at all** — two of the four had only ever been refused for
+  _another_ session. `docs/ops/README.md` requires verifying in the destination,
+  and "a different agent could not do it" is not the same evidence as "I could
+  not do it". One of the attempts also returned something no previous entry had.
+- **Results, each from this session's own call:**
+  - **T-30 — disable the Monday 09:00 send Routine.**
+    `update_trigger enabled=false` on `trig_01FxDef9B5snYTW42FfcMEbD` → refused:
+    _"this routine was created via http_api, not by an agent. Agents can only
+    update routines they created."_ **New detail worth having:** the refusal
+    names the exact owner-facing URL,
+    `https://claude.ai/code/routines/trig_01FxDef9B5snYTW42FfcMEbD`, and
+    discloses that a routine's own fired session may disable itself
+    (`enabled=false` only) — so the one agent that could switch it off is the
+    one it starts each Monday, which no other session can reach.
+  - **T-32 — make `tune-advisor-` private.** `gh api -X PATCH … -f private=true`
+    → **HTTP 403**, "Repository settings writes are not permitted through this
+    proxy". Verified after: `private: False`, unchanged.
+  - **T-29 — repoint the default branch.**
+    `gh api -X PATCH … -f default_branch=claude/claude-md-docs-cqvhy6` → the
+    same 403. Verified after: default still
+    `claude/georgia-opportunity-ledger-kfpt4c`.
+  - **T-29 — delete the spent branches.** `gh api -X DELETE …/git/refs/heads/…`
+    → **HTTP 403**, "Write access to this GitHub API path is not permitted";
+    `git push --delete` → relay disconnect; GitHub MCP has no delete-ref tool.
+  - **T-27 / A-10 — attach a repository to the four Routines.** Not attempted,
+    because it is not refused so much as absent: `create_trigger` has **no
+    `source_url` or `outcome_branch` parameter**, and `update_trigger` cannot
+    add one to an existing Routine. There is no call to make. The alternative in
+    A-10 — binding the Routines to a persistent session that already holds a
+    checkout — **is** inside this session's tools and was deliberately not done:
+    it is fragile by design, and scheduling authority is reserved to the owner
+    by A-08 and never returned.
+- **Error** None introduced; nothing was changed by any of the above.
+- **Remediation** The deliverable for this instruction is therefore a manual
+  package, not an execution. It is in T-32 and T-29 with the ordering, and the
+  Routine URL above is the shortest path for T-30. **The Monday Routine fires
+  again 2026-10-12T09:00Z**, and when it is switched off the setting should be
+  re-read rather than trusted — it silently failed to persist once already
+  (OL-0021).
+- **Worth stating plainly** — four owner actions have now been outstanding since
+  2026-09-16, 2026-09-25 and 2026-10-08. **This is not an agent capability gap
+  that further attempts will close.** Every route has been tried and named. The
+  record's job now is to stop a later session spending another turn
+  rediscovering the same four refusals.
+
+---
+
+## Next entry: OL-0028
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
