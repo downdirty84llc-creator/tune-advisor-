@@ -23,25 +23,34 @@ and actual result.
 
 ## Status board
 
-| ID   | Decision                                                  | Class | Status                  | Covers                             |
-| ---- | --------------------------------------------------------- | ----- | ----------------------- | ---------------------------------- |
-| S-01 | Standing approval for local repository work               | A/B   | **Approved** (standing) | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
-| A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition  | B     | **Approved**            | T-01 T-02 T-03                     |
-| A-02 | Correct drifted documentation and the legal-review flags  | B     | **Approved**            | T-04 T-05                          |
-| A-03 | Exclude demo accounts from owner-facing revenue reporting | E-adj | **Approved**            | T-06 T-12                          |
-| A-04 | Correct the annual MRR arithmetic                         | E-adj | **Approved**            | T-07                               |
-| A-05 | Create Stripe products and prices; run the payment matrix | E + F | **Approved**            | T-11                               |
-| A-06 | Commission legal review of the legal documents            | G     | **Approved**            | T-13                               |
-| A-07 | Subscribe to an upload virus-scanning service             | E + F | **Pending**             | T-14                               |
-| A-08 | Build the operations control plane                        | B     | **Approved**            | T-18 T-19 T-20 T-21 T-22           |
-| A-09 | Merge the two agent branches and converge the schedule    | B     | **Approved**            | T-23 T-24 T-25 T-26                |
-| A-10 | Give the Routines a repository to write to                | B     | **Pending**             | T-27                               |
-| A-11 | Consolidate onto the Ledger repository                    | F     | **Approved, narrowed**  | T-28 T-29                          |
-| A-12 | Accept the unremovable send Routine as a recorded risk    | C-adj | **Accepted**            | T-30                               |
+| ID   | Decision                                                                    | Class | Status                  | Covers                             |
+| ---- | --------------------------------------------------------------------------- | ----- | ----------------------- | ---------------------------------- |
+| S-01 | Standing approval for local repository work                                 | A/B   | **Approved** (standing) | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
+| A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition                    | B     | **Approved**            | T-01 T-02 T-03                     |
+| A-02 | Correct drifted documentation and the legal-review flags                    | B     | **Approved**            | T-04 T-05                          |
+| A-03 | Exclude demo accounts from owner-facing revenue reporting                   | E-adj | **Approved**            | T-06 T-12                          |
+| A-04 | Correct the annual MRR arithmetic                                           | E-adj | **Approved**            | T-07                               |
+| A-05 | Create Stripe products and prices; run the payment matrix                   | E + F | **Approved**            | T-11                               |
+| A-06 | Commission legal review of the legal documents                              | G     | **Approved**            | T-13                               |
+| A-07 | Subscribe to an upload virus-scanning service                               | E + F | **Pending**             | T-14                               |
+| A-08 | Build the operations control plane                                          | B     | **Approved**            | T-18 T-19 T-20 T-21 T-22           |
+| A-09 | Merge the two agent branches and converge the schedule                      | B     | **Approved**            | T-23 T-24 T-25 T-26                |
+| A-10 | Give the Routines a repository to write to                                  | B     | **Pending**             | T-27                               |
+| A-11 | Consolidate onto the Ledger repository                                      | F     | **Approved, narrowed**  | T-28 T-29                          |
+| A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**            | T-30                               |
+| A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Pending**             | T-32, blocks T-29                  |
 
-**One packet is with the owner: A-10** — the Routines still have no repository
-to write to, which is why no brief has ever been committed. A-07 is also
-unanswered but does not block launch; it blocks accepting uploads safely.
+**Three packets are with the owner: A-10, A-13 and A-07.**
+
+- **A-10** — the Routines still have no repository to write to, which is why no
+  brief had ever been committed before 2026-10-08, and the one that exists was
+  written by a session driven by hand rather than by the schedule.
+- **A-13** — raised 2026-10-08 by the first daily-brief run. The decision in
+  T-32 was already recorded and already waiting; it had **no packet**, so it was
+  not visible in the one place this file exists to make decisions visible. That
+  is the defect the packet fixes, independent of which option is chosen.
+- **A-07** — unanswered since 2026-08-06. Does not block launch; it blocks
+  accepting uploads safely.
 
 **A-05 and A-06 were answered on 2026-08-10** and read "awaiting owner" on this
 branch until 2026-09-25, because the answers were recorded on the other branch.
@@ -632,3 +641,97 @@ than an agent's, and neither was asked for.
 **Success test** — A future reader can tell from the register that this Routine
 survives by decision rather than by oversight, and knows the one condition that
 reopens it.
+
+---
+
+## A-13 — Decide the visibility of a public repository holding DD84's revenue figures
+
+**Status: PENDING — raised 2026-10-08 by the first `/dd84-daily-brief` run.**
+
+**Decision requested** — Choose one of three dispositions for the fact that
+`downdirty84llc-creator/tune-advisor-` is a **public** repository and
+`docs/agents/ventures.md` on this branch carries DD84's financial position.
+
+**Business objective** — Risk control, and getting a deliberate decision on the
+record before a queued action makes the exposure more prominent. T-32 has been
+waiting since this morning with no packet, which means it has been waiting
+somewhere the owner does not look.
+
+**Source and context** — T-32, found 2026-10-08 while checking whether the
+default branch could be repointed for T-29. **The visibility was not what was
+being looked for.** `gh api` reports `private: false` for both
+`downdirty84llc-creator/tune-advisor-` and
+`downdirty84llc-creator/georgia-opportunity-ledger`.
+
+**What is actually exposed** — in one table each, in `ventures.md`: all-time
+revenue, paid invoice count, distinct customer count, **customer concentration
+as a percentage**, average and largest invoice, the date of the last payment,
+the Stripe account id, the Supabase project ref, the Shopify store identifiers,
+and the owner's email address.
+
+**What is not exposed, stated as plainly** — **no credentials and no customer
+names.** The registry was written under the §23 rule that keeps customer detail
+out of version control, and that rule held. What a reader gets is the business's
+own financial position and its concentration risk.
+
+**Honest about the timing, because it changes how urgent this is** — the
+repository has been public throughout and these figures have been readable since
+2026-08-03. **This packet is not reporting a new leak.** What is new is that
+T-29's queued repoint would move the file from findable to the public front
+page, which is a difference of degree. That is the reason to decide now, not the
+reason it matters.
+
+**Recommended plan — Option 1: make `tune-advisor-` private.** One setting.
+Nothing else changes, the registry keeps the figures the agents need, and both
+T-29 and T-32 unblock immediately.
+
+**Alternatives**
+
+- **Option 2 — strip the revenue table and identifiers out of `ventures.md`**
+  into something not version-controlled. **This costs real capability**: the
+  registry exists so an agent does not re-derive or invent these numbers, and
+  CLAUDE.md §5 turns on them being present and dated. It also makes T-36 worse,
+  not better.
+- **Option 3 — accept it on the record.** Defensible for a pre-revenue business
+  with three customers, and it at least converts an oversight into a decision.
+- **Rejected: do nothing.** That is Option 3 without the record, which is the
+  state this packet exists to end.
+
+**Cost and cash impact** — **None** for any of the three options. Repository
+visibility is free on this account's plan.
+
+**Risks and safeguards** — Option 1 has one consequence worth naming: **a
+private repository cannot serve anything publicly**, so if anything is ever
+intended to read this repository anonymously, that breaks. Nothing currently
+does, as far as this register knows, and that qualifier is deliberate. Option 1
+is reversible in one setting.
+
+**Systems affected** — GitHub repository settings only. No connector, no
+customer-facing system, no code.
+
+**Customer/public impact** — Option 1 **reduces** public exposure. Option 2
+changes nothing publicly today, since git history retains what was published.
+**Note that for Option 2 specifically: deleting the table from the current file
+does not unpublish it** — it stays in the history of a public repository, so
+Option 2 without Option 1 is largely cosmetic. That is the single most important
+thing to know before choosing it.
+
+**Success test** — `gh api /repos/downdirty84llc-creator/tune-advisor-` reports
+`private: true` (Option 1), or the chosen option is recorded here with its
+reasoning and T-29 proceeds knowing what it exposes.
+
+**Note on the other repository** — `georgia-opportunity-ledger` is also public
+and is **a separate question not covered by this packet.** It holds no DD84
+material. What it does hold is a product whose legal documents still carry
+"awaiting legal review" banners, which is T-13's problem rather than this one's.
+
+**An agent cannot execute Option 1.** `gh api -X PATCH … -f private=true`
+returned **HTTP 403, "Repository settings writes are not permitted through this
+proxy"**, verified unchanged afterwards — OL-0027. The permission is present on
+the account; the proxy in front of it refuses. This needs the GitHub UI.
+
+**Reply with: APPROVE (option 1) / APPROVE WITH CHANGES (option 2 or 3) / DEFER
+/ REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-32, and T-29 which it
+blocks. **Actual result** — Not executed.

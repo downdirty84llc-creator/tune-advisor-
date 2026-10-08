@@ -36,9 +36,9 @@ open tasks yet — no intake routine has run against a live connector.
 | T-08 | Remove the phantom integration-test glob from the Vitest config     | ledger     | Normal   | Done                | Agent | S-01             | 2026-08-02   |
 | T-09 | Close the PostgREST filter injection in the opportunity fallback    | ledger     | High     | Done                | Agent | S-01             | 2026-08-02   |
 | T-10 | Correct the test counts and integration-suite claim in CLAUDE.md    | ops        | Normal   | Done                | Agent | S-01             | 2026-08-05   |
-| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical | Awaiting Approval   | Owner | **A-05 pending** | 2026-08-20   |
+| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical | Blocked             | Owner | A-05 approved    | 2026-08-20   |
 | T-12 | Record the sample-data exclusion rule in CLAUDE.md                  | ops        | Normal   | Done                | Agent | A-03             | 2026-07-31   |
-| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical | Awaiting Approval   | Owner | **A-06 pending** | 2026-08-27   |
+| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical | Blocked             | Owner | A-06 approved    | 2026-08-27   |
 | T-14 | Wire virus scanning to `attachments.scan_status`                    | ledger     | High     | Awaiting Approval   | Owner | **A-07 pending** | 2026-09-03   |
 | T-15 | Make the public landing pages cacheable again                       | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-09-03   |
 | T-16 | Build in-product super-administrator MFA reset                      | ledger     | Normal   | Backlog             | Agent | S-01 to prepare  | not recorded |
@@ -48,37 +48,71 @@ open tasks yet — no intake routine has run against a live connector.
 | T-20 | Extend the Torque agent definition with the missing spec sections   | ops        | High     | Done                | Agent | A-08             | 2026-08-06   |
 | T-21 | Point CLAUDE.md §10 at the commands and the operating record        | ops        | Normal   | Done                | Agent | A-08             | 2026-08-06   |
 | T-22 | Verify and push the operations control plane                        | ops        | High     | Done                | Agent | A-08             | 2026-08-06   |
-| T-23 | Schedule the six routines and confirm the first firing              | ops        | High     | Blocked             | Owner | owner-held       | 2026-08-08   |
+| T-23 | Schedule the six routines and confirm the first firing              | ops        | High     | **In Verification** | Owner | owner-held       | 2026-08-08   |
 | T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned             | Agent | S-01 to prepare  | 2026-08-13   |
 | T-27 | Routines fire but commit nothing                                    | ops        | High     | Blocked             | Owner | **A-10 pending** | not set      |
 | T-28 | Settle where the Ledger and the agent platform each live            | ops        | High     | Done                | Agent | A-11             | 2026-09-23   |
-| T-29 | The Ledger application copy in this repository is stale             | ops        | Normal   | Partly Done         | Owner | A-11             | not set      |
+| T-29 | The Ledger application copy in this repository is stale             | ops        | Normal   | Blocked             | Owner | A-11             | not set      |
 | T-30 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High     | **Accepted Risk**   | Owner | A-12 accepted    | 2026-09-25   |
 | T-31 | Consolidate the two diverged operating records onto one branch      | ops        | High     | Done                | Agent | owner decision   | 2026-09-25   |
+| T-32 | Both repositories are public, and the venture registry is in one    | compliance | High     | **Awaiting Owner**  | Owner | **A-13 pending** | before T-29  |
+| T-33 | Establish what `dd84-api` is, and why it is failing on Render       | ops        | High     | Planned             | Agent | A to diagnose    | 2026-10-10   |
+| T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                  | ops        | Normal   | Planned             | Agent | A to diagnose    | 2026-10-13   |
+| T-35 | Three stale pull requests, one from the superseded branch           | ops        | High     | **Awaiting Owner**  | Owner | none yet         | not set      |
+| T-36 | No readable path to DD84's own revenue figures                      | finance    | High     | Planned             | Agent | A to prepare     | 2026-10-15   |
 
-Counts: 16 Done · 1 Partly Done · 1 Accepted Risk · 2 In Verification · 2
-Awaiting Approval · 2 Blocked · 4 Planned · 2 Backlog.
+Counts: 16 Done · 1 Accepted Risk · 3 In Verification · 1 Awaiting Approval · 2
+Awaiting Owner · 4 Blocked · 7 Planned · 2 Backlog. **36 tasks.**
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
+
+### Reconciliation, 2026-10-08 — five corrections from the first daily brief
+
+The first `/dd84-daily-brief` run read this register against `APPROVALS.md` and
+found the two disagreeing. Recorded here rather than quietly edited, because a
+silent correction teaches nothing:
+
+1. **T-11** read `Awaiting Approval · A-05 pending`. **A-05 was APPROVED on
+   2026-08-10** and its result block records the work found already satisfied in
+   live Stripe. Corrected to **Blocked** — it waits on test-mode keys and the
+   missing webhook endpoint, both Ledger scope, not on a decision.
+2. **T-13** read `Awaiting Approval · A-06 pending`. **A-06 was APPROVED on
+   2026-08-10.** Corrected to **Blocked** — it waits on the owner engaging
+   counsel.
+3. **T-23's summary row read Blocked**, its own detail block **In
+   Verification**. The detail is later and controlling; the summary was
+   corrected to match.
+4. **T-29's summary row read Partly Done**, its detail **Blocked (on owner)**,
+   re-confirmed 2026-10-08 in OL-0026. Summary corrected.
+5. **T-32 was absent from this table altogether**, and the counts line read "2
+   Awaiting Approval" where the table showed three. Both fixed.
+
+Corrections 1 and 2 had stood for **59 days**. They are the same failure mode
+T-31 recorded at the top of this file — A-05 reading "awaiting owner" six weeks
+after it was answered — reappearing in the summary table rather than in a second
+record. **The lesson that generalises: when an approval is answered, the row in
+this table is part of the write.** Evidence: OL-0028.
 
 ---
 
 ## Open items, by what they are waiting on
 
-| Waiting on                          | Tasks                        |
-| ----------------------------------- | ---------------------------- |
-| Owner approval (A-10 — the big one) | T-27                         |
-| Owner approval                      | T-14                         |
-| Owner action (engaging counsel)     | T-13                         |
-| Owner or developer, test-mode keys  | T-11                         |
-| Owner decision                      | T-29                         |
-| Owner confirmation                  | T-19                         |
-| A seeded or live database           | T-06                         |
-| Agent execution capacity            | T-15, T-16, T-24, T-25, T-26 |
-| Nobody — accepted risk              | T-30                         |
+| Waiting on                              | Tasks                                    |
+| --------------------------------------- | ---------------------------------------- |
+| Owner approval (A-10 — the big one)     | T-23, T-27                               |
+| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                 |
+| Owner approval                          | T-14                                     |
+| Owner action (engaging counsel)         | T-13                                     |
+| Owner or developer, test-mode keys      | T-11                                     |
+| Owner decision                          | T-29, T-35                               |
+| Owner confirmation                      | T-19                                     |
+| A seeded or live database               | T-06                                     |
+| A readable payment system               | T-36                                     |
+| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34 |
+| Nobody — accepted risk                  | T-30                                     |
 
 ---
 
@@ -314,7 +348,15 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Expected result** — Every tier is purchasable and the granted rank matches.
 - **Completion proof required** — Stripe dashboard product and price IDs, one
   `billing_events` row per event, a screenshot of each tier's billing page.
-- **Status** Awaiting Approval · **Next action** — Owner answers A-05.
+- **Status** **Blocked**, corrected 2026-10-08 · **Next action** — Obtain
+  test-mode Stripe keys, and register the missing webhook endpoint. **A-05 was
+  approved on 2026-08-10, not pending**; this block read "Awaiting Approval ·
+  Owner answers A-05" for 59 days after the answer. A-05's result records that
+  the four products and six prices already existed in live account
+  `acct_1QBl8ZINLKqe1c6g` and that nothing needed creating. What is left is the
+  tier-by-tier matrix, which needs test-mode keys no agent session holds, and
+  the absent webhook endpoint — **both Ledger scope**, so both belong with
+  `downdirty84llc-creator/georgia-opportunity-ledger`.
 
 ## T-12 — Record the sample-data exclusion rule in CLAUDE.md
 
@@ -357,7 +399,15 @@ finding that would otherwise have been mentioned once in a reply and lost.
 - **Expected result** — Every document either reviewed or documented as exempt
   **by counsel**, not by the agent.
 - **Completion proof required** — Written response from counsel per document.
-- **Status** Awaiting Approval · **Next action** — Owner answers A-06.
+- **Status** **Blocked**, corrected 2026-10-08 · **Next action** — Owner engages
+  counsel; an agent then builds the briefing package. **A-06 was approved on
+  2026-08-10, not pending** — this block read "Awaiting Approval" for 59 days
+  after the answer. A-06's result also corrects this task's own title: the
+  canonical Ledger carries **twelve** documents, **nine** requiring review, not
+  ten and seven. **Possible movement, unconfirmed:** a client-portal invitation
+  from Hawkins Law, LLC arrived 2026-10-08T13:39Z and is unactivated. Whether
+  that is this engagement is **a question for the owner, not an inference** —
+  see the 2026-10-08 brief.
 
 ## T-14 — Wire virus scanning to `attachments.scan_status`
 
@@ -1001,4 +1051,172 @@ unique entries were carried across by hand instead.
   it does hold is a product whose legal documents still carry "awaiting legal
   review" banners.
 - **Status** **Awaiting owner** · **Next action** — Decide option 1, 2 or 3.
-  **T-29 step 1 should wait for it.**
+  **T-29 step 1 should wait for it.** Formalised as packet **A-13** on
+  2026-10-08 by the first daily-brief run: the decision was real and recorded
+  here, but it had no packet, so it was not appearing in the one place the owner
+  looks for pending decisions.
+
+---
+
+## T-33 — Establish what `dd84-api` is, and why it is failing on Render
+
+- **Objective** — Find out whether a failing production service belongs to DD84,
+  what it serves, and whether anything customer-facing is down. The failure is
+  confirmed; its significance is not.
+- **Source** — `/dd84-daily-brief`, 2026-10-08. Two unread Render alerts to
+  `downdirty84llc@gmail.com`.
+- **Workstream** ops · **Priority** High · **Owner** Agent · **Due** 2026-10-10
+- **Dependencies** — None to diagnose. No Render connector exists on this
+  account, so the alerts are the only evidence available from a session.
+- **Approval class** — **A to diagnose.** Any change to the service is **F** and
+  returns for approval.
+- **The finding, precisely** — Two emails, both unread:
+  - 2026-10-08T00:27:38Z, `no-reply@render.com`, "Server failure detected on
+    dd84-api" — _"Exited with status 1. This alert means one of the instances
+    running your service became unavailable."_
+  - 2026-10-08T15:21:58Z, `no-reply@render.com`, "deploy failed for dd84-api" —
+    _"your deploy didn't complete successfully and your latest changes may not
+    be live."_ Commit line reads **"Merge pull request #25"**.
+- **Why this is a register entry and not a footnote** — **`ventures.md` does not
+  mention Render, `dd84-api`, or any hosted API.** Its systems table lists a
+  Manus front door, Shopify, Stripe, bookipay and print-on-demand vendors, and
+  nothing else. So either the registry is incomplete, or this service belongs to
+  something outside the two recorded ventures. **Both possibilities matter and
+  neither is established.**
+- **Cost and risk** — **not recorded.** A Render service has a plan and a price;
+  neither was read. The risk cannot be sized until the service is identified: if
+  it serves customers it is an outage, and if it is a dormant experiment it is
+  noise. **Do not assume either.**
+- **Execution steps** — (1) Identify the service: which repository deploys to
+  it, what its URL is, whether anything public depends on it; (2) establish
+  whether the 00:27Z exit and the 15:21Z deploy failure are one fault or two;
+  (3) check whether PR #25 and T-34's CI failure are the same change; (4) add
+  the service to `ventures.md`, or record that it belongs to neither venture;
+  (5) only then decide whether a fix is warranted, and raise a packet if it
+  touches the live service.
+- **Completion proof required** — The service identified by name and repository,
+  its customer-facing status stated, and `ventures.md` either updated or
+  explicitly recorded as correct to omit it.
+- **Status** Planned · **Next action** — Step 1. **Note the sequencing honestly:
+  this is the top item on the 2026-10-08 brief because it is the only thing
+  confirmed broken today, not because its impact is known.**
+
+## T-34 — CI is failing on `main` in `downdirty84-ai-tuning`
+
+- **Objective** — Find out whether a third repository on this account has a
+  broken main branch, and whether it is DD84's.
+- **Source** — `/dd84-daily-brief`, 2026-10-08. GitHub notification email.
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-10-13
+- **Dependencies** — **This session's GitHub scope covers `tune-advisor-`
+  only.** Reading the repository needs it attached with `add_repo`, which is a
+  deliberate act and was not performed during a Class A reporting run.
+- **Approval class** — A to diagnose and to attach a repository for reading.
+- **The finding** — 2026-10-08T15:12:35Z, `notifications@github.com`:
+  `[downdirty84llc-creator/downdirty84-ai-tuning] Run failed: CI - main (914e171)`.
+  The visible annotation line reads _"CI / Safety guardrails still in place —
+  Succeeded in 12 seconds"_, so **at least one job passed and something else
+  failed**; which job failed is not in the preview and was not read.
+- **Worth noting about that repository's name** — a CI job called "Safety
+  guardrails still in place" implies deliberate guardrail testing in a tuning
+  context. If that repository publishes anything about tuning, the DD84
+  restrictions bind it: **no guaranteed power figures, no emissions-defeat
+  marketing, stop and escalate on safety-critical faults.** That is a flag for
+  whoever picks this up, not a finding about the code.
+- **Cost and risk** — none known. **not recorded.**
+- **Execution steps** — (1) Attach the repository read-only; (2) read the
+  failing job, not the summary; (3) establish whether it shares a cause with
+  T-33; (4) record whether this repository is DD84's and add it to `ventures.md`
+  if so.
+- **Completion proof required** — The failing job named, with its real output.
+- **Status** Planned · **Next action** — Step 1, after T-33.
+
+## T-35 — Three stale pull requests, one from the superseded branch
+
+- **Objective** — Stop a merge that would reinstate a retired operating record
+  and a deleted source tree.
+- **Source** — `/dd84-daily-brief`, 2026-10-08. `list_pull_requests` on
+  `downdirty84llc-creator/tune-advisor-`, read 15:38Z.
+- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due** not set
+- **Dependencies** — None. **The action is the owner's**: closing or retargeting
+  a pull request is a repository write, and OL-0027 established that this
+  environment's proxy refuses repository writes regardless.
+- **Approval class** — **Owner's.** An agent does not close someone else's pull
+  request.
+- **The finding, precisely** — Three pull requests are open, all targeting a
+  branch called **`dd84/main`** which is neither the repository default
+  (`claude/georgia-opportunity-ledger-kfpt4c`) nor the working branch:
+  - **#1** _"Add CLAUDE.md, DD84 operations spec and the Torque agent
+    definition"_ — head **`claude/claude-md-docs-jjveuq`**, opened 2026-08-03,
+    last touched 2026-09-25.
+  - **#4** _"Add CLAUDE.md and correct stale architecture omissions"_ — head
+    `claude/claude-md-docs-4501xa`, opened 2026-08-05, last touched 2026-09-15.
+  - **#5** _"[WIP] Reapply changes from PR #4"_ — draft, opened by Copilot
+    2026-08-05.
+- **Why #1 is the dangerous one** — its head is the branch **T-31 declared
+  superseded**, at a commit that still carries the retired operating record
+  (OL-0001…OL-0015 under their old numbers) and the 241-file Ledger tree that
+  T-29 had deleted. Merging it would **undo both T-29 and T-31 in one action**,
+  and would restore a second operating log whose entries duplicate numbers in
+  the live one. T-31's standing rule — "there is one operating record, and it is
+  on this branch" — is enforced by nothing but that branch not being merged.
+- **The fourth branch nobody has explained** — `dd84/main` is the base of all
+  three. It appears in no task, no approval and no log entry in this register.
+  **What it is and whether anything depends on it is unknown**, and that is part
+  of this task rather than an aside.
+- **Cost and risk** — No cost. The risk is low-probability and high-consequence:
+  these PRs have sat for nine weeks, so nobody is about to merge them by
+  accident — but a single click reverses two completed tasks.
+- **Execution steps (owner)** — (1) Close **#1** with a comment naming T-31; (2)
+  close **#5**, a draft reapplication of #4 that has not moved since 2026-08-05;
+  (3) decide whether **#4** holds anything not already on this branch, and close
+  it if not; (4) establish what `dd84/main` is for.
+- **Completion proof required** — `list_pull_requests` returning no open PR
+  whose head is `claude/claude-md-docs-jjveuq`.
+- **Status** **Awaiting Owner** · **Next action** — Step 1. No packet raised:
+  the decision is a repository hygiene call with no cost, no customer impact and
+  no irreversible consequence beyond what closing a stale PR implies. **If the
+  owner would rather have it in packet form, say so and it will be written.**
+
+## T-36 — No readable path to DD84's own revenue figures
+
+- **Objective** — Restore the ability to answer "what has this business
+  collected" from a live system rather than from a 66-day-old document.
+- **Source** — `/dd84-daily-brief`, 2026-10-08, which could not fill its own
+  money section.
+- **Workstream** finance · **Priority** High · **Owner** Agent · **Due**
+  2026-10-15
+- **Dependencies** — A Stripe connector on this account, or a bookipay export.
+  **Neither is in an agent's gift.**
+- **Approval class** — **A to prepare and to read.** Connecting a connector is
+  the owner's action.
+- **The finding** — Every revenue figure in `docs/agents/ventures.md` — all-time
+  revenue $3,507.86, 10 paid invoices, 3 distinct customers, 67% single-customer
+  concentration, last payment 2025-09-12 — carries **Verified 2026-08-03**. That
+  is **66 days old**, and CLAUDE.md §5 requires anything past 30 days to be
+  re-checked against the live system before it is quoted. **It cannot be
+  re-checked from this session:**
+  - **No Stripe MCP server exists in this session's tool list.** Confirmed by
+    searching the loaded servers, not inferred from a failed call.
+  - **bookipay has no API access at all**, by design and by record — and
+    `ventures.md` states that **every historic payment came through it**.
+  - PayPal and Shopify both read clean and both read **zero**; PayPal is not
+    listed as a DD84 payment system, so its zero says nothing about DD84.
+- **What this costs in practice** — the daily brief's "money moved" section, the
+  entire cash review routine, and any claim about revenue. **Unknown is not
+  zero**, and the registry's figures are now quotable only with their date
+  attached and a caveat — which is the honest position and a poor one.
+- **Cost and risk** — No cost. The risk is that a stale figure gets quoted as
+  current, which has already happened in this repository with the stale
+  MILESTONES and the legal-document count (T-28).
+- **Execution steps** — (1) Ask the owner to connect Stripe to this account, or
+  confirm the connector was intentionally removed; (2) if bookipay has no API,
+  establish a manual export cadence — a CSV in Drive the agent can read is
+  enough; (3) re-verify the eight revenue figures and re-date them; (4) record
+  in `ventures.md` which system is authoritative for revenue, since "Stripe plus
+  bookipay" is currently ambiguous.
+- **Completion proof required** — The eight figures re-read from a live system,
+  with a new verification date and the read recorded in `OPERATING-LOG.md`.
+- **Status** Planned · **Next action** — Step 1. **Until it closes, every
+  routine that reports money must degrade that section rather than quote
+  2026-08-03 as if it were today.**

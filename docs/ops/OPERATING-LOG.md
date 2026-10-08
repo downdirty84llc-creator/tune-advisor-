@@ -1026,7 +1026,111 @@ actually have.** It is in their tool list; a repository is not.
 
 ---
 
-## Next entry: OL-0028
+## OL-0028 — 2026-10-08 · First daily brief ever written to `docs/ops/briefs/`
+
+- **Timestamp** 2026-10-08T15:42:00Z
+- **Task** T-23, T-27, T-32, and T-33…T-36 created by this run · **Approval**
+  S-01 (Class A routine, local repository work). Owner invoked
+  `/dd84-daily-brief` directly in the host session.
+- **Action** Ran the daily command brief end to end: read the operating record,
+  read five connectors, reconciled the register, wrote the brief, created four
+  tasks, raised one approval packet, corrected five register defects.
+- **Tool** `Read`/`Write`/`Edit`; `mcp__Google_Calendar__list_calendars` and
+  `list_events`; `mcp__Gmail__search_threads` ×2; `mcp__PayPal__list_invoices`
+  and `list_transactions`; `mcp__Shopify__list-orders`;
+  `mcp__github__list_pull_requests` and `actions_list`; `ToolSearch` to
+  establish the absence of Stripe.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** `docs/ops/briefs/` contained nothing but its `README.md`, as it had
+  since 2026-08-06. 31 tasks, 12 approval packets.
+- **After** `docs/ops/briefs/2026-10-08-daily-brief.md` exists. 36 tasks, 13
+  packets.
+
+### What this run does and does not prove
+
+**It does not close T-23 and it does not satisfy A-10.** A-10's success test is
+"one **scheduled** run ends with a dated brief committed to `docs/ops/briefs/`",
+and T-23 requires one `OL-` entry per routine's **first firing**. This was a
+manual invocation in a session that already held the repository — the stopgap,
+not the fix. **The scheduled Routines have still delivered nothing**, and a
+reader who treats this entry as the proof T-23 waited for will be wrong.
+
+**What it does prove, and it is worth having:** the routine itself works. Given
+a checkout and the connectors, it produces the brief the contract specifies,
+degrades the sections it cannot read, and writes to all four destinations. The
+defect diagnosed in T-27 is entirely the container, not the prompt. That had
+been asserted since 2026-08-28 on the strength of token counts; it is now
+demonstrated.
+
+### Connectors — read once each, as the contract requires
+
+| Connector           | Result                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Google Calendar     | Reached. 3 calendars; **0 events** on `downdirty84llc@gmail.com` and `Family` for 2026-10-08 and 2026-10-09         |
+| Gmail               | Reached. 25 threads read of an estimated 201 in the inbox, 2-day window                                             |
+| PayPal              | Reached. **0 invoices** in any status; **0 transactions** 2026-09-08 → 2026-10-08T12:59:59Z                         |
+| Shopify             | Reached. **0 orders**, `totalCount: 0`                                                                              |
+| GitHub              | Reached. **3 open pull requests**; **0 workflow runs** on this branch — the branch has no `.github/workflows`       |
+| **Stripe**          | **Absent.** No Stripe MCP server in this session. Established by searching the loaded servers, not by a failed call |
+| **bookipay**        | **No API access**, by design and by record                                                                          |
+| **Superhuman Mail** | **Requires OAuth**; non-interactive session cannot run the flow                                                     |
+
+**The money section therefore degraded, and that is the single most important
+thing in this entry.** The two systems that have ever carried DD84 revenue —
+Stripe and bookipay — were both unreadable. PayPal and Shopify each read a true
+zero, and PayPal is not even listed as a DD84 payment system. **No revenue
+figure was estimated, carried forward or inferred.** That gap is now T-36.
+
+### Findings, and what each became
+
+1. **`dd84-api` is failing on Render** — two unread alerts, 00:27Z ("Exited with
+   status 1") and 15:21Z ("deploy failed", commit "Merge pull request #25").
+   **The service appears nowhere in `ventures.md` or this register.** →
+   **T-33**.
+2. **CI failed on `main` in `downdirty84llc-creator/downdirty84-ai-tuning`**
+   (`914e171`, 15:12Z) — a third repository the register does not know about. →
+   **T-34**. Any link to T-33 is a hypothesis, not a finding.
+3. **PR #1 is open from `claude/claude-md-docs-jjveuq`**, the branch T-31
+   superseded, targeting an unexplained `dd84/main`. Merging it would reverse
+   T-29 and T-31 together. → **T-35**.
+4. **`ventures.md`'s revenue figures are 66 days old** and unverifiable from
+   here. → **T-36**.
+5. **T-32 had no approval packet** despite being a live owner decision that
+   blocks T-29. → raised as **A-13**.
+6. **A law-firm client-portal invitation** (Hawkins Law, LLC, 13:39Z,
+   unactivated) **may** relate to A-06 and T-13. Recorded as a question to the
+   owner in both the brief and T-13. **Deliberately not asserted** — a plausible
+   connection between a law firm and a pending legal review is exactly the kind
+   of inference that becomes a fabricated fact two sessions later.
+
+### Register corrections — the part worth reading
+
+Reconciliation found **five** defects, two of them substantive:
+
+- **T-11 and T-13 both read "Awaiting Approval" against packets the owner had
+  APPROVED on 2026-08-10.** They had been wrong for **59 days**. Both corrected
+  to **Blocked**, with what they actually wait on.
+- T-23's and T-29's summary rows contradicted their own detail blocks.
+- T-32 was missing from the summary table, and the counts line undercounted
+  Awaiting Approval by one.
+
+**This is T-31's failure recurring in a new place.** T-31 recorded that A-05
+read "awaiting owner" for six weeks because the answer lived on another branch;
+the fix was one record. One record was not sufficient — **the summary table is a
+second record of approval state, and it drifted from the first.** The rule this
+produces is in the register: when an approval is answered, its row in the
+summary table is part of the write, not a follow-up.
+
+- **Error** None introduced. **Nothing was written to any connector**: no email
+  sent or drafted, no calendar event touched, no charge, invoice, refund or
+  fulfilment action, no live system changed. Class A held.
+- **Remediation** Not applicable — nothing failed. What remains outstanding is
+  owner-side and unchanged: **A-10, A-13, A-07**, plus the four manual actions
+  in OL-0026 and OL-0027 that no agent route can reach.
+
+---
+
+## Next entry: OL-0029
 
 The next routine run or executed action appends here. If you are a routine: your
 run entry goes at the bottom of this file and nothing above it is touched.
