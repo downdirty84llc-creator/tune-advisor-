@@ -1556,4 +1556,93 @@ is the wrong instinct.** It belongs in the next revision of
 
 ---
 
-## Next entry: OL-0034
+## OL-0034 — 2026-10-09 · Daily brief; T-27 closes on a scheduled-run commit
+
+- **Timestamp** 2026-10-09T11:00:00Z
+- **Task** T-27 (**closed**), T-23, T-46 · **Approval** S-01 (Class A routine),
+  fired by Routine "DD84 Daily Command Brief (repo-attached)",
+  `trig_01Uw62JeMqdK6DaLatfk3BXX`, 10:51:09Z.
+- **Action** Ran the daily command brief. Read five sources, degraded three,
+  closed T-27 on hard evidence, wrote the brief.
+- **Tool** `mcp__Google_Calendar__list_events`, `mcp__PayPal__list_invoices` and
+  `list_transactions`, `mcp__Shopify__list-orders`,
+  `mcp__github__list_pull_requests`; `git`; `Read`/`Write`/`Bash`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 48 tasks, 16 packets, T-27 In Verification.
+- **After** Same counts; **T-27 Done**,
+  `docs/ops/briefs/ 2026-10-09-daily-brief.md` written.
+
+### T-27 is closed, and this is the evidence
+
+**Commit `ecd04da`**, the 2026-10-09 inbox intake, written and pushed by a
+**scheduled** firing at 10:20:15Z and landed at 10:29:17Z. This brief is the
+second scheduled firing of the day to commit. **Two for two**, against seven
+weeks and roughly thirty firings that delivered nothing.
+
+**What is deliberately not closed.** **A-10 stays pending** and T-23 stays In
+Verification. What worked is the A-14 stopgap — one host session holding the
+checkout with all four Routines bound to it — and its three weaknesses are
+unchanged: single point of failure, unbounded context growth, four routines
+serialising. **Only two of the four have fired since the binding**; follow-up
+and site-monitor are still unscheduled entirely. **Closing T-27 records that the
+diagnosis was right and the stopgap works. It is not a verdict that the problem
+is solved.**
+
+### Connectors — three of the eight sources degraded, and the same three as always
+
+| Source                       | Result                                                                                                                                                  |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Google Calendar (primary)    | Reached. **0 events** for 2026-10-09 and 2026-10-10                                                                                                     |
+| PayPal                       | Reached. **0 invoices**, **0 transactions** — but the API **truncated the window to 08:59:59Z**, its own last refresh, so two hours of today are unread |
+| Shopify                      | Reached. **0 orders**                                                                                                                                   |
+| GitHub                       | Reached. **3 open PRs**, all unchanged since 2026-10-08                                                                                                 |
+| **Stripe**                   | **Absent** — no server in this session (T-36)                                                                                                           |
+| **bookipay**                 | **No API**, by design (T-36)                                                                                                                            |
+| **Superhuman Mail**          | **OAuth required**, non-interactive session                                                                                                             |
+| `Family` / holiday calendars | **Not re-read this run.** Empty yesterday; that is yesterday's reading                                                                                  |
+
+**The money section degraded for the third consecutive run**, and for the same
+reason each time: the two systems that have ever carried DD84 revenue are both
+unreadable. **No figure was estimated or carried forward.** A real expense is
+also inbound — a Webador annual invoice that will auto-charge, **amount in a PDF
+no session can open**, recorded as unknown (T-46).
+
+### A note on the PayPal truncation, because it will recur
+
+`list_transactions` silently narrowed the requested end time to its own
+`last_refreshed_datetime`. **The response looked like a complete read of the
+window asked for and was not.** Both PayPal reads this week did this. The lesson
+generalises: **a connector that returns successfully has not necessarily
+returned what was requested**, and the response's own echo of the window is the
+thing to check. Worth adding to the cash review's contract, which leans on
+PayPal harder than the daily brief does.
+
+### The stale file count in the firing prompts, now twice observed
+
+Both of today's prompts told the session to expect **28 tracked files**. The
+tree had **30** at 10:20Z and **31** at 10:51Z — the briefs each run commits.
+**The number is wrong by construction and drifts upward every day.** No harm
+done, because the reset condition the prompts actually name is the presence of
+`src/`, which was absent both times. **But a prompt that asserts a
+daily-changing number will eventually make a session reset a correct checkout.**
+The durable tells are `src/` and the absence of `package.json`. Already folded
+into **T-44**.
+
+- **Error** None introduced. **Class A held**: nothing sent, published, charged,
+  booked or changed in any live system. No calendar write, no customer contact,
+  no price quoted. **No connector was written to.**
+- **Remediation** Not applicable. Owner-side and open: **A-15** (GDOT waiting
+  three days), **A-16** (the redaction options), **A-07**, the C10 determination
+  (T-37), the Webador amount (T-46), whether Hawkins Law is counsel (T-45), the
+  four unreachable owner actions in OL-0026 and OL-0027, and **whether the card
+  toggling across 10-07 to 10-09 was the owner** — still unanswered, still not
+  made a task, and still the one item that would outrank everything if the
+  answer is no.
+- **Worth stating plainly** — the calendar is empty, no reachable system shows
+  money moving, and no customer is waiting on a reply. **A quiet day is a real
+  result.** What is outstanding is four decisions, three already written up and
+  waiting on one word each.
+
+---
+
+## Next entry: OL-0035

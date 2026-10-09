@@ -60,7 +60,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
 | T-25 | Build the project status control routine                            | ops        | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
 | T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-27 | Routines fire but commit nothing                                    | ops        | High     | **In Verification**      | Agent | A-14 / A-10 open | 2026-10-09   |
+| T-27 | Routines fire but commit nothing                                    | ops        | High     | **Done**                 | Agent | A-14 executed    | 2026-10-09   |
 | T-28 | Settle where the Ledger and the agent platform each live            | ops        | High     | Done                     | Agent | A-11             | 2026-09-23   |
 | T-29 | The Ledger application copy in this repository is stale             | ops        | Normal   | Blocked                  | Owner | A-11             | not set      |
 | T-30 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High     | **Accepted Risk**        | Owner | A-12 accepted    | 2026-09-25   |
@@ -87,7 +87,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: 16 Done · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
+Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 3 In Verification · 2 In
 Progress · 2 Awaiting Approval · 4 Awaiting Owner · 4 Blocked · 12 Planned · 2
 Backlog. **48 tasks.**
 
@@ -127,7 +127,7 @@ this table is part of the write.** Evidence: OL-0028.
 
 | Waiting on                              | Tasks                                    |
 | --------------------------------------- | ---------------------------------------- |
-| Owner approval (A-10 — the big one)     | T-23, T-27                               |
+| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)            |
 | Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                 |
 | Owner approval                          | T-14                                     |
 | Owner action (engaging counsel)         | T-13                                     |
@@ -836,7 +836,22 @@ log. **The operating record still advances only when a session holding the
 repository writes to it.** The change narrows the damage; it does not close the
 task.
 
-- **Status** **In Verification**, changed 2026-10-08 · **A-14 executed a
+- **Status** **DONE**, 2026-10-09 · **Completion evidence: commit `ecd04da`**,
+  the 2026-10-09 inbox intake, written and pushed by a **scheduled** firing of
+  `trig_01UdMtZvf1BdVuYoucd6UY7N` at 10:20:15Z and landed at 10:29:17Z. A second
+  scheduled firing, the daily brief at 10:51:09Z, committed as well. **Two for
+  two.** That is the objective this task was opened for — "find out why four
+  scheduled routines have run for a week without writing a single brief, and
+  make the next run leave evidence" — and both halves are now answered. Recorded
+  in OL-0033 and OL-0034.
+- **What this does NOT close.** **A-10 is still pending** and T-23 is still In
+  Verification. The fix that worked is the A-14 stopgap: one host session
+  holding the checkout, with all four Routines bound to it. **Its three
+  weaknesses are unchanged** — a single point of failure, unbounded context
+  growth, and four routines serialising through one session. **The real fix is
+  still recreating the Routines from the claude.ai UI with a repository
+  attached.** Closing this task is not permission to stop wanting that.
+- **Previously** · **In Verification**, 2026-10-08 · **A-14 executed a
   stopgap**: a host session that holds this repository and branch now exists,
   and the four Routines are bound to it (OL-0029, sibling session). **That is
   not a fix and A-10 stays open** — it is one session, its context grows without
