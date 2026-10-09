@@ -87,7 +87,7 @@ holding it pending a checklist.
 
 **Customer status could not be verified, and §9 forbids merging on anything
 less.** Shopify returns **no customer** with that email; Stripe and bookipay
-were both unreachable this run. So Arman is recorded as an **active
+were both unreachable this run. So the C10 customer is recorded as an **active
 correspondent whose purchase history is unknown** — not as one of the three
 known customers, and not as a new one.
 
@@ -96,25 +96,25 @@ known customers, and not as a new one.
 1. **The O2 diagnosis and the verified hardware do not agree.** On 2026-10-06
    DD84 wrote: _"That Bosch O2 sensor is your limiting factor causing erratic
    AFR readings due to incorrect resistance on the sensor. You will need to use
-   an OEM Holley O2 sensor for the Terminator X Max."_ Arman then checked and
-   reported: _"I did verify it is the Holley Bosch 4.9 LSU."_ **If the sensor is
-   already the Holley part, the stated remedy is already in place and the root
-   cause is still open.** Torque is **not** resolving this — it is a technical
-   determination about a customer's running engine, and `ventures.md` forbids
-   fabricating a diagnosis or guaranteeing a result. **It is flagged, paused,
-   and handed to the owner.** See Conflicts.
+   an OEM Holley O2 sensor for the Terminator X Max."_ The customer then checked
+   and reported: _"I did verify it is the Holley Bosch 4.9 LSU."_ **If the
+   sensor is already the Holley part, the stated remedy is already in place and
+   the root cause is still open.** Torque is **not** resolving this — it is a
+   technical determination about a customer's running engine, and `ventures.md`
+   forbids fabricating a diagnosis or guaranteeing a result. **It is flagged,
+   paused, and handed to the owner.** See Conflicts.
 2. **No payment appears anywhere in 22 messages.** No invoice, no deposit, no
    price, no payment link. Against the catalogue this work sits somewhere
    between _ECU Tune File Review_ ($99/$149/$199) and _Holley EFI Tuning &
-   Diagnostics_ ($350/$450/$650). **Whether Arman has paid cannot be checked** —
-   Stripe and bookipay are the systems that would know and neither was
-   reachable. This is **flagged as unverified, not asserted as unbilled.**
+   Diagnostics_ ($350/$450/$650). **Whether the C10 customer has paid cannot be
+   checked** — Stripe and bookipay are the systems that would know and neither
+   was reachable. This is **flagged as unverified, not asserted as unbilled.**
 
-**Why no draft was written for Arman.** The next message in that thread has to
-either send the revised tune file or answer the O2 contradiction. Both are
-technical determinations about someone's vehicle. Writing a plausible-sounding
-one would be the exact failure `ventures.md` calls disqualifying. **The blocker
-here is a decision, not a draft.**
+**Why no draft was written for the C10 customer.** The next message in that
+thread has to either send the revised tune file or answer the O2 contradiction.
+Both are technical determinations about someone's vehicle. Writing a
+plausible-sounding one would be the exact failure `ventures.md` calls
+disqualifying. **The blocker here is a decision, not a draft.**
 
 ## Drafts prepared — NOT SENT
 
@@ -274,12 +274,12 @@ mailbox carries `[Superhuman]/AI/` labels — `Respond` (35), `Waiting` (30),
 plus a user label **`DD84 Dyno Facility Outreach`** (13 messages) that is
 directly on point for the GDOT work.
 
-| Thread                         | Proposed label                                                                                                         | Why                                              |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| GDOT `Driveway Concept Review` | `DD84 Dyno Facility Outreach` — **it already carries `[Superhuman]/AI/Waiting`**, which is now wrong; GDOT has replied | Puts it with the 13 messages of the same project |
-| Arman — `C10 Terminator X Max` | `[Superhuman]/AI/Waiting`                                                                                              | DD84 is correctly waiting on the customer        |
-| Georgia SBDC `Meeting Today`   | `[Superhuman]/AI/Respond`                                                                                              | A reply is owed                                  |
-| Google Play `[Action Needed]`  | `[Superhuman]/AI/Respond`                                                                                              | 60-day clock                                     |
+| Thread                                    | Proposed label                                                                                                         | Why                                              |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| GDOT `Driveway Concept Review`            | `DD84 Dyno Facility Outreach` — **it already carries `[Superhuman]/AI/Waiting`**, which is now wrong; GDOT has replied | Puts it with the 13 messages of the same project |
+| The C10 customer — `C10 Terminator X Max` | `[Superhuman]/AI/Waiting`                                                                                              | DD84 is correctly waiting on the customer        |
+| Georgia SBDC `Meeting Today`              | `[Superhuman]/AI/Respond`                                                                                              | A reply is owed                                  |
+| Google Play `[Action Needed]`             | `[Superhuman]/AI/Respond`                                                                                              | 60-day clock                                     |
 
 **The one worth deciding first:** the GDOT thread is labelled `Waiting` and is
 not waiting any more. A label that is stale is worse than no label, because it
@@ -287,16 +287,16 @@ is trusted.
 
 ## Not checked this run
 
-| Source                     | Reason                                                                                                                                                                                                                              |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Superhuman Mail**        | OAuth required; this session is non-interactive and cannot run the flow. **If any account linked there is not also in this Gmail, its mail was not read at all this run** — and that is unknown, not none.                          |
-| **Stripe**                 | No Stripe MCP server in this session. Customer-identity and payment checks degraded to unknown.                                                                                                                                     |
-| **bookipay**               | No API access by design. Every historic DD84 payment went through it, so **"has Arman paid?" is unanswerable from here.**                                                                                                           |
-| **Google Drive**           | Not searched. The thread attachments (`D1TO Full Permit Review V1.7.pdf`, Arman's datalogs and tune file) arrived as mail attachments, and no attachment-download tool is loaded in this session. **Contents unread, not guessed.** |
-| Google Calendar            | Read earlier today for the daily brief: zero events today and tomorrow. **No slot was offered in any draft**, so nothing depended on a deeper read.                                                                                 |
-| Shopify                    | Read. **No customer record** for the customer's address. 0 orders all time, so this tells us little.                                                                                                                                |
-| Mail older than 2 days     | Out of window by design. **With 20,756 unread in the inbox, the backlog beyond this window is entirely unassessed.**                                                                                                                |
-| Spam folder (248 messages) | Not examined. A misfiled customer enquiry would be invisible to this run.                                                                                                                                                           |
+| Source                     | Reason                                                                                                                                                                                                                                     |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Superhuman Mail**        | OAuth required; this session is non-interactive and cannot run the flow. **If any account linked there is not also in this Gmail, its mail was not read at all this run** — and that is unknown, not none.                                 |
+| **Stripe**                 | No Stripe MCP server in this session. Customer-identity and payment checks degraded to unknown.                                                                                                                                            |
+| **bookipay**               | No API access by design. Every historic DD84 payment went through it, so **"has the C10 customer paid?" is unanswerable from here.**                                                                                                       |
+| **Google Drive**           | Not searched. The thread attachments (`D1TO Full Permit Review V1.7.pdf`, the customer's datalogs and tune file) arrived as mail attachments, and no attachment-download tool is loaded in this session. **Contents unread, not guessed.** |
+| Google Calendar            | Read earlier today for the daily brief: zero events today and tomorrow. **No slot was offered in any draft**, so nothing depended on a deeper read.                                                                                        |
+| Shopify                    | Read. **No customer record** for the customer's address. 0 orders all time, so this tells us little.                                                                                                                                       |
+| Mail older than 2 days     | Out of window by design. **With 20,756 unread in the inbox, the backlog beyond this window is entirely unassessed.**                                                                                                                       |
+| Spam folder (248 messages) | Not examined. A misfiled customer enquiry would be invisible to this run.                                                                                                                                                                  |
 
 ## Also found — the drafts backlog
 

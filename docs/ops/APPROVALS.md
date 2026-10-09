@@ -851,6 +851,17 @@ not a schedule. First scheduled test 2026-10-09T10:20Z.
 
 **Status: PENDING — raised 2026-10-08 by the first `/dd84-inbox-intake` run.**
 
+> **REDACTED 2026-10-09 — the body of this packet has been edited, which the
+> packet rule normally forbids.** One site in the Alternatives list carried the
+> C10 customer's full name; it now reads "the C10 customer". **Removed by:**
+> Claude (agent), cqvhy6 session. **Under:** approval **A-16**, Option A,
+> granted by the owner 2026-10-09. **Rule forced the conflict:** `CLAUDE.md` §5
+> against `docs/ops/README.md`'s rule that a raised packet is appended to and
+> only its **Response** and **Actual result** blocks are edited. **Commit:** the
+> one carrying **OL-0036**. **The decision requested, the drafts, the reasoning
+> and the alternatives are unchanged** — this packet is still pending and still
+> says exactly what it said when it was raised. **The history is not touched.**
+
 **Decision requested** — Authority to send **two** replies, written in full and
 reproduced verbatim in `docs/ops/briefs/2026-10-08-inbox-intake.md`. Batched
 into one packet so this is one decision rather than two.
@@ -907,10 +918,10 @@ areas wanted are financing the building and what lenders will expect to see.
   if the voice is wrong. The drafts are a starting point, not a submission.
 - **Send neither.** The GDOT thread then continues to age, having already lost
   42 hours. Included because it is the honest baseline, not as a straw man.
-- **Rejected: adding a third draft replying to Arman Olgun** (T-37). His thread
-  is the most commercially live in the mailbox and was **deliberately left
-  without a draft** — the next message must either send a revised tune file or
-  resolve a contradiction between DD84's stated O2 diagnosis and the hardware
+- **Rejected: adding a third draft replying to the C10 customer** (T-37). His
+  thread is the most commercially live in the mailbox and was **deliberately
+  left without a draft** — the next message must either send a revised tune file
+  or resolve a contradiction between DD84's stated O2 diagnosis and the hardware
   the customer has since verified. Both are technical determinations about a
   running engine. `ventures.md` forbids fabricating a diagnosis or guaranteeing
   a result, so the blocker there is the owner's judgement, not a missing draft.
@@ -956,7 +967,7 @@ result** — Not executed. Nothing sent.
 
 ## A-16 — Redact customer identity from the append-only log and a sealed packet
 
-**Status: PENDING — raised 2026-10-09 by the scheduled inbox intake.**
+**Status: APPROVED (Option A) — owner, 2026-10-09. EXECUTED the same day.**
 
 **Decision requested** — Authority to edit **`OPERATING-LOG.md`** and the body
 of **packet A-15** to remove one customer's name, email address and mobile
@@ -1048,6 +1059,170 @@ so a later session does not re-litigate it.
 **Reply with: APPROVE (option A) / APPROVE WITH CHANGES (option B or D) / DEFER
 / REJECT**
 
-**Response** — _awaiting owner._ **Affected records** — T-48, and OL-0031 and
-A-15 if Option A is chosen. **Actual result** — Not executed; the two protected
-files are untouched.
+**Response** — **APPROVE (Option A)**, owner, 2026-10-09: "Approve A-16". A bare
+approval is Option A by the packet's own reply format; the owner was not asked
+to restate it. **Option D was not revisited** and does not need to be — A-13
+settled it on 2026-10-08 and the owner declined to reopen it when asked directly
+the same day.
+
+**Affected records** — T-48, OL-0031, A-15, and — see below — `TASK-REGISTER.md`
+and `briefs/2026-10-08-inbox-intake.md`, which this packet had recorded as
+already clean and which were not.
+
+**Actual result** — **Executed 2026-10-09, thirteen sites across four files**,
+not the two the packet anticipated. Recorded in **OL-0036**.
+
+| File                                | Sites | What was there                    |
+| ----------------------------------- | ----: | --------------------------------- |
+| `OPERATING-LOG.md` (OL-0031)        |     4 | First name ×3, **personal email** |
+| `briefs/2026-10-08-inbox-intake.md` |     7 | First name ×7                     |
+| `APPROVALS.md` (A-15 body)          |     1 | **Full name**                     |
+| `TASK-REGISTER.md`                  |     1 | First name                        |
+
+All thirteen now read "the C10 customer" or "the customer". The two protected
+records each carry a dated inline note naming what was removed, by whom, under
+which approval, which two rules collided, and that the history is untouched —
+the Option A mitigation, so the edit announces itself rather than being a silent
+gap.
+
+### The packet was wrong about two files, and the reason generalises
+
+**A-16's own table said `TASK-REGISTER.md` and the 2026-10-08 brief were
+"Redacted". Both still carried the customer's first name** — eight sites between
+them. The earlier pass removed the full name, the email address and the phone
+number and left every bare first name standing.
+
+**The cause is the success test.** A-16 tested for "no customer email address or
+phone number" by `grep`. A first name is neither, so a grep-clean tree looked
+like a finished redaction. **The test did not test for the thing the rule names
+first** — §5 says "customer **names**, email addresses, phone numbers or payment
+details", and names are the hardest of the four to grep for, because you must
+already know the name to search for it. **A success test narrower than its rule
+reports success early**, which is the same shape of defect as reading a green
+routine run as a delivered brief (T-27).
+
+Whether a bare first name is identifying is arguable. It was removed anyway: an
+uncommon given name alongside an engine, a town, a fault and a thread subject is
+not meaningfully anonymous, and §5 does not grade by how identifying a name is.
+
+> **This paragraph had to be rewritten.** Its first draft quoted the name in
+> order to argue that the name was identifying — **reintroducing it into the
+> file the same commit was cleaning.** Caught by re-running the verification
+> after the edits rather than before. **A redaction's own write-up is a place
+> the redacted value gets put back**, which is not obvious until you do it.
+
+### What this does not fix, stated plainly because the packet insisted on it
+
+**The history still carries all of it.** Commits `dbd6c21`…`cb35580` hold the
+full name, the email address and the phone number, and the only option that
+would remove them — Option C, rewrite and force-push — is forbidden by
+`CLAUDE.md` and refused by this environment's proxy (OL-0026, OL-0027). The end
+state is **current files clean, history not.** T-48 stays open on that basis and
+must not be closed as if the exposure were undone.
+
+**The customer has not been contacted and must not be** about this. That would
+be Class C and a separate decision; nothing about it changes their job.
+
+---
+
+## A-17 — Twelve third-party people's contact details are in this public repository
+
+**Status: PENDING — raised 2026-10-09 while executing A-16.**
+
+**Decision requested** — A decision on **non-customer** third-party contact
+details: nine named individuals' work email addresses, five consumer free-mail
+addresses belonging to inbound solicitors, and three phone numbers. **None is a
+customer, so §5's customer rule does not reach them and A-16 did not cover
+them.** §5's closing clause does reach them: "a new category of sensitive
+material needs its own decision."
+
+**Business objective** — Decide once whether third-party contact detail belongs
+in a public operating record, so that every future intake run has a rule instead
+of a judgement call. The intake routine will keep producing this material every
+weekday it runs; without a decision it will keep accumulating.
+
+**Source and context** — A full scan of the tracked tree while executing A-16.
+A-16 was scoped to one customer; the scan was not, and found the rest. **This is
+the scan A-16's grep-based success test would have passed**, because all of it
+is correctly-formatted non-customer data.
+
+| Category                                                                           | Count | Where                                     | Assessment                                                                                                                 |
+| ---------------------------------------------------------------------------------- | ----: | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Named officials' work addresses** — GDOT ×2, Georgia SBDC, GREC, Georgia CDC ×2  |     6 | A-15 body, `TASK-REGISTER.md`, two briefs | Government staff in their official capacity. Mostly a matter of public record already                                      |
+| **Named vendor staff addresses** — a steel-building supplier, a legal-plans seller |     2 | `TASK-REGISTER.md`, 2026-10-08 brief      | Commercial sales contacts who wrote to DD84 unsolicited                                                                    |
+| **Consumer free-mail addresses of inbound solicitors**                             |     5 | `TASK-REGISTER.md`, 2026-10-08 brief      | **The T-42 set — five of these are assessed as likely loan fraud.** Private individuals' addresses, whatever their conduct |
+| **A state agency's published information line** (GREC)                             |     1 | 2026-10-09 brief                          | Published by the agency for exactly this purpose. No concern                                                               |
+| **A business office line** (GDOT District 1)                                       |     1 | `TASK-REGISTER.md`                        | Published. No concern                                                                                                      |
+| **The owner's own mobile number**, in two draft email signatures                   |     1 | 2026-10-08 brief ×2                       | **The owner's own, so the owner's call** — listed for completeness, not flagged                                            |
+| **Automated vendor senders** — Render, GitHub, PayPal, HP Tuners via NetSuite      |     4 | `TASK-REGISTER.md`, two briefs            | No-reply robots. No person behind them. No concern                                                                         |
+
+**Recommended plan — Option A: redact the five solicitor addresses, keep the
+rest, and write the rule into the routine.** The five consumer addresses are
+private individuals' personal accounts and carry the least public-interest
+justification; that two of them may be running a fraud does not make publishing
+their addresses DD84's business, and it is the category most likely to be
+regretted. Officials' work addresses, published agency lines and no-reply robots
+stay, because they are either already public or not personal. Then **amend
+`.claude/commands/dd84-inbox-intake.md`** so future runs record a solicitor as
+"a consumer free-mail address" with the thread ID and nothing more.
+
+**Alternatives**
+
+- **Option B — redact every address of a named natural person**, officials
+  included, leaving published agency lines and robots. Most conservative.
+  **Cost:** A-15's drafts become harder to review, since you cannot see who they
+  are addressed to without opening Gmail; the register gets vaguer about who
+  said what. Defensible if you would rather not host anyone's address.
+- **Option C — change nothing and record the decision.** Nothing here is a
+  credential, a customer or a payment detail, and most is public already. The
+  five solicitor addresses are the weak point. **Cheapest, and honest if you
+  judge the exposure trivial** — but it must be recorded as a decision, or the
+  next session reopens it, which is what A-13 was closed to stop.
+- **Option D — make the repository private.** **Not recommended and not really
+  live.** A-13 settled it, the owner declined to reopen it when asked directly
+  on 2026-10-08, and nothing here is a stronger case than the customer mobile
+  number that failed to move it. Listed so the record shows it was considered,
+  not to reopen it.
+
+**Cost and cash impact** — **None** for any option.
+
+**Risks and safeguards**
+
+- **The same limit as A-16 applies: no option removes anything from the git
+  history.** Options A and B clean the current files only. Do not let any of
+  them read as undoing publication.
+- **Option A's risk is that the line is mine, not a rule's** — "private
+  individual" versus "professional contact" is a judgement, and a future run
+  will meet a case that sits between the two. The routine amendment is the
+  mitigation: it makes the call once, in writing, where the next run will read
+  it.
+- **Doing nothing has a running cost.** The intake fires every weekday and this
+  material accrues on each run. Three briefs have produced it so far.
+
+**Systems affected** — Up to four files in this repository, plus one routine
+prompt. No connector, no live system, no customer contact.
+
+**Customer/public impact** — **Nobody is contacted under any option.** No
+solicitor, official or adviser is told their address was published or removed;
+raising it would be Class C and a separate decision, and for the suspected-fraud
+set would additionally tip off a party DD84 may need to report rather than warn.
+
+**Success test** — The chosen option is recorded here with its reasoning; the
+tree matches it; and if Option A or B is chosen,
+`.claude/commands/dd84-inbox-intake.md` states the rule so the next scheduled
+run applies it without asking. **The test is not a grep** — that is what let
+A-16 report success on two files that were not clean.
+
+**Reply with: APPROVE (option A) / APPROVE WITH CHANGES (option B or C) / DEFER
+/ REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-51. **Actual result**
+— Not executed; nothing in this packet has been changed in the tree.
+
+> **A numbering note, because this record keeps hitting it.** This packet first
+> cited T-49. **T-49 and T-50 had been taken minutes earlier** by the scheduled
+> cash review, which committed at 13:21:48Z while this work was in progress —
+> the fourth numbering collision in this record, all four from two sessions
+> appending concurrently. Corrected to **T-51** before the commit. The
+> structural fix is A-10: one Routine per session instead of four serialising
+> through one.

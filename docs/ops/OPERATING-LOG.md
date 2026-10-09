@@ -1240,6 +1240,21 @@ summary table is part of the write, not a follow-up.
 
 ## OL-0031 — 2026-10-08 · First inbox intake; the register had been blind to the actual business
 
+> **REDACTED 2026-10-09 — this entry has been edited, which the append-only rule
+> normally forbids.** Four sites in this entry carried the C10 customer's name
+> and, in one case, his personal email address. They now read "the C10
+> customer". **Removed by:** Claude (agent), cqvhy6 session. **Under:** approval
+> **A-16**, Option A, granted by the owner 2026-10-09. **Rule forced the
+> conflict:** `CLAUDE.md` §5 — "never add customer names, email addresses, phone
+> numbers or payment details" — against `docs/ops/README.md`'s "append-only —
+> never edit or delete an entry". **Both are hard rules and satisfying either
+> breaks the other**, which is why it went to the owner rather than being fixed
+> quietly. **Commit:** the one carrying **OL-0036**, which records the whole
+> action. **Nothing else in this entry was altered** — no finding, figure,
+> conclusion or timestamp. **The history is not touched**: these details remain
+> readable in commits `dbd6c21`…`cb35580`, and no option available to this
+> repository removes them from there. See **T-48**.
+
 - **Timestamp** 2026-10-08T16:04:00Z
 - **Task** T-37…T-44 created by this run; T-13 cross-referenced · **Approval**
   S-01 (Class A routine). Owner invoked `/dd84-inbox-intake` directly.
@@ -1272,24 +1287,24 @@ report — which the routine's own contract calls worse than no routine at all.
 
 ### What was actually in there
 
-| Thread                                         | What it is                                                                                                                        | Became   |
-| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `C10 Terminator X Max - DL Files`, 22 messages | **Live customer job.** Arman Olgun, LM7 C10, Terminator X Max V3 b110, AFR fault. DD84 has built a revised tune and is holding it | **T-37** |
-| `Driveway Concept Review`, 4 messages          | **GDOT District 1 answered**: permit likely, but **right-in/right-out only** due to the SR 72 median. **Unread 42 hours**         | **T-38** |
-| `Meeting Today`                                | Georgia SBDC session **missed** 2026-10-06; reschedule offered                                                                    | **T-39** |
-| Play Console `[Action Needed]`                 | Developer account closes in 60 days                                                                                               | **T-40** |
-| r/LSSwapTheWorld ×2                            | Two people DD84 helped free; one said they'd be in touch                                                                          | **T-41** |
-| `list_drafts`                                  | **14 unsent drafts**, incl. a state regulator today and an SBA 504 lender 9 days old                                              | **T-42** |
-| Search Console                                 | **`downdirty84llc.com`** indexing — a domain `ventures.md` does not contain                                                       | **T-43** |
+| Thread                                         | What it is                                                                                                                             | Became   |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `C10 Terminator X Max - DL Files`, 22 messages | **Live customer job.** The C10 customer, LM7 C10, Terminator X Max V3 b110, AFR fault. DD84 has built a revised tune and is holding it | **T-37** |
+| `Driveway Concept Review`, 4 messages          | **GDOT District 1 answered**: permit likely, but **right-in/right-out only** due to the SR 72 median. **Unread 42 hours**              | **T-38** |
+| `Meeting Today`                                | Georgia SBDC session **missed** 2026-10-06; reschedule offered                                                                         | **T-39** |
+| Play Console `[Action Needed]`                 | Developer account closes in 60 days                                                                                                    | **T-40** |
+| r/LSSwapTheWorld ×2                            | Two people DD84 helped free; one said they'd be in touch                                                                               | **T-41** |
+| `list_drafts`                                  | **14 unsent drafts**, incl. a state regulator today and an SBA 504 lender 9 days old                                                   | **T-42** |
+| Search Console                                 | **`downdirty84llc.com`** indexing — a domain `ventures.md` does not contain                                                            | **T-43** |
 
 ### Two conflicts, both paused, neither resolved
 
-1. **DD84 told Arman his Bosch O2 sensor was the limiting factor and that an OEM
-   Holley sensor was needed. He then verified the sensor _is_ the Holley Bosch
-   4.9 LSU.** The remedy no longer follows from the cause. **No replacement
-   diagnosis was offered and no tune file was sent** — it is a technical
-   determination about a customer's running engine, and `ventures.md` forbids
-   fabricating one. Handed to the owner.
+1. **DD84 told the C10 customer his Bosch O2 sensor was the limiting factor and
+   that an OEM Holley sensor was needed. He then verified the sensor _is_ the
+   Holley Bosch 4.9 LSU.** The remedy no longer follows from the cause. **No
+   replacement diagnosis was offered and no tune file was sent** — it is a
+   technical determination about a customer's running engine, and `ventures.md`
+   forbids fabricating one. Handed to the owner.
 2. **`ventures.md` names `dd84tuning.com` as the front door; Search Console
    reports on `downdirty84llc.com`.** The live system is controlling. **Nothing
    was changed** — `ventures.md` is Rev's file and this record does not write
@@ -1302,19 +1317,19 @@ GDOT (reply on `1a1133f549956cc3`) and Georgia SBDC (reply on
 were created**: the routine prefers the output file, and a fifteenth draft would
 have joined the T-42 backlog it had just found. Covered by **A-15**.
 
-**No draft was written for the Arman thread, deliberately.** That is the most
-commercially live thread in the mailbox and the omission is the point — see
-conflict 1.
+**No draft was written for the C10 customer's thread, deliberately.** That is
+the most commercially live thread in the mailbox and the omission is the point —
+see conflict 1.
 
 ### Identity, checked rather than assumed
 
-Shopify holds **no customer** for `arman.olgun@gmail.com`. Stripe and bookipay
-were unreachable. So **whether DD84's most active correspondent is one of its
-three known customers is unknown**, and §9 forbids merging on less than verified
-identity. He is recorded as an active correspondent of unknown purchase history
-— not as a fourth customer, and not as one of the three. **Whether he has paid
-for 22 messages of diagnostic work is also unknown**, and is flagged as a
-question rather than asserted as unbilled.
+Shopify holds **no customer** for the C10 customer's address. Stripe and
+bookipay were unreachable. So **whether DD84's most active correspondent is one
+of its three known customers is unknown**, and §9 forbids merging on less than
+verified identity. He is recorded as an active correspondent of unknown purchase
+history — not as a fourth customer, and not as one of the three. **Whether he
+has paid for 22 messages of diagnostic work is also unknown**, and is flagged as
+a question rather than asserted as unbilled.
 
 - **Error** None introduced. **Class A held absolutely**: nothing sent,
   forwarded or replied to; no label applied; no thread moved, archived or
@@ -1747,4 +1762,136 @@ credits, labour — **and no labour rate was assumed**, per §8.5.
 
 ---
 
-## Next entry: OL-0036
+## OL-0036 — 2026-10-09 · A-16 executed: thirteen redaction sites, four files, two of them protected
+
+- **Timestamp** 2026-10-09T13:45:00Z
+- **Task** T-48 (**In Verification**), T-51 (**new**) · **Approval** **A-16,
+  APPROVED Option A** by the owner 2026-10-09 ("Approve A-16"). Raising
+  **A-17**.
+- **Action** Removed the C10 customer's name and personal email address from
+  thirteen sites across four files; added a visible dated redaction note to the
+  two records whose write modes forbid editing; scanned the whole tracked tree
+  and raised a second packet for what the scan found outside A-16's scope.
+- **Tool** `Bash` (`git`, `python3`), `Read`/`Edit`; `get_trigger` ×3,
+  `get_session` ×2, `delete_trigger` ×1.
+- **Operator** Claude (agent), cqvhy6 session `session_01J5Nz8tzpHNV4Z5TriQVecq`
+- **Before** 50 tasks, 16 packets. Customer first name in four files; personal
+  email in one; full name in two. A-16 pending.
+- **After** 51 tasks, 17 packets. **No customer name, email address or phone
+  number anywhere in the tracked tree.** A-16 closed as executed.
+
+### The evidence
+
+| File                                | Sites | Verification                       |
+| ----------------------------------- | ----: | ---------------------------------- |
+| `OPERATING-LOG.md` (OL-0031)        |     4 | 3 × first name, 1 × personal email |
+| `briefs/2026-10-08-inbox-intake.md` |     7 | 7 × first name                     |
+| `APPROVALS.md` (A-15 body)          |     1 | Full name                          |
+| `TASK-REGISTER.md`                  |     1 | First name                         |
+
+Each replacement was applied by a script asserting **exactly one** occurrence of
+its target string before substituting, so a silent miss or a double-apply fails
+loudly rather than passing. All thirteen asserted and applied. A
+case-insensitive sweep for the name token across every tracked markdown file
+returns **nothing**.
+
+**The two protected records each carry an inline note** naming what was removed,
+by whom, under which approval, which two rules collided, and that the history is
+untouched. That note _is_ Option A: the mitigation for editing an append-only
+record is that the edit announces itself. A reader of OL-0031 now sees that it
+was changed, and why, without having to diff it.
+
+### A-16's own table was wrong about two files, and the reason is worth keeping
+
+**A-16 recorded `TASK-REGISTER.md` and the 2026-10-08 brief as "Redacted". They
+were not** — eight sites between them still named the customer. The earlier pass
+removed the full name, the email and the mobile number, and left every bare
+first name standing.
+
+**The success test caused it.** A-16's test was a `grep` for an email address
+and a phone number. A first name matches neither, so the tree tested clean while
+eight sites still named him. **§5 lists names first** of the four things it
+forbids — and a name is the only one of the four you cannot grep for without
+already knowing it, which is exactly why it got skipped.
+
+**This is T-27's defect in different clothing.** There, a Routine reporting
+`SUCCEEDED` was read as a brief delivered; the status was real and measured the
+wrong thing. Here, a grep returning nothing was read as a tree with no customer
+identity in it. **A test narrower than the rule it tests reports success
+early**, and in both cases the gap survived weeks because the test kept passing.
+T-51's packet carries a deliberately non-grep success test on that basis.
+
+### What was deliberately not done
+
+**Nothing was contacted, sent or published.** The customer has not been told and
+must not be — Class C, separate decision, and the material at risk is his own
+name and number, already known to him.
+
+**The git history was not touched and cannot be.** Commits `dbd6c21`…`cb35580`
+still carry the full name, email address and mobile number in a **public**
+repository. Option C — rewrite and force-push — is forbidden by `CLAUDE.md` and
+refused by this environment's proxy (OL-0026, OL-0027). **The end state is
+current files clean, history not**, and T-48 stays **In Verification** on that
+basis rather than Done. A-16 said in its own risk section not to let the packet
+read as fixing the exposure; it does not, and neither does this entry.
+
+**Option D (make the repository private) was not revisited.** A-13 settled it on
+2026-10-08 and the owner declined to reopen it when asked directly the same day.
+A-16 listed it only because a customer's mobile number is a different category
+from the revenue figures A-13 was decided about; the owner's approval of Option
+A answers it.
+
+### The scan found more than the packet covered, so it became a second packet
+
+A-16 was scoped to one customer. **The tree scan was not, and found nineteen
+further contact items belonging to people who are not customers** — six named
+officials' work addresses, two vendor-staff addresses, five consumer free-mail
+addresses from inbound solicitors, two published agency phone lines, the owner's
+own mobile in two draft signatures, and four no-reply robots.
+
+**None of it is in breach of §5**, which is about customers. **All of it is
+caught by §5's closing clause** — "a new category of sensitive material needs
+its own decision." So it was **not** redacted on my own judgement, even though
+most of it sits in files an agent may edit freely. **Raised as A-17 / T-51**,
+with a recommendation (clean the five consumer addresses, keep the rest, write
+the rule into the intake routine) rather than a question with no answer
+attached.
+
+**Scope was not expanded to execute it.** Thirteen sites were changed, all of
+them inside what the owner approved.
+
+### A fourth numbering collision, and the pattern is now the point
+
+A-17 was first written citing **T-49**. **T-49 and T-50 had been taken 24
+minutes earlier** by the scheduled cash review, which committed `18566cc` at
+13:21:48Z while this work was in progress. Caught before the commit and
+corrected to T-51.
+
+**That is the fourth collision in this record** — OL-0023, OL-0028, A-13 and now
+T-49 — **every one of them two sessions appending to the same register at the
+same time.** Re-reading the tail before taking a number has caught all four, but
+it is a habit standing in for a fix. **The fix is A-10**: four Routines in four
+sessions instead of four serialising through one host. Worth noting that today's
+three scheduled runs all succeeded _and_ produced a collision; the stopgap
+working is not the same as the stopgap being right.
+
+### One correction to this session's earlier reporting
+
+At 13:20Z I told the owner the Friday cash review had been delivered but had not
+committed, and that the host session's identical token counters across two reads
+81 seconds apart were "consistent with a stalled session _and_ with a
+turn-boundary snapshot", which I could not distinguish. **It was the snapshot.**
+The cash review committed `18566cc` at **13:21:48Z**, 2h10m after its 11:11:22Z
+firing, and `docs/ops/briefs/2026-10-09-cash-review.md` is in the tree. **Three
+of three scheduled firings delivered today.** The scheduled re-check I had armed
+for 14:31Z (`trig_015eubXSgqzNsYqwnULQvS7v`) was deleted as redundant.
+
+Declining to call it either way was right — the two causes genuinely were
+indistinguishable from the available readings. **But `external_metadata`
+counters on another session are a turn-boundary snapshot and should not be read
+as a liveness signal at all**, which is a cheaper lesson than waiting 70 minutes
+for.
+
+---
+
+## Next entry: OL-0037

@@ -81,9 +81,10 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-45 | GREC will not interpret the law; the licensing question is open     | compliance | High     | Blocked                  | Owner | A-06 covers it   | 2026-10-16   |
 | T-46 | Webador annual invoice will auto-charge; amount unknown             | finance    | Normal   | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
 | T-47 | Two Google Business Profiles for one business                       | ops        | Normal   | Planned                  | Owner | A to prepare     | not set      |
-| T-48 | Customer identity is in a public repository and in its history      | compliance | **High** | **Awaiting Owner**       | Owner | **A-16 pending** | 2026-10-10   |
+| T-48 | Customer identity is in a public repository and in its history      | compliance | **High** | **In Verification**      | Agent | A-16 executed    | 2026-10-10   |
 | T-49 | A bank transfer was declined on 2026-10-05                          | finance    | **High** | **Awaiting Owner**       | Owner | A to read        | 2026-10-09   |
 | T-50 | HP Tuners Do Not Sell List — partner obligation                     | compliance | Normal   | **Awaiting Owner**       | Owner | A to read        | 2026-10-12   |
+| T-51 | Third-party contact details in a public repository                  | compliance | Normal   | **Awaiting Owner**       | Owner | **A-17 pending** | 2026-10-13   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
@@ -1319,9 +1320,9 @@ unique entries were carried across by hand instead.
   file for a running engine is **safety-adjacent** and is the owner's, not an
   agent's.
 - **Where it stands** — DD84 sent last on 2026-10-07T13:24Z: _"just get back to
-  me as soon as you are able to go through the checklist. Safe travels."_ Arman
-  is on a work trip and said he would run the checks on return. **Waiting is
-  correct here**; this task is not about chasing him.
+  me as soon as you are able to go through the checklist. Safe travels."_ The
+  C10 customer is on a work trip and said he would run the checks on return.
+  **Waiting is correct here**; this task is not about chasing him.
 
 ### The blocker is a contradiction, not a delay
 
@@ -1787,8 +1788,12 @@ payment.
 - **Workstream** compliance · **Priority** **High** · **Owner** **Owner** ·
   **Due** 2026-10-10
 - **Approval class** — Redacting the register and a dated brief is **A**, within
-  their own write modes, and **is done**. Editing `OPERATING-LOG.md` or an
-  approval packet is **not** — raised as **A-16**.
+  their own write modes. Editing `OPERATING-LOG.md` or an approval packet is
+  **not** — raised as **A-16**, **approved Option A 2026-10-09 and executed**.
+- **Why this is In Verification and not Done** — the current files are clean and
+  that is verifiable, but **the task's objective was to get customer identity
+  out of a world-readable repository and that has not been achieved.** The
+  history still carries it. **Do not close this on the redaction.**
 
 ### What happened, in order
 
@@ -1811,16 +1816,32 @@ whatever gets added later."
 
 ### What is done, and what is deliberately not
 
-| File                                | Write mode                      | Action                                                                            |
-| ----------------------------------- | ------------------------------- | --------------------------------------------------------------------------------- |
-| `TASK-REGISTER.md`                  | Edit in place                   | **Redacted.** Now "the C10 customer", pointing at Gmail thread `1a1082503004a073` |
-| `briefs/2026-10-08-inbox-intake.md` | Dated output                    | **Redacted**, same substitution                                                   |
-| `OPERATING-LOG.md`                  | **Append-only**                 | **Untouched.** Still carries the name and email                                   |
-| `APPROVALS.md` (A-15 body)          | Append; **Response block only** | **Untouched.** Still carries the name                                             |
+| File                                | Write mode                      | State after A-16                                                        |
+| ----------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
+| `TASK-REGISTER.md`                  | Edit in place                   | **Clean.** 1 further site found and removed under A-16                  |
+| `briefs/2026-10-08-inbox-intake.md` | Dated output                    | **Clean.** 7 further sites found and removed under A-16                 |
+| `OPERATING-LOG.md`                  | **Append-only**                 | **Clean**, 4 sites, **with a visible inline redaction note** in OL-0031 |
+| `APPROVALS.md` (A-15 body)          | Append; **Response block only** | **Clean**, 1 site, **with a visible inline redaction note**             |
 
 **Breaking one hard rule to satisfy another is not an agent's call.** Both the
 append-only log and the edit-once packet exist to stop records being quietly
-rewritten, which is precisely what a redaction is. **A-16 asks the owner.**
+rewritten, which is precisely what a redaction is. **A-16 asked the owner, and
+the owner approved Option A on 2026-10-09.** Executed the same day; see OL-0036.
+
+### The two "already redacted" files were not redacted
+
+Rows 1 and 2 above were recorded as **done** when A-16 was raised. **Both still
+carried the customer's first name — eight sites between them.** The first pass
+removed the full name, the email address and the phone number and left every
+bare first name in place.
+
+**The cause was A-16's success test**, which was a `grep` for an email address
+and a phone number. A first name is neither, so the tree tested clean while
+eight sites still named the customer. **§5 lists names first** of the four
+things it forbids, and a name is the one of the four you cannot grep for without
+already knowing it. The lesson is the same one T-27 taught in a different
+costume: **a success test narrower than the rule it is testing reports success
+early.** T-51's packet carries a non-grep success test for that reason.
 
 ### The part that matters most
 
@@ -1932,3 +1953,55 @@ nothing else had been intaked yet, not because anything prevented it.
 - **Completion proof required** — A recorded statement that the list was read
   and checked against DD84's customers, with the result.
 - **Status** **Awaiting Owner** · **Next action** — Step 1.
+
+## T-51 — Third-party contact details in a public repository
+
+- **Objective** — Get an owner decision on contact details belonging to people
+  who are **not** DD84 customers, and write the resulting rule into the intake
+  routine so the question is settled rather than re-asked every weekday.
+- **Source** — A full tracked-tree scan on 2026-10-09 while executing A-16. A-16
+  was scoped to one customer; the scan was not.
+- **Workstream** compliance · **Priority** Normal · **Owner** **Owner** ·
+  **Due** 2026-10-13
+- **Approval class** — **A-17 pending.** Redacting `TASK-REGISTER.md` and dated
+  briefs would be Class A within their write modes, but **the decision of where
+  the line sits is not an agent's**, and A-15's body is a sealed packet again.
+
+### What is there
+
+Nineteen items, in six categories, none of them a customer: **six named
+officials' work addresses** (GDOT ×2, Georgia SBDC, GREC, Georgia CDC ×2), **two
+named vendor-staff addresses**, **five consumer free-mail addresses** belonging
+to inbound solicitors — the T-42 set, five of which are assessed as likely loan
+fraud — **two published agency phone lines**, **the owner's own mobile** in two
+draft signatures, and **four automated no-reply senders**. The full table, with
+an assessment of each, is in A-17.
+
+### Why it is Normal priority and not High
+
+**Nothing here is a credential, a customer, or a payment detail.** Most of it is
+already public: government staff addresses, agency information lines, no-reply
+robots. **The weak point is the five consumer addresses** — private individuals'
+personal accounts, and the fact that two of them appear to be running a loan
+fraud is not a reason DD84 should be publishing where they live online.
+
+T-48 was High because it was a paying customer's mobile number. This is not
+that, and saying so is more useful than flagging everything at the same level.
+
+### The thing to decide, in one sentence
+
+**Is a named official's work email address "sensitive material" in the sense §5
+means?** Say yes and the register gets vaguer about who said what, including in
+A-15's drafts, which become hard to review without opening Gmail. Say no and the
+five solicitor addresses need handling separately. A-17 recommends exactly that
+split — Option A.
+
+### What it does not fix
+
+**No option removes anything from the git history.** Same limit as T-48, same
+reason: history rewriting is forbidden on this branch and refused by the proxy.
+Any option here cleans current files only.
+
+- **Status** **Awaiting Owner** · **Next action** — answer **A-17**. **Due
+  2026-10-13**, which is the next weekday intake after the weekend; past that
+  the routine keeps adding to the pile under no rule.
