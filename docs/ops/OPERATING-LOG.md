@@ -1645,4 +1645,106 @@ into **T-44**.
 
 ---
 
-## Next entry: OL-0035
+## OL-0035 — 2026-10-09 · Weekly cash review; three for three, and a review that cannot state cash
+
+- **Timestamp** 2026-10-09T11:28:00Z
+- **Task** T-36, T-37, T-46, T-49 and T-50 (**created**) · **Approval** S-01
+  (Class A routine), fired by Routine "DD84 Weekly Cash and Revenue Review
+  (repo-attached)", `trig_01Y9G9LUVQR752W4uop2jZfL`, 11:11:21Z.
+- **Action** Ran the weekly revenue and cash review for the seven days ending
+  11:11Z. **Reported no revenue total**, because doing so would have spanned two
+  unreadable systems. Created two tasks from mail nobody had opened.
+- **Tool** `mcp__PayPal__list_transactions` (succeeded), `list_invoices` and
+  `list_disputes` (**both failed**); `mcp__Shopify__get-shop-info`,
+  `list-orders`, `run-analytics-query`; `mcp__Gmail__search_threads`;
+  `mcp__Supermetrics_Marketing_Analytics__data_source_discovery`;
+  `Read`/`Write`/`Bash`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 50 tasks after the intake and brief; 16 packets.
+- **After** 52 rows — **T-49 and T-50 added** — and
+  `docs/ops/briefs/2026-10-09-cash-review.md`. **No packet raised.**
+
+### Three scheduled firings today, three commits
+
+Intake `ecd04da` 10:29Z, daily brief `538d2d3` 11:00Z, and this review. **Three
+for three**, against roughly thirty prior firings that delivered nothing. T-27
+closed on the first; this entry is further evidence under the same stopgap, and
+**A-10 remains the real fix.**
+
+### The headline is a refusal, not a number
+
+**No revenue total is reported for the week.** Stripe is absent from this
+session and bookipay has no API — **the two systems that have ever carried DD84
+revenue.** This routine's own contract forbids a total spanning a system that
+could not be read, and that rule did real work today: it would have been easy,
+and wrong, to write "$0.00 revenue this week" from two zeros that only cover
+Shopify and PayPal.
+
+**What was genuinely read:**
+
+| System                    | Result                                                                                                                |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Shopify                   | **$0.00 and 0 orders**, confirmed twice — `list-orders` and a 30-day ShopifyQL aggregate on `49qz1e-0r.myshopify.com` |
+| PayPal transactions       | **0**, but in a window the API **silently narrowed** to 08:59:59Z                                                     |
+| PayPal invoices, disputes | **Failed** — connector dropped to "needs re-authentication" mid-run                                                   |
+| Advertising, 32 sources   | **All `NOT_AUTHENTICATED`.** No spend readable                                                                        |
+| Bank                      | **No connector exists.** Cash position unreadable                                                                     |
+
+### Baseline: one of five figures re-verified, four still stale
+
+`ventures.md` is **67 days old** against a 30-day rule. **Shopify's all-time 0
+orders was re-confirmed** over the last 30 days. **All-time revenue, invoice
+count, customer count and last-payment date could not be**, so they are quoted
+with their 2026-08-03 date and **the change since is reported as not
+computable.** That is the fourth consecutive degraded money section, same cause
+each time — **T-36.**
+
+**Three standing owner decisions were honoured rather than quietly worked
+around:** the ten historic invoices were not chased and the numbering gaps not
+raised (2026-08-07); Shopify figures were labelled as the back half of the
+funnel (2026-08-13); and no Ledger revenue appears anywhere in the review
+(2026-09-16).
+
+### Two cash signals found in the mailbox, neither previously tracked
+
+The command file's Gmail step — vendor invoices and renewal notices — was the
+only source that produced new findings, and both were unread:
+
+1. **A declined bank transfer**, PayPal, 2026-10-05T19:10Z. **Amount, direction
+   and reason all unknown** and in an unopened message; no bank connector exists
+   to ask. High priority because a declined ACH against a business with no
+   verifiable revenue in thirteen months reads either as a bank block or as
+   insufficient funds, **and an annual auto-charge is inbound on an unknown
+   amount** (T-46). → **T-49**
+2. **HP Tuners "Do Not Sell List"**, 2026-10-05T15:02Z, **effective the next day
+   — so in force since 2026-10-06.** DD84 is an HP Tuners partner by its own
+   capability list. **The attached list is unread**, so who is on it is unknown.
+   Four days of unknown obligation. → **T-50**
+
+### Margin and pipeline: both empty, and the reason is a record-keeping gap
+
+**No job closed, so no margin is computable.** The one open job — the C10
+Terminator X Max fault — **has no price attached after 22 messages, a diagnosis
+and a built tune file.** Against the catalogue it falls between **$99 and
+$650**, and **the range was left as a range**: picking the midpoint would have
+been a pricing decision, and pricing authority is the owner's. Margin is
+recorded **INCOMPLETE** with its three missing inputs named — revenue, software
+credits, labour — **and no labour rate was assumed**, per §8.5.
+
+- **Error** None introduced. **Class A held absolutely. No write tool was called
+  on any payment system**: no charge, refund, invoice, payment link, transfer,
+  subscription change or price change. Nothing was sent or published.
+- **Remediation** Not applicable; nothing failed on this side. **The PayPal
+  re-authentication is a live connector fault the owner must clear** — it joins
+  Stripe and bookipay in T-36. Owner-side and open: **A-15** (GDOT waiting three
+  days), **A-16**, **A-07**, the C10 price and technical determination (T-37),
+  the declined transfer (T-49), the HP Tuners list (T-50), the Webador amount
+  (T-46), and the unanswered card-toggling question from 10-08.
+- **Worth stating plainly** — **this review could not state DD84's cash
+  position.** Not because the week was quiet, but because no reachable system
+  holds the answer. **That is a defect in the setup, not in the business**, and
+  it is one connector away from being fixed.
+
+---
+
+## Next entry: OL-0036

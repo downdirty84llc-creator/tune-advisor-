@@ -82,14 +82,16 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-46 | Webador annual invoice will auto-charge; amount unknown             | finance    | Normal   | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
 | T-47 | Two Google Business Profiles for one business                       | ops        | Normal   | Planned                  | Owner | A to prepare     | not set      |
 | T-48 | Customer identity is in a public repository and in its history      | compliance | **High** | **Awaiting Owner**       | Owner | **A-16 pending** | 2026-10-10   |
+| T-49 | A bank transfer was declined on 2026-10-05                          | finance    | **High** | **Awaiting Owner**       | Owner | A to read        | 2026-10-09   |
+| T-50 | HP Tuners Do Not Sell List — partner obligation                     | compliance | Normal   | **Awaiting Owner**       | Owner | A to read        | 2026-10-12   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 3 In Verification · 2 In
-Progress · 2 Awaiting Approval · 4 Awaiting Owner · 4 Blocked · 12 Planned · 2
-Backlog. **48 tasks.**
+Progress · 2 Awaiting Approval · **6 Awaiting Owner** · 4 Blocked · 12 Planned ·
+2 Backlog. **50 tasks.**
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -138,7 +140,7 @@ this table is part of the write.** Evidence: OL-0028.
 | A readable payment system               | T-36                                     |
 | Owner approval (A-15 — the drafts)      | T-38, T-39                               |
 | A customer (checklist, on a work trip)  | T-37                                     |
-| Owner decision                          | T-41, T-42, T-43, T-46, T-47             |
+| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50 |
 | Owner approval (A-16 — the redactions)  | T-48                                     |
 | Counsel (A-06 is already approved)      | T-13, T-45                               |
 | Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34 |
@@ -1859,3 +1861,74 @@ nothing else had been intaked yet, not because anything prevented it.
   customer email or phone number (**already true**), plus a recorded owner
   decision on the log, the packet and the history.
 - **Status** **Awaiting Owner** · **Next action** — A-16.
+
+---
+
+## T-49 — A bank transfer was declined on 2026-10-05
+
+- **Objective** — Find out what failed, how much, and in which direction, before
+  it fails again or means something worse.
+- **Source** — `/dd84-cash-review`, 2026-10-09. Gmail `1a10d796458de156`,
+  `service@paypal.com`, 2026-10-05T19:10:17Z, **unread**.
+- **Workstream** finance · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-09
+- **The finding, quoted** — _"Your bank declined your electronic funds transfer.
+  You recently attempted to transfer funds from your bank account. Your bank
+  has…"_ The snippet truncates there and the message has not been opened.
+- **What is unknown, and is not guessed** — **the amount, the direction, the
+  bank, and the reason.** All four are in the unread message or in PayPal, and
+  **no bank connector exists on this account.** PayPal itself dropped to "needs
+  re-authentication" during this run, so it could not be asked either.
+- **Why it is High rather than Normal.** A declined ACH is one of two things: a
+  bank-side block, or insufficient funds. **Torque cannot distinguish them and
+  will not try.** Against a business with **no verifiable revenue since
+  2025-09-12** and an annual hosting charge inbound on an unknown amount (T-46),
+  either reading matters. If it is insufficient funds, the Webador auto-charge
+  may fail too.
+- **Approval class** — **A to read.** Any remedial transfer, retry or account
+  change is **E** and needs a packet.
+- **Cost and risk** — **not recorded.** The risk of leaving it is a second
+  failure, a bank fee, or a declined charge on a service DD84 depends on.
+- **Execution steps** — (1) Owner opens the email and records amount, direction
+  and stated reason here; (2) check whether the transfer has since succeeded;
+  (3) if it was insufficient funds, check it against T-46's inbound charge; (4)
+  raise an E packet for any corrective transfer.
+- **Completion proof required** — The amount, direction and reason recorded, and
+  the current state of that transfer.
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **An agent cannot
+  read a bank; this one needs your eyes and takes a minute.**
+
+## T-50 — HP Tuners Do Not Sell List — a partner obligation with a past effective date
+
+- **Objective** — Establish who DD84 may not sell to, and whether it already
+  has.
+- **Source** — `/dd84-cash-review`, 2026-10-09. Gmail `1a10c967ba25d9b7`,
+  `system@sent-via.netsuite.com`, 2026-10-05T15:02:24Z.
+- **Workstream** compliance · **Priority** Normal · **Owner** **Owner** ·
+  **Due** 2026-10-12
+- **The finding, quoted** — _"Dear Valued HP Tuners Partner, Please find
+  attached HP Tuners Do Not Sell List. This list becomes effective **NEXT DAY
+  FROM RECEIPT at 12:01:00 AM**. The entities on the attached files are in
+  violation of…"_
+- **Why DD84 is bound by it** — `ventures.md` lists **HP Tuners** among DD84's
+  capabilities, so DD84 is a partner this notice addresses. **The effective date
+  has already passed** — the list took effect 2026-10-06 and today is
+  2026-10-09, **four days of unknown obligation.**
+- **The list itself is UNREAD.** It is an attachment, and no attachment-download
+  tool is loaded in this session. **Who is on it is unknown and is not guessed
+  at.**
+- **What this is not** — not a cash figure, and not evidence that DD84 has done
+  anything wrong. It is a supplier instruction whose contents nobody has
+  checked. **The risk is partner standing, not money.**
+- **Approval class** — A to read and cross-check. Any customer-facing
+  consequence is **C**.
+- **Cost and risk** — No cost. Risk: selling to a listed entity in breach of a
+  partner agreement, which is the kind of thing that ends a tooling relationship
+  rather than generating an invoice dispute.
+- **Execution steps** — (1) Owner opens the attachment; (2) cross-check against
+  DD84's customers and open work — **three known customers and one live job, so
+  this is a short check**; (3) record whether any match exists; (4) if one does,
+  stop and raise a packet before any further contact.
+- **Completion proof required** — A recorded statement that the list was read
+  and checked against DD84's customers, with the result.
+- **Status** **Awaiting Owner** · **Next action** — Step 1.
