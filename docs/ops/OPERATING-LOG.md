@@ -1438,4 +1438,122 @@ it raised is still a good one — just not evidenced by this.
 
 ---
 
-## Next entry: OL-0033
+## OL-0033 — 2026-10-09 · The first scheduled routine run ever to commit
+
+- **Timestamp** 2026-10-09T10:40:00Z
+- **Task** T-23, T-27, T-41, T-45…T-48 · **Approval** S-01 (Class A routine),
+  fired by Routine "DD84 Inbox and Lead Intake (repo-attached)",
+  `trig_01UdMtZvf1BdVuYoucd6UY7N`, 10:20:15Z.
+- **Action** Ran the inbox intake on schedule. Reviewed 26 threads, 9 of them
+  new. Created four tasks, updated one, raised one packet, redacted customer
+  identity from two files, named three conflicts.
+- **Tool** `mcp__Gmail__search_threads` ×2, `get_thread` ×1; `git`;
+  `Read`/`Write`/`Bash`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 44 tasks, 15 packets. No scheduled run had ever committed anything.
+- **After** 48 tasks, 16 packets, `docs/ops/briefs/2026-10-09-inbox-intake.md`.
+
+### This is the completion proof T-23 and A-10 have waited on since 2026-08-07
+
+A-10's success test: "**one scheduled run ends with a dated brief committed to
+`docs/ops/briefs/` and an entry in `OPERATING-LOG.md`**." T-23's: one `OL-`
+entry per routine's first firing. **This entry and this commit are both.** The
+2026-10-08 briefs were hand-driven and said so; this one was not.
+
+**What it proves and what it does not.** It proves the A-14 stopgap works: a
+Routine bound to a session that holds the repository delivers. **It does not
+close A-10** — this is one of four Routines, on one session, whose context grows
+with every firing and through which all four serialise. The daily brief at
+10:50Z and the cash review on Friday are the next tests, and the real fix is
+still recreating the Routines from the claude.ai UI.
+
+### The checkout check, and a defect in the prompt that runs it
+
+The firing prompt says to confirm "**28 tracked files and no `src/`**". The tree
+has **30** — the two briefs committed yesterday. **The count is already stale
+and will drift on every run.** It did not cause harm because the reset condition
+the prompt actually names is the presence of `src/`, which was absent, and the
+branch pointer matched after one fast-forward. **But a prompt that tells a
+session to expect a number that changes daily will eventually make one panic or,
+worse, reset.** The durable tell is `src/` and the absence of a `package.json`,
+not a file count. → folded into **T-44**.
+
+### What the window found
+
+| Thread                           | What it is                                                                                                                                                                                | Became             |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| GREC licensing reply, unread 15h | **A state commission declined to interpret its own licensing law**, cited three provisions the letter had not asked about, and **ignored the question about how to get a binding answer** | **T-45**           |
+| r/LSSwapTheWorld, third handle   | 2000 Sierra, street 6.0, **Riyadh** — and an assumption that distance rules DD84 out                                                                                                      | **T-41**           |
+| Webador annual invoice           | **Will auto-charge; amount in an unread PDF**                                                                                                                                             | **T-46**           |
+| Google Business Profile ×2       | **Two listings, one business** — 4 views and 40 views                                                                                                                                     | **T-47**           |
+| Yesterday's own output           | Customer identity in a public repository                                                                                                                                                  | **T-48**, **A-16** |
+
+**No reply was drafted this run**, and that is a result rather than an empty
+section: GREC needs a filing or a lawyer, the C10 job needs the owner's
+technical determination, and Webador needs a decision about money. **A-15's two
+drafts from yesterday are still unanswered.**
+
+### The conflict this run had to resolve about its own predecessor
+
+**`CLAUDE.md` §5, added overnight under A-13, forbids adding customer names,
+emails or phone numbers to this repository. Yesterday's intake had added all
+three.** The rule did not exist at the time, so it was not a violation then; it
+is an exposure now, and §5 explicitly covers "whatever gets added later".
+
+**Redacted** — `TASK-REGISTER.md` (edit-in-place by design) and
+`briefs/2026-10-08-inbox-intake.md` (a dated output). The customer is now "the
+C10 customer" against Gmail thread `1a1082503004a073`, which is a pointer and
+not an identity.
+
+**Deliberately not touched** — **this file**, which is append-only, and the body
+of packet **A-15**, which may only be edited in its Response block. **Breaking
+one hard rule to satisfy another is not an agent's call**, so both still carry
+the details and **A-16** asks the owner. Options A to D are laid out there,
+including the one already declined as A-13 Option 1, raised again only because a
+customer's mobile number is a different category from a revenue figure — which
+is the case §5 says needs its own decision.
+
+**Stated plainly because it is the part that matters: none of this unpublishes
+anything.** The name, email and number remain in the history of a public
+repository at `dbd6c21`…`cb35580`. A history rewrite is forbidden on this branch
+and refused by the proxy. **Current files clean, history not** is the honest end
+state, and A-16 decides what the record says about it, not whether the exposure
+happened.
+
+### A fourth consecutive summary-table drift, and it is no longer a slip
+
+**T-32's summary row read "Decided — owner's hand · A-13 approved" while its own
+detail block read "Closed — Option 3, the owner accepts the exposure".** The
+A-13 bullet on the approvals status board still described Option 1 as the
+answer. Both corrected here.
+
+That is the **fourth** time in two days the summary table or the status board
+has lagged a decision recorded three hundred lines below it: T-11 and T-13 on
+2026-10-08 (59 days stale), T-32 and T-27 later the same day, and T-32 again
+plus the A-13 bullet today. **Two of the four were introduced by this session
+and two by the sibling**, so this is not one agent being careless.
+
+**The register's own rule — "when an approval is answered, the row in this table
+is part of the write" — is not working, because it relies on remembering.** The
+honest conclusion is that a summary table maintained by hand beside a 1,700-line
+register will drift, and the fix is structural rather than exhortative: either
+the summary stops carrying approval state and points at `APPROVALS.md` as the
+single source, or something generates it. **Recorded here rather than turned
+into another task, because inventing a fifth process to remember the first four
+is the wrong instinct.** It belongs in the next revision of
+`docs/ops/README.md`.
+
+- **Error** None introduced. **Class A held**: nothing sent, forwarded or
+  replied to; no label applied; no thread moved, archived or trashed; no
+  calendar write; no customer contacted; no price quoted; no payment action; no
+  statute read or interpreted. **No draft was created in the mail account.**
+- **Remediation** Not applicable; nothing failed. Owner-side and open: **A-15**
+  (two sends, GDOT waiting three days), **A-16** (the redactions), the C10
+  technical determination (T-37), the Webador amount (T-46), whether Hawkins Law
+  is engaged counsel (T-45), and **whether the card toggling on 10-07 to 10-09
+  was the owner** — asked in the brief, deliberately not made a task until
+  answered, because if it was not the owner it outranks everything here.
+
+---
+
+## Next entry: OL-0034

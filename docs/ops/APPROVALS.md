@@ -41,24 +41,37 @@ and actual result.
 | A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed) | T-32, blocks T-29                  |
 | A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                | T-27                               |
 | A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**                 | T-38 T-39                          |
+| A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Pending**                 | T-48                               |
 
-**Two packets are with the owner: A-15 and A-07.** **A-15 is the only one with a
-human counterparty waiting** — a GDOT engineer since 2026-10-06 — and should be
-answered first for that reason alone. A-07 has been open since 2026-08-06 and
-blocks nothing urgent.
+**Three packets are with the owner: A-15, A-16 and A-07.**
 
-- **A-15** — raised 2026-10-08 by the first intake run. Two drafts, both written
-  in full, neither sent, neither placed in the mail account.
-- **A-13 — ANSWERED, NOT DONE.** The owner chose Option 1, make `tune-advisor-`
-  private. **The repository is still public**: the setting is not reachable from
-  a session (403 through the proxy, three routes tried) and needs the owner's
-  hand in the GitHub UI. T-32 therefore reads "decided, awaiting the owner's
-  hand", not Done.
-- **A-10 — still open**, and A-14 is explicitly not a substitute for it. A-14
-  binds the four Routines to a host session that holds the repository; that is a
-  stopgap with three stated weaknesses and it grants no standing scheduling
-  authority. The real fix is still recreating the Routines from the claude.ai
-  UI.
+- **A-15** — raised 2026-10-08 by the first intake run. Two drafts, written in
+  full, neither sent, neither placed in the mail account. **The only packet with
+  a human counterparty waiting**: a GDOT engineer since 2026-10-06T22:04Z.
+  Answer this one first.
+- **A-16** — raised 2026-10-09 by the scheduled intake. One customer's name,
+  email and mobile number sit in the **append-only** log and in A-15's own body,
+  and **an agent may not edit either without a decision.** The two files whose
+  write modes allow it are already clean. **The only packet about a real
+  person's data being world-readable.**
+- **A-07** — open since 2026-08-06. Ledger scope; blocks accepting uploads
+  safely, not launch.
+
+**Answered, and worth not misreading:**
+
+- **A-13 — CLOSED as Option 3**, 2026-10-08. The owner was asked twice: first
+  chose Option 1 (make the repository private), then asked for the reasoning and
+  **chose to accept the exposure instead**. Both answers are in the packet
+  because the sequence is the useful part. **The repository stays public by
+  decision**, which is what created the standing rule in `CLAUDE.md` §5 — and
+  what A-16 now turns on.
+- **A-14 — APPROVED and executed.** Four Routines bound to a host session
+  holding the repository. **It is not a substitute for A-10**: one session, its
+  context grows without bound, all four serialise, and it grants no standing
+  scheduling authority. **A-10 stays open.**
+- **A-10 — still open.** The real fix is recreating the Routines from the
+  claude.ai UI with a repository attached. **A-14 narrows the damage; it does
+  not close this.**
 
 > **Three packets were raised and answered within one hour on 2026-10-08, by two
 > sessions working the same record concurrently, and the numbering collided.**
@@ -938,3 +951,103 @@ DEFER / REJECT**
 
 **Response** — _awaiting owner._ **Affected records** — T-38, T-39. **Actual
 result** — Not executed. Nothing sent.
+
+---
+
+## A-16 — Redact customer identity from the append-only log and a sealed packet
+
+**Status: PENDING — raised 2026-10-09 by the scheduled inbox intake.**
+
+**Decision requested** — Authority to edit **`OPERATING-LOG.md`** and the body
+of **packet A-15** to remove one customer's name, email address and mobile
+number. **Both edits are forbidden by rules an agent must not override**, which
+is the only reason this is a packet rather than a fix.
+
+**Business objective** — Stop a real person's contact details being
+world-readable in a public repository, without an agent quietly rewriting the
+two records whose value is that they are not rewritten.
+
+**Source and context** — T-48. On 2026-10-08 the first intake run wrote the C10
+customer's full name, personal email and mobile number into four files. On
+2026-10-08 at about 23:00Z, **A-13 closed as Option 3 and a standing rule landed
+in `CLAUDE.md` §5**: this repository is public by decision, and "never add
+customer names, email addresses, phone numbers or payment details … customer
+identity is not [accepted], and the decision does not extend to it."
+
+**What has already been done without asking** — the two files whose own write
+modes permit it are **clean**:
+
+| File                                | Write mode                  | State                          |
+| ----------------------------------- | --------------------------- | ------------------------------ |
+| `TASK-REGISTER.md`                  | Edit in place               | **Redacted**                   |
+| `briefs/2026-10-08-inbox-intake.md` | Dated output                | **Redacted**                   |
+| `OPERATING-LOG.md`                  | **Append-only**             | **Still carries name + email** |
+| `APPROVALS.md`, A-15 body           | Append; Response block only | **Still carries name**         |
+
+**The conflict, stated precisely** — `CLAUDE.md` §5 says never hold customer
+identity here. `docs/ops/README.md` says the operating log is "**Append-only** —
+never edit or delete an entry", and that an approval packet is appended with
+"only the **Response** and **Actual result** blocks" edited. **Both are hard
+rules. Satisfying either breaks the other.** The append-only rule exists to stop
+audit trails being quietly rewritten, and a redaction is exactly a quiet rewrite
+— which is why an agent should not make this call alone.
+
+**Recommended plan — Option A: redact in place, visibly.** Replace the name and
+email in OL-0031 and in A-15's body with "the C10 customer", and **leave a dated
+inline note in each saying what was removed, by whom, under which rule and in
+which commit.** The entry stays legible, its meaning is unchanged, and the
+redaction itself becomes part of the record rather than a silent gap.
+
+**Alternatives**
+
+- **Option B — append a correction and change nothing.** Purest on append-only:
+  OL-0033 already records the breach, so the log would carry both the identity
+  and its correction. **It leaves the details readable**, which is the thing
+  being complained about. Defensible if you value the audit trail above the
+  exposure, and the exposure is one person's contact details, not credentials.
+- **Option C — rewrite history and force-push**, removing the details from
+  commits `dbd6c21`…`cb35580`. **Rejected, and not available anyway**: CLAUDE.md
+  forbids history rewriting on this branch, and this environment's proxy refuses
+  such pushes (OL-0026, OL-0027). Listed because it is the only option that
+  actually unpublishes anything, and it is worth knowing that it is closed.
+- **Option D — make the repository private.** This was A-13 Option 1 and **you
+  already considered and declined it** on reasoning recorded in A-13. Raised
+  again only because the facts have changed: A-13 was decided about revenue
+  figures and system identifiers, and **a customer's mobile number is a
+  different category** — which is precisely the case §5 says needs its own
+  decision. **If the answer is still no, that is a complete answer** and this
+  packet does not reopen it.
+
+**Cost and cash impact** — **None** for any option.
+
+**Risks and safeguards**
+
+- **Option A's risk is precedent.** Once a log entry has been edited once, the
+  append-only guarantee is weaker for every future reader. The visible inline
+  note is the mitigation: an edit that announces itself is not the failure the
+  rule guards against.
+- **Option B's risk is that nothing changes.** The details stay indexable.
+- **Whichever is chosen, the history is unaffected.** **No option on this list
+  except C removes anything from the public history, and C is closed.** The
+  honest end state is "current files clean, history not". **Do not let this
+  packet read as if it fixes the exposure** — it fixes the current files and
+  decides what the record says about it.
+
+**Systems affected** — Two files in this repository. No connector, no live
+system, no customer contact.
+
+**Customer/public impact** — The customer has not been contacted and **must not
+be** about this; nothing about it changes their job. Mentioning a data exposure
+to a customer is Class C and a separate decision entirely, and the material at
+risk is their own name and number, already known to them.
+
+**Success test** — `grep` over the tracked tree finds no customer email address
+or phone number, **and** the chosen option is recorded here with its reasoning,
+so a later session does not re-litigate it.
+
+**Reply with: APPROVE (option A) / APPROVE WITH CHANGES (option B or D) / DEFER
+/ REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-48, and OL-0031 and
+A-15 if Option A is chosen. **Actual result** — Not executed; the two protected
+files are untouched.
