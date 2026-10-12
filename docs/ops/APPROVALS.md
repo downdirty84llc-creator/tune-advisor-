@@ -41,9 +41,18 @@ and actual result.
 | A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed) | T-32, blocks T-29                  |
 | A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                | T-27                               |
 | A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**                 | T-38 T-39                          |
-| A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Pending**                 | T-48                               |
+| A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)     | T-48                               |
+| A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                 | T-51                               |
 
-**Three packets are with the owner: A-15, A-16 and A-07.**
+**Four packets are with the owner: A-15, A-17, A-07 and A-10.**
+
+> **Reconciled 2026-10-12 by the daily brief.** This board had **A-16 as
+> Pending** when its own Response block records **APPROVE (Option A), owner,
+> 2026-10-09**, executed the same day — and **A-17 had no row at all** though
+> its packet exists and T-51 cites it. Both fixed. **That is the fifth and sixth
+> time in five days that this board or the register's summary table has
+> contradicted the record below it**, across three different sessions. The fix
+> is structural, not another reminder: see OL-0034 and OL-0038.
 
 - **A-15** — raised 2026-10-08 by the first intake run. Two drafts, written in
   full, neither sent, neither placed in the mail account. **The only packet with

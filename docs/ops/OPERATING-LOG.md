@@ -2003,4 +2003,105 @@ part, not the eight missed strings**, which the sibling has since removed.
 
 ---
 
-## Next entry: OL-0038
+## OL-0038 — 2026-10-12 · Monday daily brief; PayPal joins the unreadable, and the board drifts for the sixth time
+
+- **Timestamp** 2026-10-12T11:04:00Z
+- **Task** T-23, T-30, T-36, T-37, T-46, T-49, T-52…T-55 · **Approval** S-01
+  (Class A routine), fired by Routine "DD84 Daily Command Brief
+  (repo-attached)", `trig_01Uw62JeMqdK6DaLatfk3BXX`, 10:50:58Z.
+- **Action** Ran the daily command brief. Read three connectors, degraded four,
+  reconciled two approvals-board defects, created no task — this morning's
+  intake had already captured everything in the mail.
+- **Tool** `mcp__Google_Calendar__list_events`, `mcp__Shopify__list-orders`,
+  `mcp__github__list_pull_requests`, `ToolSearch` (to establish PayPal's
+  absence); `git`; `Read`/`Write`/`Bash`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 54 tasks, 17 packets, A-16 shown Pending, A-17 absent from the
+  board.
+- **After** 54 tasks, 17 packets, `docs/ops/briefs/ 2026-10-12-daily-brief.md`.
+  **No new task and no packet** — correctly, since OL-0037 had just covered the
+  same window's mail.
+- **Fifth scheduled firing to commit.** Four on Friday and Monday's two.
+
+### PayPal is gone, which makes three of four payment systems unreadable
+
+**PayPal's tools are no longer present in this session.** Not an error on call —
+**absent.** `ToolSearch` for `list_transactions` at 10:58Z returned no match,
+and the server is listed as requiring authentication. It dropped mid-run during
+Friday's cash review and has not recovered.
+
+| System     | State                                        | Since                      |
+| ---------- | -------------------------------------------- | -------------------------- |
+| Stripe     | **Absent from the session**                  | 2026-10-08, first observed |
+| bookipay   | **No API**, by design                        | always                     |
+| **PayPal** | **Requires re-authentication; tools absent** | **2026-10-09, new**        |
+| Shopify    | Reachable. **0 orders**                      | —                          |
+
+**The only payment system still answering has never carried a single order.**
+That is the fifth consecutive degraded money section and the first one that got
+_worse_ rather than staying level — **T-36.**
+
+### Six transactions are known to have happened and not one amount is known
+
+Every one surfaced through **mail**, not through a payment system: a **declined
+bank transfer** (T-49, 10-05), **three HP Tuners credit orders** (T-54, 10-09 to
+10-11), **money received via Chime** (T-55, 10-10), and the **Webador annual
+auto-charge** (T-46, pending).
+
+**Six events, six unknown amounts, none estimated.** This is what T-36 costs in
+operational terms rather than in principle: **the business is visibly
+transacting and no figure is readable.** An inbound payment nobody can size is
+as much of a hole as an outbound one.
+
+### A sixth board drift, and the count is now across three sessions
+
+Reconciliation found the approvals status board contradicting its own packets:
+
+1. **A-16 read `Pending`.** Its Response block records **APPROVE (Option A),
+   owner, 2026-10-09**, and a sibling executed it the same day (OL-0036).
+   Corrected to **Approved (executed)**.
+2. **A-17 had no board row**, although the packet exists at line 1128 and T-51
+   cites it as pending. Row added.
+
+**The running count: T-11 and T-13 (59 days stale, found 10-08), T-23, T-29,
+T-32 twice, and now A-16 and A-17.** Six instances in five days, **introduced by
+three different sessions** — this one included. It is not carelessness in any
+one run; it is that **a hand-maintained summary beside a 2,000-line register
+will drift, and every session that writes to the record is equally likely to
+leave it behind.**
+
+**OL-0034 already reached the conclusion and nothing has acted on it:** the
+summary should point at `APPROVALS.md` as the single source rather than restate
+its state, or something should generate it. **Recorded again here only because
+the count rose, not to propose a seventh process for remembering the first
+six.** It belongs in the next revision of `docs/ops/README.md`.
+
+### T-30 re-verified by this morning's intake, not re-checked here
+
+The Monday 09:00Z send Routine fired and **sent nothing** — established in
+OL-0037 by `in:sent newer_than:3d` returning empty, 80 minutes after the fire.
+**Not re-asserted independently here**; this entry cites that read rather than
+claiming a second one. Fifth consecutive no-op. Next fire **2026-10-19T09:00Z**.
+
+- **Error** None introduced. **Class A held**: nothing sent, published, charged,
+  booked or changed in any live system; no calendar write; no customer
+  contacted; no price quoted; no connector written to.
+- **Remediation** Not applicable. **PayPal needs the owner to re-authorise it**;
+  that is now the third payment connector in T-36.
+- **Owner-side and open** — **T-52** (the phish, dated today, unread four days),
+  **A-15** (two written messages; a state engineer waiting six days), **T-53**
+  (a third written message, unsent), **A-17**, **A-07** (67 days), **A-10**, the
+  C10 determination (**T-37**, five days silent), **T-46** (dated today), T-42,
+  T-49, T-50, T-54, T-55, T-29, T-30, T-45 — and **the card-toggling question,
+  now in its sixth day.**
+- **Worth stating plainly, and it is the useful observation of the run** — the
+  calendar is empty and no reachable system shows money moving, which reads like
+  a quiet Monday. It is not. There is a live phishing attempt in the inbox,
+  **three messages written and none sent**, two counterparties waiting six days
+  each, and six transactions nobody can price. **Almost nothing outstanding here
+  is blocked on work; it is blocked on sending, reading or deciding things that
+  are already prepared.**
+
+---
+
+## Next entry: OL-0039
