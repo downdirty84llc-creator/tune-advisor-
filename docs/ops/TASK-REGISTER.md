@@ -32,67 +32,71 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 
 ## Summary
 
-| ID   | Title                                                               | Workstream | Priority | Status                   | Owner | Approval         | Due          |
-| ---- | ------------------------------------------------------------------- | ---------- | -------- | ------------------------ | ----- | ---------------- | ------------ |
-| T-01 | Transcribe the DD84 operations specification into the repository    | ops        | High     | Done                     | Agent | A-01             | 2026-07-31   |
-| T-02 | Author CLAUDE.md as the repository orientation guide                | ops        | High     | Done                     | Agent | A-01             | 2026-07-31   |
-| T-03 | Define the Torque agent as a reusable subagent                      | ops        | High     | Done                     | Agent | A-01             | 2026-07-31   |
-| T-04 | Correct documentation that had drifted away from the code           | ledger     | Normal   | Done                     | Agent | A-02             | 2026-07-31   |
-| T-05 | Record the true legal-review flags on the ten legal documents       | compliance | High     | Done                     | Agent | A-02             | 2026-07-31   |
-| T-06 | Exclude demo accounts from subscriber, revenue and analytics counts | finance    | High     | **In Verification**      | Agent | A-03             | 2026-08-08   |
-| T-07 | Count annual subscribers at a twelfth of the annual price           | finance    | High     | Done                     | Agent | A-04             | 2026-07-31   |
-| T-08 | Remove the phantom integration-test glob from the Vitest config     | ledger     | Normal   | Done                     | Agent | S-01             | 2026-08-02   |
-| T-09 | Close the PostgREST filter injection in the opportunity fallback    | ledger     | High     | Done                     | Agent | S-01             | 2026-08-02   |
-| T-10 | Correct the test counts and integration-suite claim in CLAUDE.md    | ops        | Normal   | Done                     | Agent | S-01             | 2026-08-05   |
-| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical | Blocked                  | Owner | A-05 approved    | 2026-08-20   |
-| T-12 | Record the sample-data exclusion rule in CLAUDE.md                  | ops        | Normal   | Done                     | Agent | A-03             | 2026-07-31   |
-| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical | Blocked                  | Owner | A-06 approved    | 2026-08-27   |
-| T-14 | Wire virus scanning to `attachments.scan_status`                    | ledger     | High     | Awaiting Approval        | Owner | **A-07 pending** | 2026-09-03   |
-| T-15 | Make the public landing pages cacheable again                       | ledger     | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-09-03   |
-| T-16 | Build in-product super-administrator MFA reset                      | ledger     | Normal   | Backlog                  | Agent | S-01 to prepare  | not recorded |
-| T-17 | Commission high-fidelity design and brand sign-off                  | design     | Low      | Backlog                  | Owner | none yet         | not recorded |
-| T-18 | Build the six DD84 routines as runnable commands                    | ops        | High     | Done                     | Agent | A-08             | 2026-08-06   |
-| T-19 | Stand up the operating record and seed it with current state        | ops        | High     | **In Verification**      | Agent | A-08             | 2026-08-06   |
-| T-20 | Extend the Torque agent definition with the missing spec sections   | ops        | High     | Done                     | Agent | A-08             | 2026-08-06   |
-| T-21 | Point CLAUDE.md §10 at the commands and the operating record        | ops        | Normal   | Done                     | Agent | A-08             | 2026-08-06   |
-| T-22 | Verify and push the operations control plane                        | ops        | High     | Done                     | Agent | A-08             | 2026-08-06   |
-| T-23 | Schedule the six routines and confirm the first firing              | ops        | High     | **In Verification**      | Owner | owner-held       | 2026-08-08   |
-| T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-25 | Build the project status control routine                            | ops        | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal   | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-27 | Routines fire but commit nothing                                    | ops        | High     | **Done**                 | Agent | A-14 executed    | 2026-10-09   |
-| T-28 | Settle where the Ledger and the agent platform each live            | ops        | High     | Done                     | Agent | A-11             | 2026-09-23   |
-| T-29 | The Ledger application copy in this repository is stale             | ops        | Normal   | Blocked                  | Owner | A-11             | not set      |
-| T-30 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High     | **Accepted Risk**        | Owner | A-12 accepted    | 2026-09-25   |
-| T-31 | Consolidate the two diverged operating records onto one branch      | ops        | High     | Done                     | Agent | owner decision   | 2026-09-25   |
-| T-32 | Both repositories are public, and the venture registry is in one    | compliance | High     | **No Action** (accepted) | Owner | A-13 closed      | 2026-10-08   |
-| T-33 | Establish what `dd84-api` is, and why it is failing on Render       | ops        | High     | Planned                  | Agent | A to diagnose    | 2026-10-10   |
-| T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                  | ops        | Normal   | Planned                  | Agent | A to diagnose    | 2026-10-13   |
-| T-35 | Three stale pull requests, one from the superseded branch           | ops        | High     | **Awaiting Owner**       | Owner | none yet         | not set      |
-| T-36 | No readable path to DD84's own revenue figures                      | finance    | High     | Planned                  | Agent | A to prepare     | 2026-10-15   |
-| T-37 | The C10 customer — Terminator X Max AFR fault                       | service    | High     | **In Progress**          | Owner | A to prepare     | 2026-10-10   |
-| T-38 | GDOT access review — right-in/right-out on the Colbert site         | real est.  | High     | **In Progress**          | Owner | **A-15 pending** | 2026-10-10   |
-| T-39 | Reschedule the missed Georgia SBDC session                          | finance    | Normal   | Awaiting Approval        | Owner | **A-15 pending** | 2026-10-10   |
-| T-40 | Google Play developer account at risk of closure                    | ops        | Normal   | Planned                  | Owner | A to diagnose    | 2026-12-06   |
-| T-41 | Three r/LSSwapTheWorld lead candidates                              | sales      | Normal   | Planned                  | Owner | C to contact     | not set      |
-| T-42 | Fourteen unsent drafts, five of them to likely loan fraud           | ops        | High     | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
-| T-43 | `downdirty84llc.com` is live and absent from the venture registry   | ops        | Normal   | Planned                  | Owner | A to prepare     | not set      |
-| T-44 | One inbox query is not an intake; fix the routine's search          | ops        | Normal   | Planned                  | Agent | A to prepare     | 2026-10-15   |
-| T-45 | GREC will not interpret the law; the licensing question is open     | compliance | High     | Blocked                  | Owner | A-06 covers it   | 2026-10-16   |
-| T-46 | Webador annual invoice will auto-charge; amount unknown             | finance    | Normal   | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
-| T-47 | Two Google Business Profiles for one business                       | ops        | Normal   | Planned                  | Owner | A to prepare     | not set      |
-| T-48 | Customer identity is in a public repository and in its history      | compliance | **High** | **In Verification**      | Agent | A-16 executed    | 2026-10-10   |
-| T-49 | A bank transfer was declined on 2026-10-05                          | finance    | **High** | **Awaiting Owner**       | Owner | A to read        | 2026-10-09   |
-| T-50 | HP Tuners Do Not Sell List — partner obligation                     | compliance | Normal   | **Awaiting Owner**       | Owner | A to read        | 2026-10-12   |
-| T-51 | Third-party contact details in a public repository                  | compliance | Normal   | **Awaiting Owner**       | Owner | **A-17 pending** | 2026-10-13   |
+| ID   | Title                                                               | Workstream | Priority     | Status                   | Owner | Approval         | Due          |
+| ---- | ------------------------------------------------------------------- | ---------- | ------------ | ------------------------ | ----- | ---------------- | ------------ |
+| T-01 | Transcribe the DD84 operations specification into the repository    | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
+| T-02 | Author CLAUDE.md as the repository orientation guide                | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
+| T-03 | Define the Torque agent as a reusable subagent                      | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
+| T-04 | Correct documentation that had drifted away from the code           | ledger     | Normal       | Done                     | Agent | A-02             | 2026-07-31   |
+| T-05 | Record the true legal-review flags on the ten legal documents       | compliance | High         | Done                     | Agent | A-02             | 2026-07-31   |
+| T-06 | Exclude demo accounts from subscriber, revenue and analytics counts | finance    | High         | **In Verification**      | Agent | A-03             | 2026-08-08   |
+| T-07 | Count annual subscribers at a twelfth of the annual price           | finance    | High         | Done                     | Agent | A-04             | 2026-07-31   |
+| T-08 | Remove the phantom integration-test glob from the Vitest config     | ledger     | Normal       | Done                     | Agent | S-01             | 2026-08-02   |
+| T-09 | Close the PostgREST filter injection in the opportunity fallback    | ledger     | High         | Done                     | Agent | S-01             | 2026-08-02   |
+| T-10 | Correct the test counts and integration-suite claim in CLAUDE.md    | ops        | Normal       | Done                     | Agent | S-01             | 2026-08-05   |
+| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical     | Blocked                  | Owner | A-05 approved    | 2026-08-20   |
+| T-12 | Record the sample-data exclusion rule in CLAUDE.md                  | ops        | Normal       | Done                     | Agent | A-03             | 2026-07-31   |
+| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical     | Blocked                  | Owner | A-06 approved    | 2026-08-27   |
+| T-14 | Wire virus scanning to `attachments.scan_status`                    | ledger     | High         | Awaiting Approval        | Owner | **A-07 pending** | 2026-09-03   |
+| T-15 | Make the public landing pages cacheable again                       | ledger     | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-09-03   |
+| T-16 | Build in-product super-administrator MFA reset                      | ledger     | Normal       | Backlog                  | Agent | S-01 to prepare  | not recorded |
+| T-17 | Commission high-fidelity design and brand sign-off                  | design     | Low          | Backlog                  | Owner | none yet         | not recorded |
+| T-18 | Build the six DD84 routines as runnable commands                    | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
+| T-19 | Stand up the operating record and seed it with current state        | ops        | High         | **In Verification**      | Agent | A-08             | 2026-08-06   |
+| T-20 | Extend the Torque agent definition with the missing spec sections   | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
+| T-21 | Point CLAUDE.md §10 at the commands and the operating record        | ops        | Normal       | Done                     | Agent | A-08             | 2026-08-06   |
+| T-22 | Verify and push the operations control plane                        | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
+| T-23 | Schedule the six routines and confirm the first firing              | ops        | High         | **In Verification**      | Owner | owner-held       | 2026-08-08   |
+| T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
+| T-25 | Build the project status control routine                            | ops        | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
+| T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
+| T-27 | Routines fire but commit nothing                                    | ops        | High         | **Done**                 | Agent | A-14 executed    | 2026-10-09   |
+| T-28 | Settle where the Ledger and the agent platform each live            | ops        | High         | Done                     | Agent | A-11             | 2026-09-23   |
+| T-29 | The Ledger application copy in this repository is stale             | ops        | Normal       | Blocked                  | Owner | A-11             | not set      |
+| T-30 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High         | **Accepted Risk**        | Owner | A-12 accepted    | 2026-09-25   |
+| T-31 | Consolidate the two diverged operating records onto one branch      | ops        | High         | Done                     | Agent | owner decision   | 2026-09-25   |
+| T-32 | Both repositories are public, and the venture registry is in one    | compliance | High         | **No Action** (accepted) | Owner | A-13 closed      | 2026-10-08   |
+| T-33 | Establish what `dd84-api` is, and why it is failing on Render       | ops        | High         | Planned                  | Agent | A to diagnose    | 2026-10-10   |
+| T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                  | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-13   |
+| T-35 | Three stale pull requests, one from the superseded branch           | ops        | High         | **Awaiting Owner**       | Owner | none yet         | not set      |
+| T-36 | No readable path to DD84's own revenue figures                      | finance    | High         | Planned                  | Agent | A to prepare     | 2026-10-15   |
+| T-37 | The C10 customer — Terminator X Max AFR fault                       | service    | High         | **In Progress**          | Owner | A to prepare     | 2026-10-10   |
+| T-38 | GDOT access review — right-in/right-out on the Colbert site         | real est.  | High         | **In Progress**          | Owner | **A-15 pending** | 2026-10-10   |
+| T-39 | Reschedule the missed Georgia SBDC session                          | finance    | Normal       | Awaiting Approval        | Owner | **A-15 pending** | 2026-10-10   |
+| T-40 | Google Play developer account at risk of closure                    | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
+| T-41 | Three r/LSSwapTheWorld lead candidates                              | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
+| T-42 | Fifteen unsent drafts, five of them to likely loan fraud            | ops        | High         | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
+| T-43 | `downdirty84llc.com` is live and absent from the venture registry   | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
+| T-44 | One inbox query is not an intake; fix the routine's search          | ops        | Normal       | Planned                  | Agent | A to prepare     | 2026-10-15   |
+| T-45 | GREC will not interpret the law; the licensing question is open     | compliance | High         | Blocked                  | Owner | A-06 covers it   | 2026-10-16   |
+| T-46 | Webador annual invoice will auto-charge; amount unknown             | finance    | Normal       | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
+| T-47 | Two Google Business Profiles for one business                       | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
+| T-48 | Customer identity is in a public repository and in its history      | compliance | **High**     | **In Verification**      | Agent | A-16 executed    | 2026-10-10   |
+| T-49 | A bank transfer was declined on 2026-10-05                          | finance    | **High**     | **Awaiting Owner**       | Owner | A to read        | 2026-10-09   |
+| T-50 | HP Tuners Do Not Sell List — partner obligation                     | compliance | Normal       | **Awaiting Owner**       | Owner | A to read        | 2026-10-12   |
+| T-51 | Third-party contact details in a public repository                  | compliance | Normal       | **Awaiting Owner**       | Owner | **A-17 pending** | 2026-10-13   |
+| T-52 | Phishing email impersonating Meta, unread and flagged important     | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-12   |
+| T-53 | Purchase proposal on the Colbert parcel — no reply in six days      | real est.  | **High**     | **Awaiting Owner**       | Owner | C to follow up   | 2026-10-13   |
+| T-54 | Three HP Tuners credit orders in three days, amounts unread         | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
+| T-55 | Chime is a payment channel absent from the venture registry         | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 3 In Verification · 2 In
-Progress · 2 Awaiting Approval · **6 Awaiting Owner** · 4 Blocked · 12 Planned ·
-2 Backlog. **50 tasks.**
+Progress · 2 Awaiting Approval · **8 Awaiting Owner** · 4 Blocked · 14 Planned ·
+2 Backlog. **54 tasks.**
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -142,6 +146,8 @@ this table is part of the write.** Evidence: OL-0028.
 | Owner approval (A-15 — the drafts)      | T-38, T-39                               |
 | A customer (checklist, on a work trip)  | T-37                                     |
 | Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50 |
+| Owner action — security                 | **T-52** (phishing, unread 3 days)       |
+| A counterparty who has not replied      | T-53 (6 days), and A-15 is 6 days unsent |
 | Owner approval (A-16 — the redactions)  | T-48                                     |
 | Counsel (A-06 is already approved)      | T-13, T-45                               |
 | Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34 |
@@ -2005,3 +2011,169 @@ Any option here cleans current files only.
 - **Status** **Awaiting Owner** · **Next action** — answer **A-17**. **Due
   2026-10-13**, which is the next weekday intake after the weekend; past that
   the routine keeps adding to the pile under no rule.
+
+---
+
+## T-52 — Phishing email impersonating Meta, unread and flagged important
+
+- **Objective** — Get a credential-harvesting email out of the inbox before
+  anyone acts on it, and establish whether anyone already has.
+- **Source** — `/dd84-inbox-intake`, 2026-10-12. Gmail thread
+  `1a120384795bc4cf`, received **2026-10-09T10:32:00Z**, **unread for 3 days**.
+- **Workstream** compliance · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-12
+- **Approval class** — A to read and report here. **Reporting or deleting the
+  mail is a mail-state change and is the owner's** — Torque may not modify mail
+  state without a taxonomy approval, and would not delete evidence anyway.
+- **The message** — subject _"System Safety Hub – DOWNDIRTY84 - Ref:
+  REF-KYJS1D"_. Body: _"Hello Admin, log in to finalize the system security
+  check for DOWNDIRTY84"_ with a "Finalize System Check" link, then a footer
+  giving Meta's Menlo Park address and an `unsubscribe@meta.com`.
+- **Why it is phishing, from the message itself** — four independent tells:
+  1. **The sender is an ordinary consumer Gmail address**, not a Meta domain.
+  2. **The link targets a Google Forms page**, not Facebook. No real Meta
+     security process collects an admin login on a Google form.
+  3. Manufactured urgency with **no specific account, page or incident named**.
+  4. Addressed to "Admin" generically while claiming to know the business name.
+- **Why it is Critical rather than High** — **Gmail classified it IMPORTANT and
+  CATEGORY_PERSONAL.** It is not in spam and not in promotions; it is sitting in
+  the inbox looking like real mail, and it has been there three days. The whole
+  risk is that it gets believed.
+- **The URL is deliberately not recorded here.** This repository is **public**
+  (CLAUDE.md §5) and reproducing a live phishing link in it would republish the
+  attack. The subject line, Ref ID and timestamp are enough to find the message.
+  **Torque did not click it.**
+- **Cost and risk** — No cost. The exposure if it has been actioned is whatever
+  was typed into that form, most likely a Facebook/Meta Business login.
+  `ventures.md` records DD84's social accounts as `UNKNOWN`, so **what a
+  compromised Facebook page would reach is itself unknown** — that gap is T-43's
+  neighbour and worth closing.
+- **Context, offered without a causal claim** — the same three days brought a
+  Chime "new login detected", two Disney+ new-login notices with a one-time
+  passcode, and the fifth day of debit-card toggling. **No evidence links any of
+  these to the phish, and Torque is not asserting a link** — account notices are
+  routine. They are listed together because checking them is one ten-minute task
+  rather than five.
+- **Execution steps** — (1) Do not click; report as phishing and delete; (2)
+  establish whether anyone clicked or submitted; (3) if so, change that password
+  and audit the page's admin list; (4) **close the `UNKNOWN` on which social
+  accounts exist and who administers them** — hand that half to Rev.
+- **Completion proof required** — The message reported or deleted, and a
+  recorded statement that no credential was submitted, or the remediation if one
+  was.
+- **Status** **Awaiting Owner** · **Next action** — Step 1, today.
+
+## T-53 — Purchase proposal on the Colbert parcel: no reply in six days
+
+- **Objective** — Get an answer on buying the shop site, or establish that the
+  listing agent is not responding, before more is spent on a parcel DD84 may not
+  be able to acquire.
+- **Source** — `/dd84-inbox-intake`, 2026-10-12. Gmail thread
+  `1a0f74adc1dbd49a`.
+- **Workstream** real estate · **Priority** **High** · **Owner** **Owner** ·
+  **Due** 2026-10-13
+- **The finding** — DD84 sent a **non-binding purchase proposal on
+  2026-10-06T15:50:27Z** for **0 Highway 72 W, Colbert, GA 30628, parcel 0059
+  038 / MLS 10802803**, for an owner-occupied automotive performance, tuning,
+  diagnostics and light vehicle service use. **No reply in six days.** A
+  follow-up draft to the listing agent was created **2026-10-12T10:11:23Z** and
+  is **unsent**.
+- **Why this is its own task and not part of T-38** — T-38 is the **GDOT access
+  review** for this parcel: whether a driveway can be permitted. This is
+  **whether DD84 can buy the land at all.** The register has tracked the permit
+  since 2026-10-08 and **has never tracked the purchase**, which is the larger
+  of the two. Same site, two independent gates, and the property one had no
+  entry.
+- **How it depends on the others** — T-38 established GDOT would likely permit
+  access, subject to right-in/right-out. **That answer is worth little if the
+  parcel is not available**, and a survey or civil design commissioned before
+  the purchase is settled is money spent at risk. Sequence matters.
+- **Approval class** — **C to follow up** (external communication). The owner's
+  own draft already exists; **Torque did not write, edit or send it.** Any
+  offer, deposit or contract is **E and G**.
+- **Cost and risk** — No cost to follow up. **The purchase price is not recorded
+  and no figure appears in the thread's preview** — not estimated. Risk of
+  silence: the listing moves, or survey money is spent on a parcel that is gone.
+- **Execution steps** — (1) Owner sends or revises the draft that is already
+  sitting there; (2) if there is still no reply, telephone the listing agent;
+  (3) record the asking price and whether the property is still available; (4)
+  sequence any survey spend behind a positive answer.
+- **Completion proof required** — A reply from the listing agent, or a recorded
+  decision to stop pursuing this parcel.
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **The draft is
+  written; it needs sending, which is yours.**
+
+## T-54 — Three HP Tuners credit orders in three days, amounts unread
+
+- **Objective** — Record what DD84 is spending on tuning credits, and supply the
+  margin input Friday's cash review could not.
+- **Source** — `/dd84-inbox-intake`, 2026-10-12. Gmail receipts for orders
+  `#2005285` (2026-10-09T20:32Z), `#2005948` (2026-10-10T17:17Z) and `#2006613`
+  (2026-10-11T20:36Z), all for **Universal Credits**.
+- **Workstream** finance · **Priority** Normal · **Owner** **Owner** · **Due**
+  2026-10-14
+- **What is known** — three separate orders, three consecutive days, all
+  Universal Credits, all marked complete.
+- **What is NOT known, and is not estimated** — **the amount of any of them.**
+  The figures are not in the receipts' preview text and the full receipts were
+  not opened. **Three orders of unknown value is the honest statement.**
+- **Why it matters twice** — Universal Credits are the consumable HP Tuners
+  licensing consumes per vehicle, so **three purchases in three days reads
+  either as active tuning work or as stock-building**, and the two have opposite
+  cash implications. Separately, **OL-0035 recorded software credits as a
+  missing margin input for T-37** and marked that margin INCOMPLETE. These three
+  receipts are where that input comes from.
+- **The uncomfortable juxtaposition, stated plainly** — three credit purchases
+  in three days against **no revenue verifiable in any reachable system** and a
+  **declined bank transfer on 2026-10-05** (T-49). None of those three facts
+  explains the others, and **Torque is drawing no conclusion.** They belong on
+  the same page.
+- **Approval class** — A to read. Any decision to stop or change purchasing is
+  **E**.
+- **Cost and risk** — Cost **not recorded**, by three receipts. Risk: credit
+  spend running ahead of billable work, invisible because nobody totals it.
+- **Execution steps** — (1) Open the three receipts and record each amount here;
+  (2) establish whether they were consumed on a job or stocked; (3) if consumed
+  on the C10 job, feed the figure into T-37's margin; (4) note whether HP Tuners
+  credit spend should be a standing line in the weekly cash review.
+- **Completion proof required** — Three amounts recorded with their order
+  numbers, and a statement of what they were for.
+- **Status** Planned · **Next action** — Step 1.
+
+## T-55 — Chime is a payment channel absent from the venture registry
+
+- **Objective** — Establish every channel through which money reaches DD84, so a
+  cash review can state a cash position.
+- **Source** — `/dd84-inbox-intake`, 2026-10-12. Chime notification,
+  2026-10-10T18:22:08Z: _"Robert L. just sent you money… The funds are in your
+  Chime account and available for immediate use."_
+- **Workstream** finance · **Priority** Normal · **Owner** **Owner** · **Due**
+  2026-10-14
+- **The finding** — **money arrived through a channel `ventures.md` does not
+  list.** The registry's systems table names Shopify, Stripe, bookipay and
+  print-on-demand vendors. **Chime appears nowhere in it, or in this register.**
+- **What is unknown, and not guessed** — **the amount** (not in the preview),
+  and **whether this is business or personal.** A peer-to-peer transfer from a
+  named individual could be either, and Torque will not assume. **The sender is
+  not recorded here**: §5 forbids adding personal contact detail to a public
+  repository, and whether this person is a customer is exactly what is unknown.
+- **Why it matters** — OL-0035 could not state DD84's cash position, naming the
+  absence of a bank connector as the cause. **This is a fifth money channel, and
+  the registry's incompleteness is now a measured fact rather than a
+  suspicion.** A cash review that does not know where money arrives cannot be
+  complete however many connectors are fixed.
+- **Scope note** — `ventures.md` is **Rev's file**; Torque reads it and does not
+  write to it (CLAUDE.md §2). **Nothing was changed there.** This task is the
+  ops half: establish the channel list. Updating the registry is Rev's or the
+  owner's.
+- **Approval class** — A to read and report. Connecting a Chime connector, if
+  one exists, is the owner's.
+- **Cost and risk** — No cost. Risk: an unrecorded inbound channel means
+  revenue, and tax-relevant income, that no routine can see.
+- **Execution steps** — (1) Owner states whether the Chime account is a business
+  channel; (2) if it is, record it in `ventures.md` with the other systems; (3)
+  establish whether any of DD84's three known customers has ever paid through
+  it; (4) list every other channel not in the registry.
+- **Completion proof required** — A complete, dated list of DD84's inbound
+  payment channels, in `ventures.md`.
+- **Status** Planned · **Next action** — Step 1, one sentence from the owner.

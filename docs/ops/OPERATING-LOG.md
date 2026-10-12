@@ -1894,4 +1894,113 @@ for.
 
 ---
 
-## Next entry: OL-0037
+## OL-0037 — 2026-10-12 · Monday intake: a phishing attempt, and a mailbox that has sent nothing in three days
+
+- **Timestamp** 2026-10-12T10:40:00Z
+- **Task** T-30 (**verified**), T-37, T-42 (**updated**), T-52…T-55
+  (**created**) · **Approval** S-01 (Class A routine), fired by Routine "DD84
+  Inbox and Lead Intake (repo-attached)", `trig_01UdMtZvf1BdVuYoucd6UY7N`,
+  10:20:26Z.
+- **Action** Ran the inbox intake for the three days since OL-0033, including a
+  weekend. Reviewed 48 threads across inbox, **sent** and drafts. Four tasks
+  created, one retitled, one accepted risk re-verified. **No draft written and
+  nothing sent.**
+- **Tool** `mcp__Gmail__search_threads` ×3, `get_thread` ×2, `list_drafts`;
+  `git`; `Read`/`Write`/`Bash`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 50 tasks, 17 packets.
+- **After** 54 tasks, 17 packets, `docs/ops/briefs/ 2026-10-12-inbox-intake.md`.
+  **No packet raised** — none of the four findings needs a decision that A-15,
+  A-16 or A-17 does not already cover.
+- **Fourth scheduled firing to commit.** Intake, daily brief and cash review on
+  Friday; this is Monday's.
+
+### The single most useful query was `in:sent`, and it returned nothing
+
+**`in:sent newer_than:3d` is empty. Not one message has left this mailbox in
+three days.** That one empty result settled three separate questions:
+
+1. **T-30's Monday Routine fired at 09:00Z this morning and sent nothing.**
+   Verified rather than assumed, the same way OL-0020 did it. **Fifth
+   consecutive green no-op.** A-12's acceptance holds; its single voiding
+   condition — the first real Ledger subscriber — has not triggered, since the
+   Ledger still has zero profiles. Next fire 2026-10-19T09:00Z.
+2. **A-15's two drafts are still unsent.** The GDOT engineer has now been
+   waiting **six days**, the packet four. The favourable permit answer it
+   responds to is going stale.
+3. **The C10 customer has had no reply and sent none** — five days of silence on
+   both sides (T-37).
+
+**An empty result from the right query is worth more than a full one from the
+wrong query.** This is T-44's lesson arriving from the other direction: last
+Thursday a single broad inbox query hid a customer job, and today a narrow
+targeted one proved a negative three ways at once.
+
+### Urgent: a credential phish is in the inbox, classified IMPORTANT
+
+Thread `1a120384795bc4cf`, received 2026-10-09T10:32Z and **unread for three
+days.** It impersonates Meta — "finalize the system security check for
+DOWNDIRTY84" — from **a consumer Gmail address**, with the login link pointing
+at **a Google Forms page**. Four independent tells, all on the face of the
+message.
+
+**Gmail put it in the inbox as IMPORTANT and CATEGORY_PERSONAL — not spam, not
+promotions.** That is why it is Critical: it looks like real mail. **The URL was
+deliberately not recorded in the repository**, which is public under A-13;
+reproducing a live phishing link here would republish the attack. Torque did not
+click it and did not alter mail state. → **T-52**
+
+Three other account notices landed in the same window — a Chime new login, two
+Disney+ new-login notices with a passcode, and the fifth day of card toggling.
+**No evidence links any of them to the phish and none is claimed.** They are
+grouped because checking them is one task, not five.
+
+### What else the window held
+
+| Finding                                                                                                                                                      | Why it is in the register now                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **A purchase proposal on the shop parcel, no reply in 6 days** (`1a0f74adc1dbd49a`), with a follow-up draft created **9 minutes before this run** and unsent | T-38 tracked the **GDOT permit** for this parcel since 10-08. **Nobody had tracked whether DD84 can buy it.** → **T-53**            |
+| **Three HP Tuners Universal Credits orders in three days**, amounts not in the previews                                                                      | OL-0035 marked T-37's margin INCOMPLETE for want of a software-credit figure. **These are that figure, unread.** → **T-54**         |
+| **Money arrived via Chime**, a channel `ventures.md` does not list                                                                                           | OL-0035 could not state a cash position. **A fifth payment channel makes that a measured fact rather than a suspicion.** → **T-55** |
+| **Drafts backlog 14 → 15**: one sent (GREC, which produced T-45), two added, both shop-building                                                              | **The five likely-loan-fraud drafts are untouched at 10–12 days.** T-42 retitled, not duplicated                                    |
+
+### A correction I owe, from the sibling session's A-16 work
+
+OL-0036 found the C10 customer's **first name** in **thirteen sites across four
+files**, including the two files this session reported as redacted on
+2026-10-09. **That report was wrong and the reason is worth keeping:** the
+redaction script asserted that the full name, the email and the phone number
+were absent, and **a bare first name matches none of those three patterns.** §5
+lists names first among the four things it forbids, and a name is the one you
+cannot grep for without already knowing it.
+
+**The test was narrower than the rule it was testing, so it passed early.** That
+is the same defect T-27 recorded — a success test that checks a proxy rather
+than the thing — and it reappeared inside the very run that was fixing a
+different instance of it. **Noted here because the lesson is the generalisable
+part, not the eight missed strings**, which the sibling has since removed.
+
+- **Error** None introduced this run. **Class A held**: nothing sent, forwarded
+  or replied to; no label applied; no thread moved, archived, trashed or
+  reported — **including the phishing mail, which was read and left in place for
+  the owner**; no draft created, edited, sent or deleted; no calendar write; no
+  price quoted; no payment action. **No customer name, email or phone number was
+  written to this repository**; people are identified by thread ID throughout.
+- **Remediation** Not applicable; nothing failed. **PayPal still needs
+  re-authentication** since Friday — transactions, invoices and disputes all
+  unreadable, joining Stripe and bookipay in T-36. Canva also now needs auth,
+  which matters to nothing here.
+- **Owner-side and open, oldest first** — **A-15** (two sends; a state engineer
+  waiting six days), **A-07**, **A-17**, **T-52** (the phish, today), **T-53**
+  (the property follow-up, drafted and unsent), the C10 determination (T-37),
+  **T-49** (the declined transfer, still unread after three days), **T-50** (the
+  HP Tuners do-not-sell list, now six days past its effective date), T-46, T-54,
+  T-55, and **the card-toggling question, now five days unanswered.**
+- **Worth stating plainly** — **no lead arrived and no customer wrote.** The
+  mailbox's business content over three days was one attack, one unanswered
+  property proposal, three credit purchases and one inbound payment nobody has
+  classified. **A quiet weekend for sales is not a quiet weekend for risk.**
+
+---
+
+## Next entry: OL-0038
