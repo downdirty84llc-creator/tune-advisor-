@@ -89,14 +89,18 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-53 | Purchase proposal on the Colbert parcel — no reply in six days      | real est.  | **High**     | **Awaiting Owner**       | Owner | C to follow up   | 2026-10-13   |
 | T-54 | Three HP Tuners credit orders in three days, amounts unread         | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
 | T-55 | Chime is a payment channel absent from the venture registry         | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
+| T-56 | USDA B&I loan guarantee — confirm FY27 authority and rural test     | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
+| T-57 | Is Colbert in a designated Georgia Rural Zone?                      | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
+| T-58 | SBA 504 — send the Georgia CDC draft and ask two questions          | finance    | **High**     | **Awaiting Owner**       | Owner | C — within T-42  | 2026-10-14   |
+| T-59 | The opportunity scan cannot validate any primary source             | ops        | **High**     | **Awaiting Owner**       | Owner | A to prepare     | 2026-10-14   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 3 In Verification · 2 In
-Progress · 2 Awaiting Approval · **8 Awaiting Owner** · 4 Blocked · 14 Planned ·
-2 Backlog. **54 tasks.**
+Progress · 2 Awaiting Approval · **10 Awaiting Owner** · 4 Blocked · 16 Planned
+· 2 Backlog. **58 tasks.**
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -132,26 +136,27 @@ this table is part of the write.** Evidence: OL-0028.
 
 ## Open items, by what they are waiting on
 
-| Waiting on                              | Tasks                                    |
-| --------------------------------------- | ---------------------------------------- |
-| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)            |
-| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                 |
-| Owner approval                          | T-14                                     |
-| Owner action (engaging counsel)         | T-13                                     |
-| Owner or developer, test-mode keys      | T-11                                     |
-| Owner decision                          | T-29, T-35                               |
-| Owner confirmation                      | T-19                                     |
-| A seeded or live database               | T-06                                     |
-| A readable payment system               | T-36                                     |
-| Owner approval (A-15 — the drafts)      | T-38, T-39                               |
-| A customer (checklist, on a work trip)  | T-37                                     |
-| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50 |
-| Owner action — security                 | **T-52** (phishing, unread 3 days)       |
-| A counterparty who has not replied      | T-53 (6 days), and A-15 is 6 days unsent |
-| Owner approval (A-16 — the redactions)  | T-48                                     |
-| Counsel (A-06 is already approved)      | T-13, T-45                               |
-| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34 |
-| Nobody — accepted risk                  | T-30                                     |
+| Waiting on                              | Tasks                                      |
+| --------------------------------------- | ------------------------------------------ |
+| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)              |
+| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                   |
+| Owner approval                          | T-14                                       |
+| Owner action (engaging counsel)         | T-13                                       |
+| Owner or developer, test-mode keys      | T-11                                       |
+| Owner decision                          | T-29, T-35                                 |
+| Owner confirmation                      | T-19                                       |
+| A seeded or live database               | T-06                                       |
+| A readable payment system               | T-36                                       |
+| Owner approval (A-15 — the drafts)      | T-38, T-39                                 |
+| A customer (checklist, on a work trip)  | T-37                                       |
+| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50   |
+| Owner action — security                 | **T-52** (phishing, unread 3 days)         |
+| Owner action — network policy           | **T-59** (egress block disables a routine) |
+| A counterparty who has not replied      | T-53 (6 days), and A-15 is 6 days unsent   |
+| Owner approval (A-16 — the redactions)  | T-48                                       |
+| Counsel (A-06 is already approved)      | T-13, T-45                                 |
+| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34   |
+| Nobody — accepted risk                  | T-30                                       |
 
 ---
 
@@ -2177,3 +2182,195 @@ Any option here cleans current files only.
 - **Completion proof required** — A complete, dated list of DD84's inbound
   payment channels, in `ventures.md`.
 - **Status** Planned · **Next action** — Step 1, one sentence from the owner.
+
+---
+
+## T-56 — USDA B&I loan guarantee: confirm FY27 authority and the rural test
+
+- **Objective** — Establish whether the best-fitting debt instrument for a rural
+  owner-occupied shop will still exist, and whether the Colbert site qualifies.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-12. Score **50/100**, ranked 2.
+- **Workstream** real estate · **Priority** Normal · **Owner** Agent · **Due**
+  2026-10-19 (next scan)
+- **Approval class** — **A to research.** Contacting USDA is **C**; any
+  application is **E and G**.
+- **Stated by source** — USDA Rural Development's own programme page surfaced in
+  search but **returned 403 and was not read.** Secondary, single-source:
+  guarantee raised to **85% for qualifying loans under $5 million in FY2026**;
+  **the FY2027 budget request eliminates appropriated authority** against
+  $1.43bn enacted the prior year, and a House bill passed 2026-06-04 restores it
+  at **$2.0 billion**.
+- **Assumed by Torque** — that Madison County/Colbert meets USDA's population
+  test (**the test itself was not read**), and that an owner-occupied tuning and
+  dyno shop is an eligible business purpose. **Both unconfirmed.**
+- **Why it matters more than its score** — the reported 85% guarantee is aimed
+  at exactly DD84's weakness: **a lender's reluctance given thin revenue
+  history.** It is the one instrument whose design compensates for the thing
+  that makes SBA 504 hard.
+- **Cost and risk** — No cost to research. **The risk is unusual: the
+  programme's own survival is contested**, which argues for establishing fit
+  early rather than at the point of need.
+- **Execution steps** — (1) Read the B&I eligibility page **once network access
+  permits** (T-59); (2) confirm FY2027 authority from the enacted appropriation,
+  not a budget request; (3) confirm the rural population test against Colbert;
+  (4) **raise with the SBDC adviser first** (T-39) — a free session is cheaper
+  than a cold call to USDA.
+- **Completion proof required** — The population test and FY27 authority each
+  recorded with the page and date read.
+- **Status** Planned · **Next action** — Step 4, which costs nothing and is
+  already scheduled work.
+
+## T-57 — Is Colbert in a designated Georgia Rural Zone?
+
+- **Objective** — Answer one cheap question that would materially change the
+  arithmetic of buying the shop site.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-12. Score **48/100**, ranked 3.
+- **Workstream** real estate · **Priority** Normal · **Owner** Agent · **Due**
+  2026-10-19
+- **Approval class** — **A to research.** Emailing DCA is **C**.
+- **Stated by source** — Georgia DCA documents surfaced in search (**403, not
+  fetched**): **investment credit of 25% of a property's purchase price, capped
+  at $125,000**; job tax credit **$2,000 per FTE per year for up to five
+  years**; rehabilitation credit **30% of qualified costs, capped $150,000**.
+  Zone eligibility: population ≤15,000, a concentration of commercial structures
+  50+ years old, demonstrated distress. **The local government applies, not the
+  business.** Latest round announced 2025-12-05 designated Alma, Barnesville,
+  Blairsville, Elberton, Folkston, Grantville and Summerville from 2026-01-01 to
+  2030-12-31.
+- **Neither Colbert nor Jefferson, nor Madison nor Jackson County, appeared in
+  any designation list found** — including a ~40-community 2023 overview. **That
+  is an absence in search results, not a confirmed negative.**
+- **Assumed by Torque** — that Colbert's population is under 15,000 (**not read
+  from a source this run**), and that a dyno shop on a state route would count
+  as a qualifying activity in a **downtown revitalisation** zone — **genuinely
+  doubtful**, and the doubt is the honest part.
+- **The limitation that matters most** — these are **non-refundable Georgia
+  income tax credits.** DD84's all-time revenue is **$3,507.86** with nothing
+  collected since 2025-09-12, so its state tax liability is almost certainly too
+  small to absorb a $125,000 credit in any useful period. **The headline number
+  is real and largely unusable at current scale.** Scored 24/25 on value and 1/5
+  on risk for exactly that reason.
+- **Cost and risk** — No cost. Risk of ignoring it: buying the parcel without
+  knowing a 25% credit was available.
+- **Execution steps** — (1) Read DCA's designations list once network access
+  permits; (2) if Colbert is not designated, record that and park this; (3) if
+  it is, put the investment credit into the financing conversation and **check
+  whether DD84 could actually use the credit** before valuing it.
+- **Completion proof required** — A yes or no on Colbert's designation, with the
+  page and date read.
+- **Status** Planned · **Next action** — Step 1, gated on T-59.
+
+## T-58 — SBA 504: send the Georgia CDC draft and ask two questions
+
+- **Objective** — Move the shop financing from a written-but-unsent draft to an
+  actual answer from a Certified Development Company.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-12. Score **47/100**, ranked 4.
+- **Workstream** finance · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-14
+- **Approval class** — **C to send.** **Covered by the existing T-42 decision on
+  the drafts backlog; no new packet raised** — a second packet for one of the
+  fifteen drafts would fragment a decision the owner already has in front of
+  them.
+- **Why this is the action rather than more research** — **Georgia CDC is
+  already in the mailbox.** A draft to them has been written and unsent since
+  **2026-09-29 — 13 days.** Every remaining SBA 504 question is one a CDC
+  answers in a sentence and no amount of searching will settle.
+- **The two questions, and why they are the right two** — both come from gaps
+  this scan could not close:
+  1. **Is a building with a fixed dyno installation classified "special
+     purpose"?** If yes, the borrower equity requirement reportedly moves from
+     **10% to 15–20%.** For a purchase in the low hundreds of thousands that is
+     tens of thousands of dollars of difference, and it is the single largest
+     unknown in DD84's financing plan.
+  2. **What equity does a business of DD84's age and revenue history need?**
+     Secondary sources report an **additional 5–10% for businesses under two
+     years old.**
+- **Stated by source** — all SBA 504 figures in the scan are from **lender and
+  marketing pages**; `sba.gov` returned **403**. Reported: 10% standard equity,
+  15–20% special purpose, 50/40/10 bank/CDC/borrower split, **≥51%
+  owner-occupancy**, up to ~$15M, net worth under $20M and average after-tax net
+  income under $5M.
+- **Assumed by Torque** — that DD84's wholly owner-occupied plan clears the 51%
+  test comfortably. **Looks safe; not read on SBA's page.**
+- **Cost and risk** — No cost to send. Risk of continued delay: the Colbert
+  parcel purchase (T-53) has had no reply in six days, and financing readiness
+  is what makes an offer credible.
+- **Execution steps** — (1) Owner sends the existing GACDC draft with the two
+  questions added; (2) record the answers here; (3) feed the equity figure into
+  whatever offer T-53 produces.
+- **Completion proof required** — A written answer from the CDC on
+  classification and equity.
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **The draft exists;
+  it needs sending.**
+
+## T-59 — The opportunity scan cannot validate any primary source
+
+- **Objective** — Restore the half of this routine that makes its output
+  trustworthy, and fix two stale references in its command file.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-12, failing its own validation
+  step and recording why.
+- **Workstream** ops · **Priority** **High** · **Owner** **Owner** (the network
+  change) **and Agent** (the command file) · **Due** 2026-10-14
+- **Approval class** — A to prepare and to amend the command file. **The network
+  policy change is the owner's.**
+
+### Finding 1 — egress is blocked to every issuing body
+
+The routine's design is **`WebSearch`, then `WebFetch` on the primary source.**
+`WebSearch` works. **`WebFetch` is blocked.** Measured this run:
+
+| Host              | Result                             |
+| ----------------- | ---------------------------------- |
+| `dca.georgia.gov` | **HTTP 403 CONNECT tunnel failed** |
+| `www.sba.gov`     | **403**                            |
+| `grants.gov`      | **403**                            |
+| `www.rd.usda.gov` | **403**                            |
+
+**The proxy is healthy** — `enabled: true`, `bundleCoversEveryHost: true`,
+`recentRelayFailures: []` — so this is the **environment's network policy**, not
+a fault. **The remedy is the owner's:** Network access in the environment's
+settings (the cloud environment menu in the session title bar, then Edit) —
+either a broader level, or those hosts under Allowed domains with "Allow package
+managers" left ticked.
+<https://code.claude.com/docs/en/cloud-environments#network-access>
+
+**What it costs, concretely.** The command file says _"never state a deadline
+you have not seen on the issuing body's own page"_ and _"never score an
+opportunity you could not open."_ Applied honestly, **this routine can discover
+candidates and cannot validate one.** The 2026-10-12 scan found six real
+candidates and every single one carries a **3–5/15 source reliability** score
+for that reason alone. **The ranking is therefore a ranking of search summaries,
+not of programmes**, and it says so.
+
+### Finding 2 — the command file points at a deleted file, and misdescribes the repository
+
+- **`src/lib/scoring/score.ts` does not exist on this branch.** It went with the
+  Ledger tree on 2026-09-25 (T-29, OL-0016). The **components and maxima survive
+  in the command file's own inline restatement** and sum to 100, so scoring was
+  possible — **but the classification bands were only in the code and are now
+  unavailable.** The 2026-10-12 scan therefore reported raw scores with **no
+  bands**, could not apply the "worth investigating" gate, and **invented no
+  thresholds.**
+- **The command file states _"This repository is the Georgia Opportunity
+  Ledger"_** and directs a Supabase duplicate check against Ledger data.
+  **`CLAUDE.md` §0 says otherwise** — the Ledger is a separate business in
+  another repository — and the firing prompt is explicit that this scan is
+  DD84's own. **The file is describing an arrangement that ended on
+  2026-09-23.**
+
+- **Cost and risk** — No cost. **The risk is a scan that reads as authoritative
+  and is not.** A ranked list with scores looks like validated research; this
+  one is honest about being search summaries, but **the next session may not be
+  as careful**, which is what makes this High rather than Normal.
+- **Execution steps** — (1) **Owner** adds the four hosts to Allowed domains, or
+  widens network access; (2) **Agent** amends
+  `.claude/commands/dd84-opportunity-scan.md`: write the band thresholds in
+  explicitly or state that bands are unavailable, delete the "this repository is
+  the Ledger" framing, and remove the Supabase duplicate-check step; (3) re-run
+  the scan and compare — **the 2026-10-12 brief is the baseline and all six
+  scores should rise.**
+- **Completion proof required** — One scan in which at least one deadline is
+  recorded as read from an issuing body's own page, with the URL and timestamp.
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **Step 2 is Torque's
+  and does not wait on it**, but is worth doing in the same pass so the file is
+  corrected once.

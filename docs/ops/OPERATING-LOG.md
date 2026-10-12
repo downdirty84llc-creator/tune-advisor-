@@ -2104,4 +2104,125 @@ claiming a second one. Fifth consecutive no-op. Next fire **2026-10-19T09:00Z**.
 
 ---
 
-## Next entry: OL-0039
+## OL-0039 — 2026-10-12 · First opportunity scan: six real candidates, none validated
+
+- **Timestamp** 2026-10-12T11:55:00Z
+- **Task** T-39, T-42, T-53, T-56…T-59 (**created**) · **Approval** S-01 (Class
+  A routine), fired by Routine "DD84 Weekly Georgia Opportunity Scan
+  (repo-attached)", `trig_01UPEmQbHN6vzC4PKse2zf23`, 11:26:42Z.
+- **Action** Ran the Georgia opportunity scan. **The first one this platform has
+  ever run** — `docs/ops/briefs/` held no prior `*-opportunity-scan.md`. Found
+  six candidates, scored and ranked all six, recorded seven closed programmes,
+  created four tasks. **Contacted nobody, applied for nothing.**
+- **Tool** `WebSearch` ×6, `WebFetch` ×2 (**both refused**), `Bash` (`curl` to
+  measure the block), `read_documentation`; `Read`/`Write`.
+- **Operator** Claude (agent), cqvhy6 host session
+- **Before** 54 tasks, 17 packets, no opportunity scan on record.
+- **After** 58 tasks, 17 packets,
+  `docs/ops/briefs/ 2026-10-12-opportunity-scan.md`. **No packet raised** —
+  nothing in the scan needs outreach approval that T-42 does not already cover.
+- **Sixth scheduled firing to commit**, and the sixth of six routines fired
+  since the A-14 stopgap. **All four scheduled routines have now delivered.**
+
+### The routine's validation step is blocked, and that is the run's main finding
+
+**Design: `WebSearch`, then `WebFetch` on the primary source. The second half
+does not work here.** Every issuing body refused:
+
+| Host              | Result                             |
+| ----------------- | ---------------------------------- |
+| `dca.georgia.gov` | **HTTP 403 CONNECT tunnel failed** |
+| `www.sba.gov`     | **403**                            |
+| `grants.gov`      | **403**                            |
+| `www.rd.usda.gov` | **403**                            |
+
+**Measured, not inferred.** `WebFetch` reported `ENOTFOUND`, which looks like
+DNS; `curl` through the proxy returned **403 CONNECT** for all four, and
+`$HTTPS_PROXY/__agentproxy/status` reports the proxy **healthy** —
+`bundleCoversEveryHost: true`, `recentRelayFailures: []`. **So it is the
+environment's network policy**, and the remedy is the owner's: Allowed domains,
+or a broader access level.
+
+**Applied honestly, the command file's own rules bite hard.** It says _never
+state a deadline you have not seen on the issuing body's own page_ and _never
+score an opportunity you could not open_. Its degradation clause permits listing
+a candidate with **source reliability scored low for that reason** — which is
+what was done. **Every one of the six carries 3–5 out of 15 on that component
+purely because of the block**, and **no deadline in the brief is stated as
+fact.** The ranking is a ranking of search summaries and says so in its own
+header. → **T-59**
+
+### A second defect: the scoring file is gone and the command file is stale
+
+- **`src/lib/scoring/score.ts` does not exist on this branch** — it left with
+  the Ledger tree on 2026-09-25 (OL-0016). The **components and maxima
+  survived** in the command file's inline restatement and sum to 100, so scoring
+  was possible. **The classification bands did not survive.** No bands were
+  reported, the "worth investigating" gate could not be applied, and **no
+  threshold was invented** — due-diligence tasks went to the top three by raw
+  score, with the substitution stated.
+- **The command file opens "This repository _is_ the Georgia Opportunity
+  Ledger"** and directs a Supabase duplicate check against Ledger records.
+  **That ended on 2026-09-23** (T-28). The Ledger database was **deliberately
+  not queried**: it is another business's production data, and a duplicate check
+  against its editorial records is meaningless for DD84's own opportunities.
+  Deduplication was against the register and prior briefs — of which there are
+  none. → also **T-59**
+
+### The ranking, and the thing worth noticing about it
+
+| #   | Candidate                  | Score  | Why it sits there                                                                              |
+| --- | -------------------------- | ------ | ---------------------------------------------------------------------------------------------- |
+| 1   | **Georgia SBDC advisory**  | **64** | Free, confirmed, already offered — **and already missed once**                                 |
+| 2   | USDA B&I guarantee         | 50     | 85% guarantee reportedly suits thin revenue history; **programme authority contested in FY27** |
+| 3   | Georgia Rural Zone credits | 48     | **25% of purchase price, capped $125,000** — and largely unusable, see below                   |
+| 4   | SBA 504                    | 47     | The conventional path, stalled on **one unsent email, 13 days old**                            |
+| 5   | TCSG apprenticeship        | 41     | **Automotive is an explicit focus area** — premature by one hire                               |
+| 6   | USDA REAP                  | 34     | Possibly 19 days out, **on the weakest source in the scan**                                    |
+
+**The top-ranked opportunity is a free advisory session DD84 already stood up.**
+That is not a quirk of the scoring — it is the honest result. It is the only
+candidate that is confirmed, costless, already extended, and blocked by nothing
+but a calendar booking, and it is **also the cheapest route to the knowledge
+this scan could not obtain**: an SBDC adviser knows which of candidates 2 to 6
+Georgia is actually operating this year.
+
+**The Rural Zone entry is the one to read carefully.** It scores **24/25 on
+financial value and 1/5 on risk**, and the reason is the same fact: the credits
+are **non-refundable Georgia income tax credits**, and DD84's all-time revenue
+is **$3,507.86** with nothing since 2025-09-12. **A $125,000 credit against
+almost no tax liability is a headline, not a benefit.** Recording that was more
+useful than recording the cap.
+
+**Seven closed programmes were kept rather than dropped**, several of which
+recur. Two independent sources said **Georgia's 2026 small-business grant
+calendar has largely closed** — which is itself the strategic finding: **for a
+business seeking building finance, the live paths are debt and tax credits, not
+grants.** The one watch item is the **FedEx Entrepreneur Fund**, whose published
+criteria DD84 appears to meet and whose 2026 window could not be confirmed.
+
+- **Error** None introduced. **Class A held**: nobody contacted, nothing applied
+  for, no capital committed, no agency or broker approached. **Nothing written
+  to any Ledger database and no record moved through any editorial workflow.**
+  `docs/growth/` untouched. **No deadline, award amount or eligibility rule was
+  invented**, and every candidate separates a **Stated by source** block from an
+  **Assumed by Torque** block, as §8.8 requires.
+- **Remediation** The scan's own degradation was handled per the command file
+  rather than worked around. **Two repairs are outstanding**: the owner's
+  network policy, and Torque's amendment of the command file. Both in T-59.
+- **Owner-side and open** — **T-52** (the phish, now four days unread), **A-15**
+  (two written messages; GDOT waiting six days), **T-58 / T-42** (the GACDC
+  draft, 13 days unsent), **T-53** (the property follow-up, drafted and unsent),
+  **T-59** (network policy), **A-17**, **A-07** (67 days), **A-10**, the C10
+  determination (**T-37**), T-46, T-49, T-50, T-54, T-55, T-29, T-30, T-45 — and
+  **the card-toggling question, now in its sixth day.**
+- **Worth stating plainly** — **the scan worked and its output is weaker than it
+  looks.** Six candidates, a defensible ranking, and not one verified deadline.
+  **The most actionable things it surfaced were not new opportunities at all:
+  they were two messages already written and unsent, and a free meeting already
+  offered.** That is the third routine this week to reach the same conclusion
+  from a different direction.
+
+---
+
+## Next entry: OL-0040
