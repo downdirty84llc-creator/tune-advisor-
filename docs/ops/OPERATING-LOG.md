@@ -2517,4 +2517,154 @@ submission, which was read and deliberately not recorded.**
 
 ---
 
-## Next entry: OL-0042
+## OL-0042 — 2026-10-13 · First follow-up run: a second live customer nobody recorded, and two jobs with no price
+
+- **Routine** `/dd84-followup`, **invoked by the owner** at
+  **2026-10-13T11:12Z** — the third routine of the day and **the first time this
+  routine has ever run.** Class A throughout.
+- **Checkout verified before writing** — HEAD `44b277d`, equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **38 tracked files**, no `src/`, clean
+  tree.
+- **Reached** Gmail, Google Calendar, Google Drive, Shopify (orders **and**
+  customers). **Not reached** Stripe, PayPal, bookipay, Square, Chime — **so not
+  one payment system was readable**, which decided most of what this run was
+  allowed to do.
+- **Candidates 6 · Drafted 1 · Held for payment confirmation 4.**
+
+### The find, and how it was found
+
+**There is a second live tuning job and this register had never mentioned it.**
+Gmail thread **`1a0e402cdcf75731`** — a **2018 Dodge Challenger R/T**, **28
+messages**, 2026-09-27T17:56:10Z → 2026-10-02T20:06:05Z, hard-cranking and
+intermittent no-start, **at least two revised tune files delivered** (confirmed
+from their own text), six days of iteration, **and silent for eleven days.** Now
+**T-64**, raised Critical.
+
+**It was found in Google Drive, not in email.** Three customer videos — 158 MB,
+114 MB, 97 MB — shared with the business account on 2026-10-02 and viewed by the
+owner on 2026-10-04, **which no task referenced.** The files led to the thread.
+**That is worth recording as a method**: five routines had read this mailbox and
+none had found this job, because **every one of them searched mail by recency
+and this job's last message fell outside every window.** Drive had no such
+window.
+
+### The second finding, which outranks the first
+
+A targeted Gmail search over **every message to or from each live customer** for
+`invoice OR price OR pricing OR deposit OR quote OR payment OR paid OR cost OR charge OR "$"`:
+
+- **The Challenger customer — zero messages.**
+- **The C10 customer — zero messages.**
+
+**Two live jobs. 57 messages. Tune files delivered on both. Not one written
+mention of money in either.**
+
+**This is a result, not an observation.** Every prior brief said "no price was
+noticed in N messages", which is a statement about attention. **Two deliberate
+empty search results are a statement about the mailbox.** The distinction is the
+whole difference between a thing someone might have missed and a thing that is
+not there.
+
+**What it is not, and the limit is stated rather than glossed.** It reads
+**written** mail only. **A price agreed by phone or text would not appear**, and
+DD84 publishes a business number. Every payment system is unreadable (T-36). So
+**the billing position of both jobs is unknown and is not asserted** — T-64 asks
+the owner instead of concluding.
+
+**Why it is the revenue leak rather than a slow payment.** An unpriced job
+cannot be invoiced, cannot be chased, and **cannot appear in any cash review** —
+which explains why three cash reviews found nothing to report against a business
+doing visible work. **It is not a late payment. It is an absent one.**
+
+### The routine's hard rule did the work it exists for
+
+The command file forbids drafting a money chase unless a payment system
+confirmed the item is genuinely open. **None was reachable, so four items that
+could each have carried a chase carry none:** both jobs' billing positions, any
+review request, and the question of whether either customer is one of the three
+known paying ones. **Each is in the Held section, naming the system that was
+missing and what would confirm it.**
+
+**One draft was written: a technical chase asking whether the revision was
+flashed, how the car starts, and for a datalog.** It asks for no money, quotes
+no price, offers no diagnosis, and **explicitly offers the customer the option
+of saying the project is parked**, so it cannot read as pressure. Packet
+**A-18** covers it — **one recipient, one message, sent verbatim or not at all**
+— and says in terms what it does _not_ authorise, so an approval cannot be read
+wider than it is.
+
+**No chase for the C10 customer, and the reason is positive.** **DD84 spoke
+last, eighteen hours ago.** No threshold is reached, the ball is with the
+customer, and a chase would interrupt an exchange the owner is running well.
+
+**No review request for anyone — and that is a measurement failure, not a real
+zero.** Eligibility is \*complete **and paid\***, and **paid cannot be
+established for anybody.** DD84 has three paying customers and no testimonial
+library; **two jobs in flight could each produce a first review, and the gate is
+not the customers' willingness but DD84's inability to read its own payment
+systems.** The clearest price T-36 has carried yet.
+
+### Three corrections from live systems
+
+1. **The missed SBDC session is now confirmed from the calendar, not inferred
+   from a chasing email.** Google Calendar, read 11:15Z: a 30-minute Teams
+   meeting, **2026-10-06 19:30–20:00Z**, booked via Calendly on 10-02, organised
+   by the adviser, **both attendees `accepted`**, status `confirmed`. **Real,
+   agreed, unattended** — which makes the seven-day-unsent reschedule reply
+   worse than the register had it, not better. **The adviser's name, email and
+   phone are in that entry and were deliberately not copied** (§5; A-17 covers
+   the category).
+2. **T-41's row said "Three" lead candidates against a body saying five.** The
+   body was updated at 10:40Z and the row was not, **so the board disagreed with
+   the record for three hours.** Corrected. **The eighth instance of summary
+   drift, and the same shape as all seven before it** — a detail updated in one
+   place and not the other.
+3. **`ventures.md` is right about 0 Shopify orders and silent about a customer
+   account.** Shopify confirms **0 orders** and returns **one customer**:
+   created 2026-10-07T21:35:33Z, **0 orders, $0.00 spent**, names and phone
+   `null`, an **email-masking alias** for an address. Unrecorded for six days →
+   **T-65**. **Not contacted**, because it may equally be the owner's own test
+   from the week he was QA-testing the contact form, and **nothing in the data
+   separates that from a real visitor** — the two call for opposite actions.
+
+### What was not established, listed rather than smoothed
+
+**The bodies of all 57 messages were not read** — senders, dates and sizes were
+read for every one. Six SENT messages in the Challenger thread are 1.88–1.92 MB,
+the same size class as the two confirmed tune files, **and are not asserted to
+be tune files.** **The three videos were not opened** and no diagnosis is drawn
+from them. **The three 2025 customers cannot be followed up from here at all** —
+their identity is deliberately absent from this record (§5, T-48), so a
+reactivation campaign is Rev's and needs the owner's own records.
+
+### Class A held
+
+**Nothing sent.** No reply, forward, review request or collection notice. **No
+Gmail draft created** — the drafted message exists only in the brief, so the
+mailbox's draft count is unchanged at 15. No quote cancelled, no slot released,
+no amount written off, **no discount, extension or goodwill credit offered, no
+price set.** No invoice marked paid, no job marked complete, nothing passed to
+collections. **Calendar read only.** No Shopify or Drive write. `docs/growth/`
+untouched, though the storefront-conversion half of T-65 was flagged for Rev.
+**No customer name, email or phone written here** — both live customers are
+Gmail thread IDs, the Shopify account is a Shopify ID, the Reddit candidates are
+public handles, the SBDC adviser is a role, and **the Drive sharer is "a third
+party".**
+
+- **Needs the owner today** — **A-18** (one message, 11 days late), **and a
+  price on both live jobs, which is worth more than the message.** Then **T-63**
+  (ten minutes), **T-61** (~2 days), **T-60** (~6 days), **T-52** (4 days
+  unread), **A-15** (7 days), **T-42 / T-58** (14 days unsent), **T-53**,
+  **T-65** (one word), **T-49**, **T-46**, **T-50**, **A-17**, **T-59**,
+  **A-10**.
+- **Worth stating plainly** — **this routine's first run found a customer the
+  operating record did not know about, and then found that neither of the two
+  live jobs has ever been given a price.** Three cash reviews reported no
+  revenue to report; **the reason was not that the work is absent, it is that
+  the work was never priced.** The follow-up queue's one draft asks for a
+  datalog, because **asking for money is the one thing it was not allowed to
+  do** — and on today's evidence, the thing nobody has done is name a number.
+
+---
+
+## Next entry: OL-0043

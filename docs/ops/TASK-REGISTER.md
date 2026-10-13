@@ -74,7 +74,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-38 | GDOT access review — right-in/right-out on the Colbert site         | real est.  | High         | **In Progress**          | Owner | **A-15 pending** | 2026-10-10   |
 | T-39 | Reschedule the missed Georgia SBDC session                          | finance    | Normal       | Awaiting Approval        | Owner | **A-15 pending** | 2026-10-10   |
 | T-40 | Google Play developer account at risk of closure                    | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
-| T-41 | Three r/LSSwapTheWorld lead candidates                              | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
+| T-41 | Five r/LSSwapTheWorld lead candidates, none contacted               | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
 | T-42 | Fifteen unsent drafts, five of them to likely loan fraud            | ops        | High         | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
 | T-43 | `downdirty84llc.com` is live and absent from the venture registry   | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
 | T-44 | One inbox query is not an intake; fix the routine's search          | ops        | Normal       | Planned                  | Agent | A to prepare     | 2026-10-15   |
@@ -97,15 +97,17 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-61 | Square turns offline payments on by default in two days             | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-62 | Vercel reports three misconfigured domains on one project           | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
 | T-63 | Two Shopify account-verification codes, cause unexplained           | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
+| T-64 | A second live tuning job, unrecorded and unpriced — 11 days silent  | service    | **Critical** | **Awaiting Owner**       | Owner | C to send        | 2026-10-14   |
+| T-65 | A Shopify customer account with zero orders, unrecorded             | sales      | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **13 Awaiting Owner** · 4 Blocked · 17 Planned
-· 2 Backlog. **63 tasks.** Recounted mechanically from the table above after
-every write, 2026-10-13 (intake 10:40Z, then daily brief 11:05Z).
+Progress · 2 Awaiting Approval · **14 Awaiting Owner** · 4 Blocked · 18 Planned
+· 2 Backlog. **65 tasks.** Recounted mechanically from the table above after
+every write, 2026-10-13 (intake 10:40Z, daily brief 11:05Z, follow-up 11:34Z).
 
 > **This line was wrong twice before the 2026-10-13 intake touched it** — it
 > read "3 In Verification" against 4, and "58 tasks" against 59. **That is the
@@ -149,29 +151,30 @@ this table is part of the write.** Evidence: OL-0028.
 
 ## Open items, by what they are waiting on
 
-| Waiting on                              | Tasks                                                          |
-| --------------------------------------- | -------------------------------------------------------------- |
-| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)                                  |
-| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                                       |
-| Owner approval                          | T-14                                                           |
-| Owner action (engaging counsel)         | T-13                                                           |
-| Owner or developer, test-mode keys      | T-11                                                           |
-| Owner decision                          | T-29, T-35                                                     |
-| Owner confirmation                      | T-19                                                           |
-| A seeded or live database               | T-06                                                           |
-| A readable payment system               | T-36                                                           |
-| Owner approval (A-15 — the drafts)      | T-38, T-39                                                     |
-| Owner — a live job, still unpriced      | T-37 (29 messages, no price in 9 days)                         |
-| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                       |
-| Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15) |
-| Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained) |
-| Owner action — security                 | **T-52** (phishing, unread 4 days)                             |
-| Owner action — network policy           | **T-59** (egress block disables a routine)                     |
-| A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                       |
-| A-16 executed; verification outstanding | T-48                                                           |
-| Counsel (A-06 is already approved)      | T-13, T-45                                                     |
-| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62                 |
-| Nobody — accepted risk                  | T-30                                                           |
+| Waiting on                              | Tasks                                                                   |
+| --------------------------------------- | ----------------------------------------------------------------------- |
+| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)                                           |
+| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                                                |
+| Owner approval                          | T-14                                                                    |
+| Owner action (engaging counsel)         | T-13                                                                    |
+| Owner or developer, test-mode keys      | T-11                                                                    |
+| Owner decision                          | T-29, T-35                                                              |
+| Owner confirmation                      | T-19                                                                    |
+| A seeded or live database               | T-06                                                                    |
+| A readable payment system               | T-36                                                                    |
+| Owner approval (A-15 — the drafts)      | T-38, T-39                                                              |
+| Owner approval (A-18 — one chase)       | T-64                                                                    |
+| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                                |
+| Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15)          |
+| Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained)            |
+| Owner — a price on a live job           | **T-64** (11 days silent), **T-37** (29 messages) — neither ever quoted |
+| Owner action — security                 | **T-52** (phishing, unread 4 days)                                      |
+| Owner action — network policy           | **T-59** (egress block disables a routine)                              |
+| A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                                |
+| A-16 executed; verification outstanding | T-48                                                                    |
+| Counsel (A-06 is already approved)      | T-13, T-45                                                              |
+| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62                          |
+| Nobody — accepted risk                  | T-30                                                                    |
 
 ---
 
@@ -1455,6 +1458,27 @@ been billed remains unknown and is not asserted** (T-36, T-58).
   again, and when does this job get priced?** The second half has been open for
   29 messages and nine days.
 
+### 2026-10-13 — the price question, answered as far as mail can answer it
+
+The follow-up routine ran the same targeted search over **every message to or
+from this customer** —
+`invoice OR price OR pricing OR deposit OR quote OR payment OR paid OR cost OR charge OR "$"`
+— and it returned **zero messages.** The identical search against the
+**Challenger** customer (**T-64**, a second live job this register did not know
+about) also returned **zero.**
+
+**That upgrades the finding from "no price was noticed in 29 messages" to "the
+word does not occur in any of them."** The first is an observation about
+attention; the second is a result. **It still does not prove the job is
+unbilled** — the search reads written mail, a price agreed by phone would not
+appear, and every payment system remains unreadable (T-36). **The billing
+position stays unknown and unasserted.**
+
+**No chase was drafted, and the reason is positive rather than cautious: DD84
+spoke last, 18 hours ago.** The ball is with the customer, who is waiting on a
+second wideband to arrive. **No threshold has been reached**, and a chase would
+interrupt a live exchange the owner is handling well.
+
 ## T-38 — GDOT access review: right-in/right-out on the Colbert shop site
 
 - **Objective** — Keep a live state-agency permit review moving, and get the
@@ -1545,6 +1569,30 @@ Quoted rather than paraphrased, because the constraint matters:
 - **Completion proof required** — A booked Calendly slot, visible on the
   calendar.
 - **Status** Awaiting Approval · **Next action** — A-15, then the owner books.
+
+### 2026-10-13 — the missed appointment is confirmed from the calendar
+
+Until now this task rested on **the adviser's chasing email** — good evidence
+that a meeting was missed, but secondhand. **Google Calendar, read at
+2026-10-13T11:15Z, confirms the appointment directly:** a 30-minute Microsoft
+Teams meeting on **2026-10-06, 19:30–20:00Z**, booked through Calendly on
+**2026-10-02**, **organised by the SBDC adviser**, with **both attendees marked
+`accepted`** and status `confirmed`.
+
+**So the meeting was real, was accepted, and was not attended.** That is firmer
+than the register had it, and **it makes the unsent reschedule reply worse, not
+better**: a free advisory session was booked, agreed and missed, the adviser
+chased once, and **the reply has been written and unsent for seven days**
+(A-15).
+
+**The adviser's name, email address and phone number are in that calendar entry
+and are deliberately not copied here** — §5, and **A-17 is already with the
+owner on exactly this category.** The appointment is identified by its date and
+time, which identifies nobody.
+
+- **Status unchanged: Awaiting Approval (A-15).** · **Next action unchanged** —
+  approve A-15 and send. **Nothing in this task needs more evidence; it needs a
+  send.**
 
 ## T-40 — Google Play developer account at risk of closure
 
@@ -2803,3 +2851,155 @@ not of programmes**, and it says so.
   date. **Not an assumption that silence means it was routine.**
 - **Status** **Awaiting Owner** · **Next action** — Step 1, today. **Ten
   minutes, and it is the only item today that could be an active compromise.**
+
+## T-64 — A second live tuning job, unrecorded and unpriced, 11 days silent
+
+- **Objective** — Recover a live customer job that this register never knew
+  existed, and get it priced before it goes cold with work already delivered.
+- **Source** — `/dd84-followup`, 2026-10-13. **Found in Google Drive, not in
+  email**: three customer videos (158 MB, 114 MB, 97 MB) shared with the
+  business account on 2026-10-02 and viewed by the owner on 2026-10-04, which
+  **no task in this register referenced.** Tracing them led to Gmail thread
+  **`1a0e402cdcf75731`** — _"2018 rt challenger log"_, **28 messages**,
+  2026-09-27T17:56:10Z → 2026-10-02T20:06:05Z — and a second thread
+  **`1a0e75796744dd11`** (2026-09-28, DD84's intake questions).
+- **Workstream** service · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-14
+- **Customer record (§8.1 fields; missing ones marked missing)**
+  - **Identity deliberately not recorded.** `CLAUDE.md` §5 forbids customer
+    names, email addresses and phone numbers in this public repository. **Gmail
+    thread `1a0e402cdcf75731` is the stable pointer and is not identity.** The
+    same convention as T-37, applied from the start this time rather than
+    retrofitted — **T-48 exists because it was not.**
+  - Vehicle **2018 Dodge Challenger R/T** · Engine **missing** (R/T is the 5.7
+    HEMI as sold, **not confirmed from the thread**) · Transmission **missing**
+    · Location **missing**
+  - Fault — **hard cranking and intermittent no-start.** The customer's own
+    words, 2026-10-02T15:49:21Z: _"the only thing i did on this log is crank up
+    a few times and i did a few burn outs, but no drive. the last 3 or 4 cranks
+    it didnt start so i hit the gas jus a lil to help it"_
+  - Requested service — datalog review and recalibration
+  - Source of the enquiry **missing** — and it is the field `ventures.md` most
+    needs, since the channel producing DD84's customers is recorded as
+    `UNKNOWN`. **Two live jobs now have an unknown origin. Ask both.**
+- **Customer status — UNVERIFIED, and not merged.** Shopify holds **no**
+  matching customer; Stripe, PayPal, bookipay and Square were all unreachable.
+  Per spec §9 a merge needs verified identity, so this is **a correspondent of
+  unknown purchase history — counted as neither a new customer nor one of the
+  three known paying ones.**
+- **What DD84 delivered** — at least **two revised tune files, confirmed from
+  the message text**: 2026-10-02T17:04:22Z and 2026-10-02T20:06:05Z, both
+  reading _"Here is the updated tune file with additional VE table corrections
+  and startup adjustments."_ **Six further SENT messages in the thread are
+  1.88–1.92 MB each, the same size class as those two, consistent with further
+  tune-file attachments — but their text was not read and they are not asserted
+  to be tune files.** Six days of iteration either way.
+- **Where it stands: DD84 spoke last, 2026-10-02T20:06:05Z**, asking the
+  customer to flash the revision, take a log and report back. **Eleven days of
+  silence since.** Against the proposed thresholds that is **past the 7-day
+  final threshold for _waiting on a customer datalog_** — and those thresholds
+  are **Torque's proposal and still not owner-approved.**
+
+### The finding that outranks the silence: money has never been mentioned
+
+A targeted Gmail search over **every message to or from this customer** for
+`invoice OR price OR pricing OR deposit OR quote OR payment OR paid OR cost OR charge OR "$"`
+returned **zero messages.** The identical search against the **C10** customer
+(T-37) also returned **zero**.
+
+**Two live tuning jobs. 57 messages. Tune files delivered on both. Not one
+written mention of money in either.**
+
+That is **two deliberate empty search results, not an inference from not having
+noticed a price.** It is the difference between "no invoice was found" and "the
+word invoice does not occur", and only the second is worth acting on.
+
+**What it is not.** It is **not proof the jobs are unbilled.** The search reads
+written mail only; **a price agreed by phone or text would not appear**, and
+DD84 publishes a business number. Stripe, PayPal, bookipay and Square are all
+unreadable (T-36), so **the billing position of both jobs is unknown and is not
+asserted.** This task asks the owner rather than concluding.
+
+**Why it is the revenue leak and not a slow payment.** A job with no price
+cannot be invoiced, cannot be chased, and **cannot appear in any cash review** —
+which is exactly why three cash reviews have found nothing to report against a
+business doing visible work. **An unpriced job is not a late payment. It is an
+absent one.**
+
+- **Approval class** — **A to prepare. Sending is C.** A technical chase is
+  drafted in `docs/ops/briefs/2026-10-13-followup.md` and covered by packet
+  **A-18**. **Pricing the job is the owner's and is outside this routine
+  entirely** — the follow-up command file puts discounts, extensions and
+  goodwill credits beyond its scope, and setting a first price is the same
+  category. **Supplying calibration for a running engine is safety-adjacent and
+  the owner's by rule.**
+- **Cost and risk** — No cost to chase. **The risk of waiting** is a job going
+  cold with work already delivered and never invoiced; at 11 days a chase still
+  reads as service, at a month it reads as an afterthought. **The risk of the
+  wrong chase** is asking for money a customer may already have paid, which is
+  why the drafted message asks for a datalog and nothing else.
+- **Execution steps** — (1) **Owner** approves A-18 and sends the technical
+  chase; (2) **owner sets a price for this job** and records it here; (3)
+  establish whether anything has been billed, from a payment system or from the
+  owner's own knowledge; (4) ask the customer **where he found DD84** — the
+  `UNKNOWN` channel field; (5) if no reply comes by ~2026-10-20, decide
+  deliberately whether to close the job rather than letting it lapse.
+- **Completion proof required** — The customer's reply recorded here, **a price
+  for this job stated**, and the billing position established from a live system
+  or from an explicit owner statement. **Not an assumption that silence means
+  the job ended.**
+- **Status** **Awaiting Owner** · **Next action** — Step 1 and step 2, today.
+  **Step 2 matters more and nobody else can do it.**
+
+## T-65 — A Shopify customer account with zero orders, unrecorded
+
+- **Objective** — Establish whether a Shopify customer account created last week
+  is a real prospect or the owner's own test, before anybody is contacted.
+- **Source** — `/dd84-followup`, 2026-10-13. `mcp__Shopify__list-customers` read
+  at 2026-10-13T11:20Z returned **exactly one customer**:
+  `gid://shopify/Customer/10013547724847`, created **2026-10-07T21:35:33Z**, **0
+  orders**, **$0.00 total spent**, first and last name `null`, phone `null`, and
+  an **email-masking forwarding alias** rather than a direct address.
+- **Workstream** sales · **Priority** Normal · **Owner** Agent · **Due**
+  2026-10-16
+- **Approval class** — **A to read.** Reading the Shopify customer and order
+  list is observation. **Contacting the account holder is C**, and **is not
+  recommended until step 1 settles what this is.**
+- **The address is deliberately not recorded here.** §5. It is a masked alias
+  and not a person's direct address, but **the rule is about category, not about
+  how useful the address would be**, and the Shopify customer ID is a stable
+  pointer that identifies nobody.
+- **What the registry gets right, and what it is silent about** — `ventures.md`
+  records **0 Shopify orders**, and Shopify confirms **0 orders**, so the
+  registry is **correct**. It says nothing about customer accounts, and **this
+  one has existed for six days unrecorded.** A storefront with a signup and no
+  sale is a different fact from a storefront with neither.
+- **The two explanations, and no preference between them** —
+  1. **The owner's own test.** 2026-10-07 sits in the week he was QA-testing the
+     `downdirty84llc.com` contact form (T-43), and a masking alias is exactly
+     what a careful person uses to test a signup flow.
+  2. **A real visitor** who created an account and did not buy, in which case it
+     is **the only recorded instance of someone reaching the storefront and
+     stopping.** **Nothing in the data separates them**, and the two call for
+     opposite actions — which is why nothing is sent.
+- **Why not simply email and find out** — because **sending "we noticed you
+  didn't finish your order" to yourself is the cheap mistake and sending it to a
+  stranger whose only interaction was an aliased signup is the expensive one.**
+  A single-customer store cannot afford to look automated.
+- **Cost and risk** — No cost. The risk is **a cart-abandonment follow-up
+  pointed at the owner's own test account**, which would be visible in the
+  record and faintly ridiculous. The opposite risk — a real prospect left alone
+  for a week — is already realised and costs nothing more to check properly.
+- **Execution steps** — (1) **Owner** says whether he created it; (2) if not,
+  read the account's Shopify activity — abandoned checkouts, which products were
+  viewed — and record what the storefront actually did; (3) decide whether a
+  single, non-automated follow-up is worth sending, and raise it as a C packet
+  if so; (4) **hand the storefront-conversion question to Rev**, which is where
+  it belongs; (5) add Shopify customer accounts to whatever the site monitor
+  checks, since nothing currently notices one appearing.
+- **Completion proof required** — A statement of **what this account is**, from
+  the owner or from Shopify's own activity record — and, if it is a real
+  visitor, a recorded decision on whether to contact them. **Not a guess either
+  way.**
+- **Status** Planned · **Next action** — Step 1. **One question to the owner,
+  and it costs him one word.**

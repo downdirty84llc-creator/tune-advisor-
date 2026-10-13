@@ -1235,3 +1235,96 @@ A-16 report success on two files that were not clean.
 > appending concurrently. Corrected to **T-51** before the commit. The
 > structural fix is A-10: one Routine per session instead of four serialising
 > through one.
+
+---
+
+## A-18 — Send one technical follow-up to a live customer, 11 days silent
+
+**Status: PENDING — raised 2026-10-13 by the first `/dd84-followup` run.**
+
+**Decision requested** — Approval to send **one** message: a technical follow-up
+to the customer on Gmail thread `1a0e402cdcf75731` (the 2018 Challenger R/T),
+asking whether the tune revision DD84 sent on 2026-10-02 was flashed, how the
+car now starts, and for a datalog of two or three start cycles. **The full body
+is in `docs/ops/briefs/2026-10-13-followup.md` and is sent verbatim or not at
+all.** This packet covers **one recipient and one message.**
+
+**Business objective** — Recover a live job with work already delivered. DD84
+sent at least two revised tune files over six days of iteration and has heard
+nothing for eleven days. **At eleven days a follow-up reads as service; at a
+month it reads as an afterthought.**
+
+**Source and context** — The job was found by `/dd84-followup` **in Google
+Drive, not in email**: three customer videos shared on 2026-10-02 that no task
+in this register referenced. **This register did not know the job existed** — it
+is now **T-64**. DD84 spoke last at **2026-10-02T20:06:05Z**. Against the
+proposed ageing thresholds the job is **past the 7-day final threshold for
+_waiting on a customer datalog_**; **those thresholds are Torque's proposal and
+have never been owner-approved**, which is why this is a packet and not an
+action.
+
+**Recommended plan** — Send the drafted message as written, today. One message,
+one recipient, no attachment.
+
+**Alternatives considered**
+
+1. **Send nothing and wait.** Rejected: eleven days is already past every
+   threshold anyone has proposed, and the job has delivered work attached to it.
+2. **Send a chase that also asks for payment.** **Rejected on the routine's own
+   hard rule.** Stripe, PayPal, bookipay and Square were all unreachable, so
+   **whether this job has been billed or paid is unknown.** Asking a customer
+   for money he may already have paid costs more trust than the follow-up
+   recovers.
+3. **Send a chase that quotes a price.** Rejected: **this job has never been
+   priced, and setting a first price is a pricing decision, not a follow-up.**
+   The follow-up command file puts pricing outside this routine, and this
+   routine respected that.
+4. **Send a message offering a diagnosis of the no-start fault.** Rejected:
+   **safety-adjacent**, the fault is not diagnosable from three videos and a
+   description, and `ventures.md` forbids fabricating a diagnosis or
+   guaranteeing a result. The message asks for data instead.
+
+**Cost and cash impact** — **No cost to send.** No discount, extension or credit
+is offered. **No revenue is promised**: the job is unpriced, so the upside is
+unquantified and is deliberately not estimated here. Catalogue basis is
+**$99–$650** and **the range stays a range.**
+
+**Risks and safeguards** — The message commits DD84 to reviewing one more
+datalog and making one more determination. **It commits to no timeline, no
+result and no power figure**, and it explicitly offers the customer the option
+of saying the project is parked, so it cannot read as pressure. The risk of
+sending is low; **the risk of the alternatives — a payment chase or a price — is
+what this packet exists to avoid.**
+
+**Systems affected** — Gmail only, one thread. **No payment system, no calendar,
+no Shopify, no live site.**
+
+**Customer/public impact** — One customer receives one message. **Nothing
+public.**
+
+**Success test** — The customer replies with the car's starting behaviour, or
+says the project is parked. **Either is a result**; eleven more days of silence
+is not.
+
+**What this packet does NOT cover, stated so approval is not read wider than it
+is** — it does **not** authorise pricing either live job, sending anything to
+the C10 customer (T-37, where DD84 spoke last 18 hours ago and no chase is due),
+contacting any of the five Reddit candidates (T-41, blocked by T-60), contacting
+the Shopify account holder (T-65, whose nature is unestablished), or any review
+request (none is eligible, because **no job can be shown to be paid**).
+
+**The separate decision the owner still owes, and it is worth more than this
+one** — **both live jobs need a price.** A targeted search over every message to
+or from both customers for
+`invoice OR price OR pricing OR deposit OR quote OR payment OR paid OR cost OR charge OR "$"`
+returned **zero messages for both.** 57 messages, tune files delivered on both
+jobs, **no written mention of money anywhere.** That is not in this packet
+because **pricing is not Torque's to move** — but approving this message and not
+setting a price would recover the conversation and still leave the revenue on
+the floor.
+
+**Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response** — _awaiting the owner._
+
+**Actual result** — _not yet executed. Nothing has been sent._
