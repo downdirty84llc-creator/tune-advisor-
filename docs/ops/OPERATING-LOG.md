@@ -2225,4 +2225,162 @@ criteria DD84 appears to meet and whose 2026 window could not be confirmed.
 
 ---
 
-## Next entry: OL-0040
+## OL-0040 — 2026-10-13 · Tuesday intake: the most productive day in this record sent nothing
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled Routine "DD84 Inbox
+  and Lead Intake"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-13T10:21:03Z**, into this host session. **Sixth scheduled firing to
+  reach a session with the repository attached.** Class A throughout.
+- **Checkout verified before writing** — HEAD `b0d926b`, equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **36 tracked files**, no `src/`, clean
+  tree. **The firing prompt's "28 files" is stale and drifts upward every time a
+  brief commits**; it is a constant in the prompt and a variable in the
+  repository. Worth fixing in the prompt, which needs the Routines UI (A-10).
+- **Window** Since OL-0037, **2026-10-12T10:40Z — 24 hours**, queried
+  `newer_than:1d` with a two-day sent sweep. **27 threads reviewed, 8
+  actionable, 19 no-action.**
+- **Multi-query discovery held** — the T-44 fix is now proven five runs running.
+  `category:primary`, `is:important`, `in:sent`, `list_drafts`. **A single
+  `in:inbox` query would have buried the Reddit flag under newsletters again.**
+
+### What the day actually contained
+
+**The owner had his most productive day in this record and sent no business
+correspondence.** He worked the live C10 job twice, coached two more people on
+Reddit, and QA-tested his own website's contact form. **`in:sent newer_than:2d`
+returned exactly one thread — the C10 job — and the drafts backlog is unchanged
+at 15.** Both halves of that are findings, and the second one is the fourth
+routine this week to reach it from a different direction.
+
+### Three new tasks, and the first has a deadline the issuer set
+
+- **T-60 — Reddit flagged the account for automated activity, seven days.**
+  Thread `1a13111f99c61711`, 2026-10-12T17:03:43Z, IMPORTANT. Deadline
+  **~2026-10-19**. **This is the only dated deadline in the run, and the only
+  one this week that came from an issuer's own message** — the 2026-10-12
+  opportunity scan produced six candidates and not one verified deadline.
+  **Critical because r/LSSwapTheWorld has produced five lead candidates in six
+  days and nothing else in this record has produced one**, while `ventures.md`
+  still records the channel behind the three paying customers as `UNKNOWN`. **No
+  cause for the flag is claimed**, and the Reddit threads themselves could not
+  be read — they are on reddit.com and egress is blocked (T-59), **so this task
+  cannot diagnose its own cause from a session.**
+- **T-61 — Square turns offline payments on by default in ~2 days**, received
+  **ten minutes before this run fired.** Two findings, and the second is bigger:
+  a money setting changes by inaction, **and Square is the sixth payment channel
+  absent from `ventures.md`** — Chime was the fifth, three days ago (T-55).
+  **Two unrecorded ways money can reach this business, found in three days, by
+  reading email.** That does not widen T-36's gap so much as make **the size of
+  the gap unknown**, which is the retrospective justification for the 2026-10-09
+  cash review declining to state a revenue total.
+- **T-62 — Vercel reports three misconfigured domains across one project.** **A
+  hosting platform the registry has never mentioned.** The count is the email's,
+  **not a reading of Vercel**, and the domains are not named because they were
+  not read. Sized as a registry gap, not an outage, and **the sizing will change
+  the moment they are read.**
+
+### Five existing tasks updated, and one of them was framed wrong
+
+- **T-37 — the C10 job came back to life: 22 → 29 messages**, seven on
+  2026-10-12 after five days of silence. Customer returned the checklist (oil
+  **42–45 PSI**, fuel **33 PSI KOEO / 53 psi idle**, **91 octane**, wideband
+  "appears to be functioning"), dropped IAC to **8–10%**; **the owner replied
+  twice**, naming **iridium plugs** as the first problem and recommending **NGK
+  TR5 copper**; the customer has a **second wideband inbound** to test. **The
+  correction: this register recorded the blocker as a contradiction the owner
+  owed a determination on, and it was resolved by not resolving it.** He moved
+  to an independent finding and left the sensor hypothesis to be settled
+  empirically with a spare part. **That is better than what the register was
+  waiting for, and the register was wrong to frame a live diagnostic exchange as
+  stalled on one owed answer.** Recorded as a correction, not a win. **What has
+  still never happened in 29 messages: a price.** $99–$650 against the
+  catalogue, **and the range stays a range.**
+- **T-33 — `dd84-api` failed again**, 2026-10-12T14:00:40Z, same "Exited with
+  status 1". **Three alerts in five days.** This **corrects yesterday's brief**,
+  which read the quiet period as consistent with stabilisation **while
+  explicitly refusing to call it evidence of that.** The brief was written at
+  ~11:00Z and the alert came at 14:00Z: **accurate when written, overtaken three
+  hours later.** The hedge is the reason this is an update and not a retraction.
+  Service still unidentified; **three failures of an unidentified service is
+  three times the unknown, not three times the information.**
+- **T-43 — `downdirty84llc.com` has a working contact form, proven by the
+  owner's own QA submission** (thread `1a130a7e1ee4d5f5`, 2026-10-12T15:07:49Z,
+  "DD84-WEBSITE-QA-20261012-PHONE Owner-authorized website test only").
+  **Evidence, not inference.** It upgrades the task from "a domain nobody
+  recorded" to **"a lead-capture surface nobody recorded"** — and who watches
+  those submissions is not established. **Status stays Planned, because the
+  estate got longer and less complete the same day** (T-62).
+- **T-41 — handles four and five**, u/combustable_lemons3 (shortened harness,
+  **no-start, ~300 rpm on crank** — the closest thing to a qualified lead in
+  this register, and **still down**) and u/Ill_Relationship_365 (**2WD truck,
+  collecting quotes now**). **Nobody contacted. T-60 is now a prerequisite for
+  this task, not a neighbour of it.**
+- **T-52 — the phish is four days unread**, and the cluster gained a sixth item:
+  **two GitHub device-verification emails**, both IMPORTANT. One week now holds
+  a phishing attempt, a Reddit automation flag, a GitHub device prompt, Chime
+  and Disney+ logins and six days of card toggling. **No linkage claimed, no
+  cause asserted — the point is that it is one check, not six**, and that a
+  reader seeing them one per brief would never see the density.
+
+### The seventh instance of summary drift, found in this register's own tally
+
+The Summary counts line **was wrong before this run touched it**: "3 In
+Verification" against 4, and "58 tasks" against 59. **Recounted mechanically
+from the table and corrected to 62, with the drift recorded in place rather than
+quietly fixed.** That is **the seventh instance** (T-11, T-13, T-23, T-29, T-32
+×2, A-16, A-17, now this). **OL-0034 and OL-0038 both concluded the fix is
+structural, and this is the evidence for it:** a hand-maintained tally beside a
+growing table is a defect generator, and every routine that writes a row must
+recount or it lies. The open-items table was refreshed in the same pass — T-37
+no longer "waiting on a customer on a work trip", T-52 at four days not three,
+T-53 and A-15 at seven days not six.
+
+### No draft written, and for the first time that was the right answer
+
+**None of the four actionable items wanted a message.** Reddit verification is a
+click. Square needs a decision about money. **The C10 thread is a live technical
+exchange the owner is handling competently and at pace — drafting into it would
+be interference**, and the diagnosis is safety-adjacent and his by rule. The
+affiliate solicitation deserves no reply.
+
+### Degradation, named
+
+**PayPal** still requires re-authentication (unchanged since 2026-10-09).
+**Stripe** absent, **bookipay** no API — **so the C10 job's billing status is
+still unknown and is not asserted** (T-36). **Superhuman Mail and Canva** need
+interactive authentication. **Square's current setting was not read** — no
+connector exists, only the email about it. **Vercel's domain list not read.**
+**The Reddit threads not read** — egress blocked (T-59). **Attachments** still
+unreadable. **~20,700 unread remain unassessed** outside the window. **No
+section became an estimate.**
+
+### Class A held, and §5 held
+
+Nothing sent, forwarded or replied to. No label applied, no thread moved,
+archived, trashed or reported. No draft created, edited, sent or deleted. **No
+Reddit action of any kind — notably not the human-verification click, which is
+the owner's and which an agent performing would be the exact behaviour being
+flagged.** No calendar write, no customer contacted, no price quoted, no payment
+action, **no Square setting touched.** `docs/growth/` not written to, though two
+items were flagged for hand-off (the Pinterest CSV with 31 failed rows, and the
+web-estate question). **No customer name, email or phone entered this
+repository** — everyone is identified by Gmail thread ID or public handle — and
+**the affiliate solicitor's address was deliberately not recorded**, which is
+the same category A-17 is already with the owner about.
+
+- **Needs the owner today** — **T-60** (Reddit, ~6 days left), **T-61** (Square,
+  ~2 days), **T-52** (the phish, 4 days unread), **A-15** (two written messages,
+  GDOT 7 days), **T-58 / T-42** (the GACDC draft, **14 days unsent**), **T-53**
+  (drafted, unsent, proposal unanswered 7 days), **T-37** (the price), **T-59**
+  (network policy), **A-17**, **A-07** (68 days), **A-10** — and **the
+  card-toggling question, now in its seventh day.**
+- **Worth stating plainly** — **the business did real work yesterday and none of
+  it left the building.** Two platform deadlines arrived in 24 hours, both
+  self-executing if ignored, and **the only channel producing leads is the one
+  with a clock on it.** Meanwhile four written messages sit unsent, the oldest
+  for fourteen days. **The constraint is not finding work; it is sending what is
+  already written.**
+
+---
+
+## Next entry: OL-0041

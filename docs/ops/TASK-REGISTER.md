@@ -93,14 +93,26 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-57 | Is Colbert in a designated Georgia Rural Zone?                      | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
 | T-58 | SBA 504 — send the Georgia CDC draft and ask two questions          | finance    | **High**     | **Awaiting Owner**       | Owner | C — within T-42  | 2026-10-14   |
 | T-59 | The opportunity scan cannot validate any primary source             | ops        | **High**     | **Awaiting Owner**       | Owner | A to prepare     | 2026-10-14   |
+| T-60 | Reddit flagged the account for automated activity — 7 days          | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-19   |
+| T-61 | Square turns offline payments on by default in two days             | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
+| T-62 | Vercel reports three misconfigured domains on one project           | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 3 In Verification · 2 In
-Progress · 2 Awaiting Approval · **10 Awaiting Owner** · 4 Blocked · 16 Planned
-· 2 Backlog. **58 tasks.**
+Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
+Progress · 2 Awaiting Approval · **12 Awaiting Owner** · 4 Blocked · 17 Planned
+· 2 Backlog. **62 tasks.** Recounted mechanically from the table above,
+2026-10-13.
+
+> **This line was wrong twice before the 2026-10-13 intake touched it** — it
+> read "3 In Verification" against 4, and "58 tasks" against 59. **That is the
+> seventh instance of summary drift in this register's short life** (T-11, T-13,
+> T-23, T-29, T-32 ×2, A-16, A-17, and now this). OL-0034 and OL-0038 both
+> concluded the fix is structural rather than another reminder, and this is the
+> evidence for it: a hand-maintained tally beside a growing table is a defect
+> generator, and every routine that writes a row has to recount or it lies.
 
 T-26 was discovered while verifying T-22 and is the register doing its job: a
 finding that would otherwise have been mentioned once in a reply and lost.
@@ -136,27 +148,28 @@ this table is part of the write.** Evidence: OL-0028.
 
 ## Open items, by what they are waiting on
 
-| Waiting on                              | Tasks                                      |
-| --------------------------------------- | ------------------------------------------ |
-| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)              |
-| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                   |
-| Owner approval                          | T-14                                       |
-| Owner action (engaging counsel)         | T-13                                       |
-| Owner or developer, test-mode keys      | T-11                                       |
-| Owner decision                          | T-29, T-35                                 |
-| Owner confirmation                      | T-19                                       |
-| A seeded or live database               | T-06                                       |
-| A readable payment system               | T-36                                       |
-| Owner approval (A-15 — the drafts)      | T-38, T-39                                 |
-| A customer (checklist, on a work trip)  | T-37                                       |
-| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50   |
-| Owner action — security                 | **T-52** (phishing, unread 3 days)         |
-| Owner action — network policy           | **T-59** (egress block disables a routine) |
-| A counterparty who has not replied      | T-53 (6 days), and A-15 is 6 days unsent   |
-| Owner approval (A-16 — the redactions)  | T-48                                       |
-| Counsel (A-06 is already approved)      | T-13, T-45                                 |
-| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34   |
-| Nobody — accepted risk                  | T-30                                       |
+| Waiting on                              | Tasks                                                          |
+| --------------------------------------- | -------------------------------------------------------------- |
+| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)                                  |
+| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                                       |
+| Owner approval                          | T-14                                                           |
+| Owner action (engaging counsel)         | T-13                                                           |
+| Owner or developer, test-mode keys      | T-11                                                           |
+| Owner decision                          | T-29, T-35                                                     |
+| Owner confirmation                      | T-19                                                           |
+| A seeded or live database               | T-06                                                           |
+| A readable payment system               | T-36                                                           |
+| Owner approval (A-15 — the drafts)      | T-38, T-39                                                     |
+| Owner — a live job, still unpriced      | T-37 (29 messages, no price in 9 days)                         |
+| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                       |
+| Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15) |
+| Owner action — security                 | **T-52** (phishing, unread 4 days)                             |
+| Owner action — network policy           | **T-59** (egress block disables a routine)                     |
+| A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                       |
+| A-16 executed; verification outstanding | T-48                                                           |
+| Counsel (A-06 is already approved)      | T-13, T-45                                                     |
+| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62                 |
+| Nobody — accepted risk                  | T-30                                                           |
 
 ---
 
@@ -1173,6 +1186,26 @@ unique entries were carried across by hand instead.
   this is the top item on the 2026-10-08 brief because it is the only thing
   confirmed broken today, not because its impact is known.**
 
+### 2026-10-13 — a third failure, and a correction to yesterday's brief
+
+**`no-reply@render.com`, 2026-10-12T14:00:40Z, thread `1a1306a8538b8e46`:** _"We
+recently detected a server failure for dd84-api: **Exited with status 1**."_
+Same signature as the 2026-10-08T00:27Z alert. **Three alerts in five days.**
+
+**This corrects the 2026-10-12 daily brief**, which recorded "no Render alert
+since 10-08T15:21Z" and read it as _consistent with_ the service having
+stabilised **while explicitly declining to call it evidence of that**. The brief
+was written at ~11:00Z and the alert landed at 14:00Z, so **it was accurate when
+written and overtaken three hours later.** The hedge is why this is an update
+and not a retraction — **a brief that had asserted stabilisation would have been
+wrong, and this one was not.**
+
+**What changes:** the failure is **intermittent, not resolved**. Nothing else
+does — the service is **still unidentified**, no Render connector exists, and
+its customer-facing status is **still unknown**. Steps 1–5 stand unaltered.
+**Three failures of an unidentified service is three times the unknown, not
+three times the information.**
+
 ## T-34 — CI is failing on `main` in `downdirty84-ai-tuning`
 
 - **Objective** — Find out whether a third repository on this account has a
@@ -1374,6 +1407,52 @@ nothing since 2025-09-12.
   given that the sensor is the Holley 4.9 LSU, does the revised tune file still
   go out as built? Then decide the billing position.
 
+### 2026-10-13 — the job came back to life, and this task's framing was wrong
+
+**Thread `1a1082503004a073`: 22 → 29 messages.** Seven messages on 2026-10-12,
+after five days of silence. In order:
+
+1. **17:41Z — the customer returned the checklist.** Oil pressure **42–45 PSI**;
+   fuel **33 PSI key-on-engine-off, 53 psi at idle**; fuel **91 octane**;
+   wideband _"runs warmup and appears to be functioning"_; warm idle RPM given.
+2. **18:39Z —** customer adjusted idle **IAC down to 8–10%**.
+3. **19:31Z — the owner replied**, naming **iridium spark plugs** as the first
+   problem and recommending a **standard copper plug, NGK TR5**.
+4. **19:40Z —** customer has **another wideband inbound** to swap in and see
+   _"if it is the smoking gun"_.
+5. **20:39Z —** the owner endorsed that plan and repeated the plug advice.
+
+**The correction, stated plainly.** This task recorded the blocker as a
+contradiction the owner owed a determination on: _given the sensor is the Holley
+4.9 LSU, does the revised tune still go out as built?_ **It was not resolved
+that way and did not need to be.** The owner moved to a new, independent finding
+— plug heat range and type — and left the sensor hypothesis to be settled
+**empirically, by the customer, with a spare part he already has coming.**
+
+**That is a better resolution than the one this register was waiting for**, and
+**the register was wrong to frame the thread as stalled on a single owed
+answer.** A live diagnostic exchange does not have to clear its open questions
+in order; it can route around one. **Recorded as a correction to this task, not
+as a completion** — the AFR fault is not fixed, and the revised tune file's
+status is still not stated anywhere in the thread.
+
+**No draft was written, deliberately.** The owner is handling a live technical
+exchange competently and at pace; an agent drafting into it would be
+interference, and the diagnosis is safety-adjacent and his by rule.
+
+**The payment finding does not move: 29 messages, still no price.** No quote, no
+deposit, no invoice, no payment link. Against the catalogue the work still sits
+between **$99 and $650** — **the range stays a range, and no midpoint is
+offered.** Stripe is absent, bookipay has no API, and **PayPal is now unreadable
+too** (re-authentication required since 2026-10-09), so **whether anything has
+been billed remains unknown and is not asserted** (T-36, T-58).
+
+- **Status unchanged: In Progress.** · **Next action revised** — the owner's
+  open question is no longer the O2 contradiction. It is now: **does the plug
+  change and the second wideband get tested before any tune file is revised
+  again, and when does this job get priced?** The second half has been open for
+  29 messages and nine days.
+
 ## T-38 — GDOT access review: right-in/right-out on the Colbert shop site
 
 - **Objective** — Keep a live state-agency permit review moving, and get the
@@ -1555,6 +1634,43 @@ whether calibration files may be sent to Saudi Arabia is a compliance question
 for counsel, not for an agent. Recorded now so it is not discovered after a
 payment.
 
+### Handles four and five, 2026-10-12 — and the channel now has a clock on it
+
+Both from r/LSSwapTheWorld, both mid-diagnosis, **both still identified by
+handle alone**:
+
+- **u/combustable_lemons3**, 2026-10-12T14:20Z — LS swap with a **shortened
+  harness**, **no-start, cranking at roughly 300 rpm**. DD84 advised verifying
+  injector power in RUN and START and checking for pulse; they replied _"I can
+  get them to fire manually if I use my scanner."_ **A non-running vehicle with
+  a butchered harness is squarely DD84's _Wiring & EFI power diagnostics_
+  service at $75–$250** — the same shape as u/CausionWitFlossin, and this one is
+  **still down**. **The closest thing to a qualified lead in this register.**
+- **u/Ill_Relationship_365**, 2026-10-12T17:15Z — **2WD** truck, LS swap
+  planned, **power goal not stated**. DD84 advised making shops quote the same
+  engine/transmission package and **itemise wiring and fuel separately**; they
+  replied _"2WD, thanks this was in my brain but i will ask specifically."_
+  **Actively collecting quotes right now**, which is a timing signal and not a
+  request.
+
+**Every §8.1 field except the handle is missing for both.** Recorded as missing.
+
+**Five handles in six days, and every one was produced by DD84 answering a
+technical question for free.** Nothing else in this record has produced a single
+inbound enquiry. `ventures.md` still records the channel behind DD84's three
+paying customers as `UNKNOWN` and paid advertising as never used.
+
+**And that is now urgent rather than merely notable: Reddit has flagged the
+account for automated activity with a seven-day deadline (T-60).** The only
+demand source this business can demonstrate has a clock on it, roughly to
+2026-10-19. **T-60 is a prerequisite for this task, not a neighbour of it.**
+
+- **Status unchanged: Planned.** **Nobody has been contacted** — all five remain
+  uncontacted, contacting any of them is Class C, and the forum restriction
+  holds: lead with the answer, disclose the interest, do not pitch into a
+  technical thread. · **Next action** — **clear T-60 first.** Then the owner
+  decides on u/combustable_lemons3, who is the one with a dead truck.
+
 ## T-42 — Fourteen unsent drafts, five of them to likely loan fraud
 
 - **Objective** — Clear a backlog of prepared-but-unsent work, and get five
@@ -1622,6 +1738,39 @@ payment.
   serves, and which has analytics — handed to Rev for the registry.
 - **Status** Planned · **Next action** — Owner confirms what
   `downdirty84llc.com` is.
+
+### 2026-10-13 — confirmed as a working lead-capture surface, by the owner's own test
+
+**Thread `1a130a7e1ee4d5f5`, 2026-10-12T15:07:49Z, from
+`no-reply@downdirty84llc.com`** — a contact-form submission reading
+**"DD84-WEBSITE-QA-20261012-PHONE Owner-authorized website test only. Verify
+delivery of the…"**.
+
+**This is evidence, not an inference.** The domain is live, it has a contact
+form, and **the form delivers into the business inbox** — proven by a submission
+the owner made himself and labelled as a test. Nothing here was inferred from
+Search Console.
+
+**What it upgrades.** T-43 opened as "a domain appears in Search Console and in
+no DD84 record". It is now **a functioning lead-capture surface absent from the
+venture registry** — which is a materially worse gap, because an unrecorded
+domain that merely exists leaks nothing, and one that **collects enquiries** can
+collect them where nobody is watching. **Who monitors those submissions is not
+established.**
+
+**The hole also got bigger the same day.** T-62 records **Vercel reporting three
+misconfigured domains on one project** — a hosting platform `ventures.md` never
+mentions. So the count now stands at **`dd84tuning.com` (Manus, egress-blocked),
+`shop.downdirty84llc.com` (Shopify), `downdirty84llc.com` (live, with a working
+form), plus three Vercel domains of unknown identity** — and **readable
+analytics for none of them.**
+
+- **Status unchanged: Planned**, because the completion proof is a list of every
+  live domain and what each serves, and that list is now **longer and less
+  complete than it was yesterday.** · **Next action** — fold T-62's domain list
+  into this one, then hand the whole estate to Rev for the registry. **The SEO
+  and marketing half is still Rev's; `ventures.md` and `docs/growth/` were not
+  written to.**
 
 ## T-44 — One inbox query is not an intake; fix the routine's search
 
@@ -2068,6 +2217,33 @@ Any option here cleans current files only.
   was.
 - **Status** **Awaiting Owner** · **Next action** — Step 1, today.
 
+### 2026-10-13 — four days unread, and the cluster gained a sixth item
+
+**The phish is still unread**, now **four days** in an inbox that classified it
+IMPORTANT. Nothing about the message has changed and no remediation is recorded.
+
+**Added to the cluster, from the 2026-10-12 intake window:** **two GitHub device
+verification emails**, 2026-10-12T11:58Z and 11:59Z, **both flagged IMPORTANT**
+— a sign-in from an unrecognised device requesting a code.
+
+**They are counted here rather than dismissed as routine**, and the reason is
+arithmetic, not suspicion: one week has now produced **a credential phishing
+attempt, a Reddit automated-activity flag (T-60), a GitHub device prompt, a
+Chime new-login notice, two Disney+ new-login notices with a one-time passcode,
+and six days of debit-card toggling.** **No linkage between any of them is
+claimed and no cause is asserted** — every one of those notices is individually
+unremarkable. **The point is that checking them is one task, not six**, and that
+a reader seeing them one per brief would never notice the density.
+
+**Step 4 of this task gains weight.** `ventures.md` records DD84's social
+accounts as `UNKNOWN`, and the week's notices now span **Meta, Reddit, GitHub,
+Chime and Disney+** — so **what a compromised credential would reach is still
+unknown**, and that gap is the one thing here nobody has started on.
+
+- **Status unchanged: Awaiting Owner.** · **Next action** — Step 1, still today,
+  **plus the Reddit verification in T-60, which has a dated deadline the phish
+  does not.**
+
 ## T-53 — Purchase proposal on the Colbert parcel: no reply in six days
 
 - **Objective** — Get an answer on buying the shop site, or establish that the
@@ -2374,3 +2550,185 @@ not of programmes**, and it says so.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **Step 2 is Torque's
   and does not wait on it**, but is worth doing in the same pass so the file is
   corrected once.
+
+## T-60 — Reddit flagged the account for automated activity: seven days
+
+- **Objective** — Keep DD84 able to post in r/LSSwapTheWorld, which is the only
+  inbound channel this record has any evidence for, before the deadline Reddit
+  set expires.
+- **Source** — `/dd84-inbox-intake`, 2026-10-13. Gmail thread
+  `1a13111f99c61711`, from `noreply@reddit.com`, received
+  **2026-10-12T17:03:43Z** and **flagged IMPORTANT**.
+- **Workstream** sales · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-19
+- **Approval class** — **A to read and report here.** The remedy is a
+  human-verification click in the owner's own Reddit session. **Torque may not
+  and will not perform it** — see below.
+- **What the message says, quoted** — _"down-dirty-84 We detected automated
+  activity on your account. Verify you're human or register your account as an
+  app on the Reddit Developer Platform **within 7 days** to continue posting,
+  commenting…"_
+- **The deadline, and what makes it unusual in this register** — **approximately
+  2026-10-19**, seven days from receipt. **Reddit set it, in its own message to
+  this mailbox.** That makes it **the only dated deadline anywhere in the
+  2026-10-13 intake, and the only one this week not inherited from a secondary
+  source** — the 2026-10-12 opportunity scan produced six candidates and not one
+  verified deadline (T-59). **A platform's own notice to its own account holder
+  is as primary as a source gets.**
+- **Why this is Critical, in business terms rather than platform terms** —
+  r/LSSwapTheWorld has produced **five lead candidates in six days** (T-41) and
+  **nothing else in this record has produced one.** `ventures.md` records the
+  channel behind DD84's three paying customers as `UNKNOWN` and paid advertising
+  as never used. **If posting is restricted, DD84 loses the only demand source
+  it can demonstrate**, with nothing identified to replace it. The account also
+  carries the goodwill that made those five warm: DD84's standing there comes
+  from answering technical questions without pitching, and **that standing is
+  not portable to a new handle.**
+- **What Torque is not claiming** — **nothing here establishes why Reddit
+  flagged the account.** Automated-activity flags fire on posting cadence, link
+  patterns, VPN or shared-IP use, and plain false positives. **No cause is
+  asserted, and no inference is drawn from the fact that an AI agent reads this
+  mailbox** — Torque has never posted to Reddit, and the notification previews
+  are all this routine has ever read of it.
+- **What was not examined, and it matters here** — **the Reddit threads
+  themselves.** Only the email previews were read. **What DD84 actually posted,
+  and whether anything in it would explain the flag, is unknown**: the threads
+  are on reddit.com and web fetch is blocked by this environment's egress policy
+  (T-59). So **this task cannot diagnose the cause even in principle from a
+  session.**
+- **The one thing an agent must not do here** — click the verification. **A bot
+  completing a "verify you're human" check is precisely the behaviour being
+  flagged**, it would be a misrepresentation to the platform, and a failed or
+  suspicious verification could cost the account outright. **It is the owner's
+  click and nobody else's.**
+- **Cost and risk** — No cost to verify. The risk of inaction is losing posting
+  rights on the only channel with evidence behind it. The risk of the wrong
+  action — an agent verifying, or registering the account as a developer app
+  when it is a person posting — is **a worse standing than the flag itself.**
+- **Execution steps** — (1) **Owner** opens the Reddit notification and
+  completes human verification in his own session, before ~2026-10-19; (2)
+  record here that it was done and what Reddit then showed; (3) if Reddit states
+  a cause, record it — **that is the only route to a cause this record has**;
+  (4) if posting is already restricted, say so, because T-41's five candidates
+  then need a different route; (5) **separately and without urgency**, decide
+  whether the developer-app path is ever appropriate — it is not, if a human is
+  doing the posting.
+- **Completion proof required** — A recorded statement that verification was
+  completed, with the date, and confirmation that posting and commenting still
+  work. **Not an assumption that the deadline passed harmlessly.**
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **T-41 waits on
+  this**: contacting any of the five candidates through a restricted account is
+  not a plan.
+
+## T-61 — Square turns offline payments on by default in two days
+
+- **Objective** — Get a payment-acceptance setting decided before a platform
+  changes it unilaterally, and close the fact that **Square is a payment channel
+  the venture registry does not contain.**
+- **Source** — `/dd84-inbox-intake`, 2026-10-13. Gmail thread
+  `1a134be9ce241c19`, received **2026-10-13T10:11:09Z — ten minutes before the
+  intake fired.**
+- **Workstream** finance · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-15
+- **Approval class** — **A to read and report.** Changing a payment-acceptance
+  setting is **Class E and F** and is the owner's. **No Square setting was
+  touched and no Square connector exists.**
+- **What the message says, quoted** — _"Reminder! 2 days left before offline
+  payments are automatically allowed… If we don't hear from you, offline
+  payments will be turned on by default."_ **Effective approximately
+  2026-10-15**, and **the default is on.**
+- **Finding one: a money setting changes by inaction.** Offline card acceptance
+  takes a payment **without a live authorisation**, holding it until the
+  terminal reconnects. The trade is real in both directions: it prevents losing
+  a sale when connectivity drops at the shop, and it means **declines, expired
+  cards and chargebacks surface after the customer has gone.** **Whether that
+  trade is acceptable depends on how DD84 takes payment in person, and this
+  record does not know that.** `ventures.md` does not describe in-person payment
+  at all. **No recommendation is offered here, because an informed one is not
+  available.**
+- **Finding two, which is the larger one: Square is the sixth payment channel.**
+  `ventures.md` lists **Shopify, Stripe, bookipay and print-on-demand vendors.**
+  **Chime was the fifth, found 2026-10-10 (T-55). Square is the sixth.** That is
+  **two previously unrecorded ways money can reach this business, discovered in
+  three days, by reading email.**
+- **Why that compounds T-36 rather than merely adding to it** — T-36 records
+  that there is **no readable path to DD84's own revenue figures**: Stripe has
+  no connector in this session, bookipay has no API by design, and **PayPal has
+  required re-authentication since 2026-10-09.** A sixth channel does not just
+  widen the gap; **it means the size of the gap is itself unknown.** Any revenue
+  total assembled today would be a total over an unknown number of systems, and
+  **the cash review of 2026-10-09 declined to state one for exactly this
+  reason.** That refusal looks better today than it did then.
+- **Cost and risk** — No cost to decide. The exposure if offline payments are
+  switched on unconsidered is **post-hoc declines and chargebacks on work
+  already delivered**, against a business whose last recorded payment was
+  **2025-09-12**. The registry risk is that **a channel nobody has recorded is a
+  channel nobody reconciles.**
+- **Execution steps** — (1) **Owner** decides before ~2026-10-15 whether offline
+  payments should be on, and records the decision here with the reason — **an
+  explicit "yes, leave it on" is a fine answer and a default is not**; (2) state
+  what Square is used for and since when; (3) **hand Square and Chime to Rev for
+  `ventures.md`**, with the systems table's verification date; (4) fold both
+  into T-36's list of systems that would have to be readable before any revenue
+  figure is quoted.
+- **Completion proof required** — The offline-payment setting's state recorded
+  as **read from Square**, with the date, plus Square present in the venture
+  registry. **Not the email's description of the setting** — the email says what
+  will happen, not what the account is currently set to.
+- **Status** **Awaiting Owner** · **Next action** — Step 1, within two days.
+  **The deadline is the platform's, and it does not require a reply to take
+  effect.**
+
+## T-62 — Vercel reports three misconfigured domains on one project
+
+- **Objective** — Find out what Vercel hosts for DD84 and which three domains
+  are misconfigured, because both the platform and the domains are absent from
+  the venture registry.
+- **Source** — `/dd84-inbox-intake`, 2026-10-13. Vercel notification received
+  **2026-10-13T09:23:56Z**: _"Your Team (downdirty84llc-creator's projects) has
+  **3 misconfigured domains across 1 project**."_
+- **Workstream** ops · **Priority** Normal · **Owner** Agent · **Due**
+  2026-10-16
+- **Approval class** — **A to read.** A Vercel connector exists in this session
+  and **reading project and domain configuration is observation.** Changing a
+  DNS record, a domain assignment or a deployment is **Class F** and returns for
+  approval.
+- **The finding** — **Vercel is hosting something for DD84 and this register has
+  never mentioned it.** `ventures.md`'s systems table names a Manus front door,
+  Shopify, Stripe, bookipay and print-on-demand vendors. **No Vercel, no
+  project, no domains.** The team name `downdirty84llc-creator` matches the
+  GitHub owner, so the account is DD84's rather than coincidental.
+- **What is known and what is not** — **three misconfigured domains across one
+  project is the email's count.** It was **not verified by reading Vercel**, and
+  the three domains are **not named here because they have not been read.**
+  Whether any of them is customer-facing is **unknown.** A misconfigured domain
+  usually means DNS that does not point where Vercel expects — which can mean a
+  domain that does not resolve, or one that simply was never finished. **Neither
+  is assumed.**
+- **Why Normal and not High** — nothing establishes that anything
+  customer-facing is down. **It is sized as a registry gap, not an outage**, and
+  the sizing will change the moment the domains are read. **Three alerts about
+  an unidentified thing is the same shape as T-33**, which is also an
+  unidentified service failing on an unrecorded platform, and **that recurrence
+  is the real finding here: email keeps revealing infrastructure the registry
+  does not contain.**
+- **How it joins T-43** — T-43 is the open question of what DD84's web estate
+  actually is. With this, the count stands at **`dd84tuning.com` (Manus,
+  egress-blocked), `shop.downdirty84llc.com` (Shopify), `downdirty84llc.com`
+  (live, with a contact form confirmed working on 2026-10-12), and three Vercel
+  domains of unknown identity** — **with readable analytics for none of them.**
+- **Cost and risk** — No cost to read. A Vercel project has a plan and possibly
+  a price; **neither was read.** The risk is that a live surface is broken and
+  nobody knows, or that DD84 is paying for a platform nobody has recorded.
+- **Execution steps** — (1) **Agent** reads the Vercel team, its projects and
+  its domain list, and records which three are misconfigured and how; (2)
+  establish whether any is customer-facing or carries traffic; (3) state the
+  project's plan and cost if the connector exposes it; (4) **fold the domain
+  list into T-43** and hand the whole estate to Rev for `ventures.md`; (5) raise
+  a packet before changing any DNS record or domain assignment — **that is F,
+  and a wrong DNS change on a live domain is an outage.**
+- **Completion proof required** — The three domains named, each one's state read
+  **from Vercel** rather than from the email, and their customer-facing status
+  stated.
+- **Status** Planned · **Next action** — Step 1. **No approval needed to
+  start**; this one is Torque's and does not wait on the owner.
