@@ -2383,4 +2383,138 @@ the same category A-17 is already with the owner about.
 
 ---
 
-## Next entry: OL-0041
+## OL-0041 — 2026-10-13 · Daily brief, thirty minutes after the intake: an empty calendar and an unexplained code
+
+- **Routine** `/dd84-daily-brief`, **fired by the scheduled Routine "DD84 Daily
+  Command Brief (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-13T10:51:18Z**. **Seventh scheduled firing to reach a session with
+  the repository attached.** Class A throughout.
+- **Checkout verified before writing** — HEAD `54ffb7c`, equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **37 tracked files**, no `src/`, clean
+  tree. The firing prompt again asserts 28 files; **it was 36 before this
+  morning's intake committed and 37 after**, which is the point made in OL-0040
+  — a file count hard-coded in a prompt is a constant checked against a
+  variable. The substantive half of the check is sound and did its job: **no
+  `src/` and the right branch pointer.**
+- **Connectors reached** Google Calendar (2 calendars), Gmail, Shopify, GitHub.
+  **Not reached** Stripe, PayPal, bookipay, Square, Chime, Render, Superhuman
+  Mail, Canva. **Stripe and PayPal were confirmed absent by tool search
+  returning no match, not assumed from the last run's memory.**
+
+### Two things arrived in the thirty minutes since the intake
+
+- **T-63 — two Shopify account-verification codes**, `mailer@shopify.com`,
+  **10:33:35Z and 10:36:34Z**, three minutes apart, both IMPORTANT, second
+  unread. **The codes are not recorded in this repository** — they are
+  credentials and §5 forbids them here, and a ten-minute expiry does not make
+  them a different category. **No cause is asserted.** Three explanations fit
+  equally: the owner retrying, a connector re-authenticating, or someone else
+  attempting entry — in which case the code landing in this mailbox is what
+  stopped them. **What this session can rule out, precisely: it made no Shopify
+  call between 10:21Z and 10:40Z**, the window both codes were issued in; the
+  intake read Gmail only, and its own "not checked" list is the evidence. The
+  first Shopify call from here was `list-orders` at **10:53Z, seventeen minutes
+  after the second code.** **That rules this session out and rules nothing else
+  in.** Scored **High, not Critical** — there is no evidence of compromise, and
+  treating an unexplained code as a breach would be the same defect, inverted,
+  as treating a quiet Render log as a fix.
+- **Pinterest closed itself, and this record owed the closure.** Yesterday's
+  intake flagged **50 rows loaded and 31 Video Pin rows failed**
+  (10-12T18:12:22Z). At **10-13T10:30:53Z** Pinterest confirmed **"31 Pins were
+  created"** — the failed rows were re-uploaded and succeeded. **The owner fixed
+  it with no agent involvement.** It is marketing and therefore Rev's, and it is
+  recorded here only because this record raised the failure.
+
+### The empty calendar is a real read, and it is nine days long
+
+Both calendars read at **10:52Z** for 2026-10-13 and 2026-10-14. **Zero
+events.** Stated as a real empty read rather than an unavailable source, because
+the distinction is the whole discipline: an unreachable calendar and an empty
+one look identical in a brief that does not say which it was.
+
+**Nine consecutive days with no calendar entry**, against a live customer job, a
+state-agency permit review and a property proposal in flight. **Not a complaint
+— an observation with a consequence**: this business runs in email and on
+Reddit, so an empty calendar must not be read as a free day. Recorded so the
+next brief does not rediscover it.
+
+### No revenue total, for the fourth routine running
+
+**Shopify: 0 orders, read 10:53Z — a real zero, because Shopify answered.**
+Stripe, PayPal, bookipay, Square and Chime: **not available this run, named
+individually.** Five of six payment channels unreadable, **two of them unknown
+to this record eight days ago.**
+
+**A total across one readable system and five unreadable ones is not a total**,
+and none was offered. `ventures.md`'s last recorded payment (2025-09-12) is
+quoted as a document, not a reading — **its verification date is 2026-08-03, now
+71 days past the 30-day re-check rule**, so even the baseline is stale by this
+record's own standard.
+
+### What the top three displaced, said out loud
+
+Chosen: **T-63** (ten minutes, the only item that could be an active
+compromise), **T-61** (Square, ~2 days, self-executing), **T-60** (Reddit, ~6
+days, the only evidenced lead channel). **All three have clocks.**
+
+**Displaced: the four written-and-unsent messages** — A-15 ×2 at 7 days, the
+GACDC draft at **14 days**, the realty follow-up. **They are almost certainly
+the highest-value hour available to this business, and they were not picked,
+because nothing forces them today.** That is recorded rather than smoothed over:
+a prioritisation rule that always loses to a deadline will keep deprioritising
+the backlog that has no deadline, which is exactly how a fourteen-day-old draft
+gets to fourteen days.
+
+### Overdue, split rather than counted
+
+**Twenty open tasks past due.** Ten are DD84 operations from the last five days
+and **all ten are the owner's**; ten are Ledger-era engineering from August and
+early September, **five of those blocked on a pending packet and therefore
+waiting correctly.** **None of the Ledger ten will produce DD84 revenue.**
+Saying which half is which is more useful than reporting twenty, and **three of
+the DD84 ten — T-38, T-39, T-42 — resolve the moment four already-written
+messages leave the mailbox.**
+
+### Six packets pending, four of them past two months
+
+**A-15** (7 days, and the only one that costs money today), **A-17** (4 days),
+**A-10** (66 days), **A-05**, **A-06**, **A-07** (68 days each, all
+Ledger-side). **A-14 is APPROVED and is why this session exists**, which is also
+why A-10 stays open: the interim fix serialises four routines through one
+context and is not the repair.
+
+### The register's own tally, recounted again
+
+**63 tasks**, recounted mechanically after this write. OL-0040 recorded the
+seventh drift instance and corrected 58→62; **this run adds T-63 and recounts
+rather than incrementing**, and the Summary line now states that it is recounted
+after every write with the times. **That is a convention, not a fix** — the
+structural repair is still outstanding and still the right conclusion.
+
+### Class A held
+
+Nothing sent, replied to or forwarded. **No calendar event created, moved,
+confirmed or declined — both calendars read only.** No label applied, no mail
+state changed. No charge, refund, invoice, payout or fulfilment action. **No
+Shopify verification code used, and neither code written to this repository.**
+No Shopify, Vercel, Supabase or GitHub write of any kind. No task marked Done on
+inference. `docs/growth/` untouched. No customer name, email or phone written
+here — **including the phone number inside the owner's own QA contact-form
+submission, which was read and deliberately not recorded.**
+
+- **Needs the owner today** — **T-63** (ten minutes), **T-61** (~2 days),
+  **T-60** (~6 days), **T-52** (4 days unread), **A-15** (7 days), **T-42 /
+  T-58** (14 days unsent), **T-53**, **T-37** (the price, 29 messages),
+  **T-49**, **T-46** (auto-charges itself), **T-50**, **A-17**, **T-59** — and
+  **the card-toggling question, now in its seventh day.**
+- **Worth stating plainly** — **this brief found two new things in thirty
+  minutes and neither was work the business chose.** One was a verification code
+  nobody has explained; the other was Pinterest closing a failure by itself. The
+  calendar is empty, the storefront took no orders, five of six payment channels
+  cannot be read, and **four written messages still have not been sent.** The
+  constraint has not changed in four routines across three days, and **naming it
+  a fourth time is the most honest thing this brief can do.**
+
+---
+
+## Next entry: OL-0042

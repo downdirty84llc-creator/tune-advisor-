@@ -96,15 +96,16 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-60 | Reddit flagged the account for automated activity — 7 days          | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-19   |
 | T-61 | Square turns offline payments on by default in two days             | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-62 | Vercel reports three misconfigured domains on one project           | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
+| T-63 | Two Shopify account-verification codes, cause unexplained           | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **12 Awaiting Owner** · 4 Blocked · 17 Planned
-· 2 Backlog. **62 tasks.** Recounted mechanically from the table above,
-2026-10-13.
+Progress · 2 Awaiting Approval · **13 Awaiting Owner** · 4 Blocked · 17 Planned
+· 2 Backlog. **63 tasks.** Recounted mechanically from the table above after
+every write, 2026-10-13 (intake 10:40Z, then daily brief 11:05Z).
 
 > **This line was wrong twice before the 2026-10-13 intake touched it** — it
 > read "3 In Verification" against 4, and "58 tasks" against 59. **That is the
@@ -163,6 +164,7 @@ this table is part of the write.** Evidence: OL-0028.
 | Owner — a live job, still unpriced      | T-37 (29 messages, no price in 9 days)                         |
 | Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                       |
 | Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15) |
+| Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained) |
 | Owner action — security                 | **T-52** (phishing, unread 4 days)                             |
 | Owner action — network policy           | **T-59** (egress block disables a routine)                     |
 | A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                       |
@@ -2732,3 +2734,72 @@ not of programmes**, and it says so.
   stated.
 - **Status** Planned · **Next action** — Step 1. **No approval needed to
   start**; this one is Torque's and does not wait on the owner.
+
+## T-63 — Two Shopify account-verification codes, cause unexplained
+
+- **Objective** — Establish who requested two Shopify account-verification codes
+  this morning, and whether anyone other than the owner has been trying to get
+  into the storefront.
+- **Source** — `/dd84-daily-brief`, 2026-10-13. Gmail thread `1a134d328c12b11c`,
+  two messages from `mailer@shopify.com`, **2026-10-13T10:33:35Z and
+  2026-10-13T10:36:34Z** — **three minutes apart, both flagged IMPORTANT**, the
+  second still unread. Subject _"Shopify verification code"_, body _"We received
+  a request to verify your account."_
+- **Workstream** compliance · **Priority** **High** · **Owner** **Owner** ·
+  **Due** 2026-10-13
+- **Approval class** — **A to read and report here.** Checking the Shopify
+  account's login history and staff list is the owner's; **changing a password,
+  revoking a session or altering staff permissions is Class F.**
+- **The codes are deliberately not recorded in this repository.** They are
+  credentials, `CLAUDE.md` §5 forbids credentials here, and **the fact that they
+  expire in ten minutes does not make them a different category.** The thread ID
+  and the two timestamps are enough to find them.
+- **What is established** — two verification requests reached this mailbox three
+  minutes apart. That is all. **A single request is routine; two in three
+  minutes is either a retry or two attempts, and nothing here distinguishes
+  them.**
+- **What is not established, and will not be guessed** — **who asked.** Three
+  explanations fit the evidence equally and no evidence separates them:
+  1. The owner, or someone with the owner's password, signing in and retrying
+     after the first code was missed or expired.
+  2. A connector or integration re-authenticating against the Shopify account.
+  3. Someone who has the account's email address or password attempting to get
+     in, in which case **the code arriving in this mailbox is what stops them.**
+     **No cause is asserted.** A verification code reaching the owner's own
+     inbox is as consistent with a blocked attempt as with a successful sign-in.
+- **What Torque can rule out about itself, precisely** — **this session made no
+  Shopify call between 10:21Z and 10:40Z**, the window in which both codes were
+  issued; the intake that ran then read Gmail only, and its own "not checked"
+  list is the evidence. The first Shopify call from this session was
+  `list-orders` at **10:53Z, seventeen minutes after the second code**. **That
+  rules this session out as the cause and rules nothing else in** — another
+  session on this account, or the connector's own background re-authentication,
+  remains entirely possible and cannot be checked from here.
+- **Why it is High rather than Critical** — **there is no evidence of a
+  compromise**, and treating an unexplained verification code as a breach would
+  be the same defect as treating a quiet Render log as a fix. It is High because
+  **Shopify is the storefront and one of six payment channels**, because the
+  check is ten minutes, and because it lands in a week that has already produced
+  a credential phishing attempt (T-52) and a Reddit automation flag (T-60).
+- **The honest version of the cluster claim** — this is the **seventh** account
+  or security notice in eight days. **No linkage between any of them is claimed,
+  and several are certainly routine.** The reason they are grouped is that
+  checking them is one task; the reason the grouping is stated is that a reader
+  seeing one per brief would never notice the density. **Density is not
+  evidence.**
+- **Cost and risk** — No cost to check. The exposure if someone else holds the
+  password is the storefront, its product catalogue, its payment configuration
+  and whatever customer data Shopify holds. **What Shopify holds was not read
+  this run** — only the order count.
+- **Execution steps** — (1) **Owner** confirms whether he requested either code;
+  (2) if not, review Shopify's login history and active sessions, change the
+  password and enable or re-check two-factor authentication; (3) review the
+  staff list for accounts nobody recognises; (4) record the finding here either
+  way — **"it was me" is a result worth writing down**, because the next
+  unexplained code should not restart this task from zero; (5) fold into T-52's
+  step 4, the open question of which accounts exist and who administers them.
+- **Completion proof required** — A recorded statement of **who requested the
+  codes**, or, if that cannot be established, the remediation performed and the
+  date. **Not an assumption that silence means it was routine.**
+- **Status** **Awaiting Owner** · **Next action** — Step 1, today. **Ten
+  minutes, and it is the only item today that could be an active compromise.**
