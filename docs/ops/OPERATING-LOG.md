@@ -2667,4 +2667,181 @@ party".**
 
 ---
 
-## Next entry: OL-0043
+## OL-0043 — 2026-10-14 · Wednesday intake: the customer replied, and yesterday's approved draft went stale in four hours
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled Routine "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-14T10:20:14Z**. **Eighth scheduled firing to reach a session with
+  the repository attached.** Class A throughout.
+- **Checkout verified before writing** — HEAD `2b8fdd4`, equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **39 tracked files**, no `src/`, clean.
+  The prompt's "28 files" is stale for the third run running; **the substantive
+  half of the check — no `src/`, right branch pointer — is what matters and it
+  passed.**
+- **Window** since OL-0040, **2026-10-13T10:40Z — 24 hours.** `newer_than:1d`, a
+  two-day sent sweep, and a full draft list. **30 threads, 11 actionable, 19
+  no-action.**
+- **Reached** Gmail. **Not reached** PayPal, Stripe, bookipay, Square,
+  Superhuman Mail, Canva.
+
+### The finding that had to come first: a pending packet went stale
+
+**The Challenger customer replied at 2026-10-13T15:39:45Z** — _"this is the log
+from a hour+ drive"_, a 2.8 MB attachment, **still unread.** He ended eleven
+days of silence.
+
+**Packet A-18, raised at 11:34Z the same morning, asks him to flash the
+revision, say how the car starts, and send a datalog. He had done all three four
+hours and five minutes later.** Sending it now would tell a customer who has
+just broken a long silence that nobody read his reply. **Recommendation
+recorded: REJECT, or APPROVE WITH CHANGES against a redraft that answers the log
+instead of requesting it.**
+
+**The body of A-18 was left exactly as written.** `docs/ops/README.md` permits
+editing only the Response and Actual-result blocks of a raised packet, so the
+supersession went in the Actual-result block. **That is also the better record:
+a packet that was right when raised and wrong four hours later is worth more
+intact than tidied.**
+
+**The generalisable lesson, and it is new.** This is the second time in three
+days that output was overtaken within hours — the 10-12 daily brief's Render
+line went stale at 14:00Z the same afternoon. **Both times the hedging held, so
+neither became a false claim. The lesson is not "hedge more".** It is that **a
+drafted outbound message has a shelf life, and A-18's was four hours.** A packet
+left pending overnight may no longer describe the world it was written about,
+and **nothing in this record's process currently re-checks a packet's premises
+before it is approved.**
+
+### The week's headline finding was wrong, and the correction is good news
+
+**Four routines across three days reported that nothing was leaving this
+mailbox.** OL-0040, OL-0041 and OL-0042 all named it the binding constraint.
+**It was true at 2026-10-13T10:40Z and stopped being true ninety minutes
+later.**
+
+**The owner sent five messages on 10-13, three of them new outreach:** Colbert
+City Hall (12:27:45Z), **Piedmont Water (12:28:46Z, new)**, **the Georgia DPH
+Lead Environmental Health Specialist (12:30:14Z, cc a second officer, new)**,
+the realty agent (12:30:36Z), and a Ledger support-mailbox delivery test
+(16:14:59Z).
+
+**And the sequencing is better than it looks: Colbert City Hall replied at
+14:55:43Z naming that same DPH officer as the person who would have to decide.
+He had written to the right official two and a half hours before the city told
+him who it was.**
+
+**So the constraint is narrower than this record claimed, not absent.** The
+property and permitting work moves under its own steam. **What is still unsent
+is the customer and funding correspondence** — A-15 at 8 days, the GACDC draft
+at 15. **That distinction is sharper and more useful than the blanket claim**,
+and the blanket claim is corrected rather than quietly dropped.
+
+### Three new tasks, and the first is a month-old lead nobody read
+
+- **T-66 — a real Lexus enquiry sat 23 days, and the contact form was never
+  read.** A **2016 Lexus RC 350 F Sport, 2GR-FSE**, wanting _"just a mild
+  burble"_, from **New York**, delivered by the `downdirty84llc.com` contact
+  form on **2026-09-15T14:08:37Z**. DD84 replied **2026-10-08T14:38:21Z** —
+  twenty- three days later, opening _"Sorry for the delayed response"_ — and
+  **has heard nothing in the six days since.** `ventures.md` prices Toyota/Lexus
+  ECU tuning at **$400–$650**. **The 23-day delay is the probable cause of the
+  silence and is labelled probable, not asserted.** **This forces a correction
+  on T-43**, which recorded the form as a newly discovered surface, confirmed
+  working by the owner's own QA test on 10-12. Both statements were true; **the
+  conclusion was wrong in the way that mattered. The form was never broken and
+  never new — it had been delivering real enquiries for a month and nobody was
+  reading them.** A delivery test proves delivery; **it cannot prove anyone is
+  watching the inbox it delivers to**, and this record took the one as evidence
+  of the other. **That is the more expensive fault**: a broken form loses leads
+  visibly, a working unwatched one loses them silently while looking healthy.
+  **How many arrived before 2026-09-15 is unknown**, and the count is the task's
+  real deliverable.
+- **T-67 — two more loan-fraud lures, sixteen minutes apart**, 15:08:31Z and
+  15:24:01Z, from unrelated `mityfunds.com` and `fundyze.com` addresses, one
+  flagged IMPORTANT. Same template, both inventing an "application" DD84 never
+  made, both driving to a link with no amount, term or officer named. **Neither
+  link opened; neither URL recorded here.** T-42's five fraud-addressed drafts
+  were the historic evidence; **these are the campaign arriving now**, and
+  **DD84 is actively seeking SBA 504 financing**, which is the state of mind
+  they are built to exploit. **The five drafts should be deleted, not sent.**
+- **T-68 — MFA switched off on the Zoho account that now holds the Ledger
+  support mailbox.** Disabled 16:03:37Z, **re-enabled 16:03:43Z — six seconds.**
+  **The benign reading is almost certainly right and is stated first:** that is
+  a person switching authentication method, not an exposure. **It is recorded
+  because of what the account became in the next six minutes** — a verified
+  domain and a customer-facing support mailbox for a subscription business.
+  **Whether MFA is on right now is unknown**: the last notification says
+  enabled, and **a notification is not a reading of the account.** Ledger
+  infrastructure, so the commercial half is Rev's; `docs/growth/` untouched.
+
+### Three existing tasks corrected
+
+- **T-53's premise is gone.** The realty agent replied **2026-10-13T23:11:42Z**
+  — _"This is what my client has!"_, 5.6 MB attachment, unread. The task
+  recorded a proposal unanswered for seven days with a drafted follow-up; **the
+  owner wrote to her directly without waiting for the draft and she answered
+  eleven hours later.** The draft is **moot in substance.** **The attachment was
+  not downloaded, so what the client "has" is unknown** — the silence was the
+  problem, now the unread attachment is.
+- **T-33: a fourth `dd84-api` failure**, 2026-10-13T22:00:20Z, same exit status.
+  **Four alerts in six days, two in the last two.** Service still unidentified,
+  no connector, customer-facing status still unknown. **Step 1 is Torque's and
+  waits on capacity, not approval** — four alerts is the argument for spending
+  it.
+- **T-36 gained its fastest route to an answer.** At **2026-10-13T11:51:46Z**
+  Google recorded a Stripe sign-in from this account. **That gives this session
+  no connector, but it establishes that the person who can price both live jobs
+  was inside the system that knows, nineteen hours ago.**
+
+### Drafts, and what the count hides
+
+**Gmail drafts: 15 — unchanged for a fourth consecutive run.** Not one added,
+sent or deleted. **Five of the fifteen are addressed to likely loan fraud**
+(T-42), and T-67 is the argument that those five should be **deleted rather than
+sent.** **No draft was written this run**: the one message the window called for
+is a technical determination on a running engine, which is the owner's, and the
+draft that already exists is wrong rather than merely unapproved.
+
+### Degradation, named
+
+**PayPal** re-authentication (unchanged since 2026-10-09). **Stripe, bookipay,
+Square** absent — **so both live jobs' billing status is still unknown.** **The
+Challenger datalog (2.8 MB) and the realty attachment (5.6 MB) were not
+downloaded**, so the car's actual state and the seller's documents are both
+unknown. **Reddit could not be checked at all** — no new notifications and
+reddit.com is egress-blocked (T-59), so **whether T-60's verification was
+completed is unknown with its deadline now ~5 days out.** ~20,700 unread remain
+unassessed. **No section became an estimate.**
+
+### Class A held, and §5 held against four credentials
+
+Nothing sent, forwarded or replied to. No label applied, no thread moved,
+archived, trashed or reported. **No draft created, edited, sent or deleted.**
+Neither fraud link opened and **neither URL recorded.** **Four credentials
+passed through this window — two Shopify codes carried over and two Zoho
+one-time passwords — and all four were read and left out**, as were the card's
+last four digits in nine Wells Fargo alerts. No calendar write, no customer
+contacted, no price quoted, no payment action. `docs/growth/` untouched. **No
+customer name, email or phone written here**: every customer, counterparty and
+official is a Gmail thread ID, a role, or an organisation's domain.
+
+- **Needs the owner today** — **read the Challenger datalog and kill or amend
+  A-18** (it is wrong as written); **price both live jobs**; **T-67** (two fraud
+  lures, and delete the five drafts); **T-60** (Reddit, ~5 days left); **T-61**
+  (Square — the ~10-15 default date is **today or passed, and the setting was
+  never read**); **T-63**; **T-52** (5 days unread); **T-66** (count the
+  contact-form backlog); **T-53** (open the attachment); **A-15** (8 days);
+  **T-42 / T-58** (15 days unsent); **T-68**; **T-49**, **T-46**, **T-50**,
+  **A-17**, **T-59**, **A-10**.
+- **Worth stating plainly** — **the business had its best day of the week and
+  this record's headline claim about it was wrong by ninety minutes.** Five
+  messages went out, three agencies were engaged, the right official was found
+  before the city named him, a silent customer came back with the exact artefact
+  he was asked for, and **a month-old lead turned out to have been sitting in a
+  working inbox nobody was reading.** **Seventeen of sixty-eight tasks now wait
+  on the owner, up from ten on Monday** — and the two that would move money,
+  pricing the two live jobs, still have not been done.
+
+---
+
+## Next entry: OL-0044

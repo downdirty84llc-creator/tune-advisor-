@@ -1327,4 +1327,23 @@ the floor.
 
 **Response** — _awaiting the owner._
 
-**Actual result** — _not yet executed. Nothing has been sent._
+**Actual result** — **not executed, and it must not be executed as written.**
+
+> **SUPERSEDED 2026-10-14 by the facts it was built on.** The customer replied
+> at **2026-10-13T15:39:45Z** — _"this is the log from a hour+ drive"_, with a
+> 2.8 MB attachment — **four hours and five minutes after this packet was
+> written.** The drafted message asks him to flash the revision, report how the
+> car starts, and send a datalog. **He has done all three.** Sending it now
+> would tell a customer who has just ended eleven days of silence that nobody
+> read his reply.
+>
+> **Torque's recommendation is REJECT**, or APPROVE WITH CHANGES against a
+> redraft that responds to the log instead of asking for it. **Only the Response
+> and Actual-result blocks of a raised packet may be edited**
+> (`docs/ops/README.md`), so the body above is left exactly as it was written
+> rather than quietly corrected — **a packet that was right when raised and
+> wrong four hours later is worth more as a record than as a tidy document.**
+>
+> **The separate decision this packet named still stands, undiminished: both
+> live jobs are unpriced.** That was true when this was raised and is true now.
+> The customer was never the reason it had not happened.\_

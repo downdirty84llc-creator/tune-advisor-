@@ -99,15 +99,19 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-63 | Two Shopify account-verification codes, cause unexplained           | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
 | T-64 | A second live tuning job, unrecorded and unpriced — 11 days silent  | service    | **Critical** | **Awaiting Owner**       | Owner | C to send        | 2026-10-14   |
 | T-65 | A Shopify customer account with zero orders, unrecorded             | sales      | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
+| T-66 | A real Lexus enquiry sat 23 days; the contact form was never read   | sales      | **High**     | **Awaiting Owner**       | Owner | C to contact     | 2026-10-15   |
+| T-67 | Two more loan-fraud "application" emails, 16 minutes apart          | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
+| T-68 | MFA switched off on the Zoho account now holding Ledger support     | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **14 Awaiting Owner** · 4 Blocked · 18 Planned
-· 2 Backlog. **65 tasks.** Recounted mechanically from the table above after
-every write, 2026-10-13 (intake 10:40Z, daily brief 11:05Z, follow-up 11:34Z).
+Progress · 2 Awaiting Approval · **17 Awaiting Owner** · 4 Blocked · 18 Planned
+· 2 Backlog. **68 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-14T10:52Z** (intake). **17 of 68 are now waiting on
+the owner**, which is the number worth watching: it was 10 on 2026-10-12.
 
 > **This line was wrong twice before the 2026-10-13 intake touched it** — it
 > read "3 In Verification" against 4, and "58 tasks" against 59. **That is the
@@ -167,6 +171,8 @@ this table is part of the write.** Evidence: OL-0028.
 | Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                                |
 | Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15)          |
 | Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained)            |
+| Owner action — security                 | **T-67** (two fraud lures), **T-68** (Zoho MFA state)                   |
+| Owner — an unwatched lead inbox         | **T-66** (a 23-day-old enquiry; count the rest)                         |
 | Owner — a price on a live job           | **T-64** (11 days silent), **T-37** (29 messages) — neither ever quoted |
 | Owner action — security                 | **T-52** (phishing, unread 4 days)                                      |
 | Owner action — network policy           | **T-59** (egress block disables a routine)                              |
@@ -1211,6 +1217,18 @@ its customer-facing status is **still unknown**. Steps 1–5 stand unaltered.
 **Three failures of an unidentified service is three times the unknown, not
 three times the information.**
 
+### 2026-10-13 — a fourth failure
+
+**2026-10-13T22:00:20Z, thread `1a13747e5ff7aa19`:** the same _"Exited with
+status 1"_. **Four alerts in six days, two of them in the last two.**
+
+**Nothing else has changed, and that is the finding.** The service is still
+unidentified, still has no connector, and its customer-facing status is still
+unknown. **The register has now recorded four failures of a thing nobody has
+named**, which is less a diagnosis than a count. **Step 1 has been outstanding
+since 2026-10-08 and is Torque's, not the owner's** — it does not wait on an
+approval, only on capacity, and four alerts is the argument for spending it.
+
 ## T-34 — CI is failing on `main` in `downdirty84-ai-tuning`
 
 - **Objective** — Find out whether a third repository on this account has a
@@ -1822,6 +1840,32 @@ analytics for none of them.**
   and marketing half is still Rev's; `ventures.md` and `docs/growth/` were not
   written to.**
 
+### 2026-10-14 — the form was never the problem; nobody reading it was
+
+**T-66 found a real customer enquiry delivered by this contact form on
+2026-09-15 and answered 23 days later.** That changes what this task is about.
+
+**This task's two prior findings were both true.** The domain was live and
+absent from the registry. The form was confirmed working on 2026-10-12 by the
+owner's own QA submission. **The conclusion drawn from them was wrong in the way
+that mattered: the form was treated as a newly discovered surface needing
+verification.** It was neither new nor unverified — **it had been delivering
+real enquiries for a month, and nobody was reading them.**
+
+**A delivery test proves delivery. It cannot prove anyone is watching the inbox
+it delivers to**, and this record took the one as evidence of the other. **That
+is the more expensive fault of the two**: a broken form loses leads visibly, a
+working unwatched one loses them silently and looks healthy the whole time.
+
+**How many submissions arrived before 2026-09-15 is unknown.** Mail older than
+the intake windows has never been assessed and **~20,700 unread messages
+remain.** T-66 step 2 is the count.
+
+- **Status unchanged: Planned.** · **Next action, revised** — the domain list is
+  still wanted (with T-62's Vercel domains), **but the live question is now who
+  reads the form's output and how often.** That is T-66, and it outranks the
+  registry gap.
+
 ## T-44 — One inbox query is not an intake; fix the routine's search
 
 - **Objective** — Stop the intake routine from missing real work on a mailbox
@@ -2333,6 +2377,33 @@ unknown**, and that gap is the one thing here nobody has started on.
   decision to stop pursuing this parcel.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **The draft is
   written; it needs sending, which is yours.**
+
+### 2026-10-14 — the agent replied; this task's premise is gone
+
+**2026-10-13T23:11:42Z the realty agent replied:** _"This is what my client
+has!"_ — with a **5.6 MB attachment**, **unread**.
+
+This task recorded a purchase proposal with no reply in seven days and a
+drafted, unsent follow-up. **Both halves have moved.** The owner wrote to her
+directly at **2026-10-13T12:30:36Z** without waiting for the draft, and she
+answered eleven hours later. **The drafted follow-up is moot in substance** — it
+chases a silence that has ended.
+
+**The open question has changed shape, not closed.** **The attachment was not
+downloaded**, so **what the seller's client "has" is unknown** — a survey, a
+soil report, a counter, a plat, or nothing useful. **No inference is drawn from
+the file size.** The silence was the problem; now the unread attachment is.
+
+**And the property work is moving faster than this register.** On 10-13 the
+owner also opened **two new agency threads** — Piedmont Water (12:28:46Z) and
+the Georgia DPH Lead Environmental Health Specialist (12:30:14Z, cc a second
+officer) — and **Colbert City Hall replied at 14:55:43Z naming that same DPH
+officer as the person who would have to decide.** **He had contacted the right
+official two and a half hours before the city told him who it was.**
+
+- **Status unchanged: Awaiting Owner**, but the action has changed. · **Next
+  action** — **open the attachment.** Then decide whether the drafted follow-up
+  is still wanted at all; on this evidence it is not.
 
 ## T-54 — Three HP Tuners credit orders in three days, amounts unread
 
@@ -2948,8 +3019,48 @@ absent one.**
   for this job stated**, and the billing position established from a live system
   or from an explicit owner statement. **Not an assumption that silence means
   the job ended.**
-- **Status** **Awaiting Owner** · **Next action** — Step 1 and step 2, today.
-  **Step 2 matters more and nobody else can do it.**
+- **Status** **Awaiting Owner** · **Next action** — superseded; see below.
+
+### 2026-10-14 — he replied, and the approved chase would now be wrong
+
+**2026-10-13T15:39:45Z, thread now 29 messages, still unread:** _"this is the
+log from a hour+ drive"_ — with a **2.8 MB attachment.**
+
+**Eleven days of silence ended four hours after the follow-up run drafted a
+message asking for exactly this.** The draft was written at 11:34Z; the log
+arrived at 15:39Z.
+
+**So A-18 must not be sent as written.** It asks him to flash the revision, say
+how the car starts, and send a datalog. **He has flashed it, driven it for over
+an hour, and sent the log.** Sending that message now would tell a customer who
+has just ended a long silence that nobody read his reply. **Recommendation:
+REJECT A-18, or approve only as amended.** Recorded in A-18's own Actual-result
+block.
+
+**This is the second time in three days a brief has been overtaken within
+hours** — the 10-12 daily brief's Render line was overtaken at 14:00Z the same
+day. **Both times the output was accurate when written and both times the
+hedging is what kept it from becoming a false claim.** The lesson is not to
+hedge more; it is that **a drafted outbound message has a shelf life, and A-18's
+was four hours.** A packet left pending for a day is a packet that may no longer
+describe the world.
+
+**What the log does not tell us.** **The attachment was not downloaded** — no
+download tool exists in this session — so **the car's actual state is unknown.**
+"An hour-plus drive" means it starts and runs well enough to drive, which is
+more than was true on 2 October; **whether the hard-start fault is resolved is
+not established** and will not be guessed at.
+
+**Still unpriced.** 29 messages now, and the price search run on 10-13 returned
+zero. Nothing in this window changed it. **The billing position remains unknown
+and unasserted** — but note **the owner signed into Stripe at
+2026-10-13T11:51:46Z** (T-36), so the person who can answer was in the system
+that knows.
+
+- **Status unchanged: Awaiting Owner.** · **Next action, revised** — (1) **read
+  the datalog**; (2) **decide A-18: reject or amend** — do not send as written;
+  (3) **price the job.** The customer is no longer the blocker on any of the
+  three.
 
 ## T-65 — A Shopify customer account with zero orders, unrecorded
 
@@ -3003,3 +3114,191 @@ absent one.**
   way.**
 - **Status** Planned · **Next action** — Step 1. **One question to the owner,
   and it costs him one word.**
+
+## T-66 — A real Lexus enquiry sat 23 days, and the contact form was never read
+
+- **Objective** — Recover a catalogued-service enquiry that went unanswered for
+  23 days, and fix the reason it did: **nobody was reading what the website's
+  contact form delivered.**
+- **Source** — `/dd84-inbox-intake`, 2026-10-14. Gmail thread
+  **`1a0a565f802fc60b`**, a contact-form submission from
+  `no-reply@downdirty84llc.com` received **2026-09-15T14:08:37Z** and flagged
+  IMPORTANT.
+- **Workstream** sales · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-15
+- **Lead record (§8.1 fields; missing ones marked missing)**
+  - **Identity deliberately not recorded.** §5. The enquirer's name and email
+    address are in the thread; **`1a0a565f802fc60b` is the pointer and is not
+    identity.**
+  - Vehicle **2016 Lexus RC 350 F Sport** · Engine **2GR-FSE** · Transmission
+    **missing** · Modifications **missing** · **Location: New York** (stated by
+    the enquirer)
+  - Requested service — in his own words, _"just a mild burble"_. **Exhaust and
+    idle character, not a power goal** — worth stating precisely, because it
+    changes which catalogue line applies.
+  - Source — **the `downdirty84llc.com` contact form.** This is the **first
+    recorded instance of that form producing a real customer enquiry.**
+  - Budget **missing** · Urgency — **decaying**
+- **What happened, in order** — enquiry **2026-09-15T14:08:37Z**. DD84 replied
+  **2026-10-08T14:38:21Z**, **twenty-three days later**, opening _"Sorry for the
+  delayed response. Are you still looking into remote tuning?"_ and asking for
+  details before confirming support, pricing or timing. **No reply in the six
+  days since.**
+- **Why it is High** — `ventures.md` prices **Toyota/Lexus custom ECU tuning at
+  $400–$650**. This was a real enquiry, for a catalogued service, with the
+  vehicle and engine already stated. **It is the only inbound lead in this
+  record that arrived through DD84's own website rather than a free answer on a
+  forum** — which makes it the only evidence that the website converts at all.
+- **The probable cause of the silence, labelled as probable** — **the 23-day
+  delay.** That is an inference, not a finding: he may have gone elsewhere, had
+  the work done, or lost interest. **No cause is asserted**, and the reply he
+  did get was a reasonable one.
+
+### The correction this forces on T-43
+
+**T-43 recorded `downdirty84llc.com` as a domain discovered in Search Console
+and, on 2026-10-12, as a contact form "confirmed working" by the owner's own QA
+submission.** Both statements were true. **The conclusion drawn from them was
+wrong in a way that mattered.**
+
+**The form was never broken and was never new. It has been delivering real
+customer enquiries since at least 2026-09-15.** The fault was not a dead form
+needing verification — **it was a working form whose output nobody was
+reading.** A QA test proves delivery; **it cannot prove anyone is watching the
+inbox it delivers to**, and this record treated the one as evidence of the
+other.
+
+**That is the more expensive fault**, because a broken form loses leads visibly
+and a working, unwatched one loses them silently. **How many other submissions
+arrived before 2026-09-15 is unknown** — mail older than the intake windows has
+never been assessed, and ~20,700 unread messages remain.
+
+- **Approval class** — **A to prepare. C to contact.** No draft is written here:
+  a re-approach after 29 days needs the owner's judgement on tone, and **what to
+  say depends on whether he still wants New York remote work at all.**
+- **Cost and risk** — No cost to re-approach. The risk of sending is a second
+  late message to someone who has moved on, which costs nothing but goodwill
+  already spent. **The risk of not fixing the reading problem is every future
+  submission.**
+- **Execution steps** — (1) **Owner** decides whether to re-approach, and if so
+  sends one message; (2) **search the mailbox for every prior
+  `no-reply@downdirty84llc.com` submission** and establish how many enquiries
+  have arrived and how many were answered — **this is the step that recovers
+  more than one lead**; (3) decide who reads that form's output and how often,
+  and record it; (4) add contact-form submissions to whatever the site monitor
+  checks; (5) **hand the conversion question to Rev**, not here.
+- **Completion proof required** — A count of contact-form submissions received
+  and answered, taken from the mailbox, **plus a stated owner for watching that
+  inbox.** The single lead's outcome is secondary to that count.
+- **Status** **Awaiting Owner** · **Next action** — Step 2 first, not step 1.
+  **One lead is worth less than knowing how many there have been.**
+
+## T-67 — Two more loan-fraud "application" emails, sixteen minutes apart
+
+- **Objective** — Get two fraudulent lure emails out of the inbox, and establish
+  that nobody has engaged with this campaign.
+- **Source** — `/dd84-inbox-intake`, 2026-10-14. Two threads received
+  **2026-10-13**:
+  - **15:08:31Z**, thread `1a135cedc8722ad9`, from a `mityfunds.com` address,
+    **flagged IMPORTANT** — _"Thanks for your application. Our team has finished
+    review of your application and would like to let you know that your account
+    is live. Log on to your account and…"_
+  - **15:24:01Z**, thread `1a135dd0d70d671b`, from a `fundyze.com` address —
+    _"Your information is available to review. You can access your application
+    below to confirm details and continue."_
+- **Workstream** compliance · **Priority** **High** · **Owner** **Owner** ·
+  **Due** 2026-10-15
+- **Approval class** — **A to read and report here.** Reporting or deleting mail
+  is a mail-state change and is the owner's.
+- **Why it is fraud, from the messages themselves** — four tells:
+  1. **Both reference an "application" DD84 never made.** That is the whole
+     mechanism: an invented prior relationship to make a login look expected.
+  2. **Same template, two unrelated domains, sixteen minutes apart.** A single
+     campaign spraying a list, not two lenders coincidentally writing.
+  3. **Both drive to a link rather than naming any amount, term, product or
+     officer.** A real lender's decision letter contains numbers.
+  4. **Generic salutations** — _"Hey"_, _"Hi there"_ — from a business claiming
+     to have reviewed a specific application.
+- **Neither link was opened and neither URL is recorded here.** §5 — this
+  repository is public and reproducing a live lure republishes the attack. The
+  thread IDs and timestamps locate the messages.
+- **The pattern this belongs to** — **T-42 records fifteen unsent drafts, five
+  of them addressed to likely loan fraud.** Those five were the historic
+  evidence. **These two are the campaign arriving now**, which means the address
+  is on an active list and **more will come.** The five drafts in T-42 should be
+  **deleted rather than sent**, and this task is the argument for it.
+- **Why High rather than Critical** — **no evidence anyone has engaged.** The
+  Meta phish (T-52) is Critical because it sat unread in an inbox that had
+  classified it IMPORTANT, looking like real mail, for days. These are the same
+  category and the same risk; **what is absent is any sign of a click.**
+- **Cost and risk** — No cost. The exposure if either is actioned is whatever
+  gets typed into a fake lender portal — **in a funding context that is bank
+  details, an EIN and a personal guarantee**, which is worse than a social
+  login. **DD84 is actively seeking SBA 504 financing** (T-58, T-42), which is
+  exactly the state of mind these messages are built to exploit.
+- **Execution steps** — (1) **Owner** reports both as phishing and deletes them,
+  without clicking; (2) confirm no application was made to either name and no
+  details were submitted; (3) **delete the five loan-fraud drafts in T-42**
+  rather than leaving them one accidental click from sending; (4) record that
+  legitimate SBA 504 contact goes through the Georgia CDC only (T-58), so a
+  future lure is easier to spot; (5) fold into T-52's security review — this is
+  now **the eighth and ninth items in eight days.**
+- **Completion proof required** — Both messages reported or deleted, and a
+  recorded statement that **no information was submitted to either.**
+- **Status** **Awaiting Owner** · **Next action** — Step 1, and step 3 in the
+  same sitting.
+
+## T-68 — MFA switched off on the Zoho account now holding Ledger support
+
+- **Objective** — Confirm that a brief multi-factor-authentication gap on a
+  newly business-critical account was deliberate, and that MFA is on now.
+- **Source** — `/dd84-inbox-intake`, 2026-10-14. A sequence of Zoho
+  notifications on **2026-10-13**, **all unread**: two one-time passwords and
+  two new sign-ins (15:58:43Z–16:00:52Z, Windows/Chrome, Georgia, United
+  States); **MFA enabled 16:01:15Z**; **_"You have disabled multi-factor
+  authentication for your Zoho account"_ at 16:03:37Z**; **MFA enabled again at
+  16:03:43Z**; domain `georgiaopportunityledger.com` verified 16:09:47Z;
+  `support@georgiaopportunityledger.com` added 16:10:04Z; a delivery test sent
+  and **confirmed working** 16:14:59Z–16:16:03Z.
+- **Workstream** compliance · **Priority** Normal · **Owner** **Owner** ·
+  **Due** 2026-10-16
+- **Approval class** — **A to read and report.** Changing an account's
+  authentication settings is **Class F** and is the owner's.
+- **The benign reading is probably the right one, and is stated first** — **six
+  seconds separate the disable from the re-enable.** That is the signature of a
+  person switching authentication method inside a settings screen, not an
+  account left exposed. **No compromise is alleged**, both sign-ins came from
+  Georgia on a plausible device, and the whole sequence is consistent with one
+  person deliberately setting up a mailbox.
+- **Why it is recorded anyway** — because of **what the account became in the
+  next six minutes.** It went from a personal Zoho login to **the account
+  holding a customer-facing support mailbox for a subscription business.** The
+  MFA state of an account that receives customer mail is worth one confirmed
+  line in a register, and **"it was almost certainly fine" is not that line.**
+- **The two one-time passwords were read and are deliberately not recorded
+  here.** §5 — credentials, and expiry does not change the category.
+- **Which venture this belongs to** — **the Ledger's, not DD84's.** It is in
+  this register only because the register already carries Ledger-era tasks, and
+  **the commercial significance of a support mailbox belongs to Rev.**
+  `docs/growth/` was not written to. **The security question is operational and
+  stays here.**
+- **What is not established** — **whether MFA is on right now.** The last
+  notification says enabled, but **notifications are not a reading of the
+  account**, and no Zoho connector exists in this session. **Unknown, not
+  assumed.**
+- **Cost and risk** — No cost to confirm. The exposure if MFA is in fact off is
+  a support mailbox and a verified domain for a business that intends to take
+  subscription payments.
+- **Execution steps** — (1) **Owner** confirms he performed the sequence, and
+  **reads the current MFA state in Zoho** rather than trusting the last email;
+  (2) if MFA is off, turn it on; (3) record who else can sign into that account;
+  (4) **add the support mailbox to the venture registry** — it is a new
+  customer-facing surface and `ventures.md` does not contain it; (5) decide
+  whether support mail should route somewhere a routine can read, since **a
+  support inbox nobody monitors is T-66's fault repeating on a different
+  surface.**
+- **Completion proof required** — The **current** MFA state read from Zoho with
+  the date, and the support mailbox present in the registry. **Not the last
+  notification's claim.**
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **Step 5 is the one
+  with teeth: this record has just learned what an unwatched inbox costs.**
