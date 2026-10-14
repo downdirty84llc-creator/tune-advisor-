@@ -73,6 +73,34 @@ Every routine in `.claude/commands/dd84-*.md` obeys the same contract. The
 individual command files restate the parts specific to them; this is the shared
 core, and it is what makes the routines safe to run unattended.
 
+0. **Confirm the checkout before writing anything.**
+   `git fetch origin claude/claude-md-docs-cqvhy6`, then confirm all three:
+   `HEAD` equals `origin/claude/claude-md-docs-cqvhy6`, **no `src/` directory
+   exists**, and **no `package.json` exists**. If either is present you are on
+   the wrong tree — `git reset --hard origin/claude/claude-md-docs-cqvhy6`
+   first.
+
+   On 2026-10-08 a container reset left a branch of this exact name pointing at
+   a `main` commit with the whole stale Georgia Opportunity Ledger tree checked
+   out, **and a clean `git status`** — which is indistinguishable from a correct
+   checkout. `src/` and `package.json` are in that tree and in no clean checkout
+   of this branch, so their absence is the test.
+
+   **State the result in the run's `OPERATING-LOG.md` entry** — one line naming
+   the tip commit it verified against and that both markers were absent. **An
+   unrecorded check is indistinguishable from a skipped one.** No brief between
+   2026-10-08 and 2026-10-14 recorded this check in either form, so whether any
+   of them performed it cannot be established from the record, which is the same
+   defect in miniature as a green Routine run that committed nothing (T-27).
+
+   **Do not test this with a tracked-file count.** The four scheduled Routine
+   prompts said "28 tracked files" from 2026-10-08; briefs accumulate about two
+   per weekday and the count passed 38 by 2026-10-13, so the check failed on
+   every run that was in fact correct. **A guard that always fails is a guard
+   that gets ignored** — and this one exists to catch the one failure mode that
+   looks like success. The guard belongs here, in version control, rather than
+   duplicated across four trigger prompts that only the host session can edit.
+
 1. **Class A only.** Every routine observes, calculates, drafts and reports. No
    routine sends, publishes, charges, refunds, deploys, deletes or changes a
    live system. Anything a routine finds that requires such an action becomes an

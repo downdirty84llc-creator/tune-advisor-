@@ -32,76 +32,77 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 
 ## Summary
 
-| ID   | Title                                                               | Workstream | Priority     | Status                   | Owner | Approval         | Due          |
-| ---- | ------------------------------------------------------------------- | ---------- | ------------ | ------------------------ | ----- | ---------------- | ------------ |
-| T-01 | Transcribe the DD84 operations specification into the repository    | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
-| T-02 | Author CLAUDE.md as the repository orientation guide                | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
-| T-03 | Define the Torque agent as a reusable subagent                      | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
-| T-04 | Correct documentation that had drifted away from the code           | ledger     | Normal       | Done                     | Agent | A-02             | 2026-07-31   |
-| T-05 | Record the true legal-review flags on the ten legal documents       | compliance | High         | Done                     | Agent | A-02             | 2026-07-31   |
-| T-06 | Exclude demo accounts from subscriber, revenue and analytics counts | finance    | High         | **In Verification**      | Agent | A-03             | 2026-08-08   |
-| T-07 | Count annual subscribers at a twelfth of the annual price           | finance    | High         | Done                     | Agent | A-04             | 2026-07-31   |
-| T-08 | Remove the phantom integration-test glob from the Vitest config     | ledger     | Normal       | Done                     | Agent | S-01             | 2026-08-02   |
-| T-09 | Close the PostgREST filter injection in the opportunity fallback    | ledger     | High         | Done                     | Agent | S-01             | 2026-08-02   |
-| T-10 | Correct the test counts and integration-suite claim in CLAUDE.md    | ops        | Normal       | Done                     | Agent | S-01             | 2026-08-05   |
-| T-11 | Create Stripe products and prices and run the test-payment matrix   | finance    | Critical     | Blocked                  | Owner | A-05 approved    | 2026-08-20   |
-| T-12 | Record the sample-data exclusion rule in CLAUDE.md                  | ops        | Normal       | Done                     | Agent | A-03             | 2026-07-31   |
-| T-13 | Commission legal review of the ten legal and policy documents       | compliance | Critical     | Blocked                  | Owner | A-06 approved    | 2026-08-27   |
-| T-14 | Wire virus scanning to `attachments.scan_status`                    | ledger     | High         | Awaiting Approval        | Owner | **A-07 pending** | 2026-09-03   |
-| T-15 | Make the public landing pages cacheable again                       | ledger     | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-09-03   |
-| T-16 | Build in-product super-administrator MFA reset                      | ledger     | Normal       | Backlog                  | Agent | S-01 to prepare  | not recorded |
-| T-17 | Commission high-fidelity design and brand sign-off                  | design     | Low          | Backlog                  | Owner | none yet         | not recorded |
-| T-18 | Build the six DD84 routines as runnable commands                    | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
-| T-19 | Stand up the operating record and seed it with current state        | ops        | High         | **In Verification**      | Agent | A-08             | 2026-08-06   |
-| T-20 | Extend the Torque agent definition with the missing spec sections   | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
-| T-21 | Point CLAUDE.md §10 at the commands and the operating record        | ops        | Normal       | Done                     | Agent | A-08             | 2026-08-06   |
-| T-22 | Verify and push the operations control plane                        | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
-| T-23 | Schedule the six routines and confirm the first firing              | ops        | High         | **In Verification**      | Owner | owner-held       | 2026-08-08   |
-| T-24 | Build the weekly marketing opportunity scan routine                 | ops        | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-25 | Build the project status control routine                            | ops        | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-26 | Decide what to do about 105 files failing `prettier --check`        | ledger     | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
-| T-27 | Routines fire but commit nothing                                    | ops        | High         | **Done**                 | Agent | A-14 executed    | 2026-10-09   |
-| T-28 | Settle where the Ledger and the agent platform each live            | ops        | High         | Done                     | Agent | A-11             | 2026-09-23   |
-| T-29 | The Ledger application copy in this repository is stale             | ops        | Normal       | Blocked                  | Owner | A-11             | not set      |
-| T-30 | Unattended Ledger subscriber-email Routine — cannot be removed      | ops        | High         | **Accepted Risk**        | Owner | A-12 accepted    | 2026-09-25   |
-| T-31 | Consolidate the two diverged operating records onto one branch      | ops        | High         | Done                     | Agent | owner decision   | 2026-09-25   |
-| T-32 | Both repositories are public, and the venture registry is in one    | compliance | High         | **No Action** (accepted) | Owner | A-13 closed      | 2026-10-08   |
-| T-33 | Establish what `dd84-api` is, and why it is failing on Render       | ops        | High         | Planned                  | Agent | A to diagnose    | 2026-10-10   |
-| T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                  | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-13   |
-| T-35 | Three stale pull requests, one from the superseded branch           | ops        | High         | **Awaiting Owner**       | Owner | none yet         | not set      |
-| T-36 | No readable path to DD84's own revenue figures                      | finance    | High         | Planned                  | Agent | A to prepare     | 2026-10-15   |
-| T-37 | The C10 customer — Terminator X Max AFR fault                       | service    | High         | **In Progress**          | Owner | A to prepare     | 2026-10-10   |
-| T-38 | GDOT access review — right-in/right-out on the Colbert site         | real est.  | High         | **In Progress**          | Owner | **A-15 pending** | 2026-10-10   |
-| T-39 | Reschedule the missed Georgia SBDC session                          | finance    | Normal       | Awaiting Approval        | Owner | **A-15 pending** | 2026-10-10   |
-| T-40 | Google Play developer account at risk of closure                    | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
-| T-41 | Five r/LSSwapTheWorld lead candidates, none contacted               | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
-| T-42 | Fifteen unsent drafts, five of them to likely loan fraud            | ops        | High         | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
-| T-43 | `downdirty84llc.com` is live and absent from the venture registry   | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
-| T-44 | One inbox query is not an intake; fix the routine's search          | ops        | Normal       | Planned                  | Agent | A to prepare     | 2026-10-15   |
-| T-45 | GREC will not interpret the law; the licensing question is open     | compliance | High         | Blocked                  | Owner | A-06 covers it   | 2026-10-16   |
-| T-46 | Webador annual invoice will auto-charge; amount unknown             | finance    | Normal       | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
-| T-47 | Two Google Business Profiles for one business                       | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
-| T-48 | Customer identity is in a public repository and in its history      | compliance | **High**     | **In Verification**      | Agent | A-16 executed    | 2026-10-10   |
-| T-49 | A bank transfer was declined on 2026-10-05                          | finance    | **High**     | **Awaiting Owner**       | Owner | A to read        | 2026-10-09   |
-| T-50 | HP Tuners Do Not Sell List — partner obligation                     | compliance | Normal       | **Awaiting Owner**       | Owner | A to read        | 2026-10-12   |
-| T-51 | Third-party contact details in a public repository                  | compliance | Normal       | **Awaiting Owner**       | Owner | **A-17 pending** | 2026-10-13   |
-| T-52 | Phishing email impersonating Meta, unread and flagged important     | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-12   |
-| T-53 | Purchase proposal on the Colbert parcel — no reply in six days      | real est.  | **High**     | **Awaiting Owner**       | Owner | C to follow up   | 2026-10-13   |
-| T-54 | Three HP Tuners credit orders in three days, amounts unread         | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
-| T-55 | Chime is a payment channel absent from the venture registry         | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
-| T-56 | USDA B&I loan guarantee — confirm FY27 authority and rural test     | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
-| T-57 | Is Colbert in a designated Georgia Rural Zone?                      | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
-| T-58 | SBA 504 — send the Georgia CDC draft and ask two questions          | finance    | **High**     | **Awaiting Owner**       | Owner | C — within T-42  | 2026-10-14   |
-| T-59 | The opportunity scan cannot validate any primary source             | ops        | **High**     | **Awaiting Owner**       | Owner | A to prepare     | 2026-10-14   |
-| T-60 | Reddit flagged the account for automated activity — 7 days          | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-19   |
-| T-61 | Square turns offline payments on by default in two days             | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
-| T-62 | Vercel reports three misconfigured domains on one project           | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
-| T-63 | Two Shopify account-verification codes, cause unexplained           | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
-| T-64 | A second live tuning job, unrecorded and unpriced — 11 days silent  | service    | **Critical** | **Awaiting Owner**       | Owner | C to send        | 2026-10-14   |
-| T-65 | A Shopify customer account with zero orders, unrecorded             | sales      | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
-| T-66 | A real Lexus enquiry sat 23 days; the contact form was never read   | sales      | **High**     | **Awaiting Owner**       | Owner | C to contact     | 2026-10-15   |
-| T-67 | Two more loan-fraud "application" emails, 16 minutes apart          | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
-| T-68 | MFA switched off on the Zoho account now holding Ledger support     | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
+| ID   | Title                                                                 | Workstream | Priority     | Status                   | Owner | Approval         | Due          |
+| ---- | --------------------------------------------------------------------- | ---------- | ------------ | ------------------------ | ----- | ---------------- | ------------ |
+| T-01 | Transcribe the DD84 operations specification into the repository      | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
+| T-02 | Author CLAUDE.md as the repository orientation guide                  | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
+| T-03 | Define the Torque agent as a reusable subagent                        | ops        | High         | Done                     | Agent | A-01             | 2026-07-31   |
+| T-04 | Correct documentation that had drifted away from the code             | ledger     | Normal       | Done                     | Agent | A-02             | 2026-07-31   |
+| T-05 | Record the true legal-review flags on the ten legal documents         | compliance | High         | Done                     | Agent | A-02             | 2026-07-31   |
+| T-06 | Exclude demo accounts from subscriber, revenue and analytics counts   | finance    | High         | **In Verification**      | Agent | A-03             | 2026-08-08   |
+| T-07 | Count annual subscribers at a twelfth of the annual price             | finance    | High         | Done                     | Agent | A-04             | 2026-07-31   |
+| T-08 | Remove the phantom integration-test glob from the Vitest config       | ledger     | Normal       | Done                     | Agent | S-01             | 2026-08-02   |
+| T-09 | Close the PostgREST filter injection in the opportunity fallback      | ledger     | High         | Done                     | Agent | S-01             | 2026-08-02   |
+| T-10 | Correct the test counts and integration-suite claim in CLAUDE.md      | ops        | Normal       | Done                     | Agent | S-01             | 2026-08-05   |
+| T-11 | Create Stripe products and prices and run the test-payment matrix     | finance    | Critical     | Blocked                  | Owner | A-05 approved    | 2026-08-20   |
+| T-12 | Record the sample-data exclusion rule in CLAUDE.md                    | ops        | Normal       | Done                     | Agent | A-03             | 2026-07-31   |
+| T-13 | Commission legal review of the ten legal and policy documents         | compliance | Critical     | Blocked                  | Owner | A-06 approved    | 2026-08-27   |
+| T-14 | Wire virus scanning to `attachments.scan_status`                      | ledger     | High         | Awaiting Approval        | Owner | **A-07 pending** | 2026-09-03   |
+| T-15 | Make the public landing pages cacheable again                         | ledger     | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-09-03   |
+| T-16 | Build in-product super-administrator MFA reset                        | ledger     | Normal       | Backlog                  | Agent | S-01 to prepare  | not recorded |
+| T-17 | Commission high-fidelity design and brand sign-off                    | design     | Low          | Backlog                  | Owner | none yet         | not recorded |
+| T-18 | Build the six DD84 routines as runnable commands                      | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
+| T-19 | Stand up the operating record and seed it with current state          | ops        | High         | **In Verification**      | Agent | A-08             | 2026-08-06   |
+| T-20 | Extend the Torque agent definition with the missing spec sections     | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
+| T-21 | Point CLAUDE.md §10 at the commands and the operating record          | ops        | Normal       | Done                     | Agent | A-08             | 2026-08-06   |
+| T-22 | Verify and push the operations control plane                          | ops        | High         | Done                     | Agent | A-08             | 2026-08-06   |
+| T-23 | Schedule the six routines and confirm the first firing                | ops        | High         | **In Verification**      | Owner | owner-held       | 2026-08-08   |
+| T-24 | Build the weekly marketing opportunity scan routine                   | ops        | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
+| T-25 | Build the project status control routine                              | ops        | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
+| T-26 | Decide what to do about 105 files failing `prettier --check`          | ledger     | Normal       | Planned                  | Agent | S-01 to prepare  | 2026-08-13   |
+| T-27 | Routines fire but commit nothing                                      | ops        | High         | **Done**                 | Agent | A-14 executed    | 2026-10-09   |
+| T-28 | Settle where the Ledger and the agent platform each live              | ops        | High         | Done                     | Agent | A-11             | 2026-09-23   |
+| T-29 | The Ledger application copy in this repository is stale               | ops        | Normal       | Blocked                  | Owner | A-11             | not set      |
+| T-30 | Unattended Ledger subscriber-email Routine — cannot be removed        | ops        | High         | **Accepted Risk**        | Owner | A-12 accepted    | 2026-09-25   |
+| T-31 | Consolidate the two diverged operating records onto one branch        | ops        | High         | Done                     | Agent | owner decision   | 2026-09-25   |
+| T-32 | Both repositories are public, and the venture registry is in one      | compliance | High         | **No Action** (accepted) | Owner | A-13 closed      | 2026-10-08   |
+| T-33 | Establish what `dd84-api` is, and why it is failing on Render         | ops        | High         | Planned                  | Agent | A to diagnose    | 2026-10-10   |
+| T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                    | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-13   |
+| T-35 | Three stale pull requests, one from the superseded branch             | ops        | High         | **Awaiting Owner**       | Owner | none yet         | not set      |
+| T-36 | No readable path to DD84's own revenue figures                        | finance    | High         | Planned                  | Agent | A to prepare     | 2026-10-15   |
+| T-37 | The C10 customer — Terminator X Max AFR fault                         | service    | High         | **In Progress**          | Owner | A to prepare     | 2026-10-10   |
+| T-38 | GDOT access review — right-in/right-out on the Colbert site           | real est.  | High         | **In Progress**          | Owner | **A-15 pending** | 2026-10-10   |
+| T-39 | Reschedule the missed Georgia SBDC session                            | finance    | Normal       | Awaiting Approval        | Owner | **A-15 pending** | 2026-10-10   |
+| T-40 | Google Play developer account at risk of closure                      | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
+| T-41 | Five r/LSSwapTheWorld lead candidates, none contacted                 | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
+| T-42 | Fifteen unsent drafts, five of them to likely loan fraud              | ops        | High         | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
+| T-43 | `downdirty84llc.com` is live and absent from the venture registry     | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
+| T-44 | One inbox query is not an intake; fix the routine's search            | ops        | Normal       | Planned                  | Agent | A to prepare     | 2026-10-15   |
+| T-45 | GREC will not interpret the law; the licensing question is open       | compliance | High         | Blocked                  | Owner | A-06 covers it   | 2026-10-16   |
+| T-46 | Webador annual invoice will auto-charge; amount unknown               | finance    | Normal       | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
+| T-47 | Two Google Business Profiles for one business                         | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
+| T-48 | Customer identity is in a public repository and in its history        | compliance | **High**     | **In Verification**      | Agent | A-16 executed    | 2026-10-10   |
+| T-49 | A bank transfer was declined on 2026-10-05                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to read        | 2026-10-09   |
+| T-50 | HP Tuners Do Not Sell List — partner obligation                       | compliance | Normal       | **Awaiting Owner**       | Owner | A to read        | 2026-10-12   |
+| T-51 | Third-party contact details in a public repository                    | compliance | Normal       | **Awaiting Owner**       | Owner | **A-17 pending** | 2026-10-13   |
+| T-52 | Phishing email impersonating Meta, unread and flagged important       | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-12   |
+| T-53 | Purchase proposal on the Colbert parcel — no reply in six days        | real est.  | **High**     | **Awaiting Owner**       | Owner | C to follow up   | 2026-10-13   |
+| T-54 | Three HP Tuners credit orders in three days, amounts unread           | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
+| T-55 | Chime is a payment channel absent from the venture registry           | finance    | Normal       | Planned                  | Owner | A to read        | 2026-10-14   |
+| T-56 | USDA B&I loan guarantee — confirm FY27 authority and rural test       | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
+| T-57 | Is Colbert in a designated Georgia Rural Zone?                        | real est.  | Normal       | Planned                  | Agent | A to research    | 2026-10-19   |
+| T-58 | SBA 504 — send the Georgia CDC draft and ask two questions            | finance    | **High**     | **Awaiting Owner**       | Owner | C — within T-42  | 2026-10-14   |
+| T-59 | The opportunity scan cannot validate any primary source               | ops        | **High**     | **Awaiting Owner**       | Owner | A to prepare     | 2026-10-14   |
+| T-60 | Reddit flagged the account for automated activity — 7 days            | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-19   |
+| T-61 | Square turns offline payments on by default in two days               | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
+| T-62 | Vercel reports three misconfigured domains on one project             | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
+| T-63 | Two Shopify account-verification codes, cause unexplained             | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
+| T-64 | A second live tuning job, unrecorded and unpriced — 11 days silent    | service    | **Critical** | **Awaiting Owner**       | Owner | C to send        | 2026-10-14   |
+| T-65 | A Shopify customer account with zero orders, unrecorded               | sales      | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
+| T-66 | A real Lexus enquiry sat 23 days; the contact form was never read     | sales      | **High**     | **Awaiting Owner**       | Owner | C to contact     | 2026-10-15   |
+| T-67 | Two more loan-fraud "application" emails, 16 minutes apart            | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
+| T-68 | MFA switched off on the Zoho account now holding Ledger support       | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
+| T-69 | Four Routine prompts contradict the checkout guard in version control | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)   | 2026-10-15   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
@@ -3360,3 +3361,65 @@ never been assessed, and ~20,700 unread messages remain.
   notification's claim.**
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **Step 5 is the one
   with teeth: this record has just learned what an unwatched inbox costs.**
+
+## T-69 — Four Routine prompts contradict the checkout guard in version control
+
+- **Objective** — Get the four scheduled Routine prompts to stop asserting a
+  tracked-file count, so the guard they carry agrees with `docs/ops/README.md`
+  contract item 0.
+- **Source** — OL-0045, 2026-10-14, found while fixing the guard itself.
+- **Workstream** ops · **Priority** Normal · **Owner** **Agent** · **Due**
+  2026-10-15, the next weekday firing
+- **Approval class** — **A.** Correcting the agents' own instruction text. No
+  send, no spend, no live system.
+
+### What is wrong
+
+All four prompts open with "confirm **28 tracked files** and no `src/`", and add
+that "the file count is the only tell". The tree held 28 files when the prompt
+was written on 2026-10-08 and holds **41** today, measured with `git ls-files`
+at `d8effb4` — briefs add about two per weekday — so **the check fails on every
+run whose checkout is correct.** The guard exists to catch a container reset
+that serves the stale Ledger tree with a clean `git status`, which is the one
+failure that looks like success. **A guard that always fails gets skipped.**
+
+### What is already done
+
+**`docs/ops/README.md` contract item 0 carries the guard** with a test that does
+not drift — `src/` and `package.json` both absent — and **requires the run to
+state the result and the tip commit in its log entry.** Verified: this branch
+tracks neither marker and `origin/claude/georgia-opportunity-ledger-kfpt4c`
+tracks both. Every routine is told to read that README first, so the correct
+check is in force now, in version control, where anyone can fix it.
+
+### Why this is not simply Done
+
+**`update_trigger` refuses from this session**: "a routine's instructions can be
+changed only from the conversation or thread the routine posts into." The four
+Routines post into the A-14 host session `session_01MadzgqZSAWtvberqr3hMpN`. A
+re-read of the intake prompt at 2026-10-14T14:25Z confirms it **still names 28
+files**. Until that session applies the change the prompt and the README
+disagree, and a run following the prompt literally still trips the count.
+
+**Two documents disagreeing is worse than one being wrong**, because a run has
+to choose and nothing makes it say which it chose. That is precisely how the
+opportunity-scan defect in the same OL entry survived three weeks.
+
+### A related gap, worth not losing
+
+**No brief from 2026-10-08 to 2026-10-14 records the checkout check at all** —
+ten runs. That does **not** prove it was skipped; the prompts never asked for it
+to be reported. It proves **the record cannot tell the difference**, which is
+why contract item 0 now requires the result in the log entry.
+
+### Not a blocked permission
+
+The refusal names where the edit belongs and says to ask there. **That is a
+routing constraint, not a denial**, and categorically different from the branch
+deletions in OL-0026 and OL-0027 where the capability itself was refused and
+asking another session would have been a way around it.
+
+- **Status** **In Verification** · **Next action** — the host session has been
+  asked. Confirm by **reading the prompt** after the 2026-10-15 10:20Z firing.
+  **Done only when a `get_trigger` read shows the new text** — not when the host
+  session reports that it applied it.

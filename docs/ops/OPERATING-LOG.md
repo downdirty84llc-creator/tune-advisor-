@@ -2954,4 +2954,171 @@ customer name, email, phone or card digits written here.**
 
 ---
 
-## Next entry: OL-0045
+## OL-0045 — 2026-10-14 · Two defects in the routines' own instructions: a guard that always failed, and a scan told it was the other business
+
+- **Timestamp** 2026-10-14T14:30:00Z
+- **Task** T-69 (**new**) · **Approval** S-01 (Class A: correcting the agents'
+  own instruction files). **No approval boundary crossed** — nothing sent,
+  published, spent, or changed in a live external system.
+- **Action** Moved the checkout guard out of four unreachable trigger prompts
+  into `docs/ops/README.md` contract item 0 and replaced its drifting test with
+  a stable one. Rewrote eleven sites in
+  `.claude/commands/dd84-opportunity-scan.md` that told the routine this
+  repository is the Georgia Opportunity Ledger and sent it to that product's
+  production database.
+- **Tool** `update_trigger` ×2 (**both refused**), `get_trigger` ×1,
+  `list_triggers`, `Edit`, `Bash` (`git`, `python3`, `prettier`).
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** 68 tasks. Guard present only inside four trigger prompts, asserting
+  a file count of 28 against a tree of **41** (`git ls-files` at `d8effb4`).
+  Scan command carrying 14 references to the other business.
+- **After** 69 tasks. Guard in version control with a non-drifting test that
+  must be reported. Scan command clean — `grep` for `src/lib`, `execute_sql`,
+  `workflow_status`, `minimum_access_rank` and "Ledger database" returns
+  nothing.
+
+### Defect 1 — the guard that had started failing on every correct run
+
+All four scheduled Routine prompts open by telling the run to confirm **"28
+tracked files and no `src/`"**, and add that "the file count is the only tell".
+That count was correct on 2026-10-08, the day it was written into them. **Briefs
+accumulate about two per weekday.** Measured with `git ls-tree -r` at each named
+tip rather than recalled: **30** at `8f0a6c3` (10-08 23:00Z), **32** at
+`538d2d3`, **33** at `18566cc` (10-09), **39** at `2b8fdd4` (10-13), **41** at
+`d8effb4` today. The check has failed on every run since the day after it was
+written — on runs whose checkouts were in fact correct.
+
+> **A figure in the first draft of this entry was wrong.** It read "32 on 10-09,
+> 38 on 10-13 and 44 today", from memory of earlier readings rather than from a
+> measurement at a named commit. Caught by `git ls-files` returning **41**
+> against a claimed 44. **A number without a source is a defect** — including in
+> the entry whose whole subject is a defective check, and the five counts above
+> now each name the commit they were read at.
+
+**This is worse than noise.** The guard exists to catch one specific failure
+mode: a container reset leaving a branch of this name pointing at a `main`
+commit with the stale Ledger tree checked out **and a clean `git status`**,
+which is indistinguishable from a correct checkout. **A guard that cries wolf on
+every run is one a later run learns to skip** — and what it would skip is the
+only check that catches the failure that looks like success.
+
+**The replacement test is `src/` and `package.json` both absent.** Verified
+rather than assumed: this branch tracks neither, and
+`origin/claude/georgia-opportunity-ledger-kfpt4c` — still the default branch,
+still holding the retired copy — tracks both. Two binary facts instead of a
+count that moves twice a day.
+
+### A second finding, from looking for evidence that the guard still ran
+
+**No brief between 2026-10-08 and 2026-10-14 records this check at all** — not
+its result, not the tip it verified against, not a file count. Ten runs.
+
+**What that does and does not establish.** It does **not** establish that the
+check was skipped; the prompts never asked the run to report it, so a run could
+have performed it silently and correctly. **It establishes that the record
+cannot tell the difference** — and an unrecorded check is worth exactly as much
+as a skipped one to anyone auditing later. So contract item 0 now requires the
+run to state the result and the tip commit in its log entry.
+
+This is the third time this record has met the same shape: **a signal that is
+real but measures the wrong thing, or is absent where its absence looks like
+success.** A green Routine run that committed nothing (T-27). A grep that passed
+on a tree still naming a customer (A-16). Now a guard whose operation leaves no
+trace. **Each one survived because the absence of evidence read as evidence.**
+
+### I could not change the four prompts, and the reason matters
+
+`update_trigger` **refused both attempts**: _"a routine's instructions can be
+changed only from the conversation or thread the routine posts into, and this is
+not that one."_ The four Routines post into the A-14 host session
+`session_01MadzgqZSAWtvberqr3hMpN`, not this one. Re-read of the intake prompt
+at 14:25Z today confirms it **still says "28 tracked files"**.
+
+So **the four prompts now contradict `docs/ops/README.md`**, recorded as
+**T-69**, with the host session asked to apply the change since it is the only
+session that can. **This is not laundering a blocked permission**: the refusal
+names where the edit must happen and says to ask there. The branch deletions in
+OL-0026 and OL-0027 were the opposite — the proxy denied the capability
+outright, and asking a peer session would have been a way around a denial. **A
+routing constraint and a permission denial are different things**, and the error
+text is what distinguishes them.
+
+### Defect 2 — the opportunity scan was told it was the other business
+
+`.claude/commands/dd84-opportunity-scan.md` opened with **"This repository _is_
+the Georgia Opportunity Ledger"** and instructed the routine to:
+
+- deduplicate candidates against that product's **production Supabase**, with an
+  explicit SELECT grant and a list of write tools to avoid;
+- read its scoring method from **`src/lib/scoring/score.ts`** and the editorial
+  workflow from **`src/lib/opportunities/workflow.ts`** — both **deleted from
+  this branch on 2026-09-25** (OL-0016);
+- understand itself as a "researcher" inside that product's role separation;
+- file tasks in an `opportunity ledger` workstream;
+- report "Ledger database checked: yes/no" in every brief.
+
+**Every one of those was false from 2026-09-25**, nearly three weeks before
+today. The file is the most load-bearing instruction the scan has: the Routine
+prompt says to follow it **exactly**.
+
+**The contradiction is the real finding.** When the Routines were rebuilt, the
+_prompts_ were patched to say the right thing — "This scan is DD84 looking for
+its own opportunities… nothing you find here becomes a Ledger record" — and
+**the file they point at was never checked.** A run was handed two documents
+that disagreed about which business it was working for, and told to follow the
+wrong one exactly. Monday's scan (`b0d926b`) produced six candidates and
+contacted nobody, so the run resolved it correctly; **it should not have had to,
+and a future run might resolve it the other way.**
+
+**Patching the wrapper and leaving what it wraps is how both defects happened.**
+In defect 1 the correction went into four trigger prompts instead of the one
+file in version control; in defect 2 it went into the prompts and skipped the
+command file entirely. Same error, opposite direction.
+
+### What was deliberately not changed
+
+**The scoring method is untouched** — financial value 25, accessibility 20, time
+sensitivity 15, source reliability 15, capital requirement 10, complexity 10,
+risk 5. It was already written out in full in the command file, so deleting the
+pointer to the removed source file lost nothing; **the file is now the
+specification rather than a reference to one.** Scores stay comparable across
+weeks, which was the only reason the pointer mattered.
+
+**Supabase went from read-only to forbidden, not to unmentioned.** The only
+Supabase project on this account belongs to the other business, so the old
+file's SELECT grant was a standing permission to read another company's
+production data. A flat prohibition is the correct setting and is now stated as
+one.
+
+**The `ledger` workstream stays in the register's vocabulary.** It tracks the
+Ledger as a _business_, which Torque and Rev legitimately do; what was wrong was
+filing **DD84's own** opportunities under it. `CLAUDE.md` §1 already draws that
+line — Ledger-as-business belongs here, Ledger _code_ does not.
+
+### The other five routines were checked, not assumed
+
+`grep` for "ledger", "supabase" and "src/lib" across all six command files: the
+scan held **14 hits and the other five held none.** `.claude/agents/torque.md`
+has two, both correct — a prohibition on touching production Supabase, and
+`ledger` in the workstream list. `docs/ops/README.md` has one, the routine's
+display name in the schedule table. **No further contamination exists**, which
+is a measured result rather than a hope.
+
+### Two more numbering collisions, taking the count to six
+
+This entry was first written as **OL-0042** with task **T-64**, and the task
+register row and packet cross-references with it. **The host session took
+OL-0042 and T-64–T-65** in `2b8fdd4` while the work was in progress, then
+**OL-0043, OL-0044 and T-66–T-68** in `08af190` and `d8effb4` overnight.
+Renumbered to **OL-0045 / T-69** against a freshly fetched tip.
+
+**That is six collisions, every one of them two sessions appending to the same
+register concurrently.** Re-reading the tail immediately before taking a number
+has caught all six, and it is still a habit standing in for a fix. **The fix is
+A-10.** Note also that **T-64 now means something else entirely** — the intake
+brief of 2026-10-14 cites T-64 for the Challenger customer — which is why the
+renumbering had to happen before the commit rather than after.
+
+---
+
+## Next entry: OL-0046
