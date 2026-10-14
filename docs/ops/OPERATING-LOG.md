@@ -2844,4 +2844,114 @@ official is a Gmail thread ID, a role, or an organisation's domain.
 
 ---
 
-## Next entry: OL-0044
+## OL-0044 — 2026-10-14 · Daily brief: correcting the intake that ran thirty-one minutes earlier
+
+- **Routine** `/dd84-daily-brief`, **fired by the scheduled Routine "DD84 Daily
+  Command Brief (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-14T10:51:54Z**. **Ninth scheduled firing to reach a session with the
+  repository attached.** Class A throughout.
+- **Checkout verified** — HEAD `08af190` equal to origin, **40 tracked files**,
+  no `src/`, clean.
+- **Reached** Google Calendar, Gmail, Shopify, GitHub. **Not reached** Stripe,
+  PayPal, bookipay, Square, Chime, Render, Zoho, Superhuman Mail, Canva.
+
+### This brief's main output was two corrections to our own work
+
+**1. Square's deadline is tomorrow, not today.** The 10:20Z intake wrote that
+the offline-payment default date was "**today or passed**". **Wrong, and it
+overstated the urgency.** The 10-13 message says _"2 days left"_ → ~10-15.
+
+**And it is corroborated independently.** A **second** Square message,
+**2026-09-15T10:11:14Z**, said offline payments would be enabled _"in 30 days"_
+— **30 days from 15 September is also ~15 October.** **Two messages a month
+apart converge on one date**, which is firmer evidence than either alone and
+firmer than the intake's guess.
+
+**2. The larger correction: Square may never have been activated.** T-55 and
+T-61 recorded Square as DD84's **sixth payment channel**. **Twelve Square
+threads since 2026-08-17 include onboarding prompts for an unfinished account**
+— _"Your point of sale is waiting"_, **_"Start taking payments — just verify
+your identity"_**, _"You're so close to making the most of Square"_, hardware
+and Tap-to-Pay nags.
+
+**Consistent with a provisioned-but-never-activated account. Not asserted** — no
+connector, the state was never read, and a verification nag can be stale. **But
+it changes the decision**: if Square never took a payment, the setting is close
+to harmless and the real question is whether the account should exist. If it
+did, the setting matters. **One dashboard look answers both and has never been
+taken**, so **T-61's next action is reordered: read the account first, decide
+the setting second.** Deciding a setting on an account that may not process
+payments is the wrong order.
+
+**What survives and what must not harden.** T-61's argument that a sixth channel
+made the **size** of T-36's revenue gap unknown **still holds** — an unread
+channel is unread either way. **What must not harden is the count: "six
+channels" may be "five channels and an abandoned signup",** and the register
+should not carry a number it has not verified. **Corrected in T-61 and T-55
+rather than left standing**, and flagged for Rev as **unverified** rather than
+handed over as live channels.
+
+### A first in this record: a packet whose correct answer is no
+
+**A-18 is pending, and approving it would cause the harm it was written to
+avoid.** It asks the Challenger customer to flash the revision, report the car's
+starting behaviour and send a datalog. **He sent the datalog at
+2026-10-13T15:39:45Z and it is still unread.** **Every previous packet in this
+record has been waiting for a yes; this is the first whose right answer is
+REJECT.**
+
+That is why it is the brief's first priority rather than its third: **of seven
+pending packets, six cost something while they wait and one costs something if
+it is granted.**
+
+### The rest, briefly, because it is the same shape as yesterday
+
+- **Appointments: none.** Both dates read at 10:54Z, zero events. **Tenth
+  consecutive empty day.** Recorded without a new inference — the consequence
+  (an empty calendar here is not a free day) was already drawn yesterday.
+- **Money: Shopify $0 on 0 orders, read 10:54Z — a real zero.** Five other
+  channels not available this run, each named. **No revenue total, fifth routine
+  running.** The owner's own Stripe sign-in (10-13T11:51:46Z) remains the
+  fastest route to the number this session cannot read.
+- **The card was toggled ten times in 25 hours and is currently off** (day
+  eight). **No cause asserted.** Worth one line because **T-46's Webador invoice
+  auto-charges and T-49's transfer already declined** — three facts that sit in
+  the same place without a claim connecting them.
+- **Overdue: 24, up from 20.** Fourteen DD84 items from this week, **eleven of
+  them the owner's**; ten Ledger-era items of which **four are correctly waiting
+  on a pending packet** and **none will produce DD84 revenue.**
+- **Customer risk inverted on T-64.** It was eleven days of silence; **it is now
+  a customer who replied with exactly what was asked for, and nobody has opened
+  it.** That is a better problem and a more embarrassing one.
+- **GitHub quiet and correct** — three stale PRs unchanged, **no workflow run
+  since 2026-10-08 (success)**. Noted explicitly: **CI does not run on this
+  branch by design**, so a green CI is not evidence about this branch's content.
+
+### Class A held
+
+Nothing sent, replied to or forwarded. **Both calendars read only** — no event
+created, moved, confirmed or declined. No label applied, no mail state changed.
+No charge, refund, invoice, payout or fulfilment action. **No Square setting
+touched and no Square account action taken** — the correction above rests on
+mailbox evidence alone, which is stated in the brief rather than implied. No
+GitHub write. No task marked Done on inference. `docs/growth/` untouched. **No
+customer name, email, phone or card digits written here.**
+
+- **Needs the owner today** — **read the Challenger datalog, then REJECT or
+  amend A-18**; **open the Square dashboard before tomorrow**; **price both live
+  jobs**. Then **T-52** (5 days unread) with **T-67**, **T-60** (~5 days),
+  **T-63** (ten minutes), **T-53** (open the attachment), **T-66** (count the
+  contact-form backlog), **A-15** (8 days), **T-42 / T-58** (16 days unsent),
+  **T-49**, **T-46**, **T-50**, **T-68**, **A-17**, **T-59**, **A-10**.
+- **Worth stating plainly** — **the most valuable thing this brief did was
+  correct the routine that ran half an hour before it.** One correction stopped
+  a false urgency; the other stopped a payment-channel count from hardening into
+  a fact nobody had checked. **Neither was found by a new connector — both came
+  from reading further back in mail the earlier run had already touched.** The
+  windowed queries that make these routines cheap are also what made a month-old
+  Lexus lead and an unactivated Square account invisible, and **that is now two
+  days running that the finding came from outside the window.**
+
+---
+
+## Next entry: OL-0045

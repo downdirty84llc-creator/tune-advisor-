@@ -2482,6 +2482,23 @@ official two and a half hours before the city told him who it was.**
 
 ---
 
+### 2026-10-14 — the channel count is less certain than this task implied
+
+**T-61's 2026-10-14 addendum records that Square may never have been activated**
+— twelve Square threads since 2026-08-17, several of them onboarding prompts for
+an unfinished account, including _"Start taking payments — just verify your
+identity"_.
+
+**That does not change this task, which is about Chime.** It changes **the count
+this task started.** Chime was recorded as the fifth payment channel and Square
+as the sixth; **"six channels" may in fact be "five channels and an abandoned
+signup".** **Neither Chime's nor Square's activity was ever read** — no
+connector exists for either.
+
+**So the registry gap is confirmed and the channel count is not.** Both should
+go to Rev for `ventures.md` **with their status marked unverified**, rather than
+being added as live payment channels on the strength of their mail.
+
 ## T-56 — USDA B&I loan guarantee: confirm FY27 authority and the rural test
 
 - **Objective** — Establish whether the best-fitting debt instrument for a rural
@@ -2799,6 +2816,47 @@ not of programmes**, and it says so.
 - **Status** **Awaiting Owner** · **Next action** — Step 1, within two days.
   **The deadline is the platform's, and it does not require a reply to take
   effect.**
+
+### 2026-10-14 — the date is firmer and the channel is doubtful
+
+**Two corrections, from a fuller read of Square's mail.**
+
+**First, the date is ~2026-10-15 and it is corroborated.** The 2026-10-13
+message said _"2 days left"_. A **second** Square message,
+**2026-09-15T10:11:14Z**, said _"Offline payments will be turned on across all
+compatible devices **in 30 days**"_ — **30 days from 15 September is also ~15
+October.** **Two messages a month apart converge on one date**, which is firmer
+than either alone. **The 2026-10-14 intake said the date was "today or passed";
+that was wrong and overstated the urgency.** It is tomorrow.
+
+**Second, and larger: Square may never have been activated.** This task and T-55
+recorded Square as DD84's **sixth payment channel**. **Square has sent twelve
+threads since 2026-08-17, and several are onboarding prompts for an unfinished
+account** — _"Your point of sale is waiting"_ and "Finish your setup today"
+(08-17), **_"Start taking payments — just verify your identity"_** and "You're
+so close to making the most of Square" (08-20), _"How to take a payment"_
+(08-21), hardware and Tap-to-Pay prompts (08-23, 08-24).
+
+**That is consistent with a provisioned-but-never-activated account.** **It is
+not asserted**: no Square connector exists, the account state was never read,
+and an identity-verification nag can be stale. **But it changes what the
+decision is.** If Square has never taken a payment, the offline-payment setting
+is close to harmless and **the real question is whether the account should exist
+at all.** If it has, the setting matters. **One look at the dashboard answers
+both, and that look has never been taken.**
+
+**What this does and does not do to T-36's argument.** This task argued that a
+sixth channel made the **size** of the revenue-visibility gap unknown. **That
+still holds** — an unread channel is unread whether or not it ever took money.
+**What must not harden is the count: "six channels" may be "five channels and an
+abandoned signup",** and the register should not carry a number it has not
+verified.
+
+- **Status unchanged: Awaiting Owner.** · **Next action, revised** — **open the
+  Square dashboard.** Establish (a) whether the account has ever taken a
+  payment, (b) the current offline-payment setting, (c) whether identity
+  verification was ever completed. **Then** decide the setting. **Deciding a
+  setting on an account that may not process payments is the wrong order.**
 
 ## T-62 — Vercel reports three misconfigured domains on one project
 
