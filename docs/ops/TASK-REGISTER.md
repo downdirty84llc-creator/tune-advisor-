@@ -102,7 +102,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-66 | A real Lexus enquiry sat 23 days; the contact form was never read     | sales      | **High**     | **Awaiting Owner**       | Owner | C to contact     | 2026-10-15   |
 | T-67 | Two more loan-fraud "application" emails, 16 minutes apart            | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-68 | MFA switched off on the Zoho account now holding Ledger support       | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
-| T-69 | Four Routine prompts contradict the checkout guard in version control | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)   | 2026-10-15   |
+| T-69 | Four Routine prompts contradict the checkout guard in version control | ops        | Normal       | **Blocked**              | Owner | S-01 (Class A)   | 2026-10-15   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
@@ -3419,7 +3419,31 @@ routing constraint, not a denial**, and categorically different from the branch
 deletions in OL-0026 and OL-0027 where the capability itself was refused and
 asking another session would have been a way around it.
 
-- **Status** **In Verification** · **Next action** — the host session has been
-  asked. Confirm by **reading the prompt** after the 2026-10-15 10:20Z firing.
-  **Done only when a `get_trigger` read shows the new text** — not when the host
-  session reports that it applied it.
+### The ask is not reachable from here either — corrected after the first commit
+
+`b2f3ab7` committed this task saying the host session "**has been asked**". **It
+had not been, and then could not be.** That sentence was written before the
+attempt, on the assumption it would work. Recorded rather than quietly amended,
+because an entry about a check that passed without running is the worst possible
+place to assert an unverified completion.
+
+| Route                 | Result                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `update_trigger`      | **Refused** — prompt edits only from the conversation the routine posts into                                                    |
+| `ListAgents`          | **No reachable peer.** It covers this machine; the host runs in its own cloud container                                         |
+| Session messaging     | **No tool reaches a cloud session** from here                                                                                   |
+| `fire_trigger` + text | **Would work, and was not used** — it delivers by running an unscheduled intake, buying a note for a false firing in the record |
+
+**Owner action, and it is one line.** In the host session's own conversation
+(`session_01MadzgqZSAWtvberqr3hMpN`), say:
+
+> Update all four DD84 Routine prompts: replace the "28 tracked files and no
+> `src/`" check with "no `src/` directory and no `package.json`", and have each
+> run state the result and the tip commit in its log entry. `docs/ops/README.md`
+> contract item 0 is the wording.
+
+- **Status** **Blocked — owner** · **Next action** — the line above, in the host
+  session. **Done only when a `get_trigger` read shows the new text** — not when
+  any session reports having applied it. Until then `docs/ops/README.md` is the
+  controlling contract and the prompts' file count is known-wrong rather than
+  merely stale.

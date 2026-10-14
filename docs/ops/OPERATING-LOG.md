@@ -3035,13 +3035,35 @@ not that one."_ The four Routines post into the A-14 host session
 at 14:25Z today confirms it **still says "28 tracked files"**.
 
 So **the four prompts now contradict `docs/ops/README.md`**, recorded as
-**T-69**, with the host session asked to apply the change since it is the only
-session that can. **This is not laundering a blocked permission**: the refusal
-names where the edit must happen and says to ask there. The branch deletions in
+**T-69**. **This is not laundering a blocked permission**: the refusal names
+where the edit must happen and says to ask there. The branch deletions in
 OL-0026 and OL-0027 were the opposite — the proxy denied the capability
 outright, and asking a peer session would have been a way around a denial. **A
 routing constraint and a permission denial are different things**, and the error
 text is what distinguishes them.
+
+> **Correction, made minutes after this entry was first committed in
+> `b2f3ab7`.** This paragraph and T-69 both said the host session "has been
+> asked". **It had not been, and then could not be.** The sentence was written
+> on the assumption that asking would work, before the attempt — which is the
+> precise thing §"never fabricate confirmations" forbids, and it is worse here
+> than an ordinary slip because the whole entry is about a check that reported
+> success without having run.
+>
+> **Attempted and failed:** `ListAgents` reports no reachable peer — it covers
+> sessions on this machine, and the host runs in its own cloud container. No
+> session-messaging tool reaches a cloud session from here.
+>
+> **Deliberately not used:** `fire_trigger` takes a `text` argument appended as
+> an extra user turn, so it _would_ deliver the message — by running an
+> unscheduled inbox intake to carry it. **That buys a note at the cost of a fake
+> firing in the schedule evidence**, on the one record whose value is that
+> scheduled and hand-driven runs are distinguishable (OL-0033). Not a trade
+> worth making.
+>
+> **So T-69 is Blocked on the owner**, not In Verification by an agent, and the
+> remedy is one line typed in the host session's own conversation. The exact
+> text is in T-69.
 
 ### Defect 2 — the opportunity scan was told it was the other business
 
