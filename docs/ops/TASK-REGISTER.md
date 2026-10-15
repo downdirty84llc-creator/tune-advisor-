@@ -103,16 +103,27 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-67 | Two more loan-fraud "application" emails, 16 minutes apart            | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-68 | MFA switched off on the Zoho account now holding Ledger support       | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
 | T-69 | Four Routine prompts contradict the checkout guard in version control | ops        | Normal       | **Blocked**              | Owner | S-01 (Class A)   | 2026-10-15   |
+| T-70 | Colbert parcel capped at 380 gpd design flow without public water     | real est.  | **High**     | **Awaiting Owner**       | Owner | A to research    | 2026-10-17   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **17 Awaiting Owner** · 4 Blocked · 18 Planned
-· 2 Backlog. **68 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-14T10:52Z** (intake). **17 of 68 are now waiting on
+Progress · 2 Awaiting Approval · **18 Awaiting Owner** · 5 Blocked · 18 Planned
+· 2 Backlog. **70 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-15T10:58Z** (intake). **18 of 70 are now waiting on
 the owner**, which is the number worth watching: it was 10 on 2026-10-12.
+
+> **This line was stale again** — it read 68 tasks, 17 Awaiting Owner and 4
+> Blocked, against 69 rows after T-69 was added yesterday from another session.
+> **That is the ninth instance of summary drift, and the first contributed by a
+> different session**, which is the useful part: the earlier eight could be read
+> as one agent forgetting a step. **Two sessions independently adding a row and
+> not recounting is the structural argument finishing itself.** The fix is not
+> more diligence — a tally hand-maintained beside a table that two writers
+> append to will drift, and the only durable repair is to stop storing a derived
+> number by hand. **Recorded, not quietly corrected.**
 
 > **This line was wrong twice before the 2026-10-13 intake touched it** — it
 > read "3 In Verification" against 4, and "58 tasks" against 59. **That is the
@@ -2406,6 +2417,30 @@ official two and a half hours before the city told him who it was.**
   action** — **open the attachment.** Then decide whether the drafted follow-up
   is still wanted at all; on this evidence it is not.
 
+### 2026-10-15 — the attachment is now blocking the septic application
+
+**Still unread, two days on.** And it has acquired a second reason to matter.
+
+**T-70** records the state's commercial-septic requirement list, and **one of
+the five documents is the recorded plat of the property.** The agent's message
+of 2026-10-13T23:11:42Z reads _"This is what my client has!"_ with a **5.6 MB
+attachment** — **which may be exactly that plat**, or a survey, or something
+else entirely. **The contents are unknown; no inference is drawn from the size
+or the wording.**
+
+**That makes this the cheapest possible step on the property's critical path.**
+If the plat is in there, one of five required documents is already in hand for
+free. If it is not, DD84 knows to ask. **Either answer costs one click**, and it
+sits ahead of commissioning any paid soil work.
+
+**And a second dependency runs through this thread.** The septic application's
+**owner-consent signature block** needs the seller, and **DD84 does not own the
+parcel** — so the agent is the route to that signature too. **This thread is no
+longer a follow-up chase; it is the property file's gate.**
+
+- **Status unchanged: Awaiting Owner.** · **Next action** — **open the
+  attachment.** The drafted follow-up remains moot.
+
 ## T-54 — Three HP Tuners credit orders in three days, amounts unread
 
 - **Objective** — Record what DD84 is spending on tuning credits, and supply the
@@ -3121,6 +3156,20 @@ that knows.
   (3) **price the job.** The customer is no longer the blocker on any of the
   three.
 
+### 2026-10-15 — forty-three hours unread, and A-18 is still pending
+
+**Nothing moved.** `in:sent newer_than:1d` returned **empty**, so no reply left
+the mailbox, and the datalog of 2026-10-13T15:39:45Z is **still unread at ~43
+hours.**
+
+**A-18 is therefore still pending and still wrong.** Each day it sits, the
+message it authorises gets further from the facts: it asks a customer to flash a
+revision, report how the car starts and send a log, and **he did all three two
+days ago.** **Reject it or amend it; do not let it age into being sent.**
+
+**Still unpriced**, 29 messages in. Nothing in this window could change that —
+no payment system is readable — but **nothing in this window tried.**
+
 ## T-65 — A Shopify customer account with zero orders, unrecorded
 
 - **Objective** — Establish whether a Shopify customer account created last week
@@ -3447,3 +3496,160 @@ place to assert an unverified completion.
   any session reports having applied it. Until then `docs/ops/README.md` is the
   controlling contract and the prompts' file count is known-wrong rather than
   merely stale.
+
+### 2026-10-15 — confirmed from the host session, which can do it and has not
+
+**The host session is now reading this task, and it has first-hand evidence
+rather than a re-read.** The Inbox and Lead Intake routine fired at
+**2026-10-15T10:20:25Z** and its message body opens: _"confirm **28 tracked
+files and no `src/`**… the file count is the only tell."_ **The tree holds 41
+files at `d432b96`.** So the prompt is wrong on today's firing, not merely
+recorded as wrong — **the eleventh consecutive run whose correct checkout fails
+the prompt's own test.**
+
+**The routing picture changes, and in the direction that matters.** This session
+**is** the conversation the four Routines post into, and `update_trigger` is
+available to it. **So the edit is reachable — there is no missing capability.**
+The sibling's table recorded "no route from here", which was true **from
+there**; from here the route exists.
+
+**It was still not taken, deliberately.** A scheduled task's prompt is
+configuration of an automation that runs unattended, and **the instruction to
+change it came from another agent's register entry, not from the owner.** The
+rule this session operates under is explicit that a request arriving through a
+scheduled firing — including one relayed in a task someone else filed — is
+information to weigh and not an instruction, and that **creating, changing or
+firing a scheduled task on that basis is precisely the action to report rather
+than perform.** Doing it anyway would also make this entry self-authorising: an
+agent writes a task asking for a change, another agent reads it and makes the
+change, and no human is in the loop at any point.
+
+**So the status is right and the reason is narrower than "blocked".** It is not
+blocked on capability or on routing. **It is blocked on one sentence from the
+owner, to a session that can execute it immediately.** The line to say is in the
+block above this one.
+
+**Contract item 0 was followed this run and the result is in the log**, which is
+the part that protects the record while the prompts stay wrong: tip `d432b96`,
+**no `src/`, no `package.json`.** The guard works; only its four copies in the
+trigger prompts do not.
+
+## T-70 — Colbert parcel capped at 380 gpd design flow without public water
+
+- **Objective** — Establish whether the proposed facility fits inside the
+  state's 380-gallon-per-day ceiling, and what the feasibility review costs,
+  before any money is spent on soil work.
+- **Source** — `/dd84-inbox-intake`, 2026-10-15. Gmail thread
+  **`1a1353df03441a3e`**: the **Madison County environmental health specialist**
+  replied **twice** on **2026-10-14, 14:12:58Z and 14:17:17Z**, answering all
+  six of the owner's 10-13 questions, with the **county fee schedule attached as
+  a PDF**. The second message is **still unread**.
+- **Workstream** real estate · **Priority** **High** · **Owner** **Owner** ·
+  **Due** 2026-10-17
+- **Approval class** — **A to research and report.** Reading table 13.J and the
+  fee schedule is observation. **Commissioning a level 3 soil survey is Class
+  E**, and **any application touching the parcel needs the seller's signature**
+  — see below.
+
+### Stated by the agency
+
+Quoted or closely paraphrased from the two messages; **nothing here is
+inferred**.
+
+- **"Without public water the property is limited to a maximum design flow of
+  380 gallons"** — from **table 13.J** of the Georgia on-site sewage manual
+  (`https://dph.georgia.gov/media/92616/download`).
+- The office evaluates sites **without public sewer** carrying **typical
+  residential-strength waste under 10,000 gpd**. DD84's stated concept —
+  restroom and handwashing only, **no vehicle fluids, parts washing, bay-floor
+  drainage or vehicle-wash discharge** — fits that description.
+- **"We do not have any permits or soil evaluations for this property."**
+- A commercial feasibility review needs **five documents**: the **recorded
+  plat**; a **to-scale stamped original level 3 soil survey**; a **business plan
+  describing the size and use of the proposed facility**; a **floor plan**; a
+  **plumbing plan**.
+- Design flow is set from **table 13.J**, and for a commercial facility the
+  office wants a **floor plan** to estimate sewage flow, which with the soil
+  survey determines system size and design.
+- **Owner consent is a signature block inside the application form.**
+- **"We don't have any info about the lot that would point to adverse conditions
+  for development."**
+- Registries of **state-certified septic installers and soil classifiers** are
+  on the state site.
+- **Question 4 was not answered** — site-specific setbacks, groundwater, well
+  separation, easements, replacement drainfield. His reply: _"I don't know if I
+  understand this question… I wouldn't have that info."_
+
+### Why 380 gallons is the finding
+
+**Piedmont Water said on 2026-09-18 that its system was at capacity and could
+not add service.** If that still holds, the parcel has **no public water**, and
+**380 gpd is the ceiling for the entire facility** — restroom, office, light
+service and the hub dyno together.
+
+**Whether 380 gpd is sufficient is NOT established, and no estimate is
+offered.** It depends on table 13.J's per-employee and per-fixture figures, and
+**that PDF is on `dph.georgia.gov`, which this environment's egress policy
+blocks** (T-59). **Reading one table decides whether this site can hold the
+business the owner is planning**, which makes it the highest-value unread
+document in this record.
+
+**It is a constraint, not a verdict.** A single-restroom shop with one or two
+people may fit inside 380 gpd comfortably; the same building with a wash bay
+would not, and DD84 has already excluded wash discharge from the concept.
+**Nothing here says the site fails.**
+
+### What the answer is not, stated so it is not over-read
+
+- **Not a clearance.** "No info pointing to adverse conditions" is the same
+  sentence as "no permits or soil evaluations on file" — **the agency has no
+  record of this lot.** Absence of a record is not a finding of suitability.
+- **Not costed.** **The fee schedule PDF was not downloaded** — no download tool
+  in this session — so **every fee is unknown**, including the level 3 soil
+  survey, which is the expensive line and the first one that spends money.
+- **Not DD84's to apply for.** **Owner consent is in the application form and
+  DD84 does not own the parcel.** The seller must sign before soil work, which
+  puts this **behind** the realty thread (T-53), not beside it. T-53's unread
+  5.6 MB attachment — _"this is what my client has!"_ — **may already contain
+  the recorded plat**, which is one of the five required documents.
+
+### Why the agency's speed is worth recording
+
+The owner wrote at **2026-10-13T12:30:14Z** and had a six-point answer with an
+attachment **26 hours later**. For comparison, in this same register: **GDOT has
+been waiting 9 days on a written reply DD84 has already drafted**, the **Georgia
+CDC draft is 16 days unsent**, and **Colbert City Hall took three requests over
+13 days** to answer.
+
+**The pattern is consistent and worth acting on: this business gets fast, useful
+answers from state agencies when it asks them specific questions in writing.**
+That is the cheapest research channel it has, and three of its four open agency
+threads are stalled on DD84's side rather than theirs.
+
+**And the owner's own framing is why the answer cost nothing.** His enquiry
+closed with _"Do not initiate a chargeable application, site visit, testing, or
+other work; please quote any fee first."_ **Six substantive answers and a fee
+schedule, no charge incurred.** Repeat that exact sentence on the soil survey.
+
+- **Cost and risk** — **No cost to read table 13.J and the fee schedule.** The
+  risk of not reading them is **commissioning a soil survey for a site whose
+  water ceiling may already rule out the plan** — spending the expensive step
+  first. The risk the other way is a stalled file, which is what the last four
+  weeks already produced.
+- **Execution steps** — (1) **Owner** opens the unread second message and the
+  attached fee schedule, and records the soil-survey and application fees here;
+  (2) **read table 13.J** and compute design flow for the actual intended
+  fixture and staff count — **this is the decision**; (3) get Piedmont Water's
+  **current written position**, since the 380 gpd ceiling depends on the
+  four-week-old "at capacity" statement still being true, and the owner's 10-13
+  request for that is unanswered; (4) **reword question 4** and send it back —
+  the specialist asked for clarification and did not refuse; (5) check whether
+  T-53's unread attachment contains the recorded plat; (6) **only then** decide
+  whether to ask the seller to sign a consent form, which is a C and an E.
+- **Completion proof required** — A **design-flow figure computed from table
+  13.J** against the intended facility, with the table's own numbers cited, and
+  **the fee schedule's actual figures recorded.** **Not "380 gpd is probably
+  fine."**
+- **Status** **Awaiting Owner** · **Next action** — Step 2, and it needs step 1
+  first. **This is the property's critical path**: T-38, T-53, T-56 and T-57 are
+  all downstream of whether the site can take water and waste at all.

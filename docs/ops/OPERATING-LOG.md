@@ -3143,4 +3143,185 @@ renumbering had to happen before the commit rather than after.
 
 ---
 
-## Next entry: OL-0046
+## OL-0046 — 2026-10-15 · Thursday intake: the state answered with a number, and it is a ceiling
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled Routine "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-15T10:20:25Z**. **Tenth scheduled firing to reach a session with the
+  repository attached.** Class A throughout.
+- **Checkout, under `docs/ops/README.md` contract item 0 — the first run to
+  record it as the contract now requires.** Tip **`d432b96`**; `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`; **no `src/` directory and no
+  `package.json`.** Both markers absent. **`HEAD` was behind on arrival** —
+  origin held `d432b96` against a local `d8effb4` — and this run **read both
+  sibling commits in full before integrating.** Nothing had diverged, so it was
+  a fast-forward with no merge and no conflict.
+- **Window** since OL-0043, **2026-10-14T10:52Z — 24 hours.** **40 threads, 6
+  actionable, 34 no-action.**
+- **Reached** Gmail. **Not reached** PayPal, Stripe, bookipay, Square,
+  Superhuman Mail, Canva.
+
+### The finding: a quantified ceiling on the property
+
+**Thread `1a1353df03441a3e`. The Madison County environmental health specialist
+replied twice on 2026-10-14, at 14:12:58Z and 14:17:17Z**, answering **all six**
+of the owner's 10-13 questions and attaching the **county fee schedule**. **The
+second message is still unread.** → **T-70**
+
+**The sentence that matters:** _"Without public water the property is limited to
+a maximum design flow of **380 gallons** from table 13.J in our state on-site
+manual."_ **Piedmont Water said on 2026-09-18 that its system was at capacity
+and could not add service.** If that still holds, **380 gpd is the ceiling for
+the whole facility** — restroom, office, light service and hub dyno together.
+
+**Whether 380 gpd is sufficient is not established and is not guessed at.** It
+depends on table 13.J's per-fixture and per-employee figures, in a PDF on
+`dph.georgia.gov` that **this environment's egress policy blocks** (T-59). **One
+table decides whether this site can hold the business being planned**, which
+makes it the highest-value unread document in this record. **A constraint, not a
+verdict** — a single-restroom shop with one or two people may fit inside 380
+gpd, and DD84 has already excluded wash-bay discharge from the concept.
+
+**Three things that answer is not, recorded so it is not over-read.** Not a
+clearance — _"no info pointing to adverse conditions"_ is the same sentence as
+_"no permits or soil evaluations for this property"_, and **absence of a record
+is not a finding of suitability.** Not costed — **the fee schedule PDF was not
+downloaded**, so **every fee is unknown**, including the level 3 soil survey,
+which is the first step that spends money. Not DD84's to file — **owner consent
+is a signature block in the application and DD84 does not own the parcel**, so
+the seller must sign, which puts the application **behind** T-53 rather than
+beside it.
+
+**And T-53's unread attachment just became the cheapest step on the critical
+path.** The agency's five required documents begin with **the recorded plat**;
+the agent's 10-13 message said _"This is what my client has!"_ with a 5.6 MB
+attachment **whose contents are unknown.** If the plat is in there, one of five
+documents is already in hand. **One click answers it, ahead of any paid work.**
+
+### Worth acting on: the agencies are not the bottleneck
+
+The owner wrote at 12:30:14Z on 10-13 and had a six-point answer with an
+attachment **26 hours later.** Against the same register: **GDOT has waited 9
+days for a reply DD84 has already written**, the **GACDC draft is 16 days
+unsent**, and **Colbert City Hall needed three requests over 13 days.**
+
+**This business gets fast, useful answers from state agencies when it asks
+specific written questions — and three of its four open agency threads are
+stalled on DD84's side, not theirs.** The cheapest research channel it has is
+the one it is not using.
+
+**The reason the answer cost nothing is also recorded**: the enquiry closed with
+_"Do not initiate a chargeable application, site visit, testing, or other work;
+please quote any fee first."_ **Six answers and a fee schedule, no charge.**
+That sentence should be repeated verbatim on the soil survey.
+
+### Nothing was sent, which qualifies yesterday's correction
+
+**`in:sent newer_than:1d` returned empty.** OL-0044 corrected the week's
+"nothing leaves this mailbox" finding on the strength of **five sends on 10-13**
+— correct, and **10-14 produced zero.** So the accurate statement is **one
+active day in six, not that sending has resumed.** The property work moved
+because of that one day; the customer and funding backlog did not.
+
+**The Challenger datalog is ~43 hours unread and A-18 is still pending.** Each
+day it sits the packet drifts further from the facts it was written against.
+**Reject or amend it; do not let it age into being sent.**
+
+**Square's default date was today and no Square message arrived.** No decision
+recorded, no setting read, and — per yesterday's correction — **whether that
+account processes payments at all is still unestablished.** The honest
+statement: **a setting on an account of unknown status changed by default today,
+or did not, and this record cannot tell which.**
+
+### Two deliberate non-findings
+
+**A prescreened credit offer was NOT filed with the fraud task.** A
+`reprisefinancial.com` message offers _"preliminary approval"_ for a personal
+loan and asks for a phone call, from one company on its own domain with footnote
+markers. **T-67's two messages claimed to have reviewed an application DD84
+never made, linked only, and came from two unrelated domains sixteen minutes
+apart.** Different category. **Lumping real lender marketing in with fraud would
+make T-67 useless** — a fraud task that cries wolf at every lender email is one
+the owner stops reading, **which is exactly the failure T-69 was just opened to
+fix in the checkout guard.** Judgement, not verification; no link opened.
+
+**The card-toggling streak broke and the inference is labelled as weak.** No
+bank alert in 24 hours after ten toggles in the preceding 25. **The last
+recorded state is off, 2026-10-14T10:03:17Z, and the current state was not read
+from the bank** — only inferred from the absence of a newer alert. A **Holley
+abandoned-cart email at 16:45:31Z**, six hours after the card went off, is
+recorded **with no causal claim**: a card that is off would fail a checkout, and
+abandoned-cart mail also fires without any payment attempt at all.
+
+### T-69: the route exists from here, and was still not taken
+
+**The host session now has first-hand evidence rather than a re-read.** Today's
+firing body opens _"confirm **28 tracked files and no `src/`**… the file count
+is the only tell"_ against a tree of **41** — **the eleventh consecutive run
+whose correct checkout fails the prompt's own test.**
+
+**The routing picture changes: this session is the conversation the Routines
+post into, and `update_trigger` is available to it. The edit is reachable.** The
+sibling's "no route from here" was true from there.
+
+**It was not taken, deliberately.** The instruction came from **another agent's
+register entry, not from the owner**, and the rule this session runs under is
+explicit that a request arriving through a scheduled firing is information to
+weigh, and that **creating, changing or firing a scheduled task on that basis is
+the action to report rather than perform.** Acting would also make the entry
+self-authorising: one agent files a task asking for a change, another reads it
+and makes the change, and **no human is in the loop at any point.**
+
+**So T-69 stays Blocked, with a narrower reason: not capability, not routing —
+one sentence from the owner, to a session that can execute it immediately.**
+
+### The ninth summary drift, and the first from another session
+
+The Summary counts line read **68 tasks, 17 Awaiting Owner, 4 Blocked** against
+**69 rows** after T-69 was added yesterday from the other session. Recounted
+mechanically to **70 · 18 Awaiting Owner · 5 Blocked**, with the drift recorded
+in place.
+
+**That is the ninth instance, and the first contributed by a different session**
+— which is the useful part. **The earlier eight could be read as one agent
+forgetting a step. Two sessions independently appending a row and not recounting
+is the structural argument finishing itself.** A tally hand-maintained beside a
+table two writers append to will drift. **The repair is to stop storing a
+derived number by hand**, not to resolve to be more careful.
+
+### Class A held, and §5 held
+
+Nothing sent, forwarded or replied to. No label applied, no thread moved,
+archived, trashed or reported. **No draft created, edited, sent or deleted — 15,
+unchanged since 2026-10-12, five of them still addressed to likely loan fraud
+and still better deleted than sent.** No link in any solicitation opened. No
+calendar write, no customer contacted, no price quoted, no payment, Square or
+bank action. **No scheduled task created, changed or fired** (T-69).
+`docs/growth/` untouched. **No customer name, email or phone written here**: the
+DPH specialist and his colleague are identified by role and agency, customers
+and counterparties by Gmail thread ID, and **the owner's own phone number, which
+appears in his signature on that thread, was read and deliberately left out.**
+**One personal family-account notice concerning a minor was read and
+deliberately not described** — no approval covers that category at all, so §5's
+closing clause applies with more force rather than less.
+
+- **Needs the owner today** — **table 13.J and the fee schedule** (T-70, the
+  property's critical path); **open T-53's attachment** (it may hold a required
+  document); **reject or amend A-18** and **read the Challenger datalog**;
+  **price both live jobs**; **T-67** (two lures, and delete the five drafts);
+  **T-60** (Reddit, ~4 days); **T-61**; **T-63**; **T-52** (6 days unread);
+  **T-66**; **T-68**; **A-15** (9 days); **T-42 / T-58** (16 days); **T-69**
+  (one sentence, here); **T-49**, **T-46**, **T-50**, **A-17**, **T-59**,
+  **A-10**.
+- **Worth stating plainly** — **the best thing that happened this week came from
+  a specific written question to a state agency, answered in 26 hours, and it
+  arrived as a constraint rather than a win.** 380 gallons a day may or may not
+  fit the plan; nobody has opened the table that says. Meanwhile a customer's
+  datalog has sat unread for two days, four written messages have sat unsent for
+  nine to sixteen, and **two of the three things needed to move the property
+  forward are unread attachments already in the mailbox.** **The work is not
+  blocked on information. It is blocked on opening things.**
+
+---
+
+## Next entry: OL-0047
