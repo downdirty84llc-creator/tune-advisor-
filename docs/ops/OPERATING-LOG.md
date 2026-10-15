@@ -3324,4 +3324,122 @@ closing clause applies with more force rather than less.
 
 ---
 
-## Next entry: OL-0047
+## OL-0047 — 2026-10-15 · Daily brief: a quiet day, and the overdue count stops being useful
+
+- **Routine** `/dd84-daily-brief`, **fired by the scheduled task "DD84 Daily
+  Command Brief (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-15T10:51:22Z**. **Eleventh scheduled firing to reach a session with
+  the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`66a8703`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **Second run to record it as the contract requires.**
+- **The worker process restarted mid-run**, after the calendar and Shopify reads
+  and before the brief was written. **Both reads completed at ~10:53Z and are
+  reported with that timestamp rather than re-run or presented as fresher.**
+  Nothing was lost; the resumption is stated in the brief so a reader knows why
+  two figures carry an earlier time than the run.
+- **Reached** Google Calendar, Gmail, Shopify, GitHub. **Not reached** Stripe,
+  PayPal, bookipay, Square, Chime, Render, Zoho, Superhuman Mail, Canva.
+
+### A quiet day, recorded as one
+
+**No mail in the hour since the 10:20Z intake. Nothing sent in 24 hours. No
+appointments, no orders, no enquiries, no customer replies, no new findings.**
+The firing instruction asks for a quiet day to be said plainly rather than
+inflated, and **this was one.**
+
+**So the brief's content is not new information.** It is which of yesterday's
+unopened things is now the constraint, and **all three priorities reduce to
+"open something you already have"**: table 13.J and the fee schedule (T-70, the
+state's answer now 21 hours old), the realty attachment (T-53, which may hold
+one of the five documents the septic application needs), and the Challenger
+datalog (T-64, **~68 hours unread**, with A-18 still live asking for it). **None
+needs a connector, an approval, or a reply from anyone else.**
+
+### The finding the quiet made visible: the overdue count has stopped working
+
+**29 tasks past due, up from 24 yesterday and 20 on Monday — and no new work
+arrived to cause it.** Nine of today's additions were already in the register
+and simply passed a date: **T-34, T-51, T-53, T-54, T-55, T-58, T-59, T-63,
+T-64.** **Nothing happened to them. Their dates arrived.**
+
+**This is the same defect this record diagnosed yesterday in a different
+place.** T-69 exists because a checkout guard that fails on every correct run is
+a guard that gets skipped. **An overdue list that grows by nine in a day without
+new work is on the same path**: 29 of 70 is not a priority signal, it is a wall,
+and a wall gets walked past.
+
+**The cause is specific and already written in the register's own preamble:**
+due dates on unapproved tasks are **Torque's proposal, not owner-agreed dates.**
+Each routine sets one two or three days out, nobody agrees to it, and it lapses.
+**The fault is in the setting, not in the missing** — and the routines doing the
+setting are the ones then reporting the breach, which is the part that makes the
+number meaningless.
+
+**Recorded as an observation and deliberately not filed as a task.** How this
+register should set dates is a judgement about the record itself, and **an agent
+opening a task instructing the owner to change the record's conventions would be
+the same self-authorising move declined on T-69 this morning.** It is stated
+where he will read it; what to do about it is his.
+
+**One thing the split does show, and it is worth the owner's eye:** of the ten
+genuinely stale items (42–70 days), **three are blocked on packets pending 70
+days** (T-11 on A-05, T-13 on A-06, T-14 on A-07) and are waiting correctly.
+**Calling those overdue overstates them.** The rest are agent capacity on
+Ledger-side work that produces no DD84 revenue.
+
+### Carried forward without re-arguing
+
+- **Square's deadline passed yesterday and this record cannot say what
+  happened.** No Square mail on the day, no setting read, and whether the
+  account processes payments at all is still unestablished. **A default took
+  effect, or did not, on an account of unknown status** — stated as the cost of
+  not looking.
+- **No revenue total, sixth routine running.** Shopify's **0 orders at 10:53Z**
+  is the only real zero.
+- **The card's state is inferred from silence** for a second day — 25 hours with
+  no bank alert after ten toggles in 25 hours. **The weaker evidence,
+  labelled.**
+- **Eleventh consecutive empty calendar day**, reported as a count. The
+  consequence was drawn on 10-14 and nothing changed it.
+- **Seven packets pending**, unchanged in number, each a day older. **A-18 is
+  still the one whose correct answer is no.**
+- **GitHub unchanged** — three stale PRs (#1, #4, #5), no workflow run since
+  2026-10-08. **CI does not run on this branch by design**, so green CI is not
+  evidence about this branch.
+
+### The week's clearest pattern, stated once
+
+**The agencies answered; DD84 has not.** The state environmental health office
+replied in **26 hours** with six answers and a fee schedule. **GDOT, the Georgia
+SBDC and the Georgia CDC are all waiting on messages that already exist in
+draft** — 9, 9 and 17 days. **That asymmetry is not a connector problem and not
+an information problem.**
+
+### Class A held
+
+Nothing sent, replied to or forwarded. **Calendar read only** — no event
+created, moved, confirmed or declined. No label applied, no mail state changed.
+No charge, refund, invoice, payout or fulfilment action. No Square, bank,
+Shopify or GitHub write. **No scheduled task created, changed or fired** —
+T-69's edit remains available from this session and unmade, for the reason
+recorded there this morning. No task marked Done on inference. `docs/growth/`
+untouched. **No customer name, email, phone or card digits written here.**
+
+- **Needs the owner today** — **table 13.J and the fee schedule** (T-70); **open
+  T-53's attachment**; **read the Challenger datalog, reject or amend A-18,
+  price both live jobs**; then **T-52 with T-67** (one sitting), **T-60** (~4
+  days), **T-63**, **T-66**, **T-68**, **A-15** (9 days), **T-42 / T-58**,
+  **T-49**, **T-46**, **T-50**, **A-17**, **T-59**, **A-10**, and **T-69** — one
+  sentence, to a session that can execute it.
+- **Worth stating plainly** — **nothing arrived today, and that made the
+  backlog's shape the only news.** Two documents that would settle whether DD84
+  can build on the Colbert parcel are sitting unopened in the mailbox; a
+  customer who broke eleven days of silence is still unread at 68 hours; and the
+  register's own overdue count grew by nine without a single new finding. **The
+  constraint has not been information for some days now. It is attention, and
+  today there is no competing demand on it to explain the gap.**
+
+---
+
+## Next entry: OL-0048
