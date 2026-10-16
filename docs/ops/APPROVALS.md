@@ -1347,3 +1347,111 @@ the floor.
 > **The separate decision this packet named still stands, undiminished: both
 > live jobs are unpriced.** That was true when this was raised and is true now.
 > The customer was never the reason it had not happened.\_
+
+---
+
+## A-19 — May DD84's cash position be recorded in this public repository?
+
+**Status: PENDING — raised 2026-10-16 by `/dd84-inbox-intake`, within the hour
+before the weekly cash review fires.**
+
+**Decision requested** — A decision on a **new category of sensitive material**:
+**DD84's bank balance, cash position, overdraft state and account-level
+financial condition.** Four options below. **Until this is answered, the
+routines will record that a figure exists and withhold the figure**, which is
+what `/dd84-inbox-intake` did this morning (T-71).
+
+**Business objective** — Make the operating record usable on cash without making
+the business's financial condition searchable. **Right now it is neither**: the
+cash review cannot state a position, and the intake had to publish a hole where
+a number belongs.
+
+**Source and context** — Wells Fargo alert **2026-10-15T17:06:44Z**, thread
+`1a14087d5d2b6009`, subject **"Your balance is at or below zero"**, reporting a
+**negative available balance** on the business account. **Unread at the time of
+this packet.** The figure, the account's last four digits and the debit card's
+last four digits were all read by the run and **none was written to the
+repository.**
+
+**Why this is a packet and not a judgement call** — `CLAUDE.md` §5: _"A new
+category of sensitive material needs its own decision. A-13 covers what was
+exposed on 2026-10-08, not whatever gets added later. If a routine wants to
+write something that would be awkward in public, that is an approval packet, not
+a judgement call."_
+
+**A-13 accepted revenue figures and system identifiers.** It is silent on a cash
+position, and the two are not the same thing: **$3,507.86 of all-time revenue
+describes a small business; a negative balance describes a distressed one**, and
+DD84 is **actively pursuing SBA 504 financing** (T-58) with a prescreened
+personal-loan solicitation chasing it. **A public, searchable record of
+insolvency risk is material to a lender in a way a revenue figure is not.**
+
+**Why it cannot wait** — **the weekly cash and revenue review fires Fridays at
+11:10 UTC**, and today is Friday. **Its entire purpose is to report revenue,
+receivables and cash position.** With no answer here it must either withhold the
+only number it has or publish it on an agent's judgement. **Neither is
+acceptable, and the first is what will happen by default.**
+
+**Recommended plan — Option C.**
+
+|       | Option                                               | What the record would hold                                                                                           |
+| ----- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **A** | **Record freely**, as A-13 does for revenue          | Exact balances, dates, overdraft state, in briefs and the log                                                        |
+| **B** | **Record nothing** about cash                        | Briefs say "not available"; the cash review loses its subject                                                        |
+| **C** | **Record the shape, not the figure** _(recommended)_ | "Overdrawn", "positive", "a declined payment", with **thread IDs** pointing to the owner's own mail for every number |
+| **D** | **Record figures, make the repository private**      | Everything, but it reverses A-13 and is a separate decision                                                          |
+
+**Why C.** It keeps every routine able to say the thing that drives action —
+**an account is overdrawn, a payment declined, an auto-charge is pending** —
+while **no figure a lender or competitor could use is published.** The owner
+loses nothing: **a thread ID is one click from the exact number in his own
+inbox**, which is where the authoritative figure lives anyway. It is the same
+convention already proven on customer identity under A-16: **a stable pointer
+instead of the sensitive value.**
+
+**Alternatives considered**
+
+1. **Option A.** Rejected as the default, **not as unthinkable** — it is the
+   owner's business and his call. But it should be chosen deliberately, with the
+   lender exposure in view, rather than inherited from A-13 by an agent's
+   analogy.
+2. **Option B.** Rejected: it makes the cash review pointless, and **"not
+   available this run" would be false** — the figure was available, this run
+   simply declined to publish it. **A degradation notice that misrepresents why
+   is worse than the gap.**
+3. **Option D.** Not rejected on merit — **it may be the right long-run answer**
+   — but A-13 was raised twice and settled on the record, and reversing it is
+   its own packet, not a rider on this one.
+
+**Cost and cash impact** — **No cost to any option.** Option D would have
+knock-on effects on the Ledger repository's visibility assumptions and is not
+costed here.
+
+**Risks and safeguards** — Under C the residual risk is that **"overdrawn" is
+itself informative**, which is accepted: it is the minimum needed for the record
+to be about the business at all. Under A the risk is a searchable record of
+financial distress during a loan application. **Under B the risk is a cash
+review that cannot do its job**, which is the risk this record already carries.
+
+**Systems affected** — `docs/ops/` briefs, `OPERATING-LOG.md`, and the
+`/dd84-cash-review` routine's output. **No live system, no money, no customer.**
+
+**Customer/public impact** — **No customer impact.** The public impact is the
+whole subject of the packet.
+
+**Success test** — The next cash review states DD84's cash position **in
+whatever form this decision permits**, with a source and a read time, **without
+either a fabricated figure or an unexplained blank.**
+
+**What this packet does not cover** — the **account number, card digits or any
+credential**, which stay out under §5 regardless of the answer; and **customer
+payment details**, which A-13 already excludes and A-16 removed.
+
+**Reply with: APPROVE (name the option) / APPROVE WITH CHANGES / DEFER /
+REJECT**
+
+**Response** — _awaiting the owner._
+
+**Actual result** — _not yet executed. The figure is withheld and T-71 carries
+the finding without it. Deferring leaves the record as it is now, which is
+Option C in practice but by an agent's choice rather than a decision._

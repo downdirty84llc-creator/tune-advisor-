@@ -104,16 +104,24 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-68 | MFA switched off on the Zoho account now holding Ledger support       | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
 | T-69 | Four Routine prompts contradict the checkout guard in version control | ops        | Normal       | **Blocked**              | Owner | S-01 (Class A)   | 2026-10-15   |
 | T-70 | Colbert parcel capped at 380 gpd design flow without public water     | real est.  | **High**     | **Awaiting Owner**       | Owner | A to research    | 2026-10-17   |
+| T-71 | The business bank account is overdrawn; two payments declined         | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **18 Awaiting Owner** · 5 Blocked · 18 Planned
-· 2 Backlog. **70 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-15T10:58Z** (intake). **18 of 70 are now waiting on
-the owner**, which is the number worth watching: it was 10 on 2026-10-12.
+Progress · 2 Awaiting Approval · **19 Awaiting Owner** · 5 Blocked · 18 Planned
+· 2 Backlog. **71 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-16T11:02Z** (intake). **19 of 71 are now waiting on
+the owner**, up from 10 on 2026-10-12.
+
+> **One of the 19 outranks the other 18. T-71: the business bank account is
+> overdrawn**, two payments declined on the evening of 2026-10-15, and the alert
+> is unread. **Everything else in this register is tidiness by comparison** —
+> and two of the items that looked like tidiness, **T-37 and T-64, are completed
+> jobs that were never priced**, which is the only near-term cash this record
+> can identify. **Read that one first.**
 
 > **This line was stale again** — it read 68 tasks, 17 Awaiting Owner and 4
 > Blocked, against 69 rows after T-69 was added yesterday from another session.
@@ -167,32 +175,33 @@ this table is part of the write.** Evidence: OL-0028.
 
 ## Open items, by what they are waiting on
 
-| Waiting on                              | Tasks                                                                   |
-| --------------------------------------- | ----------------------------------------------------------------------- |
-| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)                                           |
-| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                                                |
-| Owner approval                          | T-14                                                                    |
-| Owner action (engaging counsel)         | T-13                                                                    |
-| Owner or developer, test-mode keys      | T-11                                                                    |
-| Owner decision                          | T-29, T-35                                                              |
-| Owner confirmation                      | T-19                                                                    |
-| A seeded or live database               | T-06                                                                    |
-| A readable payment system               | T-36                                                                    |
-| Owner approval (A-15 — the drafts)      | T-38, T-39                                                              |
-| Owner approval (A-18 — one chase)       | T-64                                                                    |
-| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                                |
-| Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15)          |
-| Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained)            |
-| Owner action — security                 | **T-67** (two fraud lures), **T-68** (Zoho MFA state)                   |
-| Owner — an unwatched lead inbox         | **T-66** (a 23-day-old enquiry; count the rest)                         |
-| Owner — a price on a live job           | **T-64** (11 days silent), **T-37** (29 messages) — neither ever quoted |
-| Owner action — security                 | **T-52** (phishing, unread 4 days)                                      |
-| Owner action — network policy           | **T-59** (egress block disables a routine)                              |
-| A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                                |
-| A-16 executed; verification outstanding | T-48                                                                    |
-| Counsel (A-06 is already approved)      | T-13, T-45                                                              |
-| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62                          |
-| Nobody — accepted risk                  | T-30                                                                    |
+| Waiting on                              | Tasks                                                                       |
+| --------------------------------------- | --------------------------------------------------------------------------- |
+| Owner approval (A-10 — the big one)     | T-23 (T-27 closed 2026-10-09)                                               |
+| Owner approval (A-13 — repo visibility) | T-32, and it blocks T-29                                                    |
+| Owner approval                          | T-14                                                                        |
+| Owner action (engaging counsel)         | T-13                                                                        |
+| Owner or developer, test-mode keys      | T-11                                                                        |
+| Owner decision                          | T-29, T-35                                                                  |
+| Owner confirmation                      | T-19                                                                        |
+| A seeded or live database               | T-06                                                                        |
+| A readable payment system               | T-36                                                                        |
+| Owner approval (A-15 — the drafts)      | T-38, T-39                                                                  |
+| Owner approval (A-18 — one chase)       | T-64                                                                        |
+| Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                                    |
+| Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15)              |
+| Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained)                |
+| Owner — CASH: the account is overdrawn  | **T-71** (unread), **A-19** (may the figure be recorded?), T-49, T-46, T-61 |
+| Owner action — security                 | **T-67** (two fraud lures), **T-68** (Zoho MFA state)                       |
+| Owner — an unwatched lead inbox         | **T-66** (a 23-day-old enquiry; count the rest)                             |
+| Owner — a price on a live job           | **T-64** (11 days silent), **T-37** (29 messages) — neither ever quoted     |
+| Owner action — security                 | **T-52** (phishing, unread 4 days)                                          |
+| Owner action — network policy           | **T-59** (egress block disables a routine)                                  |
+| A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                                    |
+| A-16 executed; verification outstanding | T-48                                                                        |
+| Counsel (A-06 is already approved)      | T-13, T-45                                                                  |
+| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62                              |
+| Nobody — accepted risk                  | T-30                                                                        |
 
 ---
 
@@ -1363,6 +1372,35 @@ approval, only on capacity, and four alerts is the argument for spending it.
 
 ---
 
+### 2026-10-16 — a partial path nobody had used, found by accident
+
+**2026-10-15T22:13:42Z, thread `1a141a0da70a7e5d`: PayPal emailed a completed
+outbound payment** — a named merchant, an amount, a transaction date and an
+order ID. **That is the first outbound payment this record has ever captured.**
+
+**The point is the channel, not the payment.** This task records that there is
+**no readable path to DD84's own figures**, and for the _inbound_ side that
+remains true. But **PayPal's connector has required re-authentication since
+2026-10-09 while PayPal's notification mail has worked throughout** — and the
+intake routine reads that mailbox every weekday.
+
+**So the claim needs narrowing: there is no readable path to a complete
+position, and there is a partial, event-driven path to individual transactions
+that no routine has been using.** It is strictly worse than a connector — it
+sees only what PayPal chooses to email, it cannot be queried, and **absence of a
+notification is not absence of a transaction.** It is not nothing.
+
+**The same question is now open for the bank.** T-71's entire evidence base is
+**one alert email**, because there is no bank connector either. **If balance
+alerts arrive by mail, so may transaction alerts** — unchecked, and worth one
+search before the next cash review concludes that cash is unreadable.
+
+- **Status unchanged.** · **Next action, extended** — the connector gap is
+  unchanged, **and the mail-derived route should be worked deliberately rather
+  than stumbled on**: search the mailbox for payment notifications from PayPal,
+  the bank, Stripe and Square, and record what each actually emails. **A partial
+  source, labelled as partial, beats a blank.**
+
 ## T-37 — The C10 customer: Terminator X Max AFR fault
 
 - **Objective** — Get a live customer's erratic AFR resolved, decide whether the
@@ -2008,6 +2046,30 @@ remain.** T-66 step 2 is the count.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **An agent cannot
   read the attachment; this one genuinely needs your eyes.**
 
+### 2026-10-16 — an auto-charge against an overdrawn account
+
+**T-71**: the business account held a **negative available balance** as of
+2026-10-15T13:05 Eastern, and **two payments declined that evening** — one to a
+subscription service at 18:33Z and, earlier, the transfer in T-49.
+
+**This invoice auto-charges and its amount is still unknown.** Those two facts
+were separately tolerable. Together they are not: **an unknown charge is due to
+try itself against an account that has just failed two payments.**
+
+**Three outcomes, none of them good, and no prediction between them** — it
+succeeds and deepens the overdraft; it fails and the hosting lapses; or it fails
+and adds a decline fee on top of an overdraft fee. **Which one depends on the
+amount, the timing and the account's grace terms, and this record knows none of
+the three.**
+
+**The cheap move is still the one this task has always asked for: read the
+invoice.** It is now worth doing **before** the charge rather than after, which
+is a change of urgency and not of action.
+
+- **Status unchanged: Awaiting Owner**, **but it belongs in the same sitting as
+  T-71.** · **Next action** — read the amount and the date; then decide whether
+  to stop the charge, which is Class E and the owner's.
+
 ## T-47 — Two Google Business Profiles for one business
 
 - **Objective** — Establish whether DD84 has duplicate local listings, and
@@ -2184,6 +2246,27 @@ nothing else had been intaked yet, not because anything prevented it.
   the current state of that transfer.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **An agent cannot
   read a bank; this one needs your eyes and takes a minute.**
+
+### 2026-10-16 — a probable cause, from the other end
+
+**T-71 records that the business account carried a negative available balance as
+of 2026-10-15T13:05 Eastern.** A transfer declining on 2026-10-05 fits that
+plainly.
+
+**Stated as probable, not established.** No bank connector exists, **no
+transaction list was read**, and a transfer can decline for a limit, a hold, a
+mismatched detail or a fraud block as readily as for insufficient funds.
+**Eleven days separate the decline from the balance alert**, and nothing read
+this run links them.
+
+**What it changes is the order of work, not the diagnosis.** This task has sat
+unread for six days as "a declined transfer, cause unknown"; it is now **one
+line in a cash picture** and should be read together with T-71 rather than
+chased on its own. **T-71 step 2 — establishing how the account went negative —
+answers this task as a by-product.**
+
+- **Status unchanged: Awaiting Owner.** · **Next action** — read it inside T-71,
+  not beside it.
 
 ## T-50 — HP Tuners Do Not Sell List — a partner obligation with a past effective date
 
@@ -2893,6 +2976,35 @@ verified.
   payment, (b) the current offline-payment setting, (c) whether identity
   verification was ever completed. **Then** decide the setting. **Deciding a
   setting on an account that may not process payments is the wrong order.**
+
+### 2026-10-16 — it switched itself on, and the risk is now different
+
+**2026-10-16T10:11:09Z, thread `1a14431b2f5a8027`: _"Offline payments are now
+turned on"_**, subtitled _"No connection? No problem"_.
+
+**The forecast was right and the decision was never made.** Two Square messages
+a month apart pointed at ~2026-10-15; **the date passed, nobody chose, and the
+default took effect.** This task's prediction is closed as correct; **its
+purpose is not.**
+
+**What it opens is worse than what it closed.** Offline card acceptance takes
+payment **without a live authorisation**, so a decline or chargeback surfaces
+after the customer has left — **and as of 2026-10-15 the business's own account
+is overdrawn with two payments already declined** (**T-71**). **Accepting cards
+without authorisation while unable to absorb a reversal is a different decision
+from the one this task originally framed**, and it has already been made by
+inaction.
+
+**Still unestablished, and now load-bearing:** whether that Square account has
+**ever processed a payment.** If it never has, the setting is close to harmless
+and the live question is whether the account should exist. If it has, **this is
+now a cash-risk control that is switched the wrong way.** **One dashboard read
+settles it and still nobody has taken it.**
+
+- **Status unchanged: Awaiting Owner**, **Priority raised in effect by T-71**
+  rather than re-labelled here. · **Next action** — unchanged in order but no
+  longer optional: **read the dashboard, then decide, then tell T-71 what you
+  found.**
 
 ## T-62 — Vercel reports three misconfigured domains on one project
 
@@ -3653,3 +3765,147 @@ schedule, no charge incurred.** Repeat that exact sentence on the soil survey.
 - **Status** **Awaiting Owner** · **Next action** — Step 2, and it needs step 1
   first. **This is the property's critical path**: T-38, T-53, T-56 and T-57 are
   all downstream of whether the site can take water and waste at all.
+
+### 2026-10-15 — the owner supplied the inputs, and did it the right way
+
+**2026-10-15T20:08:02Z — the one message sent in 24 hours**, and it went to the
+reviewer:
+
+> _"Thank you for clarifying the requirements. The shop would have **one toilet
+> and one handwashing sink only, with an estimated maximum of 10 people total
+> per day**. The employee/customer…"_
+
+**That is exactly what table 13.J needs** — fixture count and occupancy — and it
+**asks the agency to compute the design flow rather than guessing at it.**
+**Thirty hours from the agency's answer to DD84's reply**, against a GDOT
+message that has sat written-and-unsent for ten days. **When this business
+answers a specific written question it answers quickly; the gap is in the
+messages nobody has to write.**
+
+**So step 2 has moved off DD84's side.** The determination is now the reviewer's
+to produce, with the inputs in hand.
+
+**Torque is not computing the flow, and the reason is not only the blocked
+PDF.** The figure decides a property purchase, the agency is the body whose
+number counts, and it now has what it needs. **What this record can say and no
+more: one toilet, one sink and ten people a day is a small sanitary load.**
+**Whether it fits inside 380 gpd is the agency's finding to state** — no
+estimate is offered, and a midpoint or a "should be fine" would be exactly the
+fabrication the spec forbids.
+
+- **Status unchanged: Awaiting Owner**, but **what it waits on has changed** —
+  from a computation DD84 owed to a reply the agency owes. · **Next action** —
+  **the fee schedule is still unread** and is still DD84's to open (step 1), and
+  **T-53's attachment may already hold the recorded plat.** Those two remain the
+  cheapest steps on this path.
+
+## T-71 — The business bank account is overdrawn; two payments declined
+
+- **Objective** — Get the owner looking at a negative cash position he has not
+  read, before the next auto-charge lands, and establish what put it there.
+- **Source** — `/dd84-inbox-intake`, 2026-10-16. Wells Fargo alert
+  **2026-10-15T17:06:44Z**, thread `1a14087d5d2b6009`, subject **"Your balance
+  is at or below zero"**, stating a **negative available balance** on the
+  business account as of **10/15 at 13:05 Eastern**. **Still unread.**
+- **Workstream** finance · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-16
+- **Approval class** — **A to read and report here.** Moving money, paying an
+  overdraft, transferring funds or changing an account setting is **Class E**
+  and is the owner's alone. **Nothing was touched.**
+
+### The figure is deliberately not recorded here
+
+**The balance is known to the run that found it and is not written in this
+repository.** Nor is the account's last four digits, nor the debit card's.
+
+**This is §5's closing clause applied as written, not caution for its own
+sake.** This repository is **public by the owner's decision (A-13,
+2026-10-08)**. A-13 accepted **revenue figures and system identifiers** on the
+record that day; it says nothing about a **cash position**, and §5 states
+plainly that **a new category of sensitive material needs its own decision** and
+that something awkward in public **is an approval packet, not a judgement
+call.**
+
+**The specific harm is not hypothetical.** DD84 is **actively pursuing SBA 504
+financing** (T-58, T-42) and has a **prescreened personal-loan solicitation**
+chasing it. A public, searchable record of a negative balance is material to a
+lender. **Publishing it to save the owner one click is a bad trade.**
+
+**So: the number is in his inbox, the thread ID above gets him there in one
+click, and A-19 asks whether figures of this kind may be written here at all.**
+That question cannot wait, because **the weekly cash review fires on Fridays at
+11:10 UTC — within the hour — and its whole job is to report cash position.**
+
+### What this explains, and what it does not
+
+**Nine findings this record has carried as unrelated now fit one explanation:**
+
+| Finding                                                     | How it was recorded              | How it reads now                                            |
+| ----------------------------------------------------------- | -------------------------------- | ----------------------------------------------------------- |
+| A bank transfer declined 2026-10-05 (**T-49**)              | Cause unknown, unread for 6 days | **A decline on an account heading to zero**                 |
+| **Nine days of debit-card toggling**, 10-08 to 10-16        | "No cause is asserted"           | **Card control on an overdrawn account**                    |
+| Webador invoice **auto-charges**, amount unknown (**T-46**) | A dated risk                     | **An auto-charge against an overdrawn account**             |
+| Holley abandoned cart, 2026-10-14T16:45Z                    | "No causal claim"                | **A checkout that may have failed**                         |
+| **DAZN "Your payment has declined"**, 2026-10-15T18:33:37Z  | New this run                     | **A second decline, 90 minutes after the alert**            |
+| Three HP Tuners credit orders in three days (**T-54**)      | Amounts unread                   | **Credit purchases, amounts still unknown**                 |
+| A prescreened loan offer, chased twice                      | A solicitation                   | Still a solicitation — **the context is no longer neutral** |
+| A credit-score-change notice, 2026-10-14                    | Noted for T-58                   | Material; **direction still unread**                        |
+| **No revenue since 2025-09-12**                             | `ventures.md`                    | **The other side of the same ledger**                       |
+
+**No causal chain is asserted beyond what the alerts themselves say.** Each row
+is still its own fact, and several have ordinary explanations — card toggling is
+a documented fraud-control habit, abandoned-cart mail fires without any payment
+attempt.
+
+**What changed is the standard of evidence for declining to connect them.** For
+a week this record reported these as coincidences and said so explicitly each
+time. **That was right without the balance. It is not right with it**, and the
+correction is recorded here rather than left as nine separate hedges.
+
+### What is not known, which is most of it
+
+- **How the account got there.** **No transaction list, no pending items, no
+  deposit history and no overdraft-fee schedule were read** — there is **no bank
+  connector**, and the single alert email is the entire evidence base.
+- **Whether it is still negative.** The figure is **as of 10/15 13:05 Eastern**,
+  roughly 21 hours before this run. **Not re-read, because it cannot be.**
+- **Whether an overdraft fee has been charged**, or whether the account has a
+  grace feature. The alert mentions a grace period; **its terms were not read.**
+- **The size of the gap relative to anything.** Against unknown receivables,
+  unknown HP Tuners balances and **two delivered-but-unpriced jobs** (T-37,
+  T-64), the figure cannot be put in context from here.
+
+### Why this outranks everything else in the register
+
+**It is the first finding in this record that is unambiguously about survival
+rather than tidiness.** The register's other Critical items are a phishing
+attempt nobody clicked and a platform flag with a seven-day clock. **This is a
+business with no recorded revenue in thirteen months, two declined payments in
+one evening, an auto-charge pending, and a payment setting that just switched
+itself to accepting cards without live authorisation** (T-61).
+
+**And it reframes two items that looked administrative.** T-37 and T-64 are
+**two completed jobs that were never priced** — somewhere between **$198 and
+$1,300** against the catalogue if both are chargeable, **and the range stays a
+range** because neither job's tier was ever decided. **Pricing them stopped
+being a bookkeeping chore the moment the account went negative.**
+
+- **Cost and risk** — **No cost to read the alert.** The risk of not reading it
+  is a third decline, an overdraft fee, or the Webador auto-charge failing
+  against an account that cannot cover it. **The risk of acting on it from here
+  is why nothing was acted on:** every remedy is Class E.
+- **Execution steps** — (1) **Owner** reads the alert and the account; (2)
+  establishes **how** it went negative — which debit landed, and whether
+  anything is still pending; (3) decides whether to cover it today, and whether
+  the Webador auto-charge (T-46) should be stopped before it tries; (4) **prices
+  T-37 and T-64 and invoices them** — the only two identified sources of
+  near-term cash this record knows of; (5) answers **A-19** so the cash review
+  can report a position at all; (6) revisits **T-61** — offline card acceptance
+  on an overdrawn account is a different decision from offline acceptance in
+  general.
+- **Completion proof required** — The current balance read **from the bank**,
+  with the date; a statement of **what caused the shortfall**; and either the
+  account positive or a recorded decision to leave it. **Not "it was probably
+  the card thing."**
+- **Status** **Awaiting Owner** · **Next action** — Step 1, today. **This is the
+  top of the register until it is answered.**

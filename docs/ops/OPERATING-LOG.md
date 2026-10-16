@@ -3442,4 +3442,159 @@ untouched. **No customer name, email, phone or card digits written here.**
 
 ---
 
-## Next entry: OL-0048
+## OL-0048 — 2026-10-16 · Friday intake: the account is overdrawn, and nine coincidences become one explanation
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled task "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-16T10:20:32Z**. **Twelfth scheduled firing to reach a session with
+  the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`38ad041`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **Third run to record it as the contract requires.** The
+  firing prompt again demanded "28 tracked files" against **43** — the twelfth
+  such run (T-69).
+- **Window** since OL-0046, **2026-10-15T10:58Z — 24 hours.** **38 threads, 9
+  actionable, 29 no-action.**
+- **Reached** Gmail. **Not reached** the PayPal connector, Stripe, bookipay,
+  Square, Superhuman Mail, Canva.
+
+### The finding: the business bank account is overdrawn
+
+**Wells Fargo, 2026-10-15T17:06:44Z, thread `1a14087d5d2b6009`, subject "Your
+balance is at or below zero"** — a **negative available balance** on the
+business account as of **10/15 at 13:05 Eastern**. **Unread.** → **T-71**,
+raised **Critical**.
+
+**The figure is deliberately not written in this repository, and neither is the
+account's nor the card's last four digits.** This is §5's closing clause applied
+as written: this repository is **public by decision (A-13)**, A-13 accepted
+**revenue figures and system identifiers** and is **silent on a cash position**,
+and §5 says a new category needs its own decision and that something awkward in
+public is **a packet, not a judgement call**.
+
+**The harm is specific, not notional.** DD84 is **actively pursuing SBA 504
+financing** (T-58) with a prescreened personal-loan solicitation chasing it.
+**$3,507.86 of all-time revenue describes a small business; a negative balance
+describes a distressed one**, and one of those is material to a lender in a way
+the other is not. **Publishing it to save the owner a click is a bad trade.**
+The thread ID gets him to the number in one click. **A-19 asks the question.**
+
+### Nine coincidences, one explanation — and a correction to how they were reported
+
+**T-49** (a transfer declined 10-05, unread six days), **nine days of debit-card
+toggling**, **T-46** (an invoice that auto-charges, amount unknown), a **Holley
+abandoned cart**, **DAZN "Your payment has declined" at 18:33Z — ninety minutes
+after the balance alert**, **T-54** (three credit orders, amounts unread), a
+**loan solicitation chased twice**, a **credit-score-change notice**, and **no
+revenue since 2025-09-12**.
+
+**Each was reported on its own, several with an explicit refusal to connect
+them.** That refusal was correct: without a balance, nine account notices really
+are nine account notices, and card toggling is a documented fraud-control habit.
+
+**With the balance, the standard changes.** A single plain explanation now fits
+all nine, and **continuing to hedge each one separately would be the error** —
+the opposite of the one the hedging was guarding against. **No causal chain is
+asserted beyond what the alerts say**, and several rows still have innocent
+readings. **What is recorded is that the evidentiary situation changed and the
+reporting changed with it**, in T-71 rather than as nine amended hedges.
+
+### Square switched itself on, and the risk is now a different risk
+
+**2026-10-16T10:11:09Z: _"Offline payments are now turned on"_.** **T-61's
+forecast was right and nobody chose** — two Square messages a month apart
+pointed at ~10-15, the date passed, the default took effect.
+
+**What it opens is worse than what it closed.** Offline acceptance takes cards
+**without live authorisation**, so declines and chargebacks land after the
+customer has gone — **on a business whose own account is overdrawn and whose
+last two outbound payments declined.** **Accepting cards you may not be able to
+absorb a reversal on is a different decision from the one T-61 framed, and it
+has already been made by inaction.** Still unestablished and now load-bearing:
+**whether that account has ever processed a payment.** One dashboard read.
+
+### A partial path to money data that nobody was using
+
+**PayPal emailed a completed outbound payment** — merchant, amount, date, order
+ID (thread `1a141a0da70a7e5d`). **The first outbound payment this record has
+ever captured**, and it came by **mail**, not connector: **PayPal's connector
+has needed re-authentication since 2026-10-09 while its notification mail worked
+throughout**, into a mailbox a routine reads every weekday.
+
+**So T-36's claim needs narrowing rather than repeating.** There is no readable
+path to a **complete** position; there is a **partial, event-driven path to
+individual transactions** that no routine has worked deliberately. It is
+strictly worse than a connector — unqueryable, and **absence of a notification
+is not absence of a transaction** — and it is not nothing. **The same question
+is now open for the bank, whose entire evidence base in T-71 is one alert
+email.**
+
+### The owner answered the state, and answered it well
+
+**2026-10-15T20:08:02Z — the one message sent in 24 hours** went to the
+environmental health reviewer: **one toilet, one handwashing sink, an estimated
+maximum of ten people per day.** That is exactly what table 13.J needs, and it
+**asks the agency to compute the design flow rather than guessing.**
+
+**Thirty hours from the agency's answer to his reply** — against a GDOT message
+written and unsent for **ten days**. **When this business answers a specific
+written question it answers fast; the gap is in the messages nobody has to
+write.** T-70's step 2 has moved off DD84's side; **the fee schedule and T-53's
+attachment remain the cheapest steps left on that path.**
+
+**Torque did not compute the flow and will not.** One toilet, one sink and ten
+people a day is a small sanitary load; **whether it fits 380 gpd is the agency's
+finding to state.** A "should be fine" here would be the fabrication the spec
+forbids.
+
+### Smaller, recorded
+
+- **Google Business Profile wants business details confirmed** (10-16T05:16Z,
+  unread). **Relevant to T-47**: confirming details on the wrong one of two
+  profiles entrenches the duplicate. **Which profile was not established.**
+- **An OpenAI account was granted access to the Google account** (10-15T19:53Z),
+  thirteen minutes after an OpenAI marketing email — **almost certainly the
+  owner's own signup**, recorded not flagged. **Tenth account or security notice
+  in ten days**; T-52 step 4 is still open.
+- **No new leads**, second consecutive run. **A real zero for the window**, not
+  evidence none exists.
+- **Drafts: 15, unchanged for a sixth run.** **Five are addressed to likely loan
+  fraud and should be deleted — and the overdraft makes that more pressing, not
+  less**, because a business short of cash is exactly who those messages are
+  written for.
+
+### Class A held, and §5 cost something today
+
+Nothing sent, forwarded or replied to. No label applied, no thread moved,
+archived, trashed or reported. **No draft created, edited, sent or deleted.** No
+link in any solicitation opened. No calendar write, no customer contacted, no
+price quoted, **no payment, bank, card or Square action of any kind.** No
+scheduled task created, changed or fired (T-69). `docs/growth/` untouched.
+
+**§5 held at a real cost this run: the balance figure, the account's last four
+digits and the card's last four digits were all read and none is written here**
+— the figure withheld pending **A-19** rather than published on an agent's
+judgement. **No customer name, email or phone written**; the reviewer is a role,
+customers are thread IDs, **and a personal family notice concerning a minor is
+neither named nor described.**
+
+- **Needs the owner today** — **T-71, first and before anything else** (unread,
+  and every remedy is Class E); **A-19** (the cash review fires within the hour
+  and cannot report a position without it); **price T-37 and T-64** — the only
+  near-term cash this record can identify; **T-61** (read the Square dashboard);
+  **T-46** (read the amount before it charges); then **T-67 with T-52**,
+  **T-60** (~3 days), **T-70**'s fee schedule, **T-53**'s attachment, **A-18**
+  (reject it), **A-15** (10 days), **T-69** (one sentence).
+- **Worth stating plainly** — **for eight days this record carefully declined to
+  connect a declined transfer, nine days of card toggling, an auto-charge, two
+  failed checkouts and thirteen months without revenue. One unread email
+  connected them.** The restraint was right each time it was exercised and the
+  conclusion was available the whole time to anyone who read the bank's own
+  alert. **The lesson is not that the hedging was wrong. It is that a register
+  can be scrupulous about every individual claim and still miss the thing the
+  claims are about** — and that **the two unpriced jobs it has been reporting as
+  an administrative untidiness are now the only cash in sight.**
+
+---
+
+## Next entry: OL-0049
