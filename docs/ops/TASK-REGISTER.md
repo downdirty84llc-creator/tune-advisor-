@@ -113,8 +113,9 @@ and **none existed in this register an hour earlier.**
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
 Progress · 2 Awaiting Approval · **19 Awaiting Owner** · 5 Blocked · 18 Planned
 · 2 Backlog. **71 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-16T11:02Z** (intake). **19 of 71 are now waiting on
-the owner**, up from 10 on 2026-10-12.
+every write — last **2026-10-16T11:12Z** (daily brief; **recounted and
+unchanged** — this run added a dated correction to T-71 and no row). **19 of 71
+are now waiting on the owner**, up from 10 on 2026-10-12.
 
 > **One of the 19 outranks the other 18. T-71: the business bank account is
 > overdrawn**, two payments declined on the evening of 2026-10-15, and the alert
@@ -3909,3 +3910,36 @@ being a bookkeeping chore the moment the account went negative.**
   the card thing."**
 - **Status** **Awaiting Owner** · **Next action** — Step 1, today. **This is the
   top of the register until it is answered.**
+
+### 2026-10-16, 10:56Z — the toggle count was understated, and the card is on right now
+
+**This task's table row read "nine days of debit-card toggling, 10-08 to
+10-16".** The span was right; **the count behind it was produced by a query that
+hid messages.**
+
+A targeted sweep of `from:notify.wellsfargo.com newer_than:2d` at
+**2026-10-16T10:56Z** returns **nine threads** and **eighteen toggle events in
+the 63 hours from 2026-10-13T18:48Z to 2026-10-16T10:00:52Z** — against the ten
+in 25 hours this register last recorded. **The most recent event is an enable at
+2026-10-16T10:00:52Z, so the card is currently ON**, 17 hours after the balance
+alert.
+
+**The cause is a tool behaviour, and it is worth writing down because it will
+recur.** The Gmail search tool returns **previews containing only the ~5 oldest
+messages of a thread, with newer messages omitted and no truncation marker.**
+Wells Fargo collapses these alerts into two long-running threads. A
+`newer_than:1d` inbox query matched those threads, showed their oldest five
+messages, and **silently withheld the rest** — which is how yesterday's daily
+brief came to report that the toggling had stopped. **It had not.** That claim
+is withdrawn in full, along with any inference drawn from it.
+
+**What this does not change:** the reading in the table above — **card control
+on an overdrawn account** — is unaffected, and the density is higher than
+recorded, not lower. **No cause is asserted.** Card toggling is a documented
+fraud-control habit and the owner may be doing it deliberately; what this
+register can now say with evidence is that **the card was switched at least
+eighteen times in 63 hours and is enabled as of 10:00:52Z today.**
+
+- **Status unchanged: Awaiting Owner.** · **Next action** — unchanged. Step 1
+  still begins with reading the alert. **The toggle count is context for that
+  conversation, not a separate errand.**

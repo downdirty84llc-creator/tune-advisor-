@@ -3597,4 +3597,152 @@ neither named nor described.**
 
 ---
 
-## Next entry: OL-0049
+## OL-0049 — 2026-10-16 · Daily brief: correcting yesterday's card finding, and what a windowed query hides
+
+- **Routine** `/dd84-daily-brief`, **fired by the scheduled task "DD84 Daily
+  Command Brief (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-16T10:51:01Z**. **Thirteenth scheduled firing to reach a session
+  with the repository attached**, 31 minutes after the intake at OL-0048. Class
+  A throughout.
+- **Checkout, per contract item 0** — tip **`ff03e2c`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **44 tracked files, working tree clean. Fourth run to
+  record the result and the tip as the contract requires** — and the
+  **thirteenth** whose firing prompt demanded "28 tracked files" against 44
+  (T-69).
+- **Reached** Google Calendar, Gmail, Shopify. **Not reached** the bank, Stripe,
+  the PayPal connector, bookipay, Square, Chime, Render, Zoho, Superhuman Mail,
+  Canva. **GitHub was read on 10-15 and not re-read this run; it is reported as
+  not checked rather than carried forward as current.**
+
+### The correction: yesterday's brief inferred a state from a silence that did not exist
+
+**OL-0047 and the 10-15 daily brief said "no Wells Fargo alert arrived in this
+window" and that "the card-toggling streak broke." Both are false.**
+
+A targeted sweep of `from:notify.wellsfargo.com newer_than:2d` at **10:56Z**
+returns **nine threads** and **eighteen toggle events in the 63 hours from
+2026-10-13T18:48Z to 2026-10-16T10:00:52Z**:
+
+| Date      | Toggle events                                                                                        |
+| --------- | ---------------------------------------------------------------------------------------------------- |
+| **10-13** | off 18:48 · on 18:57 · off 19:00 · on 23:22 · off 23:24                                              |
+| **10-14** | on 00:00 · off 00:31 · on 08:46 · off 10:03 · on 13:05 · off 13:06 · on 16:05 · off 16:35 · on 21:57 |
+| **10-15** | off 13:10 · on 16:48                                                                                 |
+| **10-16** | off 08:50 · **on 10:00:52 — the card is currently enabled**                                          |
+
+**Five of those fell inside yesterday's reporting window and were missed.**
+
+**The cause is a tool behaviour this record was warned about and did not account
+for.** The Gmail search tool states that results are **previews showing only the
+~5 oldest messages of each thread, with newer messages omitted and no truncation
+marker.** Wells Fargo collapses these alerts into two long-running threads. The
+`in:inbox newer_than:1d` query matched those threads, showed their oldest five
+messages, and **withheld the rest silently.**
+
+**So the defect is not that the brief over-read weak evidence — it labelled the
+inference as weak and that label was correct. The premise itself was
+manufactured by the query.** A hedge cannot save a claim whose underlying fact
+was never observed.
+
+**This is the second time in this session a too-narrow query produced a
+confident false negative.** The first was a redaction test that matched full
+names and missed a bare first name, on 10-13. **Same defect class, different
+surface: a search that returns something is not a search that returned
+everything, and neither case announced the gap.**
+
+**What follows for the routines, stated once and not filed as a task** — any
+claim of the form "nothing arrived" needs a query whose shape can actually
+establish it: per-sender rather than per-window, or a thread read rather than a
+search. **The intake and brief prompts both ask for windowed sweeps**, which is
+the right default for volume and the wrong instrument for an absence. **Recorded
+here rather than as a register item because it is a change to the routines' own
+instructions, and T-69 is already the open case for that.**
+
+**Withdrawn:** that the toggling stopped, and every inference drawn from its
+stopping. **Standing:** the toggling is real, continuous, now nine days old, and
+**T-71's reading of it — card control on an overdrawn account — is unaffected**;
+the density is higher than recorded, not lower. **T-71 carries a dated
+correction with the full count.** No cause is asserted; card toggling is a
+documented fraud-control habit and may be deliberate.
+
+### One account surfaced that `ventures.md` has never carried
+
+**Two of the nine Wells Fargo threads are Wells Fargo Advisors price alerts** on
+a listed security (10-14 and 10-15). **A brokerage relationship therefore exists
+on this mailbox.**
+
+**Nothing is asserted about it** — not what it holds, not whether it is a
+business or a personal account, not whether it bears on cash. There is no
+connector and **a price alert says nothing about a balance.**
+
+**Why naming the institution is within what this record already does, while the
+bank balance is not.** This repository already names Wells Fargo, Chime, PayPal,
+Square, bookipay and Stripe as channels; **institution names with no figures are
+the accepted category A-13 settled.** The **balance** is the new category §5
+requires a decision for, and it stays withheld pending **A-19**. **If A-19 comes
+back stricter than Option C, this line comes out too** — it is listed on the
+same judgement, not a separate one.
+
+**It is recorded at all because an unrecorded financial account is precisely
+what this week has been about**, and because `ventures.md` is the file this
+platform treats as the verified business context.
+
+### The overdue list has changed character, which is more useful than its size
+
+**35 open tasks past due, up from 29.** The arithmetic is yesterday's and is not
+re-argued: **dates arriving, not work appearing.**
+
+**What is new is the composition.** Ten of this week's twenty-five are now cash
+items or their consequences — **T-71, T-49, T-46, T-54, T-55, T-61, T-36, T-37,
+T-64, T-58.** **A fortnight ago this register's overdue list was engineering
+debt and unread attachments; it is now mostly money.** The genuinely stale ten
+(43–71 days) are unchanged, and **three of them are waiting correctly on packets
+pending 71 days.**
+
+### The reporting gap that is now a cash problem
+
+**Unpaid invoices, failed or disputed customer payments, and whether any
+customer has been charged since 2025-09-12 could not be checked for the seventh
+consecutive run.** Stated plainly: **that is no longer a reporting
+inconvenience. The business cannot tell whether it is owed money, in the week it
+went overdrawn.**
+
+### Class A held, and §5 cost the same thing it cost at 10:20Z
+
+Nothing sent, replied to or forwarded. **Calendar read only** — no event
+created, moved, confirmed or declined. No label applied, no thread moved,
+archived, trashed or reported; no draft created, edited, sent or deleted. No
+charge, refund, invoice, payout or fulfilment action. **No bank, card, Square,
+Shopify or GitHub write.** No scheduled task created, changed or fired — T-69's
+edit remains available from this session and unmade, for the reason recorded
+there on 10-16. No task marked Done on inference. `docs/growth/` untouched.
+
+**The balance figure, the account's last four digits and the card's last four
+digits were read this run and none is written here** — the figure withheld
+pending **A-19** rather than published on an agent's judgement. **No customer
+name, email or phone written**; customers are thread IDs, the state reviewer is
+a role, **and the personal family notice concerning a minor is neither named nor
+described.**
+
+- **Needs the owner today** — **T-71 first and before anything else** (unread 18
+  hours; every remedy is Class E); **A-19** (the cash review fires at 11:10 UTC
+  and cannot state a position without it); **price T-37 and T-64** —
+  **$198–$1,300 against the catalogue if both are chargeable, and the range
+  stays a range** because neither tier was ever decided, **the only near-term
+  cash this record can identify**; then **T-61** (read the Square dashboard),
+  **T-46** (read the amount before it charges), **T-67 with T-52**, **T-60** (~3
+  days), **T-70**'s fee schedule, **T-53**'s attachment, **A-18** (reject it),
+  **A-15** (10 days), **T-69** (one sentence).
+- **Worth stating plainly** — **the brief that corrected an intake on Wednesday
+  is the brief being corrected today**, and both corrections came from the same
+  habit: a query narrow enough to answer fast, reported as though it had
+  answered completely. **The register's hedging discipline is working — every
+  wrong claim this week was labelled as weak evidence before it was withdrawn —
+  and it is not sufficient**, because a careful label on a fabricated premise
+  still reads as a finding. **What makes the difference is checking the
+  instrument, not the confidence.**
+
+---
+
+## Next entry: OL-0050
