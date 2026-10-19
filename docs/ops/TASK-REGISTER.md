@@ -118,9 +118,18 @@ and **none existed in this register an hour earlier.**
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
 Progress · 2 Awaiting Approval · **23 Awaiting Owner** · 5 Blocked · 19 Planned
 · 2 Backlog. **76 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-19T10:52Z** (Monday intake; five rows added, **T-72
-to T-76**). **23 of 76 are now waiting on the owner**, up from 19 on 2026-10-16
-and from 10 on 2026-10-12.
+every write — last **2026-10-19T11:02Z** (daily brief; **recounted and
+unchanged** — that run added a dated section to T-60 and no row). **23 of 76 are
+now waiting on the owner**, up from 19 on 2026-10-16 and from 10 on 2026-10-12.
+
+> **Separately, and more usefully than the count: 45 of the 57 open tasks are
+> past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
+> was a real deadline.** **T-60** expired that day; the other forty-four carry
+> dates Torque proposed and nobody agreed to. **Nothing in this table
+> distinguishes the two.** That is the defect to fix next, and it is the
+> 2026-10-15 observation arriving from the other end: **a list that grows by
+> date rather than by event stops being read, and the day it matters is the day
+> something real is buried in it.**
 
 > **The owner's queue is growing roughly four times faster than it is being
 > emptied.** 10 → 19 → 23 waiting on him in seven days, against **nothing closed
@@ -2929,6 +2938,34 @@ not of programmes**, and it says so.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **T-41 waits on
   this**: contacting any of the five candidates through a restricted account is
   not a plan.
+
+### 2026-10-19 — day seven, and the state cannot be established
+
+**Today is the deadline.** Reddit's notice of 2026-10-12T17:03:43Z gave seven
+days; the seventh is **2026-10-19**.
+
+**Whether the verification has been completed is unknown and cannot be checked
+from here.** reddit.com is **egress-blocked** (**T-59**), no Reddit connector
+exists, and no mail in the 71-hour window to 2026-10-19T10:21Z mentions the
+account. **The only reachable evidence is the original notice.**
+
+**This task is therefore not closed, and will not be closed by its date
+arriving.** Per §5 and the README, **unknown is not done**; a deadline passing
+is not evidence that the thing behind it happened. **Status stays Awaiting
+Owner** and the completion test below is unchanged.
+
+**The timing is the lesson rather than the task.** **T-59** has been reported as
+"an egress block that disables a routine" for five runs, costing nothing visible
+each time. **Today it costs the ability to know whether the business still has
+its only evidenced inbound channel**, on the one day that knowing would change
+what the owner does. **A capability gap with no consequence is indistinguishable
+from a capability gap with a consequence, right up until the day it is not.**
+
+- **Status unchanged: Awaiting Owner.** · **Next action** — unchanged and now
+  terminal: **complete the verification in the owner's own Reddit session
+  today**, then **report the outcome here**, because nothing else in this
+  platform can observe it. **If it has already been done, say so and this
+  closes.**
 
 ## T-61 — Square turns offline payments on by default in two days
 

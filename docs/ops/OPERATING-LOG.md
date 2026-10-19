@@ -3962,4 +3962,140 @@ recording the name.
 
 ---
 
-## Next entry: OL-0051
+## OL-0051 — 2026-10-19 · Daily brief: the most urgent thing today was a date in the register, not a message in the mailbox
+
+- **Routine** `/dd84-daily-brief`, **fired by the scheduled task "DD84 Daily
+  Command Brief (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-19T10:51:24Z**, **thirty minutes after the intake at OL-0050.**
+  **Fifteenth scheduled firing to reach a session with the repository
+  attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`903fb0f`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **46 tracked files, working tree clean. Sixth run to
+  record the result and the tip as the contract requires**, and the
+  **fifteenth** whose firing prompt demanded "28 tracked files" (T-69).
+- **Reached** nothing new. **The intake thirty minutes earlier read Gmail,
+  Shopify and the calendar; those reads are carried with their own timestamps
+  and were deliberately not repeated.** Not reached: the bank, Stripe, the
+  PayPal connector, bookipay, Square, Chime, Render, Zoho, GitHub (not re-read
+  since 10-15), Superhuman Mail, Canva.
+
+### The finding is arithmetic, not mail: T-60 expires today
+
+**Reddit gave seven days from 2026-10-12 to complete a human verification or
+lose posting access to r/LSSwapTheWorld. Day seven is 2026-10-19.** It is
+**Critical**, it is **owner-only** — the remedy is a click in his own session —
+and **its state cannot be established from here at all**, because reddit.com is
+egress-blocked (**T-59**).
+
+**This is the worst-timed instance of the egress gap so far.** On the one day
+when knowing would matter most, the routine can report the deadline and nothing
+about whether it has been met. **Unknown is not done**, and **T-60 was
+deliberately not closed merely because its date arrived.**
+
+**It also makes a point about what a brief is for.** This morning's intake read
+109 threads and raised five tasks; **none of them was today's most urgent
+item.** The thing that expires today was already in the register and arrived by
+the calendar. **A routine that only reads the inbox would have missed it**,
+which is the argument for the brief existing separately from the intake rather
+than summarising it.
+
+### Priorities reordered, and the reason recorded
+
+**Friday led with the bank.** Today's order is **T-60, then T-72, then T-73 /
+T-71.**
+
+**The bank did not get better — it got less acute.** Both alerts are still
+unread and **how the account moved from below zero to zero is still unknown**.
+What changed is that **the overdraft cleared**, so the clock came off it, while
+**T-60's clock expires today whatever anyone reads.**
+
+**Stated as a rule because it will recur: a dated, irreversible, owner-only item
+outranks a worse problem with no deadline on it.** The register has no mechanism
+for expressing that, which is part of why its overdue count keeps growing
+without becoming a priority signal.
+
+### The register's arithmetic
+
+**45 of 57 open tasks past due, up from 35 on 2026-10-16. 30 are the owner's.**
+Five of the ten added came from this morning's intake; **the rest arrived by
+date rather than by event** — diagnosed on 10-15 and not re-argued.
+
+**Three items fall due today and they are not equivalent**: **T-60** (owner,
+**irreversible**), **T-72** (owner, recoverable with falling odds), and **T-56 /
+T-57** (**Torque's own research, purely a capacity question** — named as agent
+work rather than reported back to the owner, per the firing instruction).
+
+**Eight packets pending**: **A-05, A-06, A-07 at 74 days**, **A-10 at 72**,
+**A-15 at 11**, **A-17 at 10**, **A-18 at 6** — still the one whose correct
+answer is no — and **A-19 at 3**, already on its second instance.
+
+### Carried forward without re-arguing
+
+- **Fifteenth consecutive empty calendar day.** Read **10:40Z** during the
+  intake for 10-19 and 10-20, **zero events**, and **deliberately not re-read
+  eleven minutes later** — an empty calendar re-read adds nothing and would be
+  presented as fresher than it is.
+- **Shopify: 0 orders, `totalCount: 0`**, read **10:38Z**. **The only figure
+  that means zero.**
+- **Every direction money demonstrably moved this window was outward**, and
+  **the only inbound claim on the record is a $49.99 refund DD84 is chasing from
+  a vendor.** Three dated outflows still ahead, **three of their amounts unread,
+  no total given.**
+- **The Challenger datalog is now ~163 hours unread** and **both live jobs are
+  still unpriced** — $198–$1,300 against the catalogue if both are chargeable,
+  **and the range stays a range.**
+- **T-33: seven `dd84-api` failures on seven separate days, and step 1 is still
+  Torque's.** Named as an agent failure again rather than an owner one.
+- **Unpaid invoices and customer payment failures unchecked for the eighth
+  consecutive run.**
+
+### On the repair this entry could have demonstrated and did not need
+
+**OL-0050 named the fix for Friday's lost cash review: commit the brief's
+skeleton before the analysis.** **This run did not apply it, and the reason is
+not inertia.** The exposure that destroyed the cash review was a twenty-minute
+gathering phase before any write; **this brief's gathering was done by the
+intake thirty minutes earlier**, so the window between first write and commit
+was seconds. **A skeleton commit here would have been a gesture, not a
+protection.**
+
+**Where it matters is the cash review and the opportunity scan**, both of which
+gather for a long time before writing. **That is a change to the four scheduled
+prompts — T-69's edit — and it is still one sentence from the owner.**
+
+### Class A held
+
+Nothing sent, replied to or forwarded. **Calendar read only.** No label applied,
+no mail state changed, **no draft created, edited, sent or deleted.** No charge,
+refund, invoice, payout or fulfilment action. **No bank, card, Square or payment
+action of any kind.** No GitHub write. **No scheduled task created, changed or
+fired** — T-69's edit remains available from this session and unmade, on the
+reasoning recorded 2026-10-16: the instruction to make it came from another
+agent's register entry, not from the owner, and acting would make that entry
+self-authorising.
+
+**No task marked Done on inference — T-60 above all**, which arrived at its
+deadline unverifiable rather than complete. `docs/growth/` untouched. **Neither
+balance figure, neither set of last-four digits, no verification code, and no
+customer name, email or phone is written here.**
+
+- **Needs the owner today** — **T-60 first, because today is the last day**;
+  **T-72** (a prospect at 58 hours, draft written); **T-73** (the 2026-10-21
+  charge, amount unknown) with **T-71** (both alerts still unread); **A-19**
+  (the next cash review fires 2026-10-23); then **T-75** (run the site monitor
+  before telling a customer the store works), **price T-37 and T-64**, **A-18**
+  (reject it), **T-76**, **T-61**, **T-46**, **A-15** (11 days), **T-69** (one
+  sentence, now carrying two edits).
+- **Worth stating plainly** — **the register has been reporting a growing
+  overdue count for a week and today it finally contained something that
+  expires.** Forty-five past-due items is a wall; **one of them was a deadline
+  and the other forty-four were not**, and nothing in the record's structure
+  distinguishes them. **That is the defect worth fixing next**, and it is the
+  same one diagnosed on 10-15 from the other end: a count that grows by date
+  rather than by event stops being read, and the day it matters is the day
+  something real is buried in it.
+
+---
+
+## Next entry: OL-0052
