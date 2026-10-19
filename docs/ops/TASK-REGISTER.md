@@ -110,17 +110,20 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-74 | A third party says a Melio account exists; message does not hold together | finance    | Normal       | **Awaiting Owner**       | Owner | A to verify      | 2026-10-22   |
 | T-75 | A new Shopify theme was published and nobody checked the storefront       | service    | **High**     | Planned                  | Agent | A to diagnose    | 2026-10-21   |
 | T-76 | Four account-access notices in four hours across four providers           | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-21   |
+| T-77 | Register as a supplier on the Georgia Procurement Registry and ACCGov     | sales      | **High**     | Planned                  | Agent | A to register    | 2026-10-26   |
+| T-78 | Price buy-an-existing-shop against the raw-land build on Hwy 72           | real est.  | **High**     | Planned                  | Agent | A to compare     | 2026-10-26   |
+| T-79 | Identify the SecretSOS issuer before any fee is paid                      | finance    | Normal       | Planned                  | Agent | A to verify      | 2026-11-30   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **23 Awaiting Owner** · 5 Blocked · 19 Planned
-· 2 Backlog. **76 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-19T11:02Z** (daily brief; **recounted and
-unchanged** — that run added a dated section to T-60 and no row). **23 of 76 are
-now waiting on the owner**, up from 19 on 2026-10-16 and from 10 on 2026-10-12.
+Progress · 2 Awaiting Approval · **23 Awaiting Owner** · 5 Blocked · 22 Planned
+· 2 Backlog. **79 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-19T12:04Z** (opportunity scan; three rows added,
+**T-77 to T-79**, all Agent-owned). **23 of 76 are now waiting on the owner**,
+up from 19 on 2026-10-16 and from 10 on 2026-10-12.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -240,7 +243,7 @@ this table is part of the write.** Evidence: OL-0028.
 | A counterparty who has not replied      | T-53 (7 days), and A-15 is 7 days unsent                                                       |
 | A-16 executed; verification outstanding | T-48                                                                                           |
 | Counsel (A-06 is already approved)      | T-13, T-45                                                                                     |
-| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62                                                 |
+| Agent execution capacity                | T-15, T-16, T-24, T-25, T-26, T-33, T-34, T-62, **T-77**, **T-78**, **T-79**                   |
 | Nobody — accepted risk                  | T-30                                                                                           |
 
 ---
@@ -2715,6 +2718,41 @@ being added as live payment channels on the strength of their mail.
 - **Status** Planned · **Next action** — Step 4, which costs nothing and is
   already scheduled work.
 
+### 2026-10-19 — advanced, not closed: the binding test is named and unanswerable from here
+
+**`/dd84-opportunity-scan`, 2026-10-19T11:50Z.** This task asked for FY27
+authority and the rural test. **One is now precise and the other is confirmed
+absent.**
+
+**The rural test, as reported by lender and consultant secondaries:** the
+programme serves areas of **50,000 or fewer**, and the fuller definition is
+**"any place that is not a city or town of more than 50,000 people and not in
+the urbanized area next to such a city or town"**, governed by **7 CFR Part
+5001**.
+
+**Colbert's own population was never the risk.** The binding clause is **"the
+urbanized area next to"** — and **Athens-Clarke County carries roughly 130,000
+people about ten miles away.** Whether Colbert falls inside Athens's urbanized
+area as the regulation defines it **decides eligibility outright**, and it
+cannot be answered without the regulation or a USDA map, **neither of which is
+reachable while egress is blocked** (T-59).
+
+**FY2027 authority: searched and not found.** No appropriation or programme
+level for FY2027 appeared in any result. The most recent figures found are
+**FY2026** — up to **85% guarantee for loans of $5 million and under**, maximum
+guarantee **$25M** and up to **$40M** for certain projects.
+
+**This moved the candidate's score down from 50 to 44**, and the reason is this
+task's own finding rather than anything changing at USDA. **The demotion is the
+research working.**
+
+- **Status unchanged: Planned** · **Next action, narrowed** — the two open
+  questions are now **the adjacency test** and **the FY2027 authority**, and
+  **both are one phone call to Georgia USDA Rural Development.** That is **Class
+  C** and needs a packet. **Nothing further is answerable from inside this
+  platform**, so this task should stop consuming agent capacity until either
+  egress opens or the owner approves the call.
+
 ## T-57 — Is Colbert in a designated Georgia Rural Zone?
 
 - **Objective** — Answer one cheap question that would materially change the
@@ -2754,6 +2792,40 @@ being added as live payment channels on the strength of their mail.
 - **Completion proof required** — A yes or no on Colbert's designation, with the
   page and date read.
 - **Status** Planned · **Next action** — Step 1, gated on T-59.
+
+### 2026-10-19 — advanced, not closed: cities apply, and the credit is payroll-based
+
+**`/dd84-opportunity-scan`, 2026-10-19T11:50Z**, from a **DCA press release
+(2025-12-05)** and **NCSHA**, consistent with one another. **`dca.georgia.gov`
+could not be opened** (T-59).
+
+**Two findings, and the second matters more than the first.**
+
+**One — Colbert is almost certainly not designated.** **Rural Zone designations
+are granted to cities, not counties.** The cohort effective **2026-01-01** and
+running to **2030-12-31** is **Alma, Barnesville, Blairsville, Elberton,
+Folkston, Grantville and Summerville**. **Colbert is not among them.**
+**Applications are due each August and designees announced each October**, so an
+announcement may be imminent — **but cities apply, not businesses, so DD84's
+only route is a designation it does not control.** The complete current register
+is on DCA's documents page, unreachable, so **"not designated" is reported as
+very likely rather than confirmed.**
+
+**Two — even a designation would be worth close to nothing to DD84 today.** The
+headline incentive is a **job tax credit of $2,000 per year per new full-time
+equivalent job, for up to five years**, plus investment and rehabilitation
+credits. **DD84 has no employees and no payroll.** The credits attach to hiring
+and to qualifying investment, **both of which need capital this business does
+not have.**
+
+**That took the candidate from 48/100 to 40/100**, and the drop is about
+**generosity to DD84** rather than generosity in general — which is the only
+score this register should carry.
+
+- **Status unchanged: Planned** · **Next action** — **none worth agent
+  capacity.** The finding is recorded; confirming the full designation list
+  needs the DCA page. **Recommended: leave this at the bottom of the register
+  and do not re-raise it until DD84 has payroll or a designation appears.**
 
 ## T-58 — SBA 504: send the Georgia CDC draft and ask two questions
 
@@ -2869,6 +2941,47 @@ not of programmes**, and it says so.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **Step 2 is Torque's
   and does not wait on it**, but is worth doing in the same pass so the file is
   corrected once.
+
+### 2026-10-19 — the block is one cause with two error strings, and today it cost something
+
+**`/dd84-opportunity-scan`, 2026-10-19T11:38Z.** The second scan to run with
+this task open, and the first to diagnose it properly rather than quote an error
+string.
+
+**Three readings:**
+
+| Check                                             | Result                                                                                                                    |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Proxy status (`$HTTPS_PROXY/__agentproxy/status`) | **`enabled: true`, `bundleCoversEveryHost: true`, `recentRelayFailures: []`** — it is not even seeing these attempts fail |
+| `getent hosts doas.ga.gov`                        | **nothing.** The container has **no DNS resolution of its own**                                                           |
+| `curl https://doas.ga.gov/`                       | **`CONNECT tunnel failed, response 403`** — exactly the 2026-10-12 symptom                                                |
+
+**So the cause is unchanged and the symptom depends on which tool asks.** `curl`
+hands the hostname to the proxy and is refused at the tunnel. **`WebFetch`
+resolves the name itself first and dies earlier, at DNS, reporting
+`getaddrinfo ENOTFOUND`.** **One block, two messages.**
+
+**Recorded because the near-miss is instructive.** Had this run reported
+`ENOTFOUND` as the finding, the way 2026-10-12 reported the 403, **this register
+would now carry two different problems where there is one** — and the second
+would look like a new regression rather than the same unchanged policy. **An
+error string is not a diagnosis.** The check that settles it is **two
+commands**: the proxy's own status, and a `curl` against the same host. **Those
+two belong in this routine's instructions**, alongside T-69's other prompt
+edits.
+
+**And today it cost something concrete, twice.** **T-60's platform deadline
+expired today and could not be verified** because the host is blocked. **Every
+candidate in the 2026-10-19 scan carries a low source-reliability score for this
+reason**, and two candidates were ranked on secondaries alone. **Five runs of
+"an egress block that disables a routine" at no visible cost, and then a day
+when it cost the ability to know whether the business still has its only
+evidenced inbound channel.**
+
+- **Status unchanged** · **Next action** — unchanged and **now carrying a
+  concrete cost rather than a hypothetical one.** The remedy is the
+  environment's **Network access** setting, which is the owner's: either a
+  broader access level, or the issuing hosts added under Allowed domains.
 
 ## T-60 — Reddit flagged the account for automated activity: seven days
 
@@ -4367,3 +4480,161 @@ that owns the operating record is not a thing to file and forget.
 - **Completion proof required** — A yes or no per provider. **Not "probably
   me."**
 - **Status** **Awaiting Owner** · **Next action** — Step 1.
+
+## T-77 — Register as a supplier on the Georgia Procurement Registry and ACCGov
+
+- **Objective** — Open a revenue notice stream that costs nothing, using
+  capability DD84 already has, in a week when the business has no recorded
+  revenue in thirteen months.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-19. **Ranked #1 at 62/100** —
+  the full record, including every assumption, is in
+  `docs/ops/briefs/2026-10-19-opportunity-scan.md`.
+- **Workstream** sales · **Priority** **High** · **Owner** Agent · **Approval
+  class** **A to register.** Registering as a supplier **commits no money and
+  contacts no counterparty.** **Submitting a bid is Class E and G** and needs a
+  packet. · **Due** 2026-10-26
+
+### Why this outranked a $260,000 property and a $25M loan programme
+
+**Because it is the only candidate that costs nothing.** The scan's method and
+its ranking rule agreed for once: **financial value unknown, capital requirement
+zero, risk none identified.** Against an account that reported zero available on
+2026-10-17 (**T-71**), **a free registration that might produce revenue beats a
+loan DD84 cannot service and a tax credit against payroll it does not have.**
+
+**What it is not: a sale.** **No current vehicle-maintenance or diagnostic
+solicitation was found** on Team Georgia Marketplace or in either county, and
+**registration does not win work.** One week of searching is not a base rate.
+
+### What must be established, not assumed
+
+- **What the Georgia Procurement Registry actually charges.** **The "no cost"
+  statement the scan found belongs to ACCGov's OpenGov, not to the state
+  registry** — DOAS's own fee position was never read, because the page could
+  not be opened (**T-59**). **The brief's "costs nothing" framing rests on this
+  and must be confirmed first.**
+- **Which NIGP codes cover tuning, calibration and diagnostics.** The code list
+  is inside the registry.
+- **Whether ACCGov's rule bites.** It **"does not register vendors for bidding
+  purposes only"**; its Vendor Registration Form is for vendors with a current
+  or pending contract. **The OpenGov bidding registration and the vendor
+  registration may be two different things** and the scan could not separate
+  them.
+
+- **Cost and risk** — **Expected zero, unconfirmed.** The risk is an hour or two
+  of owner or agent time, and the discovery that the registry charges a fee —
+  which would make it a Class E decision, not an A one.
+- **Execution steps** — (1) Open the GPR and record any fee; (2) register, or
+  stop and raise a packet if there is a cost; (3) select NIGP codes for vehicle
+  maintenance, diagnostics and calibration; (4) register on ACCGov's OpenGov and
+  establish whether the bidding and vendor registrations differ; (5) check
+  Madison County's bid page, which posts only when it is ready to receive bids;
+  (6) record what notices arrive over the following month, **so the next scan
+  has a base rate instead of one week's snapshot.**
+- **Completion proof required** — A registration confirmation from each portal,
+  the codes selected, and **the actual fee, read from the registry.**
+- **Status** **Planned** · **Next action** — Step 1. **Blocked on egress for the
+  registry itself** (T-59), so the first real step may have to be the owner's
+  browser rather than this platform.
+
+## T-78 — Price buy-an-existing-shop against the raw-land build on Hwy 72
+
+- **Objective** — Put a number on the path DD84 is not taking, before more owner
+  effort goes into the path it is.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-19. **Ranked #2 at 56/100.**
+- **Workstream** real estate · **Priority** **High** · **Owner** Agent ·
+  **Approval class** **A to compare.** **Any offer, broker enquiry or financing
+  application is Class C, E and G.** · **Due** 2026-10-26
+
+### The comparable, and what it is not
+
+**6911 Highway 72, Colbert, GA 30628 — MLS# 10723733. SOLD 2026-06-25 at
+$260,000.** **It is not an acquirable opportunity and must never be recorded as
+one.**
+
+**What it is: a dated, independently corroborated benchmark.** 3,072 SF, built
+1970, ~0.76–0.8 acres, described as **an auto mechanic shop with five service
+bays and a fully encapsulated automotive paint booth**; 2024 taxes **$816**.
+Listed **$280,000** in late March/early April 2026, cut to **$270,000** on 05-01
+and **$260,000** on 05-20, closing at that. **Four listing aggregators carry
+consistent MLS-derived data; the deed and the MLS record itself could not be
+opened** (T-59).
+
+### Why this is worth an owner's attention rather than a file note
+
+**DD84 is actively engineering the harder path.** **T-70** has the business
+corresponding with a state environmental-health office about whether raw land at
+**parcel 0059 038** can carry a septic system, with a **380 gpd ceiling already
+established** and a fee schedule still unread. **Four months ago, on the same
+highway, a purpose-built five-bay shop with a paint booth and a septic system
+that already exists changed hands for $260,000** — after shedding $20,000 over
+seven weeks to find a buyer.
+
+**Nobody has priced one path against the other.** That is the whole task.
+
+### Stated separately, because the scan requires it
+
+**Assumed, not established:** that the raw-land path costs more than $260,000
+all-in — **parcel 0059 038's asking price is not in this record and no build
+estimate exists**; that an existing 1970 shop's septic capacity is adequate —
+**its permitted capacity was not read and may itself be limited**; that one
+property with two price cuts indicates slow absorption — **one property is not a
+market.**
+
+- **Cost and risk** — **No cost to compare.** The risk is that the comparison
+  argues for a purchase DD84 cannot finance, which is information either way.
+- **Execution steps** — (1) Record parcel 0059 038's asking price from T-70's
+  thread; (2) list the raw-land costs already known — septic design, well,
+  build, the 380 gpd constraint — marking each as known or unknown; (3) set the
+  $260,000 comparable beside them **as a range against unknowns, never as a
+  midpoint**; (4) establish whether any equivalent improved property is
+  currently listed on Hwy 72; (5) hand the owner one page, not a recommendation
+  — **financing is his decision and he has no capital today.**
+- **Completion proof required** — The two paths side by side with every unknown
+  named as unknown.
+- **Status** **Planned** · **Next action** — Step 1, which needs nothing but
+  T-70's own thread.
+
+## T-79 — Identify the SecretSOS issuer before any fee is paid
+
+- **Objective** — Establish whether a grant programme with an open window and a
+  $15 application fee is real, before a business short of cash pays it.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-19. **Ranked #3 at 53/100 — and
+  the score is built almost entirely from unknowns**, which is itself the
+  finding.
+- **Workstream** finance · **Priority** Normal · **Owner** Agent · **Approval
+  class** **A to verify. Paying the fee is Class E and needs a packet — for $15,
+  because the question is not the amount.** · **Due** 2026-11-30
+
+### What is claimed and by whom
+
+**One aggregator** (`grantcompass.co`, "Small Business Grants Open Now, October
+2026"), read **2026-10-19T11:30Z**: open to Georgia businesses, applications
+**quarterly**, the **October–December window currently open**, **a $15
+application fee**. **No issuing organisation was identified. No issuer page
+exists in this record. No award figure was found.**
+
+### Why it is listed at all, and why it is listed third
+
+**It is the only candidate in the scan with an open window and a trivial cost.**
+That is also why it is suspicious: **$15 is small enough to pay without
+thinking, which is the shape of an advance-fee scheme** — and **DD84's mailbox
+is currently receiving loan-fraud solicitations** (**T-42**, five drafts still
+addressed to them; **T-67**).
+
+**No accusation is made.** The claim is narrower: **an unverifiable programme
+charging an upfront fee should be verified before it is paid**, and the
+verification costs nothing.
+
+- **Cost and risk** — **$15 and the information it buys**, against the risk of
+  handing details to an unidentified party. **Scored 3/15 on source reliability,
+  the lowest in the scan.**
+- **Execution steps** — (1) Identify the issuing organisation — a legal name, an
+  address, a published award history; (2) if none can be found, **close this as
+  a no-action record with the reason**, which is the expected outcome; (3) only
+  if a real issuer is found, read the eligibility rules and the award range,
+  then raise a packet to pay the fee.
+- **Completion proof required** — Either a named issuer with a verifiable award
+  history, **or a no-action record saying no issuer could be found.** **Not "it
+  looked fine."**
+- **Status** **Planned** · **Next action** — Step 1.

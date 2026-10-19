@@ -4098,4 +4098,178 @@ customer name, email or phone is written here.**
 
 ---
 
-## Next entry: OL-0052
+## OL-0052 — 2026-10-19 · Opportunity scan: the skeleton-commit repair applied, and an error string that was not a diagnosis
+
+- **Routine** `/dd84-opportunity-scan`, **fired by the scheduled task "DD84
+  Weekly Georgia Opportunity Scan (repo-attached)"**
+  (`trig_01UPEmQbHN6vzC4PKse2zf23`) at **2026-10-19T11:25:43Z**. **Sixteenth
+  scheduled firing to reach a session with the repository attached.** Class A
+  throughout.
+- **Checkout, per contract item 0** — tip **`d838301`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **47 tracked files, working tree clean. Seventh run to
+  record the result and the tip**, and the **sixteenth** whose firing prompt
+  demanded "28 tracked files" (T-69).
+- **Window** since the only prior scan, **2026-10-12**. **New: 3. Updated: 2,
+  both scored down on evidence. Expired or withdrawn: 5. Duplicates merged: 0.**
+- **Searched** Georgia small-business grant programmes, Georgia state and county
+  procurement, Madison County commercial property and tax sales, TCSG training
+  incentives, Georgia DCA Rural Zones, USDA B&I. **Not searched** GDOT vendor
+  opportunities, Google Drive owner criteria. **Gmail covered by the 10:21Z
+  intake. No Supabase tool was called and nothing belonging to the Georgia
+  Opportunity Ledger was read or written.**
+
+### The repair from OL-0050, applied by hand on the routine it was for
+
+**The skeleton went up as commit `6338360` before the first search ran**, naming
+the run, its start time and the commit it was checked out against. **This
+entry's brief is the amending write.**
+
+**Chosen deliberately here and declined four hours earlier.** OL-0051 records
+the daily brief _not_ applying it, because that run's gathering had been done by
+the intake thirty minutes before and the window between first write and commit
+was seconds. **This routine is the opposite case**: thirty-two minutes of
+searching before a single line of findings existed, which is precisely the shape
+that destroyed Friday's cash review. **The repair is worth a commit here and was
+theatre there, and the record now shows both judgements with their reasons.**
+
+**The durable version is still T-69** — a change to the four scheduled prompts,
+one sentence from the owner, now carrying three edits: the file-count check, the
+skeleton commit, and the two-command egress diagnosis below.
+
+### The finding that generalises: an error string is not a diagnosis
+
+**Every `WebFetch` failed, and not the way it failed last week.** 2026-10-12
+recorded **403 CONNECT tunnel failed**; today every host returned
+**`getaddrinfo ENOTFOUND`**.
+
+**Three readings at 11:38Z settled it:**
+
+| Check                       | Result                                                                        |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| Proxy status                | **`enabled: true`, `bundleCoversEveryHost: true`, `recentRelayFailures: []`** |
+| `getent hosts doas.ga.gov`  | **nothing — the container has no DNS of its own**                             |
+| `curl https://doas.ga.gov/` | **`CONNECT tunnel failed, response 403`** — last week's symptom, unchanged    |
+
+**One block, two error strings, decided by which tool asks.** `curl` hands the
+hostname to the proxy and is refused at the tunnel; **`WebFetch` resolves the
+name itself first and dies earlier, at DNS.**
+
+**The near-miss is the point.** Had this run reported `ENOTFOUND` as the finding
+the way 2026-10-12 reported the 403, **this record would now carry two problems
+where there is one**, and the second would read as a fresh regression. **The
+check that settles it is two commands** — the proxy's own status and a `curl`
+against the same host — and they belong in the routine's instructions. →
+**T-59**, updated with the full diagnosis.
+
+**And today the block cost something concrete, twice.** **T-60's platform
+deadline expired today unverifiable**, and **every candidate in this scan
+carries a low source-reliability score** because no issuing body's page could be
+opened. **Five runs of reporting this at no visible cost, then one day where it
+cost the ability to know whether the business still has its only evidenced
+inbound channel.**
+
+### The ranking, and the one candidate that changes a live decision
+
+**#1 — state and county supplier registration, 62/100 → T-77.** The Georgia
+Procurement Registry and ACCGov's OpenGov. **Financial value unknown, capital
+requirement zero, risk none identified.** Against a business with no recorded
+revenue in thirteen months and an account that reported zero available on 10-17,
+**a free registration that might produce revenue outranks a loan it cannot
+service and a tax credit against payroll it does not have.** **The method's
+score and the command file's ranking rule agreed, which they need not.** What it
+is not: a sale. **No current vehicle-maintenance solicitation was found
+anywhere**, and **the "costs nothing" claim is ACCGov's, not DOAS's** — T-77's
+first step is to read the state registry's actual fee.
+
+**#2 — buy an existing shop rather than build on raw land, 56/100 → T-78.**
+**6911 Highway 72, Colbert: 3,072 SF, five service bays, a fully encapsulated
+paint booth, ~0.76 acres, built 1970. Sold 2026-06-25 at $260,000**, after
+$280,000 → $270,000 → $260,000 over roughly twelve weeks. **It is sold and is
+recorded as a comparable, never as an acquirable opportunity.**
+
+**This is the only item in the scan that bears on something the owner is working
+right now.** **T-70** has DD84 corresponding with a state environmental-health
+office about septic feasibility on **raw land at parcel 0059 038**, with a **380
+gpd ceiling** established and a fee schedule unread. **Four months ago, on the
+same road, a purpose-built five-bay shop whose septic system already exists
+traded for $260,000.** **Nobody has priced one path against the other**, and
+that is now T-78.
+
+**#3 — SecretSOS, 53/100 → T-79.** An open October–December window and a **$15
+application fee**, from **one aggregator with no identifiable issuer.** **Listed
+because it is cheap; ranked third because cheap is the problem** — $15 is small
+enough to pay without thinking, which is the shape of an advance-fee scheme, and
+this mailbox is currently receiving loan-fraud solicitations (T-42, T-67). **The
+53 is built almost entirely from neutral "unknown" components**, which is not
+the same as a 53 built from facts. **Paying it is Class E and needs a packet,
+for $15, because the question is not the amount.**
+
+### Two candidates scored down, and the reasons recorded rather than smoothed
+
+**USDA B&I: 50 → 44 (T-56, advanced not closed).** Nothing changed at USDA.
+**What changed is that the binding eligibility test is now named:** 7 CFR Part
+5001 excludes **"the urbanized area next to"** a city or town over 50,000, and
+**Athens-Clarke carries roughly 130,000 people about ten miles from Colbert.**
+Colbert's own population was never the risk. **FY2027 authority: searched, not
+found.** Both open questions are now one phone call to Georgia USDA Rural
+Development — **Class C, needs a packet** — and **nothing further is answerable
+from inside this platform.**
+
+**Georgia Rural Zones: 48 → 40 (T-57, advanced not closed).** **Designations go
+to cities, not counties**; the cohort effective 2026-01-01 is seven named cities
+and **Colbert is not among them**; applications are due each August and
+announced each October, **so DD84 is not the applicant either way.** And the
+decisive finding: **the headline incentive is a job tax credit of $2,000 per job
+per year, and DD84 has no employees and no payroll.** **Last week scored the
+programme's generosity; this week scored its generosity to DD84**, which is the
+only score this register should carry.
+
+**Both demotions are the research working** and both tasks were **advanced
+rather than closed on their due date** — the T-60 principle applied twice more.
+
+### Still no bands, and the defect got subtler
+
+**No candidate carries a classification band, for the third scan.** The command
+file says to score with its method **"and the classification bands that follow
+from the total"** — **and never states them.** On 2026-10-12 this was recorded
+as the bands having died with `src/lib/scoring/score.ts` (deleted 2026-09-25).
+**The file has since been rewritten to restate the components inline**, which
+fixed half the problem and **left a dangling promise of bands that exist
+nowhere** — which reads like the reader's oversight rather than the file's.
+**Due-diligence tasks went to the top three by raw score, as last week, with the
+substitution stated. No threshold was invented.**
+
+### Class A held
+
+**No source, agency, broker, seller or partner was contacted.** No application,
+expression of interest or offer submitted. **No capital committed, nothing
+signed, no terms accepted.** **No `mcp__Supabase__*` tool called; nothing of the
+Georgia Opportunity Ledger's read or written.** `docs/growth/` untouched —
+**candidate #1 is arguably a Rev observation too, and it was not written
+there.**
+
+**No assumption is presented as a source fact.** Every candidate carries both a
+**Stated by source** and an **Assumed by Torque** block and they do not merge.
+**No deadline is stated that a result did not quote, and every one is marked as
+reported rather than read.** **Three components were scored neutral for lack of
+information and each says so.** **A sold property is recorded as sold.**
+
+- **Needs the owner** — **nothing from this scan today**, which is worth saying
+  plainly: all three new tasks are **Agent-owned** and need no decision. What
+  this scan adds to his queue is **one recommendation and one unblock**: read
+  **T-78**'s comparison when it exists before more effort goes into T-70's
+  septic path, and **open the environment's Network access setting** (**T-59**),
+  which is the single change that would let this routine do the half of its job
+  it has never once completed.
+- **Worth stating plainly** — **the scan found three things worth doing and not
+  one of them is a grant.** The best candidate is a free registration; the most
+  useful is a four-month-old sale price on the same highway DD84 is trying to
+  build on. **A business with no cash is not short of grant programmes — it is
+  short of a channel and a price**, and this run produced one of each. **Every
+  score in it rests on secondary sources, because the routine has never once
+  been able to open a primary one.**
+
+---
+
+## Next entry: OL-0053
