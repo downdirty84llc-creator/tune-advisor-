@@ -3745,4 +3745,221 @@ described.**
 
 ---
 
-## Next entry: OL-0050
+## OL-0050 — 2026-10-19 · Monday intake over a weekend: a prospect asked if DD84 is open, the overdraft cleared, and Friday's cash review left no record
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled task "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-19T10:21:10Z**. **Fourteenth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`ea1b213`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **45 tracked files, working tree clean. Fifth run to
+  record the result and the tip as the contract requires**, and the
+  **fourteenth** whose firing prompt demanded "28 tracked files" (T-69).
+- **Window** since OL-0048, **2026-10-16T10:58Z — 2026-10-19T10:21Z, 71h23m** —
+  **the first intake to cover a weekend. 109 threads across three pages, 17
+  actionable, 92 no-action.**
+- **Reached** Gmail, Shopify, Google Calendar. **Not reached** Superhuman Mail,
+  the PayPal connector, Stripe, bookipay, Square, Chime, the bank, Canva.
+
+### First, an operating failure of this session's own: the 2026-10-16 cash review produced nothing
+
+**The weekly cash review fired on time — `trig_01Y9G9LUVQR752W4uop2jZfL` at
+2026-10-16T11:11:17Z — and there is no `2026-10-16-cash-review.md`.** The run
+began, verified the checkout, and completed two Shopify reads (**0 orders in the
+7-day window and 0 across 365 days**, read ~11:14Z). **Then the worker process
+restarted, twice, and the run died with it.** Nothing was committed.
+
+**This matters more than one missing brief, because it is a new failure mode.**
+**T-27 and A-10** describe scheduled runs dying because the fired session had
+**no repository attached**. This session exists precisely to fix that, and it
+did: the repository was attached, the checkout was clean, the routine was
+executing correctly. **It still produced no record, because a container restart
+mid-run loses everything not yet committed.**
+
+**So the host-session arrangement closes one gap and leaves another open.** A
+firing now lands somewhere that _can_ commit; **nothing makes it commit early**,
+and a routine that gathers for twenty minutes before its first write has a
+twenty-minute window in which a restart erases it. **The cheap repair is in the
+routines' own instructions** — write the brief's skeleton and commit before the
+analysis, then amend — **and that is T-69's territory: a change to the four
+scheduled prompts, which this session can make the moment the owner says so.**
+
+**Recorded, not quietly skipped.** The next cash review fires **Friday
+2026-10-23**. **T-73, raised today, is the part of that review's job that could
+be done from mail alone**, and it was.
+
+### The lead: a prospect asked whether the business is still open
+
+**2026-10-17T02:18:04Z, thread `1a147a736841eaed`, unread for ~56 hours.** The
+entire message: _"is this store still taking orders or temporary closed?"_ No
+name, no vehicle, no service named. → **T-72**, with a drafted reply in the
+brief, **not placed in the mail account**, **Class C to send.**
+
+**Deliberately not merged with T-65**, the Shopify customer account created
+2026-10-07 behind a masking alias. Different route, unverified identity, spec
+§9. **DD84 now has three inbound routes — a website form (T-66), a Shopify
+account (T-65), and direct email — and watches none of them.** Each was found by
+an intake run.
+
+**The draft carries one claim that cannot be verified, and that is the honest
+finding.** Its first line says the business is open and taking work.
+**`ventures.md` says 50 active products; Shopify says 0 orders all-time; a new
+theme was published on 2026-10-16 and nobody looked; `/dd84-site-monitor` has
+never run.** → **T-75**, raised High precisely because a customer is waiting on
+an answer that depends on it. **No causal claim about the theme** — zero orders
+predates it by a year.
+
+### The bank: the overdraft cleared, and nobody knows how
+
+**2026-10-17T21:55:25Z, thread `1a14bdcd406bdaf2`, unread.** The same
+at-or-below-zero alert, now reporting the available balance **at zero rather
+than below it**, 51 hours after the first.
+
+**T-71's title is now wrong and was left as written**, with a dated section
+added that controls — this register's own rule from the 2026-10-08
+reconciliation. **The summary callout was struck through rather than edited
+away.** A register that silently corrects itself teaches nothing; one that says
+"overdrawn" after the overdraft cleared is worse.
+
+**Neither figure is recorded, and this is A-19's second instance in four days.**
+**The direction was recorded and the numbers were not** — because the
+alternative was leaving a stale wrong claim standing, and because direction is
+what makes the task actionable. **If A-19 comes back stricter than the interim
+practice, the direction comes out too.**
+
+**Three explanations fit the two alerts equally well** — a deposit, the Extra
+Day Grace Period the first alert names, or pending items settling differently.
+**No inference drawn. Zero available is not solvency**, and **T-73** now lists
+five outflows against that account inside nine days.
+
+### The card, re-counted with the repair from OL-0049 applied
+
+**Nineteen further toggle events across 10-16 and 10-17; none on 10-18 or 10-19.
+The card has been ON since 2026-10-17T16:37:38Z — about 66 hours. Thirty-two
+events are now on the record since 2026-10-08.**
+
+**That claim rests on a per-sender sweep with message counts reconciled, not a
+windowed query.** And it produced a correction to Friday's correction, which is
+worth stating precisely:
+
+**OL-0049 blamed the false negative on the Gmail tool "showing only the ~5
+oldest messages of each thread."** That is what the tool's own documentation
+says. **It is not what was observed today.** Thread `1a144284b3634df3` reports
+`messageCount: 6`; the search preview returned **five messages and omitted the
+oldest**, which `get_thread` then supplied. **So the preview truncated at the
+other end from the documented behaviour.**
+
+**What was right on Friday: that the truncation is real and silent, and that it
+manufactured the premise.** **What was wrong: the direction**, asserted from
+documentation rather than observation — **the same class of error as the thing
+it was explaining.**
+
+**The repair does not depend on knowing the direction, which is why it is the
+one to keep: compare `messageCount` against the number of messages returned, and
+call `get_thread` whenever they differ.** Mechanical, checkable, and indifferent
+to which end gets cut.
+
+### Money: two more declines, three dated charges, one claim the other way
+
+→ **T-73**, raised **Critical**.
+
+| Item                                 | Date                         | Amount                                       |
+| ------------------------------------ | ---------------------------- | -------------------------------------------- |
+| **Ocoya**, billed through Stripe     | **Declined 10-16T12:26:37Z** | **$29.00**                                   |
+| **DAZN**                             | **Declined 10-16T16:00:00Z** | **Not stated**                               |
+| **Capital One AutoPay**              | **Scheduled 2026-10-21**     | **Not stated**                               |
+| **ChatGPT Business**, DD84 workspace | **Renews 2026-10-24**        | **Not stated** — 1 Premium + 1 Standard seat |
+| **Webador** annual invoice           | **Unread**                   | **Not stated** — T-46                        |
+
+**Three of five amounts are unknown and no total is given**, because a total
+across unread figures is the fabrication the spec forbids.
+
+**The one item pointing the other way: DAZN owes DD84 $49.99.** The owner sent
+**two messages himself** — 10-16T17:54:15Z and 10-17T12:57:38Z, the second
+escalating to a supervisor — on the grounds that he cancelled on 2026-09-15,
+before the 2026-09-16 charge. **DD84's only inbound money claim in the window,
+and it needs no agent action.** **Those two were the only messages DD84 sent in
+71 hours**; GDOT and the Georgia SBDC are now **13 days** on replies that exist
+in draft (**A-15**).
+
+**A Stripe _failure_ notice was readable in mail while the Stripe account itself
+has no connector** — the T-36 pattern, and the third time this month an outflow
+was captured by email rather than by a system.
+
+### Smaller, recorded
+
+- **A third party says DD84 signed up for Melio** (10-16T15:41:35Z) — and the
+  message carries **three different identities**: a `xero.com` sender address, a
+  different first name in the signature, a third variant in the booking link.
+  **Melio is real and does power Xero's US bill pay, so this may be sloppy
+  templating** — but a name mismatch inside an unsolicited message about a
+  payment account is not resolved by clicking its link. **No link opened, no URL
+  recorded.** → **T-74**, and **T-36's channel count must not harden** at six
+  when it may be seven.
+- **Four account-access notices inside four hours on 10-16** — OpenAI sign-in
+  reported from **Chicago** (10:58Z), a DSers password reset (11:50Z), two
+  GitHub device-verification codes 46 seconds apart (14:50Z, 14:51Z). →
+  **T-76**. **No compromise is claimed**; each has an ordinary explanation.
+  **What is claimed is that four providers issued access notices in four hours
+  and the register can attribute none of them** — the third such cluster, the
+  first across four providers, and **the GitHub one sits on the account that
+  owns this public repository** (A-13). **No code recorded.**
+- **`dd84-api` failed on 10-16, 10-17 and 10-18** — **seven failures on seven
+  separate days since 2026-10-08.** → a dated addendum on **T-33**, stated as an
+  **agent** failure rather than an owner one: step 1 needs no approval, only
+  capacity, and **a count is not a diagnosis.**
+- **Two unread PayPal Mastercard documents** (10-16T23:16:41Z, 10-17T02:19:36Z)
+  and **a $17.00 PayPal payment to Meta Platforms** (10-17). None opened.
+- **Fifteenth consecutive empty calendar day.** Calendar read
+  **2026-10-19T10:40Z** for 10-19 and 10-20: **zero events.** Shopify read
+  **10:38Z: 0 orders, `totalCount: 0`.** **Two real zeros.**
+- **Drafts: 15, unchanged for a seventh run**, five still addressed to likely
+  loan fraud (**T-42**).
+- **A second and third financial institution surfaced on this mailbox** —
+  Fidelity Investments marketing (10-16) alongside the Wells Fargo Advisors
+  price alerts. **Named with nothing asserted about holdings or whether either
+  is a business account**, on the same basis as OL-0049: institution names
+  without figures are the category A-13 settled.
+- **Three separate 3D-printing and laser vendors onboarded the account over one
+  weekend**, and an Alibaba sourcing alert keyed to **LS connecting rods** and
+  an **EFI intake manifold**. **Recorded without inference** — it may be
+  procurement research, it may be unrelated, and no routine has asked.
+
+### Class A held, and §5 held at a cost again
+
+Nothing sent, forwarded or replied to. **No draft created, edited, sent or
+deleted** — the one draft written this run lives in the brief only. No label
+applied, no thread moved, archived, trashed or reported. **No link in any
+solicitation opened.** No calendar write, no customer contacted, no price
+quoted. **No payment, bank, card or Square action of any kind.** No scheduled
+task created, changed or fired (T-69). No task marked Done on inference.
+`docs/growth/` untouched.
+
+**Withheld this run: both balance figures, the account's last four digits, the
+card's last four digits, two GitHub verification codes, the enquirer's email
+address, the Melio outreach URLs, and the state officials' names** (roles
+instead). **Several Google Family Link notices concerning minors were read and
+are neither named nor described.** **A repair-shop follow-up addressed to
+someone who is not the account holder** was classified no-action without
+recording the name.
+
+- **Needs the owner today** — **T-71** (both alerts, still unread, and the cause
+  unknown); **T-73** (**the 2026-10-21 charge is two days out**); **T-72** (a
+  prospect at 56 hours — approve, amend or reject the draft); **A-19** (second
+  instance, and Friday's review will meet it again); **T-76** (four access
+  notices); then **T-75** (run the site monitor before telling a customer the
+  store works), **price T-37 and T-64**, **T-74**, **T-61**, **T-46**, **A-18**
+  (reject it), **A-15** (13 days), **T-69** (one sentence).
+- **Worth stating plainly** — **the weekend's single most important message was
+  one sentence long and is still unread: a stranger asking whether this business
+  is open.** Everything else in this entry is money moving in the dark —
+  declines, scheduled charges, an overdraft that cleared for reasons nobody can
+  name. **That one message is the only thing in 109 threads that could have
+  become revenue**, and the honest answer to it depends on a storefront check
+  that has never been run. **Thirteen months without recorded revenue is not
+  obviously a demand problem.**
+
+---
+
+## Next entry: OL-0051
