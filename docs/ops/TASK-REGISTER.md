@@ -122,9 +122,9 @@ and **none existed in this register an hour earlier.**
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
 Progress · 2 Awaiting Approval · **24 Awaiting Owner** · 5 Blocked · 22 Planned
 · 2 Backlog. **80 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-20T10:48Z** (Tuesday intake; one row added,
-**T-80**, Ledger-side). **23 of 76 are now waiting on the owner**, up from 19 on
-2026-10-16 and from 10 on 2026-10-12.
+every write — last **2026-10-20T11:06Z** (daily brief; **recounted and
+unchanged** — that run added no row and no section). **23 of 76 are now waiting
+on the owner**, up from 19 on 2026-10-16 and from 10 on 2026-10-12.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
