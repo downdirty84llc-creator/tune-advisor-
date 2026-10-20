@@ -113,17 +113,18 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-77 | Register as a supplier on the Georgia Procurement Registry and ACCGov     | sales      | **High**     | Planned                  | Agent | A to register    | 2026-10-26   |
 | T-78 | Price buy-an-existing-shop against the raw-land build on Hwy 72           | real est.  | **High**     | Planned                  | Agent | A to compare     | 2026-10-26   |
 | T-79 | Identify the SecretSOS issuer before any fee is paid                      | finance    | Normal       | Planned                  | Agent | A to verify      | 2026-11-30   |
+| T-80 | Supabase `public`-schema grants deadline 2026-10-30 — Ledger-side         | ledger     | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-28   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **23 Awaiting Owner** · 5 Blocked · 22 Planned
-· 2 Backlog. **79 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-19T12:04Z** (opportunity scan; three rows added,
-**T-77 to T-79**, all Agent-owned). **23 of 76 are now waiting on the owner**,
-up from 19 on 2026-10-16 and from 10 on 2026-10-12.
+Progress · 2 Awaiting Approval · **24 Awaiting Owner** · 5 Blocked · 22 Planned
+· 2 Backlog. **80 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-20T10:48Z** (Tuesday intake; one row added,
+**T-80**, Ledger-side). **23 of 76 are now waiting on the owner**, up from 19 on
+2026-10-16 and from 10 on 2026-10-12.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -4208,6 +4209,44 @@ causal claim.
   less urgent** — the question "what put it there" is still unanswered and
   **T-73's first charge lands on 2026-10-21.**
 
+### 2026-10-20 — a third alert: below zero, to zero, and below zero again
+
+**Thread `1a1543fa2b75e598`, 2026-10-19T13:00:15Z, unread.** The same
+at-or-below-zero alert, reporting the available balance **below zero** as of
+**10/19 at 08:24 Eastern.**
+
+| Date      | As of    | State                | Thread             |
+| --------- | -------- | -------------------- | ------------------ |
+| **10-15** | 13:05 ET | **Below zero**       | `1a14087d5d2b6009` |
+| **10-17** | 17:55 ET | **At zero**          | `1a14bdcd406bdaf2` |
+| **10-19** | 08:24 ET | **Below zero again** | `1a1543fa2b75e598` |
+
+**All three remain unread. No figure from any of them is recorded** — **A-19's
+third instance in five days.**
+
+**What the third alert adds, and it is not just repetition.** The 10-19 section
+of this task reasoned that the clock had come off this item because the
+overdraft cleared. **It has come back on.** And the sequence now rules out the
+most benign reading: **a one-off timing mismatch that resolved itself does not
+recur on day four.**
+
+**Three things are true at once and none is asserted as the cause:** the account
+went below zero **before** the Capital One AutoPay scheduled for **2026-10-21**
+(T-73); it went below zero **while the debit card was switched on** — no toggle
+alert since 10-17T16:37:38Z, about 90 hours; and **no deposit is visible to this
+record**, because there is no bank connector and three alert emails are the
+entire evidence base.
+
+**What is still unknown is the same thing that was unknown on 10-15: how.** No
+transaction list, no pending items, no overdraft terms, no deposit history.
+**Four runs have now reported the state of this account and not one has been
+able to report a cause.**
+
+- **Status unchanged: Awaiting Owner**, **and still the top of this register.**
+  · **Next action** — **read the three alerts** (step 1 now covers three), then
+  step 2. **The 2026-10-21 charge lands tomorrow and its amount has never been
+  read.**
+
 ## T-72 — A store enquiry asked if DD84 is open; unread 56 hours
 
 - **Objective** — Answer a live buying-intent question before the prospect
@@ -4331,6 +4370,30 @@ of its job that could be done from mail alone.**
   through."**
 - **Status** **Awaiting Owner** · **Next action** — Step 1, before 2026-10-21.
 
+### 2026-10-20 — the first charge lands tomorrow, and a third decline arrived
+
+**Capital One AutoPay is scheduled for 2026-10-21 — tomorrow — and its amount
+has still never been read.** The notice has sat unopened since
+2026-10-17T15:01:55Z.
+
+**And DAZN declined a third time:** **2026-10-19T16:00:00Z**, _"Your payment has
+declined."_ Declines now recorded on **10-15, 10-16 and 10-19**.
+
+**That third decline is worth more than a tally.** **A vendor is retrying
+charges against an account at or below zero, while the owner is simultaneously
+asking that same vendor to cancel the subscription and refund $49.99** (his two
+messages of 10-16 and 10-17). **Each retry is another authorisation attempt on
+an account that reported below zero on 10-19** — and **T-71** records that the
+account went negative again **before** tomorrow's scheduled charge.
+
+**Nothing new is known about the other three outflows.** The Webador invoice is
+still unopened (T-46); the ChatGPT Business renewal is still **2026-10-24**;
+**three of the five amounts in this task remain unread and none is estimated.**
+
+- **Status unchanged: Awaiting Owner** · **Next action** — **step 1 today, not
+  tomorrow.** Reading the Capital One notice is the only one of the five that
+  has a deadline inside 24 hours.
+
 ## T-74 — A third party says a Melio account exists; the message does not hold together
 
 - **Objective** — Establish whether DD84 has a Melio bill-pay account, because
@@ -4378,6 +4441,36 @@ discipline applied to Square.
 - **Completion proof required** — A yes or no from a source that is not this
   email.
 - **Status** **Awaiting Owner** · **Next action** — Step 1.
+
+### 2026-10-20 — much stronger evidence, and still not proof
+
+**Two messages ten minutes apart on 2026-10-19:**
+
+- **13:07:24Z**, the same sender as 10-16, in thread `1a1456066392fc38` (now two
+  messages): _"With your account already being made, I'd like to set aside some
+  time to better understand how you would like to use Melio for your business."_
+  **The three-way name mismatch recorded above is unchanged.**
+- **13:17:29Z**, thread `1a15450c6e7bfc86`, from **`info@melio.com`** — _"5
+  updates to your account from last quarter"_, covering expenses, bill import,
+  weekend payments, currencies and a referral bonus.
+
+**The second message is materially better evidence than the first.** It comes
+from **Melio's own domain** and addresses DD84 **as an account holder**, which
+an unsolicited sales message does not.
+
+**It is still not proof, and the distinction is worth keeping.** A vendor's
+quarterly product-update mail reaches marketing lists as readily as account
+holders, and **this register's own discipline on Square — "five channels and
+possibly an abandoned signup" — exists precisely because a signup and an account
+are not the same thing.**
+
+**So the finding is narrowed, not closed:** **a Melio account probably exists**,
+and **T-36's channel count is probably seven.** **"Probably" is doing real work
+in both sentences** and must not be edited out of them.
+
+- **Status unchanged: Awaiting Owner.** · **Next action** — unchanged and now
+  cheaper: **the owner either recognises the account or he does not.** Still
+  **not** via the link in the sales message.
 
 ## T-75 — A new Shopify theme was published and nobody checked the storefront
 
@@ -4638,3 +4731,62 @@ verification costs nothing.
   history, **or a no-action record saying no issuer could be found.** **Not "it
   looked fine."**
 - **Status** **Planned** · **Next action** — Step 1.
+
+## T-80 — Supabase `public`-schema grants deadline 2026-10-30 — Ledger-side
+
+- **Objective** — Make sure a dated platform change to a **production database
+  that is not DD84's** reaches the people who own it, without this platform
+  touching it.
+- **Source** — `/dd84-inbox-intake`, 2026-10-20. Thread `1a1586e9de9b100b`,
+  **2026-10-20T08:30:05Z**, **unread and flagged important**: _"Final notice:
+  new tables in 'public' need grants from October 30."_ Stated as **10 days
+  left**.
+- **Workstream** ledger · **Priority** **High** · **Owner** **Owner** ·
+  **Approval class** **A to report only.** · **Due** 2026-10-28 — **two days
+  before the deadline, not on it.**
+
+### Why this is in DD84's register at all, and what must not happen
+
+**The only Supabase project on this account belongs to the Georgia Opportunity
+Ledger** — a different business, in
+`downdirty84llc-creator/georgia-opportunity-ledger`, deliberately separate
+(`CLAUDE.md` §0).
+
+**This task exists because the notice arrived in DD84's mailbox and nowhere else
+this platform can see.** It is logged so that a dated change to a live database
+is not lost between two records. **It is not DD84 work.**
+
+**What was not done, and will not be:** **no `mcp__Supabase__*` tool was
+called.** The project was not read, its tables were not listed, and its
+migrations were not inspected. **The command files make this a flat prohibition
+rather than a read-only allowance**, and that holds even when a genuine deadline
+would be easier to assess with one query.
+
+**The register already carries Ledger-side items** — T-11 (Stripe test keys),
+T-13 (legal review), T-14 (virus scanning) — **so a Ledger row here is the
+established pattern, not an exception.** What is new is that this one has a
+**hard external date.**
+
+### What is and is not established
+
+**Established:** a notice with the wording above, a date of **2026-10-30**, and
+a "final notice" framing implying earlier messages this platform has not seen.
+
+**Not established:** whether the Ledger's schema is actually affected, how many
+tables, whether its migrations already set explicit grants, or whether anything
+breaks on 10-30 if nothing is done. **Answering any of those means reading that
+project, which this routine may not do.**
+
+- **Cost and risk** — **No cost to report.** The risk of silence is a production
+  database changing behaviour on a known date with nobody on either record
+  having read the notice. **The risk of acting is crossing a boundary the
+  platform sets deliberately**, which is why nothing was touched.
+- **Execution steps** — (1) **Owner** reads the notice; (2) decides whether it
+  affects the Ledger's schema — **from that repository's session, not this
+  one**; (3) if it does, the work belongs in the Ledger's own operating record;
+  (4) tell this task the outcome so it can close with evidence.
+- **Completion proof required** — Either a statement that the Ledger's schema is
+  unaffected, or a record **in the Ledger repository** that the grants were set.
+  **Not "it was probably fine."**
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **Ten days, and this
+  register cannot shorten them.**

@@ -4272,4 +4272,176 @@ information and each says so.** **A sold property is recorded as sold.**
 
 ---
 
-## Next entry: OL-0053
+## OL-0053 — 2026-10-20 · Tuesday intake: the account went negative again, and the eight-minute reply
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled task "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-20T10:20:14Z**. **Seventeenth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`3e86c48`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **48 tracked files, working tree clean. Eighth run to
+  record the result and the tip**, and the **seventeenth** whose firing prompt
+  demanded "28 tracked files" (T-69).
+- **Skeleton committed first** as **`843b47b`**, before the sweep — **the third
+  application of OL-0050's repair and the first to the intake**, which spends
+  ten to twenty-five minutes reading before it writes.
+- **Window** since OL-0050, **2026-10-19T10:21Z — 2026-10-20T10:20Z, 24 hours.**
+  **48 threads, and the result estimate was also 48**, so the window is covered
+  in one page with no pagination gap. **9 actionable, 39 no-action.**
+- **Reached** Gmail, Google Calendar, Shopify. **Not reached** the bank, Stripe,
+  the PayPal connector, bookipay, Square, Chime, Superhuman Mail, Canva, Reddit.
+
+### The finding: a third bank alert, and the benign reading is gone
+
+**Thread `1a1543fa2b75e598`, 2026-10-19T13:00:15Z, unread.** Below zero as of
+**10/19 08:24 Eastern**.
+
+| Date      | As of    | State                |
+| --------- | -------- | -------------------- |
+| **10-15** | 13:05 ET | **Below zero**       |
+| **10-17** | 17:55 ET | **At zero**          |
+| **10-19** | 08:24 ET | **Below zero again** |
+
+**All three unread. No figure recorded — A-19's third instance in five days.**
+
+**Yesterday's brief reasoned that the clock had come off this item because the
+overdraft cleared. It has come back on**, and the sequence rules out the kindest
+explanation: **a one-off timing mismatch that resolved itself does not recur on
+day four.**
+
+**Three facts, no causal claim.** The account went below zero **before**
+tomorrow's scheduled Capital One AutoPay; **while the debit card was switched
+on** — no toggle alert since 10-17T16:37:38Z, about ninety hours; and **with no
+deposit visible to this record**, because three alert emails are the entire
+evidence base.
+
+**What four runs have still not produced is a cause.** No transaction list, no
+pending items, no overdraft terms. **The register can now describe this
+account's state precisely and has never once been able to say why it is in it.**
+→ **T-71** updated; **T-73** updated, because **the first of five outflows lands
+tomorrow and its amount has never been read.**
+
+### The contrast worth more than any single item
+
+**2026-10-19T14:48:43Z the owner sent a 9.74 MB message to a commercial
+vehicle-body manufacturer's lifecycle support desk. The reply came at 14:56:35Z
+— eight minutes — at 6.75 MB.**
+
+**Neither message has a subject line and the contents cannot be read from here**
+(no download tool). **No inference is drawn about what the files were**, and the
+contact's name, direct line and address are **not recorded**.
+
+**What is recorded is the shape.** On the same day, in the same mailbox: **a
+prospect's one-line question passed sixty hours unread** (T-72, now ~80 hours),
+**a customer's datalog passed 187 hours unread** (T-64), and **GDOT District 1
+reached twelve days waiting on a reply that already exists in draft** (A-15).
+
+**So the constraint is not availability.** **This business answers inside ten
+minutes when it decides something matters.** What the register has been calling
+a capacity problem looks more like a prioritisation one — **and that is a
+different problem with a different fix.**
+
+**Recorded alongside it, narrowly:** **two retirement-plan notices naming a
+third-party employer arrived in this mailbox on 10-19.** **The employer is not
+named here and no conclusion is drawn.** It is noted only because **this
+register has been measuring response times against an assumption of full
+availability that nothing in `ventures.md` states** — and **whether the owner's
+capacity belongs in the operating record is his decision, not an agent's.** No
+packet raised; §5's new-category clause points at a question, and the question
+is his.
+
+### Melio: much stronger evidence, and deliberately still not proof
+
+**Two messages ten minutes apart on 10-19.** The same sales sender followed up —
+_"With your account already being made…"_ — and ten minutes later
+**`info@melio.com` itself** sent _"5 updates to your account from last
+quarter"_.
+
+**The second is materially better evidence: Melio's own domain, addressing DD84
+as an account holder.** **It is still not proof** — quarterly product-update
+mail reaches marketing lists as readily as account holders, and **this
+register's Square discipline ("five channels and possibly an abandoned signup")
+exists for exactly this distinction.**
+
+**So T-74 is narrowed, not closed: a Melio account probably exists, and T-36's
+channel count is probably seven.** **"Probably" is doing real work in both
+sentences and must not be edited out.**
+
+### A dated deadline on a database this platform may not touch
+
+**2026-10-20T08:30:05Z, thread `1a1586e9de9b100b`, unread and flagged
+important:** _"Final notice: new tables in 'public' need grants from October
+30."_ **Ten days.**
+
+**The only Supabase project on this account belongs to the Georgia Opportunity
+Ledger** — a different business, a different repository. → **T-80**, raised
+**High**, with the boundary stated in the task itself.
+
+**No `mcp__Supabase__*` tool was called.** The project was not read, its tables
+not listed, its migrations not inspected. **The command files make that a flat
+prohibition rather than a read-only allowance, and it held even though one query
+would have established whether the deadline matters at all.** The task is logged
+so a dated change to a live database is not lost between two records, **and its
+due date is 2026-10-28 — two days before the deadline, not on it.**
+
+### Smaller, recorded
+
+- **DAZN declined a third time** (10-19T16:00:00Z; also 10-15 and 10-16). **A
+  vendor retrying authorisations against an account at or below zero while the
+  owner asks that same vendor to cancel and refund $49.99.** → T-73.
+- **`dd84-api` failed an eighth time** (10-19T14:48:56Z), eight separate days.
+  **No new dated section on T-33** — yesterday's said a count is not a
+  diagnosis, and a ninth tally would be the behaviour it criticised.
+- **A Google security alert for a different account** for which this mailbox is
+  the **recovery address** (10-19T16:44:05Z). Not DD84's account; **no code
+  recorded.** **Five access notices across five providers in four days** → T-76.
+- **No new leads. No enquiry, quote request or customer message in 24 hours** —
+  **a real zero, checked rather than inferred**: the 48-thread sweep contains no
+  message from an individual about a vehicle.
+- **Sixteenth consecutive empty calendar day** (read 10:36Z for 10-20 and
+  10-21). **Shopify 0 orders** (read 10:37Z). **Two real zeros.**
+- **Drafts: 15, unchanged for an eighth run**, five still addressed to likely
+  loan fraud (T-42). **None created, edited or deleted.**
+- **Reddit: a targeted three-day sweep returned nothing.** **T-60's deadline
+  passed yesterday and no suspension or restoration notice arrived** — **weak
+  evidence, not a resolution**, and the outcome is still unknown.
+- **The card-toggle check was done properly again:** six Wells Fargo threads
+  over three days, **every `messageCount` matching the messages returned**, so
+  nothing was silently truncated. **Card ON for ~90 hours** after thirty-two
+  toggles in nine days.
+
+### Class A held, and §5 held
+
+Nothing sent, forwarded or replied to. **No draft created, edited, sent or
+deleted** — yesterday's draft to the prospect still stands, unapproved. No label
+applied, no thread moved, archived, trashed or reported. **No link in any
+solicitation opened.** No calendar write, no customer contacted, no price
+quoted. **No payment, bank, card or Square action of any kind.** **No Supabase
+tool called; nothing of the Georgia Opportunity Ledger's read or written.** No
+scheduled task created, changed or fired (T-69). `docs/growth/` untouched.
+
+**Withheld: every figure from all three bank alerts, both sets of last-four
+digits, the third-party employer's name, the vendor contact's name, direct line
+and address, and the solicitation URLs.** **No customer name, email or phone
+written.** **Several Family Link notices concerning minors were read and are
+neither named nor described.**
+
+- **Needs the owner today** — **T-73 step 1, today rather than tomorrow** (the
+  Capital One charge lands 10-21 and its amount has never been read); **T-71**
+  (three unread alerts, cause still unknown); **T-72** (a prospect at 80 hours —
+  approve, amend or reject yesterday's draft); **A-19** (third instance; the
+  cash review fires Friday); **T-60** (did the verification happen? nothing here
+  can tell); then **T-80** (ten days, Ledger-side), **T-75**, **price T-37 and
+  T-64**, **T-76**, **T-74**, **T-61**, **T-46**, **A-18** (reject it), **A-15**
+  (12 days), **T-69**.
+- **Worth stating plainly** — **the register has four runs of precise reporting
+  about an account whose movements it cannot explain, and one unanswered
+  sentence from someone who wanted to buy something.** The eight-minute reply
+  shows the second of those is not a capacity problem. **That is the most useful
+  thing this intake found, and it was found by comparing two timestamps rather
+  than by reading anything new.**
+
+---
+
+## Next entry: OL-0054
