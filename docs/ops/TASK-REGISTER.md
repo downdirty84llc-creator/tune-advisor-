@@ -125,9 +125,9 @@ and **none existed in this register an hour earlier.**
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
 Progress · 2 Awaiting Approval · **27 Awaiting Owner** · 5 Blocked · 22 Planned
 · 2 Backlog. **83 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-21T11:02Z** (Wednesday intake; three rows added,
-**T-81 to T-83**, all owner-held). **23 of 76 are now waiting on the owner**, up
-from 19 on 2026-10-16 and from 10 on 2026-10-12.
+every write — last **2026-10-21T11:10Z** (daily brief; **recounted and
+unchanged** — that run added a dated section to T-75 and no row). **23 of 76 are
+now waiting on the owner**, up from 19 on 2026-10-16 and from 10 on 2026-10-12.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -4630,6 +4630,38 @@ store works is waiting for approval.**
   result.**
 - **Completion proof required** — A site-monitor brief naming each page checked
   and its state, with timestamps.
+
+### 2026-10-21 — due today, not done, and nothing schedules the routine it needs
+
+**This task falls due today and Torque has not done it.** Recorded plainly
+because the firing instructions say not to report an owner action as agent work,
+**and the reverse obligation is the same one.**
+
+**The reason is structural, not a lapse of attention.** This task's next action
+is **"run `/dd84-site-monitor`"**, and **that routine has no schedule.** Four of
+the six DD84 routines fire on a timer — intake, daily brief, cash review,
+opportunity scan. **`/dd84-site-monitor` and `/dd84-followup` only run when
+somebody asks.**
+
+**So this task cannot close by waiting.** It will sit here indefinitely unless
+the owner triggers the routine or **T-69's prompt edits add a schedule for it**
+— which is now the fourth edit that one sentence carries.
+
+**And it is currently gating a customer reply.** **T-72**'s drafted first line
+says the business is open and taking work. **Nothing reachable confirms that**:
+`ventures.md` claims 50 active products, **Shopify reports 0 orders all-time**,
+a **new storefront theme was published 2026-10-16** and nobody looked. The check
+is **free and Class A**. **A prospect has now been waiting about 104 hours for
+an answer that depends on a routine nothing fires.**
+
+**Not silently re-dated.** Moving the due date would hide exactly the thing
+worth seeing: **the register can generate work for a routine it has no way to
+trigger.**
+
+- **Status unchanged: Planned, Agent-owned** · **Next action** — unchanged:
+  **run `/dd84-site-monitor`.** It needs its own run and its own brief, not a
+  section inside the daily one. **Either the owner asks for it, or T-69 gives it
+  a schedule.**
 
 ## T-76 — Four account-access notices in four hours across four providers
 

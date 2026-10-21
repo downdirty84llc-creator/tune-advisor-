@@ -4751,4 +4751,125 @@ customer name, email or phone written.** **No minor named or described.**
 
 ---
 
-## Next entry: OL-0056
+## OL-0056 — 2026-10-21 · Daily brief: five unread bank messages, a supplier waiting, and a task of mine that nothing can trigger
+
+- **Routine** `/dd84-daily-brief`, **fired by the scheduled task "DD84 Daily
+  Command Brief (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-21T10:51:12Z**, **thirty-one minutes after the intake at OL-0055.**
+  **Twentieth scheduled firing to reach a session with the repository
+  attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`4e87638`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **51 tracked files, working tree clean. Eleventh run to
+  record the result and the tip**, and the **twentieth** whose firing prompt
+  demanded "28 tracked files" (T-69).
+- **No skeleton commit**, deliberately, for OL-0051's reason. **Three
+  applications, two reasoned declines — and two of the three applications have
+  now been tested by a real worker restart, both holding.**
+- **Reached** nothing new; the intake's reads are carried with their own
+  timestamps.
+
+### The bank pile is now five messages, and the newest is the only one that explains anything
+
+**Three balance alerts (10-15, 10-17, 10-19), the declined-transactions notice
+(10-20), and the Capital One AutoPay notice whose charge was due yesterday — all
+five unread.**
+
+**The ordering is the finding.** Four runs reported this account's state and
+none could say what moved through it. **The message that names a charge arrived
+last**, and it is the only one of the five that converts anything from unknown
+to known. **A reader working top-down through that mailbox would reach the
+useful message fifth.**
+
+**And yesterday's charge produced no confirmation and no failure notice.**
+**Unknown is not paid.** If it failed the way the 10-20 PayPal debit did, a fee
+may be accruing where nothing here can see it.
+
+### A task of mine fell due today, I did not do it, and the reason is structural
+
+**T-75 — run the site monitor — is Agent-owned, was due today, and is not
+done.** Recorded plainly: **the firing instruction says not to report an owner
+action as agent work, and the reverse obligation is identical.**
+
+**The reason is not inattention.** This task's next action is to run
+**`/dd84-site-monitor`**, and **that routine has no schedule.** Four of the six
+routines fire on a timer; **`/dd84-site-monitor` and `/dd84-followup` run only
+when somebody asks.**
+
+**So the register can generate work for a routine it has no way to trigger** —
+and this instance of it is **gating a reply to the only live prospect on the
+record**, because T-72's drafted first line claims the store works and nothing
+reachable confirms that.
+
+**The due date was deliberately not moved.** Re-dating it would hide precisely
+the thing worth seeing. → **T-75** carries the finding; **T-69 now carries a
+fourth edit: give the site monitor a schedule.**
+
+**Also mine and undone: T-33's step 1**, which shrank this morning from an
+open-ended investigation to **one GitHub query** — find the repository holding
+PR #29. **Eleven days overdue, no approval needed, and GitHub has not been
+re-read since 2026-10-15.**
+
+### Today's dates, and a second clean instance of the overdue defect
+
+**48 of 64 open tasks past due, up from 46; 32 are the owner's.**
+
+**Due today: T-75 and T-76 — and this agent set both dates on 2026-10-19.**
+**Neither has an external deadline.** **Yesterday exactly one of 46 past-due
+items carried a real clock; today none of the 48 does.**
+
+**The two genuine dates in the whole register are both in the future** — the
+ChatGPT Business renewal on **2026-10-24** and the Ledger's database deadline on
+**2026-10-30** (T-80). **The pattern diagnosed on 10-19 and 10-20 now has a
+third reading, and it is the cleanest: a register in which forty-eight items are
+"overdue" and none is actually late.**
+
+### Carried forward without re-arguing
+
+- **T-82: a named supplier wrote nineteen hours ago.** The only warm supplier
+  relationship on the record; **silence for a third week reads as a decline, and
+  one paragraph prevents that.**
+- **T-72 at ~104 hours** with a draft waiting, and **T-81** needing **one line**
+  — does DD84 ship abroad? **No draft for either was written**; T-81's would
+  require inventing a shipping policy `ventures.md` does not contain.
+- **Seventeenth consecutive empty calendar day** (read 10:41Z) and **Shopify 0
+  orders** (10:42Z). **Two real zeros.**
+- **Seven items now draw on the account, four amounts unread, no total given.**
+- **Eight packets pending**: A-05 / A-06 / A-07 at **76 days** — **and A-06's
+  stated blocker, the owner engaging counsel, emailed unprompted yesterday** —
+  A-10 at **74**, A-15 at **13**, A-17 at **12**, A-18 at **8**, **A-19 at 5,
+  with Friday's cash review two days out.**
+- **Unpaid invoices and customer payment failures unchecked for the tenth
+  consecutive run.**
+
+### Class A held
+
+Nothing sent, replied to or forwarded. **Calendar read only.** No label applied,
+no mail state changed, **no draft created, edited, sent or deleted.** No charge,
+refund, invoice, payout or fulfilment action. **No bank, card, Square or payment
+action of any kind.** **No Supabase tool called.** No GitHub write. **No
+scheduled task created, changed or fired** — T-69's four edits remain available
+from this session and unmade, on the 2026-10-16 reasoning.
+
+**No task marked Done on inference.** **T-60 stays open two days past its
+deadline; T-75 stays open as undone agent work rather than being re-dated.**
+`docs/growth/` untouched. **No balance figure, card-statement figure, last-four
+digits, verification code, customer name, email or phone written here.**
+
+- **Needs the owner today** — **the five unread bank messages as one sitting**,
+  **starting with the newest**, because it is the only one that names anything;
+  **T-82** (a supplier wrote nineteen hours ago — one paragraph); **T-72**
+  (approve the draft) and **T-81** (one line on shipping); **A-19** (fifth
+  instance, Friday's review is in two days); then **T-83**, **price T-37 and
+  T-64**, **A-18** (reject it), **T-76**, **A-15** (13 days), **T-80**, and
+  **T-69** — now four edits, one of which is the only way T-75 ever closes.
+- **Worth stating plainly** — **nothing arrived today; the brief's content is
+  entirely about what is already sitting in the mailbox and the register.** Five
+  unread bank messages where the useful one is last, a supplier waiting on a
+  paragraph, two prospects waiting on a decision and a one-line policy, and **a
+  task of mine that cannot close because nothing fires the routine it needs.**
+  **None of it is an information problem. One of them is mine.**
+
+---
+
+## Next entry: OL-0057
