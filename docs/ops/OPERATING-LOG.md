@@ -5132,4 +5132,123 @@ and explicitly not separable per job** because neither tier was ever decided.
 
 ---
 
-## Next entry: OL-0059
+## OL-0059 — 2026-10-21 · A-15 executed: the first two external messages this platform has ever sent
+
+- **Timestamp** 2026-10-21T12:11:00Z
+- **Task** T-38, T-39 · **Approval** **A-15, APPROVED (both)** by the owner
+  2026-10-21 ("Approve A-15"). **Class C — external send.**
+- **Action** Re-read both threads, found neither had moved, corrected two
+  statements that 13 days had made untrue, sent both replies, and verified each
+  in its thread afterwards.
+- **Tool** `mcp__Gmail__get_thread` ×4 (two before, two after),
+  `mcp__Gmail__reply` ×2; `Edit`; `git`.
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** A-15 pending 13 days. GDOT thread 4 messages, last reply unread
+  since 2026-10-06. SBDC thread 1 message, no reply.
+- **After** GDOT thread **5 messages**, SBDC thread **2**. Both sends verified
+  by re-reading the threads.
+
+### This is the first time either agent has sent anything outward
+
+Every routine on this platform is Class A by construction, and the gate has held
+since 2026-08-06: **drafts have been written, packets raised, and nothing has
+ever left.** A-15 is the first approval of a send, and this entry is the first
+record of one. Worth marking, because the safety model's whole claim is that the
+boundary is real — **it is only demonstrated by an approval actually crossing
+it, under a name and a timestamp.**
+
+### Checked before sending, because a 13-day-old draft is a claim about the past
+
+**Both threads were re-read first.** GDOT: still 4 messages, Nakia Nembhard's
+2026-10-06T22:04:31Z reply still last and still unread. SBDC: still a single
+message from 2026-10-06T19:56:11Z. **Nothing had arrived that the drafts did not
+account for.**
+
+That was the condition for sending at all. **Had either counterparty written
+again, the drafts would have gone back to the owner rather than out** — an
+approval is for a message in a context, and the context is checkable.
+
+### Two words changed, and the reasoning for treating that as execution
+
+| Draft | Was                               | Sent                                  | Why                                                                                                                    |
+| ----- | --------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| GDOT  | "Good **afternoon** Nakia"        | "Good **morning**"                    | Sent **08:10 EDT**. Nembhard's own messages in this thread open "Good afternoon" and "Good evening" to match the clock |
+| SBDC  | "missing **Tuesday's** 3:30 slot" | "missing **the October 6** 3:30 slot" | **Last Tuesday was 2026-10-20.** The phrase had come to point at the wrong date                                        |
+
+**The second one mattered.** Apologising to an adviser for "Tuesday's slot" when
+their meeting was on the 6th reads as an apology for a different and more recent
+no-show — worse than saying nothing. **A weekday reference is a figure that
+drifts**, exactly like the tracked-file count in OL-0045, and it drifted into
+being wrong in thirteen days.
+
+**Nothing was added.** No sentence about the 13-day gap beyond the SBDC draft's
+existing "and for the slow reply"; no new commitment, date or figure. **Adding
+prose to an approved message to a state agency is customer-facing variance and
+goes back to the owner; changing "afternoon" to "morning" at 8am is not.** The
+line is drawn at whether the recipient's understanding of what DD84 has
+committed to changes, and in both edits it does not.
+
+### Verified in the destination, not from the return value
+
+`reply` returned message IDs for both. **That was not treated as delivery.**
+Both threads were re-read afterwards: GDOT `1a0cf82b91d1352c` now carries
+`1a15e5f14b204202` at 12:10:51Z with `SENT`, to the reviewing engineer and cc
+the second D1TO address; SBDC `1a112caffaba4e6d` now carries `1a15e5f48ed39b01`
+at 12:11:05Z. **Message counts went 4 → 5 and 1 → 2.**
+
+Recipients are named here by role rather than by address. They are already
+written out in A-15's Draft 1 and Draft 2, and **A-17 — whether third-party
+contact details belong in this public repository at all — is still pending.
+Multiplying instances of the contested category while its decision is open would
+be settling it by accretion.**
+
+This record has been caught three times by a success signal that measured the
+wrong thing — a green Routine that committed nothing, a grep that passed on an
+uncleaned tree, a token counter read as liveness. **A send call returning an ID
+is the same class of signal**, and it cost one extra read to not rely on it.
+
+### What was deliberately not done
+
+- **No attachment and no revised concept plan.** The GDOT reply asks three
+  questions and makes no engineering claim, as approved.
+- **The D1TO checklist PDF is still unread.** No attachment-download tool exists
+  in this session, and **the message makes no claim about what the checklist
+  contains** — it says it is in hand and asks questions around it.
+- **No Calendly booking and no calendar write.** The SBDC reply says the owner
+  will book. T-39 stays open until a booking exists.
+- **No reply to the C10 customer.** A-15's rejected third draft stays rejected;
+  that thread needs a technical determination about a running engine, which
+  `ventures.md` puts beyond an agent.
+
+### A seventh numbering collision, and theirs was the better fix
+
+This entry was written as **OL-0058** and is **OL-0059**. The follow-up run
+committed `43459f6` at **12:10:59Z** — eight seconds before the GDOT reply went
+out — and took OL-0058 from the same "Next entry" line this session had read.
+
+**That session's own entry proposes the durable fix**, and it is right: _stop
+storing a derived value by hand._ "Next entry: OL-00NN" is a cached count of the
+entries above it, and a cached count is what has now failed seven times. The
+number should be computed from the headings at write time, not read from a
+footer that two sessions can read simultaneously and both believe.
+
+**Also worth adopting from that entry:** it found a figure it had been carrying
+forward rather than recomputing, and flagged that the error ran in the
+**flattering** direction — overstating the neglect a routine exists to detect.
+**An exaggeration in the direction of the tool's own purpose is the one a reader
+will believe**, which makes it worse than an understatement, not better.
+
+### What the owner now owns
+
+**T-38 waits on Nembhard**, and the three answers are what set a surveyor's
+scope — throat width and radii, survey versus traffic statement, railroad
+coordination sequencing. **No surveyor should be engaged before they arrive**,
+which is the entire reason the questions were asked rather than assumed. Chase
+date **2026-10-28**: the thread's own history shows a 12-day turnaround, so a
+week's silence is not yet late.
+
+**T-39 waits on the owner**, who has to click the Calendly link.
+
+---
+
+## Next entry: OL-0060

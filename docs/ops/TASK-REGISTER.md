@@ -71,8 +71,8 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-35 | Three stale pull requests, one from the superseded branch                 | ops        | High         | **Awaiting Owner**       | Owner | none yet         | not set      |
 | T-36 | No readable path to DD84's own revenue figures                            | finance    | High         | Planned                  | Agent | A to prepare     | 2026-10-15   |
 | T-37 | The C10 customer — Terminator X Max AFR fault                             | service    | High         | **In Progress**          | Owner | A to prepare     | 2026-10-10   |
-| T-38 | GDOT access review — right-in/right-out on the Colbert site               | real est.  | High         | **In Progress**          | Owner | **A-15 pending** | 2026-10-10   |
-| T-39 | Reschedule the missed Georgia SBDC session                                | finance    | Normal       | Awaiting Approval        | Owner | **A-15 pending** | 2026-10-10   |
+| T-38 | GDOT access review — right-in/right-out on the Colbert site               | real est.  | High         | **In Progress**          | Owner | A-15 sent        | 2026-10-28   |
+| T-39 | Reschedule the missed Georgia SBDC session                                | finance    | Normal       | **In Progress**          | Owner | A-15 sent        | 2026-10-28   |
 | T-40 | Google Play developer account at risk of closure                          | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
 | T-41 | Five r/LSSwapTheWorld lead candidates, none contacted                     | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
 | T-42 | Fifteen unsent drafts, five of them to likely loan fraud                  | ops        | High         | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
@@ -5197,3 +5197,29 @@ has listed DD84's liabilities, and no routine asks for one.**
   statement, with the funding account named.
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **The statement is
   an unopened attachment in the mailbox, not missing information.**
+
+---
+
+> ## A-15 sent, 2026-10-21 — what changed for T-38 and T-39
+>
+> Both replies went out at **12:10–12:11Z** and are verified in their threads:
+> GDOT `1a15e5f14b204202` (thread 4 → 5 messages), SBDC `1a15e5f48ed39b01`
+> (thread 1 → 2). Full record in **A-15** and **OL-0058**.
+>
+> **T-38 — the ball is with GDOT, and the three answers set the surveyor's
+> scope.** Nothing can be bought until Nembhard answers: preferred throat width
+> and radii, whether a boundary and topographic survey with sight distance
+> suffices or a traffic statement is also expected, and whether railroad
+> coordination must precede the driveway application or can run in parallel.
+> **Do not engage a surveyor before those three answers** — that is the whole
+> point of having asked. Chase on **2026-10-28** if nothing arrives; the
+> thread's own history is a 12-day reply turnaround, so a week is not yet late.
+>
+> **T-39 — the booking is the owner's, and the agent cannot do it.** The reply
+> says Mark will book through the adviser's Calendly link. **No slot was
+> proposed and nothing was written to the calendar.** The task stays open until
+> a booking exists.
+>
+> **Still unread and still blocking a full submission:** the D1TO Full Permit
+> Review checklist PDF. No session here has an attachment-download tool, so its
+> contents have never been read and nothing in the reply claims otherwise.

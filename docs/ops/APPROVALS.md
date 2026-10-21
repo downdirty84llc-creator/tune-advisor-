@@ -899,7 +899,7 @@ not a schedule. First scheduled test 2026-10-09T10:20Z.
 
 ## A-15 — Send two prepared replies: GDOT District 1, and the Georgia SBDC
 
-**Status: PENDING — raised 2026-10-08 by the first `/dd84-inbox-intake` run.**
+**Status: APPROVED (both) — owner, 2026-10-21. SENT the same day.**
 
 > **REDACTED 2026-10-09 — the body of this packet has been edited, which the
 > packet rule normally forbids.** One site in the Alternatives list carried the
@@ -1010,8 +1010,61 @@ guessed.
 **Reply with: APPROVE (both) / APPROVE WITH CHANGES (name which, and what) /
 DEFER / REJECT**
 
-**Response** — _awaiting owner._ **Affected records** — T-38, T-39. **Actual
-result** — Not executed. Nothing sent.
+**Response** — **APPROVE (both)**, owner, 2026-10-21: "Approve A-15". A bare
+approval is "APPROVE (both)" by this packet's own reply format.
+
+**Affected records** — T-38, T-39.
+
+**Actual result** — **Both sent 2026-10-21, verified in Gmail by re-reading each
+thread after sending rather than trusting the send call's return.**
+
+| Message                                                                                              | Sent      | New message ID     | Thread now                             |
+| ---------------------------------------------------------------------------------------------------- | --------- | ------------------ | -------------------------------------- |
+| GDOT District 1 — the reviewing engineer, cc the second D1TO address, both as named in Draft 1 above | 12:10:51Z | `1a15e5f14b204202` | `1a0cf82b91d1352c`, **4 → 5 messages** |
+| Georgia SBDC — the adviser, as named in Draft 2 above                                                | 12:11:05Z | `1a15e5f48ed39b01` | `1a112caffaba4e6d`, **1 → 2 messages** |
+
+### Checked before sending: neither thread had moved
+
+The packet was 13 days old at send. **Both threads were re-read first and both
+were exactly as the packet described** — GDOT still 4 messages with Nakia
+Nembhard's 2026-10-06T22:04:31Z reply last and still unread, SBDC still a single
+message. **Nothing had arrived that the drafts did not know about**, so no
+content was stale. Had either counterparty written again, the drafts would have
+gone back to the owner rather than out.
+
+### Two words changed, and why that is not "APPROVE WITH CHANGES"
+
+**Both edits restore a statement that was true when drafted and had stopped
+being true. Neither alters meaning, commitment or tone.**
+
+| Draft | Was                               | Sent as                               | Why                                                                                                               |
+| ----- | --------------------------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| GDOT  | "Good **afternoon** Nakia"        | "Good **morning** Nakia"              | Sent 08:10 EDT. The thread's own register tracks time of day — Nembhard wrote "Good afternoon" and "Good evening" |
+| SBDC  | "missing **Tuesday's** 3:30 slot" | "missing **the October 6** 3:30 slot" | **Last Tuesday was 2026-10-20.** After 13 days the phrase pointed at the wrong date entirely                      |
+
+The second was not cosmetic: apologising for "Tuesday's slot" to someone whose
+meeting was on the 6th would have read as an apology for a different, more
+recent no-show. **A date that drifts is the same defect as a file count that
+drifts** — see OL-0045.
+
+**Nothing was added.** Neither message acknowledges the 13-day gap beyond what
+the SBDC draft already said ("and for the slow reply"). Adding a sentence to an
+approved message to a state agency is customer-facing variance and would have
+gone back; changing "afternoon" to "morning" is not.
+
+### What was not done
+
+**No attachment, no revised concept plan, no design.** The GDOT reply asks three
+questions and makes no engineering claim, exactly as approved. **The D1TO
+checklist PDF is still unread** — no attachment-download tool in this session —
+and the message makes no claim about its contents.
+
+**No Calendly booking.** The SBDC reply says the owner will book; **the owner
+books.** The calendar was not written to.
+
+**The third draft that was rejected stays rejected.** No reply was sent to the
+C10 customer (T-37); that thread still needs a technical determination about a
+running engine, which is the owner's judgement and not a drafting problem.
 
 ---
 
