@@ -26,6 +26,7 @@ and actual result.
 | ID   | Decision                                                                    | Class | Status                      | Covers                             |
 | ---- | --------------------------------------------------------------------------- | ----- | --------------------------- | ---------------------------------- |
 | S-01 | Standing approval for local repository work                                 | A/B   | **Approved** (standing)     | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
+| S-02 | Standing approval: acknowledge every new enquiry at the next intake         | C     | **Pending**                 | T-87 T-66 T-72 T-81                |
 | A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition                    | B     | **Approved**                | T-01 T-02 T-03                     |
 | A-02 | Correct drifted documentation and the legal-review flags                    | B     | **Approved**                | T-04 T-05                          |
 | A-03 | Exclude demo accounts from owner-facing revenue reporting                   | E-adj | **Approved**                | T-06 T-12                          |
@@ -40,11 +41,15 @@ and actual result.
 | A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**                | T-30                               |
 | A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed) | T-32, blocks T-29                  |
 | A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                | T-27                               |
-| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**                 | T-38 T-39                          |
+| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Approved** (executed)     | T-38 T-39                          |
 | A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)     | T-48                               |
 | A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                 | T-51                               |
+| A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **Pending**                 | T-64                               |
+| A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Pending**                 | —                                  |
+| A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                 | T-37 T-64 T-66                     |
 
-**Four packets are with the owner: A-15, A-17, A-07 and A-10.**
+**Seven packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20 and
+S-02.**
 
 > **Reconciled 2026-10-12 by the daily brief.** This board had **A-16 as
 > Pending** when its own Response block records **APPROVE (Option A), owner,
@@ -1641,4 +1646,138 @@ blocker the sends do not remove.
 the batch.
 
 **Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-66.
+**Actual result** — _not yet executed._
+
+---
+
+## S-02 — Standing approval: acknowledge every new enquiry at the next intake
+
+**Status: PENDING — raised 2026-10-21 by the automation review
+(`docs/ops/reviews/2026-10-21-ai-agent-video-review.md`).**
+
+**Decision requested** — Standing authority for `/dd84-inbox-intake` to send
+**one fixed acknowledgment**, verbatim below, to **each new person who writes to
+DD84 about a service**, at the first intake run after the message arrives —
+inside the limits below and nothing else. This is a **Class C** communication
+approved once as a standing approval, as spec §6 provides: "The agent may then
+execute within those exact limits and must report each use." **APPROVE / APPROVE
+WITH CHANGES / DEFER / REJECT.**
+
+**Business objective** — Stop losing enquiries to silence. In this record a
+website enquiry waited **23 days** for a first reply (T-66), a store enquiry
+asking whether DD84 is open waited **more than four days** with a reply drafted
+and unsent (T-72), and **fifteen drafts** sit unsent (T-42). Each one waited on
+a per-message packet, and the owner's queue grows faster than it empties (see
+the register's summary). The fastest reply in the record is the one the business
+never gets to send. The AI operating system's own target for an automated first
+response is **under five minutes** (`DD84-AI-OS/05-Reports/Weekly/` on
+`dd84/main`); this packet cannot reach that alone — see Alternative 2 — but it
+moves the first response from days to one intake cycle.
+
+**Exact message — sent verbatim, as a reply in the same thread.** Only the two
+bracketed fields change: the first name as the sender wrote it (else "there"),
+and nothing else.
+
+```
+Hi [first name],
+
+Thanks for contacting Down Dirty 84. This is an automatic note to confirm we
+have your message.
+
+Every tuning request is reviewed by the owner before anything is quoted or
+scheduled. If you haven't already included them, these details let us answer
+properly:
+
+- Year, make and model
+- Engine and transmission
+- Modifications, and the fuel you run
+- What you want the vehicle to do differently
+
+Just reply to this email with them. Nothing has been booked or charged.
+
+Down Dirty 84 LLC
+dd84tuning.com
+```
+
+It quotes no price, promises no date, offers no diagnosis and makes no technical
+claim, and it says plainly that it is automatic.
+
+**Limits — this authorises exactly:**
+
+1. **Who.** A person writing to DD84 **for the first time, in a thread with no
+   DD84 message in it**, about a service or product DD84 lists — found by the
+   intake routine in the business Gmail account, including the
+   `downdirty84llc.com` contact form.
+2. **Never** to: a vendor, partner, platform, bank, lender, agency, recruiter or
+   automated sender; anyone who opted out or asked not to be contacted; anything
+   that reads as fraud or a loan lure (T-42, T-67); a message that raises
+   safety, an accident, a complaint, a refund, a chargeback, a legal matter or
+   emissions defeat — **those escalate exactly as today**; an existing
+   customer's thread. **When in doubt, draft instead of sending.**
+3. **Once per thread, ever.** Before sending, the thread and this file's log
+   must show no earlier DD84 message. **No retry on an ambiguous result** —
+   check the Sent folder, record it as unverified, and never send twice.
+4. **At most ten a day.** More than ten qualifying in a day is a signal — spam
+   or a bug — and the excess is drafted and raised in the brief, not sent.
+5. **Every use is reported:** the run's `OPERATING-LOG.md` entry lists each
+   thread ID sent to and the Sent-folder check that verified it, with no name or
+   address. Every acknowledged enquiry gets a register task for the owner's
+   substantive reply, due one business day later, so an acknowledgment is never
+   the last thing the person hears.
+6. **Expires** 30 days after approval unless renewed. **"Revoke S-02"** ends it
+   at once.
+
+**It does not authorise:** any other text; a price, date, diagnosis or
+commitment; replies in existing threads; follow-ups; any channel but the
+business Gmail account; labels, archiving or moving mail.
+
+**On approval, the executing session also amends** `docs/ops/README.md` contract
+item 1 and `.claude/commands/dd84-inbox-intake.md` to name S-02 as the single
+exception to "no routine sends", in these words and no wider. **Until then, both
+still forbid every send**, so nothing changes if this packet waits.
+
+**Cost and cash impact** — No new spend; the sends happen inside intake runs
+that already fire. The return is indirect and real: the only enquiry that came
+through DD84's own website lost 23 days before anyone answered it.
+
+**Risks and safeguards**
+
+1. **An acknowledgment followed by silence is worse than none.** Safeguard:
+   limit 5 — every acknowledgment creates the owner's reply task, and the daily
+   brief's queue puts it at the top.
+2. **Sending to the wrong kind of sender.** Safeguard: limit 2, and "when in
+   doubt, draft".
+3. **A duplicate.** Safeguard: limit 3 — once per thread, sent-log check first,
+   no blind retry.
+4. **A runaway.** Safeguard: limit 4, the daily cap; and limit 6, revocable in
+   two words.
+
+**Systems affected** — Gmail, send only, one fixed message per qualifying
+thread. No payment system, calendar, live site or pricing record.
+
+**Customer and public impact** — New enquirers get one honest, automatic email
+within one intake cycle instead of waiting days for a person.
+
+**Success test** — Over the first 14 days: every qualifying enquiry acknowledged
+at the first intake run after it arrived; **zero duplicates**; **zero
+acknowledgments to an excluded sender**; and each acknowledged enquiry's owner
+reply tracked in the register. Fourteen clean days is the evidence a follow-up
+standing approval (3- and 7-day follow-ups) would need — a new packet, not a
+wider reading of this one.
+
+**Alternatives considered**
+
+1. **Keep a packet per message.** The status quo — and the evidence above is
+   what it produces.
+2. **Auto-reply at the website form itself** — instant, and no agent involved.
+   Recommended **in addition**, not instead: it cannot screen out spam or fraud,
+   and the `dd84tuning.com` forms first need to store what they receive at all
+   (T-85). It is a website change, Class F.
+3. **A blanket mailbox auto-responder.** Rejected: it answers every marketing
+   email and vendor, and confirms the address to spammers.
+
+**Fallback if no decision** — Nothing changes: drafts keep queuing as
+per-message packets.
+
+**Response** — _awaiting owner._ **Affected records** — T-87, T-66, T-72, T-81.
 **Actual result** — _not yet executed._

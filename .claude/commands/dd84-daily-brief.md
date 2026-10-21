@@ -38,19 +38,28 @@ page and say so — a brief that arrives late is a brief nobody reads.
 
 ## Procedure
 
-1. **Discover.** Read the register and approvals first, then each connector in
-   the table. Note the UTC time of every read; figures are as-of, not eternal.
+1. **Discover.** Run `node docs/ops/tools/ops.mjs queue` and
+   `node docs/ops/tools/ops.mjs due` first. Their output is the register-derived
+   half of this brief — what waits on the owner, in order, and which dates are
+   real — so **do not recount the register by hand**: hand counts are what
+   drifted. Then read the register and approvals for context, then each
+   connector in the table. Note the UTC time of every read; figures are as-of,
+   not eternal.
 2. **Validate.** Cross-check anything that looks like money against a second
    field before reporting it — an invoice marked paid in one system and open in
    another is a finding, not a number to average. Check that a "customer risk"
    is not an already-closed task.
 3. **Organize.** Attach every item to a task ID where one exists. Items with no
-   task get one — create it in the register under the next free `T-nn`.
+   task get one — under the ID `ops.mjs next-id T` prints at that moment.
 4. **Plan.** Choose the top three execution priorities using the §10 factors:
    revenue, deadline, customer impact, risk, dependency, owner effort, strategic
    value. Three, not five. If everything is a priority the brief has failed.
+   **Start from the queue's order** — hard deadlines first, then decisions by
+   priority — and depart from it only with a stated reason.
 5. **Report.** Write the output below.
-6. **Document.** Append a run entry to `docs/ops/OPERATING-LOG.md`.
+6. **Document.** Append a run entry to `docs/ops/OPERATING-LOG.md` under the ID
+   `ops.mjs next-id OL` prints, then run `ops.mjs sync` and `ops.mjs check`
+   before committing (contract item 7).
 
 ## Output format
 
@@ -76,11 +85,13 @@ Each figure names its system and read time. Missing system = "Not available
 this run", never 0.
 
 ## Needs a decision from you
-Packet ID · one-line decision · deadline · consequence of waiting.
-Pull from APPROVALS.md where status is Pending. If none: "Nothing waiting on you."
+The packets table from `ops.mjs queue`, then one clause per packet on the
+consequence of waiting. If none: "Nothing waiting on you."
 
-## Overdue
-Task ID · title · days overdue · what unblocks it.
+## Dates
+The summary line from `ops.mjs due`, its hard-deadline tables, and what
+unblocks each. Proposed dates past due are a count, not a list, unless one
+changed today — the full list is one command away.
 
 ## Customer risk
 Unanswered threads past the response standard, unpaid invoices past terms,

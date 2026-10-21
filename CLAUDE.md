@@ -59,6 +59,8 @@ docs/
     APPROVALS.md             Every approval packet, its response and result
     OPERATING-LOG.md         Append-only execution log
     briefs/                  Dated routine output
+    reviews/                 One-off reviews of the system itself
+    tools/ops.mjs            The record's arithmetic — counts, IDs, checks
   growth/                    Rev's record: registers, campaign kits
     briefs/
 .claude/
@@ -70,6 +72,11 @@ docs/
 
 There is no `package.json`. Format markdown with `npx prettier --write` if you
 change it; `.prettierrc` is kept for that reason alone.
+
+**Never type a derived number into the record.** Counts, the approvals board and
+new IDs come from `node docs/ops/tools/ops.mjs` (`sync`, `next-id`), and
+`ops.mjs check` must pass before a commit — `docs/ops/README.md` contract items
+7 and 8. It needs only `node`, and no `package.json`.
 
 **`docs/growth/` and `ventures.md` both discuss the Ledger as a _business_.**
 That is correct and is not stray Ledger material — Rev tracks both ventures
@@ -97,7 +104,7 @@ publishes, or reaches a customer.
 
 ---
 
-## 3. The scheduled Routines — and why they have never worked
+## 3. The scheduled Routines
 
 Four Routines fire against this repository and branch:
 
@@ -108,16 +115,17 @@ Four Routines fire against this repository and branch:
 | DD84 Weekly Cash and Revenue Review  | Fridays 11:10 UTC  |
 | DD84 Weekly Georgia Opportunity Scan | Mondays 11:25 UTC  |
 
-**None of them has ever committed a brief.** `docs/ops/briefs/` holds nothing
-but its README. They fire on schedule, report `SUCCEEDED`, produce a brief-sized
-body of work — one sampled run spent $1.77 and 22,888 output tokens — and it
-dies with the session, because **the fired sessions are created with no
-repository attached**. Diagnosed in `docs/ops/` T-27 and OL-0012. The fix is
-approval **A-10** and needs the claude.ai Routines UI, which no tool in a
-session can reach.
+**Since 2026-10-08 they commit.** For their first two months they fired,
+reported `SUCCEEDED`, produced a brief-sized body of work — one sampled run
+spent $1.77 and 22,888 output tokens — and lost it with the session, because
+**the fired sessions were created with no repository attached** (T-27, OL-0012).
+**A-14** routed them through a repository-holding host session, and T-27 closed
+on 2026-10-09 on a scheduled run's own commit (OL-0034). `docs/ops/briefs/` now
+holds their output.
 
-**Treat the cadence above as scheduled, not as coverage.** Nothing in
-`docs/ops/briefs/` means nothing was found.
+**Two of the six routines still have no schedule** — `/dd84-followup` and
+`/dd84-site-monitor` — and intake runs once a weekday, not twice. T-23 carries
+the proposed additions; the owner configures them.
 
 If you move this platform, **the four Routine prompts are part of the move.**
 They were left pointing at the Ledger's repository for a week in September after

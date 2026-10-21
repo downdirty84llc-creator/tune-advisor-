@@ -77,7 +77,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-41 | Five r/LSSwapTheWorld lead candidates, none contacted                     | sales      | Normal       | Planned                  | Owner | C to contact     | not set      |
 | T-42 | Fifteen unsent drafts, five of them to likely loan fraud                  | ops        | High         | **Awaiting Owner**       | Owner | none yet         | 2026-10-10   |
 | T-43 | `downdirty84llc.com` is live and absent from the venture registry         | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
-| T-44 | One inbox query is not an intake; fix the routine's search                | ops        | Normal       | Planned                  | Agent | A to prepare     | 2026-10-15   |
+| T-44 | One inbox query is not an intake; fix the routine's search                | ops        | Normal       | **In Verification**      | Agent | S-01             | 2026-10-15   |
 | T-45 | GREC will not interpret the law; the licensing question is open           | compliance | High         | Blocked                  | Owner | A-06 covers it   | 2026-10-16   |
 | T-46 | Webador annual invoice will auto-charge; amount unknown                   | finance    | Normal       | **Awaiting Owner**       | Owner | E if cancelled   | 2026-10-12   |
 | T-47 | Two Google Business Profiles for one business                             | ops        | Normal       | Planned                  | Owner | A to prepare     | not set      |
@@ -117,18 +117,21 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-81 | A five-word enquiry asks whether DD84 ships to London                     | sales      | Normal       | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
 | T-82 | Supercharger reseller application 16 days silent; supplier chased         | sales      | **High**     | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
 | T-83 | Capital on Tap: a business credit card with a statement nobody opened     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-23   |
+| T-84 | Adopt the record tool: merge it and point the Routines at it              | ops        | High         | **Awaiting Owner**       | Owner | S-01 built it    | not set      |
+| T-85 | `dd84tuning.com` forms store nothing and may never reach Gmail            | sales      | **High**     | **Awaiting Owner**       | Owner | F to change      | not set      |
+| T-86 | `dd84-ai-ops-agent` repeats its follow-up alerts on every run             | ops        | Normal       | **Awaiting Owner**       | Owner | F to change      | not set      |
+| T-87 | New enquiries wait days for a first reply; S-02 would answer them         | sales      | **High**     | Awaiting Approval        | Owner | **S-02 pending** | not set      |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **27 Awaiting Owner** · 5 Blocked · 22 Planned
-· 2 Backlog. **83 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-21T11:38Z** (follow-up run; **recounted and
-unchanged** — dated sections on T-37, T-64 and T-66, no row, and **A-20**
-raised). **23 of 76 are now waiting on the owner**, up from 19 on 2026-10-16 and
-from 10 on 2026-10-12.
+Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 5 In Verification · 3 In
+Progress · 2 Awaiting Approval · **30 Awaiting Owner** · 5 Blocked · 21 Planned
+· 2 Backlog. **87 tasks.** Open 68: 48 with the owner, 20 with the agent.
+Generated from the table above by `node docs/ops/tools/ops.mjs sync` — never
+edit these numbers by hand. Overdue and deadline figures change with the date,
+so they are not stored here: run `ops.mjs due`.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -759,6 +762,26 @@ this table is part of the write.** Evidence: OL-0028.
   still missing:** this task requires one `OL-` entry per routine's first
   firing, and no routine run has yet written one. See T-27 — that gap is now its
   own task, and T-23 cannot close until it is resolved.
+
+### 2026-10-21 — what still does not fire, and a proposal for each
+
+Four of the six routines are scheduled; `/dd84-followup` and
+`/dd84-site-monitor` are not, and intake runs once a weekday where the cadence
+table in `docs/ops/README.md` says twice. The daily brief of 2026-10-21 named
+the cost: T-75 cannot move until someone runs the site monitor by hand.
+Proposed, for the owner to configure — Torque does not schedule itself:
+
+| Routine                          | Proposed (UTC) | Why then                                                       |
+| -------------------------------- | -------------- | -------------------------------------------------------------- |
+| `/dd84-inbox-intake`, second run | Weekdays 16:20 | Halves the longest wait on a new enquiry (T-87)                |
+| `/dd84-followup`                 | Weekdays 11:30 | After the brief, so its drafts join the same day's decisions   |
+| `/dd84-site-monitor`             | Daily 09:40    | Before intake, so a broken checkout is known before any answer |
+
+Each would fire into the same repository-holding host session as the four that
+already run (A-14), opening with the checkout paragraph in T-69. **Each run
+costs tokens:** that is about 17 more runs a week, and the one sampled run in
+this record cost $1.77 (`CLAUDE.md` §3) — an order of magnitude from a single
+sample, not a measurement.
 
 ## T-24 — Build the weekly marketing opportunity scan routine
 
@@ -1802,6 +1825,8 @@ time, which identifies nobody.
   2026-10-07T14:33Z.
 - **Workstream** ops · **Priority** Normal · **Owner** **Owner** · **Due**
   **2026-12-06** (60 days from notice, per the email)
+- **Hard deadline** 2026-12-06 — Google Play's own notice of 2026-10-07 gives 60
+  days before the developer account is closed.
 - **The finding** — _"Your developer account is at risk of being closed because
   it's not being used… You have 60 days to fix issues with your Play Console
   developer account, Down Dirty 84."_
@@ -2081,6 +2106,22 @@ remain.** T-66 step 2 is the count.
 - **Status** Planned · **Next action** — Amend the command file. **This is the
   routine's first real run and it found a defect in itself; that is the run
   working, not failing.**
+
+### 2026-10-21 — the command is amended; one run proves it
+
+`.claude/commands/dd84-inbox-intake.md` now runs six targeted searches in a
+fixed order — `category:primary`, `is:important`, the `downdirty84llc.com`
+contact-form sender, the `[Superhuman]/AI/` Respond and Waiting labels (resolved
+through `list_labels`, not guessed), `in:sent` for threads DD84 spoke last in,
+and the general sweep last — records how many threads each returned, and reads
+the draft backlog with `list_drafts`. It also names a blind spot it cannot
+close: the `dd84tuning.com` forms do not provably reach Gmail at all (T-85).
+Done under **S-01** on `ccr-6b5636c5-baxovz` (OL-0060).
+
+**Status** In Verification · **Next action** — The proof this task set: one
+intake run whose output shows a customer thread arriving through search 1 or 3
+that the general sweep alone would have missed — T-37's, if it is still inside
+the window.
 
 ---
 
@@ -3060,6 +3101,8 @@ evidenced inbound channel.**
   **2026-10-12T17:03:43Z** and **flagged IMPORTANT**.
 - **Workstream** sales · **Priority** **Critical** · **Owner** **Owner** ·
   **Due** 2026-10-19
+- **Hard deadline** 2026-10-19 — the seven days Reddit's notice of
+  2026-10-12T17:03Z allowed. Passed.
 - **Approval class** — **A to read and report here.** The remedy is a
   human-verification click in the owner's own Reddit session. **Torque may not
   and will not perform it** — see below.
@@ -3157,6 +3200,8 @@ from a capability gap with a consequence, right up until the day it is not.**
   intake fired.**
 - **Workstream** finance · **Priority** **High** · **Owner** **Owner** · **Due**
   2026-10-15
+- **Hard deadline** 2026-10-15 — Square's notice of 2026-10-13: offline payments
+  turn on by default two days later unless the account says otherwise. Passed.
 - **Approval class** — **A to read and report.** Changing a payment-acceptance
   setting is **Class E and F** and is the owner's. **No Square setting was
   touched and no Square connector exists.**
@@ -3977,6 +4022,23 @@ the part that protects the record while the prompts stay wrong: tip `d432b96`,
 **no `src/`, no `package.json`.** The guard works; only its four copies in the
 trigger prompts do not.
 
+### 2026-10-21 — the guard is now a command, and the prompt edit gets smaller
+
+`node docs/ops/tools/ops.mjs verify-checkout` performs contract item 0 and
+prints the line a log entry needs. It passed on this branch's tip and failed,
+exit 2, on the stale Ledger tree checked out from `origin/main`, naming `src/`,
+`package.json` and the wrong HEAD (OL-0060). Once T-84's merge lands, the
+replacement for the opening of all four Routine prompts is one paragraph,
+identical in each:
+
+> **Check the checkout first:** run
+> `node docs/ops/tools/ops.mjs verify-checkout` and paste the line it prints
+> into your log entry. If it exits 2, write nothing: run the `git reset --hard`
+> it prints, then run the check again. Do not count tracked files.
+
+It still has to be applied from the A-14 host session, the only place
+`update_trigger` accepts it. **Status unchanged** — Blocked on that session.
+
 ## T-70 — Colbert parcel capped at 380 gpd design flow without public water
 
 - **Objective** — Establish whether the proposed facility fits inside the
@@ -4474,6 +4536,8 @@ all-time Shopify order count of zero.
   one 71-hour window.
 - **Workstream** finance · **Priority** **Critical** · **Owner** **Owner** ·
   **Due** 2026-10-20
+- **Hard deadline** 2026-10-24 — the ChatGPT Business renewal date in the
+  renewal notice of 2026-10-17, the next outflow that can still be acted on.
 - **Approval class** — **A to read and report.** **Stopping, moving or paying
   any of these is Class E** and is the owner's alone. **Nothing was touched.**
 
@@ -4973,6 +5037,8 @@ verification costs nothing.
 - **Workstream** ledger · **Priority** **High** · **Owner** **Owner** ·
   **Approval class** **A to report only.** · **Due** 2026-10-28 — **two days
   before the deadline, not on it.**
+- **Hard deadline** 2026-10-30 — Supabase's final notice of 2026-10-20: new
+  tables in `public` need grants from that date.
 
 ### Why this is in DD84's register at all, and what must not happen
 
@@ -5223,3 +5289,102 @@ has listed DD84's liabilities, and no routine asks for one.**
 > **Still unread and still blocking a full submission:** the D1TO Full Permit
 > Review checklist PDF. No session here has an attachment-download tool, so its
 > contents have never been read and nothing in the reply claims otherwise.
+
+---
+
+## T-84 — Adopt the record tool: merge it and point the Routines at it
+
+- **Objective** — Make the record's derived values computed rather than typed,
+  in every session that writes to it.
+- **Source** — The automation review of 2026-10-21 (OL-0060); the structural fix
+  OL-0034, OL-0038 and OL-0059 each called for.
+- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due** not set
+- **Approval class** — Built under **S-01** on `ccr-6b5636c5-baxovz`. Bringing
+  it onto this branch is a push S-01 does not cover, so it is the owner's to
+  authorise.
+- **What it is** — `docs/ops/tools/ops.mjs`: `verify-checkout`, `check`, `sync`,
+  `next-id`, `queue` and `due`, with 27 tests and no dependencies. Its first
+  `check` of this record found seven real errors — the counts line said 2 In
+  Progress against 3 and 2 Awaiting Approval against 1, A-18 to A-20 were absent
+  from the board, A-15 still read Pending after it was sent, the "with the
+  owner" line was stale, and the log footer cached a next ID — and `sync`
+  corrected all seven.
+- **Execution steps** — (1) merge `ccr-6b5636c5-baxovz` into this branch, before
+  the next intake run if possible, so it fast-forwards; (2) if a routine wrote
+  meanwhile, merge, renumber any colliding ID with `ops.mjs next-id`, and run
+  `sync`; (3) apply T-69's paragraph to the four Routine prompts from the host
+  session.
+- **Completion proof required** — The merge on this branch, and one scheduled
+  run whose log entry carries the `verify-checkout` line.
+- **Status** **Awaiting Owner** · **Next action** — The owner says "merge it".
+
+## T-85 — `dd84tuning.com` forms store nothing and may never reach Gmail
+
+- **Objective** — Make every enquiry from the front door land somewhere durable
+  that the intake routine reads.
+- **Source** — The automation review of 2026-10-21, from a read of
+  `downdirty84llc-creator/dd84` at `b24b135`, the application behind
+  `dd84tuning.com`.
+- **Workstream** sales · **Priority** **High** · **Owner** **Owner** · **Due**
+  not set
+- **The finding** — The site's `/contact` and `/quote` forms both send the owner
+  a Manus notification and **store nothing and email nothing**. Miss the
+  notification and the enquiry exists nowhere. `ventures.md` records
+  `dd84tuning.com` as the front door everything runs through, so this is the
+  main entrance.
+- **What is not known, and is not guessed** — whether Manus delivers those
+  notifications to the business Gmail account, and from which sender. If it
+  does, adding that sender to the intake's searches closes most of the gap
+  without touching the site.
+- **Approval class** — **F** to change the site. Preparing the change on a
+  branch of `dd84` is class F, prepare; deploying it is the owner's.
+- **Execution steps** — (1) one test enquiry through each form, and see where it
+  lands; (2) if it reaches Gmail, add the sender to the intake searches; (3)
+  either way, have the forms store each submission and send a copy to the
+  business inbox, through the email provider the site already uses for job
+  updates.
+- **Completion proof required** — A test submission found by the intake routine,
+  and a stored record of it.
+- **Status** **Awaiting Owner** · **Next action** — Step 1: one test submission,
+  by the owner, from a phone.
+
+## T-86 — `dd84-ai-ops-agent` repeats its follow-up alerts on every run
+
+- **Objective** — Make the Command Center's scheduled alerts say something new
+  each time, or say nothing.
+- **Source** — The automation review of 2026-10-21, from a read of
+  `downdirty84llc-creator/dd84-ai-ops-agent` at `f0a2d72`.
+- **Workstream** ops · **Priority** Normal · **Owner** **Owner** · **Due** not
+  set
+- **The finding** — Its follow-up job notifies the owner once for every lead
+  matching every active rule, **on every run, with no record of what it already
+  sent**. If the job is registered at its settings page's default of one hour,
+  one stale lead produces an alert an hour until someone closes it — whether it
+  is registered at all is not visible from the code. The counters that would
+  prevent this exist in its database and are never written. An alert that
+  repeats gets muted — the opposite of what an owner queue needs. A second
+  finding about the same jobs went to the owner directly rather than into this
+  public repository.
+- **Approval class** — **F** to change that application; preparing the change on
+  a branch is class F, prepare.
+- **Completion proof required** — A run that alerts once per lead per change of
+  state, with a test proving the next run is silent.
+- **Status** **Awaiting Owner** · **Next action** — The owner says whether that
+  application is still in use. If not, this is No Action with that reason.
+
+## T-87 — New enquiries wait days for a first reply; S-02 would answer them
+
+- **Objective** — Bound the wait for a first response at one intake cycle, then
+  shorten the cycle.
+- **Source** — The automation review of 2026-10-21; T-66 (23 days), T-72 (more
+  than four days), T-42 (fifteen unsent drafts).
+- **Workstream** sales · **Priority** **High** · **Owner** **Owner** · **Due**
+  not set
+- **Approval class** — **C**, as a standing approval: **S-02**.
+- **Execution steps** — (1) the owner answers S-02; (2) on approval, amend
+  `docs/ops/README.md` contract item 1 and the intake command to name S-02 as
+  the one exception; (3) schedule the second intake run proposed in T-23; (4)
+  after 14 clean days, consider a follow-up standing approval as a new packet.
+- **Completion proof required** — S-02 answered; if approved, the first run's
+  log entry listing each acknowledged thread and its Sent-folder check.
+- **Status** Awaiting Approval · **Next action** — The owner answers S-02.

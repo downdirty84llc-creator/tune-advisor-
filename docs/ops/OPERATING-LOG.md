@@ -5251,4 +5251,85 @@ week's silence is not yet late.
 
 ---
 
-## Next entry: OL-0060
+## OL-0060 — 2026-10-21 · Automation review: the record's arithmetic becomes a program, and the first reply gets a proposal
+
+- **Timestamp** 2026-10-21T17:45:00Z
+- **Task** T-44, T-23, T-69, and new T-84 to T-87 · **Approval** **S-01** —
+  local repository work, pushed to this task's designated branch only. **S-02**
+  raised, not used.
+- **Checkout, per contract item 0** —
+  `Checkout verified 2026-10-21T17:45Z: HEAD` `751564d`
+  `equals origin/claude/claude-md-docs-cqvhy6; no src/, no package.json.` The
+  work was done on `ccr-6b5636c5-baxovz`, branched from that tip. **Nothing was
+  pushed to this branch.**
+- **Action** Evaluated the video the owner sent — _"AI Runs My Entire
+  Business"_, promoting the Hyperagent agent platform — against Torque's and
+  Rev's specs, the AI operating system on `dd84/main` and the three
+  applications, and acted on the gaps. Built `docs/ops/tools/` (`ops.mjs`,
+  `record.mjs`, 28 tests, a README). Ran `check` on this record — **seven
+  errors** — and `sync`, which corrected all seven. Recorded five hard deadlines
+  from their sources (T-40, T-60, T-61, T-73, T-80). Amended the routine
+  contract (items 0, 7, 8; the status table; a section on the tool), the daily
+  brief and inbox intake commands (T-44), `.claude/settings.json` (an allow rule
+  for the tool), `CLAUDE.md` §1 and §3. Raised **S-02** and **T-84 to T-87**;
+  recorded proposals on T-23 and T-69. Added a CI workflow that runs the tests
+  and `check` on every push to this branch. Wrote
+  `docs/ops/reviews/2026-10-21-ai-agent-video-review.md`.
+- **Tool** `Read`, `Write`, `Edit`; `node` (`--test`, `ops.mjs check`, `sync`,
+  `verify-checkout`); `npx prettier`; `git`; web search for the video's title
+  and sponsor; read-only clones of `dd84`, `dd84-ai-ops-agent`,
+  `dd84-shoplink-portal`, `downdirty84-ai-tuning` and
+  `georgia-opportunity-ledger`.
+- **Source** The owner's request in this session; this record; `dd84/main`; the
+  application repositories at the commits named in T-85 and T-86.
+- **Operator** Claude (agent), session on `ccr-6b5636c5-baxovz`
+- **Before** 83 tasks, 21 packets. The counts line said 2 In Progress against 3
+  in the table and 2 Awaiting Approval against 1; A-18, A-19 and A-20 had no
+  board row; A-15 read Pending on the board after it was sent; the "with the
+  owner" line named four packets against six; the footer cached `OL-0060`.
+- **After** 87 tasks, 22 packets. `ops.mjs check`: "The operating record agrees
+  with itself." `ops.mjs sync --check`: "Every derived value already matches its
+  source."
+- **Evidence** `node --test docs/ops/tools/record.test.mjs`: **28 pass, 0
+  fail**. Six bugs planted one at a time in a copy of `record.mjs` were each
+  caught by at least one test. `verify-checkout` passed on this tip and failed,
+  **exit 2**, on the stale Ledger tree from `origin/main`, naming `src/`,
+  `package.json` and the wrong HEAD. `npx prettier --check` clean on every file
+  changed except `CLAUDE.md`, whose one pre-existing difference — a blockquote
+  line Prettier would rewrite — was left as it was (T-26). Commit: the one
+  carrying this entry on `ccr-6b5636c5-baxovz`.
+
+### What the review concluded
+
+**DD84's agents are not short of capability; the business is short of finished
+work.** Two delivered jobs are unpriced, a website enquiry waited 23 days for a
+first reply, and the owner's queue grows faster than it empties. So the changes
+compute what the record used to count, rank what waits on the owner in one list,
+and propose — in S-02 — that the first reply to a new enquiry stop waiting on a
+per-message decision. The full reasoning, the scorecard and what was rejected
+are in the review.
+
+### What was deliberately not done
+
+- **Nothing was sent, scheduled, merged, or pushed to this branch.** S-02 is a
+  proposal; T-23's schedules are proposals; merging is T-84, the owner's.
+- **No Routine prompt was changed.** T-69's paragraph is ready; only the host
+  session can apply it.
+- **The three applications' repositories were read, not changed.** Their
+  findings are T-85 and T-86. One further finding about `dd84-ai-ops-agent` went
+  to the owner directly rather than into this public repository.
+- **T-24 and T-25 were not built.** T-24 is blocked on knowing which ad accounts
+  exist, spend authority is $0, and neither routine moves a payment.
+- **The video itself was not watched.** `youtube.com` is blocked by the
+  session's network policy and no transcript was found; the review evaluates the
+  approach the title and sponsor describe, and says so.
+
+### A numbering note for whoever merges
+
+This entry, S-02 and T-84 to T-87 were numbered from the tip above. If a routine
+writes first, `ops.mjs check` will name any collision and `ops.mjs next-id`
+gives the replacement — the situation T-84's step 2 describes.
+
+---
+
+## Next entry: never stored — take it from `node docs/ops/tools/ops.mjs next-id OL`

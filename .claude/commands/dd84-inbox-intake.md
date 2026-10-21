@@ -36,11 +36,40 @@ Search windows: default to `newer_than:2d` on the first run of a day and to
 "since the timestamp of the last intake entry in the operating log" thereafter.
 State the window used in the output.
 
+### Several targeted searches, never one broad one (T-44)
+
+On 2026-10-08 one `in:inbox newer_than:2d` query returned 25 threads and not one
+was from a person, while `category:primary` over the same two days held a live
+customer job (T-37) and a state agency's permit reply (T-38). The mailbox takes
+about two hundred threads in two days, most of them marketing, so a single page
+sorted by recency is all noise. Run these in order, record how many threads each
+returned, and de-duplicate by thread ID before classifying:
+
+| #   | Search                                                      | Why                                                                                       |
+| --- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| 1   | `category:primary` + window                                 | Where people write from                                                                   |
+| 2   | `is:important` + window                                     | Gmail's own signal; catches what the primary tab misses                                   |
+| 3   | `from:no-reply@downdirty84llc.com newer_than:30d`           | The `downdirty84llc.com` contact form. A real enquiry sat there unread for 23 days (T-66) |
+| 4   | The `Respond` and `Waiting` labels under `[Superhuman]/AI/` | Resolve the exact names with `mcp__Gmail__list_labels` first; never guess label syntax    |
+| 5   | `in:sent newer_than:14d`                                    | Threads where DD84 spoke last — follow-ups, not closed threads                            |
+| 6   | `in:inbox` + window                                         | The general sweep, last                                                                   |
+
+Then read the **draft backlog** with `mcp__Gmail__list_drafts`: how many, the
+age of the oldest, and any addressed to a customer. An unsent draft is a reply
+nobody received (T-42).
+
+**A blind spot to state every run until T-85 closes:** the `dd84tuning.com`
+contact and quote forms send the owner a Manus notification and store nothing.
+Whether that notification also reaches this mailbox, and from which sender, is
+not established. Until a form submission is found in Gmail and its sender added
+as search 3b, write "dd84tuning.com form submissions — not visible to this
+routine" under **Not checked this run**.
+
 ## Procedure
 
-1. **Discover.** Pull the thread list for the window. Include threads where DD84
-   sent last and the customer has not replied — a silent thread is a follow-up,
-   not a closed one.
+1. **Discover.** Run the six searches above and the draft-backlog read. Include
+   threads where DD84 sent last and the customer has not replied — a silent
+   thread is a follow-up, not a closed one.
 2. **Validate.** Confirm the sender's identity against existing customer records
    before merging anything. Spec §9: **merge only on verified identity**. Two
    people with the same first name and similar vehicles are two people. Check
@@ -90,6 +119,8 @@ Write to `docs/ops/briefs/YYYY-MM-DD-inbox-intake.md` and print in the reply:
 # DD84 inbox intake — <date>
 Run at <UTC>. Window: <window>. Accounts scanned: <list>. Not reached: <list or "none">.
 Threads reviewed: <n>. Actionable: <n>. No-action: <n>.
+Per search (T-44): primary <n> · important <n> · contact form <n> · labels <n> · sent <n> · sweep <n>.
+Draft backlog: <n> drafts, oldest <age>, <n> addressed to customers.
 
 ## Urgent — read first
 <why · who · clock · the action needed · whether it needs approval>
@@ -126,7 +157,8 @@ One line each.
 - `docs/ops/APPROVALS.md` — a Class C packet covering the batch of drafts, so
   the owner can approve sending in one decision rather than ten.
 - `docs/ops/OPERATING-LOG.md` — the run entry, including the count of drafts
-  created in a mail account.
+  created in a mail account. Take its ID from `ops.mjs next-id OL`, and run
+  `ops.mjs sync` and `ops.mjs check` before committing (contract item 7).
 
 ## Never without approval
 
