@@ -4872,4 +4872,104 @@ digits, verification code, customer name, email or phone written here.**
 
 ---
 
-## Next entry: OL-0057
+## OL-0057 — 2026-10-21 · A-06's document count corrected at the top, where a reader reaches it first
+
+- **Timestamp** 2026-10-21T12:15:00Z
+- **Task** A-06, T-05 · **Approval** **owner, 2026-10-21 ("Fix A-06")**, after
+  the option was put to them rather than assumed — the same packet rule that
+  made A-16 an approval applies here.
+- **Action** Verified the legal-document count against the canonical repository,
+  found the existing correction was in the right words but the wrong place, and
+  promoted it to a banner at the head of A-06 naming the two documents the
+  packet omits.
+- **Tool** `gh api` on
+  `downdirty84llc-creator/georgia-opportunity-ledger/contents/src/lib/legal/documents.ts?ref=main`,
+  `base64 -d`, `grep -c`; `Edit`; `git`.
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** A-06's title, decision block and plan all say "ten documents, seven
+  requiring review". Correction present but at the foot of the packet.
+- **After** Same body, unchanged. Banner immediately under **Status**, with the
+  verification date, the two missing slugs, and why the body was not rewritten.
+
+### Verified first-hand, not carried forward
+
+`src/lib/legal/documents.ts` on `main` in the canonical Ledger repository, read
+today: **9 × `requiresReview: true`, 3 × `false`, 12 documents.** The nine are
+terms, privacy, subscription-terms, refunds, cookies, copyright, disclaimers,
+**acceptable-use** and **accessibility**. The three exempt are editorial
+standards, corrections and data sources.
+
+**A-06's body lists seven and names them**, and its three exempt documents match
+exactly. **The delta is precisely `acceptable-use` and `accessibility`** — and
+neither is incidental: acceptable use is a term of the agreement with the
+member, accessibility is a compliance statement about the product. **A review
+pack built from this packet would have been short by the two with the clearest
+exposure.**
+
+This is the "registry figures carry a verification date" rule doing its job. The
+figure was 42 days old and came from closing T-28; it was re-read rather than
+quoted.
+
+### The defect was placement, not wording
+
+The correction has been in A-06 since the consolidation, and it is well put. It
+sits at the **foot** of the packet, below the decision, the objective, the
+source, the plan, the alternatives and the cost section.
+
+**The daily briefs quote the title.** 2026-10-14 and 2026-10-15 both reported
+"A-06 — Commission legal review of ten legal documents" to the owner, with "Ten
+documents nobody qualified has reviewed" as the consequence line. The correction
+was present in the repository the whole time and reached nobody.
+
+**A correction a reader meets after the error is not yet doing its job.** That
+is the finding worth keeping, and it generalises past this packet: this record
+is full of corrections, and their value depends entirely on being encountered
+before the thing they correct.
+
+### Why a banner and not a rewrite
+
+`docs/ops/README.md` holds that a raised packet is appended to, with only its
+**Response** and **Actual result** blocks edited. **The wrong figures therefore
+stay exactly where they were written** — title, decision block and plan all
+still say ten and seven. Only a dated banner was added, the same pattern A-16
+established for the append-only log: **an edit that announces itself is not the
+failure the rule guards against.**
+
+**This was put to the owner rather than decided here.** On 2026-10-15 the option
+was offered with the reasoning — defensible, because a banner corrects a
+propagating factual error without touching the decision requested, but identical
+in shape to the edit that needed approval a week earlier. The answer was "Fix
+A-06" on 2026-10-21. **Asking twice about the same class of edit costs a
+message; assuming the second answer costs the rule.**
+
+### The miscount, which has now gone wrong in both directions
+
+`grep -c "slug:"` on that file returns **14** — twelve documents, plus the
+interface declaration at line 17 and the `findLegalDocument(slug: string)`
+parameter at line 422. Earlier in this record the count was given as **13
+entries, 9 requiring review**, from counting the interface as a document. A-06
+says **ten and seven**, from reading the stale copy that used to live here.
+
+**Three different counts from one file, none of them arrived at dishonestly.**
+The reliable count is of `requiresReview`, because every document has exactly
+one and nothing else does. **A count is only as good as the thing being
+counted** — and "number of lines matching a field name" is not the same question
+as "number of documents".
+
+### What this does not change
+
+**The decision A-06 asks for is unchanged** — authority to engage counsel, and a
+budget. What changes is its **scope**: the review pack is two documents larger
+than the packet describes, so **any quote obtained against "ten documents" is
+for the wrong job.** Worth knowing before the packet is answered, which is the
+whole reason the banner is at the top.
+
+**No fee is recorded, still.** The packet's second correction stands: an earlier
+agent estimate of 6–12 hours of counsel time appeared in conversation and is not
+a quote. Treat the cost as unknown.
+
+**A-06 remains PENDING**, 76 days with the owner, and Ledger-side.
+
+---
+
+## Next entry: OL-0058

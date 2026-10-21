@@ -339,6 +339,43 @@ later reorganisation.
 
 **Status: PENDING — with the owner since 2026-08-06.**
 
+> ### ⚠ The counts in this packet's title and body are wrong. Read this before quoting either.
+>
+> **It is twelve documents, nine requiring review — not ten and seven.**
+> Verified first-hand on **2026-10-21** by reading `src/lib/legal/documents.ts`
+> on `main` in `downdirty84llc-creator/georgia-opportunity-ledger`, the
+> canonical copy: **9 × `requiresReview: true`, 3 × `false`, 12 in total.**
+>
+> **The body's list of seven omits two**, and both carry real exposure:
+>
+> | Missing from this packet | What it is                                                             |
+> | ------------------------ | ---------------------------------------------------------------------- |
+> | **`acceptable-use`**     | A term of the agreement with the member, not a description of practice |
+> | **`accessibility`**      | A compliance statement about the product                               |
+>
+> The other seven (terms, privacy, subscription terms, refunds, cookies,
+> copyright, disclaimers) and the three exempt ones (editorial standards,
+> corrections, data sources) are listed correctly below.
+>
+> **Why this banner exists and the body is untouched.** `docs/ops/README.md`
+> says a raised packet is appended to, with only its **Response** and **Actual
+> result** blocks edited — so the wrong figures stay where they were written.
+> But the correction was at the _foot_ of this packet, below several screens of
+> body, and **the daily briefs quote the title**: 2026-10-14 and 2026-10-15 both
+> reported "ten legal documents" to the owner. **A correction a reader reaches
+> after the error is not yet doing its job.** Moving it to the top is the fix;
+> the full version, with the second correction about cost, is still below.
+>
+> **The miscount is instructive.** `grep -c "slug:"` on that file returns **14**
+> — twelve documents plus the interface declaration and the lookup function's
+> parameter. Counting `requiresReview` instead returns 12. **A count is only as
+> good as the thing being counted**, and this one has now been got wrong twice
+> from the same file, in both directions.
+>
+> **This changes the scope of the decision**, not the decision: the review pack
+> is two documents larger than this packet says, so any quote obtained against
+> "ten documents" is for the wrong job.
+
 **Decision requested** — Authority to engage counsel to review the ten documents
 in `src/lib/legal/documents.ts`, and a budget for it.
 
@@ -411,10 +448,14 @@ written:
 1. **The document count in the title is wrong for the Ledger.** It says ten,
    with seven requiring review. That was read from the stale copy in this
    repository. The canonical Ledger carries **twelve documents, nine requiring
-   review** — established while closing T-28 and pinned by
-   `tests/unit/legal/documents.test.ts` there. The title is left as written
-   because a packet is not rewritten after the fact; this note is the
-   correction.
+   review** — established while closing T-28, pinned by
+   `tests/unit/legal/documents.test.ts` there, and **re-verified against `main`
+   on 2026-10-21**: 9 × `requiresReview: true`, 3 × `false`. The title is left
+   as written because a packet is not rewritten after the fact; this note is the
+   correction. **It has since been promoted to a banner at the head of this
+   packet**, which names the two missing documents — `acceptable-use` and
+   `accessibility` — because two daily briefs quoted "ten" from the title before
+   ever reaching this far down.
 2. **No fee was ever quoted.** An earlier agent estimate of 6–12 hours of
    counsel time appeared in conversation and is **not** recorded as a cost here,
    because nobody asked a lawyer. Treat the cost as unknown.
