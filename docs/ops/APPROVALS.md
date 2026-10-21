@@ -1455,3 +1455,96 @@ REJECT**
 **Actual result** — _not yet executed. The figure is withheld and T-71 carries
 the finding without it. Deferring leaves the record as it is now, which is
 Option C in practice but by an agent's choice rather than a decision._
+
+## A-20 — Send three customer follow-ups: two live jobs and one stalled enquiry
+
+**Status: PENDING — raised 2026-10-21 by `/dd84-followup`.**
+
+**Decision requested** — Approval to send **three messages, as a batch**, to two
+live customers and one stalled enquirer. The full text of all three is in
+`docs/ops/briefs/2026-10-21-followup.md`. **APPROVE / APPROVE WITH CHANGES /
+DEFER / REJECT**, per message or for the batch.
+
+**None of the three asks for money**, and that is deliberate — see the
+constraint below.
+
+**Business objective** — Stop the only two delivered jobs in this record going
+cold, and close or convert a lead that is thirteen days past its own threshold.
+**All three are revenue-relevant and none can be sent by an agent.**
+
+| #     | Recipient               | Thread             | Stage                                                                        | What it commits DD84 to                                                                                                |
+| ----- | ----------------------- | ------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **1** | The Challenger customer | `1a0e402cdcf75731` | **Complete, unpriced.** His requested datalog has been **unread ~187 hours** | **A substantive reply by a date the owner fills in.** The draft carries a `[DATE]` bracket; **no price, no diagnosis** |
+| **2** | The C10 customer        | `1a1082503004a073` | **Complete, unpriced.** DD84 spoke last, **~207 hours**, no reply            | **Reviewing one further datalog.** No price, no turnaround, no claim the fault is fixed                                |
+| **3** | The Lexus enquirer      | `1a0a565f802fc60b` | **Qualified, stalled ~13 days**, past the proposed 7-day close               | **A scope reply if he answers.** No price — **which catalogue line applies was never decided**                         |
+
+**Source and context** — `/dd84-followup`, 2026-10-21, run at the owner's
+explicit request. Eight candidates, three drafted, two held.
+
+**The constraint that shaped all three** — the routine's hard rule: **a
+follow-up that asks for money is not drafted unless a payment system confirmed
+the item is genuinely open.** **Stripe has no MCP server and PayPal has needed
+re-authentication since 2026-10-09**, so neither job's billing status could be
+confirmed. **Shopify was reachable and reports 0 orders all-time**, which rules
+out an order-based sale but says nothing about these two jobs.
+
+**And a reachable payment system would not have helped**, which is the more
+useful fact: **neither job was ever invoiced**, so there is no record for Stripe
+or PayPal to return. **The blocker is upstream of the connector — nobody set a
+price**, which has been T-37's and T-64's next action since 2026-10-13.
+
+**Cost and cash impact** — **No cost to send.** No message quotes a price,
+offers a discount, extends a deadline or grants a credit. **The cash upside is
+indirect and real**: these are **the only two pieces of delivered work in this
+record**, somewhere in **$198–$1,300 for the pair** against the catalogue (**a
+range, never a midpoint, and not separable per job** because neither tier was
+decided). **The downside of silence is that both become unbillable by age.**
+
+**Risks and safeguards**
+
+1. **Draft 1 names a date the owner must fill in.** Sent with the bracket
+   unfilled it reads as unfinished. **Safeguard: it cannot be sent by this
+   platform, and the bracket is the reason it is there** — an agent inventing a
+   turnaround is inventing a commitment.
+2. **Draft 2 offers to review another datalog**, which is unbilled work on a job
+   that was never priced. **Safeguard: say so now rather than discover it later
+   — if the owner wants that review billed, draft 2 should be deferred until
+   T-37 has a price.**
+3. **Draft 3 may reopen a lead DD84 cannot serve profitably.** The enquiry is
+   for exhaust and idle character on a 2016 Lexus RC 350, **and no catalogue
+   line was ever matched to it.** **Safeguard: it asks a qualifying question and
+   quotes nothing.**
+4. **All three go to real customers from the business address.** **Safeguard:
+   none has been placed in the mail account's drafts folder; the count stands
+   unchanged at 15.** There is nothing to send accidentally.
+
+**Systems affected** — Gmail, send only, three messages. **No payment system, no
+calendar, no live site, no pricing record.**
+
+**Customer and public impact** — **Three real people.** Two are mid-job and one
+has waited thirteen days. **Drafts 1 and 2 are overdue courtesies rather than
+asks**; draft 3 is a final touch before closing a lead.
+
+**Success test** — All three sent from the owner's own hand; **a reply from at
+least one of the two live customers inside 72 hours**; and **T-37 and T-64
+carrying a price** regardless of whether anyone replies, because that is the
+blocker the sends do not remove.
+
+**Alternatives considered**
+
+1. **Send nothing until both jobs are priced.** Rejected: **pricing is the
+   owner's and has been outstanding eight days**, and the customers' silence
+   compounds meanwhile. **A courtesy reply costs nothing and is not a quote.**
+2. **Include a payment request anyway.** Rejected outright — **the routine's
+   rule, and there is no invoice to reference.** Chasing money on an uninvoiced
+   job invites exactly the "what am I paying for?" exchange DD84 cannot answer.
+3. **Draft a fourth to the supercharger supplier (T-82).** Rejected **as out of
+   scope here, not as unimportant**: a supplier is not in the customer
+   lifecycle. It is the most time-sensitive waiting counterparty in the record
+   and **needs its own one-paragraph reply.**
+
+**Decision — APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**, per draft or for
+the batch.
+
+**Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-66.
+**Actual result** — _not yet executed._

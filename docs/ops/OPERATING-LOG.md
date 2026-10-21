@@ -4872,4 +4872,156 @@ digits, verification code, customer name, email or phone written here.**
 
 ---
 
-## Next entry: OL-0057
+## OL-0057 — 2026-10-21 · Second follow-up run: three drafts, two held, and an age this record had been overstating for four statements
+
+- **Routine** `/dd84-followup`, **run at the owner's explicit request** —
+  `run /dd84-followup`, the second genuine user instruction this session has
+  received and the second time this routine has run. Class A throughout.
+- **Checkout, per contract item 0** — tip **`0da4644`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **52 tracked files, working tree clean. Twelfth run to
+  record the result and the tip.**
+- **Candidates 8 · drafted 3 · held for payment confirmation 2 · review
+  requests 0.**
+- **Payment systems confirmed against: Shopify only** (0 orders all-time, read
+  11:22Z; one customer record, 0 orders, $0.00). **Not reached: Stripe** (no MCP
+  server), **PayPal** (re-auth since 2026-10-09), **bookipay**, **Square**, the
+  **bank**.
+
+### The correction first, because it is about this record rather than the business
+
+**T-64's unread datalog arrived 2026-10-13T15:39:45Z. At this run that is ~187
+hours.** **Four statements reported it a day too high** — the 10-20 intake and
+daily brief said 187 (correct 163), the 10-21 intake and daily brief said 211
+(correct 187).
+
+**One error, carried four times**, because each run took the previous figure and
+**added 24 hours instead of recomputing from the stored timestamp.**
+
+**The direction is what makes it worth a log entry.** It **overstated** the
+neglect — **the flattering direction for a routine whose whole purpose is to
+make neglect visible.** A register that exaggerates the thing it exists to
+detect is **less** trustworthy than one that understates it, because the
+exaggeration is the part a reader will believe.
+
+**Third instrument defect of one family.** **OL-0049:** a query that truncated
+silently. **OL-0055:** a windowed sweep that cannot see a quiet thread.
+**Today:** a number carried forward instead of recomputed. **Each is a tool or a
+prior output trusted where a fresh computation was needed**, and the repair is
+the same shape every time — **recompute from source, do not inherit.**
+
+### What was drafted, and why none of the three asks for money
+
+**Three drafts, all in the brief and none in the mail account.** The account's
+draft count stands **unchanged at 15.** → packet **A-20**, one Class C decision
+covering the batch.
+
+| Draft | Who                                                | Stage                                                          | Commits DD84 to                                                                             |
+| ----- | -------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **1** | The Challenger customer, thread `1a0e402cdcf75731` | **Complete, unpriced**; his file unread **~187h**              | A substantive reply **by a date the owner fills in** — the draft carries a `[DATE]` bracket |
+| **2** | The C10 customer, thread `1a1082503004a073`        | **Complete, unpriced**; DD84 spoke last, **~207h**             | Reviewing **one further datalog**. No price, no turnaround                                  |
+| **3** | The Lexus enquirer, thread `1a0a565f802fc60b`      | **Qualified, stalled ~13 days**, past the proposed 7-day close | A scope reply if he answers. **No price**                                                   |
+
+**The rule bound and is recorded as having bound:** _a follow-up that asks for
+money is not drafted unless a payment system confirmed the item is genuinely
+open._ **Stripe and PayPal were both unreachable, so no money chase exists in
+any of the three.**
+
+**And the more useful fact: a reachable payment system would not have helped.**
+**Neither job was ever invoiced**, so there is nothing for Stripe or PayPal to
+return. **The blocker is upstream of the connector — nobody set a price** —
+which has been T-37's and T-64's next action since 2026-10-13, nine days.
+
+**The `[DATE]` bracket in draft 1 is deliberate and is named in the packet.**
+The calendar is empty, so capacity exists; **an agent filling in a turnaround
+would be inventing a commitment.** The bracket is the safeguard, not an
+omission.
+
+### The review-and-referral half of this routine has nothing to operate on
+
+**Zero review requests, and the reason is structural rather than a dry spell.**
+Its thresholds need **a paid job inside the last month**. `ventures.md` records
+**all-time revenue of $3,507.86 across 10 invoices and 3 customers, last payment
+2025-09-12** — **thirteen months ago, and the figure is itself stale under the
+registry's own 30-day rule.** The two live jobs were **never invoiced at all.**
+
+**Deliberately not filled in with the three historical customers.** The standing
+decision of **2026-08-07 closes those ten invoices as a line of enquiry**, and a
+review request on a 13-month-old job **is not a follow-up, it is a cold approach
+to someone who once paid.** That needs its own approval and a different routine.
+
+### At final threshold, with a recommendation the owner has to make
+
+**T-66, the Lexus enquirer, is ~13 days past last contact and past the proposed
+7-day close.** **Recommendation: send draft 3; if no reply within 7 days, close
+the enquiry and record it as lost.**
+
+**Not because the lead is worthless — because the register cannot currently tell
+a live lead from a dead one.** It now holds **four inbound leads** (T-65, T-66,
+T-72, T-81) **and no close rule.** An enquiry that stays open forever is
+indistinguishable from one being worked.
+
+**And the live issue was never that lead.** It is that **the website's contact
+form went unread for 23 days**, which is still true and will produce the next
+one.
+
+### Clean reads, recorded as such
+
+- **Google Calendar, 2026-10-07 → 2026-10-22, read 11:26Z: zero events across
+  fifteen days.** **So no appointment was completed and left unclosed** — a real
+  empty read, not an unavailable section.
+- **Shopify, read 11:22Z: 0 orders all-time**; **one customer record, 0 orders,
+  $0.00, created 2026-10-07**, unchanged since 2026-10-13. **Its masked alias is
+  not recorded here.**
+- **Both customer threads report 29 messages and returned 29.** Nothing
+  truncated — **the check OL-0049 made standing practice, and the reason both
+  ages above could be recomputed from source.**
+- **Google Drive not read**, and the reason is specific: **the Challenger
+  customer's file arrived as a 2.84 MB email attachment, not a Drive share.**
+  **On 2026-10-13 Drive is where this job was found**; today it adds nothing.
+
+### Out of scope and recorded anyway
+
+**T-82, the supercharger supplier, is not a customer and this routine walks a
+customer lifecycle.** Noted because **it is the most time-sensitive waiting
+counterparty in the record** — DD84 asked to be a reseller on 09-26, got a
+dealer packet, replied 10-05, went silent sixteen days, **and the rep chased at
+2026-10-21T01:06:06Z.** **One paragraph holds that door, and this routine is not
+the one to draft it.** Rejected as a fourth draft in A-20's alternatives, with
+that reason stated.
+
+### Class A held, and §5 held
+
+**Nothing sent, forwarded or replied to.** **No draft created in the mail
+account** — all three live in the brief only, and the count is **unchanged at
+15, five still addressed to likely loan fraud** (T-42). No label applied, no
+thread moved, archived, trashed or reported. **No quote cancelled, no slot
+released, no amount written off, no discount, extension or goodwill credit
+offered** — pricing is not this routine's to move. **No invoice marked paid, no
+job marked complete.** **Nothing passed to collections.** No calendar write.
+**No bank, card, Stripe, PayPal, Square or Shopify write.** `docs/growth/`
+untouched.
+
+**No customer name, email address or phone number is written anywhere in this
+run's output.** Five customers and two enquirers are **thread IDs**; the Shopify
+alias is omitted; the supplier's rep is a role. **No price was quoted**, and the
+two jobs' value stays a **range — $198–$1,300 for the pair, never a midpoint,
+and explicitly not separable per job** because neither tier was ever decided.
+
+- **Needs the owner** — **A-20**, three drafts, approve or amend per message;
+  **price T-37 and T-64**, which is the blocker the sends do not remove;
+  **reject A-18**, which asks the Challenger customer for the file he already
+  sent; **decide the close rule** for stalled leads (T-66); and separately
+  **T-82's one paragraph**, which is not in this packet and should not wait for
+  it.
+- **Worth stating plainly** — **this run's most useful output is not the three
+  drafts.** It is that **the two items with real money in them are the two with
+  nothing confirming them, and that is not the connectors' fault** — neither job
+  was ever invoiced, so no payment system could have helped. **Nine days of
+  "held for payment confirmation" has been describing a connector gap when the
+  actual gap is an unset price.** The held section was right every day and
+  **pointed at the wrong thing.**
+
+---
+
+## Next entry: OL-0058

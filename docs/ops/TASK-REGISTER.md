@@ -125,9 +125,10 @@ and **none existed in this register an hour earlier.**
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
 Progress · 2 Awaiting Approval · **27 Awaiting Owner** · 5 Blocked · 22 Planned
 · 2 Backlog. **83 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-21T11:10Z** (daily brief; **recounted and
-unchanged** — that run added a dated section to T-75 and no row). **23 of 76 are
-now waiting on the owner**, up from 19 on 2026-10-16 and from 10 on 2026-10-12.
+every write — last **2026-10-21T11:38Z** (follow-up run; **recounted and
+unchanged** — dated sections on T-37, T-64 and T-66, no row, and **A-20**
+raised). **23 of 76 are now waiting on the owner**, up from 19 on 2026-10-16 and
+from 10 on 2026-10-12.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -1650,6 +1651,33 @@ position stays unknown and unasserted.**
 spoke last, 18 hours ago.** The ball is with the customer, who is waiting on a
 second wideband to arrive. **No threshold has been reached**, and a chase would
 interrupt a live exchange the owner is handling well.
+
+### 2026-10-21 — the customer went quiet after DD84's last message, and it is still unpriced
+
+**Thread `1a1082503004a073` now holds 29 messages and returned all 29 — no
+truncation.** **DD84 spoke last, 2026-10-12T20:39:11Z**, which is **~207 hours**
+ago. The customer's own last message was 58 minutes earlier, so **the thread
+ends with DD84's reply and the customer has not answered it.**
+
+**That is a different stage from the one this task has been reporting.** It is
+not a response risk on the customer's side — **it is a job that ran out of
+conversation.** Under the proposed thresholds a waiting-on-customer item is
+chased at 3 days and this is at 8.6.
+
+**A follow-up is drafted under A-20, and it asks about the car rather than the
+money.** The routine's rule binds: **Stripe has no MCP server, PayPal needs
+re-authentication, and neither job was ever invoiced**, so no payment system can
+confirm anything is open. **Shopify was reachable and reports 0 orders
+all-time**, which rules out an order-based sale and says nothing about this job.
+
+**Worth stating because it is the ninth day of it: the blocker is not the
+connector.** Even a working Stripe would return nothing, **because nobody set a
+price.** That has been this task's next action since 2026-10-13.
+
+- **Status unchanged: Awaiting Owner** · **Next action** — **price it**, then
+  send **A-20 draft 2**. **If the owner wants the offered datalog review billed,
+  draft 2 should be deferred until the price exists** — that caveat is in the
+  packet.
 
 ## T-38 — GDOT access review: right-in/right-out on the Colbert shop site
 
@@ -3524,6 +3552,40 @@ days ago.** **Reject it or amend it; do not let it age into being sent.**
 **Still unpriced**, 29 messages in. Nothing in this window could change that —
 no payment system is readable — but **nothing in this window tried.**
 
+### 2026-10-21 — the age of this neglect was overstated by a day, four times
+
+**The datalog arrived 2026-10-13T15:39:45Z. As of 2026-10-21T11:15Z that is ~187
+hours — 7 days 19.5 hours.**
+
+**Four statements reported it a day too high.** The 10-20 intake and daily brief
+said **187** (correct: 163); the 10-21 intake and daily brief said **211**
+(correct: 187). **One error, carried forward four times**, because each run took
+the previous figure and added 24 hours instead of recomputing from the stored
+timestamp.
+
+**The direction is the part worth recording.** It **overstated** the neglect —
+the flattering direction for a routine whose purpose is to make neglect visible.
+**A register that exaggerates the very thing it exists to detect is less
+trustworthy than one that understates it**, because the exaggeration will be
+believed.
+
+**The repair is mechanical: compute every age from the stored timestamp on each
+run, never from the last figure reported.** This is the third instrument defect
+of the same family — **OL-0049's silent query truncation, OL-0055's windowed
+sweep that cannot see a quiet thread, and now a carried-forward number** —
+**each one a tool or a prior output trusted where a recomputation was needed.**
+
+**What does not change.** The datalog is **still unread**, the customer **still
+did exactly what was asked**, the job is **still unpriced**, and **A-18 still
+asks this customer for the file he already sent.** **A follow-up is drafted
+under A-20** — it acknowledges the log and commits to a date the owner fills in,
+**and it asks for no money**, because Stripe and PayPal are both unreachable and
+**there is no invoice for either to confirm.**
+
+- **Status unchanged: Awaiting Owner** · **Next action** — unchanged: **read the
+  log, reject A-18, price the job.** **A-20 draft 1 is ready to send and cannot
+  be sent from here.**
+
 ## T-65 — A Shopify customer account with zero orders, unrecorded
 
 - **Objective** — Establish whether a Shopify customer account created last week
@@ -3654,6 +3716,33 @@ never been assessed, and ~20,700 unread messages remain.
   inbox.** The single lead's outcome is secondary to that count.
 - **Status** **Awaiting Owner** · **Next action** — Step 2 first, not step 1.
   **One lead is worth less than knowing how many there have been.**
+
+### 2026-10-21 — at final threshold: send one touch, then close it
+
+**~13 days since the last contact on thread `1a0a565f802fc60b`**, and **well
+past the proposed 7-day close** for a stalled enquiry.
+
+**A final touch is drafted under A-20 (draft 3).** It asks whether the car is
+otherwise stock and **quotes nothing** — **which catalogue line applies to "just
+a mild burble" on a 2016 RC 350 was never decided**, and an agent deciding it
+would be pricing.
+
+**The recommendation, which needs the owner rather than another chase: if there
+is no reply within 7 days of sending, close the enquiry and record it as lost.**
+
+**Not because the lead is worthless, but because the register needs to
+distinguish live leads from dead ones.** An enquiry that stays open forever is
+indistinguishable from one being worked, **and this register now holds four
+inbound leads** (T-65, T-66, T-72, T-81) **with no way to tell which are
+alive.**
+
+**And the live issue was never this lead.** It is that **the website's contact
+form went unread for 23 days** — which is still true, and is still the thing
+that will produce the next T-66.
+
+- **Status unchanged: Awaiting Owner** · **Next action** — approve **A-20 draft
+  3**; **count the other contact-form submissions**; and **decide the close
+  rule** so the next stalled lead does not need a packet to retire.
 
 ## T-67 — Two more loan-fraud "application" emails, sixteen minutes apart
 
