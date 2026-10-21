@@ -4558,4 +4558,197 @@ digits, verification code, customer name, email or phone written here.**
 
 ---
 
-## Next entry: OL-0055
+## OL-0055 — 2026-10-21 · Wednesday intake: the bank named a transaction, a reseller door is still open, and a service nobody could name has an active committer
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled task "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-21T10:20:52Z**. **Nineteenth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`7c8d54c`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent. **50 tracked files, working tree clean. Tenth run to
+  record the result and the tip**, and the **nineteenth** whose firing prompt
+  demanded "28 tracked files" (T-69).
+- **The skeleton commit earned its keep.** It went up as **`8103834`** before
+  the sweep — the fourth application — **and the worker then restarted
+  mid-run.** Without it this run would have left nothing; with it the record
+  showed a run in progress, its start time and its base commit. **Two
+  applications of this repair have now been tested by an actual restart, and
+  both held.**
+- **Window** since OL-0053, **2026-10-20T10:20Z — 2026-10-21T10:20Z, 24 hours.**
+  **62 threads across two pages, and the result estimate was also 62**, so the
+  window is fully covered. **13 actionable, 49 no-action.**
+- **Reached** Gmail, Google Calendar, Shopify. **Not reached** the bank, Capital
+  One, Capital on Tap, Stripe, the PayPal connector, bookipay, Square, Chime,
+  Render, Superhuman Mail, Canva, Reddit.
+
+### The first answer to a question four runs could not touch
+
+**2026-10-20T18:10:25Z, thread `1a15a81ecfcb864b`, unread**, subject **"Some
+transactions were declined"**: _"There wasn't enough money available in your
+account …"_ — **digits redacted here, not in the original** — **and then it
+named them: a PayPal purchase to a Meta platform entity, dated 10-18.**
+
+**Corroborated 63 minutes later from the other side.** PayPal,
+**10-20T19:13:25Z, thread `1a15abb9aa68a165`, unread**: _"Your bank declined
+your electronic funds transfer."_ **Two independent senders, one event.**
+
+**Six days of alerts had described this account's state and never what moved
+through it.** Now one thing is known, and it ties to a payment this record
+already captured — **the same payee as the $17.00 PayPal charge on 10-17**
+(T-36).
+
+**It is a partial answer and is filed as one.** It explains one declined debit.
+**It does not explain how the account reached zero**, and **it does not say what
+the Capital One AutoPay did today** — no confirmation and no failure notice
+arrived for that at all.
+
+**What it changes is the character of the problem.** Five days ago this was an
+unexplained balance. **Today it is an account declining recurring subscription
+charges**, which is a cheaper problem because the charges are enumerable. T-73's
+list now runs to **seven items with four amounts still unread** — and **it was
+missing one large enough to be declined**, which is the part worth noticing
+about the list rather than the decline.
+
+### A warm supplier relationship the register never knew about
+
+**Thread `1a0dd710e6d59123`, four messages, read in full.** **DD84 wrote first
+on 2026-09-26** asking to become a supercharger reseller; the supplier's
+new-dealer rep sent **a 2.9 MB dealer packet on 10-04**; **DD84 replied on
+10-05** listing what it was reviewing — dealer forms, pricing policy, a W-9 and
+**buy-in requirements**; **then sixteen days of silence, and the rep chased at
+2026-10-21T01:06:06Z.** → **T-82**, raised **High**.
+
+**This is the only warm supplier relationship anywhere in this record.**
+Everything else inbound is a solicitation, a decline notice or a one-line
+enquiry. **Here a named supplier sent everything DD84 asked for and is still
+following up three weeks later.**
+
+**And the buy-in meets an account that declined a charge yesterday**, so the
+money question and the opportunity question are the same question. **The point
+recorded for the owner is narrower than "decide": a third week of silence reads
+to a supplier exactly like a decline. "Not now, here is my timeline" keeps the
+door open and costs nothing.**
+
+**It also exposed a defect in this register rather than in the business.** The
+thread started **2026-09-26** and **appears nowhere in the record until today**
+— because **intake windows look at recent mail, and a thread whose last inbound
+was 10-04 fell outside every window until the chase arrived.** **A quiet thread
+is invisible to a windowed sweep.** Same defect class as the Gmail truncation in
+OL-0049: **the instrument cannot see what it is not pointed at.** The missing
+routine is **a periodic sweep of threads awaiting DD84's reply**, and no routine
+runs one.
+
+### A correction to this record's own framing of `dd84-api`
+
+**2026-10-20T16:24:55Z:** _"**deploy failed for dd84-api** … **Commit: Merge
+pull request #29**"_, plus two more server failures. **Nine failures on nine
+days, and now a failed deploy.**
+
+**T-33 has called this service, for thirteen days, one that "nobody has named,
+nobody has connected, and nothing in `ventures.md` mentions"** — language
+implying orphaned infrastructure decaying by itself. **A merged PR #29 says the
+opposite: it has an active repository and an active committer.**
+
+**So the nine failures are not a forgotten thing rotting. They are a service
+under active development whose deploys are failing** — a different problem, with
+a different owner, and a far cheaper diagnosis.
+
+**Why the record got it wrong is worth keeping.** **Every alert this task logged
+was a failure notice, and failure notices look identical whether a service is
+abandoned or actively broken.** The deploy notice is the first one carrying a
+commit, and it only arrived because somebody finally deployed. **The inference
+from silence was unsupported and is withdrawn.** **Step 1 is now one GitHub
+query — find PR #29 — rather than an open-ended investigation.**
+
+### Marketing work was happening while this record reported none
+
+**Instagram login from Chrome Mobile, Atlanta, 10-20T15:08:24Z. Pinterest
+connected to Instagram at 15:09:11Z. At 10-21T04:14:52Z: "18 Pins published
+successfully … 10 Pins didn't publish"**, addressed to **"Down Dirty 84 |
+Tuning, EFI & Performance"**.
+
+**Not an agent action.** Recorded because **this record has been reporting zero
+marketing activity for two weeks while marketing activity was taking place** —
+and because the ten failed pins are a concrete, fixable thing. **Squarely Rev's
+territory, which is exactly why it is reported here and written nowhere else:
+`docs/growth/` stays untouched by this routine.**
+
+### Smaller, recorded
+
+- **A second business credit facility** — a monthly statement for 9/20–10/19,
+  **unread, with an attached statement**, plus **an $8.00 gift-card reward
+  issued in DD84's name**, so the card has spend on it. → **T-83**. **The
+  balance figures are withheld — A-19's fifth instance, and the first where the
+  withheld figure is a liability rather than a bank balance.** The conservative
+  reading was taken because **it can be reversed later and the opposite
+  cannot.**
+- **A second one-line store enquiry in four days** — _"Ar u shping to London"_,
+  **10-20T23:37:50Z, unread, no subject.** → **T-81**. **No draft, and the
+  reason is substantive**: a reply must state a shipping policy and an
+  international price, and **`ventures.md` has neither.** **Two readings this
+  record cannot separate** — an unwatched route producing real low-quality
+  traffic, or automated probes — **and characterising the route matters more
+  than either lead.** It is the fourth unwatched inbound route found (T-65,
+  T-66, T-72, T-81).
+- **A law firm checked in unprompted** (10-20T16:16:56Z, flagged important).
+  **T-13 has been blocked 54 days on "the owner engaging counsel", and counsel
+  just made contact.** **No draft** — engaging counsel commits DD84 to a
+  conversation about cost. **The name and address are not recorded.**
+- **A third Melio chase** (10-20T13:07:50Z): _"Are you still interested… if not,
+  no worries."_ **That closing is what a real sales sequence does before it
+  stops — weak evidence against the pretext reading, and still no evidence the
+  account exists.** T-74 unchanged in substance.
+- **HP Tuners sent two dealer-only notices**, one headed _"intended for HP
+  Tuners authorized dealers."_ **The first independent, supplier-side
+  corroboration of any `ventures.md` capability claim this record has seen.**
+- **Seventeenth consecutive empty calendar day** (read 10:41Z for 10-21 and
+  10-22) and **Shopify 0 orders** (10:42Z). **Two real zeros.**
+- **Drafts: 15, unchanged for a ninth run**, five still to likely loan fraud
+  (T-42).
+- **A Google security alert and a Family Link sign-in for a minor's account**
+  for which this mailbox is the recovery address; a recovery phone was changed.
+  **Not DD84's, not named, not described.** **Seven access notices across six
+  providers in five days** (T-76).
+- **Reddit: still nothing.** **T-60's outcome is two days past its deadline and
+  remains unknown.**
+- **Thread-truncation check held:** every multi-message thread this run — the
+  reseller thread (4), Melio (3), the Render pair (2) — **returned a message
+  count equal to the messages supplied.**
+
+### Class A held, and §5 held
+
+Nothing sent, forwarded or replied to. **No draft created, edited, sent or
+deleted.** No label applied, no thread moved, archived, trashed or reported.
+**No link in any solicitation opened, and the $8.00 gift-card redemption link
+was not clicked.** No calendar write, no customer contacted, no price quoted.
+**No payment, bank, card or Square action of any kind.** **No Supabase tool
+called** — a Ledger-side notice reporting that _"people have been signing in to
+your app"_ was recorded and not investigated. No scheduled task created, changed
+or fired (T-69). `docs/growth/` untouched.
+
+**Withheld: every bank figure, the card statement's balances, both sets of
+last-four digits, both enquirers' addresses, the supplier rep's name, the law
+firm's name and address, and every solicitation and redemption URL.** **No
+customer name, email or phone written.** **No minor named or described.**
+
+- **Needs the owner today** — **read the four unread bank messages as one
+  sitting** (three balance alerts plus the declined-transactions notice, which
+  is the most informative and arrived last) and **the Capital One notice, whose
+  charge was due today with no outcome observed**; **T-82** (the supplier wrote
+  nineteen hours ago — "not now" beats silence); **T-72** (a prospect at 104
+  hours, draft written); **T-81** (one line: does DD84 ship abroad?); **A-19**
+  (fifth instance); then **T-83**, **T-75**, **price T-37 and T-64**, **A-18**
+  (reject it), **T-76**, **A-15** (13 days), **T-80**, **T-69**.
+- **Worth stating plainly** — **three of today's findings are corrections to
+  this record rather than news about the business.** The bank finally named a
+  charge, so an "unexplained balance" becomes "declining subscriptions". A
+  merged pull request turned an abandoned service into an actively broken one. A
+  supplier's chase surfaced a sixteen-day-old opportunity **that no windowed
+  sweep could ever have seen.** **The register has been describing this business
+  accurately within the limits of what it pointed at, and today three of those
+  limits moved.**
+
+---
+
+## Next entry: OL-0056

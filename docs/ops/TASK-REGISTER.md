@@ -114,17 +114,20 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-78 | Price buy-an-existing-shop against the raw-land build on Hwy 72           | real est.  | **High**     | Planned                  | Agent | A to compare     | 2026-10-26   |
 | T-79 | Identify the SecretSOS issuer before any fee is paid                      | finance    | Normal       | Planned                  | Agent | A to verify      | 2026-11-30   |
 | T-80 | Supabase `public`-schema grants deadline 2026-10-30 — Ledger-side         | ledger     | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-28   |
+| T-81 | A five-word enquiry asks whether DD84 ships to London                     | sales      | Normal       | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
+| T-82 | Supercharger reseller application 16 days silent; supplier chased         | sales      | **High**     | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
+| T-83 | Capital on Tap: a business credit card with a statement nobody opened     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-23   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **24 Awaiting Owner** · 5 Blocked · 22 Planned
-· 2 Backlog. **80 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-20T11:06Z** (daily brief; **recounted and
-unchanged** — that run added no row and no section). **23 of 76 are now waiting
-on the owner**, up from 19 on 2026-10-16 and from 10 on 2026-10-12.
+Progress · 2 Awaiting Approval · **27 Awaiting Owner** · 5 Blocked · 22 Planned
+· 2 Backlog. **83 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-21T11:02Z** (Wednesday intake; three rows added,
+**T-81 to T-83**, all owner-held). **23 of 76 are now waiting on the owner**, up
+from 19 on 2026-10-16 and from 10 on 2026-10-12.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -1315,6 +1318,41 @@ from, and whether anything customer-facing calls it. **None needs an approval.**
 
 - **Status unchanged: Planned** · **Next action** — unchanged, and now overdue
   by nine days: **step 1, by Torque.**
+
+### 2026-10-21 — this task's framing was wrong: somebody merged a pull request into it yesterday
+
+**2026-10-20T16:24:55Z, thread `1a15a21557f28045`:** _"**deploy failed for
+dd84-api** … your latest changes may not be live. **Commit: Merge pull request
+#29**"_ — with **two further server failures** at 15:41:54Z and 16:51:39Z.
+**Nine failures on nine separate days since 2026-10-08, and now a failed
+deploy.**
+
+**The correction matters more than the count.** This task has described
+`dd84-api` for thirteen days as a service **"nobody has named, nobody has
+connected, and nothing in `ventures.md` mentions"** — language that implied
+orphaned infrastructure decaying on its own.
+
+**A merged PR #29 and a failed deploy mean the opposite: the service has an
+active repository and an active committer.** Somebody is working on it. **So the
+nine failures are not a forgotten thing rotting; they are a service under
+development whose deploys are failing** — a different problem, with a different
+owner, and a much cheaper diagnosis.
+
+**What this record got wrong, and why.** Every alert this task logged was a
+_failure_ notice, and failure notices look identical whether a service is
+abandoned or actively broken. **The deploy notice is the first one carrying a
+commit**, and it took thirteen days to arrive because nobody deployed in that
+window. **The inference from silence was unsupported and is withdrawn.**
+
+**What is now cheap to establish and was not before:** **which repository holds
+PR #29.** That names the service, its committer and its purpose in one read.
+**GitHub has not been re-read since 2026-10-15**, and this register already
+carries three repositories it can reach.
+
+- **Status unchanged: Planned** · **Next action, now specific** — **find PR
+  #29.** Step 1 stops being "establish what `dd84-api` is" in the abstract and
+  becomes **one GitHub query**. Still Torque's, still needs no approval, **and
+  no longer needs the Render dashboard to start.**
 
 ## T-34 — CI is failing on `main` in `downdirty84-ai-tuning`
 
@@ -4247,6 +4285,40 @@ able to report a cause.**
   step 2. **The 2026-10-21 charge lands tomorrow and its amount has never been
   read.**
 
+### 2026-10-21 — the bank named a declined transaction, and it is the first answer to "how"
+
+**2026-10-20T18:10:25Z, thread `1a15a81ecfcb864b`, unread**, subject **"Some
+transactions were declined"**: _"There wasn't enough money available in your
+account …"_ — **digits redacted here, not in the original** — followed by the
+transactions themselves: **a PayPal purchase to a Meta platform entity, dated
+10-18.**
+
+**Corroborated 63 minutes later by the other side.** **2026-10-20T19:13:25Z,
+thread `1a15abb9aa68a165`, unread**, from PayPal: _"Your bank declined your
+electronic funds transfer."_ **Two independent senders, one event.**
+
+**This is the first time in six days of alerts that anything named what was
+hitting the account.** Four runs reported the state — below zero, at zero, below
+zero again — and **none could say what was moving through it.** Now one thing is
+known: **a recurring charge to the same payee as the $17.00 PayPal payment
+captured on 10-17** (T-36).
+
+**It is a partial answer and is recorded as one.** It explains one declined
+debit. **It does not explain how the account reached zero**, what else is
+pending, or what the Capital One AutoPay scheduled for 2026-10-21 did — **no
+confirmation and no failure notice arrived for that** (T-73).
+
+**And it shifts the character of the problem.** Five days ago this was an
+unexplained balance. **Today it is an account declining recurring subscription
+charges** — which is cheaper to fix than a mystery, because the charges are
+enumerable: **Meta via PayPal, DAZN, Ocoya via Stripe, Webador, ChatGPT
+Business, and whatever the two card statements hold** (T-73, T-83).
+
+- **Status unchanged: Awaiting Owner**, **still the top of this register.** ·
+  **Next action** — **read the four unread bank messages** (three balance alerts
+  and now the declined-transactions notice) **as one sitting.** The decline
+  notice is the most informative of the four and arrived last.
+
 ## T-72 — A store enquiry asked if DD84 is open; unread 56 hours
 
 - **Objective** — Answer a live buying-intent question before the prospect
@@ -4393,6 +4465,42 @@ still unopened (T-46); the ChatGPT Business renewal is still **2026-10-24**;
 - **Status unchanged: Awaiting Owner** · **Next action** — **step 1 today, not
   tomorrow.** Reading the Capital One notice is the only one of the five that
   has a deadline inside 24 hours.
+
+### 2026-10-21 — the charge date arrived and its outcome is unobserved
+
+**The Capital One AutoPay was scheduled for today, 2026-10-21.** A targeted
+two-day sweep of `notification.capitalone.com` returned **nothing** — **no
+confirmation, no failure notice, no revised schedule.** The original notice is
+**still unread since 2026-10-17T15:01:55Z.**
+
+**So the amount is still unknown and now the result is too.** **Unknown is not
+zero and unknown is not paid.** This task cannot say whether the payment went
+through, was declined like yesterday's PayPal debit, or was never attempted.
+
+**One thing did land, from a different direction:** the bank declined **a PayPal
+charge to a Meta entity** on 10-20 for insufficient funds (**T-71**), **naming a
+recurring subscription this task had not listed.** **The outflow list in this
+task is therefore incomplete**, and the gap is not at the margins — **it was
+missing a charge large enough to be declined.**
+
+**Revised list of what is known to draw on this account**, with what is still
+unread:
+
+| Item                    | Status                                                         |
+| ----------------------- | -------------------------------------------------------------- |
+| **Meta, via PayPal**    | **Declined 10-20 for insufficient funds.** Amount not recorded |
+| **Capital One AutoPay** | **Due today. Amount unread, outcome unobserved**               |
+| **DAZN**                | Declined 10-15, 10-16, 10-19                                   |
+| **Ocoya, via Stripe**   | Declined 10-16, **$29.00**                                     |
+| **ChatGPT Business**    | **Renews 2026-10-24** — amount unread                          |
+| **Webador**             | Date and amount unread (T-46)                                  |
+| **Capital on Tap**      | **Statement issued 10-20, unopened** (T-83)                    |
+
+**Seven items, four amounts unknown, no total given.**
+
+- **Status unchanged: Awaiting Owner** · **Next action** — **read the Capital
+  One notice and establish what happened today**, then the Capital on Tap
+  statement. **Both are unopened email, not missing information.**
 
 ## T-74 — A third party says a Melio account exists; the message does not hold together
 
@@ -4790,3 +4898,181 @@ project, which this routine may not do.**
   **Not "it was probably fine."**
 - **Status** **Awaiting Owner** · **Next action** — Step 1. **Ten days, and this
   register cannot shorten them.**
+
+## T-81 — A five-word enquiry asks whether DD84 ships to London
+
+- **Objective** — Decide whether DD84 ships internationally, so that this
+  enquiry and the next one can be answered at all.
+- **Source** — `/dd84-inbox-intake`, 2026-10-21. Thread `1a15baddf0d998a0`,
+  **2026-10-20T23:37:50Z**, **unread**, **no subject line**. The entire message:
+  _"Ar u shping to London"_.
+- **Workstream** sales · **Priority** Normal · **Owner** **Owner** · **Approval
+  class** **A to record. C to reply.** · **Due** 2026-10-22
+
+### The fields, and how few exist
+
+| Field                                           | Value                                                          |
+| ----------------------------------------------- | -------------------------------------------------------------- |
+| Name                                            | **Not given**                                                  |
+| Contact                                         | The sending address. **Not recorded here** — §5                |
+| Vehicle · engine · transmission · modifications | **None stated**                                                |
+| Location                                        | **London, by implication only**                                |
+| Requested service                               | **Unspecified.** Possibly a physical product; possibly nothing |
+| Urgency                                         | **Normal**                                                     |
+| Source                                          | **Unknown.** No subject line, free email account               |
+
+### Why no draft was written, which is the substantive part
+
+**A reply would have to state a shipping policy and an international price, and
+neither exists.** `ventures.md` prices digital products at **$39.99–$399** and
+print-on-demand merchandise at **$18.77–$64.68**, **and says nothing about
+shipping outside the United States.** The Shopify store **has never taken an
+order**, so no shipping configuration has ever been exercised.
+
+**Inventing either is exactly what this routine must not do.** **The owner's
+decision is one line long** — DD84 ships abroad, or it does not — **and the
+draft follows in a minute once it exists.**
+
+**Note what the answer might be: "no, but the digital products need no shipping
+at all."** Tune files, calculators and toolkits are **$39.99–$399** and deliver
+by download. **If this enquirer wants a physical part, the answer is probably
+no; if they want a calibration, geography is irrelevant.** **That distinction is
+worth one question, and the question is the draft.**
+
+### The pattern, which is bigger than this lead
+
+**Second one-line enquiry in four days with an identical shape** — no subject,
+no name, a free email account, broken spelling, one question about whether the
+store works (**T-72**, 10-17). **Not merged**: different senders, unverified
+identity, spec §9.
+
+**Two readings this record cannot separate.** Either **an unwatched inbound
+route is producing real low-quality traffic** — which would be the first
+evidence of any inbound demand at all — **or these are automated probes.**
+**Characterising that route matters more than either lead**, and it is the
+fourth unwatched route the register has found (T-65, T-66, T-72, this).
+
+- **Cost and risk** — **No cost.** The risk of a reply is promising delivery
+  DD84 cannot do; the risk of silence is the T-66 outcome at 23 days.
+- **Execution steps** — (1) **Owner** decides whether DD84 ships
+  internationally, and whether digital products are offered to overseas buyers;
+  (2) a draft is written to that decision; (3) **the owner sends it** — Class C;
+  (4) **establish which route these enquiries arrive by**, which serves T-72 and
+  T-81 together.
+- **Completion proof required** — A stated shipping position in `ventures.md`,
+  and either a sent reply or a recorded decision not to reply.
+- **Status** **Awaiting Owner** · **Next action** — Step 1.
+
+## T-82 — Supercharger reseller application 16 days silent; supplier chased
+
+- **Objective** — Decide whether DD84 proceeds with a supercharger reseller line
+  it asked for in September, before the supplier closes the file.
+- **Source** — `/dd84-inbox-intake`, 2026-10-21. Thread `1a0dd710e6d59123`, **4
+  messages, read in full.**
+- **Workstream** sales · **Priority** **High** · **Owner** **Owner** ·
+  **Approval class** **A to record and draft. C to reply.** · **Due** 2026-10-22
+
+### The sequence, which DD84 started
+
+| When                     | What                                                                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **2026-09-26T11:19:29Z** | **DD84 wrote first**, stating interest in a reseller line and asking for paperwork and current pricing                                                                   |
+| **2026-10-04T20:33:02Z** | The supplier's new-dealer rep sent **a full dealer packet**, 2.9 MB, apologising for the delay                                                                           |
+| **2026-10-05T11:11:48Z** | **DD84 confirmed receipt**, listing what it was reviewing: **the Dealer Request/Review form, the dealer policy, the UPP pricing policy, a W-9, and buy-in requirements** |
+| **2026-10-21T01:06:06Z** | **The rep chased**: _"Wanted to check in. Hope you're well. If I can help in anyway please let me know."_                                                                |
+
+**Sixteen days of silence on an opportunity DD84 initiated**, after being sent
+everything it asked for.
+
+### Why this is High, and why it is not simple
+
+**It is the only warm supplier relationship in this entire record.** Every other
+inbound thread is a solicitation, a decline notice or a one-line enquiry. **Here
+a named supplier sent a dealer packet and is still following up three weeks
+later** — that is a real commercial door, held open.
+
+**And it has a buy-in requirement.** The 10-05 message names it explicitly.
+**DD84's account declined a transaction yesterday for insufficient funds**
+(T-71). **The honest position is that the money question and the opportunity
+question are the same question**, and only the owner can answer it.
+
+**What must not happen is a third week of silence.** **A reseller application
+that lapses by inattention reads to the supplier exactly like one that was
+declined** — and costs the relationship either way. **"Not now" is a better
+answer than nothing**, and it keeps the door open.
+
+**This also exposes a gap in the register rather than in the business.** The
+thread began **2026-09-26**, ran through the first intake runs, and **appears
+nowhere in this register until today.** The reason is mechanical: **intake
+windows look at recent mail**, and a thread whose last inbound was 10-04 fell
+outside every window until the chase arrived. **A quiet thread is invisible to a
+windowed sweep** — the same defect class as the Gmail truncation in OL-0049, and
+worth stating because **the correct instrument is a periodic sweep of threads
+awaiting DD84's reply, which no routine runs.**
+
+- **Cost and risk** — **No cost to reply.** The buy-in is unquantified here —
+  **the packet was not opened and no download tool exists.** The risk of silence
+  is losing the only warm supplier channel on the record.
+- **Execution steps** — (1) **Owner** reads the dealer packet and establishes
+  **the actual buy-in figure**; (2) decides: proceed, defer with a date, or
+  decline; (3) **a draft is written to that decision** — a one-paragraph
+  "reviewing, here is my timeline" is enough to hold the door; (4) **the owner
+  sends it** — Class C; (5) **if proceeding, the buy-in is a Class E decision**
+  against the cash position and needs a packet.
+- **Completion proof required** — A sent reply, and either a recorded decision
+  or a dated commitment. **Not "we'll get to it."**
+- **Status** **Awaiting Owner** · **Next action** — Step 1, today. **The rep
+  wrote nineteen hours ago.**
+
+## T-83 — Capital on Tap: a business credit card with a statement nobody opened
+
+- **Objective** — Get a second business credit facility onto the record, with
+  its balance and payment date, before it joins the list of things drawing on an
+  account that is declining charges.
+- **Source** — `/dd84-inbox-intake`, 2026-10-21. Thread `1a15b7f53703d062`,
+  **2026-10-20T22:47:12Z**, **unread**, **1.9 MB with an attached statement**,
+  billing period **9/20/2026 to 10/19/2026**. Plus thread `1a159855562c98da`,
+  **2026-10-20T13:34:31Z**: **an $8.00 Amazon gift card reward issued "from DOWN
+  DIRTY 84"**.
+- **Workstream** finance · **Priority** **High** · **Owner** **Owner** ·
+  **Approval class** **A to report.** **Paying, drawing on or closing the card
+  is Class E.** · **Due** 2026-10-23
+
+### What this establishes
+
+**A live business credit card with a monthly billing cycle and an active rewards
+programme.** The gift-card reward is issued in DD84's name, which means **the
+account is not dormant** — it has spend on it.
+
+**The statement's figures are not recorded here.** **A-19's fifth instance in
+six days**, and **the first where the withheld figure is a liability rather than
+a bank balance** — which is worth noting because A-19 asks about "cash position"
+and a credit-card balance is adjacent to rather than inside that phrase. **The
+conservative reading was taken.** If the owner's answer is narrower, this figure
+can be written here later; **the reverse is not available.**
+
+### Why it matters beyond bookkeeping
+
+**T-73 lists the charges known to draw on the overdrawn account.** This adds a
+card whose **payment date and minimum are unread** — and **T-71 now shows the
+account declining recurring charges**. A card payment that fails is worse than a
+subscription that fails: **it carries a fee, a credit-file consequence, and in
+some facilities a rate change.**
+
+**It also means the payment-channel question in T-36 is further from settled,
+not closer.** The register has been counting _inbound_ channels. **This is the
+second business credit facility on the outbound side** — Capital One and Capital
+on Tap — **plus PayPal, plus whatever Melio turns out to be** (T-74). **Nobody
+has listed DD84's liabilities, and no routine asks for one.**
+
+- **Cost and risk** — **No cost to open the statement.** The risk of leaving it
+  is a missed card payment on top of a declining bank account.
+- **Execution steps** — (1) **Owner** opens the statement and records **the
+  balance, the minimum payment and the due date**; (2) adds them to **T-73**'s
+  outflow list; (3) confirms whether the card autopays from the account that
+  declined a charge on 10-20; (4) **if the two are linked, that is a Class E
+  decision and needs a packet.**
+- **Completion proof required** — Balance, minimum and due date read from the
+  statement, with the funding account named.
+- **Status** **Awaiting Owner** · **Next action** — Step 1. **The statement is
+  an unopened attachment in the mailbox, not missing information.**
