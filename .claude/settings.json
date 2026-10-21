@@ -16,6 +16,8 @@
       "Bash(npm run lint)",
       "Bash(npm test)",
       "Bash(npx prettier:*)",
+      "Bash(node docs/ops/tools/ops.mjs:*)",
+      "Bash(node --test docs/ops/tools/record.test.mjs)",
       "mcp__Shopify__get-shop-info",
       "mcp__Shopify__search_products",
       "mcp__Shopify__search_collections",

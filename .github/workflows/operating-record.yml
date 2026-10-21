@@ -1,0 +1,27 @@
+name: Operating record
+
+# Every routine run commits to the operating branch. This checks each of those
+# commits the way `docs/ops/README.md` contract item 7 asks a run to check
+# itself, so a run that skipped `ops.mjs check` still gets checked — and the
+# red mark lands on the commit that introduced the drift.
+on:
+  push:
+    branches: [claude/claude-md-docs-cqvhy6]
+  pull_request:
+    branches: [claude/claude-md-docs-cqvhy6]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Tool tests and record check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test docs/ops/tools/record.test.mjs
+      - run: node docs/ops/tools/ops.mjs check
