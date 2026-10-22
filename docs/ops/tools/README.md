@@ -100,5 +100,5 @@ in a copy of `record.mjs` — reading the status line before the response,
 counting a passed hard deadline twice, ignoring `package.json`, treating a log
 gap as an error, letting the agent's tasks into the owner's queue, reading a
 wrapped "with the owner" line as one line — were each caught by at least one
-test (OL-0060). The last of those was a real bug first, found when Prettier
+test (OL-0061). The last of those was a real bug first, found when Prettier
 wrapped the line on this record.
