@@ -70,7 +70,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                        | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-13   |
 | T-35 | Three stale pull requests, one from the superseded branch                 | ops        | High         | **Awaiting Owner**       | Owner | none yet         | not set      |
 | T-36 | No readable path to DD84's own revenue figures                            | finance    | High         | Planned                  | Agent | A to prepare     | 2026-10-15   |
-| T-37 | The C10 customer — Terminator X Max AFR fault                             | service    | High         | **In Progress**          | Owner | **A-21 pending** | 2026-10-10   |
+| T-37 | The C10 customer — Terminator X Max AFR fault                             | service    | High         | **In Progress**          | Owner | **A-20 + A-21**  | 2026-10-10   |
 | T-38 | GDOT access review — right-in/right-out on the Colbert site               | real est.  | High         | **In Progress**          | Owner | A-15 sent        | 2026-10-28   |
 | T-39 | Reschedule the missed Georgia SBDC session                                | finance    | Normal       | **In Progress**          | Owner | A-15 sent        | 2026-10-28   |
 | T-40 | Google Play developer account at risk of closure                          | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
@@ -97,14 +97,14 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-61 | Square turns offline payments on by default in two days                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-62 | Vercel reports three misconfigured domains on one project                 | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
 | T-63 | Two Shopify account-verification codes, cause unexplained                 | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
-| T-64 | A second live tuning job — price proposed; customer's log unread          | service    | **Critical** | **Awaiting Owner**       | Owner | **A-21 pending** | 2026-10-14   |
+| T-64 | A second live tuning job — price proposed; customer's log unread          | service    | **Critical** | **Awaiting Owner**       | Owner | **A-20 + A-21**  | 2026-10-14   |
 | T-65 | A Shopify customer account with zero orders, unrecorded                   | sales      | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
-| T-66 | A real Lexus enquiry sat 23 days; the contact form was never read         | sales      | **High**     | **Awaiting Owner**       | Owner | C to contact     | 2026-10-15   |
+| T-66 | A real Lexus enquiry sat 23 days; the contact form was never read         | sales      | **High**     | **Awaiting Owner**       | Owner | **A-20 pending** | 2026-10-15   |
 | T-67 | Two more loan-fraud "application" emails, 16 minutes apart                | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-68 | MFA switched off on the Zoho account now holding Ledger support           | compliance | Normal       | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
 | T-69 | Four Routine prompts contradict the checkout guard in version control     | ops        | Normal       | **Blocked**              | Owner | S-01 (Class A)   | 2026-10-15   |
 | T-70 | Colbert parcel capped at 380 gpd design flow without public water         | real est.  | **High**     | **Awaiting Owner**       | Owner | A to research    | 2026-10-17   |
-| T-71 | The business bank account is overdrawn; two payments declined             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-16   |
+| T-71 | The business bank account is overdrawn; two payments declined             | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-19 pending** | 2026-10-16   |
 | T-72 | A store enquiry asked if DD84 is open; unread 56 hours                    | sales      | **High**     | **Awaiting Owner**       | Owner | C to send        | 2026-10-19   |
 | T-73 | Three dated outflows inside nine days, three amounts unknown              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-20   |
 | T-74 | A third party says a Melio account exists; message does not hold together | finance    | Normal       | **Awaiting Owner**       | Owner | A to verify      | 2026-10-22   |
@@ -2487,8 +2487,24 @@ reason: history rewriting is forbidden on this branch and refused by the proxy.
 Any option here cleans current files only.
 
 - **Status** **Awaiting Owner** · **Next action** — answer **A-17**. **Due
-  2026-10-13**, which is the next weekday intake after the weekend; past that
-  the routine keeps adding to the pile under no rule.
+  2026-10-13**, which is the next weekday intake after the weekend. **The stated
+  consequence of missing it did not materialise** — see below.
+
+### Measured 2026-10-21, and the due-date reasoning was wrong
+
+The due date above was set on the argument that "past that the routine keeps
+adding to the pile under no rule." **Eight days past it, the pile has not
+grown.** 23 briefs committed since A-17 was raised added **zero** new consumer
+free-mail addresses; the five still sit in the same two files. The full
+measurement, its two consequences and its limits are in **A-17's Actual-result
+block**.
+
+**The date is not being moved.** It was missed, and re-dating it to make the
+register look current would hide the one thing the measurement establishes:
+**this task is overdue and it is also not urgent, and both are true at once.**
+That is a different state from the other past-due items, and worth being able to
+see. **The reason to answer A-17 is that the next intake run deserves a rule,
+not that the exposure is widening.**
 
 ---
 
