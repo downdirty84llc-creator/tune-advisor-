@@ -413,10 +413,16 @@ export function parseApprovals(text) {
   return { lines, table, board, packets, owner: ownerParagraph(lines) };
 }
 
+const OWNER_SENTENCE =
+  /\*\*(\w+) packets? (?:is|are) with the owner(?:: ([^*]*?))?\.\*\*/;
+
 /**
- * The "N packets are with the owner" sentence. Prettier wraps it once the list
- * passes 80 columns, so it is a paragraph — from its first line to the next
- * blank one — not a line.
+ * The paragraph that opens with "**N packets are with the owner: …**".
+ *
+ * Only that bold sentence is derived. Prettier wraps it once the list passes 80
+ * columns, and a session may follow it with prose of its own in the same
+ * paragraph — why one of the packets is superseded, say — so the paragraph runs
+ * to the next blank line and only the sentence is ever rewritten.
  */
 function ownerParagraph(lines) {
   const start = lines.findIndex((line) =>
@@ -425,7 +431,40 @@ function ownerParagraph(lines) {
   if (start === -1) return null;
   let end = start;
   while (end < lines.length && lines[end].trim() !== "") end += 1;
-  return { start, end, text: lines.slice(start, end).join("\n") };
+  const text = lines.slice(start, end).join("\n");
+  const flat = text.replace(/\s*\n\s*/g, " ");
+  const match = flat.match(OWNER_SENTENCE);
+  return {
+    start,
+    end,
+    text,
+    flat,
+    sentence: match?.[0] ?? null,
+    countWord: match?.[1] ?? null,
+    ids: match?.[2] ? [...idsIn(match[2], "A"), ...idsIn(match[2], "S")] : [],
+  };
+}
+
+function pendingIds(packets) {
+  return packets
+    .filter((packet) => packet.status === "Pending")
+    .map((packet) => packet.id);
+}
+
+/**
+ * Whether the stated sentence names exactly the pending packets, with the right
+ * count. Order is the writer's choice — most urgent first, say — and is not a
+ * defect.
+ */
+function ownerSentenceAgrees(owner, packets) {
+  const pending = pendingIds(packets);
+  const word = NUMBER_WORDS[pending.length] ?? String(pending.length);
+  return (
+    Boolean(owner.sentence) &&
+    owner.countWord.toLowerCase() === word.toLowerCase() &&
+    owner.ids.length === pending.length &&
+    pending.every((id) => owner.ids.includes(id))
+  );
 }
 
 const NUMBER_WORDS = [
@@ -455,14 +494,22 @@ function listIds(ids) {
   return `${ids.slice(0, -1).join(", ")} and ${ids.at(-1)}`;
 }
 
-export function renderOwnerLine(packets) {
-  const pending = sortIds(
-    packets.filter((packet) => packet.status === "Pending").map((p) => p.id),
-  );
-  const count = NUMBER_WORDS[pending.length] ?? String(pending.length);
-  if (pending.length === 0) return "**No packets are with the owner.**";
-  const noun = pending.length === 1 ? "packet is" : "packets are";
-  return `**${count} ${noun} with the owner: ${listIds(pending)}.**`;
+/**
+ * The sentence, generated. IDs keep the order of `previous` — the sentence as a
+ * writer last left it — for those still pending; resolved ones drop out, and
+ * newly pending ones follow in ID order.
+ */
+export function renderOwnerLine(packets, previous = []) {
+  const pending = pendingIds(packets);
+  const kept = previous.filter((id) => pending.includes(id));
+  const ordered = [
+    ...kept,
+    ...sortIds(pending.filter((id) => !kept.includes(id))),
+  ];
+  const count = NUMBER_WORDS[ordered.length] ?? String(ordered.length);
+  if (ordered.length === 0) return "**No packets are with the owner.**";
+  const noun = ordered.length === 1 ? "packet is" : "packets are";
+  return `**${count} ${noun} with the owner: ${listIds(ordered)}.**`;
 }
 
 // ── Operating log ───────────────────────────────────────────────────────────
@@ -660,16 +707,18 @@ export function check({ register, approvals, log }) {
       );
     }
   }
-  if (approvals.owner) {
-    const expected = renderOwnerLine(approvals.packets);
-    if (plain(approvals.owner.text) !== plain(expected)) {
-      add(
-        "error",
-        "APR-OWNER-LINE",
-        `The "with the owner" line reads "${plain(approvals.owner.text)}"; the packets say "${plain(expected)}".`,
-        true,
-      );
-    }
+  if (
+    approvals.owner &&
+    !ownerSentenceAgrees(approvals.owner, approvals.packets)
+  ) {
+    const stated = approvals.owner.sentence ?? approvals.owner.flat;
+    const expected = renderOwnerLine(approvals.packets, approvals.owner.ids);
+    add(
+      "error",
+      "APR-OWNER-LINE",
+      `The "with the owner" line reads "${plain(stated)}"; the packets say "${plain(expected)}".`,
+      true,
+    );
   }
 
   // Log: unique, contiguous IDs and no cached next number.
@@ -787,18 +836,20 @@ export function sync({ register, approvals, log }) {
       }
     }
   }
-  // Re-find the owner paragraph: the board above it may have grown.
+  // Re-find the owner paragraph: the board above it may have grown. Only the
+  // bold sentence is replaced; prose after it in the paragraph is kept.
   const owner = ownerParagraph(approvalLines);
-  if (owner) {
-    const expected = wrap(renderOwnerLine(approvals.packets));
-    if (owner.text !== expected) {
-      approvalLines.splice(
-        owner.start,
-        owner.end - owner.start,
-        ...expected.split("\n"),
-      );
-      changes.push('APPROVALS.md: "with the owner" line regenerated');
-    }
+  if (owner && !ownerSentenceAgrees(owner, approvals.packets)) {
+    const sentence = renderOwnerLine(approvals.packets, owner.ids);
+    const paragraph = owner.sentence
+      ? owner.flat.replace(owner.sentence, () => sentence)
+      : sentence;
+    approvalLines.splice(
+      owner.start,
+      owner.end - owner.start,
+      ...wrap(paragraph).split("\n"),
+    );
+    changes.push('APPROVALS.md: "with the owner" line regenerated');
   }
 
   // Log footer.

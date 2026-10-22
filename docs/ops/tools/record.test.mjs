@@ -316,6 +316,49 @@ test("a wrapped owner line is read and rewritten as one paragraph", () => {
   assert.deepEqual(sync(synced).changes, [], "a wrapped paragraph is stable");
 });
 
+test("prose after the owner sentence is kept, and so is the writer's order", () => {
+  // As on 2026-10-22: a session ordered the IDs by urgency and explained one of
+  // them in the same paragraph. A new packet is raised afterwards.
+  const approvals = APPROVALS.replace(
+    "**Two packets are with the owner: A-02 and A-03.**",
+    "**One packet is with the owner: A-03.** A-03 is superseded by a\nlater draft, and answering that one settles both.",
+  ).concat("\n## A-04 — A new packet\n\n**Response** — _awaiting owner._\n");
+  const result = sync(record(REGISTER, approvals));
+  assert.match(
+    result.approvals,
+    /\*\*Two packets are with the owner: A-03 and A-04\.\*\* A-03 is superseded by a later\ndraft, and answering that one settles both\./,
+  );
+  const synced = record(result.register, result.approvals, result.log);
+  assert.ok(!check(synced).some((f) => f.code === "APR-OWNER-LINE"));
+  assert.deepEqual(sync(synced).changes, []);
+});
+
+test("the owner sentence is checked as a set: order is free, count is not", () => {
+  const extra = "\n## A-04 — Another\n\n**Response** — _awaiting owner._\n";
+  const ownerFinding = (sentence) =>
+    check(
+      record(
+        REGISTER,
+        APPROVALS.replace(
+          "**Two packets are with the owner: A-02 and A-03.**",
+          sentence,
+        ).concat(extra),
+      ),
+    ).filter((f) => f.code === "APR-OWNER-LINE");
+  assert.deepEqual(
+    ownerFinding("**Two packets are with the owner: A-04 and A-03.**"),
+    [],
+  );
+  assert.equal(
+    ownerFinding("**Three packets are with the owner: A-03 and A-04.**").length,
+    1,
+  );
+  assert.equal(
+    ownerFinding("**Two packets are with the owner: A-03 and A-02.**").length,
+    1,
+  );
+});
+
 test('the "with the owner" line is generated from the pending packets', () => {
   const { approvals } = record();
   assert.equal(
