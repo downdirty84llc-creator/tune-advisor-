@@ -5251,4 +5251,179 @@ week's silence is not yet late.
 
 ---
 
-## Next entry: OL-0060
+## OL-0060 — 2026-10-21 · Reconciling the approval board three ways, and withdrawing A-17's own argument for urgency
+
+- **Timestamp** findings measured **2026-10-21T13:40Z** (approx.); **committed
+  2026-10-22**, after a concurrent push forced the work to be rebuilt — see
+  below. **The measurement dates are as measured and were not restamped to the
+  commit date.**
+- **Task** T-37, T-51, T-64, T-66, T-71 · **Approval** **S-01** (Class B —
+  documentation inside this repository). **No packet was answered and none could
+  be:** A-17, A-18, A-19 and A-20 are the owner's.
+- **Action** Reconciled the approval status board against the packets below it,
+  measured A-17's accumulation claim, and named two register rows to their
+  packets.
+- **Tool** `git`, `Read`, `Edit`, `python3` (regex scan), `prettier`.
+- **Operator** Claude (agent), interactive session on the owner's instruction
+  "continue".
+- **Checkout** — base **`751564d`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  **52 tracked files.** No connector reached, **no GitHub write, no scheduled
+  task touched.**
+
+### Five things on the board were wrong at once
+
+- **A-18, A-19 and A-20 had no row** — eight days, five days, and **the same
+  hour**. All three with the owner.
+- **A-15 read `Pending` two hours after it was approved and both replies were
+  sent** — OL-0059, 12:11Z. **The session that executed it updated the packet
+  and this log and not the board.**
+- **A-16 was still in the open-packet bullet list**, twelve days after it was
+  executed, describing a world-readable customer mobile number as a live concern
+  while the board row three lines above read "Approved (executed)".
+- **The summary line read "Four packets are with the owner"**, the set as it
+  stood on 2026-10-12. It is **six**: A-17, A-18, A-19, A-20, A-07, A-10.
+
+**That is the seventh through eleventh instance** of this board lagging the
+packets below it. The note recording the fifth and sixth is still on the page,
+four lines above the line that was wrong.
+
+**A-20's absence is the sharpest of the five.** Nothing had time to go stale:
+the packet and the missing row were written the same day by two sessions, and
+**the board was already wrong about a decision raised within the hour.** Five of
+the eleven instances are this board failing to notice a packet that exists,
+which makes it **the least reliable surface in the record and the first one a
+reader meets.** The 2026-10-12 note said the fix is structural rather than
+another reminder; **this entry is another reminder, and that is worth admitting
+rather than dressing up.** The structural fix would be generating the board from
+the packet headings instead of maintaining it by hand — **not attempted here**,
+because it is a tooling change in a repository with no build, and proposing it
+is not the same as having it.
+
+### The lag runs the other way too, and that half is left in place deliberately
+
+**A-05, A-06 and A-07 all read
+`Status: PENDING — with the owner since 2026-08-06` in their own packet headers.
+A-05 and A-06 were answered on 2026-08-10** — their Response blocks on the same
+page say so, and A-05's block _itself describes_ the header being stale after
+the 2026-09-25 consolidation: the fix reached the block and never reached the
+line above it.
+
+**The two headers were not edited.** `APPROVALS.md` permits editing only the
+Response and Actual-result blocks of a raised packet, and rewriting a header to
+remove a contradiction is the habit that rule exists to stop. **The
+contradiction is documented on the board instead**, with the instruction that
+follows: trust the board and the Response blocks, never a Status header.
+
+**This defect is being read, not sitting inert.** **OL-0056, today's daily
+brief, reports "Eight packets pending: A-05 / A-06 / A-07 at 76 days"** — the
+header count. **Five, not eight, and A-07 is the only packet genuinely 76 days
+old.** The brief over-reported the owner's queue from a source that looks
+authoritative and is not.
+
+### A-17 measured, and its own urgency argument withdrawn
+
+A-17's "Risks and safeguards" block predicts the material accrues on every
+intake run. **A scan of every tracked `.md` file, classifying addresses by
+domain rather than reading any out, says it has not:**
+
+- **23 brief files committed 2026-10-09 → 2026-10-21**, and **zero** new
+  consumer free-mail addresses in any of them.
+- The five-address set Option A would redact is still in **the same two files**
+  — `TASK-REGISTER.md` and `briefs/2026-10-08-inbox-intake.md`. All five arrived
+  in one run on 2026-10-08.
+- **Option A's blast radius is two files, not the "up to four" the packet
+  states.** Cheaper than advertised.
+- **What did grow is the classes the packet says to keep** — named business
+  senders now in **seven** files, two of them committed 2026-10-20. **If the
+  owner's instinct is Option B, that is the set that is moving.**
+
+Recorded in A-17's Actual-result block **with the measurement's limit stated**:
+it is a regex scan, so it shows the counted categories did not grow and shows
+nothing about a person named without an address. **A-16 was once reported done
+on a test that could not see what it missed; this one says what it cannot see.**
+
+**The consequence is that the delay has cost nothing, and the packet's one
+argument for speed is withdrawn rather than left standing.** → **T-51** carries
+the same correction, and **its due date was deliberately not moved**: it is
+overdue _and_ not urgent, and both being true at once is the thing worth seeing.
+
+### Four register rows named no packet though packets exist for them
+
+**T-71** read `A to report` five days after **A-19** was raised to cover it, and
+**T-37, T-64 and T-66** read `A to prepare` / `C to send` / `C to contact` with
+**A-20** raised the same day naming all three in its Affected-records block.
+`docs/ops/README.md` requires a task above Class A to name the approval ID or
+read `awaiting A-nn`. All four now name it.
+
+**T-64 is named to A-20, not A-18**, although both packets reach it: A-18 is
+superseded and A-20 carries the live redraft. **The row points at the packet an
+answer would actually come through**, and A-18's relationship to it is stated in
+the board's bullet rather than crammed into a table cell.
+
+### A concurrent push, and what it changed
+
+**This work was written against `0da4644`, and four commits landed on the branch
+while it was in progress** — including A-15's execution and A-20's raising. The
+push was rejected, and **the commit was rebuilt on `751564d` rather than
+merged**, because the board edits themselves had to change:
+
+- **A-15 was pending in the first draft of this entry and approved in the final
+  one.**
+- **A-20 did not exist in the first draft**, and its missing row became the
+  fifth defect and the sharpest one.
+- **The entry was numbered OL-0057 and is now OL-0060** — OL-0057 through
+  OL-0059 were taken while this was being written. **Fifth numbering collision
+  in this record.**
+
+The superseded commit is kept locally on `recon-backup` and is not pushed.
+**Fifth concurrency incident here, and the first where the other session's work
+changed the finding rather than only the numbering** — a reconciliation of a
+board went stale against that same board twice while being written, which is the
+best evidence yet that the board should not be maintained by hand.
+
+### What was deliberately not done
+
+- **No packet answered, narrowed, or recommended into.** A-17's recommendation
+  is unchanged at Option A; the measurement makes it cheaper, not chosen. **A-20
+  was read in full and left untouched** beyond its board row — three customer
+  messages are Class C and not this session's to send or alter.
+- **`.claude/commands/dd84-inbox-intake.md` was not amended.** That amendment is
+  **part of Option A**, and making it before the decision would commit half of
+  one option while the packet still offers three.
+- **A-05 and A-06 headers left as written** (above), and **A-18's body left as
+  written** — its author's own note on being overtaken is worth more than a
+  correction.
+- **No redaction performed.** Nothing in A-17 or A-19 was removed from any file,
+  and no git history was touched, which no option in either packet can do.
+- **No routine prompt edited** — T-69's edits remain available from this session
+  and unmade, on the 2026-10-16 reasoning.
+
+### Class held
+
+No mail read, sent, replied to, forwarded or labelled. **No draft created,
+edited, sent or deleted.** No charge, refund, invoice, payout or fulfilment. No
+bank, card, Square or payment action. **No Supabase tool called.** No GitHub
+write. **No scheduled task created, changed, fired or deleted.** `docs/growth/`
+untouched. **No balance figure, last-four digits, customer name, email address
+or phone number written here** — the A-17 measurement is reported as counts and
+domain classes, and **no address appears in this entry or in the packet block it
+produced.**
+
+- **Needs the owner** — **A-20** and **A-19** first, and they are a pair: A-20
+  has **three people waiting on two delivered jobs and a stalled enquiry**, and
+  **A-19 runs out of time on Friday 2026-10-23 at 11:10 UTC**, when the cash
+  review fires and withholds the only figure it has by default. Then the five
+  unread bank messages **newest first**, **T-82**, **T-72**, **A-18** (close it,
+  A-20 carries its redraft), **A-17** at 12 days, and **A-07**, the one 76-day
+  packet that is real. **A-15 is off this list for the first time since
+  2026-10-08.**
+- **And the thing none of these packets contains** — **neither delivered job has
+  ever been priced.** A-18 said so on 2026-10-13, A-20 says so again, and
+  **approving every message in A-20 would recover three conversations and still
+  leave the revenue on the floor.** Pricing is not Torque's to move; it is the
+  only item on this list with money directly attached.
+
+---
+
+## Next entry: OL-0061

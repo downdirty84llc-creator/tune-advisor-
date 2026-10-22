@@ -40,11 +40,53 @@ and actual result.
 | A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**                | T-30                               |
 | A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed) | T-32, blocks T-29                  |
 | A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                | T-27                               |
-| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Pending**                 | T-38 T-39                          |
+| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Approved** (both sent)    | T-38 T-39                          |
 | A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)     | T-48                               |
 | A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                 | T-51                               |
+| A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **Pending** (superseded)    | T-64                               |
+| A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Pending**                 | T-71                               |
+| A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                 | T-37 T-64 T-66                     |
 
-**Four packets are with the owner: A-15, A-17, A-07 and A-10.**
+**Six packets are with the owner: A-17, A-18, A-19, A-20, A-07 and A-10.** A-18
+is pending but **superseded twice over** — the customer answered all three of
+its questions four hours after it was raised, and **A-20 now carries the
+redrafted version of that same message.** Torque's recommendation on A-18 is
+REJECT, and the reasoning is in its own Actual-result block. **Answering A-20
+settles both.**
+
+> **Reconciled 2026-10-21.** Five things on this board were wrong at once —
+> **the seventh through eleventh instances** of the same failure.
+>
+> **A-18, A-19 and A-20 had no row at all** — eight days, five days, and **the
+> same hour**, all three with the owner. **A-15 read `Pending` two hours after
+> the owner approved it and both replies were sent** (OL-0059, 12:11Z); the
+> session that executed it updated the packet and the log and not this table.
+> **A-16 was still in the open-packet list below**, twelve days after it was
+> executed. And the summary line read **"Four packets are with the owner"**,
+> naming the set as it stood on 2026-10-12.
+>
+> **A-20's absence is the sharpest of the five**, because nothing had time to go
+> stale: the packet and the missing row were written on the same day by two
+> sessions, and **the board was already wrong about a decision raised within the
+> hour.** Five of these eleven instances are now this board failing to notice a
+> packet that exists, which makes it the single least reliable surface in the
+> record — and it is the first thing a reader meets.
+>
+> **The lag also runs the other way, and that half is deliberately left in
+> place.** **A-05, A-06 and A-07 all read
+> `Status: PENDING — with the owner since 2026-08-06` in their own packet
+> headers. A-05 and A-06 were answered on 2026-08-10** — their Response blocks
+> on this same page say so, and A-05's block _itself describes_ the header being
+> stale after the 2026-09-25 consolidation. **Those headers were not edited**,
+> because this file's rules permit editing only the Response and Actual-result
+> blocks of a raised packet, and rewriting a header to remove a contradiction is
+> the habit that rule exists to stop.
+>
+> **So: trust this board and the Response blocks, never a packet's Status
+> header.** Any count taken from the headers over-reports the owner's queue by
+> two — which is what happened in **OL-0056**, today's daily brief, where the
+> pending set reads "eight packets" and includes A-05 and A-06 at 76 days.
+> **A-07 is the only packet genuinely 76 days old.**
 
 > **Reconciled 2026-10-12 by the daily brief.** This board had **A-16 as
 > Pending** when its own Response block records **APPROVE (Option A), owner,
@@ -54,17 +96,36 @@ and actual result.
 > contradicted the record below it**, across three different sessions. The fix
 > is structural, not another reminder: see OL-0034 and OL-0038.
 
-- **A-15** — raised 2026-10-08 by the first intake run. Two drafts, written in
-  full, neither sent, neither placed in the mail account. **The only packet with
-  a human counterparty waiting**: a GDOT engineer since 2026-10-06T22:04Z.
-  Answer this one first.
-- **A-16** — raised 2026-10-09 by the scheduled intake. One customer's name,
-  email and mobile number sit in the **append-only** log and in A-15's own body,
-  and **an agent may not edit either without a decision.** The two files whose
-  write modes allow it are already clean. **The only packet about a real
-  person's data being world-readable.**
+- **A-19** — raised 2026-10-16. **The pending packet with the nearest clock:**
+  the weekly cash review fires **Friday 2026-10-23 at 11:10 UTC**, and with no
+  answer it must again withhold the only number it has. Recommended Option C —
+  record the shape, not the figure. **Deferring is not neutral**: it leaves the
+  record in Option C by an agent's choice rather than a decision, which is what
+  A-13 was closed to stop.
+- **A-20** — raised 2026-10-21 by `/dd84-followup`. **Three messages, three
+  people waiting**: both delivered-but-unpriced jobs and the stalled Lexus
+  enquiry. **It carries the redraft that A-18 needs**, so answering it settles
+  A-18 too. One draft has a `[DATE]` bracket only the owner can fill. **No
+  message quotes a price, because neither job was ever priced** — which is the
+  decision underneath all three and is not in this packet.
+- **A-17** — raised 2026-10-09. Third-party contact details, nobody's customer.
+  **Measured 2026-10-21: the category it would redact has not spread**, and the
+  packet's own argument for speed is withdrawn in its Actual-result block. The
+  delay is cheap; the decision is still owed, because the next intake run has no
+  rule to apply.
+- **A-18** — raised 2026-10-13 and **overtaken by the customer four hours
+  later.** Recommendation: **REJECT**. Sending it as written would tell a
+  customer who has just broken eleven days of silence that nobody read his
+  reply. **The redraft it asked for is A-20's first message**, so this needs no
+  separate answer beyond closing it.
 - **A-07** — open since 2026-08-06. Ledger scope; blocks accepting uploads
-  safely, not launch.
+  safely, not launch. **The only packet genuinely 76 days old.**
+
+**A-15 and A-16 were moved out of this list on 2026-10-21**, both of them
+answered and executed. A-16 had sat here describing a world-readable customer
+mobile number as an open concern **twelve days after it was executed**, while
+the board row read "**Approved** (executed)" three lines above. Both are
+summarised with the other answered packets below.
 
 **Answered, and worth not misreading:**
 
@@ -74,6 +135,18 @@ and actual result.
   because the sequence is the useful part. **The repository stays public by
   decision**, which is what created the standing rule in `CLAUDE.md` §5 — and
   what A-16 now turns on.
+- **A-15 — APPROVED (both) and SENT**, owner 2026-10-21 ("Approve A-15"), both
+  replies out the same day and verified in their threads (OL-0059). **The first
+  two external messages this platform has ever sent**, 13 days after the packet
+  was raised. Two statements that 13 days had made untrue were corrected before
+  sending, which is the argument for re-reading a thread rather than sending an
+  approved draft unexamined.
+- **A-16 — APPROVED (Option A) and EXECUTED**, both on 2026-10-09. One
+  customer's name, email and mobile number were removed from the two files whose
+  write modes allow it; **the append-only log and A-15's sealed body still hold
+  them, by the same rule that made the packet necessary**, and no option ever
+  reached the git history. **A-17 is the follow-on**, not a repeat: A-16 was
+  scoped to one customer, and the scan that executed it found everyone else.
 - **A-14 — APPROVED and executed.** Four Routines bound to a host session
   holding the repository. **It is not a substitute for A-10**: one session, its
   context grows without bound, all four serialise, and it grants no standing
@@ -1321,6 +1394,46 @@ A-16 report success on two files that were not clean.
 
 **Response** — _awaiting owner._ **Affected records** — T-51. **Actual result**
 — Not executed; nothing in this packet has been changed in the tree.
+
+**Measured 2026-10-21, twelve days open — and the body's urgency argument does
+not hold.** The "Risks and safeguards" block above predicts that "the intake
+fires every weekday and this material accrues on each run." **It has not.** A
+scan of every tracked `.md` file, classifying each address by domain rather than
+reading any of them out:
+
+| Since A-17 was raised                                    | Measured                                                                            |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Brief files committed 2026-10-09 → 2026-10-21            | **23**                                                                              |
+| New consumer free-mail addresses in any of them          | **zero**                                                                            |
+| Files holding the five-address set Option A would redact | **2** — `TASK-REGISTER.md` and `briefs/2026-10-08-inbox-intake.md`, the same two    |
+| Files holding named business-sender addresses            | **7**, two of them committed 2026-10-20                                             |
+| Files holding automated no-reply senders                 | **4**                                                                               |
+| Distinct phone-shaped strings                            | **1 each in 3 files** — matching the two published lines and the owner's own mobile |
+
+**What this changes.** Two things, and they pull in opposite directions.
+
+1. **Option A is cheaper than this packet claimed.** "Systems affected" says "up
+   to four files"; it is **two**, and they have not moved in twelve days. All
+   five solicitor addresses arrived in a single run on 2026-10-08 and nothing
+   has been added to that category since — because **no further inbound
+   solicitation has come in**, not because any rule stopped it.
+2. **But the record is still accumulating third-party addresses** — in the
+   categories this packet assesses as no concern. Named business senders reached
+   two more files on 2026-10-20. **If the owner's instinct is Option B rather
+   than A, that is the growing set, and it grows on the classes A-17 recommends
+   keeping.**
+
+**So the delay has cost nothing so far, and saying otherwise would be
+manufacturing urgency.** The reason to answer is that the next run is owed a
+rule, not that the pile is growing. **The one argument this body made for speed
+is withdrawn here rather than left standing.**
+
+**The limit of this measurement, stated because A-16 was reported done on a test
+that could not see what it missed** — this is a regex scan for address-shaped
+and phone-shaped strings. It would not find a person named without an address,
+an address written around a filter, or one split across a line break. **It is
+evidence that the counted categories did not grow; it is not proof the tree is
+otherwise clean.**
 
 > **A numbering note, because this record keeps hitting it.** This packet first
 > cited T-49. **T-49 and T-50 had been taken minutes earlier** by the scheduled
