@@ -5251,4 +5251,104 @@ week's silence is not yet late.
 
 ---
 
-## Next entry: OL-0060
+## OL-0060 — 2026-10-22 · Two delivered jobs priced, and the ladder every run had been reading was wrong
+
+- **Timestamp** 2026-10-22T09:47:25Z
+- **Task** T-37, T-64 · **new** T-84 · **Approval** **none required to price.**
+  Proposing and recording a price is Class A. **Adopting it and quoting it is
+  the owner's — raised as A-21.** No live price was changed; **Shopify was read
+  only.**
+- **Action** Read the live catalogue, mapped both jobs onto ACTIVE SKUs,
+  corrected the venture registry's price ladder against the store, re-verified
+  both threads, recomputed both ages from their stored timestamps, and raised
+  A-21 and T-84.
+- **Tool** `mcp__Shopify__graphql_query` ×5, `mcp__Shopify__search_products`,
+  `mcp__Gmail__search_threads` ×2 (one a deliberate control), `Edit`, `python3`,
+  `git`.
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** The pair carried at **$198–$1,300, explicitly not separable per
+  job**, for nine days. `ventures.md` listed _Holley EFI Tuning & Diagnostics_
+  at $350/$450/$650 as a Core rung.
+- **After** **T-37 $349, T-64 $350 — $699 of delivered work, separable per
+  job**, each traceable to a live ACTIVE variant. $997 with both determinations.
+
+### Evidence
+
+| Claim                                             | How it was established                                                                                                                                  |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _Holley EFI Tuning & Diagnostics_ is **ARCHIVED** | `status: "ARCHIVED"`, `updatedAt` 2026-08-06T15:05:54Z; its replacement was created 2026-08-06T15:05:32Z                                                |
+| The replacement has **no diagnostic rung**        | `variantsCount: 6`, and all 6 read back: Startup $275 · Remote NA $349 · Remote Cam $399 · Remote E85 $499 · In-Person NA $550 · In-Person Boosted $599 |
+| The ladder's **$650 ceiling** is wrong            | `DD84-TOYLEX-PERF-RENTAL` $749.00, ACTIVE                                                                                                               |
+| The ladder's **$400 floor** is wrong              | `DD84-GM-TUNE-BASIC`, `DD84-FORD-TUNE-BASIC`, `DD84-MOPAR-TUNE-BASIC` all $350.00                                                                       |
+| The **$149 file review cannot cover either job**  | Its own copy: "no calibration changes included"; "Not included: editing or delivering a tune, flashing, **tune revisions**"                             |
+| The **Mopar rung boundary does not exist**        | Full description read untruncated: lists "Basic Tune: $350.00 Street Tune: $450.00 Performance Tune: $650.00" and **no scope difference**               |
+| T-64's customer log is **unread**                 | Thread `1a0e402cdcf75731`, 29 messages, last from the customer 2026-10-13T15:39:45Z, ~2.8 MB, `labelIds` contains **`UNREAD`**                          |
+
+### Three instrument checks, because two of these tools have lied before
+
+1. **A Gmail empty result was not trusted.** `newer_than:5d` returned `{}`. The
+   **same query without the date filter** returned both threads, so the empty
+   result is a **true negative** and neither thread has moved. An unverified
+   empty result is not evidence — OL-0049 and OL-0055 are why.
+2. **A Shopify empty result was diagnosed, not believed.**
+   `title:"Tune-or-Mechanical"` returned zero while the product is ACTIVE; the
+   hyphens break the field filter. Found instead via `product_type`. **The tool
+   documents this failure mode — invalid or unmatched filters return silently.**
+3. **Both ages were recomputed from stored timestamps**, never carried forward.
+   **OL-0058 is why**: an inherited age overstated T-64 by 24 hours in four
+   consecutive statements.
+
+### The finding that outranks the prices
+
+**The money was never the blocker, and neither were the connectors.** Nine days
+of runs reported these jobs as "held for payment confirmation" — Stripe
+unreachable, PayPal unauthenticated. That was true and it was beside the point:
+**neither job was ever invoiced, so no payment system could have confirmed
+anything.** Yesterday's run got that far and named the unset price as the
+blocker. **Today found why the price was unset: the document every run consulted
+did not contain the rungs these jobs needed.**
+
+`ventures.md` carried a ten-row summary ladder. The rungs that price a
+**half-diagnosed** job — the $149 Tune-or-Mechanical determination with its
+published GREEN/YELLOW/RED outcome, the $75 pre-tune deposit, the $99 written
+datalog guidance — **were not in it.** They were in the store the whole time.
+Six active service rungs were missing; four more are still to be added.
+
+**This is the third member of the instrument-defect family, and the first where
+the faulty instrument was a document in this repository rather than a
+connector.** The repair is identical to the other two: **recompute from source,
+never inherit.** CLAUDE.md already says it — "the live system always beats the
+document, including this one" — and today is the first run that needed it.
+
+### What was deliberately not done
+
+- **No diagnosis was offered on either fault.** T-37's wideband contradiction
+  stays open; the $149 SKU **prices the question without answering it**, which
+  is the only honest way an agent can put a number on an undiagnosed car.
+- **The Mopar $450/$650 boundary was not inferred.** T-84 Step 2.
+- **The four unverified ladder rows were not re-checked.** The owner asked for
+  two prices, not a catalogue audit. T-84 Step 1, marked Agent work.
+- **Nothing was sent, and no price was quoted.** A-21.
+- **No due date was moved.** T-37 (2026-10-10) and T-64 (2026-10-14) stay past
+  due, because re-dating to hide lateness is the defect this register already
+  names.
+
+### One cross-reference corrected
+
+The 2026-10-21 register note on A-15 pointed a reader at **OL-0058** for the
+send's record. **The A-15 send is OL-0059**; OL-0058 is the follow-up run.
+Pointer corrected in `TASK-REGISTER.md`. **The sibling session's own reasoning
+was not altered** — only the number a reader would follow.
+
+### Unresolved
+
+- **Whether either job is already paid.** Unreadable (T-36). **Unknown is not
+  unbilled**, and the owner's own records are the only source that can settle it
+  before an invoice goes out.
+- **Cam and airflow status on the C10** — the $50 between $349 and $399.
+- **How DD84 would actually collect** $699 if both were invoiced today. A price
+  does not create a payment path.
+
+---
+
+## Next entry: OL-0061

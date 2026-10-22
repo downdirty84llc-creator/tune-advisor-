@@ -70,7 +70,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-34 | CI is failing on `main` in `downdirty84-ai-tuning`                        | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-13   |
 | T-35 | Three stale pull requests, one from the superseded branch                 | ops        | High         | **Awaiting Owner**       | Owner | none yet         | not set      |
 | T-36 | No readable path to DD84's own revenue figures                            | finance    | High         | Planned                  | Agent | A to prepare     | 2026-10-15   |
-| T-37 | The C10 customer — Terminator X Max AFR fault                             | service    | High         | **In Progress**          | Owner | A to prepare     | 2026-10-10   |
+| T-37 | The C10 customer — Terminator X Max AFR fault                             | service    | High         | **In Progress**          | Owner | **A-21 pending** | 2026-10-10   |
 | T-38 | GDOT access review — right-in/right-out on the Colbert site               | real est.  | High         | **In Progress**          | Owner | A-15 sent        | 2026-10-28   |
 | T-39 | Reschedule the missed Georgia SBDC session                                | finance    | Normal       | **In Progress**          | Owner | A-15 sent        | 2026-10-28   |
 | T-40 | Google Play developer account at risk of closure                          | ops        | Normal       | Planned                  | Owner | A to diagnose    | 2026-12-06   |
@@ -97,7 +97,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-61 | Square turns offline payments on by default in two days                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
 | T-62 | Vercel reports three misconfigured domains on one project                 | ops        | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
 | T-63 | Two Shopify account-verification codes, cause unexplained                 | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-13   |
-| T-64 | A second live tuning job, unrecorded and unpriced — 11 days silent        | service    | **Critical** | **Awaiting Owner**       | Owner | C to send        | 2026-10-14   |
+| T-64 | A second live tuning job — price proposed; customer's log unread          | service    | **Critical** | **Awaiting Owner**       | Owner | **A-21 pending** | 2026-10-14   |
 | T-65 | A Shopify customer account with zero orders, unrecorded                   | sales      | Normal       | Planned                  | Agent | A to read        | 2026-10-16   |
 | T-66 | A real Lexus enquiry sat 23 days; the contact form was never read         | sales      | **High**     | **Awaiting Owner**       | Owner | C to contact     | 2026-10-15   |
 | T-67 | Two more loan-fraud "application" emails, 16 minutes apart                | compliance | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-15   |
@@ -117,18 +117,21 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-81 | A five-word enquiry asks whether DD84 ships to London                     | sales      | Normal       | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
 | T-82 | Supercharger reseller application 16 days silent; supplier chased         | sales      | **High**     | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
 | T-83 | Capital on Tap: a business credit card with a statement nobody opened     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-23   |
+| T-84 | The price ladder was stale and two rung boundaries are undefined          | sales      | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-29   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 2 In
-Progress · 2 Awaiting Approval · **27 Awaiting Owner** · 5 Blocked · 22 Planned
-· 2 Backlog. **83 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-21T11:38Z** (follow-up run; **recounted and
-unchanged** — dated sections on T-37, T-64 and T-66, no row, and **A-20**
-raised). **23 of 76 are now waiting on the owner**, up from 19 on 2026-10-16 and
-from 10 on 2026-10-12.
+Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 3 In
+Progress · 1 Awaiting Approval · **28 Awaiting Owner** · 5 Blocked · 22 Planned
+· 2 Backlog. **84 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-22T09:47Z** (pricing run; **T-84 added**, T-37 and
+T-64 re-pointed at **A-21**, and T-39 found at **In Progress** — the A-15 send
+moved it out of Awaiting Approval, which is the sibling session's change, not
+this run's). **28 of the 84 rows are Awaiting Owner.** The previous line read
+"23 of 76", on a basis this run did not reproduce; the figure above is a plain
+count of the Status column.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -5204,7 +5207,8 @@ has listed DD84's liabilities, and no routine asks for one.**
 >
 > Both replies went out at **12:10–12:11Z** and are verified in their threads:
 > GDOT `1a15e5f14b204202` (thread 4 → 5 messages), SBDC `1a15e5f48ed39b01`
-> (thread 1 → 2). Full record in **A-15** and **OL-0058**.
+> (thread 1 → 2). Full record in **A-15** and **OL-0059** (corrected 2026-10-22:
+> the note said OL-0058, which is the follow-up run).
 >
 > **T-38 — the ball is with GDOT, and the three answers set the surveyor's
 > scope.** Nothing can be bought until Nembhard answers: preferred throat width
@@ -5223,3 +5227,200 @@ has listed DD84's liabilities, and no routine asks for one.**
 > **Still unread and still blocking a full submission:** the D1TO Full Permit
 > Review checklist PDF. No session here has an attachment-download tool, so its
 > contents have never been read and nothing in the reply claims otherwise.
+
+---
+
+> ## Priced, 2026-10-22 — T-37 and T-64, against the live catalogue
+>
+> **The owner asked: "price T-37 and T-64."** Both figures below are **proposed,
+> not set.** Quoting either to a customer is Class C and is packet **A-21**.
+> Nothing was sent, no live price was changed, and no catalogue edit is needed
+> to invoice either job — every figure is an **ACTIVE Shopify variant at its
+> current price**, read live at 2026-10-22T09:47Z.
+>
+> ### The answer
+>
+> | Job      | Work already delivered                                 | Work still owed                                                                       | Job total     |
+> | -------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------- | ------------- |
+> | T-37     | **$349** — Remote NA Base Tune `DD84-HOLLEY-REMOTE-NA` | **$149** — Tune-or-Mechanical Diagnostic Review (remote) `DD84-TUNE-MECH-DIAG-REMOTE` | **$349–$498** |
+> | T-64     | **$350** — Mopar Basic Tune `DD84-MOPAR-TUNE-BASIC`    | **$149** — the same diagnostic SKU                                                    | **$350–$499** |
+> | **Pair** | **$699**                                               | **$298**                                                                              | **$699–$997** |
+>
+> **$699 is the figure that matters**: it is work DD84 has already done, on two
+> cars, that no invoice has ever named. **The pair is now separable per job** —
+> it was explicitly not separable before, because no tier had been chosen.
+>
+> **Ceiling $1,347** if the owner puts T-64's delivered work on the Street
+> ($450) or Performance ($650) rung. That boundary is **undefined in DD84's own
+> published copy** and was not invented here — see T-84.
+>
+> ### T-37 — $349, and why not $399
+>
+> The live Holley product (`holley-efi-tuning-services-remote-street`) defines
+> its own rungs. **Remote NA Base Tune $349** is "remote calibration for stock
+> or lightly modified naturally aspirated combinations". **Remote
+> Cammed/Modified NA Tune $399** is "for camshaft, injector, intake, exhaust,
+> and other airflow modifications".
+>
+> The record for this car says **fuel pump and rails stock**, injectors **GM
+> 12613412** (an OE part number), and records **no camshaft, intake or exhaust
+> change**. On the evidence the car is in the $349 rung. **$399 needs a
+> modification the record does not show — one question to the customer settles
+> it**, and that question is worth $50.
+>
+> **What $349 does not buy is a finished tune, and this tune is not finished.**
+> The AFR fault is open and the wideband contradiction recorded above is
+> unresolved. So $349 is invoiceable **on completion**, not today.
+>
+> ### T-37 — the $149 prices the question without answering it
+>
+> This register committed to **not** resolving the sensor contradiction, and
+> that still holds: it is a running engine and a technical determination that is
+> the owner's. **The live store sells the determination itself.** _DD84
+> Tune-or-Mechanical Diagnostic Review_, remote **$149**, publishes a
+> traffic-light outcome — **GREEN** calibration likely, **YELLOW** calibration
+> plus mechanical or electrical correction, **RED** hardware. That is exactly
+> the open question on this car, and it can be **priced without being
+> answered.**
+>
+> Twenty-nine messages, three datalog round-trips, a diagnosis and a built tune
+> file have already been given away on this thread. $149 is the rung that should
+> have carried them.
+>
+> **Optional, $59.99** — `DD84-CAM-SCAN-01`, the GM LS Cam Swap Scanner &
+> Diagnostic Pack, whose published copy includes "**check wideband validity
+> before making fueling decisions**". That is the precise point this job is
+> stuck on. Offered as an add-on, not a substitute for the diagnostic.
+>
+> ### T-64 — $350, and the three rungs that do not apply
+>
+> DD84 delivered **at least two revised tune files** (2026-10-02T17:04:22Z and
+> T20:06:05Z, both "updated tune file with additional VE table corrections and
+> startup adjustments"). That is custom Mopar ECU calibration work, and the live
+> _Dodge / Mopar Custom ECU Tuning Service_ prices it at **Basic $350** / Street
+> $450 / Performance $650.
+>
+> **Basic is the only rung the evidence supports.** The scope here was fault
+> correction on a street car, not added power. The product's full published
+> description lists the three prices and **defines no scope difference between
+> them**, so the higher rungs cannot be reached from the store — only from the
+> owner's own practice, which is written down nowhere this session can read.
+>
+> **Three cheaper rungs were considered and excluded, on DD84's own terms:**
+>
+> - **ECU Tune File Review, $99/$149/$199** — excluded. Its copy reads "written
+>   ECU file review — **no calibration changes included**" and "not included:
+>   editing or delivering a tune, flashing, **tune revisions**". DD84 delivered
+>   tune revisions. **This kills the $99–$199 lower bound this register has
+>   carried since 2026-10-13.**
+> - **Bad or Unknown Tune Evaluation, $149** — excluded. It is for reviewing
+>   _someone else's_ calibration. This car is running DD84's own.
+> - **Check Engine / No-Tune Diagnostic Deposit, $75** — not excluded, and it is
+>   the lower-friction alternative to the $149 if the owner wants the easiest
+>   possible yes. Its copy: "determine whether the vehicle is ready for
+>   calibration or needs mechanical, sensor, fuel, ignition, or wiring repair
+>   first."
+>
+> ### T-64 — the precondition is unmet, and that is the real risk
+>
+> The Mopar product states: "**Vehicle must be mechanically sound before
+> tuning.** Final scope depends on vehicle condition, setup, and datalog
+> review." A car with **hard cranking and intermittent no-start** is not
+> established as mechanically sound. **DD84 recalibrated it anyway, twice.**
+>
+> So the $350 is owed for work done — but the job **may not be completable by
+> calibration at all**, and selling further calibration into an unmet
+> precondition is what DD84's own product copy warns against. If the log shows
+> the fault persisting, the next sale is the **$149 determination or the $75
+> deposit**, not another tune file.
+>
+> ### T-64 — the customer is not silent. DD84 is.
+>
+> Thread `1a0e402cdcf75731` read live at 2026-10-22T09:47Z: **29 messages**, and
+> the last one is **from the customer** — 2026-10-13T15:39:45Z, ~2.8 MB, the
+> largest message in the thread, and still carrying the **`UNREAD`** label.
+> **210.1 hours — 8.76 days — unopened.**
+>
+> **This row's title said "11 days silent", and that was wrong about who is
+> silent.** The customer was asked to flash the revision, take a log and report
+> back. He did. The title is corrected above. **Read the log before quoting
+> anything**, because it is the evidence that decides whether $350 closes this
+> job or opens a diagnostic.
+>
+> T-37's thread `1a1082503004a073` was checked in the same pass: **29 messages,
+> DD84 spoke last at 2026-10-12T20:39:11Z, 229.1 hours ago.** There the silence
+> is the customer's, and waiting remains correct.
+>
+> **Both ages were recomputed from their stored timestamps, not carried forward
+> from the last run** — the OL-0058 defect, which overstated T-64's age by 24
+> hours four times running.
+>
+> ### The figure this replaces
+>
+> This register has carried the pair at **$198–$1,300, not separable per job**,
+> for nine days. **Both bounds were defective.**
+>
+> - The **$198 floor** was two $99 file reviews — a SKU whose own published
+>   terms exclude the tune revisions that both jobs received.
+> - The **$1,300 ceiling** was two $650 rungs of _Holley EFI Tuning &
+>   Diagnostics_, a product that has been **ARCHIVED since 2026-08-06**.
+>
+> **The new floor is $699 — three and a half times the old one.** The error ran
+> in the direction that made the neglect look cheaper than it was.
+>
+> ### What is still unknown, and is not estimated here
+>
+> - **Whether either job is already paid.** No payment system is readable
+>   (T-36): Stripe has no MCP server, PayPal needs re-authentication, bookipay
+>   has no API. A targeted search for money words across both customers' mail
+>   returned zero on 2026-10-13, but **a price agreed by phone would not
+>   appear.** Unknown, not unbilled.
+> - **Whether either customer was ever told a price.** Nothing in writing says
+>   so, and nothing says otherwise.
+> - **Cam and airflow status on the C10** — the $50 between $349 and $399.
+> - **The Mopar rung boundary** — T-84.
+>
+> ### Why nine days of runs could not do this
+>
+> Every routine run read `docs/agents/ventures.md`, whose ladder carried a dead
+> Holley SKU and **omitted every diagnostic rung** — the $149 determination, the
+> $75 deposit, the $99 written datalog guidance. The prices were in the store
+> the whole time. **"The live system always beats the document, including this
+> one"** earned its place today. The ladder is corrected and `T-84` carries the
+> rest.
+
+---
+
+## T-84 — The price ladder was stale and two rung boundaries are undefined
+
+- **Objective** — Make DD84's own price list quotable without reading the store,
+  and get the two undefined rung boundaries decided.
+- **Source** — Pricing T-37 and T-64 on 2026-10-22 against the live Shopify
+  catalogue. Corrections written into `docs/agents/ventures.md` the same day.
+- **Workstream** sales · **Priority** High · **Owner** **Owner** · **Due**
+  2026-10-29
+- **What was already fixed** — the archived Holley rung, the $400 floor that is
+  really $350, the $650 ceiling that is really $749, and six missing active
+  service rungs. **No live price was changed; only the record.**
+- **Step 1 — Agent, no approval needed.** Re-verify the four rows still marked
+  **not re-checked** (Dodge/Mopar PCM unlock · Digital · Licence · Merch) and
+  add the four known-missing Core rows (Cammed Street · Injector/E85/Flex ·
+  LS/Hemi Swap Commissioning · Transmission). **Not done this run on purpose:**
+  the owner asked for two prices, not a catalogue audit.
+- **Step 2 — Owner.** Define what separates **Basic $350 / Street $450 /
+  Performance $650** on the GM, Ford and Mopar tuning services. The published
+  description lists the three prices and no scope difference, so **DD84 cannot
+  presently price its own mid and top rungs consistently**, and no agent may
+  infer the boundary.
+- **Step 3 — Owner.** Decide the **Holley diagnostic gap**. Archiving _Holley
+  EFI Tuning & Diagnostics_ on 2026-08-06 removed the only Holley
+  troubleshooting rung; the replacement product has six variants and none is a
+  diagnostic. **T-37 is the proof that this costs money** — a Holley diagnostic
+  job had to be priced off a generic SKU.
+- **Cost and risk** — No cost. The risk of leaving it is quoting a dead SKU to a
+  customer, or three agents reading the same ladder and reaching three prices.
+- **Status** **Awaiting Owner** · **Next action** — Step 1 is Agent work and
+  needs no approval; Steps 2 and 3 are the owner's.
+- **Completion proof required** — The ladder carrying a 2026-10-22-or-later
+  verification date on every row, and the two boundary decisions recorded in
+  `APPROVALS.md` or `ventures.md`.

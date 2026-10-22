@@ -128,20 +128,57 @@ finding until the Manus analytics are read.
 
 ### Catalogue and price ladder
 
-50 active products, $19.99–$650.
+~~50 active products, $19.99–$650.~~ **The ceiling was wrong: it is $749**
+(Toyota/Lexus Performance Tune with the 7-day device rental,
+`DD84-TOYLEX-PERF-RENTAL`, ACTIVE). Corrected 2026-10-22 — see the corrections
+note below.
 
-| Rung      | Offer                                                                | Price              |
-| --------- | -------------------------------------------------------------------- | ------------------ |
-| Entry     | Remote Tune Readiness Review                                         | $49 / $75          |
-| Entry+    | ECU Tune File Review — GM/Ford/Dodge                                 | $99 / $149 / $199  |
-| Core      | GM, Ford, Dodge/Mopar, Toyota/Lexus custom ECU tuning                | $400–$650          |
-| Core      | Holley EFI Tuning & Diagnostics                                      | $350 / $450 / $650 |
-| Adjacent  | Wiring & EFI power diagnostics                                       | $75–$250           |
-| Adjacent  | Dodge/Mopar PCM unlock, removal, reinstall                           | $75–$300           |
-| Recurring | Shop-to-shop support session                                         | $150 / $250 / $350 |
-| Digital   | Holley EFI calibrations, LS swap toolkit, cam-swap pack, calculators | $39.99–$399        |
-| Licence   | Professional Shop Licence — GM toolkit                               | $399               |
-| Merch     | Print-on-demand apparel and decor                                    | $18.77–$64.68      |
+| Rung       | Offer                                                                | Price              | Verified       |
+| ---------- | -------------------------------------------------------------------- | ------------------ | -------------- |
+| Entry      | ECM Compatibility & Tune Readiness Review                            | $49 / $75          | 2026-10-22     |
+| Entry+     | ECU Tune File Review — GM/Ford/Dodge · _no calibration changes_      | $99 / $149 / $199  | 2026-10-22     |
+| Entry+     | Written Setup & Datalog Guidance — one written response              | $99                | 2026-10-22     |
+| Diagnostic | Tune-or-Mechanical Diagnostic Review — GREEN/YELLOW/RED outcome      | $149 / $199        | 2026-10-22     |
+| Diagnostic | Bad or Unknown Tune Evaluation — third-party calibration             | $149               | 2026-10-22     |
+| Diagnostic | Check Engine / No-Tune Diagnostic Deposit                            | $75                | 2026-10-22     |
+| Core       | GM, Ford, Dodge/Mopar custom ECU tuning                              | $350 / $450 / $650 | 2026-10-22     |
+| Core       | Toyota/Lexus performance tuning (+$99 7-day device rental)           | $400–$749          | 2026-10-22     |
+| Core       | Holley EFI Tuning Services — remote and in-person                    | $275–$599          | 2026-10-22     |
+| Adjacent   | Wiring & EFI power diagnostics                                       | $75 / $125 / $250  | 2026-10-22     |
+| Adjacent   | Holley EFI fuse-blowing & power-loss diagnostic                      | $125 / $250 / $350 | 2026-10-22     |
+| Adjacent   | Dodge/Mopar PCM unlock, removal, reinstall                           | $75–$300           | not re-checked |
+| Recurring  | Performance Shop Tuning Support Session                              | $150 / $250 / $350 | 2026-10-22     |
+| Digital    | Holley EFI calibrations, LS swap toolkit, cam-swap pack, calculators | $39.99–$399        | not re-checked |
+| Licence    | Professional Shop Licence — GM toolkit                               | $399               | not re-checked |
+| Merch      | Print-on-demand apparel and decor                                    | $18.77–$64.68      | not re-checked |
+
+#### Corrections, 2026-10-22 — read before quoting anything
+
+Read against the live Shopify catalogue while pricing T-37 and T-64. **No live
+price was changed; only this record was corrected to match the store.**
+
+| This file said                                                | The store says                                                                                                                                                        |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Core · **Holley EFI Tuning & Diagnostics** · $350/$450/$650   | That product is **ARCHIVED**. It was replaced on 2026-08-06 by _Holley EFI Tuning Services_ at $275/$349/$399/$499/$550/$599, which has **no diagnostic rung at all** |
+| Core · GM/Ford/Mopar/Toyota custom ECU tuning · **$400–$650** | GM, Ford and Mopar start at **$350**, not $400; Toyota/Lexus reaches **$749** with the device rental                                                                  |
+| 50 active products, **$19.99–$650**                           | The ceiling is **$749**                                                                                                                                               |
+
+**Six active service rungs were missing from this ladder**, and they are the
+ones a half-diagnosed job needs: the three Diagnostic rows above, the Written
+Setup & Datalog Guidance row, the Holley fuse-blowing row, and four more not yet
+added (Cammed Street $499/$599 · Injector/E85/Flex $399/$499/$649 · LS/Hemi Swap
+Commissioning $599/$749 · Transmission $149/$299/$349).
+
+**This is why two live jobs sat unpriced for nine days.** Every routine run read
+this ladder, and the rungs that price an unfinished diagnostic job were not in
+it. The prices existed in the store the whole time. **A full ladder
+re-verification is T-84.**
+
+**Two rung boundaries are undefined in DD84's own published copy** and cannot be
+settled from the store: what separates Basic ($350) from Street ($450) from
+Performance ($650) on the GM, Ford and Mopar tuning services. The product
+description lists the three prices and no scope difference. **Do not infer one**
+— that is an owner decision, raised as T-84.
 
 ### Capabilities
 

@@ -1642,3 +1642,113 @@ the batch.
 
 **Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-66.
 **Actual result** — _not yet executed._
+
+---
+
+## A-21 — Set the price on two delivered jobs, and authorise quoting it
+
+**Status: PENDING — raised 2026-10-22, at the owner's explicit request ("price
+T-37 and T-64").**
+
+**Decision requested** — Two things, separable:
+
+1. **Adopt the prices below**, each mapped to a live ACTIVE Shopify variant at
+   its current price. **No new price and no catalogue change is needed.**
+2. **Authority to quote them** to the two customers (**Class C** — an agent
+   cannot send).
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**, per row or for both.
+
+| #      | Job                    | Thread             | Rung proposed                                                                              | SKU                          | Price    |
+| ------ | ---------------------- | ------------------ | ------------------------------------------------------------------------------------------ | ---------------------------- | -------- |
+| **1**  | **T-37** — C10, Holley | `1a1082503004a073` | Remote NA Base Tune — _work delivered_                                                     | `DD84-HOLLEY-REMOTE-NA`      | **$349** |
+| **1a** | T-37 — the open fault  | same               | Tune-or-Mechanical Diagnostic Review, remote — _work still owed_                           | `DD84-TUNE-MECH-DIAG-REMOTE` | **$149** |
+| **2**  | **T-64** — Challenger  | `1a0e402cdcf75731` | Dodge/Mopar Custom ECU Tuning, **Basic** — _work delivered, ≥2 tune files_                 | `DD84-MOPAR-TUNE-BASIC`      | **$350** |
+| **2a** | T-64 — the open fault  | same               | Same diagnostic SKU, **or** Check Engine/No-Tune Deposit `DD84-NOTUNE-DIAG-DEPOSIT` at $75 | `DD84-TUNE-MECH-DIAG-REMOTE` | **$149** |
+
+**$699 is the delivered-work total. $997 with both determinations.**
+
+**Business objective** — Convert the only two delivered jobs in this record into
+invoiceable amounts. **DD84 has collected nothing since 2025-09-12.** These two
+jobs are the only identified near-term cash, and neither has ever had a price,
+so neither can be invoiced, chased, or counted in a cash review.
+
+**Source and context** — The owner asked for this directly on 2026-10-22. Prices
+were read from the **live Shopify catalogue at 2026-10-22T09:47Z**, not from
+`docs/agents/ventures.md`, whose ladder was found to be wrong — it carried an
+**archived** Holley product and omitted every diagnostic rung. The ladder is
+corrected and the remainder is **T-84**. Full reasoning is in
+`docs/ops/TASK-REGISTER.md` under the 2026-10-22 pricing section.
+
+**Recommended plan** — Invoice the **delivered** work ($349 + $350 = **$699**)
+and quote the **determination** ($149 each) as the next step rather than
+bundling it. On T-37, **read nothing into the wideband contradiction** — the
+$149 SKU publishes a GREEN/YELLOW/RED outcome, so the question is priced without
+being answered. On T-64, **read the unread log first**: it may close the job at
+$350 or open a diagnostic, and quoting before reading it risks quoting the wrong
+thing.
+
+**Alternatives considered**
+
+- **Invoice the delivered work only, no diagnostic quote** ($699). Simplest, and
+  it is the conservative reading if the owner judges the open faults to be
+  inside the tune he already sold. **Recommended if you want one decision, not
+  four.**
+- **Credit the $149 against the tune** rather than charging both. Recovers cash
+  now without charging twice; net per job unchanged if the job completes. **This
+  is a discount decision and is the owner's alone.**
+- **$75 deposit instead of the $149 determination** on T-64 — lower friction, a
+  published pre-tune readiness review, but a narrower deliverable.
+- **$399 instead of $349 on T-37** — correct only if the C10 has a camshaft or
+  airflow modification. **The record does not show one.** One question settles
+  it; it is worth $50.
+- **The higher Mopar rungs ($450 / $650)** — not proposed, because the product's
+  published copy defines no scope difference between the three. **Not
+  inferred.**
+
+**Cost and cash impact** — No cost to raise. Upside **$699 recoverable now**,
+**$997** with both determinations, **$1,347** if the owner puts T-64's delivered
+work on a higher rung. Payment processing is the open problem, not the price:
+**Stripe has no MCP server, PayPal has needed re-authentication since
+2026-10-09, bookipay has no API.** A price does not itself create a way to
+collect — see T-36.
+
+**Risks and safeguards**
+
+- **Billing position unknown.** No payment system is readable, so whether either
+  job has already been paid **cannot be confirmed.** A money word search across
+  both customers' mail returned zero on 2026-10-13, but **a price agreed by
+  phone would not appear.** **Safeguard: confirm with your own records before
+  invoicing.** Unknown is not unbilled.
+- **Quoting a price nine days late, after silence, may read as opportunistic.**
+  Safeguard: the A-20 drafts, which carry no price, go first; the price follows
+  the substantive reply.
+- **T-64's precondition is unmet.** The Mopar product requires a mechanically
+  sound vehicle; a hard-crank/no-start car is not established as one, and DD84
+  recalibrated it twice anyway. **Safeguard: no further calibration is sold into
+  that fault until the determination is done.**
+- **No power figure, turnaround or outcome is promised anywhere in this
+  packet.**
+
+**Systems affected** — None by this packet. Adopting it would later touch
+invoicing and the two Gmail threads. **Shopify is not modified**; every SKU
+named is already live at the price quoted.
+
+**Customer and public impact** — Two live customers would receive a price for
+work already delivered. **Nothing is sent under this packet** — sending is A-20
+for the replies and this packet for the amounts.
+
+**Relation to A-20** — A-20's three drafts deliberately contain **no price**,
+because no price existed. **This packet supplies what A-20 could not.** The two
+are independent: A-20 can be sent without A-21, but not the reverse.
+
+**Ages, recomputed from stored timestamps at 2026-10-22T09:47Z** — T-64's
+customer log **unread 210.1 hours**; T-37 DD84 spoke last **229.1 hours** ago.
+A-20 recorded ~187 and ~207 hours on 2026-10-21; both have advanced by one day.
+
+**Success test** — A price exists on both jobs that can be invoiced without
+reading the store, each traceable to a live SKU; and the next action on each job
+is a send rather than a question.
+
+**Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-84.
+**Actual result** — _not yet executed._
