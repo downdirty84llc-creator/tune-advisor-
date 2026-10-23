@@ -121,19 +121,21 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-85 | Three platform-record questions: a third send, a sign-in, a stale test    | ops        | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-29   |
 | T-86 | Pinterest publishing mostly failing; one failure announced as success     | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-29   |
 | T-87 | Ledger production deploys failing on main — recorded, not touched         | ops        | Normal       | **Awaiting Owner**       | Owner | none yet         | 2026-10-30   |
+| T-88 | A $450 payment arrived and nobody knows which job it paid for             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-26   |
+| T-89 | Shopify billing failed; the retry will hit the same stopped card          | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix         | 2026-10-24   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 3 In
-Progress · 1 Awaiting Approval · **30 Awaiting Owner** · 5 Blocked · 23 Planned
-· 2 Backlog. **87 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-22T10:40Z** (intake run; **T-85, T-86 and T-87
-added**, T-82 re-pointed at **A-22** and its title's day count removed). **30 of
-the 87 rows are Awaiting Owner** — a plain count of the Status column, up from
-28 before this run. **Three of this run's four findings are questions only the
-owner can answer**, which is why the pile grew.
+Progress · 1 Awaiting Approval · **32 Awaiting Owner** · 5 Blocked · 23 Planned
+· 2 Backlog. **89 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-23T10:55Z** (intake run; **T-88 and T-89 added**,
+both **Critical**). **32 of the 89 rows are Awaiting Owner** — a plain count of
+the Status column, up from 30 yesterday. **Both of today's new tasks are
+Critical and both are the owner's**: money arrived that nobody can attribute,
+and a live billing failure an agent may not fix.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -5579,3 +5581,141 @@ has listed DD84's liabilities, and no routine asks for one.**
 > **Nothing moved on either priced job.** Both A-20's drafts and A-21's prices
 > are one day old and unanswered. **Calendar empty through 2026-10-29; drafts
 > still exactly 15, the oldest 64.0 days.**
+
+---
+
+## T-88 — A $450 payment arrived and nobody knows which job it paid for
+
+- **Objective** — Attribute DD84's first revenue in 405 days to a job, so it can
+  be recorded, reconciled and — if it is a deposit — completed.
+- **Source** — `/dd84-inbox-intake`, 2026-10-23. Bank notification,
+  **2026-10-22T20:46:58Z**.
+- **Workstream** finance · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-26
+- **What is known, and only this**
+  - **$450.00**, received **2026-10-22**, by Zelle into the business account.
+  - **Memo: "tune".**
+  - **Not a storefront sale** — Shopify reports **0 orders all-time**, read live
+    2026-10-23.
+  - **Not an existing Shopify customer** — a name search of the customer list
+    returned empty.
+  - **Payer's name, account digits and confirmation code withheld** under §5.
+    The amount and memo are recorded because A-13 accepts DD84's revenue
+    figures; **the balance is not, because A-19 is pending.**
+- **Why it is Critical** — `ventures.md` records the last payment as
+  **2025-09-12**. **This is the first money in 405 days**, against an all-time
+  $3,507.86 across 10 invoices and 3 customers. **A business with three paying
+  customers has just gained a transaction it cannot attribute.**
+- **$450.00 is exactly a catalogue rung** — the **Street Tune** price on the GM,
+  Ford and Dodge/Mopar custom ECU tuning services, and the Street rung of the
+  archived Holley product. **Suggestive. Not asserted** — which rung was sold is
+  unknown.
+- **It bears on A-21.** That packet proposes **$349 (T-37)** and **$350
+  (T-64)**, both one rung lower. **A customer has now paid $450 for something
+  called a tune.** A-21's rungs were argued from each job's published scope and
+  **are not withdrawn** — but **this is the first market evidence in 13 months,
+  and it points up, not down.**
+- **The payer appears to be neither live-job customer.** The name does not
+  correspond to either correspondent on `1a1082503004a073` or
+  `1a0e402cdcf75731`. **A legal name and an email handle are different things,
+  so this is suggestive, not identification**, and no payment system is readable
+  to settle it.
+- **If it is a third job, it is the second unrecorded live job found here**,
+  after T-64. **That would make the pattern the finding** — jobs reach DD84
+  through a channel this register cannot see.
+- **Step 1 — Owner.** Say which job the $450 is for, or that it is a new one.
+- **Step 2 — Agent, after step 1.** Record it against that job, reconcile it to
+  a rung, and draft the acknowledgement. **No acknowledgement was drafted this
+  run**: a receipt that names the wrong job, or implies work is finished, is
+  worse than silence.
+- **Status** **Awaiting Owner** · **Next action** — step 1. **One sentence from
+  the owner unblocks everything else here.**
+- **Completion proof required** — the job named, the rung named, and the amount
+  recorded against it in this register.
+
+---
+
+## T-89 — Shopify billing failed; the retry will hit the same stopped card
+
+- **Objective** — Keep the storefront from being suspended for non-payment.
+- **Source** — `/dd84-inbox-intake`, 2026-10-23. Shopify billing notice,
+  **2026-10-22T12:35:23Z**.
+- **Workstream** ops · **Priority** **Critical** · **Owner** **Owner** · **Due**
+  2026-10-24
+- **What arrived** — **"We couldn't process your last bill payment of $39.00 USD
+  for Down Dirty 84 LLC. We'll try again…"** for `shop.downdirty84llc.com`.
+- **Why it is Critical and not administrative** — **the storefront holds the
+  entire approved price ladder**, the digital products and the payment links.
+  Yesterday's pricing of T-37 and T-64 was read out of it. **A store suspended
+  for non-payment takes the catalogue with it**, and A-21 depends on those SKUs
+  being live.
+- **The probable cause, flagged as probable** — **ten minutes later** the bank
+  reported a card declined with its own reason: **"Declined as your card is
+  off."** Same morning, same account. **The Shopify notice does not name the
+  instrument it tried**, so the common cause is plausible and not established.
+  **If it is right, the promised retry fails too** — a retry against a stopped
+  card is not a second chance.
+- **Why an agent cannot fix it** — changing a payment method or paying a bill is
+  **Class E**. **Turning a card on is the owner's, in his banking app.**
+- **Step 1 — Owner.** Either turn the business card back on or put a working
+  instrument on the Shopify account **before the retry**.
+- **Step 2 — Agent, read-only.** Confirm from the store whether the charge
+  settled, and whether any service degradation followed.
+- **Status** **Awaiting Owner** · **Next action** — step 1, today. **$39 is the
+  smallest number in this register and the one with the largest blast radius.**
+
+---
+
+> ## Intake, 2026-10-23 — money arrived, and two of this register's own readings
+>
+> were wrong
+>
+> Full record in `docs/ops/briefs/2026-10-23-inbox-intake.md` and **OL-0063**.
+> **44 threads, zero new leads — the fifth consecutive run with an empty funnel
+> — and $450.00 in the bank.**
+>
+> ### T-71's title conflates two different failures
+>
+> The row reads **"The business bank account is overdrawn; two payments
+> declined."** On **2026-10-22T12:45:11Z** the bank declined a card and gave its
+> own reason: **"Declined as your card is off."**
+>
+> **Yesterday's intake raised exactly this as a hypothesis with two candidate
+> causes and no evidence separating them. The bank has now separated them.** At
+> least one decline is card state, not a shortage of funds. **The overdraft is
+> real and separately evidenced; the declines are not all evidence of it.**
+> **Status unchanged — the correction is to the reasoning, which was driving the
+> priority.** And card state was being actively worked: a second card was
+> toggled **off and on four times in under twelve hours**, with international
+> use switched off in the middle of it.
+>
+> ### T-85 step 1 is no longer a wording question
+>
+> On 2026-10-22, **four substantive follow-ups left this account in eleven
+> seconds** — 13:40:03Z, 13:40:07Z, 13:40:10Z and 13:40:14Z, to GDOT, Colbert
+> City Hall, Piedmont Water and Georgia DPH.
+>
+> **Yesterday this register concluded that a third external send was most
+> plausibly the owner's own, because he sends his own mail. A person does not
+> compose and send four distinct substantive follow-ups in eleven seconds.** A
+> batching tool, a scheduled automation or another agent would all explain it,
+> and the first two are unremarkable — **but "the owner typed them" is no longer
+> a sufficient account, and that was this register's own reading.** T-85 step 1
+> is now a control question.
+>
+> ### The Colbert site took two near-fatal answers in one day — T-38, T-78
+>
+> **Piedmont Water, 2026-10-22T13:46:38Z: "As of right now there is no more
+> connection to the water system in the Colbert area."** **Georgia DPH,
+> 17:56:52Z: "it might be quite difficult to get everything to fit on the
+> parcel: the shop, parking, and the septic system (and replacement area)"** —
+> on a **0.638-acre** lot.
+>
+> **GDOT answered two of A-15's three questions** at 13:16:01Z and 15:00:25Z:
+> width and radii follow the Driveway & Encroachment Control Manual, and on a
+> traffic study, **"I am unable to say as of now."**
+>
+> **The 2026-10-21 note said "Do not engage a surveyor before those three
+> answers." Two have arrived and both point away from the site.** No status was
+> changed on the owner's own project; **the finding is recorded and the spending
+> decision is his.**

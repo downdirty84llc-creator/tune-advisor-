@@ -5678,4 +5678,129 @@ Drive and Gmail listings return and which §5 forbids here.
 
 ---
 
-## Next entry: OL-0063
+## OL-0063 — 2026-10-23 · Four hundred and five days without a payment, and then $450 with "tune" in the memo
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-23T10:20:39Z**. **Twenty-first scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`155e544`** at start, **`fc6bcbb`**
+  after the skeleton commit; `HEAD` equal to origin; **no `src/`, no
+  `package.json`**; clean. **54 tracked files, not 28** — third run reporting
+  it, T-85 step 3.
+- **Window** since OL-0062, **2026-10-22T10:20Z → 2026-10-23T10:20Z**.
+- **Counts** **44 threads** (25 non-promotional + 19 promotional, two queries,
+  no continuation token on either, so both complete) · **8 actionable** · 36
+  no-action · **0 new leads** · **0 drafts** · **2 new tasks**, both Critical.
+- **Sources reached** Gmail, **Shopify**. **Not reached** Superhuman Mail,
+  Stripe, PayPal, bookipay, Square.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The finding
+
+**$450.00 arrived on 2026-10-22T20:46:58Z by Zelle, memo "tune".** `ventures.md`
+records the previous payment as **2025-09-12**. **405 days.**
+
+| Established                         | How                                                     |
+| ----------------------------------- | ------------------------------------------------------- |
+| $450.00, 2026-10-22, memo "tune"    | The bank's own notice                                   |
+| **Not a storefront sale**           | Shopify `list-orders`: **0 orders all-time**, live read |
+| **Payer is not a Shopify customer** | Name search of the customer list returned empty         |
+
+**Withheld:** payer's name, account digits, confirmation code. **The amount and
+memo are recorded** — A-13 accepts DD84's revenue figures; **the balance is not,
+A-19 is pending.**
+
+**$450.00 is exactly the Street Tune rung** on the GM, Ford and Dodge/Mopar
+tuning services. **Suggestive, not asserted.**
+
+**And it lands one rung above A-21, raised yesterday**, which proposes $349 for
+T-37 and $350 for T-64. **A-21 is not withdrawn** — its rungs were argued from
+each job's published scope, and this is a different transaction for an unknown
+job. **But it is the first market evidence in thirteen months and it points
+up.** T-88.
+
+**Nobody here knows which job it paid for.** The payer's name corresponds to
+neither live-job correspondent, which **is suggestive and is not
+identification** — a legal name and an email handle are different things, and no
+payment system is readable to settle it. **If it is a third job it is the second
+unrecorded live job this register has found**, after T-64, and **the pattern
+would then be the finding**: work reaches DD84 through a channel this register
+cannot see.
+
+### Two of this register's own readings were wrong, and both were its own
+
+**1. T-71 conflates two failures.** The row says "overdrawn; two payments
+declined". On **2026-10-22T12:45:11Z** the bank declined a card and stated its
+reason: **"Declined as your card is off."**
+
+**Yesterday's run raised precisely this as a two-candidate hypothesis and said
+the mail did not say which instrument the declines hit. Today the bank said
+it.** At least one decline is card state. **The overdraft stands on its own
+evidence; the declines are not all evidence of it.** Status unchanged — **the
+correction is to the reasoning that was setting the priority.**
+
+**2. "The owner sends his own mail" no longer covers it.** T-85 step 1 concluded
+yesterday that a third external send was most plausibly the owner's. Today:
+**four substantive follow-ups to four different recipients at 13:40:03Z,
+13:40:07Z, 13:40:10Z and 13:40:14Z.** **Eleven seconds.** A batching tool, a
+scheduled automation or another agent would all explain it; **"he typed them"
+would not.** T-85 step 1 is now a control question, **and the reading that
+needed correcting was this register's own, reached one day earlier.**
+
+### Two agencies said the land may not work — T-38, T-78
+
+**Piedmont Water: "As of right now there is no more connection to the water
+system in the Colbert area."** **Georgia DPH: "it might be quite difficult to
+get everything to fit on the parcel: the shop, parking, and the septic system
+(and replacement area)"** — on 0.638 acres.
+
+**GDOT answered two of A-15's three questions**; the third, whether a traffic
+study is needed, is **"I am unable to say as of now."**
+
+**The 2026-10-21 note said not to engage a surveyor before those answers. Two
+arrived and both point away from the site.** **No status was changed on the
+owner's own project** — the finding is recorded, the spending decision is his.
+
+### $39 with the largest blast radius
+
+**Shopify billing failed at 2026-10-22T12:35:23Z — $39.00, "we'll try again".**
+**Ten minutes before the card-declined notice.** The Shopify notice does not
+name the instrument, so the shared cause is **plausible, not established** — but
+if it holds, **the promised retry fails too.**
+
+**The storefront holds the whole approved price ladder**, the digital products
+and the payment links. **Yesterday's pricing was read out of it, and A-21
+depends on those SKUs being live.** T-89. **Paying a bill or changing a payment
+method is Class E; turning a card on is the owner's.**
+
+### Why no draft was written
+
+**Zero drafts, and the reasons are the content.**
+
+- **The $450 deserves an acknowledgement and did not get one.** DD84 does not
+  know what it paid for. **A receipt naming the wrong job, or implying work is
+  finished, is worse than silence.** One line, after T-88 step 1.
+- **The two agency threads were left alone** because something is sending into
+  them on an eleven-second cadence, and **drafting into a thread another process
+  is actively working risks a collision that lands on a state agency.**
+
+**Six messages and two prices are now queued behind the owner** — A-20 (three),
+A-21 (two prices), A-22 (one).
+
+### Fifth run with no new lead
+
+**Forty-four threads, no enquiry.** Money arrived, which is better than a lead,
+**but nobody new asked about a car.** The channel producing DD84's customers is
+still recorded as `UNKNOWN`, and **now three jobs may have come through it
+unseen.**
+
+### Withheld
+
+Payer's name · account digits · confirmation code · card digits · the negative
+balance · a credit score · **the window's promotional half was read in full and
+contained nothing actionable**, so nothing from it is recorded beyond the count.
+
+---
+
+## Next entry: OL-0064
