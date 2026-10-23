@@ -115,23 +115,25 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-79 | Identify the SecretSOS issuer before any fee is paid                      | finance    | Normal       | Planned                  | Agent | A to verify      | 2026-11-30   |
 | T-80 | Supabase `public`-schema grants deadline 2026-10-30 — Ledger-side         | ledger     | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-28   |
 | T-81 | A five-word enquiry asks whether DD84 ships to London                     | sales      | Normal       | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
-| T-82 | Supercharger reseller application 16 days silent; supplier chased         | sales      | **High**     | **Awaiting Owner**       | Owner | C to send        | 2026-10-22   |
+| T-82 | Supercharger reseller application silent; supplier has chased twice       | sales      | **High**     | **Awaiting Owner**       | Owner | **A-22 pending** | 2026-10-22   |
 | T-83 | Capital on Tap: a business credit card with a statement nobody opened     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-23   |
 | T-84 | The price ladder was stale and two rung boundaries are undefined          | sales      | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-29   |
+| T-85 | Three platform-record questions: a third send, a sign-in, a stale test    | ops        | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-29   |
+| T-86 | Pinterest publishing mostly failing; one failure announced as success     | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-29   |
+| T-87 | Ledger production deploys failing on main — recorded, not touched         | ops        | Normal       | **Awaiting Owner**       | Owner | none yet         | 2026-10-30   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 3 In
-Progress · 1 Awaiting Approval · **28 Awaiting Owner** · 5 Blocked · 22 Planned
-· 2 Backlog. **84 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-22T09:47Z** (pricing run; **T-84 added**, T-37 and
-T-64 re-pointed at **A-21**, and T-39 found at **In Progress** — the A-15 send
-moved it out of Awaiting Approval, which is the sibling session's change, not
-this run's). **28 of the 84 rows are Awaiting Owner.** The previous line read
-"23 of 76", on a basis this run did not reproduce; the figure above is a plain
-count of the Status column.
+Progress · 1 Awaiting Approval · **30 Awaiting Owner** · 5 Blocked · 23 Planned
+· 2 Backlog. **87 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-22T10:40Z** (intake run; **T-85, T-86 and T-87
+added**, T-82 re-pointed at **A-22** and its title's day count removed). **30 of
+the 87 rows are Awaiting Owner** — a plain count of the Status column, up from
+28 before this run. **Three of this run's four findings are questions only the
+owner can answer**, which is why the pile grew.
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -5440,3 +5442,140 @@ has listed DD84's liabilities, and no routine asks for one.**
 - **Completion proof required** — The ladder carrying a 2026-10-22-or-later
   verification date on every row, and the two boundary decisions recorded in
   `APPROVALS.md` or `ventures.md`.
+
+---
+
+## T-85 — Three platform-record questions: a third send, a sign-in, a stale test
+
+- **Objective** — Settle three things about this platform's own record that no
+  agent can settle by inference.
+- **Source** — `/dd84-inbox-intake`, 2026-10-22.
+- **Workstream** ops · **Priority** High · **Owner** **Owner** · **Due**
+  2026-10-29
+- **Step 1 — Owner. Who sent the third external message?** `OL-0059` records the
+  two A-15 replies as **"the first two external messages this platform has ever
+  sent"**, at 12:10:51Z and 12:11:05Z on 2026-10-21. A **third** went to the
+  Georgia Real Estate Commission at **12:06:43Z** — four minutes earlier — and
+  **A-15 covers two replies, not three.**
+  - **This is not an allegation.** The owner sends his own mail from this
+    account, and the log itself records an earlier GREC send on 2026-10-08,
+    which predates A-15 entirely — so **"first ever" can only mean first by an
+    agent**, and T-45 already points at A-06 as the approval covering the GREC
+    question.
+  - **What needs fixing either way is the phrase.** A future reader following
+    "the first two external messages this platform has ever sent" will conclude
+    the platform sent two when three left the account that minute. **If the
+    owner sent it, OL-0059 needs one qualifying word. If an agent sent it, that
+    is a control failure and the most serious item in this register.** An agent
+    should not decide which by inference about its own sending history.
+- **Step 2 — Owner. Was the 2026-10-21T13:26:26Z Stripe sign-in yours?** Two
+  paired notices: "unrecognized device signed in to your Stripe account" and a
+  Google notice that account data was shared with Stripe, same second. The
+  pairing is what a legitimate Google-SSO sign-in looks like, so **the likely
+  answer is yes** — but an unrecognised-device notice is only benign once the
+  owner says so. **Useful either way: the Stripe account is reachable by a
+  human, so T-36's gap is the connector, not the account.**
+- **Step 3 — Agent, no approval needed. The checkout test false-alarms.** Every
+  routine prompt says to confirm **"28 tracked files and no `src/`"** and calls
+  the count "the only tell" for the 2026-10-08 container reset that left this
+  branch pointing at the retired Ledger tree. **There are 54.** No application
+  code is tracked — no `.ts`, `.tsx`, `.js`, `package.json`, `next.config` or
+  migrations — so the tree is correct and **the count grew because the platform
+  grew.** 28 was true when the test was written.
+  - **A test that cries wolf on every run is worse than no test**, because it
+    trains its operator to skip the one check that would catch a real reset.
+    **The durable test is "no `src/` and no `package.json`", which is a property
+    of the Ledger tree rather than a count that drifts.** Changing it means
+    editing four Routine prompts in the claude.ai UI, which **no tool in a
+    session can reach — the same wall as A-10.**
+- **Cost and risk** — None to raise. The risk of leaving step 1 is a false
+  record of what this platform has sent.
+- **Status** **Awaiting Owner** · **Next action** — Steps 1 and 2 are questions
+  only the owner can answer; step 3 needs the Routines UI.
+
+---
+
+## T-86 — Pinterest publishing mostly failing; one failure announced as success
+
+- **Objective** — Find out why bulk publishing is dropping most of its items,
+  and stop a failure being reported as a success.
+- **Source** — `/dd84-inbox-intake`, 2026-10-22. Three notices in one window.
+- **Workstream** ops · **Priority** Normal · **Owner** **Agent** · **Due**
+  2026-10-29
+- **What arrived**
+
+| When                     | Claim                                                             |
+| ------------------------ | ----------------------------------------------------------------- |
+| **2026-10-21T04:14:52Z** | Instagram import — **18 published, 10 did not**                   |
+| **2026-10-21T11:38:49Z** | **"Success! Your .csv file was uploaded"** — **"0 Pins created"** |
+| **2026-10-21T12:39:32Z** | **"There was an issue"** — **1 row uploaded, 11 failed**          |
+
+- **The arithmetic** — across the three, **19 of 50 attempted items published.**
+  The reasons were not stated in any notice and are not guessed here.
+- **The defect worth naming is the second notice.** A message headed
+  **"Success!"** that reports **zero** results will be read as a success and
+  filed. **The failure that gets ignored is the one that announces itself as a
+  win.**
+- **Approval class** — A to diagnose. **Any change to what is published is Rev's
+  and is Class C/F.** Nothing was written to `docs/growth/`.
+- **Status** Planned · **Next action** — read the three notices in full and
+  establish whether the failures share a cause.
+- **Completion proof required** — the failure reason quoted from the platform,
+  not inferred.
+
+---
+
+## T-87 — Ledger production deploys failing on main — recorded, not touched
+
+- **Objective** — Record that the other venture's production deployments are
+  failing, without acting in its repository.
+- **Source** — `/dd84-inbox-intake`, 2026-10-22. Two Vercel notices.
+- **Workstream** ops · **Priority** Normal · **Owner** **Owner** · **Due**
+  2026-10-30
+- **What arrived** — **two production deployment failures for
+  `georgia-opportunity-ledger`**, both on `main`, seven minutes apart:
+  **2026-10-21T10:52:36Z at `089935b`** and **2026-10-21T10:59:49Z at
+  `511f401`**.
+- **Why it is here and not fixed** — `CLAUDE.md` forbids pushing DD84 material
+  to the Ledger repository and the separation is deliberate. **The precedent is
+  T-80**, which logged a Ledger-side database deadline without calling a single
+  Supabase tool. **The same discipline applies: the fact is recorded, nothing
+  was touched, no Ledger tool was called.**
+- **What it does tell this register** — **somebody is actively committing to the
+  Ledger's `main`**, two commits seven minutes apart. That is the second
+  independent confirmation this month that the Ledger is live work rather than
+  dormant infrastructure; the first retired the thirteen-day
+  "nobody-has-named-it" framing of `dd84-api` recorded under T-33. **Inferring
+  abandonment from silence has now been wrong twice.**
+- **Status** **Awaiting Owner** · **Next action** — the owner decides whether a
+  Ledger-side session is wanted. **Not this session's to open.**
+
+---
+
+> ## Intake, 2026-10-22 — a window with no customer in it
+>
+> **58 threads, zero leads, and the fourth consecutive run to report an empty
+> funnel.** Full record in `docs/ops/briefs/2026-10-22-inbox-intake.md` and
+> **OL-0062**.
+>
+> **T-71 gains a hypothesis, not an answer.** A second bank notice says the
+> business debit card **"remains off, as you requested in online or mobile
+> banking on 10/07/2026"**. A card deliberately switched off declines every time
+> it is used — so the "two payments declined" may be the card obeying
+> instructions rather than a funding failure. **Two candidate causes, no
+> evidence separating them**, and the mail does not say which instrument the
+> declines hit. **The balance figure and account digits stay withheld: A-19 is
+> still pending.**
+>
+> **T-82 was due today and is drafted.** The supplier has chased twice and the
+> second chase went unread for 33.2 hours; DD84 last wrote **407.1 hours — 17.0
+> days — ago**. Yesterday's run declined to draft on the grounds that the buy-in
+> is the owner's call. **That was right about the buy-in and wrong about the
+> silence.** The draft in **A-22** commits nothing financial and carries a
+> `[DATE]` bracket for the only part the owner must fill. **The day count has
+> been removed from the row's title** — a title with an age in it is wrong again
+> tomorrow.
+>
+> **Nothing moved on either priced job.** Both A-20's drafts and A-21's prices
+> are one day old and unanswered. **Calendar empty through 2026-10-29; drafts
+> still exactly 15, the oldest 64.0 days.**

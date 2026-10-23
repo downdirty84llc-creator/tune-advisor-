@@ -5540,4 +5540,142 @@ was not altered** — only the number a reader would follow.
 
 ---
 
-## Next entry: OL-0062
+## OL-0062 — 2026-10-22 · Intake: fifty-eight threads, no customer, and a switched-off card that may explain the declines
+
+- **Routine** `/dd84-inbox-intake`, **fired by the scheduled task "DD84 Inbox
+  and Lead Intake (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-22T10:20:24Z**. **Twentieth scheduled firing to reach a session with
+  the repository attached.** Class A throughout.
+- **Checkout, per contract item 0** — tip **`751564d`** at the start,
+  **`0ed7730`** after the skeleton commit; `HEAD` equal to origin; **no `src/`,
+  no `package.json`**; clean status. **54 tracked files, not the 28 the prompt
+  expects** — see T-85 step 3.
+- **Window** since OL-0055, **2026-10-21T10:20Z → 2026-10-22T10:20Z**, Gmail
+  `after:2026/10/21`. **Overlaps the previous run by ~10 hours on purpose**: an
+  overlap deduplicates against the register, a gap does not.
+- **Counts** 58 threads reviewed (50 + 8, both pages pulled against an estimate
+  of 58, so the list is complete) · **7 actionable** · 51 no-action · **0 new
+  leads** · 1 draft · **3 new tasks** (T-85, T-86, T-87) · 1 packet (A-22).
+- **Sources reached** Gmail, Google Drive, Google Calendar. **Not reached**
+  Superhuman Mail (needs re-authentication), Stripe, PayPal, bookipay, Square.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The skeleton repair was tested again, and this time it mattered
+
+**The brief was committed empty before gathering** (`0ed7730`) — the fifth
+application of the OL-0050 repair. **A worker restart then hit this session
+mid-run.** The 251-line finished brief survived on disk and the run was resumed
+and completed rather than lost.
+
+**That is three restarts in two days and two runs saved.** The repair's value is
+no longer hypothetical: **OL-0050 records what the same event cost when the
+repair did not exist — about twenty minutes of work and no record of it.**
+
+### The finding: a card the owner turned off himself
+
+| When                     | What the bank said                                                                                       |
+| ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| **2026-10-21T17:03:51Z** | Balance at or below zero on the business checking account. **Figure and digits withheld — A-19 pending** |
+| **2026-10-22T02:06:35Z** | The business debit card **"remains off, as you requested in online or mobile banking on 10/07/2026"**    |
+
+**T-71 says "the business bank account is overdrawn; two payments declined".** A
+card switched off on 2026-10-07 declines every time it is used. **So the
+declines may be the card obeying an instruction rather than a funding failure.**
+
+**This is a hypothesis with two candidate causes and no evidence separating
+them, and it is recorded as that.** Nothing in the mail says which instrument
+the declines hit. **It is not reported as the cause of T-71** — but it changes
+T-71's first step from "find money" to "find out which instrument declined", and
+those have different fixes.
+
+**A third decline arrived in the window** — a consumer subscription locked for a
+declined payment at 2026-10-21T16:00Z. Recorded as pattern evidence, not as a
+business item.
+
+### Zero leads, for the fourth run running
+
+**Fifty-eight threads and not one person asking about a car.** The register
+already carries the reason as an unanswered question: `ventures.md` records the
+channel producing DD84's customers as `UNKNOWN`, and **both live jobs have an
+unknown origin.**
+
+**An intake routine cannot create demand.** It can report that the top of the
+funnel is empty, which it has now done four times, and it can stop that being
+mistaken for a quiet inbox: **the inbox was busy. It was busy with nobody who
+wants a tune.**
+
+### One draft, and a reversal of yesterday's decision
+
+**T-82, the supercharger reseller line, was due today with no draft.** The
+2026-10-21 run declined to draft it because "the answer depends on the buy-in,
+which is the owner's call."
+
+**That was right about the buy-in and wrong about the silence.** The two are
+separable: a holding reply that commits to nothing financial answers the
+supplier without pre-empting the owner. **Seventeen days of silence on a
+supplier who has chased twice costs the relationship whether or not the buy-in
+is ever agreed** — and the account being overdrawn is a reason not to commit to
+a stocking order, not a reason to stay silent. **A-22**, with a `[DATE]` bracket
+for the only part the owner must fill.
+
+### Two instrument checks, and one test that cries wolf
+
+1. **The Gmail window was verified both ways.** The thread list was pulled to
+   completion (two pages, 58 against an estimate of 58), and the earlier
+   targeted query was run with and without its date filter so that an empty
+   result could be read as a true negative rather than a silent miss. **Neither
+   priced job's thread moved.**
+2. **Pinterest contradicted itself and neither side was called controlling.**
+   One notice headed **"Success!"** reports **0 Pins created**; another an hour
+   later reports **1 of 12 rows uploaded**. Across three notices **19 of 50
+   attempted items published.** T-86. **The defect is not the failure rate — it
+   is that one failure announced itself as a win**, and that is the kind that
+   gets filed and forgotten.
+3. **The routine's own checkout test is stale and now false-alarms every run.**
+   It asks for **28 tracked files** and calls the count "the only tell" for the
+   2026-10-08 container reset. **There are 54**, none of it application code.
+   **A test that cries wolf on every run trains its operator to skip the one
+   check that would catch a real reset.** The durable form is "no `src/` and no
+   `package.json`" — a property of the Ledger tree rather than a count that
+   drifts. **Fixing it needs the claude.ai Routines UI, the same wall as A-10.**
+
+### A third external message, and a phrase that will mislead
+
+**OL-0059 calls the two A-15 replies "the first two external messages this
+platform has ever sent."** A **third** left the account at **12:06:43Z** on the
+same day — four minutes earlier — and **A-15 covers two.**
+
+**This is not an allegation that an agent sent an unapproved message.** The
+owner sends his own mail from this address, and **this log already records an
+earlier send on 2026-10-08**, which predates A-15 — so "first ever" can only
+mean _first by an agent_. **T-45 already names A-06 as the approval covering
+that correspondence.**
+
+**What needs correcting either way is the sentence.** A reader following it will
+count two where three went out that minute. **Whether it needs one qualifying
+word or is the most serious entry in this register depends on who pressed send,
+and an agent must not settle a question about its own platform's sending history
+by inference.** T-85 step 1, for the owner.
+
+### Withheld, deliberately
+
+The negative balance figure · the account's last four digits · the debit card's
+last four digits · **six notices concerning a minor's accounts, recorded as
+personal with no detail at all** · two customers' email addresses, which the
+Drive and Gmail listings return and which §5 forbids here.
+
+### Unresolved
+
+- **Which instrument the declined payments hit** — the fix depends on it.
+- **Whether the 2026-10-21 Stripe sign-in was the owner's.** Useful either way:
+  **a human signed in successfully, so T-36's gap is the connector, not the
+  account.**
+- **Nothing is scheduled between 2026-10-22 and 2026-10-29.** The calendar was
+  reachable and empty. Two priced jobs and an empty week.
+- **The drafts folder is unchanged at 15**, five of them to the
+  likely-loan-fraud addresses, oldest 64.0 days. **T-42 is accurate and nothing
+  has moved.**
+
+---
+
+## Next entry: OL-0063

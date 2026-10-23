@@ -1880,3 +1880,73 @@ is a send rather than a question.
 
 **Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-84.
 **Actual result** — _not yet executed._
+
+---
+
+## A-22 — Send one holding reply to the supercharger supplier
+
+**Status: PENDING — raised 2026-10-22 by `/dd84-inbox-intake`.**
+
+**Decision requested** — Approval to send **one message** to the supercharger
+supplier's new-dealer representative, thread `1a0dd710e6d59123`. Full text in
+`docs/ops/briefs/2026-10-22-inbox-intake.md`. **APPROVE / APPROVE WITH CHANGES /
+DEFER / REJECT.**
+
+**One thing must be filled in before it can go: a `[DATE]`.** The draft promises
+a decision by a date, and **only the owner can set it.**
+
+**Business objective** — Keep a reseller line open that DD84 opened itself.
+**The supplier has chased twice; DD84 has been silent 407.1 hours — 17.0 days.**
+Silence is now the thing damaging the relationship, independently of whether the
+buy-in is ever agreed.
+
+**Source and context** — DD84 wrote first on 2026-09-26 asking to move forward.
+The supplier sent the full dealer packet on 2026-10-04. DD84 acknowledged it on
+2026-10-05 and has not written since. The supplier chased on
+**2026-10-21T01:06:06Z** and that message **was still unread 33.2 hours later.**
+
+**Recommended plan** — Send the holding reply. It commits DD84 to **a decision
+by the owner's date and nothing else**: no buy-in, no order, no dealer terms, no
+price conceded. It asks two questions that **reduce** the commitment — whether
+the initial buy-in can be staged across more than one order, and how long dealer
+pricing is held after the Dealer Request form is submitted.
+
+**Alternatives considered**
+
+- **Keep not drafting**, which is what the 2026-10-21 run decided, on the
+  grounds that the answer depends on the buy-in. **Right about the buy-in, wrong
+  about the silence** — the two are separable, and a holding reply pre-empts
+  nothing.
+- **Decide the buy-in now and reply substantively.** Rejected: that is a
+  financial commitment (**Class E**), and **the business checking account is
+  currently overdrawn** (T-71). Committing to a stocking order this week would
+  be poor timing on top of being outside an agent's authority.
+- **Close the application and tell the supplier so.** A legitimate option and
+  cheaper than it looks, but it discards a line DD84 sought out. **Offered as
+  the REJECT path rather than recommended.**
+
+**Cost and cash impact** — **None from sending.** The draft creates no
+obligation to buy. The two questions it asks exist to make a later buy-in
+cheaper or slower, not larger.
+
+**Risks and safeguards**
+
+- **The `[DATE]` must be a date the owner can keep.** A second missed date costs
+  more than the first; the bracket is deliberately left empty rather than
+  guessed.
+- **The draft admits the delay is DD84's.** That is accurate and it is cheaper
+  than an excuse the supplier can check.
+- **No dealer pricing, buy-in figure or packet term is quoted** anywhere in the
+  draft or in this packet — the packet's contents are the supplier's commercial
+  terms and this repository is public.
+
+**Systems affected** — None. One Gmail thread if approved.
+
+**Customer and public impact** — Not a customer. A prospective supplier whose
+goodwill DD84 asked for first.
+
+**Success test** — The thread shows a DD84 reply, and the next move in the
+relationship is the owner's buy-in decision rather than another chase.
+
+**Response** — _awaiting owner._ **Affected records** — T-82. **Actual result**
+— _not yet executed._
