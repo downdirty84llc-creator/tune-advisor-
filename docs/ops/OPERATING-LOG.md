@@ -5882,4 +5882,122 @@ running.**
 
 ---
 
-## Next entry: OL-0065
+## OL-0065 — 2026-10-23 · First surviving cash review: $450 in after 405 days, and a pattern the daily window had been hiding
+
+- **Routine** `/dd84-cash-review`, fired by **"DD84 Weekly Cash and Revenue
+  Review (repo-attached)"** (`trig_01Y9G9LUVQR752W4uop2jZfL`) at
+  **2026-10-23T11:12:49Z**, scheduled 11:10:00Z. Class A. **No money moved.**
+- **Checkout** tip **`a13d55a`** at start, **`2667ade`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **56
+  tracked files, not 28** — T-85 step 3, fourth run reporting it.
+- **Skeleton committed first — seventh application, against the routine that
+  produced the repair.** **OL-0050 is this routine**: on 2026-10-16 it fired,
+  ran about twenty minutes, completed two Shopify reads and **left no record at
+  all** when the worker restarted. **This is the first weekly cash review since
+  then to reach a session that could commit.**
+- **Sources reached** Shopify. **Not reached** Stripe, PayPal, bookipay, Square,
+  Chime, Melio, Capital on Tap, Capital One, Wells Fargo. **Every non-Shopify
+  figure in the review comes from notification mail and is labelled as such.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### A sampled sweep was caught and replaced
+
+The first money-word sweep of the week **matched about 201 threads and
+returned 40.** **A sample presented as a census is exactly the defect this
+register exists to catch**, and a cash review built on it would have been wrong
+without looking wrong.
+
+**Replaced with a precise query against eleven named financial senders: 38
+matched, 38 returned.** Every figure in the review rests on the second query.
+**The first is reported anyway**, because the failure mode — a broad query that
+silently truncates — is the reusable lesson.
+
+### Revenue
+
+**$450.00, 2026-10-22T20:46:58Z, memo "tune". The first payment in 405 days.**
+
+**Not a storefront sale** (Shopify: 0 orders all-time, re-verified live; no
+matching customer). **Not reconciled against anything** — no payment system is
+reachable, so it rests on one bank notice. **A notification is not a ledger**
+and the review says so in the row itself.
+
+**`ventures.md` updated** where this run actually verified something: **last
+payment 2025-09-12 → 2026-10-22**, Shopify orders re-verified at **0**,
+**all-time payments $3,957.86 marked derived** from two sources that have never
+been reconciled against each other. **The invoice count stays at 10 — a Zelle
+transfer is not an invoice**, and this run declined to promote it to one.
+**Average invoice, largest invoice and concentration were not re-checked and are
+marked not current**, 81 days past the 30-day rule.
+
+### The sentence this routine took nine days to be able to write
+
+**The largest overdue receivable is $699, and it has never been overdue.**
+
+T-37 and T-64 were delivered and never invoiced, so **nothing aged**. It could
+not appear in a cash review, could not be chased, and **did not exist as a
+number until 2026-10-22**. **It has been invisible rather than late**, and
+"invisible" is the word nine days of "held for payment confirmation" was
+reaching for.
+
+### The weekly window saw what the daily window could not
+
+**This morning's intake reported the card being toggled "four times in under
+twelve hours" on 2026-10-22.** True for that day. **Not the pattern.**
+
+The week shows **at least eleven off/on notices across 2026-10-16, 2026-10-17
+and 2026-10-22**, and **six distinct payment failures across five providers** —
+Stripe, PayPal ("your bank declined your electronic funds transfer"), Shopify
+($39.00), a subscription twice, and a card decline the bank itself attributed to
+card state — **plus two successes**, one of them the $450.
+
+**The intake's 24-hour window could not see it.** **This is OL-0055's defect
+again**: a windowed sweep reports its window, and a reader takes the window for
+the phenomenon. **The difference today is that the longer window existed and
+caught it** — the first time the weekly review has corrected the daily one, and
+**the clearest argument yet for why both cadences exist.**
+
+**T-71's "two payments declined" is now third-order wrong**: more than two,
+across more than one instrument, over more than one day. **Not asserted:** that
+the toggling is deliberate cash management. It is consistent with someone
+controlling which charges land; **intent is not read off a notification log.**
+
+### The cash position, stated as a shape
+
+**The balance is withheld — A-19, second consecutive Friday review.** What is
+sayable without it: **the account was reported at or below zero on 2026-10-17,
+2026-10-19 and 2026-10-21**, three separate notices, and **$450.00 arrived on
+the 22nd, the day after the third.**
+
+**So the first job of the first money in 405 days was to cover a hole rather
+than to fund operations.** That is the position. **Unknown is not zero, and
+withheld is not unknown** — the bank and the owner both know the figure; it is
+this document that may not carry it.
+
+### Margin: none offered, for any job
+
+Margin needs a price and a cost. **The prices arrived yesterday and are still
+pending as A-21. The costs do not exist anywhere readable** — no time record, no
+tuning-credit balance, no parts line. **T-36 and T-33 are the prerequisites and
+both are open.** **The $450 job cannot be margined either, because nobody knows
+which job it is.** **No figure was estimated. A number without a source is a
+defect.**
+
+### New work
+
+**T-90** — a shop-building quote of DD84's own, referenced 2026-10-20T15:52Z
+with "final Colbert planning dimensions", **sits outside the register and its
+amount was not read.** It is committed intent on a site that **two agencies
+questioned this week**. **A building quote for a site that may not be buildable
+is the cheapest thing to check before the expensive decisions.**
+
+### Standing decisions honoured
+
+The ten invoices were **not** re-opened as a line of enquiry (2026-08-07).
+Shopify is treated as **the back half of the funnel only** (2026-08-13). **The
+Georgia Opportunity Ledger appears in no figure here** (2026-09-16). **Figures
+older than 30 days are marked stale rather than quoted** (standing rule), and
+three of them are.
+
+---
+
+## Next entry: OL-0066

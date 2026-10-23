@@ -123,19 +123,18 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-87 | Ledger production deploys failing on main — recorded, not touched         | ops        | Normal       | **Awaiting Owner**       | Owner | none yet         | 2026-10-30   |
 | T-88 | A $450 payment arrived and nobody knows which job it paid for             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-26   |
 | T-89 | Shopify billing failed; the retry will hit the same stopped card          | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix         | 2026-10-24   |
+| T-90 | A Colbert building quote sits outside the register, amount unread         | real est.  | Normal       | Planned                  | Agent | A to read        | 2026-10-27   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 3 In
-Progress · 1 Awaiting Approval · **32 Awaiting Owner** · 5 Blocked · 23 Planned
-· 2 Backlog. **89 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-23T10:55Z** (intake run; **T-88 and T-89 added**,
-both **Critical**). **32 of the 89 rows are Awaiting Owner** — a plain count of
-the Status column, up from 30 yesterday. **Both of today's new tasks are
-Critical and both are the owner's**: money arrived that nobody can attribute,
-and a live billing failure an agent may not fix.
+Progress · 1 Awaiting Approval · **32 Awaiting Owner** · 5 Blocked · 24 Planned
+· 2 Backlog. **90 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-23T11:40Z** (weekly cash review; **T-90 added**).
+**32 of the 90 rows are Awaiting Owner** — a plain count of the Status column.
+**Nothing on the Critical list is waiting on an agent.**
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -5719,3 +5718,74 @@ has listed DD84's liabilities, and no routine asks for one.**
 > answers." Two have arrived and both point away from the site.** No status was
 > changed on the owner's own project; **the finding is recorded and the spending
 > decision is his.**
+
+---
+
+## T-90 — A Colbert building quote sits outside the register, amount unread
+
+- **Objective** — Put a number on a quote DD84 already asked for, before the
+  Colbert stop/go decision is taken without it.
+- **Source** — `/dd84-cash-review`, 2026-10-23. A thread of DD84's own,
+  **2026-10-20T15:52Z**, subject referencing a high-capacity building quote and
+  **"final Colbert planning dimensions"**.
+- **Workstream** real est. · **Priority** Normal · **Owner** **Agent** · **Due**
+  2026-10-27
+- **Why it is not Critical and still matters** — **the amount was not read**, so
+  no figure is recorded and none is estimated. But it is **committed intent on a
+  site that two agencies questioned this week**: no public water connection, and
+  a 0.638-acre lot that may not fit shop, parking and septic with replacement
+  area. **A building quote for a site that may not be buildable is the cheapest
+  thing to check before the expensive decisions.**
+- **Step 1 — Agent, Class A.** Read the thread, record the amount, the validity
+  period and what it covers.
+- **Step 2 — feeds T-78** (buy-vs-build) and the Colbert stop/go, **not a
+  purchase.** Accepting a quote is Class E and nobody's but the owner's.
+- **Status** Planned · **Next action** — step 1.
+
+---
+
+> ## Weekly cash review, 2026-10-23 — the drought ended, and the window had been
+>
+> hiding something
+>
+> Full record in `docs/ops/briefs/2026-10-23-cash-review.md` and **OL-0065**.
+> **First cash review to survive since 2026-10-16**, when one fired, ran twenty
+> minutes and left nothing.
+>
+> **Revenue closed: $450.00.** One transaction, 2026-10-22, memo "tune", the
+> first in **405 days**. Unattributed — **T-88**. `ventures.md` updated: last
+> payment **2025-09-12 → 2026-10-22**, Shopify orders re-verified at **0**,
+> all-time payments **$3,957.86 derived from two unreconciled sources** and
+> labelled as derived. **The invoice count stays at 10 — a Zelle transfer is not
+> an invoice.**
+>
+> **The largest overdue receivable is $699 and it has never been overdue.** T-37
+> and T-64, delivered and never invoiced, so **nothing aged. It has been
+> invisible rather than late.**
+>
+> ### T-71 is now third-order wrong, and the weekly window is why we know
+>
+> The row says **"two payments declined."** This week shows **six distinct
+> failures across five providers** — Stripe, PayPal ("your bank declined your
+> electronic funds transfer"), Shopify, a subscription twice, and a card decline
+> the bank attributed to **card state** — plus **two successes**.
+>
+> **And this morning's intake reported the card toggling as "four times in under
+> twelve hours" on 2026-10-22. The weekly view shows at least eleven off/on
+> notices across 2026-10-16, 10-17 and 10-22** — beginning a week earlier. **The
+> intake's 24-hour window could not see it**, which is the OL-0055 defect
+> exactly: a windowed sweep reports its window and the reader takes it for the
+> phenomenon. **The weekly review exists to catch this and this is the first
+> week it has.**
+>
+> **Not asserted:** that the toggling is deliberate cash management. It is
+> consistent with someone controlling which charges land, **and intent is not
+> read off a notification log.**
+>
+> ### Still withheld, second Friday running
+>
+> **The balance — A-19.** Three separate notices this week reported the account
+> at or below zero (10-17, 10-19, 10-21), and **$450 arrived on the 22nd, the
+> day after the third.** **So the first job of the first money in 405 days was
+> to cover a hole.** That is the cash position, stated as a shape because the
+> figure is not permitted here.

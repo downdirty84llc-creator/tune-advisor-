@@ -82,20 +82,40 @@ what they do next. Ask for it before commissioning any further marketing work.
 
 ### Revenue — the single most important fact in this file
 
-| Metric                   | Value                                                | Verified   |
-| ------------------------ | ---------------------------------------------------- | ---------- |
-| All-time revenue         | **$3,507.86**                                        | 2026-08-03 |
-| Paid invoices            | 10                                                   | 2026-08-03 |
-| Distinct customers       | **3**                                                | 2026-08-03 |
-| Average invoice          | $350.79                                              | 2026-08-03 |
-| Largest invoice          | $1,287.50                                            | 2026-08-03 |
-| Concentration            | One customer = 67% (6 invoices); two customers = 99% | 2026-08-03 |
-| **Last payment**         | **2025-09-12** — nothing collected since             | 2026-08-03 |
-| Shopify orders, all time | **0**                                                | 2026-08-03 |
+| Metric                          | Value                                                | Verified   |
+| ------------------------------- | ---------------------------------------------------- | ---------- |
+| All-time revenue                | **$3,507.86**                                        | 2026-08-03 |
+| Paid invoices                   | 10                                                   | 2026-08-03 |
+| Distinct customers              | **3**                                                | 2026-08-03 |
+| Average invoice                 | $350.79                                              | 2026-08-03 |
+| Largest invoice                 | $1,287.50                                            | 2026-08-03 |
+| Concentration                   | One customer = 67% (6 invoices); two customers = 99% | 2026-08-03 |
+| ~~**Last payment**~~            | ~~2025-09-12~~ → **2026-10-22**                      | 2026-10-23 |
+| Shopify orders, all time        | **0** — re-verified live                             | 2026-10-23 |
+| **Payments since the baseline** | **+$450.00** (one transfer, memo "tune")             | 2026-10-23 |
 
-**100% of revenue came from invoiced service work. 0% from the storefront.** Any
-plan that assumes self-serve digital products are the revenue model is arguing
-against the only evidence that exists.
+**The drought ended on 2026-10-22, after 405 days.** A transfer of **$450.00**
+arrived with **"tune"** in the memo. **Which job it paid for is unknown** and
+**the payer matches neither live-job customer** — suggestive, not identified.
+**T-88** carries it.
+
+**Derived, and labelled as derived: all-time payments received are $3,957.86**
+($3,507.86 from the 2026-08-03 baseline **plus** $450.00 from a bank
+notification). **The two figures come from different sources and have not been
+reconciled against each other**, because no payment system is reachable. **It is
+not asserted to be an eleventh invoice** — a Zelle transfer is not an invoice,
+and the invoice count stays at 10.
+
+**The rest of this table is 81 days old and breaches the 30-day rule.** This run
+re-verified only the last-payment date and the Shopify order count. **Average
+invoice, largest invoice and concentration were not re-checked and must not be
+quoted as current.**
+
+**100% of revenue came from invoiced service work. 0% from the storefront** —
+and the $450 does not change that: it arrived by bank transfer, not through
+checkout. **Shopify remains at 0 orders all-time.** Any plan that assumes
+self-serve digital products are the revenue model is arguing against the only
+evidence that exists.
 
 **What those invoices were actually for is `UNKNOWN`** — Stripe records amounts
 and invoice numbers, not line items.
