@@ -47,13 +47,27 @@ and actual result.
 | A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Pending**                 | T-71                               |
 | A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                 | T-37 T-64 T-66                     |
 | A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                 | T-37 T-64 T-84                     |
+| A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending**                 | T-82                               |
 
-**Seven packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20 and
-A-21.** A-18 is pending but **superseded twice over** — the customer answered
+**Eight packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20, A-21 and
+A-22.** A-18 is pending but **superseded twice over** — the customer answered
 all three of its questions four hours after it was raised, and **A-20 now
 carries the redrafted version of that same message.** Torque's recommendation on
 A-18 is REJECT, and the reasoning is in its own Actual-result block. **Answering
 A-20 settles both.**
+
+> **Twelfth instance, 2026-10-23 — and this one is mine.** **A-22 was raised on
+> 2026-10-22 with no row on this board**, by the same run that had just finished
+> writing that landing a packet without its row "would have made this the
+> twelfth instance by my own hand". **It did.** Caught the next morning by the
+> daily brief trying to count the pending packets and finding seven where the
+> file holds eight.
+>
+> **This is the thirteenth count of the same failure and the first committed by
+> a session that had named it one screen earlier**, which is the strongest
+> available argument that the 2026-10-12 note was right: **reminders do not fix
+> this, and the fix is generating the board from the packet headings.** Still
+> not attempted — it is a tooling change in a repository with no build.
 
 **A-21 is the one with money attached.** The 2026-10-21 reconciliation below
 closed by noting that **the thing none of these packets contained was a price**,

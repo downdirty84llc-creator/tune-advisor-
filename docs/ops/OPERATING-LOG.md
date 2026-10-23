@@ -5803,4 +5803,83 @@ contained nothing actionable**, so nothing from it is recorded beyond the count.
 
 ---
 
-## Next entry: OL-0064
+## OL-0064 — 2026-10-23 · Daily brief: the first real "money moved" section, and a board lag I committed myself
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-23T10:51:43Z**. Class A throughout.
+- **Checkout** tip **`2aee2a3`**, `HEAD` equal to origin, **no `src/`, no
+  `package.json`**, clean. **54 tracked files, not 28** — T-85 step 3.
+- **No skeleton commit, with a reason.** The repair protects a long gathering
+  phase and this run has none: **today's intake finished 31 minutes earlier**
+  and this brief reads the register, the approvals and that intake. **Declining
+  the repair where it does not apply keeps it a judgement rather than a ritual**
+  — the same call as 2026-10-20 and 2026-10-21.
+- **Operator** Claude (agent), cqvhy6 session
+
+### Yesterday's daily brief fired and was never written
+
+**It fired at 2026-10-22T10:51:35Z and reached this session 23 hours 29 minutes
+later**, after the day it covered had ended.
+
+**It was not backfilled, and that is the decision.** A "today's brief" for a
+finished day is not a brief, and **writing one now dated 2026-10-22 would put a
+document in the record whose findings were gathered on the 23rd.** The
+2026-10-22 intake covers that day's substance in full.
+
+**This is a new failure mode for this record.** T-27 and A-10 are about runs
+that cannot commit; OL-0050 is about a run erased before it committed. **This
+one committed fine and arrived too late to be what it claimed to be.** Recorded
+so the next late delivery is recognised rather than backfilled.
+
+### The first real money-moved section
+
+| Direction | Amount      | Status                                  |
+| --------- | ----------- | --------------------------------------- |
+| **IN**    | **$450.00** | Received 2026-10-22, memo "tune" — T-88 |
+| **OUT**   | **$39.00**  | **FAILED**, Shopify billing — T-89      |
+| OUT       | withheld    | A card payment reached its issuer. A-19 |
+
+**Every payment system remains unreachable**, so the $450 is known only from the
+bank's notification mail and **was reconciled against nothing. A mail notice is
+not a ledger**, and this section says so rather than presenting it as booked
+revenue.
+
+### The board lag, and this time it was mine
+
+**A-22 had no row on the approvals board.** This brief found it while counting
+pending packets: **the summary said seven and the file held eight.**
+
+**It was raised yesterday by a run that had, one screen earlier in its own
+commit message, written that landing a packet without its row "would have made
+this the twelfth instance by my own hand."** It then did exactly that.
+
+**Recorded in `APPROVALS.md` as the thirteenth count of this failure, and as the
+first committed by a session that had named it minutes before.** That is the
+strongest available evidence for what the 2026-10-12 note already said:
+**another reminder is not the fix.** The fix is generating the board from the
+packet headings, and it is still unattempted because it is a tooling change in a
+repository with no build. **Saying so for the fourth time is not progress, and
+this entry does not pretend otherwise.**
+
+### The state, counted rather than asserted
+
+- **89 tasks · 32 Awaiting Owner · 9 Critical and open, 7 of them the owner's.**
+- **49 of 89 open dated rows are past due** — a number this register has
+  repeatedly flagged as overstating the problem, because most of those dates are
+  **agent-proposed, not owner-approved service levels.**
+- **Eight packets pending**, holding **six messages and two prices**.
+- **Nothing on the Critical list is waiting on an agent.**
+
+### Not available this run
+
+Stripe, PayPal, bookipay, Square — no reachable connector. **Google Calendar was
+not re-read**; the 2026-10-22 position (no events through 2026-10-29) is
+**carried forward and labelled as carried**, because no booking notice appeared
+in today's window. **The negative balance stays withheld — A-19, and the weekly
+cash review fires today at 11:10 UTC into the same wall for the second Friday
+running.**
+
+---
+
+## Next entry: OL-0065
