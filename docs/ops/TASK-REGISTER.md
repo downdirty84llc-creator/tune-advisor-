@@ -130,19 +130,21 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-94 | HP Tuners credits bought; amount unread, and margin needs it              | finance    | Normal       | Planned                  | Agent | A to read        | 2026-10-29   |
 | T-95 | The first inbound enquiry in five runs, unqualified and unread            | sales      | **High**     | **Awaiting Approval**    | Owner | **A-23 pending** | 2026-10-27   |
 | T-96 | The business site has new indexing failures on duplicate canonicals       | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-30   |
+| T-97 | Rural Zone credits need two employees DD84 has never had                  | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-11-02   |
+| T-98 | WebFetch has no DNS, so the scan cannot validate any source               | ops        | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-11-02   |
+| T-99 | Is any Georgia fleet or vehicle-repair solicitation actually open?        | sales      | Normal       | Blocked                  | Agent | A to read        | 2026-11-09   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 3 In
-Progress · 2 Awaiting Approval · **35 Awaiting Owner** · 5 Blocked · 26 Planned
-· 2 Backlog. **96 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-26T10:50Z** (Monday intake, 72-hour window; **T-91
-to T-96 added**, three of them from money arriving). **35 of the 96 rows are
-Awaiting Owner** — a plain count of the Status column, up from 32 on Friday.
-**Eleven rows are now Critical and open**, and **$1,700 of the business's
-$5,207.86 lifetime collections arrived in the last four days.**
+Progress · 2 Awaiting Approval · **37 Awaiting Owner** · 6 Blocked · 26 Planned
+· 2 Backlog. **99 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-26T11:55Z** (weekly opportunity scan; **T-97 to
+T-99 added**). **37 of the 99 rows are Awaiting Owner** — a plain count of the
+Status column. **Eleven rows are Critical and open**, and **$1,700 of the
+business's $5,207.86 lifetime collections arrived in the last four days.**
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -6009,3 +6011,109 @@ has listed DD84's liabilities, and no routine asks for one.**
 > this record.** Not an allegation — a nickname or a helper explains it. **But
 > three signals in four days is a pattern, and the Class C gate assumes this
 > register knows who may speak for DD84.**
+
+---
+
+## T-97 — Rural Zone credits need two employees DD84 has never had
+
+- **Objective** — Get a one-word answer that either opens the best opportunity
+  this scan has found or closes it permanently.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-26. Full scoring in
+  `docs/ops/briefs/2026-10-26-opportunity-scan.md` (**55/100, ranked first**).
+- **Workstream** real est. · **Priority** **High** · **Owner** **Owner** ·
+  **Due** 2026-11-02
+- **Source data — factual** — **Elberton is a designated Georgia Rural Zone,
+  effective 2026-01-01 through 2030-12-31.** Three stackable credits: **$2,000
+  per year per new FTE** for up to five years (**DOR form caps it at $40,000 per
+  tax year**); **25% of the purchase price** of property in the zone, capped
+  **$125,000**; **30% of qualified rehabilitation costs**, capped **$150,000**.
+  **All three require at least two net new full-time-equivalent jobs**, the
+  business located in the investment property, and **two FTE maintained for
+  every year claimed.**
+- **Assumption, labelled as the agent's** — Elberton is **roughly 30 miles**
+  from the Colbert parcel; not measured from a source. **A 2007-era state page
+  gives conflicting caps ($200,000 total job credit, $25,000/yr investment); the
+  current DOR figures are used and the conflict is recorded, not dropped.**
+- **The decision, and why it is one word** — **`ventures.md` records no
+  employees.** Every credit here hangs off **two net new FTE**, which is a
+  payroll commitment DD84 has never made. **If the owner would never hire two
+  people, this entry scores zero and should not be looked at again.**
+- **Why it is worth asking anyway** — **it changes an arithmetic already in
+  front of him.** **T-78** is buy-vs-build on the Colbert parcel, and
+  **2026-10-22 brought two discouraging answers**: no public water connection in
+  the area, and a 0.638-acre lot that may not fit shop, parking and septic with
+  replacement area. **A designated zone 30 miles away returns a quarter of a
+  purchase price.** **That is not a new project — it is a second candidate for a
+  decision that currently has one failing candidate.**
+- **Source reliability is capped and the task says so** — **none of the cited
+  pages could be fetched** (T-98). Everything above is WebSearch's synthesis of
+  the DOR form and DCA releases. **Before any money moves, a human must open
+  Form IT-RZ.**
+- **Status** **Awaiting Owner** · **Next action** — the one-word answer.
+  **Nothing is applied for; there is no deadline to miss until 2030-12-31.**
+
+---
+
+## T-98 — WebFetch has no DNS, so the scan cannot validate any source
+
+- **Objective** — Record what the opportunity scan can and cannot establish, and
+  let the owner decide whether a routine that cannot open a source is worth its
+  weekly slot.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-26, with a control test.
+- **Workstream** ops · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-11-02
+- **What was measured**
+
+| Instrument   | Target                                              | Result                                    |
+| ------------ | --------------------------------------------------- | ----------------------------------------- |
+| `curl`       | `doas.ga.gov`                                       | **`CONNECT tunnel failed, response 403`** |
+| WebFetch     | `doas.ga.gov`, `www.rd.usda.gov`, `www.georgia.org` | `getaddrinfo ENOTFOUND`                   |
+| **WebFetch** | **`example.com` — the control**                     | **`getaddrinfo ENOTFOUND`**               |
+| WebSearch    | four queries                                        | **worked every time**                     |
+
+- **The correction.** **OL-0049 and OL-0055 called this "one block, two error
+  strings, decided by which tool asks."** That implied a host-level block on
+  Georgia state sites. **The control disproves it — `example.com` fails too.**
+  **There are two separate failures:** `curl` resolves and is refused by the
+  proxy with 403; **WebFetch never reaches the proxy because it cannot resolve
+  any hostname at all.** **No host allow-listing would fix WebFetch.**
+- **What it costs** — the command file requires _"validate the source and the
+  deadline before scoring"_ and _"cite the source URL for each."_ **The URLs are
+  cited and not one was opened.** **So "source reliability", worth 15 of 100
+  points, cannot score top for anything, by construction** — a ceiling the
+  container imposes on the routine, not a judgement about the sources.
+- **Why it is the owner's and not an agent's** — **fixing container egress is
+  outside a session**, like A-10's Routines UI. **The owner's decision is
+  whether the routine keeps its weekly slot knowing the ceiling.** The
+  2026-10-26 run still produced two ranked entries and this correction, **so the
+  honest answer is "degraded, not useless."**
+- **Status** **Awaiting Owner** · **Next action** — the owner's call on the
+  slot. **Every future scan should carry the ceiling in its own text**, as this
+  one does.
+
+---
+
+## T-99 — Is any Georgia fleet or vehicle-repair solicitation actually open?
+
+- **Objective** — Establish whether government fleet work is a real route for
+  DD84 or a dead end, from the registry rather than from aggregators.
+- **Source** — `/dd84-opportunity-scan`, 2026-10-26 (**40/100, ranked second**).
+- **Workstream** sales · **Priority** Normal · **Owner** **Agent** · **Due**
+  2026-11-09
+- **Why it ranked second and not lower** — **it is the only route found where
+  DD84's actual capability maps onto government spend without DD84 being a prime
+  contractor.** Georgia's DOAS awarded a statewide fleet contract covering
+  **"outside repair facilities in the vendor's network"**; a network that routes
+  work to outside shops is a door a small shop can knock on.
+- **Why it ranked no higher** — **the listing is from 2022 with unconfirmed
+  award status**, and **`ventures.md` describes a remote-tuning and diagnostics
+  operation with no recorded bay, staff or fleet-grade insurance.** **Fleet
+  networks want a facility.**
+- **Status Blocked, and the block is named up front** — **the Georgia
+  Procurement Registry cannot be reached from this container** (T-98). **This
+  task cannot be completed by an agent here as configured**, and saying so now
+  is better than it sitting Planned and silently never moving. **T-77** —
+  Procurement Registry registration — **is its precondition and is also the
+  owner's.**
+- **Next action** — none available to an agent. **Carried as Blocked against
+  T-98.**

@@ -6208,4 +6208,124 @@ whole of what is being asked.
 
 ---
 
-## Next entry: OL-0068
+## OL-0068 — 2026-10-26 · Opportunity scan: a control test corrected the egress diagnosis, and a tax credit needs two employees
+
+- **Routine** `/dd84-opportunity-scan`, fired by **"DD84 Weekly Georgia
+  Opportunity Scan (repo-attached)"** (`trig_01UPEmQbHN6vzC4PKse2zf23`) at
+  **2026-10-26T11:26:49Z**. Class A — **nobody contacted, nothing applied for,
+  nothing committed.**
+- **Checkout** tip **`1bdf284`** at start, **`81a9bf8`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **59
+  tracked files, not 28** — seventh run reporting it, T-85 step 3.
+- **Skeleton committed first — ninth application**, against **the routine with
+  the longest gathering phase of the six.**
+- **Method named**: financial value 25 · accessibility 20 · time sensitivity 15
+  · source reliability 15 · capital requirement 10 · complexity 10 · risk 5.
+  **The command file promises "bands that follow from the total" and never
+  states them. No threshold was invented — third scan to report this.**
+- **Counts** 2 scored entries · **0 with an open verified deadline** · 8 named
+  and not scored · **3 new tasks** (T-97, T-98, T-99).
+- **Operator** Claude (agent), cqvhy6 session
+
+### The control test, and a correction to this log's own diagnosis
+
+**OL-0049 and OL-0055 described the egress problem as "one block, two error
+strings, decided by which tool asks."** That framing implied a **host-level
+block on Georgia state sites.**
+
+**This run ran the control that earlier runs did not.**
+
+| Instrument   | Target                                                | Result                                    |
+| ------------ | ----------------------------------------------------- | ----------------------------------------- |
+| `curl`       | `doas.ga.gov`                                         | **`CONNECT tunnel failed, response 403`** |
+| WebFetch     | `doas.ga.gov` · `www.rd.usda.gov` · `www.georgia.org` | `getaddrinfo ENOTFOUND`                   |
+| **WebFetch** | **`example.com`**                                     | **`getaddrinfo ENOTFOUND`**               |
+| WebSearch    | four queries                                          | **worked every time**                     |
+
+**`example.com` fails, so the earlier framing was wrong.** There are **two
+separate failures, not two views of one**:
+
+- **`curl` resolves and reaches the proxy, which refuses CONNECT with 403** — a
+  policy block.
+- **WebFetch never reaches the proxy, because it has no name resolution at
+  all.** **No host allow-listing would fix it.**
+
+**The repair the earlier entries prescribed still worked** — run the two-command
+proxy check — **but the diagnosis it produced was too narrow**, and a narrow
+diagnosis sends the next session looking for a host to allow-list. **This is the
+third time an instrument check has corrected something this record believed, and
+the first time the thing corrected was a diagnosis rather than a figure.**
+
+**What it costs the routine, stated in the scan itself.** The command file
+requires _"validate the source and the deadline before scoring"_ and _"cite the
+source URL for each."_ **The URLs are cited and not one was opened.** So
+**"source reliability", 15 of the 100 points, cannot score top for anything, by
+construction** — a ceiling this container imposes, not a judgement about
+Georgia's websites. **T-98**, and **every future scan should carry the ceiling
+in its own text.**
+
+### What the scan found
+
+**Ranked first, 55/100 — Elberton Rural Zone tax credits.** Designated
+**2026-01-01 to 2030-12-31**. Three stackable credits: **$2,000/yr per new FTE**
+up to five years (**DOR form caps $40,000/tax year**); **25% of purchase price**
+in the zone, capped **$125,000**; **30% of rehabilitation costs**, capped
+**$150,000**. **All three require at least two net new FTE**, the business
+located in the investment property, maintained every year claimed.
+
+**`ventures.md` records no employees, so the binding constraint is payroll, not
+geography** — and that is why **T-97 is one word from the owner**: if he would
+never hire two people, the entry scores zero and should never be looked at
+again.
+
+**Why it still ranked first despite 55** — **it changes an arithmetic already in
+front of him.** **T-78** is buy-vs-build on the Colbert parcel, and 2026-10-22
+brought **no public water connection in the area** and **a 0.638-acre lot that
+may not fit shop, parking and septic.** **A designated zone 30 miles away
+returns a quarter of a purchase price.** Not a new project — **a second
+candidate for a decision that currently has one failing candidate.**
+
+**Ranked second, 40/100 — the statewide fleet-maintenance vendor network**, the
+only route found where DD84's capability reaches government spend without being
+a prime contractor. **Raised as T-99 and opened as Blocked**, because the
+Procurement Registry cannot be reached from here. **Marking it Blocked now is
+better than letting it sit Planned and silently never move.**
+
+### What was deliberately not scored
+
+**Eight items named, none ranked.** Most 2026 Georgia cycles have genuinely
+closed — the Helene block grant (ran 03-16 to 05-11), Go Global Georgia (09-01),
+USDA Rural Business Development (June), a $4,000 building-improvement grant
+(10-15). Invest Atlanta is **Atlanta-only and DD84 is in Jefferson**. **Rural
+Zone _designation_ is applied for by communities, not businesses.**
+
+**And one that is probably live today was still not scored:** an aggregator
+lists a Tennessee/Georgia small-business contest with a **2026-10-26 deadline —
+today.** **Unfetchable, eligibility unconfirmed.** **Scoring a listing on its
+deadline day from a source that cannot be opened is precisely what the routine
+forbids**, so it is named for the owner's five minutes and given no number. **An
+unverified opportunity with a number beside it is worse than one without.**
+
+### Honest note on the leak scan
+
+**This scan's own §5 check will flag URLs, and that is expected here.** The
+routine requires a cited source URL for every entry, and **public government
+document links are the evidence, not a leak.** Earlier runs withheld
+solicitation and redemption URLs from promotional mail; **that rule is about
+third-party tracking links, not about citations**, and the distinction is
+recorded so a later run does not strip the citations to satisfy a regex.
+
+### Unresolved
+
+- **Whether the owner would ever employ two people** — T-97. **One word decides
+  the best thing this scan found.**
+- **Whether this routine keeps its weekly slot** given the ceiling — T-98. The
+  honest summary is **degraded, not useless**: it still produced two ranked
+  entries and a correction.
+- **The Elberton-to-Colbert distance** — asserted as roughly 30 miles **from
+  general knowledge and labelled as the agent's assumption, not measured.**
+- **Local Jefferson or Madison County incentives** — not searched this run.
+
+---
+
+## Next entry: OL-0069
