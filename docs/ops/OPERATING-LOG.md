@@ -6137,4 +6137,75 @@ contacted about Ledger licensing (A-17 pending) · the business's street address
 
 ---
 
-## Next entry: OL-0067
+## OL-0067 — 2026-10-26 · Daily brief: the business got better this week and the record of it got worse
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-26T10:51:43Z**. Class A throughout.
+- **Checkout** tip **`863b233`**, `HEAD` equal to origin, **no `src/`, no
+  `package.json`**, clean. **58 tracked files, not 28** — sixth run reporting
+  it, T-85 step 3.
+- **No skeleton commit, with the reason stated in the brief**: today's intake
+  finished 31 minutes earlier and this run has no gathering phase to protect.
+  **Same judgement as 2026-10-20, 10-21 and 10-23.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### Counted, not asserted
+
+**96 tasks · 35 Awaiting Owner · 51 open and past due · 11 Critical and open —
+the most there have ever been.** **Nine of the eleven are Awaiting Owner, two
+are Blocked, and not one is waiting on an agent.** **Nine packets pending**,
+holding **seven messages and two prices**.
+
+**Money: $1,700.00 in across four days** — $450.00 (Zelle), **$550.00 (Shopify
+order #1001, PAID and FULFILLED)**, $700.00 (Zelle, from a company). **$39.00
+failed twice.** **$1,150.00 of the $1,700.00 cannot be attributed to a job.**
+
+### The calendar is the finding
+
+**Empty through 2026-11-02, read live rather than carried forward.**
+
+**$1,700 was collected and a PCM unlock was marked fulfilled, and not one hour
+of it appears in the diary.** The work is being done and scheduled nowhere, so
+**this record cannot say when any of it happened, how long it took, or whether
+it is finished.** **That is the same gap that makes margin uncomputable** — it
+is not two problems, it is one problem reported from two directions.
+
+### Seven people waiting, none of them on work
+
+The order #1001 customer (**2.95d**, and the only party in contact with them is
+unidentified) · the $700 payer (**1.52d**, unacknowledged) · the $450 payer
+(**3.56d**, unacknowledged) · the Challenger customer (**12.80d**, his datalog
+still unread) · the C10 customer (**13.59d**, waiting correctly) · the new
+enquirer (**0.70d**, unread) · the supercharger supplier (**20.99d**).
+
+**Every one of them has a drafted reply, a proposed price, or a one-sentence
+question sitting behind an approval.** **None is waiting for work to be done**,
+which is a different and more fixable problem than being behind.
+
+### What this brief declined to do
+
+- **No balance.** A-19, and this is the third routine in a row to withhold it.
+- **No margin**, for any job, including the three paid this week. **The costs
+  are not readable and the time is not recorded.**
+- **No estimate for the HP Tuners outflow** — the amount was not in the
+  notification. **T-94.**
+- **No claim that order #1001 is complete.** It is marked FULFILLED in Shopify.
+  **A flag is not evidence**, and the only confirmation request went out from a
+  sender this register cannot identify.
+- **No status changed on the owner's own Colbert project.** Two agencies
+  questioned the site and a building quote sits unread (**T-90**); the spending
+  decision is his.
+
+### One sentence worth keeping
+
+**The business got better this week and the record of it got worse.** Three
+payments, a first storefront sale and a fulfilled order, against an empty
+calendar, no computable margin, $39 failing twice into a stopped card, and an
+unidentified person talking to the newest customer. **Nine of the eleven
+Critical rows close with a sentence rather than a day's work**, and that is the
+whole of what is being asked.
+
+---
+
+## Next entry: OL-0068
