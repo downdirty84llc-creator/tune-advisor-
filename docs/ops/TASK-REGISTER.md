@@ -124,17 +124,25 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-88 | A $450 payment arrived and nobody knows which job it paid for             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-26   |
 | T-89 | Shopify billing failed; the retry will hit the same stopped card          | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix         | 2026-10-24   |
 | T-90 | A Colbert building quote sits outside the register, amount unread         | real est.  | Normal       | Planned                  | Agent | A to read        | 2026-10-27   |
+| T-91 | Shopify made its first sale ever — order #1001, $550, paid and fulfilled  | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-28   |
+| T-92 | A second unattributed payment — $700, memo "mecanic tune", from a company | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-28   |
+| T-93 | A customer was written to by someone this register cannot identify        | ops        | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-28   |
+| T-94 | HP Tuners credits bought; amount unread, and margin needs it              | finance    | Normal       | Planned                  | Agent | A to read        | 2026-10-29   |
+| T-95 | The first inbound enquiry in five runs, unqualified and unread            | sales      | **High**     | **Awaiting Approval**    | Owner | **A-23 pending** | 2026-10-27   |
+| T-96 | The business site has new indexing failures on duplicate canonicals       | ops        | Normal       | Planned                  | Agent | A to diagnose    | 2026-10-30   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · 1 Accepted Risk · 4 In Verification · 3 In
-Progress · 1 Awaiting Approval · **32 Awaiting Owner** · 5 Blocked · 24 Planned
-· 2 Backlog. **90 tasks.** Recounted mechanically from the table above after
-every write — last **2026-10-23T11:40Z** (weekly cash review; **T-90 added**).
-**32 of the 90 rows are Awaiting Owner** — a plain count of the Status column.
-**Nothing on the Critical list is waiting on an agent.**
+Progress · 2 Awaiting Approval · **35 Awaiting Owner** · 5 Blocked · 26 Planned
+· 2 Backlog. **96 tasks.** Recounted mechanically from the table above after
+every write — last **2026-10-26T10:50Z** (Monday intake, 72-hour window; **T-91
+to T-96 added**, three of them from money arriving). **35 of the 96 rows are
+Awaiting Owner** — a plain count of the Status column, up from 32 on Friday.
+**Eleven rows are now Critical and open**, and **$1,700 of the business's
+$5,207.86 lifetime collections arrived in the last four days.**
 
 > **Separately, and more usefully than the count: 45 of the 57 open tasks are
 > past due, 30 of them the owner's — and on 2026-10-19 exactly one of those 45
@@ -5789,3 +5797,215 @@ has listed DD84's liabilities, and no routine asks for one.**
 > day after the third.** **So the first job of the first money in 405 days was
 > to cover a hole.** That is the cash position, stated as a shape because the
 > figure is not permitted here.
+
+---
+
+## T-91 — Shopify made its first sale ever: order #1001, $550, paid and fulfilled
+
+- **Objective** — Record the storefront's first order, confirm the service was
+  genuinely delivered, and keep `ventures.md` honest about what the store now
+  is.
+- **Source** — `/dd84-inbox-intake`, 2026-10-26. Verified live in Shopify:
+  `gid://shopify/Order/7017291448367`, **`totalCount` 1**.
+- **Workstream** sales · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-28
+- **The order** — **#1001**, placed **2026-10-23T11:56:43Z**, **$550.00 USD**,
+  **financial status PAID**, **fulfilment status FULFILLED**, **2 line items**.
+  First named item from the notification: **"Standard Dodge / Mopar PCM Unlock
+  Service — $300.00 × 1"**. **The second item's description was truncated and is
+  not reconstructed.** Customer identity withheld under §5.
+- **Why Critical** — **it is the storefront's first revenue in its existence**,
+  it is already marked fulfilled, and **the register did not know it happened
+  for three days.**
+- **The registry was wrong and this run wrote the wrong figure into it.** The
+  2026-10-23 cash review re-verified **"Shopify orders, all time: 0"** between
+  **11:13 and 11:40Z**. The order was placed at **11:56:43Z** — **true when
+  read, false about seventeen minutes later.**
+  - **Not a bad read. A badly shaped claim.** "0 orders all time" was carrying
+    the weight of a structural fact — _"100% of revenue came from invoiced
+    service work, 0% from the storefront"_ — when it was **a running total one
+    customer could change.** Corrected in `ventures.md` with the timing stated.
+  - **What survives the correction:** no _digital product_ has ever sold. The
+    store turned out to be **a viable order channel for services**, which is a
+    different and better finding than the one it replaced.
+- **Step 1 — Owner.** Confirm the PCM unlock service was actually delivered.
+  **It is marked FULFILLED in Shopify and the store already asked the customer
+  to confirm — but that message came from someone this register cannot identify
+  (T-93).** A fulfilment flag is not evidence of delivered work.
+- **Step 2 — Agent, after step 1.** Read the second line item from the order,
+  record the rung split, and reconcile $550.00 against the catalogue. **The
+  Dodge/Mopar PCM unlock rung in `ventures.md` is $75–$300 and was not
+  re-verified this week.**
+- **Status** **Awaiting Owner** · **Completion proof required** — delivery
+  confirmed by the owner, both line items recorded, and the amount reconciled to
+  rungs.
+
+---
+
+## T-92 — A second unattributed payment: $700, memo "mecanic tune", from a company
+
+- **Objective** — Attribute the largest single payment DD84 has taken this year.
+- **Source** — `/dd84-inbox-intake`, 2026-10-26. Bank notification,
+  **2026-10-24T22:31:55Z**.
+- **Workstream** finance · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-28
+- **What is known** — **$700.00**, Zelle, **memo "mecanic tune"** (spelling as
+  received). **The payer is a limited liability company, not a private
+  individual** — identity, account digits and confirmation code withheld under
+  §5.
+- **A business paying for a tune is shop-to-shop work**, and DD84 has rungs for
+  that. **$700.00 is not one of them.** The nearest approved figures are
+  **$650** (Performance Tune, GM/Ford/Mopar) and **$749** (in-person swap
+  commissioning). **$700 sits between two rungs and matches neither**, so either
+  a price was agreed off-catalogue or it combines services. **Not inferred.**
+- **This is the second payment in four days that cannot be attributed to a
+  job**, after **T-88**'s $450.00. **Together with order #1001 that is $1,700.00
+  in four days, of which $1,150.00 is unexplained.** **The register now holds
+  more unexplained revenue than explained.**
+- **Step 1 — Owner.** Say what the $700 bought and which shop paid it.
+- **Step 2 — Agent.** Record it, reconcile to a rung or record it as
+  off-catalogue, and draft the acknowledgement. **No acknowledgement drafted:
+  naming the wrong job to a business customer is worse than silence.**
+- **Status** **Awaiting Owner** · **Next action** — step 1.
+
+---
+
+## T-93 — A customer was written to by someone this register cannot identify
+
+- **Objective** — Establish who is authorised to speak to DD84 customers, before
+  two parties answer the same customer.
+- **Source** — `/dd84-inbox-intake`, 2026-10-26. A message sent **from the
+  Shopify store** to the order #1001 customer, **2026-10-24T00:13:46Z**.
+- **Workstream** ops · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-28
+- **What it said** — it introduced the sender by **a first name, "with Down
+  Dirty 84 LLC"**, and asked the customer to confirm that the PCM unlock and
+  tuning service on order #1001 had been completed and received. **The name is
+  withheld here. It appears nowhere in this register, nowhere in `ventures.md`,
+  and is not the owner's.**
+- **What this is not** — **not an allegation.** A nickname, a family member, a
+  helper or a contractor would all explain it, and **a business asking its own
+  customer to confirm delivery is good practice.**
+- **What it is** — **the third signal in four days that communication leaves
+  this business from places the operating record cannot see**, after the third
+  external send and the four-sends-in-eleven-seconds burst (**T-85 step 1**).
+  **Individually each is unremarkable. Three in four days is a pattern**, and
+  the pattern matters because **this register's drafts, approvals and Class C
+  gate all assume it knows who can speak for DD84.**
+- **The immediate practical cost** — **this run did not draft to the order #1001
+  customer**, because a second message from a different quarter about the same
+  order is worse than none. **So an unidentified sender is currently the only
+  party in contact with the store's first-ever customer.**
+- **Step 1 — Owner.** Name who may write to customers as DD84, and from which
+  accounts.
+- **Step 2 — Agent.** Record it in `ventures.md` so drafts and approvals can
+  account for it.
+- **Status** **Awaiting Owner** · **Next action** — step 1. **One sentence.**
+
+---
+
+## T-94 — HP Tuners credits bought; amount unread, and margin needs it
+
+- **Objective** — Put a cost on tuning credits, which is one of the two reasons
+  no job can be margined.
+- **Source** — `/dd84-inbox-intake`, 2026-10-26. Order **#2021394**, "Universal
+  Credits", **received and completed 2026-10-24T22:19Z** (two notices, two
+  seconds apart).
+- **Workstream** finance · **Priority** Normal · **Owner** **Agent** · **Due**
+  2026-10-29
+- **Why it matters beyond the amount** — **T-36 and the cash review both report
+  that margin is uncomputable because tuning-credit balances are unknown.** This
+  is a credit purchase with an order number, **nine hours before $700 arrived**.
+  **A cost and a payment in the same day is the first chance this record has had
+  to put the two beside each other.**
+- **Step 1 — Agent, Class A.** Read the order mail, record the amount and the
+  credit quantity. **Not estimated — the notification snippet did not carry
+  it.**
+- **Step 2** — feeds **T-36** and the margin section of the next cash review.
+- **Status** Planned · **Next action** — step 1.
+
+---
+
+## T-95 — The first inbound enquiry in five runs, unqualified and unread
+
+- **Objective** — Convert, or qualify out, the only new enquiry since 2026-10-19
+  — and **find out how they found DD84.**
+- **Source** — `/dd84-inbox-intake`, 2026-10-26. Thread `1a174388c7b0c461`,
+  **2026-10-25T17:57:58Z**, still **unread**.
+- **Workstream** sales · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-27
+- **Customer record (§8.1 fields; missing ones marked missing)**
+  - **Identity withheld** under §5. **Thread `1a174388c7b0c461` is the stable
+    pointer.**
+  - Vehicle **missing** · Engine **missing** · Transmission **missing** ·
+    Modifications **missing** · Location **missing** · Requested service
+    **missing** · Source **missing**
+  - **The entire message is one line asking whether this is the business.** It
+    is recorded as a lead because a person wrote to a business asking if it
+    exists; **nothing about a vehicle is invented.**
+- **Why High despite its size** — `ventures.md` records the customer-producing
+  channel as **`UNKNOWN`**, and **three paying jobs this month arrived through
+  it unseen.** **This is the first enquirer who can simply be asked**, and the
+  draft asks.
+- **Draft prepared, not sent** — full text in
+  `docs/ops/briefs/2026-10-26-inbox-intake.md`. **Packet A-23.** It confirms the
+  business, asks the §8.1 qualifying fields and the source question, and
+  **commits to no price, no turnaround and no result.**
+- **Status** **Awaiting Approval** · **Next action** — A-23. **A one-line
+  enquiry goes cold faster than a quote.**
+
+---
+
+## T-96 — The business site has new indexing failures on duplicate canonicals
+
+- **Objective** — Stop the business site losing pages from search.
+- **Source** — `/dd84-inbox-intake`, 2026-10-26. Google Search Console,
+  **2026-10-25T21:34:11Z**: a **new** reason preventing indexing — **"Duplicate
+  without user-selected canonical."**
+- **Workstream** ops · **Priority** Normal · **Owner** **Agent** · **Due**
+  2026-10-30
+- **Why it is here and not Rev's** — **the fault is technical and the fix is a
+  site change.** What to _do_ about search visibility is Rev's and is Class C/F;
+  **establishing that pages have stopped being indexed is this routine's.**
+  Nothing was written to `docs/growth/`.
+- **The standing decision that frames it** — **2026-08-13: `dd84tuning.com` is a
+  Manus site and is the front door; Shopify is a checkout behind it.** The
+  notice names **`downdirty84llc.com`**. **Which property is affected, and
+  whether it is the front door or the checkout, was not established this run.**
+- **Step 1 — Agent, Class A.** Identify the affected pages and whether they are
+  service pages. **Diagnosis only; a canonical tag is a live site change and is
+  Class F.**
+- **Status** Planned · **Next action** — step 1.
+
+---
+
+> ## Intake, 2026-10-26 — $1,700 in four days, and a registry figure that went
+>
+> stale in seventeen minutes
+>
+> Full record in `docs/ops/briefs/2026-10-26-inbox-intake.md` and **OL-0066**.
+> **67 threads over a 72-hour weekend window. One new lead. Six new tasks, three
+> of them because money arrived.**
+>
+> | When                 | Amount        | Route             | Attributed             |
+> | -------------------- | ------------- | ----------------- | ---------------------- |
+> | 2026-10-22T20:46:58Z | $450.00       | Zelle             | **No — T-88**          |
+> | 2026-10-23T11:56:43Z | **$550.00**   | **Shopify #1001** | **Yes**                |
+> | 2026-10-24T22:31:55Z | $700.00       | Zelle             | **No — T-92**          |
+> | **Total**            | **$1,700.00** |                   | **$1,150 unexplained** |
+>
+> **That is 48% of everything DD84 had ever collected, in four days**, after 405
+> days of nothing. **`ventures.md` updated: lifetime collections $5,207.86,
+> derived and labelled derived from three unreconciled sources.**
+>
+> **T-89's prediction was confirmed.** Friday's task said a retry against a
+> stopped card is not a second chance. **2026-10-24T12:11:22Z — Shopify billing
+> failed again, $39.00. Nine minutes later the bank declined the card again,
+> same stated reason: "Declined as your card is off."** The store now holds $550
+> of settled revenue and two failed bills.
+>
+> **T-85 gains a third instance and T-93 carries it.** A message went to the
+> store's first-ever customer **signed by a first name that appears nowhere in
+> this record.** Not an allegation — a nickname or a helper explains it. **But
+> three signals in four days is a pattern, and the Class C gate assumes this
+> register knows who may speak for DD84.**

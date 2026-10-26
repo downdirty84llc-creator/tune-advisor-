@@ -48,13 +48,17 @@ and actual result.
 | A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                 | T-37 T-64 T-66                     |
 | A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                 | T-37 T-64 T-84                     |
 | A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending**                 | T-82                               |
+| A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                 | T-95                               |
 
-**Eight packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20, A-21 and
-A-22.** A-18 is pending but **superseded twice over** — the customer answered
-all three of its questions four hours after it was raised, and **A-20 now
-carries the redrafted version of that same message.** Torque's recommendation on
-A-18 is REJECT, and the reasoning is in its own Actual-result block. **Answering
-A-20 settles both.**
+**Nine packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20, A-21,
+A-22 and A-23.** **A-23 was added to this board in the same write as its
+packet** — the first time since the 2026-10-12 note that a packet and its row
+have landed together, which is what the thirteen counts below were asking for.
+A-18 is pending but **superseded twice over** — the customer answered all three
+of its questions four hours after it was raised, and **A-20 now carries the
+redrafted version of that same message.** Torque's recommendation on A-18 is
+REJECT, and the reasoning is in its own Actual-result block. **Answering A-20
+settles both.**
 
 > **Twelfth instance, 2026-10-23 — and this one is mine.** **A-22 was raised on
 > 2026-10-22 with no row on this board**, by the same run that had just finished
@@ -1963,4 +1967,72 @@ goodwill DD84 asked for first.
 relationship is the owner's buy-in decision rather than another chase.
 
 **Response** — _awaiting owner._ **Affected records** — T-82. **Actual result**
+— _not yet executed._
+
+---
+
+## A-23 — Reply to the first inbound enquiry in five runs
+
+**Status: PENDING — raised 2026-10-26 by `/dd84-inbox-intake`.**
+
+**Decision requested** — Approval to send **one message** to a new enquirer,
+thread `1a174388c7b0c461`. Full text in
+`docs/ops/briefs/2026-10-26-inbox-intake.md`. **APPROVE / APPROVE WITH CHANGES /
+DEFER / REJECT.**
+
+**Nothing in it needs filling in.** Unlike A-20 and A-22 it carries **no
+bracket**: there is no date to promise and no price to set, because the vehicle
+is unknown.
+
+**Business objective** — **This is the only new enquiry since 2026-10-19.** Five
+consecutive intake runs reported an empty funnel. **It is also the first chance
+to ask a customer how they found DD84** — `ventures.md` records that channel as
+`UNKNOWN`, and **three paying jobs this month arrived through it unseen.**
+
+**Source and context** — **2026-10-25T17:57:58Z**, a Sunday, one line: whether
+this is the business. **Still unread.** Identity withheld under §5; the thread
+id is the pointer.
+
+**Recommended plan** — Send it. It **confirms the business exists**, lists the
+§8.1 qualifying fields DD84 needs before it can say anything useful, and **asks
+how they found us.** Then it stops.
+
+**Alternatives considered**
+
+- **Answer "yes, that's us" and nothing more.** Friendlier, and it wastes the
+  round trip — the qualifying questions have to be asked eventually, and a
+  one-line enquirer who gets a one-line reply usually goes quiet.
+- **Quote something.** **Rejected outright**: no vehicle, no engine, no fault.
+  `ventures.md` forbids quoting a price that is not in the catalogue, and
+  nothing here identifies which catalogue line applies.
+- **Leave it, on the grounds that it may be a mistake or a bot.** Possible — but
+  **it costs one message to find out**, and the funnel has been empty for five
+  runs.
+
+**Cost and cash impact** — **None.** No price, no discount, no commitment. The
+upside is a qualified lead and, separately, **the first evidence of which
+channel produces DD84's customers.**
+
+**Risks and safeguards**
+
+- **No price, no turnaround, no promise of a result**, and **no capability
+  claimed beyond what `ventures.md` lists** — remote ECU and EFI calibration,
+  diagnostics and PCM services.
+- **It does not assume what the vehicle is**, which matters because the message
+  gives no clue.
+- **If the enquirer turns out to want an unsupported platform or a
+  safety-critical job, that escalates before anything is accepted** (§8.2).
+
+**Systems affected** — None. One Gmail thread if approved.
+
+**Customer and public impact** — One prospective customer gets an answer to a
+question they asked on a Sunday. **Nothing is sent under this packet until
+approved.**
+
+**Success test** — A reply exists in the thread, and either the §8.1 fields come
+back or the lead is closed with a reason. **Secondary and arguably worth more:
+`ventures.md`'s enquiry-source field stops reading `UNKNOWN` for at least one
+customer.**
+
+**Response** — _awaiting owner._ **Affected records** — T-95. **Actual result**
 — _not yet executed._

@@ -6000,4 +6000,141 @@ three of them are.
 
 ---
 
-## Next entry: OL-0066
+## OL-0066 — 2026-10-26 · $1,700 in four days, a storefront that finally sold something, and a figure that went stale in seventeen minutes
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-26T10:20:31Z**. **Twenty-second scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`54b36ff`** at start, **`b2cb87c`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **57
+  tracked files, not 28** — fifth run reporting it, T-85 step 3.
+- **Window** since OL-0063, **2026-10-23T10:20Z → 2026-10-26T10:20Z — 72
+  hours.** No routine fires at the weekend, so **this was the first look at
+  three days of mail.**
+- **Counts** **67 threads** (50 + 17, continuation exhausted) · **11
+  actionable** · 56 no-action · **1 new lead** · **1 draft** · **6 new tasks** ·
+  1 packet (**A-23**).
+- **Sources reached** Gmail, **Shopify**. **Not reached** Superhuman Mail,
+  Stripe, PayPal, bookipay, Square.
+- **A worker restart hit this run mid-gather.** The skeleton was already
+  committed, so **the run resumed rather than died. Fourth restart in five days;
+  third run saved.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### The money
+
+| When                 | Amount        | Route                                 | Attributed             |
+| -------------------- | ------------- | ------------------------------------- | ---------------------- |
+| 2026-10-22T20:46:58Z | $450.00       | Zelle, "tune"                         | **No — T-88**          |
+| 2026-10-23T11:56:43Z | **$550.00**   | **Shopify #1001**                     | **Yes**                |
+| 2026-10-24T22:31:55Z | $700.00       | Zelle, "mecanic tune", from a company | **No — T-92**          |
+| **Total**            | **$1,700.00** |                                       | **$1,150 unexplained** |
+
+**48% of everything this business had ever collected, in four days**, after 405
+days of nothing. **`ventures.md`: lifetime collections now $5,207.86, derived
+and labelled derived from three sources that have never been reconciled against
+each other.** **The invoice count stays at 10** — two bank transfers and a
+storefront order, and **none of them is an invoice.**
+
+**The register now holds more unexplained revenue than explained**, which is a
+sentence worth sitting with.
+
+### The storefront sold something, and a registry figure went stale in seventeen minutes
+
+**Order #1001: $550.00, PAID, FULFILLED, two line items**, placed
+2026-10-23T11:56:43Z. Verified live: `totalCount` is **1**. **The store has
+never had another order.**
+
+**The 2026-10-23 cash review re-verified "Shopify orders, all time: 0" between
+11:13 and 11:40Z and stamped it 2026-10-23. The order landed at 11:56:43Z.**
+**True when read. False about seventeen minutes later.**
+
+**This is not a bad read, and it is not a vindication of the 30-day rule
+either.** The rule worked: it caught an 81-day-old figure and replaced it with a
+fresh one. **The fresh one still went stale inside the hour, because the claim
+was the wrong shape.** "0 orders, all time" was carrying the weight of a
+structural fact — _"100% of revenue came from invoiced service work, 0% from the
+storefront"_ — **when it was a running total that one customer could change.**
+
+**Corrected in `ventures.md`, with the seventeen minutes stated**, so a later
+reader sees a claim that outgrew its evidence rather than a careless
+verification.
+
+**What survives:** **no digital product has ever sold.** The storefront turned
+out to be **a viable order channel for services** — order #1001 is a PCM unlock
+_service_ bought through checkout. **That is a better finding than the one it
+replaced**, and it only exists because the figure was wrong.
+
+### A prediction confirmed, which is rarer here than a correction
+
+**T-89, written 2026-10-23:** _"a retry against a stopped card is not a second
+chance."_
+
+- **2026-10-24T12:11:22Z** — Shopify billing failed again, **$39.00**.
+- **2026-10-24T12:20:23Z** — the bank declined the card again, **same stated
+  reason: "Declined as your card is off."** Nine minutes apart.
+
+**The store now holds $550 of settled revenue and two failed bills.** The
+toggling continued through the weekend — off 2026-10-23T12:41, on 14:35 — **at
+least thirteen off/on notices since 2026-10-16.**
+
+### A third signal, and the one that actually worries me
+
+**A message went to the store's first-ever customer on 2026-10-24T00:13:46Z,
+sent from the Shopify store, introducing the sender by a first name "with Down
+Dirty 84 LLC"** and asking them to confirm the service had been delivered.
+
+**That name appears nowhere in this register, nowhere in `ventures.md`, and is
+not the owner's.** Withheld here.
+
+**It is not an allegation.** A nickname, a family member, a helper or a
+contractor all explain it, and **a business asking its own customer to confirm
+delivery is good practice.** **What it is, is the third signal in four days that
+communication leaves this business from places this record cannot see** — after
+the third external send and the four-messages-in-eleven-seconds burst.
+
+**Individually unremarkable. Three in four days is a pattern**, and it matters
+because **every draft, every Class C gate and every approval packet in this
+system assumes the register knows who may speak for DD84.** **T-93.**
+
+**The practical cost was paid this run:** no draft was written to the order
+#1001 customer, because a second message from a different quarter about the same
+order is worse than none. **So an unidentified sender is currently the only
+party in contact with the store's first customer.**
+
+### One lead, and it is the useful kind
+
+**2026-10-25T17:57:58Z, one line: whether this is the business. Still unread.**
+**The first new enquiry in five runs.**
+
+Every §8.1 field is **missing** and none was invented. **It is worth more than
+its length** because `ventures.md` records the customer-producing channel as
+`UNKNOWN`, **three paying jobs this month came through it unseen, and this is
+the first enquirer who can simply be asked.** **The draft asks. A-23**, and
+**A-23's row went onto the approvals board in the same write as its packet** —
+the first time since the 2026-10-12 note that those two have landed together.
+
+### Withheld
+
+Two payers' identities, one of them a company · a customer's name and address ·
+the name signing store mail · card digits ×2 · account digits · two confirmation
+codes · **about eight notices concerning minors' devices and app installs,
+recorded as personal with no detail at all** · a law firm and an academic
+contacted about Ledger licensing (A-17 pending) · the business's street address.
+
+### Unresolved
+
+- **What the $450 and the $700 bought.** Two sentences from the owner.
+- **Whether order #1001's service was genuinely delivered.** **FULFILLED is a
+  flag, not evidence**, and the only confirmation request came from an
+  unidentified sender.
+- **The second line item on order #1001** — truncated in the notification, **not
+  reconstructed, not guessed.**
+- **The HP Tuners purchase amount** — T-94, and **margin still cannot be
+  computed for any job.**
+- **Which site property has stopped indexing** — T-96.
+
+---
+
+## Next entry: OL-0067
