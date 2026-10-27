@@ -146,9 +146,17 @@ In Progress · 2 Awaiting Approval · **38 Awaiting Owner** · 6 Blocked · 26
 Planned · 2 Backlog. **102 tasks.** Recounted mechanically from the table above
 after every write — last **2026-10-27T10:45Z** (Tuesday intake; **T-100 to T-102
 added**, and **T-91 moved to In Verification because the customer confirmed the
-work himself**). **38 of the 102 rows are Awaiting Owner.** **Ten rows are
-Critical and open** — one fewer than yesterday, and **the one that moved was
-closed by a customer rather than by this register.**
+work himself**). **38 of the 102 rows are Awaiting Owner.** **Eleven rows are
+Critical and open — the same eleven as yesterday.** **Corrected 2026-10-27 by
+the daily brief:** this line first read "Ten rows … one fewer than yesterday",
+on the reasoning that T-91 had moved. **T-91 moved from Awaiting Owner to In
+Verification, and In Verification is not closed** — this register's own taxonomy
+says so, and the recount excludes only Done, No Action and Accepted Risk. **The
+count did not drop; its composition changed.** What actually improved is better
+than what was claimed: **one Critical row stopped waiting on the owner and
+started waiting on an agent.** **The sentence was written from expectation while
+a correct recount sat beside it** — the same failure as OL-0058's carried age
+and this morning's undercount regex.
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

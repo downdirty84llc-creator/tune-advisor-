@@ -6450,4 +6450,98 @@ established**: the Lexus enquiry sat 23 days because nobody read the form, and
 
 ---
 
-## Next entry: OL-0070
+## OL-0070 — 2026-10-27 · Daily brief: a quiet money day, and a correction to this morning's own arithmetic
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-27T10:51:32Z**. Class A throughout.
+- **Checkout** tip **`f664b69`**, `HEAD` equal to origin, **no `src/`, no
+  `package.json`**, clean. **61 tracked files, not 28** — ninth run reporting
+  it, T-85 step 3.
+- **No skeleton commit** — today's intake finished 31 minutes earlier and this
+  run had no gathering phase to protect. Fifth time this judgement has been made
+  and recorded rather than assumed.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The correction, and it is this morning's own
+
+**The register's counts line, written by today's intake, said "Ten rows are
+Critical and open — one fewer than yesterday." There are eleven.**
+
+**T-91 moved from Awaiting Owner to In Verification when the customer confirmed
+delivery, and In Verification is not closed.** This register's own taxonomy says
+so, and the recount excludes only _Done_, _No Action_ and _Accepted Risk_. **The
+Critical-and-open count did not drop. Its composition changed.**
+
+**The real improvement is better than the one claimed:** **one Critical row
+stopped waiting on the owner and started waiting on an agent.** That is a
+smaller number in front of the person who is the bottleneck, which is what
+anyone reading the line actually wants to know — **and it was available without
+overstating the count.**
+
+**Why it happened is worth more than the fix.** The intake wrote "one fewer"
+from the _reasoning_ that a row had moved, not from the recount it had just run.
+**The recount was correct and was not consulted for that sentence.** **This is
+the same failure as OL-0058's carried-forward age and this morning's undercount
+regex: the arithmetic was available and the prose was written from
+expectation.** Corrected in the register with the reasoning attached.
+
+### A quiet money day, said plainly
+
+**Nothing came in. The last payment was 60.3 hours ago.** The week's **$1,700
+stands** — $450 Zelle, **$550 Shopify order #1001**, $700 Zelle.
+
+**The only money event in the window was the third failed $39 Shopify bill**,
+2026-10-26T12:38:57Z — **10-22, 10-24, 10-26, every 48 hours.** No decline
+notice was fetched for the third, **so whether it hit the stopped card is not
+asserted.**
+
+**After a week that took 48% of the business's lifetime collections in four
+days, today was ordinary. That is a real result and the brief says so** rather
+than inflating it.
+
+### The pattern that is now unmistakable
+
+**Two customers have sent datalogs that are sitting unread — one at 14.3 hours,
+one at 13.8 days.**
+
+**Customers do exactly what DD84 asks, and the reply waits.** The order #1001
+customer has already said the car _"feels better"_; the Challenger customer's
+log has sat since 2026-10-13. **Neither can be opened from here — no session has
+an attachment-download tool** — so both are the owner's.
+
+**The 14.3-hour one is not a complaint. It is the 13.8-day one at an age where
+it still costs nothing to fix**, and that is the only reason it is first in the
+brief.
+
+### The calendar, fourth consecutive empty check
+
+**Empty through 2026-11-03**, read live. Across a week with **$1,700 collected,
+a PCM unlock delivered and a customer confirming improvement**, **not one hour
+appears in the diary.** **Still the reason no job can be margined**, and still
+one problem rather than two.
+
+### What this brief declined to do
+
+- **No balance** — A-19, fourth routine running.
+- **No margin** for any job.
+- **No claim about which instrument the third Shopify failure hit** — not
+  fetched, not inferred.
+- **No status moved on the owner's own Colbert project**, and **no distance
+  measured for the Elberton comparison** — T-97 still carries it as the agent's
+  labelled assumption.
+- **Nothing opened in the third repository** — T-101.
+
+### Unresolved
+
+- **$1,150 of the week's $1,700 remains unattributable** — T-88 at 5.5 days,
+  T-92 at 2.51 days.
+- **A-21 and A-20 are five and six days unanswered**, and **the brief asks for a
+  deliberate answer rather than more waiting**: either the two priced jobs still
+  matter, or the week's evidence says revenue arrives by other routes and the
+  packets should be closed.
+- **Eleven Critical rows, the same eleven**, with one having changed hands.
+
+---
+
+## Next entry: OL-0071
