@@ -6328,4 +6328,126 @@ recorded so a later run does not strip the citations to satisfy a regex.
 
 ---
 
-## Next entry: OL-0069
+## OL-0069 — 2026-10-27 · A customer answered the question we put to the owner, and the task counter silently undercounted itself
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-27T10:20:17Z**. **Twenty-third scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`3106cca`** at start, **`f2a2683`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **60
+  tracked files, not 28** — eighth run reporting it, T-85 step 3.
+- **Window** since OL-0066, **2026-10-26T10:20Z → 2026-10-27T10:20Z**.
+- **Counts** **40 threads returned against an estimate of 43** · 8 actionable ·
+  32 no-action · **0 new leads** · **0 drafts** · **3 new tasks** (T-100 to
+  T-102) · **T-91 moved to In Verification.**
+- **Sources reached** Gmail. **Not reached** Superhuman Mail, Stripe, PayPal,
+  bookipay, Square.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The customer answered T-91 himself
+
+**Yesterday T-91 told the owner: "It is marked FULFILLED in Shopify … A
+fulfilment flag is not evidence of delivered work."** It asked him to confirm
+delivery. **The customer confirmed it first.**
+
+**2026-10-26T10:55:07Z** — DD84 sent a corrected calibration file: _"Please try
+unloading new file to see if that resolves the issues."_
+**2026-10-26T20:33:19Z** — the customer replied **_"for sure feels better / i
+could not push it too much due to traffic"_**, with a new datalog attached.
+
+**Delivery confirmed. Completion not** — he could not load the car properly.
+**The status moved to In Verification rather than Done, because the distinction
+is the whole content of the finding.**
+
+**And his confirming datalog is unread, 13.8 hours.** **T-64's log has sat
+unread 13.8 days.** **Two customers, the same pattern — they do what is asked
+and the reply waits.** Reporting it at 13.8 hours instead of 13.8 days is the
+only version of this observation that is worth anything.
+
+**Filenames withheld** — §5 forbids tune files here, and a calibration filename
+carries both the vehicle and the work done.
+
+### The task counter undercounted itself, and the rule caught it
+
+**The register crossed into three-digit task IDs today.** The ID column was
+sized for two digits, so **`T-100` filled it exactly and the row was written
+`| T-100|` — no pad space.**
+
+**Valid markdown. Parsed correctly by every reader. Invisible to the recount.**
+The pattern every prior run has used, `^\| T-\d\d \|`, requires the trailing
+space, so **the strict count said 99 where the tolerant count said 102.**
+
+**It was caught only because the standing rule is to recount mechanically and
+compare, never to increment by hand.** The disagreement between two counts is
+the entire reason anyone looked. **Had the counts line been written from
+arithmetic — 99 + 3 — it would have been right by luck and the broken pattern
+would have shipped**, undercounting by one more every time a three-digit task
+was added.
+
+**Prettier re-padded the rows. The corrected pattern `^\| T-\d+\s*\|` is now
+recorded in the register itself, beside the counts line**, which is where the
+next session will reach for it. **The fix that matters is not the padding — it
+is that the next run does not inherit the regex.**
+
+### The fourth instrument defect, and the first to break fields rather than completeness
+
+**The Gmail thread list returned no `date`, no `labelIds` and no `snippet`** for
+most entries — **in both views**, including `THREAD_VIEW_METADATA_ONLY`, which
+the tool documents as returning `date` and `label_ids`. **`get_thread` returned
+both correctly for all four threads fetched. Yesterday's identical query
+returned dates for every entry.**
+
+**A sweep that returns every thread but no timestamps looks healthy.** The count
+was right; only the fields were gone. **A routine reporting "unread for N hours"
+would have had nothing to compute from and no error to notice.**
+
+- **OL-0049** — silent truncation: results missing.
+- **OL-0055** — a window that could not see a quiet thread: scope too narrow.
+- **OL-0058** — an age carried forward instead of recomputed: stale arithmetic.
+- **Today** — **everything returned except the part that makes it datable.**
+
+**The repair applied: fetch what matters individually, and label the rest "not
+re-verified this run."** **Four threads fetched; 36 not aged, and said so.**
+**T-102.**
+
+### Three findings and one non-finding
+
+**Shopify billing has failed three times, 48 hours apart** — 10-22, 10-24,
+**2026-10-26T12:38:57Z**, $39.00 each. **No decline notice was fetched for the
+third, so whether it hit the stopped card is not asserted.** **The store holding
+DD84's only settled storefront revenue cannot collect $39 from its owner.**
+
+**TikTok Shop rejected the application — for a proof-of-address document.**
+**T-100.** Not a judgement on the business; a missing bank statement, lease or
+utility bill. **Those are exactly the materials §5 keeps out of this
+repository**, so it is the owner's upload, not an agent's.
+
+**A third DD84 repository exists.** `downdirty84-ai-tuning`, a failed PR CI run
+about log comparisons over RPM and pressure bands. **`CLAUDE.md` names two
+repositories and this is a third.** **Nothing was opened** — this session's
+GitHub scope is `tune-advisor-` only, and **the register has twice been wrong
+about DD84 infrastructure by inferring from notifications** (T-33's thirteen-day
+mis-framing, T-87's Ledger deploys). **A third inference would be the pattern,
+not the exception.** **T-101.**
+
+**And the non-finding that matters:** **two website contact-form submissions
+arrived and both are the owner's own tests**, labelled `DD84-FLOW-20261026-B`
+and `-C` and explicitly saying _"This is not a customer inquiry … No reply or
+service work is needed."_ **Counting them as leads would have been inventing
+leads.** They are counted as no-action — **but the form itself is now verified
+working end to end**, which **rules out a cause T-66 never actually
+established**: the Lexus enquiry sat 23 days because nobody read the form, and
+**whether the form was broken was never tested until the owner tested it.**
+
+### Unresolved
+
+- **Which job the $450 and the $700 paid for** — T-88, T-92, unchanged.
+- **The second line item on order #1001**, and $550 reconciled to rungs — now
+  **Agent work**, T-91 step 2.
+- **Whether the list-payload defect is transient** — T-102 step 1, next run.
+- **36 threads not aged this run.** Not estimated.
+
+---
+
+## Next entry: OL-0070
