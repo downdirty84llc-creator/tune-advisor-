@@ -6659,4 +6659,91 @@ receipt rather than because it is sensitive.**
 
 ---
 
-## Next entry: OL-0072
+## OL-0072 — 2026-10-28 · Daily brief: the queue is not neglect, it is a channel the owner is not using
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-28T10:52:09Z**, scheduled 10:50:00Z. Class A throughout.
+- **Checkout** tip **`3d32bbf`**, `HEAD` equal to origin, **no `src/`, no
+  `package.json`**, clean. **63 tracked files, not 28** — eleventh run reporting
+  it, T-85 step 3.
+- **No skeleton commit** — the intake finished 31 minutes earlier and this run
+  had no gathering phase to protect. Sixth time recorded.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The observation this brief exists to make once
+
+**Forty rows await the owner and the queue has grown every day for a week. The
+reason is not that nothing is happening.**
+
+**What the owner actually did in seven days, all of it from this record's own
+observations:** approved A-15 and two replies went out (10-21) · four agency
+follow-ups on the Colbert site (10-22) · changed Shopify settings twice,
+verified identity, **took order #1001**, and contacted two legal advisers
+(10-23) · **bought HP Tuners credits**, the store messaged the #1001 customer,
+**$700 arrived** (10-24) · **tested the website contact form twice end to end**,
+**sent the corrected tune file**, **submitted a TikTok Shop application**
+(10-26) · the Manus subscription renewed and **the front door stayed up**
+(10-28).
+
+**That is a working week.** **Meanwhile Awaiting Owner went from 27 to 40.**
+
+**So the finding is about the channel, not the person.** **The register asks for
+decisions through a queue he is not reading, while he does the work by hand in
+his inbox** — and the items losing that race are the ones that would cost **one
+sentence**: what the $450 bought, what the $700 bought, **did he set up the card
+schedule.**
+
+**This is said once and will not be repeated daily.** Restating it every morning
+would turn a finding into nagging, and **the register already has 56 past-due
+rows to demonstrate the point without help.**
+
+**The concrete consequence recorded:** **A-23 is the cheapest packet in the
+register** — one reply, one enquirer, **no bracket, no price, nothing to fill
+in** — and it has waited **2.70 days** behind packets that need real thought.
+**If one thing moves, that is the one that costs least.**
+
+### Money
+
+**Nothing in for 84.3 hours.** **One outflow: the Manus subscription renewed on
+a backup card at 09:52:22Z**, primary refused — **amount not in the receipt and
+not estimated.** T-103.
+
+**No Shopify billing notice in this window.** The three known failures were 48
+hours apart and **the next falls due today.** **Absence of a notice is not
+evidence the charge succeeded**, and the brief says so rather than reporting a
+silence as a success.
+
+### Counted
+
+**104 rows · 40 Awaiting Owner · 12 Critical and open** (up one: **T-103**) ·
+**56 open and past due.** **Ten of the twelve Critical rows await the owner, two
+are Blocked, one is an agent's.** **Nine packets pending.**
+
+**Fifth consecutive empty calendar check**, through 2026-11-04. **$1,700
+collected this week and not one hour of it in the diary.**
+
+### What this brief declined to do
+
+- **No balance** — A-19, fifth routine running.
+- **No margin**, for any job.
+- **No Manus amount**, because the receipt did not carry one.
+- **No claim that the fourth Shopify bill succeeded or failed** — no notice
+  either way.
+- **No read-state claim** on the two customer datalogs — **T-102 is now Accepted
+  Risk and the list payload cannot supply it**; ages are computed from stored
+  timestamps and read state is labelled unverified.
+
+### Unresolved, and the shortest versions of each
+
+- **Did the owner set up the card schedule?** One sentence. **Security question
+  if not.** T-104.
+- **What the front door costs, and on what card.** T-103.
+- **What the $450 and $700 bought.** Two sentences. T-88, T-92.
+- **A-23.** A yes.
+- **Would DD84 ever employ two people?** One word, and it settles T-97 either
+  way.
+
+---
+
+## Next entry: OL-0073
