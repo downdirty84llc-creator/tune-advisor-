@@ -135,28 +135,22 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?         | sales      | Normal       | Blocked                  | Agent | A to read        | 2026-11-09   |
 | T-100 | TikTok Shop rejected the application for a proof-of-address document       | sales      | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register   | ops        | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-30   |
-| T-102 | The Gmail thread list stopped returning dates and read state               | ops        | Normal       | In Progress              | Agent | A to diagnose    | 2026-10-29   |
+| T-102 | The Gmail thread list no longer returns dates or read state — confirmed    | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose    | 2026-10-29   |
+| T-103 | The website front door renewed on a backup card; primary refused           | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report      | 2026-10-30   |
+| T-104 | The card toggling is programmatic — 60-second windows, hourly              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report      | 2026-10-30   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **17 Done** · 1 No Action · 1 Accepted Risk · **5 In Verification** · 4
-In Progress · 2 Awaiting Approval · **38 Awaiting Owner** · 6 Blocked · 26
-Planned · 2 Backlog. **102 tasks.** Recounted mechanically from the table above
-after every write — last **2026-10-27T10:45Z** (Tuesday intake; **T-100 to T-102
-added**, and **T-91 moved to In Verification because the customer confirmed the
-work himself**). **38 of the 102 rows are Awaiting Owner.** **Eleven rows are
-Critical and open — the same eleven as yesterday.** **Corrected 2026-10-27 by
-the daily brief:** this line first read "Ten rows … one fewer than yesterday",
-on the reasoning that T-91 had moved. **T-91 moved from Awaiting Owner to In
-Verification, and In Verification is not closed** — this register's own taxonomy
-says so, and the recount excludes only Done, No Action and Accepted Risk. **The
-count did not drop; its composition changed.** What actually improved is better
-than what was claimed: **one Critical row stopped waiting on the owner and
-started waiting on an agent.** **The sentence was written from expectation while
-a correct recount sat beside it** — the same failure as OL-0058's carried age
-and this morning's undercount regex.
+Counts: **17 Done** · 1 No Action · **2 Accepted Risk** · 5 In Verification · 3
+In Progress · 2 Awaiting Approval · **40 Awaiting Owner** · 6 Blocked · 26
+Planned · 2 Backlog. **104 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
+— **not the two-digit pattern, see the note below** — last **2026-10-28T10:45Z**
+(Wednesday intake; **T-103 and T-104 added**, and **T-102 closed to Accepted
+Risk because its instrument test came back negative twice**). **40 of the 104
+rows are Awaiting Owner.** **Twelve rows are Critical and open**, up one:
+**T-103, the website front door renewing on a backup card.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
@@ -6268,3 +6262,108 @@ has listed DD84's liabilities, and no routine asks for one.**
   persists, the intake's ageing has to come from `get_thread` and the routine
   costs more per run.**
 - **Status** In Progress · **Next action** — step 1, next intake.
+
+---
+
+## T-103 — The website front door renewed on a backup card; the primary refused
+
+- **Objective** — Keep the funnel's entry point from lapsing, and find out what
+  it costs.
+- **Source** — `/dd84-inbox-intake`, 2026-10-28. Google Play receipt
+  **2026-10-28T09:52:22Z**, unread: **"Backup payment method used on Oct 28,
+  2026 for Manus AI"** — _"Your subscription … has renewed. We weren't able to
+  use the [primary card] associated with your"_ subscription. **Card digits
+  withheld under §5.**
+- **Workstream** finance · **Priority** **Critical** · **Owner** **Owner** ·
+  **Due** 2026-10-30
+- **Why Critical, and why it is not a software receipt** — the standing owner
+  decision of **2026-08-13** is that **`dd84tuning.com` is a Manus site and is
+  the front door**, with Shopify a checkout behind it. **A Manus subscription is
+  therefore the thing DD84's enquiries arrive through, not a tool expense.** **A
+  backup card absorbed this cycle. If the backup fails next cycle, the front
+  door is what lapses.**
+- **The amount is not in the receipt and is not estimated.**
+- **The fifth instrument to fail or be locked in two weeks** — the business
+  debit card (declined twice, bank's reason: "card is off"), a second debit card
+  (toggled constantly — **T-104**), a PayPal-branded card (locked 2026-10-26), a
+  PayPal electronic transfer (declined by the bank 2026-10-20), and now this.
+  **T-71 reads "two payments declined"; it has been wrong in the same direction
+  for a week.**
+- **Step 1 — Owner.** Put a working instrument on the subscription, and say what
+  it costs per cycle so the next cash review can carry it.
+- **Step 2 — Agent, Class A, after step 1.** Record the amount against
+  `ventures.md`'s cost side, which currently has no line for the front door at
+  all.
+- **Why an agent cannot do step 1** — changing a payment method is **Class E**.
+- **Status** **Awaiting Owner** · **Next action** — step 1. **The cheapest
+  Critical row in this register and the one with a single point of failure
+  behind it.**
+
+---
+
+## T-104 — The card toggling is programmatic — 60-second windows, hourly
+
+- **Objective** — Establish what is opening and closing a debit card on a
+  schedule, because it is the most likely single cause of five separate payment
+  failures.
+- **Source** — `/dd84-inbox-intake`, 2026-10-28. Four bank notices in 61
+  minutes.
+- **Workstream** finance · **Priority** **High** · **Owner** **Owner** · **Due**
+  2026-10-30
+- **The evidence, and it is just four timestamps**
+
+| When                     | Card state                 |
+| ------------------------ | -------------------------- |
+| **2026-10-27T22:53:33Z** | **on**                     |
+| **2026-10-27T22:54:33Z** | **off** — 60 seconds later |
+| **2026-10-27T23:53:46Z** | **on**                     |
+| **2026-10-27T23:54:47Z** | **off** — 61 seconds later |
+
+- **What is established** — **the toggling is automated or scripted.** Two
+  one-minute windows, **exactly an hour apart with 13 seconds of drift**. **A
+  person does not do that.**
+- **What is NOT established and is not asserted** — **why.** A 60-second window
+  in which a card works is **consistent with letting one charge through while
+  blocking everything else**, and **equally consistent with a tool
+  misbehaving.** **Nothing in the mail says what the window was for, and intent
+  is not read off a notification log.**
+- **The correction this makes to this register** — **for two weeks the toggling
+  was reported as erratic and implied a human.** **OL-0065 wrote "consistent
+  with someone controlling which charges land"** — correctly hedged on intent,
+  **but it assumed a human agent, and the timestamps say otherwise.**
+- **Why it may be one cause behind five failures** — **if a schedule governs
+  when the card works, every payment attempted outside those windows failed for
+  a mechanical reason**: **three Shopify bills at 48-hour intervals**, the two
+  card declines the bank attributed to "card is off", and **possibly the Manus
+  renewal in T-103.** **That is testable rather than speculative.**
+- **Step 1 — Owner.** Say whether this is something he set up, a tool he
+  installed, or neither. **If neither, it is a security question and outranks
+  everything else in this register.**
+- **Step 2 — Agent, Class A.** Collect every card-state notice since 2026-10-16
+  and report the full schedule. **At least thirteen notices are already known;
+  the hourly pattern was only visible because four arrived in one window.**
+- **Status** **Awaiting Owner** · **Next action** — step 1, and it is one
+  sentence.
+
+---
+
+> ## Intake, 2026-10-28 — the front door is on a backup card, and the card
+>
+> toggling turns out to be a schedule
+>
+> Full record in `docs/ops/briefs/2026-10-28-inbox-intake.md` and **OL-0071**.
+> **28 threads, zero new leads — seventh consecutive run — zero new drafts, two
+> new tasks and one closed.**
+>
+> **T-102 closed to Accepted Risk.** Its own step 1 was to re-test whether the
+> Gmail thread list returns `date` and `labelIds`. **It came back negative a
+> second time**, so the defect is not transient and **there is nothing for an
+> agent to fix.** **The intake's ageing now comes from `get_thread`, and the
+> routine costs more per run** — five individual fetches today where one list
+> call used to do it. **Accepted Risk is the honest status: the constraint is
+> real, understood, and not going away.**
+>
+> **No draft was written for the seventh day, and that is the queue being full
+> rather than idleness.** A-20 (three messages), A-22 (one), A-23 (one) **cover
+> every person who can be written to.** The two who cannot are the $450 and $700
+> payers, **because nobody knows what either payment bought.**

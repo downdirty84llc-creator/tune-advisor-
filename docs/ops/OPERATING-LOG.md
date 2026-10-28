@@ -6544,4 +6544,119 @@ one problem rather than two.
 
 ---
 
-## Next entry: OL-0071
+## OL-0071 — 2026-10-28 · The front door is on a backup card, and the card toggling turns out to be a schedule
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-28T10:20:37Z**. **Twenty-fourth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`eff5161`** at start, **`f3c9c69`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **62
+  tracked files, not 28** — tenth run reporting it, T-85 step 3.
+- **Window** since OL-0069, **2026-10-27T10:20Z → 2026-10-28T10:20Z**.
+- **Counts** **28 threads of an estimated 28** · 5 actionable · 23 no-action ·
+  **0 new leads** (seventh consecutive run) · **0 drafts** · **2 new tasks** ·
+  **1 task closed.**
+- **Sources reached** Gmail. **Not reached** Superhuman Mail, Stripe, PayPal,
+  bookipay, Square.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The front door renewed on a backup card
+
+**2026-10-28T09:52:22Z** — a Google Play receipt: **"Backup payment method used
+on Oct 28, 2026 for Manus AI"**, with _"We weren't able to use the [primary
+card] associated with your"_ subscription.
+
+**The standing decision of 2026-08-13 is that `dd84tuning.com` is a Manus site
+and is the front door**, Shopify being a checkout behind it. **So this is not a
+software receipt — it is the subscription DD84's enquiries arrive through.** **A
+backup absorbed this cycle. If the backup fails next cycle, the front door
+lapses.** **The amount is not in the receipt and is not estimated.** T-103.
+
+**This is the fifth instrument to fail or be locked in two weeks:** the business
+debit card (declined twice, bank's own reason "card is off"), a second debit
+card, a PayPal-branded card (locked 10-26), a PayPal electronic transfer
+(declined by the bank 10-20), and this one. **T-71 still reads "two payments
+declined." It has been wrong in the same direction for a week.**
+
+### Four timestamps that reframe two weeks of reporting
+
+| When                 | Card state                 |
+| -------------------- | -------------------------- |
+| 2026-10-27T22:53:33Z | **on**                     |
+| 2026-10-27T22:54:33Z | **off** — 60 seconds later |
+| 2026-10-27T23:53:46Z | **on**                     |
+| 2026-10-27T23:54:47Z | **off** — 61 seconds later |
+
+**Two one-minute windows, exactly an hour apart, 13 seconds of drift. A person
+does not do that.**
+
+**What is established: the toggling is automated or scripted.** **What is not,
+and is not asserted: why.** A 60-second window in which a card works is
+consistent with letting one charge through while blocking everything else —
+**and equally consistent with a tool misbehaving.** **Nothing in the mail says
+what the window was for, and intent is not read off a notification log.**
+
+**The correction.** **OL-0065 wrote "consistent with someone controlling which
+charges land."** The hedge on intent was right; **the assumption of a human
+agent was not**, and it stood for two weeks across three briefs.
+
+**Why it may be one cause behind five failures.** **If a schedule governs when
+the card works, then every payment attempted outside those windows failed for a
+mechanical reason** — **three Shopify bills at 48-hour intervals**, both card
+declines the bank attributed to card state, **and possibly the Manus renewal.**
+**That is testable, which is the difference between this and the last two weeks
+of reporting it as erratic.** **T-104**, and **step 1 is one sentence from the
+owner: did he set this up?** **If not, it is a security question and outranks
+everything else here.**
+
+### T-102 closed to Accepted Risk, by its own test
+
+**T-102's step 1 was to re-test whether the Gmail thread list returns `date` and
+`labelIds`.** **It came back negative a second time** — all 28 entries, on
+`THREAD_VIEW_METADATA_ONLY`, which the tool documents as returning both.
+`get_thread` returned both correctly for all five threads fetched.
+
+**So the defect is not transient and there is nothing for an agent to fix.**
+**Accepted Risk is the honest status**: the constraint is real, understood, and
+not going away. **The intake's ageing now comes from `get_thread`, and the
+routine costs more per run** — **five individual fetches today to age five
+threads, where one list call used to do it.**
+
+**A task that was opened to run a test, ran the test, got a negative answer, and
+closed itself with the constraint written down.** That is what the status was
+for.
+
+### Seven days without a new lead, and seven without a new draft
+
+**Zero new drafts, and it is the queue being full rather than idleness.** A-20
+(three messages), A-22 (one), A-23 (one) **cover every person on the waiting
+list who can be written to.** The two who cannot are **the $450 and $700 payers,
+because nobody knows what either payment bought** — unchanged since 2026-10-23
+and still two sentences from the owner.
+
+**Seventh consecutive run with no new enquiry.** The channel producing DD84's
+customers is still recorded as `UNKNOWN`, **and A-23 — the one message that
+would ask a real enquirer directly — has been waiting 2.68 days.**
+
+### Withheld
+
+A primary card's digits · a second card's digits · a cold-outreach sender's
+address (A-17 pending) · **one notice concerning a minor, recorded as personal
+with no detail** · the Manus subscription amount, **because it was not in the
+receipt rather than because it is sensitive.**
+
+### Unresolved
+
+- **What the 60-second card windows are for** — T-104. **Not knowable from
+  mail.**
+- **What the front door costs per cycle** — T-103, not in the receipt.
+- **Whether the Shopify bill failed a fourth time** — **no billing notice in
+  this window, and absence of a notice is not evidence the charge succeeded.**
+  The three known failures were 48 hours apart and the next falls due today.
+- **Read state for 23 of 28 threads** — the list payload omitted it; **five were
+  fetched, the rest were not aged and are not estimated.**
+
+---
+
+## Next entry: OL-0072
