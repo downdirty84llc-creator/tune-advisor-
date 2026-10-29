@@ -2196,7 +2196,8 @@ one and twenty days.
 **Files affected — counted mechanically, and the first version of this packet
 got it wrong.** It said "six briefs … ten files … roughly 30 occurrences", named
 `APPROVALS.md`, and **omitted `ventures.md`.** **Corrected within the hour, by
-matching `$39` while excluding `$39.99` and `$399`:**
+matching the bill amount — the figure held in thread `1a18264480149222` — while
+excluding the digital-product range:**
 
 | File                                | Occurrences |
 | ----------------------------------- | ----------- |
@@ -2261,12 +2262,11 @@ lender — currently sees a business whose cheapest recurring bill failed four
 times in eight days, with the amount named.** That is the exposure A-19 was
 written to close.
 
-**Success test** — **a match for `$39` excluding `$39.99` and `$399` returns
-zero across `docs/ops/` and `docs/agents/ventures.md`**, while **the
-digital-product range still reads `$39.99–$399` in `ventures.md`**; each edited
-file carries a dated note of what was removed and why; the log records the edit;
-and **the brief that caused this still says plainly that it got the reading
-wrong.**
+**Success test** — **a match for the bill amount, excluding the digital-product
+range, returns zero across `docs/ops/` and `docs/agents/ventures.md`**, while
+**that range still reads `$39.99–$399` in `ventures.md`**; each edited file
+carries a dated note of what was removed and why; the log records the edit; and
+**the brief that caused this still says plainly that it got the reading wrong.**
 
 **Response** — _awaiting owner._ **Affected records** — T-109. **Actual result**
 — _not yet executed._

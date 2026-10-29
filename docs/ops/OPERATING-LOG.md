@@ -7247,6 +7247,36 @@ customers' names and addresses, the supplier's company and representative, card
 digits and an account number, and the bank statement's contents — **reported as
 needing a secure login rather than as withheld, because it was never read.**
 
+### The leak scan reported a violation and the push went out anyway
+
+**Worth recording because it is a process failure, not a content one.** The §5
+leak scan was run **in the same shell chain as `git commit` and `git push`**.
+The scan is a Python block that prints its findings and **exits zero whatever it
+finds**, so `&&` carried straight on. **It printed a `declined-amt` finding and
+the commit and push ran in the same breath.**
+
+**What it caught was real but small:** A-24's corrected file list described its
+own counting method as matching the figure, **which spells the amount while
+explaining why the amount must go** — the same self-defeating move already
+corrected once today in the intake brief's illustrative quotation. **Reworded to
+name the bill amount by its thread ID instead**, and the success test with it.
+
+**The fix is structural.** **A gate that cannot fail is not a gate.** The scan
+now **exits non-zero on any finding and is run as its own step**, so a violation
+stops the commit instead of being narrated past it. **Three runs have now
+written "the leak scan caught it before commit" — that was true each time
+because the finding happened to be in a draft, not because the scan was wired to
+stop anything.**
+
+**And the rewired gate immediately caught this very entry.** The paragraph above
+originally **quoted the scan's own output line verbatim**, which spells the
+amount inside a note about not spelling the amount. **Third instance today of
+the same trap** — the intake brief's illustrative quotation, A-24's description
+of its counting method, and now the log's account of the gate. **Each time the
+figure arrived not as data but as an example of itself.** **The first two were
+caught by reading; this one was caught by the gate refusing the commit**, which
+is the whole difference the rewiring was meant to make.
+
 ### The honest summary
 
 **Nothing this session did today earned DD84 a dollar or answered a customer.**
