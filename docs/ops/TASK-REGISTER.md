@@ -106,7 +106,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-70  | Colbert parcel capped at 380 gpd design flow without public water         | real est.  | **High**     | **Awaiting Owner**       | Owner | A to research                     | 2026-10-17   |
 | T-71  | The business bank account is overdrawn; two payments declined             | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-19 Option C**                 | 2026-10-16   |
 | T-72  | A store enquiry asked if DD84 is open; unread 56 hours                    | sales      | **High**     | **Awaiting Owner**       | Owner | C to send                         | 2026-10-19   |
-| T-73  | Three dated outflows inside nine days, three amounts unknown              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-20   |
+| T-73  | Three dated outflows; amounts withheld under A-19, thread IDs held        | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-20   |
 | T-74  | A third party says a Melio account exists; message does not hold together | finance    | Normal       | **Awaiting Owner**       | Owner | A to verify                       | 2026-10-22   |
 | T-75  | A new Shopify theme was published and nobody checked the storefront       | service    | **High**     | Planned                  | Agent | A to diagnose                     | 2026-10-21   |
 | T-76  | Four account-access notices in four hours across four providers           | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-21   |
@@ -124,7 +124,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-88  | A $450 payment arrived and nobody knows which job it paid for             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-26   |
 | T-89  | Shopify billing failed 4x; primary method is PayPal, not a card           | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix                          | 2026-10-24   |
 | T-90  | A Colbert building quote sits outside the register, amount unread         | real est.  | Normal       | Planned                  | Agent | A to read                         | 2026-10-27   |
-| T-91  | Shopify first sale — $530.31 paid out; FULFILLED was automation, 2s       | sales      | **Critical** | **In Verification**      | Agent | A to report                       | 2026-10-28   |
+| T-91  | Shopify first sale — $530.31 paid out; his reply still unread             | sales      | **Critical** | **In Verification**      | Agent | A to report                       | 2026-10-28   |
 | T-92  | A second unattributed payment — $700, memo "mecanic tune", from a company | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-28   |
 | T-93  | A customer was written to by someone this register cannot identify        | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-28   |
 | T-94  | HP Tuners credits bought; amount unread, and margin needs it              | finance    | Normal       | Planned                  | Agent | A to read                         | 2026-10-29   |
@@ -149,19 +149,25 @@ ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · **2 Accepted Risk** · 5 In Verification · 3
-In Progress · 2 Awaiting Approval · **43 Awaiting Owner** · 6 Blocked · 27
-Planned · 2 Backlog. **108 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
-— **not the two-digit pattern, see the note below** — last **2026-10-29T11:05Z**
-(Thursday intake; **T-105 to T-108 added**, and **five descriptions corrected:
-T-64, T-82, T-89, T-91 and T-104 all said something this run proved wrong**).
-**43 of the 108 rows are Awaiting Owner.** **Thirteen rows are Critical and
-open**, up one: **T-105, an approved-pending reply that would chase a supplier
-who already answered.** **Two sessions wrote this register today** — OL-0073
-re-pointed **T-37, T-64 and T-66 at A-21** when **A-20 was deferred** and
-recorded **A-19 as Option C on T-71**; OL-0074 added T-105 to T-108 and
-corrected the five descriptions. **Both writes are here: the approval column is
-OL-0073's, the titles are OL-0074's, and neither overwrote the other.**
-**Approval packets pending fell from nine to seven.**
+In Progress · **3 Awaiting Approval** · **43 Awaiting Owner** · 6 Blocked · 27
+Planned · 2 Backlog. **109 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
+— **not the two-digit pattern, see the note below** — last **2026-10-29T11:40Z**
+(Thursday daily brief; **T-109 added**, after the Thursday intake added **T-105
+to T-108**, and **five descriptions corrected: T-64, T-82, T-89, T-91 and T-104
+all said something this run proved wrong**). **43 of the 109 rows are Awaiting
+Owner.** **Thirteen rows are Critical and open**, up one: **T-105, an
+approved-pending reply that would chase a supplier who already answered.**
+**Three runs wrote this register today** — OL-0073 re-pointed **T-37, T-64 and
+T-66 at A-21** when **A-20 was deferred** and recorded **A-19 as Option C on
+T-71**; OL-0074 added T-105 to T-108 and corrected five descriptions; **OL-0075
+added T-109 and rewrote T-73 and T-91 to carry A-19's shape-and-thread-ID
+form.** **Both writes are here: the approval column is OL-0073's, the titles are
+OL-0074's, and neither overwrote the other.** **Approval packets pending went
+nine → seven when the owner answered A-19 and A-20, then → eight when OL-0075
+raised A-24 against its own earlier push.** **62 of the 89 open rows are past
+due — and all six of today's increase came from the date advancing, not from new
+work:** yesterday's register, scored mechanically against today's date, also
+gives 62, and **none of the five rows added today is overdue.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

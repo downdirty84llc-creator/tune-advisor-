@@ -51,13 +51,14 @@ and actual result.
 | A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                         | T-95                               |
 | A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
 
-**Eight packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23
-and A-24.** **A-24 was raised on 2026-10-29 by the run that caused it** — the
-intake published a declined-payment amount on a reading of A-19 that was wrong,
-corrected its own two files within the hour, and **raised a packet for the ten it
-may not edit on its own judgement.** **A-23 was added to this board in the same write as its packet** — the
-first time since the 2026-10-12 note that a packet and its row have landed
-together, which is what the thirteen counts below were asking for.
+**Eight packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23 and
+A-24.** **A-24 was raised on 2026-10-29 by the run that caused it** — the intake
+published a declined-payment amount on a reading of A-19 that was wrong,
+corrected its own two files within the hour, and **raised a packet for the ten
+it may not edit on its own judgement.** **A-23 was added to this board in the
+same write as its packet** — the first time since the 2026-10-12 note that a
+packet and its row have landed together, which is what the thirteen counts below
+were asking for.
 
 > **Two answered 2026-10-29.** **A-19 — APPROVED, Option C**: record the shape
 > of a cash position, never the figure, with the thread ID that holds it.
@@ -2175,9 +2176,9 @@ format. **APPROVE / APPROVE WITH CHANGES / DEFER / REJECT.**
 customer identity from the append-only log and a sealed packet was itself an
 approval packet, on the reasoning that **editing the historical record is a
 boundary act whoever is right about the content.** Six of the ten files are
-dated briefs, one is the append-only log, one is this file. **An agent
-rewriting what a prior run published, without asking, is the thing A-16 declined
-to allow.**
+dated briefs, one is the append-only log, one is this file. **An agent rewriting
+what a prior run published, without asking, is the thing A-16 declined to
+allow.**
 
 **Business objective** — Bring the record into line with **A-19, Option C, owner
 2026-10-29**, which states that a declined-payment amount **"stays out of every
@@ -2220,13 +2221,13 @@ rather than editing silently.** `docs/growth/` is not touched under any outcome.
 **Cost and cash impact** — None. An hour of agent time.
 
 **Risks and safeguards** — **The main risk is that this achieves less than it
-appears to.** **This repository is public and git retains every version**, so the
-figure stays readable in commit `24cf441` and every commit before it. **A
-redaction changes what the record says now, not what it has already
-published** — and saying otherwise would be the kind of claim this register
-exists to prevent. **The second risk is precedent**: an approved retrospective
-edit makes the next one easier to do without asking, which is why A-16's
-reasoning is quoted rather than summarised.
+appears to.** **This repository is public and git retains every version**, so
+the figure stays readable in commit `24cf441` and every commit before it. **A
+redaction changes what the record says now, not what it has already published**
+— and saying otherwise would be the kind of claim this register exists to
+prevent. **The second risk is precedent**: an approved retrospective edit makes
+the next one easier to do without asking, which is why A-16's reasoning is
+quoted rather than summarised.
 
 **Systems affected** — Ten files on `claude/claude-md-docs-cqvhy6`. No live
 system, no customer, no money.
@@ -2238,8 +2239,8 @@ written to close.
 
 **Success test** — No declined-payment amount appears anywhere in `docs/ops/`;
 each edited file carries a dated note of what was removed and why; the log
-records the edit; and **the brief that caused this still says plainly that it got
-the reading wrong.**
+records the edit; and **the brief that caused this still says plainly that it
+got the reading wrong.**
 
 **Response** — _awaiting owner._ **Affected records** — T-109. **Actual result**
 — _not yet executed._

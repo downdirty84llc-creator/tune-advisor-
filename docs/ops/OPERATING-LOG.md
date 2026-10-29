@@ -7121,4 +7121,138 @@ front of everything A-20's deferral routed through A-21.**
 
 ---
 
-## Next entry: OL-0075
+## OL-0075 — 2026-10-29 · Daily brief: a payout lands, and the run strikes a figure its own last push should not have published
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-29T10:51:49Z**. **Twenty-sixth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`24cf441`** at start, **`1bccef4`** after the protective
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **65
+  tracked files, not 28** — **thirteenth run reporting it**, T-85 step 3.
+- **Sources reached** Google Calendar, read live; the register and approvals
+  file. **Not reached** Stripe, PayPal, bookipay, Square.
+- **New tasks** T-109. **New packets** A-24.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The protective commit carried the run's most valuable work
+
+**OL-0050's repair is normally a skeleton: commit placeholders, then fill
+them.** This run opened by finding a compliance defect in **its own session's
+push from 51 minutes earlier**, and **a fix worth saving is better protection
+than a placeholder**, so the fix went in first at `1bccef4` and the brief was
+written on top. **Thirteenth application of the repair, and the first where the
+protective commit was the point rather than the insurance.**
+
+### A-19 reached CLAUDE.md, and OL-0074 had read it wrong
+
+**`CLAUDE.md` §5 now carries A-19 Option C** and is more explicit than the
+command file OL-0074 worked from: a **"balance, an overdraft amount, a
+declined-payment amount or any account-level figure"** stays out of **every
+file, including the append-only log.**
+
+**OL-0074 published the failed Shopify bill's amount** on the reading that it
+was a vendor's list price rather than an account-level figure. **Wrong, for a
+reason visible in the text: "a declined-payment amount" is named separately from
+"any account-level figure", so the list is broader than an account-level test
+rather than an illustration of one.** A failed bill's amount is the second item
+on that list **whoever was being paid.**
+
+**The rule's stated reason confirms it rather than merely allowing it.** A-19
+exists because such a figure **"describes a distressed"** business while DD84
+pursues SBA 504 financing and this repository is public. **A subscription that
+has failed four times in eight days reads as distress to exactly that reader,
+and the amount is what makes it land.** "A bill payment failed" is neutral; the
+2026-10-27 brief's sentence about the store being unable to collect its
+subscription fee from its owner is not, **and it needed the number.**
+
+**The sharpest part of this is what OL-0074 said about itself.** It wrote that
+the reading was **"stated rather than decided quietly"** and that **"narrowing a
+fresh owner decision by an agent's judgement is precisely how its unwritten
+version went wrong."** **Both sentences were correct, and the entry then did the
+thing they warn against.** **Flagging a judgement call is not declining to make
+one** — and a run that announces its own risk and proceeds anyway has documented
+itself, not restrained itself.
+
+**Fixed:** the 2026-10-29 intake brief and OL-0074, with the figure replaced by
+the shape and thread `1a18264480149222`, **the wrong reading struck rather than
+deleted**, and the illustrative sentence **paraphrased rather than quoted**,
+because quoting it would republish the figure while explaining why it must go.
+
+**Not fixed, deliberately:** **ten files that predate the rule** — six briefs,
+the register, the approvals file and this log, about thirty occurrences. **A-16
+established that redacting the historical record is an approval packet whoever
+is right about the content**, so **A-24** is raised and nothing historical was
+touched. **T-109** carries it. **The `$39.99–$399` digital-product range stays:
+those are revenue figures and A-13 permits them in full.** **`docs/growth/` is
+not touched under any outcome.**
+
+**A-24 states the limit of what it can achieve.** **The repository is public and
+git retains every version**, so the figure stays readable in `24cf441` and
+earlier. **A redaction changes what the record says, not what it has already
+published**, and the packet's cheapest alternative is **to rule A-19 prospective
+and change nothing.**
+
+### Money moved
+
+| Direction | Amount                 | When                 | Status                                                      |
+| --------- | ---------------------- | -------------------- | ----------------------------------------------------------- |
+| **IN**    | **$530.31**            | 2026-10-29T09:17:05Z | **First Shopify payout ever** — T-91                        |
+| **OUT**   | **withheld, A-19**     | 2026-10-28T12:02:51Z | Shopify bill, 4th failure — thread `1a18264480149222`, T-89 |
+| **OUT**   | **not in the receipt** | 2026-10-28T09:52:22Z | Manus renewed on a backup card — T-103                      |
+
+**First money in for 5.48 days**, and **it is money already earned on 10-23
+finishing its journey rather than new work sold.** **Week to date: $1,700.00
+charged, $1,680.31 received, $1,150 of it still unattributable to any job.**
+**The fifth Shopify attempt falls 2026-10-30, the day of the cash review.**
+
+### The diary, and a claim that is now half wrong
+
+**Calendar read live: empty through 2026-11-06. Sixth consecutive empty check.**
+
+**This brief has said five times that no job can be margined. That is now half
+wrong.** Order #1001's **revenue side is fully known** — charged, fee, tax,
+payout, retained, all read from the live store. **Its cost side is empty**: the
+HP Tuners credit spend is unread (**T-94**) and **no calendar entry records how
+long the work took.** **The first DD84 job with a verified top line still has no
+bottom line, and the empty diary is why.**
+
+### Counts, and a delta that is not what it looks like
+
+**109 tasks** · 43 Awaiting Owner · **62 of 89 open rows past due** · **thirteen
+Critical and open**, up one on T-105.
+
+**Yesterday was 56 of 84 past due. All six of the increase came from the date
+advancing** — **yesterday's register, scored mechanically against today's date,
+also gives 62.** **None of this run's five new rows is overdue.** **The queue
+did not get worse; the calendar moved.** Recorded because "overdue up six" would
+have been true and misleading in the same breath.
+
+### Eight packets, and two answered yesterday
+
+**A-07, A-10, A-17, A-18, A-21, A-22, A-23, A-24.** **A-19 and A-20 were
+answered by the owner on 2026-10-29** — the first decisions since 2026-10-21 —
+and **A-20's deferral makes A-21 the single gate in front of three
+counterparties.** **A-23 is the only one of the eight with nothing wrong with
+it.**
+
+### What was withheld
+
+Under §5 and A-19: **the Shopify bill's amount** (shape and thread ID given
+instead), the Manus charge (**not in the receipt, not estimated**), three
+customers' names and addresses, the supplier's company and representative, card
+digits and an account number, and the bank statement's contents — **reported as
+needing a secure login rather than as withheld, because it was never read.**
+
+### The honest summary
+
+**Nothing this session did today earned DD84 a dollar or answered a customer.**
+**$530.31 arrived on its own, from work sold six days ago.** **No new enquiry
+has arrived in eight runs.** **What changed is that three claims this record had
+been repeating turned out false** — the supplier was not silent, the datalog was
+not unread, the Shopify instrument was not a card — **and all three were found
+by fetching the thing instead of trusting the stored note.**
+
+---
+
+## Next entry: OL-0076
