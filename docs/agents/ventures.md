@@ -82,17 +82,17 @@ what they do next. Ask for it before commissioning any further marketing work.
 
 ### Revenue — the single most important fact in this file
 
-| Metric                          | Value                                                                                                                               | Verified   |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| All-time revenue                | **$3,507.86**                                                                                                                       | 2026-08-03 |
-| Paid invoices                   | 10                                                                                                                                  | 2026-08-03 |
-| Distinct customers              | **3**                                                                                                                               | 2026-08-03 |
-| Average invoice                 | $350.79                                                                                                                             | 2026-08-03 |
-| Largest invoice                 | $1,287.50                                                                                                                           | 2026-08-03 |
-| Concentration                   | One customer = 67% (6 invoices); two customers = 99%                                                                                | 2026-08-03 |
-| ~~**Last payment**~~            | ~~2025-09-12~~ → **2026-10-22**                                                                                                     | 2026-10-23 |
-| ~~Shopify orders, all time~~    | ~~**0**~~ → **1** — order #1001, **$550.00, PAID, FULFILLED**, placed 2026-10-23T11:56:43Z                                          | 2026-10-26 |
-| **Payments since the baseline** | **+$1,700.00** — $450.00 (10-22, Zelle, "tune") · **$550.00 (10-23, Shopify order #1001)** · $700.00 (10-24, Zelle, "mecanic tune") | 2026-10-26 |
+| Metric                          | Value                                                                                                                                        | Verified   |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| All-time revenue                | **$3,507.86**                                                                                                                                | 2026-08-03 |
+| Paid invoices                   | 10                                                                                                                                           | 2026-08-03 |
+| Distinct customers              | **3**                                                                                                                                        | 2026-08-03 |
+| Average invoice                 | $350.79                                                                                                                                      | 2026-08-03 |
+| Largest invoice                 | $1,287.50                                                                                                                                    | 2026-08-03 |
+| Concentration                   | One customer = 67% (6 invoices); two customers = 99%                                                                                         | 2026-08-03 |
+| ~~**Last payment**~~            | ~~2025-09-12~~ → **2026-10-22**                                                                                                              | 2026-10-23 |
+| ~~Shopify orders, all time~~    | ~~**0**~~ → **1** — order #1001, **$550.00 charged / $530.31 paid out / $499.18 retained**, placed 2026-10-23T11:56:43Z                      | 2026-10-29 |
+| **Payments since the baseline** | **+$1,700.00 charged, +$1,680.31 received** — $450.00 (10-22, Zelle) · **$550.00 charged / $530.31 paid out 10-29** · $700.00 (10-24, Zelle) | 2026-10-29 |
 
 **The drought ended on 2026-10-22, after 405 days — and then it rained.**
 **$1,700.00 arrived in four days**: $450.00 on 10-22 (Zelle, memo "tune"),
@@ -106,13 +106,24 @@ against a job** — **T-88** and **T-92** carry them. **$700.00 matches no
 approved rung**, sitting between the $650 Performance Tune and $749 in-person
 commissioning.
 
-**Derived, and labelled as derived: all-time payments received are $5,207.86**
-($3,507.86 from the 2026-08-03 baseline **plus $1,700.00 collected between
-2026-10-22 and 2026-10-24**). **The figures come from different sources — a bank
-notification for two of them, Shopify for the third — and have not been
-reconciled against each other**, because no payment system is reachable. **The
-invoice count stays at 10:** two of the three were bank transfers and the third
-is a storefront order, and **none of them is an invoice.**
+**Derived, and labelled as derived: all-time payments _charged_ are $5,207.86**
+($3,507.86 from the 2026-08-03 baseline **plus $1,700.00 charged between
+2026-10-22 and 2026-10-24**). **Charged is not received, and from 2026-10-29 the
+difference is measurable:** the storefront order charged **$550.00** and paid
+out **$530.31**, so **all-time payments received are $5,188.17** — and **$31.13
+of that is sales tax collected on behalf of Georgia and a county**, not DD84's
+money, leaving **$5,157.04 retained** on the same derivation.
+
+**All three figures share the baseline's unknown basis and must not be presented
+as reconciled.** $3,507.86 was read on 2026-08-03 from a system this session
+cannot reach, on a basis (invoiced, collected, or net) that **is not recorded
+anywhere** — so adding a verified-net figure to it produces a number whose first
+four digits rest on an unverified one. **The $499.18 retained on order #1001 is
+the only revenue figure in this registry that has been traced end to end**:
+charged, fee, tax and payout, each read from the live store this run and
+agreeing to the cent. **The invoice count stays at 10:** two of the three recent
+payments were bank transfers and the third a storefront order, and **none of
+them is an invoice.**
 
 **The rest of this table is 81 days old and breaches the 30-day rule.** This run
 re-verified only the last-payment date and the Shopify order count. **Average
@@ -179,16 +190,49 @@ note below.
 | Diagnostic | Tune-or-Mechanical Diagnostic Review — GREEN/YELLOW/RED outcome      | $149 / $199        | 2026-10-22     |
 | Diagnostic | Bad or Unknown Tune Evaluation — third-party calibration             | $149               | 2026-10-22     |
 | Diagnostic | Check Engine / No-Tune Diagnostic Deposit                            | $75                | 2026-10-22     |
-| Core       | GM, Ford, Dodge/Mopar custom ECU tuning                              | $350 / $450 / $650 | 2026-10-22     |
+| Core       | GM, Ford, Dodge/Mopar custom ECU tuning                              | $350 / $450 / $650 | **2026-10-29** |
 | Core       | Toyota/Lexus performance tuning (+$99 7-day device rental)           | $400–$749          | 2026-10-22     |
 | Core       | Holley EFI Tuning Services — remote and in-person                    | $275–$599          | 2026-10-22     |
 | Adjacent   | Wiring & EFI power diagnostics                                       | $75 / $125 / $250  | 2026-10-22     |
 | Adjacent   | Holley EFI fuse-blowing & power-loss diagnostic                      | $125 / $250 / $350 | 2026-10-22     |
-| Adjacent   | Dodge/Mopar PCM unlock, removal, reinstall                           | $75–$300           | not re-checked |
+| Adjacent   | Dodge/Mopar PCM unlock, removal, reinstall                           | $75–$300           | **2026-10-29** |
 | Recurring  | Performance Shop Tuning Support Session                              | $150 / $250 / $350 | 2026-10-22     |
 | Digital    | Holley EFI calibrations, LS swap toolkit, cam-swap pack, calculators | $39.99–$399        | not re-checked |
 | Licence    | Professional Shop Licence — GM toolkit                               | $399               | not re-checked |
 | Merch      | Print-on-demand apparel and decor                                    | $18.77–$64.68      | not re-checked |
+
+#### Correction, 2026-10-29 — the ladder's list prices are not what anybody paid
+
+**Order #1001 is the only time any rung on this ladder has been bought through
+checkout, and it did not transact at list.** Read from the live store:
+
+| SKU                       | Listed   | Actually paid | Why                                                                  |
+| ------------------------- | -------- | ------------- | -------------------------------------------------------------------- |
+| `DD84-MOPAR-TUNE-BASIC`   | **$350** | **$250**      | **$100 discount code `CREDITS100`**, allocated entirely to this line |
+| `DD84-PCM-UNLOCK-INSTALL` | **$300** | **$300**      | No discount                                                          |
+
+**Two things follow, and the second is the one that will cost money if it is
+missed.**
+
+**The $350 Mopar rung is real but has never been collected.** **A-21 recommends
+$350 for T-64 on the stated grounds that it is the only rung the evidence
+supports.** That is still true of the _catalogue_, and **the single real sale of
+that SKU went out at $250.** **Whether `CREDITS100` is a standing code, a launch
+promotion or a one-off goodwill credit is not knowable from the order** and is
+**not guessed at** — but **if it is routine, the rung is $250 and A-21's $699
+total for T-37 and T-64 is optimistic by up to $100.** **T-107 asks the owner
+for that one sentence.**
+
+**Every price on this ladder is tax-inclusive, which the ladder never said.**
+Order #1001 carries `taxesIncluded: true`, with **Georgia State Tax at 4% and a
+county tax at 2%** — **$31.13 of the $550.00 charged.** So **a $350 rung yields
+$330.19 of service revenue** before any processing fee, and **the 6% was never a
+margin this business had.** **$31.13 was collected on behalf of a state and a
+county; nothing in this record says it has been registered for or remitted, and
+no position is taken on whether it must be. T-106.**
+
+**Nothing about the customer is recorded here**, and **whether the jurisdiction
+follows the buyer or the business is not established from the order data.**
 
 #### Corrections, 2026-10-22 — read before quoting anything
 

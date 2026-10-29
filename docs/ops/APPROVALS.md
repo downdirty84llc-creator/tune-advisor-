@@ -23,42 +23,48 @@ and actual result.
 
 ## Status board
 
-| ID   | Decision                                                                    | Class | Status                      | Covers                             |
-| ---- | --------------------------------------------------------------------------- | ----- | --------------------------- | ---------------------------------- |
-| S-01 | Standing approval for local repository work                                 | A/B   | **Approved** (standing)     | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
-| A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition                    | B     | **Approved**                | T-01 T-02 T-03                     |
-| A-02 | Correct drifted documentation and the legal-review flags                    | B     | **Approved**                | T-04 T-05                          |
-| A-03 | Exclude demo accounts from owner-facing revenue reporting                   | E-adj | **Approved**                | T-06 T-12                          |
-| A-04 | Correct the annual MRR arithmetic                                           | E-adj | **Approved**                | T-07                               |
-| A-05 | Create Stripe products and prices; run the payment matrix                   | E + F | **Approved**                | T-11                               |
-| A-06 | Commission legal review of the legal documents                              | G     | **Approved**                | T-13                               |
-| A-07 | Subscribe to an upload virus-scanning service                               | E + F | **Pending**                 | T-14                               |
-| A-08 | Build the operations control plane                                          | B     | **Approved**                | T-18 T-19 T-20 T-21 T-22           |
-| A-09 | Merge the two agent branches and converge the schedule                      | B     | **Approved**                | T-23 T-24 T-25 T-26                |
-| A-10 | Give the Routines a repository to write to                                  | B     | **Pending**                 | T-27                               |
-| A-11 | Consolidate onto the Ledger repository                                      | F     | **Approved, narrowed**      | T-28 T-29                          |
-| A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**                | T-30                               |
-| A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed) | T-32, blocks T-29                  |
-| A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                | T-27                               |
-| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Approved** (both sent)    | T-38 T-39                          |
-| A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)     | T-48                               |
-| A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                 | T-51                               |
-| A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **Pending** (superseded)    | T-64                               |
-| A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Pending**                 | T-71                               |
-| A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                 | T-37 T-64 T-66                     |
-| A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                 | T-37 T-64 T-84                     |
-| A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending**                 | T-82                               |
-| A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                 | T-95                               |
+| ID   | Decision                                                                    | Class | Status                              | Covers                             |
+| ---- | --------------------------------------------------------------------------- | ----- | ----------------------------------- | ---------------------------------- |
+| S-01 | Standing approval for local repository work                                 | A/B   | **Approved** (standing)             | T-08 T-09 T-10 T-15 T-16 T-24 T-25 |
+| A-01 | Adopt the DD84 spec, CLAUDE.md and the Torque definition                    | B     | **Approved**                        | T-01 T-02 T-03                     |
+| A-02 | Correct drifted documentation and the legal-review flags                    | B     | **Approved**                        | T-04 T-05                          |
+| A-03 | Exclude demo accounts from owner-facing revenue reporting                   | E-adj | **Approved**                        | T-06 T-12                          |
+| A-04 | Correct the annual MRR arithmetic                                           | E-adj | **Approved**                        | T-07                               |
+| A-05 | Create Stripe products and prices; run the payment matrix                   | E + F | **Approved**                        | T-11                               |
+| A-06 | Commission legal review of the legal documents                              | G     | **Approved**                        | T-13                               |
+| A-07 | Subscribe to an upload virus-scanning service                               | E + F | **Pending**                         | T-14                               |
+| A-08 | Build the operations control plane                                          | B     | **Approved**                        | T-18 T-19 T-20 T-21 T-22           |
+| A-09 | Merge the two agent branches and converge the schedule                      | B     | **Approved**                        | T-23 T-24 T-25 T-26                |
+| A-10 | Give the Routines a repository to write to                                  | B     | **Pending**                         | T-27                               |
+| A-11 | Consolidate onto the Ledger repository                                      | F     | **Approved, narrowed**              | T-28 T-29                          |
+| A-12 | Accept the unremovable send Routine as a recorded risk                      | C-adj | **Accepted**                        | T-30                               |
+| A-13 | Decide the visibility of a public repository holding DD84's revenue figures | G     | **Approved** (not executed)         | T-32, blocks T-29                  |
+| A-14 | Route the Routines through a repository-holding session                     | B     | **Approved**                        | T-27                               |
+| A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Approved** (both sent)            | T-38 T-39                          |
+| A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)             | T-48                               |
+| A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                         | T-51                               |
+| A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **Pending** (superseded)            | T-64                               |
+| A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Pending**                         | T-71                               |
+| A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                         | T-37 T-64 T-66                     |
+| A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                         | T-37 T-64 T-84 T-107               |
+| A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending** (premise false — DEFER) | T-82 T-105                         |
+| A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                         | T-95                               |
 
 **Nine packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20, A-21,
-A-22 and A-23.** **A-23 was added to this board in the same write as its
-packet** — the first time since the 2026-10-12 note that a packet and its row
-have landed together, which is what the thirteen counts below were asking for.
-A-18 is pending but **superseded twice over** — the customer answered all three
-of its questions four hours after it was raised, and **A-20 now carries the
-redrafted version of that same message.** Torque's recommendation on A-18 is
-REJECT, and the reasoning is in its own Actual-result block. **Answering A-20
-settles both.**
+A-22 and A-23.** **Two of the nine now carry an agent recommendation against
+their own text: A-18 (REJECT, superseded) and A-22 (DEFER — 2026-10-29 found
+that the supplier it chases replied twice and both replies are unread).** **A-21
+has not been withdrawn but has gained a fact it was raised without: the $350
+rung it recommends has only ever sold at $250, after a discount code.** **A-23
+is the only packet of the nine with nothing wrong with it and nothing to fill
+in.** **A-23 was added to this board in the same write as its packet** — the
+first time since the 2026-10-12 note that a packet and its row have landed
+together, which is what the thirteen counts below were asking for. A-18 is
+pending but **superseded twice over** — the customer answered all three of its
+questions four hours after it was raised, and **A-20 now carries the redrafted
+version of that same message.** Torque's recommendation on A-18 is REJECT, and
+the reasoning is in its own Actual-result block. **Answering A-20 settles
+both.**
 
 > **Twelfth instance, 2026-10-23 — and this one is mine.** **A-22 was raised on
 > 2026-10-22 with no row on this board**, by the same run that had just finished
@@ -1966,8 +1972,36 @@ goodwill DD84 asked for first.
 **Success test** — The thread shows a DD84 reply, and the next move in the
 relationship is the owner's buy-in decision rather than another chase.
 
-**Response** — _awaiting owner._ **Affected records** — T-82. **Actual result**
-— _not yet executed._
+**Response** — _awaiting owner._ **Affected records** — T-82, T-105. **Actual
+result** — _not executed, and Torque's recommendation is now **DEFER**._
+
+> **2026-10-29 — this packet's premise is false, and the packet is left standing
+> so that the error stays visible.**
+>
+> **A-22 exists to chase a supplier who has not replied. He replied twice.** The
+> thread, fetched on 2026-10-29: the supplier wrote on **2026-10-04T20:33:02Z**
+> and again on **2026-10-21T01:06:06Z**, and **both messages are unread** —
+> 24.57 days and 8.39 days. **DD84's chase of 2026-10-05, the one this packet
+> proposes to follow up, went out 14.65 hours after the first unread reply.**
+>
+> **Every statement of fact in the packet above about the supplier's silence is
+> wrong**, and the draft's line admitting the delay is DD84's is wrong in the
+> other direction too — **the delay is DD84's, but it is a reading delay, not a
+> replying delay.**
+>
+> **Why it was missed.** Each run aged this thread from DD84's own chase rather
+> than from the thread's latest message. **The arithmetic was right and the
+> anchor was wrong**, and the Gmail payload that would have shown a newer
+> inbound message is exactly what **T-102** took away.
+>
+> **Recommendation: DEFER, not REJECT.** A reply to this supplier is still owed;
+> **it cannot be written until someone reads what he said**, and nobody has.
+> **No replacement draft is offered** — drafting a reply to an unread message is
+> the error being corrected, and **no session here can open the thread's
+> contents on the owner's behalf.** The sequence is **read, then draft.**
+>
+> **The packet body is left exactly as written**, per this file's rule that an
+> agent edits only Response and Actual result. **T-105** carries it.
 
 ---
 

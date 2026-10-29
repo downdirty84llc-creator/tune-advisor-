@@ -6746,4 +6746,175 @@ collected this week and not one hour of it in the diary.**
 
 ---
 
-## Next entry: OL-0073
+## OL-0073 — 2026-10-29 · A supplier answered eight days ago, and the packet waiting to be sent would chase him anyway
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at **2026-10-29T10:20Z**.
+  **Twenty-fifth scheduled firing to reach a session with the repository
+  attached.** Class A throughout.
+- **Checkout** tip **`94635e0`** at start, **`6d0d224`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **64
+  tracked files, not 28** — twelfth run reporting it, T-85 step 3.
+- **Window** since OL-0071, **2026-10-28T10:20Z → 2026-10-29T10:20Z**.
+- **Counts** **28 threads of an estimated 28** · 7 actionable · 21 no-action ·
+  **0 new leads** (eighth consecutive run) · **0 drafts** · **4 new tasks**
+  (T-105 to T-108) · **5 task descriptions corrected** · **1 pending packet
+  recommended for DEFER.**
+- **Sources reached** Gmail; **Shopify, read live and controlling.** **Not
+  reached** Superhuman Mail, Stripe, PayPal, bookipay, Square, and **Shopify
+  Payments** (scope `read_shopify_payments` denied).
+- **Eleven threads fetched individually** because T-102 is Accepted Risk and the
+  list supplies neither dates nor read state.
+- **Operator** Claude (agent), cqvhy6 session
+
+### The finding: a reply nobody opened, and a chase drafted on its absence
+
+The supplier thread, fetched this run rather than carried forward:
+
+| When                     | Who          | State      |
+| ------------------------ | ------------ | ---------- |
+| 2026-09-26T11:19:29Z     | DD84 sent    | —          |
+| **2026-10-04T20:33:02Z** | **Supplier** | **UNREAD** |
+| 2026-10-05T11:11:48Z     | DD84 chased  | —          |
+| **2026-10-21T01:06:06Z** | **Supplier** | **UNREAD** |
+
+**The supplier has replied twice and neither reply has been opened** — 24.57
+days and 8.39 days. **DD84's chase went out 14.65 hours after the first unread
+reply.**
+
+**For three weeks every run here aged this thread from DD84's own 2026-10-05
+chase** (23.96 days today) **and reported escalating silence.** The age was
+arithmetically correct and computed from the wrong message. **A-22 is a holding
+reply whose entire premise is that nobody answered; the premise is false, and
+sending it would follow up on correspondence sitting unread.** Recommended
+**DEFER**, recorded as **T-105** (Critical).
+
+**A-22's packet body was not edited** — `APPROVALS.md`'s rule is that an agent
+writes only **Response** and **Actual result** — so the brief carries the
+correction and the register carries the row. **The packet and its refutation now
+sit in the same record, which is the point of the record.**
+
+**Neither reply was opened by this run either.** Metadata establishes that the
+messages exist, when they arrived and that they are unread; **what the supplier
+said is not known and was not guessed at.** Reading it is the owner's, and
+**drafting a reply to an unread message is precisely the error being
+corrected.**
+
+### Why this one was findable today and not last week
+
+**T-102 is the reason it was ever missed.** The thread list used to return
+`date` and `labelIds` for every entry, which is how a run would notice a newer
+inbound message. **When that payload degraded, runs kept ageing from the
+timestamps already in the register — and a stored timestamp cannot tell you a
+newer message arrived.** The defect did not create a wrong number; **it removed
+the only cheap way to discover the number was attached to the wrong message.**
+
+**What changed today is method, not instrument:** eleven threads were fetched
+individually instead of two to five. **It cost more and it found a Critical
+error, which settles whether the extra cost is worth it.**
+
+### Order #1001, traced end to end — the first DD84 sale whose economics are known
+
+**The first Shopify payout landed at 2026-10-29T09:17:05Z: $530.31.** Read live
+from the store, it reconciles to the cent:
+
+| Line                              | Amount        |
+| --------------------------------- | ------------- |
+| Charged                           | **$550.00**   |
+| Included GA 4% + county 2% tax    | **−$31.13**   |
+| Processing fee                    | **−$19.69**   |
+| **Paid out** (= $550.00 − $19.69) | **$530.31**   |
+| **Retained**                      | **$499.18**   |
+| Checkout → cash                   | **5.89 days** |
+
+**The register has carried $550.00 in six briefs. The business keeps $499.18** —
+**$50.82, or 9.24%, less.** Corrected in `ventures.md` this run, together with
+the derived all-time figure, which is now stated three ways (**charged $5,207.86
+· received $5,188.17 · retained $5,157.04**) with the explicit warning that
+**all three rest on a 2026-08-03 baseline whose basis is not recorded
+anywhere**, so **only the $499.18 has actually been traced.**
+
+**The fee rate name is `paypal_domestic_card_not_present` at 3.49%**; 3.49% of
+$550.00 is $19.195 against a $19.69 charge, **leaving $0.495 consistent with a
+fixed component of about $0.49** — arithmetic from two live figures, labelled as
+arithmetic. **Effective 3.58% gross**, where a standard 2.9% + $0.30 card rate
+would have been $16.25. **$3.44 on this order; a structural per-order cost the
+register has never had a number for until now.**
+
+**Two further things the live store settled that the mail could not:**
+
+- **The $100 `CREDITS100` discount landed entirely on the Mopar tune line**, so
+  `DD84-MOPAR-TUNE-BASIC` **listed at $350 and sold at $250.** **A-21 recommends
+  $350 for T-64 and is now a decision with a fact attached rather than without
+  one.** **T-107.**
+- **`FULFILLED` was set by automation 2 and 3 seconds after checkout** —
+  fulfillments at 11:56:45Z and 11:56:46Z against an order created 11:56:43Z,
+  while **the real delivery was the owner emailing a corrected file on
+  2026-10-26.** **T-91's "FULFILLED is a flag, not evidence" is now verified
+  with timestamps, and it generalises to every service SKU in the store.
+  T-108.**
+
+### Corrections this run made to its own side of the record
+
+**Five register descriptions said something this run disproved.** All five
+rewritten, none quietly:
+
+| Task      | Said                                       | Says now                                              |
+| --------- | ------------------------------------------ | ----------------------------------------------------- |
+| **T-82**  | "supplier has chased twice"                | **the supplier replied 10-21 and nobody opened it**   |
+| **T-64**  | "customer's log unread"                    | **log now READ, still unanswered** (15.78d)           |
+| **T-89**  | "the retry will hit the same stopped card" | **primary method is PayPal, not a card** — 4 failures |
+| **T-91**  | "rung unreconciled"                        | **$530.31 paid out; FULFILLED was automation**        |
+| **T-104** | "60-second windows, hourly"                | **60s, 61s, 29s; not hourly, not fixed**              |
+
+**T-89's is the one with teeth.** Shopify's fourth-failure notice names the
+method for the first time: **"Primary payment method PayPal … failed."** Three
+runs speculated about the stopped debit card and **yesterday's intake proposed a
+card schedule as "a single cause behind five failures," three Shopify bills
+among them.** **A card being off cannot fail a PayPal charge.** The hypothesis
+was offered as testable, **it was tested inside a day, and it is wrong about the
+Shopify bills.** The fifth attempt falls **2026-10-30**, tomorrow, the day of
+the cash review.
+
+**T-104's correction is the second in two days on the same evidence.** Today's
+window was **29 seconds** (on 08:51:45Z, off 08:52:14Z), against 60 and 61
+seconds yesterday, and **not on the hour.** Yesterday's "a person does not do
+that" was drawn from two points; **the third does not fit, and a varying width
+points toward a deliberate act each time rather than a script.** **What survives
+is that the card is opened and shut inside a minute, repeatedly.** **What does
+not is hourly, fixed-width, or necessarily automated** — and the earlier wording
+is struck rather than softened.
+
+### Two instrument notes
+
+**Shopify's own fields disagree about the discount.** On the Mopar line,
+`discountAllocations` reports **$100.00 allocated** and `discountedTotalSet`
+reports **$350.00**. **Controlling source: `discountAllocations`, corroborated
+independently by the tax allocation** — that line's tax is $14.15, which is 6%
+inclusive of **$250.00**. **Recorded because `discountedTotalSet` is the obvious
+field to read and it is the wrong one here.**
+
+**The recount pattern's failure got louder.** `^\| T-\d\d \|` undercounted by
+three on 2026-10-28; after T-105 to T-108 widened the ID column again, **it now
+matches nothing at all** and would report an empty register. Noted in
+`TASK-REGISTER.md` beside the counts.
+
+### What was withheld
+
+Under §5: the storefront customer's name and address, two other customers' names
+and addresses, the supplier's company and representative, **two card digit-sets
+and an account number**, the contents of a monthly bank statement, credit-score
+figures, a notice concerning a minor, and the store's admin identifiers. **The
+tax jurisdictions are named** — Georgia and a county — because **the
+collected-tax finding is unstateable without them**, and **nothing about the
+customer is recorded.**
+
+### Counts after this run
+
+**108 tasks** · 43 Awaiting Owner · **13 Critical and open**, up one on T-105.
+**Nine approval packets still pending, and one of them is now recommended for
+DEFER by the run that found the error in it.**
+
+---
+
+## Next entry: OL-0074
