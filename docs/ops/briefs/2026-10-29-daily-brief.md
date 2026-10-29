@@ -28,7 +28,8 @@ _separately_ from any account-level figure, so the list is broader than an
 account-level test, not an illustration of one.
 
 **Struck from the brief and from OL-0074**, replaced with the shape and thread
-`1a18264480149222`. **Ten older files still carry it and were not touched** —
+`1a18264480149222`. **Twelve older files still carry it — nine briefs, the
+register, the log and `ventures.md`, 38 occurrences — and were not touched** —
 editing the historical record is an approval packet under **A-16**'s reasoning,
 so **A-24** is raised instead. **The removal is partial by construction: this
 repository is public and git retains every version**, so the figure stays

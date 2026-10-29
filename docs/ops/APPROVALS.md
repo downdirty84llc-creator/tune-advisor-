@@ -2193,13 +2193,37 @@ from "any account-level figure" — **and the intake's own brief and OL-0074 wer
 corrected the same hour.** The ten remaining files predate the rule by between
 one and twenty days.
 
-**Files affected** — six briefs (`2026-10-09-cash-review`,
-`2026-10-09-inbox-intake`, `2026-10-23-cash-review`, `2026-10-23-daily-brief`,
-`2026-10-23-inbox-intake`, `2026-10-26-daily-brief`, `2026-10-26-inbox-intake`,
-`2026-10-27-daily-brief`, `2026-10-27-inbox-intake`), plus `TASK-REGISTER.md`,
-`APPROVALS.md` and `OPERATING-LOG.md`. **Roughly 30 occurrences.** **The
-`$39.99–$399` digital-product range is untouched: those are revenue figures and
-A-13 permits them in full.**
+**Files affected — counted mechanically, and the first version of this packet
+got it wrong.** It said "six briefs … ten files … roughly 30 occurrences", named
+`APPROVALS.md`, and **omitted `ventures.md`.** **Corrected within the hour, by
+matching `$39` while excluding `$39.99` and `$399`:**
+
+| File                                | Occurrences |
+| ----------------------------------- | ----------- |
+| `OPERATING-LOG.md`                  | **10**      |
+| `briefs/2026-10-26-daily-brief.md`  | 5           |
+| `briefs/2026-10-23-cash-review.md`  | 4           |
+| `briefs/2026-10-27-inbox-intake.md` | 4           |
+| `TASK-REGISTER.md`                  | 4           |
+| `briefs/2026-10-27-daily-brief.md`  | 3           |
+| `briefs/2026-10-23-daily-brief.md`  | 2           |
+| `docs/agents/ventures.md`           | **2**       |
+| `briefs/2026-10-09-cash-review.md`  | 1           |
+| `briefs/2026-10-09-inbox-intake.md` | 1           |
+| `briefs/2026-10-23-inbox-intake.md` | 1           |
+| `briefs/2026-10-26-inbox-intake.md` | 1           |
+
+**Nine briefs plus three other files — twelve in all, 38 occurrences.**
+**`APPROVALS.md` carries none** and is not edited. **`ventures.md` sits outside
+`docs/ops/` and the first list missed it**, which is why the success test below
+names paths rather than one directory. **The two 2026-10-29 briefs carry none:
+this run corrected them already.**
+
+**The `$39.99–$399` digital-product range is untouched**, in `ventures.md` and
+everywhere else: **those are revenue figures and A-13 permits them in full.**
+That is also why the count excludes them rather than grepping the figure plainly
+— **a naive match reports 17 files, and this packet would have been proposing to
+redact DD84's own price list.**
 
 **Recommended plan** — Replace each occurrence with the shape plus the thread
 ID, leave a dated strike-through note in each file saying what was removed and
@@ -2237,10 +2261,12 @@ lender — currently sees a business whose cheapest recurring bill failed four
 times in eight days, with the amount named.** That is the exposure A-19 was
 written to close.
 
-**Success test** — No declined-payment amount appears anywhere in `docs/ops/`;
-each edited file carries a dated note of what was removed and why; the log
-records the edit; and **the brief that caused this still says plainly that it
-got the reading wrong.**
+**Success test** — **a match for `$39` excluding `$39.99` and `$399` returns
+zero across `docs/ops/` and `docs/agents/ventures.md`**, while **the
+digital-product range still reads `$39.99–$399` in `ventures.md`**; each edited
+file carries a dated note of what was removed and why; the log records the edit;
+and **the brief that caused this still says plainly that it got the reading
+wrong.**
 
 **Response** — _awaiting owner._ **Affected records** — T-109. **Actual result**
 — _not yet executed._

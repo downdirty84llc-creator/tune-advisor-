@@ -7078,8 +7078,8 @@ agent's reading, announced that it had, and published the figure anyway.
 is the clearest instance of that distinction in this log.
 
 **Scope of the fix, and what it does not reach.** **This entry and the brief are
-corrected.** **Ten earlier files carry the same figure** — six briefs, the
-register, the approvals file and this log — and **editing those is editing the
+corrected.** **Twelve earlier files carry the same figure** — nine briefs, the
+register, this log and `ventures.md` — and **editing those is editing the
 historical record, which A-16 established is an approval packet**, so **A-24 was
 raised and nothing historical was touched.** **The removal is also partial by
 construction: the repository is public and git retains every version**, so the
@@ -7179,13 +7179,16 @@ the shape and thread `1a18264480149222`, **the wrong reading struck rather than
 deleted**, and the illustrative sentence **paraphrased rather than quoted**,
 because quoting it would republish the figure while explaining why it must go.
 
-**Not fixed, deliberately:** **ten files that predate the rule** — six briefs,
-the register, the approvals file and this log, about thirty occurrences. **A-16
-established that redacting the historical record is an approval packet whoever
-is right about the content**, so **A-24** is raised and nothing historical was
-touched. **T-109** carries it. **The `$39.99–$399` digital-product range stays:
-those are revenue figures and A-13 permits them in full.** **`docs/growth/` is
-not touched under any outcome.**
+**Not fixed, deliberately:** **twelve files that predate the rule** — nine
+briefs, the register, this log and `ventures.md`, **38 occurrences**, counted
+mechanically. **A-24's own first list was wrong** — it said six briefs and ten
+files, named `APPROVALS.md`, which carries none, and missed `ventures.md`, which
+carries two — **and was corrected within the hour.** **A-16 established that
+redacting the historical record is an approval packet whoever is right about the
+content**, so **A-24** is raised and nothing historical was touched. **T-109**
+carries it. **The `$39.99–$399` digital-product range stays: those are revenue
+figures and A-13 permits them in full.** **`docs/growth/` is not touched under
+any outcome.**
 
 **A-24 states the limit of what it can achieve.** **The repository is public and
 git retains every version**, so the figure stays readable in `24cf441` and

@@ -129,10 +129,11 @@ bills.** T-104 is narrowed accordingly.
 
 **The store is not flagged for closure right now** — `criticalUserMessage` is
 empty, read live, plan **Basic** — and **the failing bill is that plan's monthly
-subscription**, which is the cheapest recurring commitment this business has. But
-**Shopify's notice itself says to add a backup "so your store stays open if this
-happens again"**, and **the store holding DD84's only settled storefront revenue
-cannot collect its own monthly subscription, on the fifth attempt, tomorrow.**
+subscription**, which is the cheapest recurring commitment this business has.
+But **Shopify's notice itself says to add a backup "so your store stays open if
+this happens again"**, and **the store holding DD84's only settled storefront
+revenue cannot collect its own monthly subscription, on the fifth attempt,
+tomorrow.**
 
 ### 4. The Challenger customer's datalog is no longer unread
 
@@ -292,20 +293,21 @@ whoever is being paid.**
 A-19 exists because **"a negative balance describes a distressed"** business
 while DD84 pursues SBA 504 financing. **A subscription that has failed four
 times in eight days reads as distress to exactly that reader — and it is the
-amount that does the work.** "A bill payment failed" is neutral; **the 2026-10-27
-brief's own sentence — that the store cannot collect its subscription fee from
-its owner, with the figure named — is the distress signal, and it needed the
-number to land.** The figure was doing the damage the rule was written to stop.
+amount that does the work.** "A bill payment failed" is neutral; **the
+2026-10-27 brief's own sentence — that the store cannot collect its subscription
+fee from its owner, with the figure named — is the distress signal, and it
+needed the number to land.** The figure was doing the damage the rule was
+written to stop.
 
 **The figure is not repeated here even to illustrate the point**, which is why
 that sentence is described rather than quoted.
 
 **What is corrected, and what is not.** **This brief and OL-0074 are this run's
-own output and are fixed now.** **Ten earlier files carry the same figure — six
-briefs, the register, the approvals file and the append-only log** — and
-**editing those is editing the historical record, which A-16 established is an
-approval packet and not an agent's judgement.** **Raised as A-24; nothing
-historical is touched.**
+own output and are fixed now.** **Twelve earlier files carry the same figure —
+nine briefs, the register, the append-only log and `ventures.md`, 38
+occurrences** — and **editing those is editing the historical record, which A-16
+established is an approval packet and not an agent's judgement.** **Raised as
+A-24; nothing historical is touched.**
 
 **And the removal is partial by construction, which is worth saying plainly
 rather than implying the figure is gone.** **This repository is public and git
