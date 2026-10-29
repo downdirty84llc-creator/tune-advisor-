@@ -98,8 +98,9 @@ the order arithmetic, and those two agree exactly.** Named, not papered over.
 
 ### 3. The Shopify bill failed a fourth time — and the instrument is PayPal, not a card
 
-**2026-10-28T12:02:51Z, 0.93 days ago.** $39.00 USD, and **Shopify's own notice
-carries the full timeline and names the method for the first time:**
+**2026-10-28T12:02:51Z, 0.93 days ago. Amount withheld under A-19** — it is a
+declined-payment amount; **thread `1a18264480149222` holds it.** **Shopify's own
+notice carries the full timeline and names the method for the first time:**
 
 | Attempt  | Date             | Shopify's wording                                |
 | -------- | ---------------- | ------------------------------------------------ |
@@ -127,10 +128,11 @@ hypothesis was testable, it has been tested, and it is wrong about the Shopify
 bills.** T-104 is narrowed accordingly.
 
 **The store is not flagged for closure right now** — `criticalUserMessage` is
-empty, read live, plan **Basic** (which is what the $39.00 is). But **Shopify's
-notice itself says to add a backup "so your store stays open if this happens
-again"**, and the store holding DD84's only settled storefront revenue **cannot
-collect $39.00 from its owner on the fifth attempt tomorrow.**
+empty, read live, plan **Basic** — and **the failing bill is that plan's monthly
+subscription**, which is the cheapest recurring commitment this business has. But
+**Shopify's notice itself says to add a backup "so your store stays open if this
+happens again"**, and **the store holding DD84's only settled storefront revenue
+cannot collect its own monthly subscription, on the fifth attempt, tomorrow.**
 
 ### 4. The Challenger customer's datalog is no longer unread
 
@@ -276,19 +278,40 @@ forbids **"no balance, no overdraft amount, no declined-payment amount, no
 account-level figure"**, while **revenue figures stay reportable in full under
 A-13.**
 
-**The $39.00 Shopify bill is a declined payment, and its amount is published
-here.** **The reading taken, and it is a reading rather than a certainty:**
-**$39.00 is a vendor's list price for a named plan** — the store's plan was read
-live as **Basic** — **so it discloses what Shopify charges, not what is in
-DD84's account**, which is the line the rule itself draws. **Withholding it
-would make four failed attempts unreportable while revealing nothing**, and five
-prior briefs already carry it.
+~~**The Shopify bill's amount is a vendor list price, not an account-level
+figure, so it is published here.**~~ **Struck the same day it was written.**
 
-**Stated rather than decided quietly, because the rule is one day old and
-narrowing a fresh owner decision by an agent's judgement is how the unwritten
-version of it went wrong in the first place.** **If the owner reads A-19 as
-covering vendor charges too, this is the line to strike**, and **tomorrow's cash
-review is where it would bite first.**
+**That reading was wrong and the figure has been removed from this brief.** It
+rested on reading the rule's four items as examples of the fourth — "any
+account-level figure" — when **the rule names "a declined-payment amount"
+separately**, which makes the list broader than an account-level test, not
+narrower. **A failed bill payment's amount is the second item on that list,
+whoever is being paid.**
+
+**The rule's own stated reason settles it rather than merely permitting it.**
+A-19 exists because **"a negative balance describes a distressed"** business
+while DD84 pursues SBA 504 financing. **A subscription that has failed four
+times in eight days reads as distress to exactly that reader — and it is the
+amount that does the work.** "A bill payment failed" is neutral; **the 2026-10-27
+brief's own sentence — that the store cannot collect its subscription fee from
+its owner, with the figure named — is the distress signal, and it needed the
+number to land.** The figure was doing the damage the rule was written to stop.
+
+**The figure is not repeated here even to illustrate the point**, which is why
+that sentence is described rather than quoted.
+
+**What is corrected, and what is not.** **This brief and OL-0074 are this run's
+own output and are fixed now.** **Ten earlier files carry the same figure — six
+briefs, the register, the approvals file and the append-only log** — and
+**editing those is editing the historical record, which A-16 established is an
+approval packet and not an agent's judgement.** **Raised as A-24; nothing
+historical is touched.**
+
+**And the removal is partial by construction, which is worth saying plainly
+rather than implying the figure is gone.** **This repository is public and git
+retains every version**, so the amount remains readable in commit `24cf441` and
+in every commit before it. **Striking it changes what the record says now, not
+what it has already published.**
 
 **Nothing else here is near the line.** The Wells Fargo statement's contents
 were **not read at all**, so it is reported as needing a login rather than as

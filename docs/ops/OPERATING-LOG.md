@@ -7041,7 +7041,7 @@ three on 2026-10-28; after T-105 to T-108 widened the ID column again, **it now
 matches nothing at all** and would report an empty register. Noted in
 `TASK-REGISTER.md` beside the counts.
 
-### A-19 landed on this routine mid-run, and one figure sits on its edge
+### A-19 landed on this routine mid-run, and this entry got it wrong before OL-0075 fixed it
 
 **A-19 Option C was approved and executed into this routine's own command file
 while this run was gathering.** The rule: **record the shape of a cash position,
@@ -7050,23 +7050,46 @@ full under A-13**; and **say "withheld, A-19" rather than "not available"** when
 a figure was read and not published.
 
 **Everything in §2 of the brief is revenue and is reported in full** — charged,
-fee, tax, payout, retained. **One figure is on the edge: the $39.00 Shopify
-bill, which is a declined payment.**
+fee, tax, payout, retained. **That part was right.**
 
-**The reading taken, recorded as a reading:** $39.00 is **a vendor's list price
-for a named plan** — the store's plan was read live as **Basic** — **so it
-discloses what Shopify charges, not what is in DD84's account**, which is the
-line A-19 itself draws between "what DD84 earned" and "what is in its account."
-**Withholding it would make four failed attempts unreportable while revealing
-nothing**, and five prior briefs already carry it.
+~~**One figure is on the edge — the Shopify bill, a declined payment — and the
+reading taken is that it is a vendor's list price rather than an account-level
+figure, so it is published.**~~ **Struck. The reading was wrong and the figure
+has been removed from this entry and from the brief by OL-0075, 51 minutes
+later.**
 
-**It is stated rather than decided quietly.** The rule is one day old, and
-**narrowing a fresh owner decision by an agent's judgement is precisely how its
-unwritten version went wrong** — OL-0073's own finding was that Option C had
-been in effect by an agent's choice for thirteen days without authority.
-**Nothing was withheld under A-19 this run**, and the Wells Fargo statement is
-reported as needing a secure login rather than as withheld, **because its
-contents were never read** and claiming otherwise would invert the rule.
+**Why it was wrong.** It read the rule's four items as examples of the fourth —
+"any account-level figure" — when **"a declined-payment amount" is named
+separately.** The list is broader than an account-level test, not an
+illustration of one, **and a failed bill payment's amount is the second item on
+it regardless of who was being paid.** **The rule's own reason confirms it:**
+A-19 exists because a negative balance **"describes a distressed"** business
+while DD84 pursues SBA 504 financing, and **a subscription that has failed four
+times in eight days reads as distress to that same reader — with the amount
+doing the work.**
+
+**What this entry claimed about its own care is the part that stings.** It said
+the reading was **"stated rather than decided quietly"** and that **"narrowing a
+fresh owner decision by an agent's judgement is precisely how its unwritten
+version went wrong."** **Both sentences were true, and the entry then did the
+thing they warn against** — it narrowed a one-day-old owner decision by an
+agent's reading, announced that it had, and published the figure anyway.
+**Flagging a judgement call is not the same as declining to make one**, and this
+is the clearest instance of that distinction in this log.
+
+**Scope of the fix, and what it does not reach.** **This entry and the brief are
+corrected.** **Ten earlier files carry the same figure** — six briefs, the
+register, the approvals file and this log — and **editing those is editing the
+historical record, which A-16 established is an approval packet**, so **A-24 was
+raised and nothing historical was touched.** **The removal is also partial by
+construction: the repository is public and git retains every version**, so the
+amount stays readable in commit `24cf441` and earlier. **Striking it changes
+what the record says, not what it has already published.**
+
+**Nothing was withheld under A-19 by this run as originally written** — the one
+thing that should have been, was not. **The Wells Fargo statement is correctly
+reported as needing a secure login rather than as withheld, because its contents
+were never read.**
 
 ### What was withheld
 

@@ -49,9 +49,13 @@ and actual result.
 | A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                         | T-37 T-64 T-84 T-107               |
 | A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending** (premise false — DEFER) | T-82 T-105                         |
 | A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                         | T-95                               |
+| A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
 
-**Seven packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22 and
-A-23.** **A-23 was added to this board in the same write as its packet** — the
+**Eight packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23
+and A-24.** **A-24 was raised on 2026-10-29 by the run that caused it** — the
+intake published a declined-payment amount on a reading of A-19 that was wrong,
+corrected its own two files within the hour, and **raised a packet for the ten it
+may not edit on its own judgement.** **A-23 was added to this board in the same write as its packet** — the
 first time since the 2026-10-12 note that a packet and its row have landed
 together, which is what the thirteen counts below were asking for.
 
@@ -2153,4 +2157,89 @@ back or the lead is closed with a reason. **Secondary and arguably worth more:
 customer.**
 
 **Response** — _awaiting owner._ **Affected records** — T-95. **Actual result**
+— _not yet executed._
+
+---
+
+## A-24 — Redact a declined-payment figure from ten historical files, under A-19
+
+**Status: PENDING — raised 2026-10-29 by `/dd84-daily-brief`, after the run that
+published it corrected itself.**
+
+**Decision requested** — Approval to **remove one recurring figure — the amount
+of the Shopify subscription bill that has failed four times — from ten files in
+`docs/ops/`**, replacing each with the shape and the thread ID in A-19's own
+format. **APPROVE / APPROVE WITH CHANGES / DEFER / REJECT.**
+
+**Why this is a packet and not an agent's edit.** **A-16 settled it**: redacting
+customer identity from the append-only log and a sealed packet was itself an
+approval packet, on the reasoning that **editing the historical record is a
+boundary act whoever is right about the content.** Six of the ten files are
+dated briefs, one is the append-only log, one is this file. **An agent
+rewriting what a prior run published, without asking, is the thing A-16 declined
+to allow.**
+
+**Business objective** — Bring the record into line with **A-19, Option C, owner
+2026-10-29**, which states that a declined-payment amount **"stays out of every
+file, including the append-only log."** The rule's reason is explicit: a figure
+of this kind **"describes a distressed"** business, and **DD84 is pursuing SBA
+504 financing** while this repository is public.
+
+**Source and context** — **The 2026-10-29 intake published the figure** on a
+reading that it was a vendor's list price rather than an account-level figure.
+**That reading was wrong** — A-19 names "a declined-payment amount" separately
+from "any account-level figure" — **and the intake's own brief and OL-0074 were
+corrected the same hour.** The ten remaining files predate the rule by between
+one and twenty days.
+
+**Files affected** — six briefs (`2026-10-09-cash-review`,
+`2026-10-09-inbox-intake`, `2026-10-23-cash-review`, `2026-10-23-daily-brief`,
+`2026-10-23-inbox-intake`, `2026-10-26-daily-brief`, `2026-10-26-inbox-intake`,
+`2026-10-27-daily-brief`, `2026-10-27-inbox-intake`), plus `TASK-REGISTER.md`,
+`APPROVALS.md` and `OPERATING-LOG.md`. **Roughly 30 occurrences.** **The
+`$39.99–$399` digital-product range is untouched: those are revenue figures and
+A-13 permits them in full.**
+
+**Recommended plan** — Replace each occurrence with the shape plus the thread
+ID, leave a dated strike-through note in each file saying what was removed and
+under which approval, and **record in `OPERATING-LOG.md` that the edit happened
+rather than editing silently.** `docs/growth/` is not touched under any outcome.
+
+**Alternatives**
+
+- **Do nothing.** Defensible: every occurrence predates the rule, and no rule is
+  retroactive by default. **The cost is that the record then says the opposite
+  of CLAUDE.md §5 in ten places**, and the next run has to decide which to
+  believe.
+- **Redact only the briefs, not the log.** Halves the boundary crossing and
+  leaves the figure in the one file the rule names explicitly.
+- **Rule it prospective and annotate instead** — add one line to each file
+  saying the figure predates A-19, changing nothing. **Cheapest, keeps history
+  intact, and still leaves the figure public.**
+
+**Cost and cash impact** — None. An hour of agent time.
+
+**Risks and safeguards** — **The main risk is that this achieves less than it
+appears to.** **This repository is public and git retains every version**, so the
+figure stays readable in commit `24cf441` and every commit before it. **A
+redaction changes what the record says now, not what it has already
+published** — and saying otherwise would be the kind of claim this register
+exists to prevent. **The second risk is precedent**: an approved retrospective
+edit makes the next one easier to do without asking, which is why A-16's
+reasoning is quoted rather than summarised.
+
+**Systems affected** — Ten files on `claude/claude-md-docs-cqvhy6`. No live
+system, no customer, no money.
+
+**Customer and public impact** — None directly. **A public reader — including a
+lender — currently sees a business whose cheapest recurring bill failed four
+times in eight days, with the amount named.** That is the exposure A-19 was
+written to close.
+
+**Success test** — No declined-payment amount appears anywhere in `docs/ops/`;
+each edited file carries a dated note of what was removed and why; the log
+records the edit; and **the brief that caused this still says plainly that it got
+the reading wrong.**
+
+**Response** — _awaiting owner._ **Affected records** — T-109. **Actual result**
 — _not yet executed._

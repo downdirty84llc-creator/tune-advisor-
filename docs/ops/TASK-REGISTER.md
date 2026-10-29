@@ -142,6 +142,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record    | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350    | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-108 | Service SKUs auto-fulfil at checkout, so FULFILLED never means delivered  | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-03   |
+| T-109 | A declined-payment figure sits in ten files that predate A-19             | ops        | **High**     | **Awaiting Approval**    | Owner | **A-24 pending**                  | 2026-11-02   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
