@@ -138,6 +138,24 @@ One line each.
 - Applying labels, archiving, moving or trashing a thread.
 - Merging two customer records on anything less than verified identity.
 
+## What a bank or card alert may say in writing
+
+**A-19, Option C, owner 2026-10-29.** This routine meets the bank alerts first
+and raised this packet; the answer is now a standing rule.
+
+Record the **shape** of a cash position and never the figure: "the account is
+overdrawn", "a payment was declined", "an auto-charge is pending", **with the
+Gmail thread ID and the read time**, so the owner is one click from the exact
+number in his own inbox. **No balance, no overdraft amount, no declined-payment
+amount, no account-level figure — in no file, including the append-only log.**
+Account numbers, card digits and credentials stay out regardless, under §5.
+
+**Say "withheld, A-19" rather than "not available".** The figure was read and
+not published; claiming it could not be read would be false.
+
+**Revenue figures are a different category and are reportable in full**, under
+A-13. The line is between what DD84 earned and what is in its account.
+
 ## When a connector is unavailable
 
 Name it and continue with what is reachable. If **no** mail connector is

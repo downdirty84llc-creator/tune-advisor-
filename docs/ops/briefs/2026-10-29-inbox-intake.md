@@ -193,9 +193,35 @@ owner's, since no session here can open the thread's contents on his behalf.
 
 **No new approval packet is opened this run.** Every finding above is either a
 correction to the record (Class A, done here) or a decision only the owner can
-make with facts now in hand. **Nine packets are already queued**; a tenth that
-proposes no action I could execute would be noise, and yesterday's brief
+make with facts now in hand. **Seven packets are already queued**; an eighth
+that proposes no action I could execute would be noise, and yesterday's brief
 established that the queue — not the diagnosis — is the constraint.
+
+### The owner answered two packets while this brief was being written
+
+**This section was drafted saying nine packets were pending. Seven are.**
+OL-0073, from a sibling session, landed on the remote before this run's push and
+**disposed of two — the first owner decisions since A-15 on 2026-10-21:**
+
+- **A-19 — APPROVED, Option C.** The **shape** of a cash position may be
+  recorded and **the figure may not**, with the Gmail thread ID so the owner is
+  one click from the number. **Written into `CLAUDE.md` §5 and into both routine
+  command files, including this one**, which had carried no cash rule at all
+  despite being the routine that meets the bank alerts.
+- **A-20 — DEFERRED, "price the jobs first."** Nothing sent; the three drafts
+  stand.
+
+**The deferral makes this run's smallest finding its most expensive one.**
+A-20's three sends now wait on **A-21**, which is the gate — and **this brief
+found that A-21's central number has only ever transacted at $250**, after a
+$100 code (§2, T-107). **A-21 was raised without that fact and is now the single
+packet standing between DD84 and three silent counterparties.** **T-107 is one
+sentence and it is in front of all of it.**
+
+**Yesterday's brief said the register asks for decisions through a channel the
+owner is not reading.** Two answers in a day is the counter-evidence, and it is
+recorded as such. **It was said once; it is not repeated, and it is now partly
+wrong.**
 
 ## Conflicts found
 
@@ -244,7 +270,31 @@ position that "FULFILLED is a flag, not evidence" is now verified from the live
 store with timestamps**, and it generalises: **every service SKU in this store
 will mark itself delivered at checkout.** **T-108.**
 
-**7. The checkout test is still stale** — 28 expected, **64 tracked**, no
+**7. A-19 Option C arrived mid-run and this brief has a figure on the edge of
+it.** The new rule — written into this routine's own command file today —
+forbids **"no balance, no overdraft amount, no declined-payment amount, no
+account-level figure"**, while **revenue figures stay reportable in full under
+A-13.**
+
+**The $39.00 Shopify bill is a declined payment, and its amount is published
+here.** **The reading taken, and it is a reading rather than a certainty:**
+**$39.00 is a vendor's list price for a named plan** — the store's plan was read
+live as **Basic** — **so it discloses what Shopify charges, not what is in
+DD84's account**, which is the line the rule itself draws. **Withholding it
+would make four failed attempts unreportable while revealing nothing**, and five
+prior briefs already carry it.
+
+**Stated rather than decided quietly, because the rule is one day old and
+narrowing a fresh owner decision by an agent's judgement is how the unwritten
+version of it went wrong in the first place.** **If the owner reads A-19 as
+covering vendor charges too, this is the line to strike**, and **tomorrow's cash
+review is where it would bite first.**
+
+**Nothing else here is near the line.** The Wells Fargo statement's contents
+were **not read at all**, so it is reported as needing a login rather than as
+**"withheld, A-19"**, which the rule reserves for a figure that _was_ read.
+
+**8. The checkout test is still stale** — 28 expected, **64 tracked**, no
 `src/`, no `package.json`, `HEAD` equal to origin at `6d0d224`. **Twelfth run
 reporting it. T-85 step 3.**
 

@@ -6746,7 +6746,149 @@ collected this week and not one hour of it in the diary.**
 
 ---
 
-## OL-0073 — 2026-10-29 · A supplier answered eight days ago, and the packet waiting to be sent would chase him anyway
+## OL-0073 — 2026-10-29 · Two packets answered: a cash rule written where routines read it, and three sends deferred behind a price
+
+- **Timestamp** 2026-10-29, interactive session. **Not a routine.**
+- **Task** T-37, T-64, T-66, T-71 · **Approvals** **A-19 — APPROVE, Option C**
+  and **A-20 — DEFER**, both owner, 2026-10-29. Execution of A-19 is Class B
+  (the agents' own instruction text and this record); **A-20 required no action
+  and got none.**
+- **Operator** Claude (agent), on the owner's answers to a direct two-question
+  choice put to him on **2026-10-22**.
+- **Checkout** — base **`6d0d224`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+  Both markers absent.
+- **Reached** the local tree only. **No connector, no mail, no GitHub write, no
+  scheduled task touched.**
+
+### A-19 — APPROVED, Option C, and executed the same day
+
+**The shape of a cash position may be recorded; the figure may not.** Overdrawn,
+positive, a payment declined, an auto-charge pending — each with **the Gmail
+thread ID and the read time**, so the owner is one click from the exact number
+in his own inbox.
+
+**Written where the routines read it, not only recorded here:**
+
+- **`CLAUDE.md` §5**, beside A-13's standing rule, as a bullet in the list of
+  rules that are easiest to lose.
+- **`.claude/commands/dd84-cash-review.md`** — a `## Cash position` section in
+  the output format, which the brief had been writing for two weeks **without
+  the format asking for it**, plus the rule in full. This is the routine A-19's
+  own success test names.
+- **`.claude/commands/dd84-inbox-intake.md`** — which **carried no cash-handling
+  rule at all**, despite being the routine that meets the bank alerts first and
+  the one that raised this packet.
+
+**What it changed in behaviour: almost nothing, and that is the finding.** The
+2026-10-16 intake and the 2026-10-23 cash review had both already withheld the
+figure and stated the shape — the 10-23 brief reads _"Not stateable, and that is
+A-19… that is the cash position, stated as a shape"_ — which is precisely what
+this packet's Actual-result block predicted a deferral would produce: **Option C
+in practice, by an agent's choice rather than a decision.**
+
+**So the work here was not changing conduct but giving it authority.** Thirteen
+days of correct judgement lived only in the reasoning of the sessions that
+exercised it; **an unwritten rule is one re-reading away from a run that never
+saw the argument deciding differently.** It is now three files that cannot be
+missed.
+
+**Two things the decision deliberately did not do.** It does not touch
+**revenue** figures, which A-13 already permits in full — the line is between
+what DD84 earned and what is in its account. And **it does not advance T-71 by a
+day**: an agent may now say "overdrawn, thread `1a14087d5d2b6009`", and still
+cannot say why or stop the next charge declining. **T-71 stays Awaiting Owner at
+the top of the register**, and its next action is unchanged: a person reads the
+bank messages.
+
+### A-20 — DEFERRED, "price the jobs first." Nothing sent
+
+**No message went to any of the three** — the Challenger customer, the C10
+customer, or the Lexus enquirer. The drafts stand as written in
+`briefs/2026-10-21-followup.md`.
+
+**The deferral names the blocker the packet had already identified and declined
+to own.** A-20 said in its own body that approving it would "recover the
+conversation and still leave the revenue on the floor", because **neither
+delivered job has ever been priced** and pricing is not Torque's to move. The
+owner's answer is that the price comes first.
+
+**A-21 — raised 2026-10-22, the day after A-20 — is exactly that decision**, and
+this deferral promotes it from one of nine pending packets to **the gate every
+customer send now waits behind.** Recorded on three register rows: T-37 and T-64
+now read `A-21 (A-20 deferred)`, and T-66 reads **`A-21 via T-84`** — flagged as
+**a derived dependency, not a named one**: A-21's Affected-records block covers
+T-37, T-64 and T-84, and **the Lexus reply waits on the price ladder through
+T-84 rather than on A-21 directly.** Stating that as inference rather than as
+the packet's own scope.
+
+**The cost of the sequence is recorded rather than buried.** Three
+counterparties stay silent while A-21 waits, including an enquirer now **~21
+days stalled**, and the drafts were written to stop the jobs becoming unbillable
+by age. **Deferring does not pause that clock. It accepts it in exchange for not
+quoting twice**, which is a defensible trade and is not the same as a free one.
+
+**And the drafts will need re-reading before any send**, on A-15's own evidence:
+two statements in those drafts had gone untrue in thirteen days, and these are
+now eight days old.
+
+### A-18 was not disposed of, and that is worth saying
+
+**A deferral of A-20 answers A-20.** A-18 — the superseded single follow-up —
+**remains formally pending**, recommendation REJECT, and the board now says so
+explicitly rather than implying that A-20's answer covered it. **It is the
+cheapest item on that board: one word.**
+
+### Board state after this entry
+
+**Seven packets with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23** —
+down from nine. **A-21 is now the most expensive of them**, being the only one
+with revenue directly attached and the only one blocking three waiting
+counterparties. A-22 and A-23 are single replies that **do not** wait on it.
+
+### What was deliberately not done
+
+- **No cash figure was written anywhere** while recording a decision about cash
+  figures. The one identifier in this entry is a **Gmail thread ID**, which is
+  what Option C requires in place of a number.
+- **No message sent, drafted, edited or deleted.** A-20's three drafts are
+  untouched.
+- **A-21 was not answered, argued for, or pre-empted.** The deferral makes it
+  urgent; it does not make it decided, and proposing a price is not setting one.
+- **A-17 untouched** — still pending, still the owner's, and the 2026-10-21
+  measurement in its Actual-result block still stands.
+- **No routine prompt in the claude.ai UI edited.** The three files changed are
+  the version-controlled command definitions, which is T-69's distinction: the
+  repository text is fixable from here, the scheduled-task prompts are not.
+
+### Class held
+
+No mail read, sent, replied to, forwarded or labelled. **No draft created,
+edited, sent or deleted.** No charge, refund, invoice, payout or fulfilment. No
+bank, card, Square or payment action. **No Supabase tool called.** No GitHub
+write. **No scheduled task created, changed, fired or deleted.** `docs/growth/`
+untouched. **No balance figure, overdraft amount, last-four digits, customer
+name, email address or phone number written here.**
+
+- **Needs the owner** — **A-21 first, and it is now in a different class from
+  everything else on the board:** it holds three counterparties and the only
+  unbilled revenue in the record. Then the unread bank messages **newest
+  first**; **A-22** and **A-23**, two single replies that nothing blocks;
+  **A-18** (one word, close it); **A-17** at twenty days; and **A-07**, the one
+  76-day packet that is real.
+
+---
+
+## OL-0074 — 2026-10-29 · A supplier answered eight days ago, and the packet waiting to be sent would chase him anyway
+
+> **Third numbering collision, and that makes it structural beyond argument.**
+> **Both this entry and OL-0073 were written as OL-0073**, by two sessions that
+> each read `## Next entry: OL-0073` and each took it. **The same thing happened
+> at OL-0060 and once before that.** **Theirs is kept because it landed first;
+> this one is renumbered.** **Two instances were a coincidence worth noting;
+> three are a shared counter with no locking**, and **the convention is now
+> settled: the session that loses the push renumbers, never the one on the
+> remote.**
 
 - **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
   (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at **2026-10-29T10:20Z**.
@@ -6899,6 +7041,33 @@ three on 2026-10-28; after T-105 to T-108 widened the ID column again, **it now
 matches nothing at all** and would report an empty register. Noted in
 `TASK-REGISTER.md` beside the counts.
 
+### A-19 landed on this routine mid-run, and one figure sits on its edge
+
+**A-19 Option C was approved and executed into this routine's own command file
+while this run was gathering.** The rule: **record the shape of a cash position,
+never the figure**, with the thread ID; **revenue figures stay reportable in
+full under A-13**; and **say "withheld, A-19" rather than "not available"** when
+a figure was read and not published.
+
+**Everything in §2 of the brief is revenue and is reported in full** — charged,
+fee, tax, payout, retained. **One figure is on the edge: the $39.00 Shopify
+bill, which is a declined payment.**
+
+**The reading taken, recorded as a reading:** $39.00 is **a vendor's list price
+for a named plan** — the store's plan was read live as **Basic** — **so it
+discloses what Shopify charges, not what is in DD84's account**, which is the
+line A-19 itself draws between "what DD84 earned" and "what is in its account."
+**Withholding it would make four failed attempts unreportable while revealing
+nothing**, and five prior briefs already carry it.
+
+**It is stated rather than decided quietly.** The rule is one day old, and
+**narrowing a fresh owner decision by an agent's judgement is precisely how its
+unwritten version went wrong** — OL-0073's own finding was that Option C had
+been in effect by an agent's choice for thirteen days without authority.
+**Nothing was withheld under A-19 this run**, and the Wells Fargo statement is
+reported as needing a secure login rather than as withheld, **because its
+contents were never read** and claiming otherwise would invert the rule.
+
 ### What was withheld
 
 Under §5: the storefront customer's name and address, two other customers' names
@@ -6912,9 +7081,21 @@ customer is recorded.**
 ### Counts after this run
 
 **108 tasks** · 43 Awaiting Owner · **13 Critical and open**, up one on T-105.
-**Nine approval packets still pending, and one of them is now recommended for
-DEFER by the run that found the error in it.**
+
+**This entry was written saying nine packets were pending. By the time it
+committed, seven were.** OL-0073 landed first and disposed of **A-19 (approved,
+Option C)** and **A-20 (deferred behind a price)**. **Corrected here and in the
+brief rather than left to read as of its drafting time** — the brief is dated by
+its window, not by when its arithmetic happened to be true.
+
+**And the deferral makes this run's smallest finding its most expensive.** A-20
+was deferred with "price the jobs first", which **promotes A-21 to the single
+gate every customer send now waits behind** — three counterparties, one of them
+stalled about 21 days. **This run then found that A-21's central number has only
+ever transacted at $250**, after a $100 code, **and the packet was raised
+without that fact.** **T-107 is one sentence from the owner and it is now in
+front of everything A-20's deferral routed through A-21.**
 
 ---
 
-## Next entry: OL-0074
+## Next entry: OL-0075
