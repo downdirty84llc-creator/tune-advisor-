@@ -97,12 +97,45 @@ If there is no basis, the value is listed as unweighted.
 | Job / product | Revenue | Parts | Software credits | Travel | Labour | Margin | Complete? |
 Any row missing an input is marked incomplete and names what is missing.
 
+## Cash position
+The shape, never the figure. "Overdrawn", "positive", "a payment declined",
+"an auto-charge pending" — each with the Gmail thread ID holding the number
+and the time it was read. See the rule below.
+
 ## Corrective actions
 Ranked. Each: the finding, the money at stake, the action, the task ID, and
 whether it needs an approval packet.
 
 ## Not checked this run
 ```
+
+## The cash position: shape, not figure
+
+**A-19, Option C, owner 2026-10-29. This is a standing rule, not a judgement
+call.**
+
+This repository is public by decision (A-13). A-13 accepted **revenue figures
+and system identifiers**; it is **silent on a cash position**, and the two are
+not the same thing — all-time revenue describes a small business, a negative
+balance describes a distressed one, and DD84 is pursuing SBA 504 financing. So:
+
+- **Write the shape.** Overdrawn, positive, a payment declined, an auto-charge
+  pending, a transfer returned. Enough for the owner to act on.
+- **Never write the figure** — not a balance, an overdraft amount, a
+  declined-payment amount, or any account-level number. **In no file, including
+  the append-only log.**
+- **Always name the Gmail thread ID and the read time.** That is the whole of
+  what Option C trades away: the owner is one click from the exact number in his
+  own inbox, which is where the authoritative figure lives anyway.
+- **Account numbers, card digits and credentials stay out regardless**, under
+  §5, decision or no decision.
+- **Say "withheld, A-19" — never "not available".** The figure was read and not
+  published; "not available" would claim it could not be read, and a degradation
+  notice that misrepresents why is worse than the gap.
+
+**Revenue figures are unaffected.** Closed revenue, per-system gross, refunds
+and disputes are all reportable in full under A-13. The line is between what
+DD84 earned and what is in its account.
 
 ## Where it writes
 

@@ -190,10 +190,25 @@ world-readable, because it is:
   identifiers and that is accepted; **customer identity is not, and the decision
   does not extend to it.**
 - **Never add tune files, bench pinouts or internal technical procedures.**
+- **Never write a cash figure. Write the shape and the thread ID** (A-19, Option
+  C, owner 2026-10-29). A balance, an overdraft amount, a declined-payment
+  amount or any account-level figure stays out of every file, **including the
+  append-only log.** What goes in is the shape — "overdrawn", "positive", "a
+  payment declined", "an auto-charge pending" — **with the Gmail thread ID that
+  holds the number**, which is one click from the authoritative figure in the
+  owner's own inbox. **Revenue figures are a different category and are
+  permitted**, by A-13: `$3,507.86` of all-time revenue describes a small
+  business, a negative balance describes a distressed one, and DD84 is pursuing
+  SBA 504 financing. **"Withheld, A-19" is a complete answer in a brief. "Not
+  available" would be a lie** — the figure was available and the run declined to
+  publish it, so say which.
 - **A new category of sensitive material needs its own decision.** A-13 covers
   what was exposed on 2026-10-08, not whatever gets added later. If a routine
   wants to write something that would be awkward in public, that is an approval
-  packet, not a judgement call.
+  packet, not a judgement call. **A-19 is the worked example**: the intake met a
+  bank balance, recognised that A-13 did not reach it, published the finding
+  without the figure and raised a packet. **Thirteen days of correct behaviour
+  on an agent's judgement, and it only became a rule when the owner answered.**
 
 **A task is Done only when `OPERATING-LOG.md` carries evidence.** Otherwise it
 is In Verification. A commit hash, a command's real output, a figure read from a

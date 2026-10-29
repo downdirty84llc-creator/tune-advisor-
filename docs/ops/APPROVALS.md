@@ -44,21 +44,36 @@ and actual result.
 | A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)     | T-48                               |
 | A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                 | T-51                               |
 | A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **Pending** (superseded)    | T-64                               |
-| A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Pending**                 | T-71                               |
-| A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Pending**                 | T-37 T-64 T-66                     |
+| A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Approved, Option C**      | T-71                               |
+| A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Deferred** — price first  | T-37 T-64 T-66                     |
 | A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                 | T-37 T-64 T-84                     |
 | A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending**                 | T-82                               |
 | A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                 | T-95                               |
 
-**Nine packets are with the owner: A-07, A-10, A-17, A-18, A-19, A-20, A-21,
-A-22 and A-23.** **A-23 was added to this board in the same write as its
-packet** — the first time since the 2026-10-12 note that a packet and its row
-have landed together, which is what the thirteen counts below were asking for.
-A-18 is pending but **superseded twice over** — the customer answered all three
-of its questions four hours after it was raised, and **A-20 now carries the
-redrafted version of that same message.** Torque's recommendation on A-18 is
-REJECT, and the reasoning is in its own Actual-result block. **Answering A-20
-settles both.**
+**Seven packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22 and
+A-23.** **A-23 was added to this board in the same write as its packet** — the
+first time since the 2026-10-12 note that a packet and its row have landed
+together, which is what the thirteen counts below were asking for.
+
+> **Two answered 2026-10-29.** **A-19 — APPROVED, Option C**: record the shape
+> of a cash position, never the figure, with the thread ID that holds it.
+> Executed the same day into `CLAUDE.md` §5 and both routine command files, so
+> it is a rule rather than a habit. **A-20 — DEFERRED, "price the jobs first"**:
+> nothing sent, the three drafts stand, and **the deferral promotes A-21** from
+> one of nine pending packets to the gate every customer send now waits behind.
+>
+> **A-21 is now the most expensive open packet.** It blocks A-20's three
+> counterparties — two customers with delivered work and an enquirer **~21 days
+> stalled** — and it is the only pending packet with revenue directly attached:
+> **neither delivered job has ever been priced.** A-22 and A-23 are single
+> replies that do not wait on it.
+
+**A-18 remains pending and superseded twice over** — the customer answered all
+three of its questions four hours after it was raised, and **A-20 carries the
+redrafted version of that same message.** Torque's recommendation is **REJECT**;
+the reasoning is in its own Actual-result block. **A-20's deferral did not
+dispose of it**, because a deferral answers A-20 and not A-18: closing A-18 is
+still a one-word decision, and it is the cheapest item on this board.
 
 > **Twelfth instance, 2026-10-23 — and this one is mine.** **A-22 was raised on
 > 2026-10-22 with no row on this board**, by the same run that had just finished
@@ -1592,8 +1607,9 @@ the floor.
 
 ## A-19 — May DD84's cash position be recorded in this public repository?
 
-**Status: PENDING — raised 2026-10-16 by `/dd84-inbox-intake`, within the hour
-before the weekly cash review fires.**
+**Status: APPROVED — Option C.** Owner, **2026-10-29**. **EXECUTED the same
+day.** Raised 2026-10-16 by `/dd84-inbox-intake`, within the hour before the
+weekly cash review fires; **thirteen days and two cash reviews open.**
 
 **Decision requested** — A decision on a **new category of sensitive material**:
 **DD84's bank balance, cash position, overdraft state and account-level
@@ -1690,15 +1706,46 @@ payment details**, which A-13 already excludes and A-16 removed.
 **Reply with: APPROVE (name the option) / APPROVE WITH CHANGES / DEFER /
 REJECT**
 
-**Response** — _awaiting the owner._
+**Response** — **APPROVE, Option C**, owner **2026-10-29**: record the shape,
+not the figure. Put to the owner as a direct choice between the four options on
+2026-10-22, in the session that reconciled this board; answered on 2026-10-29.
 
-**Actual result** — _not yet executed. The figure is withheld and T-71 carries
-the finding without it. Deferring leaves the record as it is now, which is
-Option C in practice but by an agent's choice rather than a decision._
+**Limits** — Option C authorises recording **the shape of a cash position
+only**: "overdrawn", "positive", "a payment declined", "an auto-charge pending",
+each with **the Gmail thread ID** that holds the figure. It does **not**
+authorise recording a balance, an overdraft amount, a declined-payment amount or
+any account-level figure, in any file, including the append-only log. It does
+not touch **account numbers, card digits or credentials**, which §5 excludes
+regardless, nor **customer payment details**, which A-13 excludes and A-16
+removed. **Revenue figures are unaffected** — A-13 already permits those and
+this decision neither widens nor narrows it.
+
+**Expiration** — Standing. It is a rule, not a task, and it governs every future
+run until a packet replaces it.
+
+**Affected records** — T-71, and every future `/dd84-cash-review` and
+`/dd84-inbox-intake` run.
+
+**Actual result** — **EXECUTED 2026-10-29.** The rule was written where the
+routines read it rather than only recorded here: **`CLAUDE.md` §5**, beside
+A-13's standing rule, and **`.claude/commands/dd84-cash-review.md`**, whose
+success test this packet names. The intake command carried no cash-handling rule
+at all and now carries the same one.
+
+**What this changed in practice: almost nothing, and that is the point.** Both
+the 2026-10-16 intake and the 2026-10-23 cash review had already withheld the
+figure and stated the shape — _"Not stateable, and that is A-19… that is the
+cash position, stated as a shape"_ — which is exactly what this packet's own
+Actual-result block predicted a deferral would produce: **Option C by an agent's
+choice rather than a decision.** Thirteen days of agent judgement are now a rule
+that outlives the session that made it. **The behaviour was already right; what
+was missing was the authority for it, and an unwritten rule is one re-reading
+away from being reversed by a run that never saw the reasoning.**
 
 ## A-20 — Send three customer follow-ups: two live jobs and one stalled enquiry
 
-**Status: PENDING — raised 2026-10-21 by `/dd84-followup`.**
+**Status: DEFERRED — owner, 2026-10-29, "price the jobs first." Nothing sent;
+the drafts stand and wait on A-21.** Raised 2026-10-21 by `/dd84-followup`.
 
 **Decision requested** — Approval to send **three messages, as a batch**, to two
 live customers and one stalled enquirer. The full text of all three is in
@@ -1786,8 +1833,37 @@ blocker the sends do not remove.
 **Decision — APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**, per draft or for
 the batch.
 
-**Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-66.
-**Actual result** — _not yet executed._
+**Response** — **DEFER**, owner **2026-10-29**: _"price the jobs first."_ Put to
+the owner on 2026-10-22 alongside A-19, as a choice between approving all three,
+approving two and holding the Challenger message for its missing date, deferring
+to price the jobs, and rejecting.
+
+**Limits** — A deferral, not a rejection. **Nothing was sent.** The three drafts
+stand as written in `docs/ops/briefs/2026-10-21-followup.md` and remain
+available once a price exists; **they will need re-reading before any send**, on
+A-15's own evidence — two statements in those drafts had gone untrue in 13 days,
+and these are now 8 days old.
+
+**Affected records** — T-37, T-64, T-66, and **A-21**.
+
+**Actual result** — **Not executed. No message sent to any of the three.**
+
+**The deferral names the blocker this packet had already identified and declined
+to own.** A-20 said in its own body that the follow-ups would "recover the
+conversation and still leave the revenue on the floor", because **neither
+delivered job has ever been priced** and pricing is not Torque's to move. The
+owner's answer is that the price comes first. **A-21 — raised 2026-10-22, the
+day after this packet — is exactly that decision**, and the deferral promotes it
+from one of nine pending packets to the gate every customer send now waits
+behind.
+
+**So this is a sequencing decision, not a refusal of the sends**, and it should
+not be read as one. **The cost of the sequence is stated rather than buried:**
+three counterparties stay silent while A-21 waits — two customers with delivered
+work and the Lexus enquirer, who is now **~21 days stalled**. The risk the
+drafts were written to prevent is that the jobs become unbillable by age, and
+**deferring does not pause that clock; it accepts it in exchange for not quoting
+twice.**
 
 ---
 
