@@ -1,7 +1,10 @@
 # DD84 inbox intake — 2026-10-30
 
-Run at **2026-10-30T10:21–11:15Z**, Friday. Window: **since OL-0074,
-2026-10-29T10:20Z → 2026-10-30T10:20Z** (24 hours).
+Run at **2026-10-30T10:21Z**, Friday; **work completed by `b27bdd6`, committed
+10:29:27Z.** **The end time is the commit's, not an estimate** — see the note in
+the 2026-10-30 daily brief: **this line originally read "10:21–11:15Z", which
+was a guess, and 11:15Z had not happened yet when it was written.** Window:
+**since OL-0074, 2026-10-29T10:20Z → 2026-10-30T10:20Z** (24 hours).
 
 > **SKELETON COMMITTED BEFORE GATHERING** — OL-0050's repair, fourteenth
 > application, at `cbbdaec`.

@@ -149,6 +149,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-113 | A third unattributed Zelle — $400.00, memo "Tune"; matches the Lexus floor      | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown         | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project     | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
+| T-116 | Every brief states a run-end time it estimated rather than read                 | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
