@@ -7288,4 +7288,183 @@ by fetching the thing instead of trusting the stored note.**
 
 ---
 
-## Next entry: OL-0076
+## OL-0076 — 2026-10-30 · The oldest unanswered thing in this register got answered, and the owner made his first sales approach
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-10-30T10:20:50Z**. **Twenty-seventh scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`da4be5f`** at start, **`cbbdaec`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **66
+  tracked files, not 28** — **fourteenth run reporting it**, T-85 step 3.
+- **Window** since OL-0074, **2026-10-29T10:20Z → 2026-10-30T10:20Z**.
+- **Counts** **43 threads of an estimated 43** — up from 28 — · 9 actionable ·
+  34 no-action · **1 new lead, outbound** · **0 drafts** (ninth run) · **6 new
+  tasks** (T-110 to T-115) · **1 task answered by the owner.**
+- **Nine items fetched individually** because T-102 is Accepted Risk.
+- **A-19 observed**: no balance, overdraft or declined-payment amount in the
+  brief or this entry; shape plus thread ID instead. **Revenue in full under
+  A-13.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### T-64 is answered, and the gate the owner set for himself is not recorded as met
+
+**2026-10-29T14:14:56Z — DD84 replied to the Challenger customer with a new
+calibration attached, after the customer had waited 15.94 days.** **The oldest
+unanswered thing in this register, reported at the top of five briefs, is
+closed** — and **closed by the owner, not by any packet.** **A-20 was drafted to
+send exactly this follow-up and was deferred the day before; he wrote his own.**
+
+**The qualification.** This thread contains the owner twice declining to add
+power until a fault was cleared: on **2026-09-28**, _"I don't want to start
+adding power yet… if the pressure warning is real or stays low, shut it down and
+verify with a mechanical gauge before driving it hard"_; on **2026-10-01**,
+_"**before the next power/throttle revision** … **confirm the oil-pressure issue
+hasn't returned**."_ **The customer's 2026-10-13 reply says only "this is the
+log from a hour+ drive."** **The 2026-10-29 calibration's filename carries a
+power descriptor, and the message body is entirely quoted history — no new text
+went with it.**
+
+**So the gate exists, the clearance is not in the thread, and the revision has
+gone.** **Nothing is asserted about the car or about the owner's diligence** —
+he may have read the log and been satisfied, and **the log is the one artefact
+no session here can open.** **Unknown is not zero and it is not a fault
+either.** **It is first in the brief because `CLAUDE.md` requires escalating a
+safety-critical fault rather than passing over it, and a dropping oil-pressure
+reading on a car receiving added power is that category.** **One sentence closes
+it. T-110.**
+
+**The filename is withheld** under §5, which keeps tune files out of a public
+repository; a calibration filename carries the vehicle and the work together.
+
+### The first outbound sales message in this record, and the first channel anyone chose
+
+**2026-10-29T21:31:54Z**, to someone this register has never seen: _"I saw your
+**Reddit** post about your cammed/turbo 5.3. I offer remote HP Tuners tuning
+through Down Dirty 84, **starting at $300**…"_ — then a request for the tune
+file, matching startup/idle logs, cam specs, injector part number, fuel type,
+base fuel pressure and wideband status, **with the final price withheld until
+the files arrive.**
+
+**`ventures.md` has carried the enquiry source as `UNKNOWN` since 2026-08-03**,
+and four paying jobs this month arrived through it unseen. **Reddit is now
+recorded as a channel with a date and the evidence** — **and recorded with its
+limits: one message, no reply, no qualified lead, no revenue.** **The inbound
+source for every paying job is still `UNKNOWN`; this is a new channel beside
+that gap, not an answer to it. T-112.**
+
+**The script is kept rather than critiqued.** It collects what the spec's lead
+fields ask for in one paragraph.
+
+### Three prices for one class of work in three days
+
+| Source                               | Price    | Verified   |
+| ------------------------------------ | -------- | ---------- |
+| Published ladder, live store         | **$350** | 2026-10-29 |
+| **Actually sold** — order #1001 line | **$250** | 2026-10-29 |
+| **Owner's own outbound quote**       | **$300** | 2026-10-30 |
+
+**A cammed/turbo 5.3 is GM, and the registry's GM/Ford/Mopar core rung is
+$350.** **The routine's instruction is to flag a conflict with the approved
+catalogue rather than resolve it silently, so it is flagged: no live price was
+changed and no rung was rewritten.** **T-111.**
+
+**Why it matters beyond bookkeeping.** **A-21 asks the owner to set a price on
+two delivered jobs and, since A-20's deferral, is the gate every customer send
+waits behind.** **He has now priced adjacent work at $300 in writing, having
+sold the $350 rung at $250.** **That does not answer A-21 — different jobs,
+different scope — but A-21 should be answered with all three numbers in view
+rather than one.**
+
+**And the deferral's own premise moved the wrong way.** A-20 was deferred on
+2026-10-29 with "price the jobs first"; **a further revision was delivered on
+one of those very jobs the same day, still unpriced.** **Not a criticism of the
+sequence — the customer needed his answer — but the gap A-21 exists to close got
+wider.**
+
+### Money
+
+**Revenue, reportable in full under A-13:**
+
+| When       | Amount                            | Route                 | Attributed? |
+| ---------- | --------------------------------- | --------------------- | ----------- |
+| 2026-10-22 | **$450.00**                       | Zelle, "tune"         | No — T-88   |
+| 2026-10-23 | **$550.00** charged / $530.31 net | Storefront #1001      | **Yes**     |
+| 2026-10-24 | **$700.00**                       | Zelle, "mecanic tune" | No — T-92   |
+| 2026-10-29 | **$400.00**                       | Zelle, "Tune"         | No — T-113  |
+
+**$2,100.00 charged, $2,080.31 received, $1,550.00 of it unattributed to any
+job.** Registry updated; the derived all-time figures move to **$5,607.86
+charged · $5,588.17 received · $5,557.04 retained**, with the standing warning
+that all three rest on an August baseline whose basis is recorded nowhere.
+
+**$400.00 is exactly the floor of the Toyota/Lexus rung and T-66 is a stalled
+Lexus enquiry.** **One rung matching one amount is a question, not
+attribution**, and it is recorded as a question.
+
+**$530.31 left Shopify Balance at 2026-10-30T09:33:34Z** — **yesterday's payout
+moving one hop further, not new money, and not counted twice.**
+
+**A business debit card declined, "card is off", at 2026-10-29T12:25:24Z** —
+**three and a half hours after that morning's 29-second card window closed.**
+Pattern evidence under T-71 and T-104. **Amount withheld under A-19; digits
+under §5.**
+
+### A third party now has bank access and the record does not know which
+
+**2026-10-30T09:24:28Z, unread:** the bank reports a data-sharing authorisation
+with **Plaid**. **Plaid is an aggregator, not an end service, and the notice
+does not name the application behind it.** **A Plaid grant is ongoing read
+access to a business account, not a one-off login.** It arrived **nine minutes
+before the Balance transfer**, which is suggestive and **is not evidence**. **No
+cash figure recorded, under A-19. T-114.**
+
+### Two questions closed by looking at timestamps
+
+**The TikTok notices are a pair, not a second rejection.** Both arrived at
+**14:04:24Z and 14:04:25Z** on 2026-10-29, restating the same proof-of-address
+and business-verification requirement. **Yesterday's run could not tell whether
+a resubmission had been rejected again; one second apart settles it.** **T-100
+unchanged, no new task.**
+
+**The fifth Shopify bill attempt had not happened when this window closed.** All
+four prior attempts landed between **12:02Z and 12:38Z**; this window ends at
+**10:20Z**, and a targeted search of Shopify mail since 2026-10-29 returns only
+the two payout confirmations. **So its absence is neither success nor failure**
+— **the cash review at 11:10Z today is the run that will see it.**
+
+### The other venture's infrastructure, and the one leg of it that is DD84's
+
+**Vercel reports three misconfigured domains on the `georgia-opportunity-ledger`
+project**, one of them a **subdomain of DD84's primary domain.** **Nothing was
+opened** — not the dashboard, not the other repository — **because the Ledger's
+operations are not this record's and A-07 is pending.** **Only the DD84-domain
+leg is logged. T-115.**
+
+### What was withheld
+
+Under §5: the Challenger customer's and the new prospect's names and addresses,
+the Zelle payer's name and the confirmation code, **the calibration's
+filename**, card and account digits, a statement's contents, and **six notices
+concerning two minors, with no names, devices or apps recorded.** Under A-19:
+the declined card's amount and every account-level figure.
+
+### Counts after this run
+
+**115 tasks** · **14 Critical and open**, up one on T-110. **Eight approval
+packets pending, unchanged** — **no packet was raised**, because every finding
+is a correction, a flag, or a question only the owner can answer, and a ninth
+proposing no executable action would be noise.
+
+### The honest summary
+
+**This is the best window in the record and it is not close.** **The oldest
+unanswered customer got his answer, money came in, and the business made its
+first deliberate approach to a stranger.** **None of it was agent work** — the
+agent's contribution was to notice that the reply carried an uncleared safety
+gate, that the quote undercuts the published floor, and that a third party
+quietly acquired bank access.
+
+---
+
+## Next entry: OL-0077

@@ -82,17 +82,17 @@ what they do next. Ask for it before commissioning any further marketing work.
 
 ### Revenue — the single most important fact in this file
 
-| Metric                          | Value                                                                                                                                        | Verified   |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| All-time revenue                | **$3,507.86**                                                                                                                                | 2026-08-03 |
-| Paid invoices                   | 10                                                                                                                                           | 2026-08-03 |
-| Distinct customers              | **3**                                                                                                                                        | 2026-08-03 |
-| Average invoice                 | $350.79                                                                                                                                      | 2026-08-03 |
-| Largest invoice                 | $1,287.50                                                                                                                                    | 2026-08-03 |
-| Concentration                   | One customer = 67% (6 invoices); two customers = 99%                                                                                         | 2026-08-03 |
-| ~~**Last payment**~~            | ~~2025-09-12~~ → **2026-10-22**                                                                                                              | 2026-10-23 |
-| ~~Shopify orders, all time~~    | ~~**0**~~ → **1** — order #1001, **$550.00 charged / $530.31 paid out / $499.18 retained**, placed 2026-10-23T11:56:43Z                      | 2026-10-29 |
-| **Payments since the baseline** | **+$1,700.00 charged, +$1,680.31 received** — $450.00 (10-22, Zelle) · **$550.00 charged / $530.31 paid out 10-29** · $700.00 (10-24, Zelle) | 2026-10-29 |
+| Metric                          | Value                                                                                                                                                                    | Verified   |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| All-time revenue                | **$3,507.86**                                                                                                                                                            | 2026-08-03 |
+| Paid invoices                   | 10                                                                                                                                                                       | 2026-08-03 |
+| Distinct customers              | **3**                                                                                                                                                                    | 2026-08-03 |
+| Average invoice                 | $350.79                                                                                                                                                                  | 2026-08-03 |
+| Largest invoice                 | $1,287.50                                                                                                                                                                | 2026-08-03 |
+| Concentration                   | One customer = 67% (6 invoices); two customers = 99%                                                                                                                     | 2026-08-03 |
+| ~~**Last payment**~~            | ~~2025-09-12~~ → **2026-10-22**                                                                                                                                          | 2026-10-23 |
+| ~~Shopify orders, all time~~    | ~~**0**~~ → **1** — order #1001, **$550.00 charged / $530.31 paid out / $499.18 retained**, placed 2026-10-23T11:56:43Z                                                  | 2026-10-29 |
+| **Payments since the baseline** | **+$2,100.00 charged, +$2,080.31 received** — $450.00 (10-22) · **$550.00 charged / $530.31 paid out 10-29** · $700.00 (10-24) · **$400.00 (10-29, Zelle, memo "Tune")** | 2026-10-30 |
 
 **The drought ended on 2026-10-22, after 405 days — and then it rained.**
 **$1,700.00 arrived in four days**: $450.00 on 10-22 (Zelle, memo "tune"),
@@ -106,13 +106,18 @@ against a job** — **T-88** and **T-92** carry them. **$700.00 matches no
 approved rung**, sitting between the $650 Performance Tune and $749 in-person
 commissioning.
 
-**Derived, and labelled as derived: all-time payments _charged_ are $5,207.86**
-($3,507.86 from the 2026-08-03 baseline **plus $1,700.00 charged between
-2026-10-22 and 2026-10-24**). **Charged is not received, and from 2026-10-29 the
+**Derived, and labelled as derived: all-time payments _charged_ are $5,607.86**
+($3,507.86 from the 2026-08-03 baseline **plus $2,100.00 charged between
+2026-10-22 and 2026-10-29**). **Charged is not received, and from 2026-10-29 the
 difference is measurable:** the storefront order charged **$550.00** and paid
-out **$530.31**, so **all-time payments received are $5,188.17** — and **$31.13
+out **$530.31**, so **all-time payments received are $5,588.17** — and **$31.13
 of that is sales tax collected on behalf of Georgia and a county**, not DD84's
-money, leaving **$5,157.04 retained** on the same derivation.
+money, leaving **$5,557.04 retained** on the same derivation. **Four payments,
+not three: $400.00 arrived 2026-10-29 with the memo "Tune", and it is the third
+of the four that cannot be matched to a job — $1,550.00 of the $2,100.00 is
+unattributed.** **$400.00 is exactly the floor of the Toyota/Lexus rung and T-66
+is a stalled Lexus enquiry; that is one rung matching one amount, worth a
+question and recorded as a question, not as attribution.** **T-113.**
 
 **All three figures share the baseline's unknown basis and must not be presented
 as reconciled.** $3,507.86 was read on 2026-08-03 from a system this session
@@ -328,19 +333,34 @@ not predictions. This is enforced in code and copy, not just a footer.
 
 ## Channels
 
-| Channel                     | State                                                                        | Verified              |
-| --------------------------- | ---------------------------------------------------------------------------- | --------------------- |
-| **Manus front door**        | **Live. The entry point for everything. Traffic and conversion unread**      | 2026-08-13 _(stated)_ |
-| Shopify storefront          | Live as a checkout behind the front door; transacting capability unproven    | 2026-08-03            |
-| Stripe + bookipay invoicing | Live, dormant 11 months                                                      | 2026-08-03            |
-| Organic search              | **Unknown.** 7 visits/180d _to Shopify_; the front door's own search traffic |                       |
-|                             | has never been read                                                          | 2026-08-13            |
-| Social                      | Minimal (16 visits / 180 days _to Shopify_). Accounts `UNKNOWN`              | 2026-08-03            |
-| Email                       | Effectively unused (1 visit / 180 days _to Shopify_). No list size known     | 2026-08-03            |
-| Paid advertising            | **Never used. No account, no budget, no approval**                           | 2026-08-03            |
+| Channel                     | State                                                                                                                           | Verified              |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| **Manus front door**        | **Live. The entry point for everything. Traffic and conversion unread**                                                         | 2026-08-13 _(stated)_ |
+| Shopify storefront          | Live as a checkout behind the front door; transacting capability unproven                                                       | 2026-08-03            |
+| Stripe + bookipay invoicing | Live, dormant 11 months                                                                                                         | 2026-08-03            |
+| Organic search              | **Unknown.** 7 visits/180d _to Shopify_; the front door's own search traffic                                                    |                       |
+|                             | has never been read                                                                                                             | 2026-08-13            |
+| Social                      | Minimal (16 visits / 180 days _to Shopify_). Accounts `UNKNOWN`                                                                 | 2026-08-03            |
+| Email                       | Effectively unused (1 visit / 180 days _to Shopify_). No list size known                                                        | 2026-08-03            |
+| Paid advertising            | **Never used. No account, no budget, no approval**                                                                              | 2026-08-03            |
+| **Reddit — outbound**       | **First identified channel. The owner cold-approached a 5.3 owner from a Reddit post on 2026-10-29. One message, no reply yet** | **2026-10-30**        |
 
-**The channel that produced the three paying customers is `UNKNOWN`.** Nobody
+**The channel that produced the paying customers is still `UNKNOWN`.** Nobody
 recorded it. Establishing it is worth more than most campaigns — ask them.
+
+**One channel is no longer `UNKNOWN`, and it is outbound.** On
+**2026-10-29T21:31:54Z** the owner sent a cold approach to a 5.3 owner he found
+**on Reddit**, offering remote HP Tuners tuning and asking for the tune file,
+matching logs, cam specs, injector part number, fuel type, base fuel pressure
+and wideband status. **It is the first outbound sales message anywhere in this
+record and the first channel anyone chose on purpose.**
+
+**What that does and does not establish.** **It establishes that Reddit is a
+channel DD84 uses** — one message, sent, dated, with a script. **It establishes
+nothing about yield**: there has been **no reply**, no qualified lead and no
+revenue from it, and **one message is not a channel strategy.** **The inbound
+source for every paying job remains `UNKNOWN`** — this is a new channel beside
+that gap, not an answer to it. **T-112.**
 
 **"Organic search: effectively zero" was downgraded to `UNKNOWN` on
 2026-08-13**, not because new evidence contradicted it but because the evidence
