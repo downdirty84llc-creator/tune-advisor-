@@ -137,7 +137,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                              | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                               | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                                      | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
-| T-104 | Short card windows, repeated — 60s, 61s, 29s; not hourly, not fixed                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-104 | Card switched off 11 times in 8 days at irregular gaps — not a schedule                               | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-105 | A-22 chases a supplier who answered 8 days ago; two replies unread                                    | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-22 DEFER**                    | 2026-10-30   |
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record                                | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350                                | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -150,24 +150,26 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown                               | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                           | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
 | T-116 | Every brief states a run-end time it estimated rather than read                                       | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
+| T-117 | DD84 has no working payment instrument: PayPal fails and the card is off                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
+| T-118 | Revenue is traced to the cent and no expense in the period has an amount                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
+| T-119 | Every routine fires before the band in which the subscription is charged                              | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **17 Done** · 1 No Action · **2 Accepted Risk** · 6 In Verification · 5
-In Progress · **3 Awaiting Approval** · **46 Awaiting Owner** · 6 Blocked · 28
-Planned · 2 Backlog. **116 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
+In Progress · **3 Awaiting Approval** · **48 Awaiting Owner** · 6 Blocked · 29
+Planned · 2 Backlog. **119 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
 — **not the two-digit pattern, see the note below** — last **2026-10-30**, at
-the daily brief (**T-116 added**; **T-60 and T-71 descriptions corrected**,
-T-71's "two payments declined" having been wrong in the same direction for
-eleven days). **46 of the 116 rows are Awaiting Owner**, and **66 of the 96 open
-rows are past due.** **Fourteen rows are Critical and open**, up one: **T-110, a
-power revision delivered on a job whose own oil-pressure gate is not recorded as
-cleared.** **Eight approval packets pending; none raised on 2026-10-29 or
-2026-10-30.** **T-60 is the one to look at first** — 11 days past a platform
-deadline, and it now gates the only channel this record can show produced an
-enquiry.
+the weekly cash review (**T-117 to T-119 added**; **T-104 corrected a third
+time**, now that eleven dated card-off notices in eight days have killed the
+"hourly 60-second schedule" reading outright). **48 of the 119 rows are Awaiting
+Owner**, and **66 of the 99 open rows are past due.** **Fifteen rows are
+Critical and open**, up one: **T-117, the business having no payment instrument
+that reliably works.** **Eight approval packets pending; none raised on
+2026-10-29 or 2026-10-30.** **Four runs wrote this register on 2026-10-30** —
+the intake (T-110–T-115), the daily brief (T-116), and this review.
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

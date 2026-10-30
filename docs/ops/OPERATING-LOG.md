@@ -7608,4 +7608,173 @@ times every day for a week.**
 
 ---
 
-## Next entry: OL-0078
+## OL-0078 — 2026-10-30 · Cash review: revenue measured to the cent, costs measured at zero points, and no working instrument to pay with
+
+- **Routine** `/dd84-cash-review`, fired by **"DD84 Weekly Cash and Revenue
+  Review (repo-attached)"** (`trig_01Y9G9LUVQR752W4uop2jZfL`) at
+  **2026-10-30T11:12:47Z**, scheduled 11:10:00Z. **Twenty-ninth scheduled firing
+  to reach a session with the repository attached.** Class A throughout; **no
+  money moved.**
+- **Checkout** tip **`b086e02`** at start, **`fa81bc3`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **68
+  tracked files, not 28** — **sixteenth run reporting it**, T-85 step 3.
+- **Period** 2026-10-23 → 2026-10-30, since the last review.
+- **Sources read live** Shopify Admin (orders, transactions, fees, plan), Gmail.
+  **Not reached** Stripe, PayPal, bookipay, Square, **Shopify Payments** (scope
+  denied).
+- **New tasks** T-117, T-118, T-119. **T-104 corrected a third time.** **No
+  packet raised.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### Two restarts before a single finding
+
+**The worker restarted at about 11:13Z, losing the gathering phase outright, and
+again at about 11:40Z with the skeleton written but not yet committed.** **The
+second is precisely the failure OL-0050 exists to prevent** — a file on disk and
+nothing in git — so the skeleton went in at `fa81bc3` before any other work.
+**Sixteenth application, and the first time one run has needed the repair
+twice.**
+
+### The sweep was complete, and saying so is the point
+
+**34 threads matched against eight named financial senders and 34 were
+returned.** The 2026-10-23 review found that a broad money-word query matched
+about 201 and returned 40 **without saying so**. **Precision beat breadth again,
+and completeness is recorded because it is the property that cannot be
+assumed.**
+
+### Revenue closed, in full under A-13
+
+| When                 | Amount      | Route                                     | Attributed |
+| -------------------- | ----------- | ----------------------------------------- | ---------- |
+| 2026-10-23T11:56:43Z | **$550.00** | Shopify #1001                             | **Yes**    |
+| 2026-10-24T22:31:55Z | **$700.00** | Zelle, "mecanic tune", **from a company** | No — T-92  |
+| 2026-10-29           | **$400.00** | Zelle, "Tune"                             | No — T-113 |
+
+**$1,650.00 charged and $1,630.31 received in the period** — the difference
+being #1001's fee. **$1,100.00 of it cannot be matched to a job; $1,550.00 since
+2026-10-22.** **All three notifications are still unread**, the $700.00 one for
+5.5 days.
+
+**Order #1001 was placed 17 minutes after the last review finished reading the
+store**, which is why that review's "0 orders all time" went false within the
+hour. **This review re-read the store live rather than trusting a week-old
+count: still exactly one order.**
+
+### The structural finding, and it is the reverse of every previous one
+
+**One job in DD84's history now has a revenue line traced end to end:** $550.00
+charged, $650.00 of list price less a $100.00 code on the tuning line, **$31.13
+of included Georgia and county sales tax**, **$19.69 of fee at 3.49% + ~$0.49
+(3.58% effective)**, **$530.31 paid out**, **$499.18 retained — 90.76% of
+gross**, **5.89 days from checkout to cash.**
+
+**And it has no cost line, for three specific reasons rather than vaguely:** the
+**HP Tuners credits bought 2026-10-24 have never been read** (T-94); a
+**supplier shipment arrived 2026-10-29 with no purchase record** anywhere in
+this register; and **no labour time exists at all**, the calendar having been
+empty on **seven consecutive checks.**
+
+**Every prior review reported revenue and cost both unknown. This one can state
+exactly what came in and still cannot state what any of it cost.** **No margin
+is computed and none is estimated. T-118.**
+
+### Receivables: none, and that is an answer
+
+**Nothing has been invoiced, so nothing is overdue.** **Receivables read "not
+available this run" rather than zero**, because Stripe, PayPal and bookipay
+could not be read and an invoice in any of them would be invisible.
+
+**The $699 on T-37 and T-64 is not a receivable.** **A-21 has never been
+answered, so neither job was ever quoted, and nobody owes DD84 anything** — the
+packet is the blocker, not a debtor. **T-64 took a further calibration on
+2026-10-29 and is still unpriced: the job grew while the quote did not.**
+
+**The exposure is the mirror image: $1,550.00 in hand with no recorded work
+against it**, which cannot be invoiced, margined or acknowledged. **Three
+sentences converts all of it.**
+
+### DD84 has no working payment instrument, and it is now demonstrable
+
+**Shopify's primary method is PayPal** (named in the 2026-10-28 notice), and
+**PayPal declined a transfer on 10-20, had a card locked on 10-26, and cannot be
+authenticated from this session.**
+
+**And the debit card is off far more often than this register knew.** Every
+card-off notice in the sweep, dated:
+
+| Date       | Card-off notices                  |
+| ---------- | --------------------------------- |
+| 2026-10-22 | 12:57:27Z · 13:19:31Z · 22:53:09Z |
+| 2026-10-23 | 00:09:49Z · 12:41:20Z             |
+| 2026-10-26 | 12:16:32Z · 18:06:50Z             |
+| 2026-10-27 | 00:03:00Z · 22:54:33Z · 23:54:47Z |
+| 2026-10-29 | 08:52:14Z                         |
+
+**Eleven in eight days, eight of them in this period. The register had about
+four.**
+
+**T-104 is corrected a third time, and this time with enough points to settle
+it.** The 2026-10-28 intake concluded from **two** observations that this was
+**"a 60-second window, opened twice, exactly an hour apart … a person does not
+do that"** — a schedule. **The gaps across eleven points are 22 minutes, 9
+hours, 36 hours, 6 hours, 1 hour and 29 seconds.** **No schedule produces
+that.** **What it looks like is a person doing it by hand, frequently.**
+**Purpose is still not asserted.**
+
+**One inference is withdrawn rather than replaced.** Two briefs tied the Shopify
+bill failures to the card declines on a nine-minute proximity (12:11:22Z →
+12:20:23Z on 10-24). **With PayPal as the primary method and Shopify's own
+notice advising that a backup be _added_ — implying none is configured — that
+link no longer follows.** The card decline is more likely a separate attempt,
+possibly the owner's own. **Removed, not re-explained. T-117, Critical.**
+
+### A schedule that cannot see the event it exists to report
+
+**All four subscription attempts landed between 12:02:51Z and 12:38:57Z**,
+verified from the three in-period notices. **The intake fires 10:20Z, the daily
+brief 10:51Z, this review 11:13Z.** **Every routine runs before that band**, so
+**none of today's three runs can report the fifth attempt and its absence means
+nothing.** **The next intake is Monday — about 70 hours late.** **T-119.**
+
+### Against the August baseline
+
+**Re-verified: last payment 2025-09-12 → 2026-10-29; 0 Shopify orders → 1.**
+**Unchanged by construction: 10 paid invoices**, because none of the four recent
+payments is an invoice. **Not re-verified and not estimated: distinct
+customers** — whether the storefront customer and the three payers are among the
+baseline three **cannot be established here**, since names are withheld under §5
+and matching them is the owner's. **Also not re-verified: all-time revenue,
+average invoice, largest invoice, concentration** — the systems holding them are
+unreachable.
+
+**The ten invoices were not chased and the numbering gaps were not raised**, per
+the 2026-08-07 decision.
+
+**The drought ended after 405 days, and the record should say it plainly: four
+payments in eight days after fourteen months of nothing.**
+
+### Cash position
+
+**Withheld, A-19.** **The last recorded shape is _overdrawn_ (T-71, 2026-10-16),
+not re-verified since, and $1,630.31 has arrived in the period — so it may no
+longer hold and this review does not claim it does.** **The two documents that
+would settle it arrived in the last 48 hours and neither can be opened from
+here**: threads `1a18388dc9e617cb` and `1a18ab6ea53c85d9`. **Reported as
+unreadable rather than withheld, because their contents were never seen** — the
+distinction A-19 itself draws.
+
+### The honest summary
+
+**A quiet cash week would be a real result; this was not one.** **$1,650.00
+charged, $1,630.31 received, a first storefront payout banked, and the longest
+drought in the business's history ended.**
+
+**The problem has moved.** **It is no longer getting money in.** **It is that
+two thirds of what came in cannot be matched to a job, nothing that went out has
+a number against it, and the business has no instrument that reliably pays
+anything.**
+
+---
+
+## Next entry: OL-0079
