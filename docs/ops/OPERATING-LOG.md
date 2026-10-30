@@ -7467,4 +7467,145 @@ quietly acquired bank access.
 
 ---
 
-## Next entry: OL-0077
+## OL-0077 — 2026-10-30 · Daily brief: the record was overstating its own run times, and the one channel that works has an unanswered flag against it
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-10-30T10:51:24Z**. **Twenty-eighth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`b27bdd6`** at start, **`cdd6e00`** after the protective
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **67
+  tracked files, not 28** — **fifteenth run reporting it**, T-85 step 3.
+- **Sources reached** Google Calendar, read live; the register, the approvals
+  file and git history. **Not reached** Stripe, PayPal, bookipay, Square.
+- **New tasks** T-116. **New packets** none.
+- **Start time from the trigger; end time is this entry's commit** — see below.
+- **Operator** Claude (agent), cqvhy6 session
+
+### Every brief in this record overstated how long it ran, for a week
+
+**The 2026-10-30 intake said it ran 10:21–11:15Z. Its finishing commit is dated
+10:29:27Z, and the clock read 10:51:33Z when this routine fired** — **so the
+file was claiming a time that had not happened.** Checking all seven recent
+briefs against the last commit that touched each:
+
+| Brief            | Claimed end | Commit | Over by     |
+| ---------------- | ----------- | ------ | ----------- |
+| 10-27 intake     | 10:45Z      | 10:27Z | ~18 min     |
+| 10-27 daily      | 11:05Z      | 10:54Z | ~11 min     |
+| 10-28 intake     | 10:45Z      | 10:24Z | ~21 min     |
+| 10-28 daily      | 11:05Z      | 10:54Z | ~11 min     |
+| 10-29 intake     | 11:12Z      | 11:00Z | ~12 min     |
+| **10-29 daily**  | **11:40Z**  | 11:00Z | **~40 min** |
+| **10-30 intake** | **11:15Z**  | 10:29Z | **~46 min** |
+
+**All seven. The two worst are the most recent.** **An end time was estimated
+and presented as read** — the defect this register catches in connectors, in
+counts and in other runs' claims, sitting in its own header line **for a week,
+undetected because nothing downstream consumes it.**
+
+**It is not harmless.** **The inflation is three to sixfold**, and **what a
+Routine costs and how long it takes is an open question in this record** —
+OL-0012 sampled one firing at $1.77 and 22,888 output tokens, and A-10 still
+turns on whether these runs are worth their money. **A duration figure wrong by
+that factor would corrupt exactly that argument.**
+
+**Corrected:** the 2026-10-30 intake brief, this session's own output from 23
+minutes earlier, now states the trigger's start time and takes its end from the
+commit hash, **with the original wording quoted rather than deleted.**
+
+**Not corrected, deliberately:** the six earlier briefs. **Editing another run's
+dated output is the A-16 situation**, and the correction is better placed where
+this register always puts corrections — **in today's brief and this entry, with
+the whole table, so the wrong claims stay visible with the correction
+attached.** **T-116** carries the rule for future runs: **start time from the
+trigger, end time from the commit, and a brief that wants an end time before
+committing states none.**
+
+**No approval packet was raised for the six.** Unlike A-24's redaction, **this
+correction is additive and nothing about it is sensitive** — the table above is
+the whole of it, and a packet to append a note that is already appended would be
+ceremony.
+
+### The channel the business just started using is the one under a flag
+
+**Today's intake found, correctly, that the owner made DD84's first outbound
+sales approach on 2026-10-29, to a 5.3 owner he found on Reddit, and
+`ventures.md` now records Reddit as the first identified acquisition channel.**
+**The intake did not connect it to what this register already held.**
+
+- **T-60: Reddit flagged the DD84 account for automated activity, seven-day
+  deadline, expiring roughly 2026-10-19.** **Critical, Awaiting Owner, 11 days
+  past its date.**
+- **Five Reddit handles were produced in six days**, each by DD84 answering a
+  technical question for free, and this register's own words are that **"nothing
+  else in this record has produced a single inbound enquiry."**
+- **The register's own standing instruction was "clear T-60 first", with "T-60
+  is a prerequisite for this task, not a neighbour of it."**
+
+**So the only demonstrable demand source has an unresolved account problem
+against it, and the business has just begun sourcing from it harder.** **If the
+account is actioned, the channel, the five handles and the new prospect go
+together.**
+
+**Two precisions, because overstating this would be easy and wrong.** **The
+outreach went by email to the individual, not as a post in the forum**, so it
+does **not** breach the register's own forum restriction, which governs posting.
+**And the five identified handles remain uncontacted — the person approached was
+a sixth.** **Both are the owner's calls.** **The finding is the account's
+status, not his judgement**, and T-60 was already the register's own stated
+prerequisite before any of this happened.
+
+### Money, and a schedule that misses its own event
+
+**IN: $400.00**, 2026-10-30T00:35:17Z, Zelle, memo "Tune" — **the third
+unattributed payment; T-113.** **OUT: a business debit card declined, "card is
+off", 2026-10-29T12:25:24Z — amount withheld under A-19.** **$530.31 left
+Shopify Balance at 09:33:34Z and is yesterday's payout moving one hop, not new
+money.**
+
+**Nine-day revenue, in full under A-13: $2,100.00 charged, $2,080.31 received,
+$1,550.00 unattributed across three payers — none of whom has been
+acknowledged.**
+
+**A scheduling finding worth more than the billing question itself.** All four
+Shopify bill attempts landed between **12:02Z and 12:38Z**. **The intake runs at
+10:20Z, this brief at 10:51Z, and the weekly cash review at 11:10Z — every
+routine fires before the window in which the charge has always been attempted.**
+**So the routine built to catch a billing failure reports it roughly 24 hours
+late, every time**, and four briefs have now carefully hedged an absence that
+**was never going to be present.** **The hedging was right and the schedule is
+the actual defect.**
+
+### The diary, seventh time
+
+**Calendar read live: empty through 2026-11-07.** **$2,100 collected, two
+calibrations delivered, a payout banked, and nothing scheduled anywhere.** Order
+#1001 still has **a verified top line and no bottom line** — T-94's unread
+spend, a supplier shipment with no purchase record, and **no entry recording how
+long any job took.**
+
+### Counts
+
+**116 tasks** · 46 Awaiting Owner · **66 of 96 open rows past due** · **fourteen
+Critical and open**, up one on T-110. **Eight approval packets pending,
+unchanged; none raised today or yesterday.** **T-60 and T-71 descriptions
+corrected** — T-71's "two payments declined" has been wrong in the same
+direction for eleven days and now reads five or more.
+
+### The honest summary
+
+**This was the best week in the record and none of it was agent work.** The
+owner answered his oldest unanswered customer, banked a first storefront payout,
+took a third payment and made the business's first deliberate approach to a
+stranger.
+
+**The agent's contribution was three findings and one confession:** that the
+reply carried an uncleared safety gate, that the new channel sits under an
+eleven-day-old flag, that the billing routine fires 80 minutes before the event
+it exists to catch — **and that this record had been overstating its own run
+times every day for a week.**
+
+---
+
+## Next entry: OL-0078
