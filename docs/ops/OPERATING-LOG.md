@@ -8032,4 +8032,130 @@ now at the point where the delay is the only thing left to explain.**
 
 ---
 
-## Next entry: OL-0081
+## OL-0081 — 2026-11-02 · Opportunity scan: three real finds, none with a confirmed open deadline, and the reason is a network setting
+
+- **Routine** `/dd84-opportunity-scan`, fired by **"DD84 Weekly Georgia
+  Opportunity Scan (repo-attached)"** (`trig_01UPEmQbHN6vzC4PKse2zf23`) at
+  **2026-11-02T11:29:42Z**, scheduled 11:25:00Z. **Thirty-second scheduled
+  firing to reach a session with the repository attached.** Class A: **nobody
+  contacted, nothing applied for, nothing committed.**
+- **Checkout** tip **`6feb625`** at start, **`7c7ab50`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **71
+  tracked files, not 28** — **nineteenth run reporting it**, T-85 step 3.
+- **Sources** WebSearch, five queries. **WebFetch: zero hosts reachable.**
+- **New tasks** T-123, T-124, T-125. **T-98 updated and re-dated.** **No packet
+  raised.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### The repair finally paid off in the plainest possible way
+
+**The skeleton was committed and pushed at `7c7ab50`, and the worker then
+restarted mid-gather — the seventh restart this session.** **Nothing was lost.**
+**Every previous entry has argued for OL-0050's repair; this is the first where
+the argument is just a fact.**
+
+### The instrument test, and a refinement to T-98
+
+**`WebFetch https://example.com` → `getaddrinfo ENOTFOUND example.com`.** **A
+control host that certainly exists does not resolve**, so **this is not about
+any particular site** — and **the error text names the cause: the host is
+outside the session's allowed network domains.**
+
+**That corrects T-98's own wording.** The earlier conclusion was **"no name
+resolution at all, and no host allow-listing would fix it."** **The accurate
+version is that the session's network policy permits none of these hosts,
+control included** — which makes it **a policy-scope setting the owner can
+change, not an impossibility.** **Network access in the environment's settings,
+either a broader level or specific hosts under Allowed domains.**
+
+**What it costs the routine, precisely.** **The prompt requires validating the
+source and the deadline before scoring, and WebFetch is the only tool that could
+open a page.** **So every entry this run is scored from search-result content,
+every one takes a reduced source-reliability score, and no entry is presented as
+validated.** **Nothing was mocked to cover the gap.**
+
+### Two defects in the scoring method
+
+**The classification bands still do not exist** — the command file promises
+"bands that follow from the total" and never states them. **Fourth scan to
+report it; no threshold invented, entries ranked by total and left unlabelled.**
+
+**And new this run: "time sensitivity" has no stated direction.** A rolling
+programme DD84 could act on any day is **less** time-sensitive and **more**
+useful, so the axis reads either way. **The reading used was stated in the brief
+so it can be overruled: higher means the window better favours acting now.**
+**T-125.**
+
+### Ranked: 60, 56, 42 — and the second is not recommended
+
+**1. Georgia DOAS fleet-provider enrollment, 60/100.** `doas.ga.gov`, vendor
+enrollment guide dated 2026-07: **state-owned vehicle maintenance has moved to
+Element Fleet Management's provider network**, and a business outside that
+network **"must enroll and become an approved maintenance provider"** to keep
+performing maintenance or repair on state vehicles. **No deadline — enrollment,
+not a bid.** **It ranks first because it is the only find that is recurring
+revenue rather than a one-time grant**, and diagnostics is adjacent to what it
+procures. **Its honest weakness: DD84 is a remote calibration business, not a
+physical repair shop, and no source says whether that qualifies. T-123 asks that
+before any effort goes in.**
+
+**2. SBA Microloan via a Georgia intermediary, 56/100.** Up to $50,000 through
+nonprofit intermediaries, all 159 counties, rolling. **Scored second and
+explicitly not recommended** — **risk 1 out of 5, because this is debt against a
+business with four payments in eleven days and a cash shape last recorded as
+overdrawn.** **Its value is comparative: `CLAUDE.md` records DD84 as pursuing
+SBA 504, and a microloan is the right-sized instrument where 504 is not.**
+
+**3. Jackson County Chamber small-business grant, 42/100.** **DD84's own
+county.** 2024 cycle: **$3,000 cap, 1 October deadline, chamber membership of at
+least a year required.** **No 2026 cycle confirmed.**
+
+### The scan caught itself about to publish a deadline that does not exist
+
+**The first search reported the chamber programme as a "Small Business Grant
+Program 2026" run jointly with Chevron.** **An extended search of the same page
+found the content is the 2024 cycle, and nothing anywhere connects Chevron to
+this chamber.**
+
+**Had this scan scored from the first search alone it would have published a
+confident 2026 deadline that does not exist.** **That is the failure the
+prompt's "never score from a stale or unverifiable listing" rule aims at,
+arriving by a route the rule does not describe: not a stale listing, but a fresh
+summary of a stale page.** **Recorded because the second search was a choice,
+and a future run under time pressure might not make it.**
+
+### Refused, and the pattern worth more than any single bid
+
+**A claimed $90,000 Department of Community Health grant with a 2026-11-13
+deadline was refused.** The search that surfaced it reported the page carries
+**"jumbled, mismatched program descriptions"**, and a health grant has no
+evident fit with automotive calibration. **An unverified opportunity with a
+number beside it is worse than one without** — the same judgement as 2026-10-26,
+second time needed.
+
+**Five Georgia fleet solicitations were found and all had closed** — Fulton
+County police fleet, **a Small Business Set Aside**, closed 2026-09-15; Atlanta
+Fire Rescue EMS 2026-05-29; Augusta-Richmond 2026-06-03; South Fulton heavy-duty
+2026-04-30 and light-duty 2026-04-24.
+
+**The pattern is the finding, not any single closed bid: fleet maintenance work
+recurs in Georgia, closes on short windows, and some of it is explicitly set
+aside for small businesses.** **A weekly scan that cannot open a procurement
+portal will keep meeting these after they close** — which ties the whole routine
+back to T-98.
+
+### The honest headline
+
+**Not one opportunity in this scan has a confirmed open deadline.** **The prompt
+says an empty scan is a finding about the scan rather than about Georgia** — and
+**this scan is not empty, it is unvalidated, for one reason: the session cannot
+open a web page.**
+
+**The decision that unblocks the routine is an environment setting, not an
+opportunity.** **Nothing found needs money and nothing is urgent this week; the
+urgent items are T-110, T-52 and T-60, and this scan does not compete with them
+for attention.**
+
+---
+
+## Next entry: OL-0082

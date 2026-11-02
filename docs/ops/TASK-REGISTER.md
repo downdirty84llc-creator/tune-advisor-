@@ -131,7 +131,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-95  | The first inbound enquiry in five runs, unqualified and unread                                | sales      | **High**     | **Awaiting Approval**    | Owner | **A-23 pending**                  | 2026-10-27   |
 | T-96  | The business site has new indexing failures on duplicate canonicals                           | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-30   |
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
-| T-98  | WebFetch has no DNS, so the scan cannot validate any source                                   | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
+| T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
 | T-100 | TikTok Shop rejected the application for a proof-of-address document                          | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -156,27 +156,25 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-120 | Meta Ads spend exists; the registry says advertising was never used                           | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
 | T-121 | A second bank account and an advisors account the register never recorded                     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-122 | The third repository has a Supabase project and it has been paused                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
+| T-123 | Does remote ECU calibration qualify as fleet "maintenance" for DOAS enrollment?               | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-124 | Is DD84 a Jackson County Chamber member, and is there a 2026 grant cycle?                     | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-125 | The scan scoring method has no stated direction for "time sensitivity"                        | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-09   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **18 Done** · 1 No Action · **2 Accepted Risk** · 6 In Verification · 5
-In Progress · **3 Awaiting Approval** · **50 Awaiting Owner** · 6 Blocked · 29
-Planned · 2 Backlog. **122 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
+Counts: **18 Done** · 1 No Action · **2 Accepted Risk** · 6 In Verification · 6
+In Progress · **3 Awaiting Approval** · **52 Awaiting Owner** · 6 Blocked · 29
+Planned · 2 Backlog. **125 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
 — **not the two-digit pattern, see the note below** — last **2026-11-02**, at
-the Monday intake (**T-120 to T-122 added**; **T-94 closed Done with evidence**,
-the first cost input this record has held; **T-89, T-117 and T-118 corrected**).
-**50 of the 122 rows are Awaiting Owner**, and **75 of the 101 open rows are
-past due.** **Fourteen rows are Critical and open, down one** — **T-117 was
-corrected from Critical to High once three payment instruments were shown to
-work and only the Shopify billing agreement was shown to fail.** **Eight
-approval packets pending; none raised since 2026-10-29.** **Re-read at the
-2026-11-02 daily brief: 122 tasks unchanged, 75 of the 101 open rows now past
-due — all nine of the increase since Friday from three days of weekend passing,
-not from new work.** **T-52 and T-60 descriptions corrected: T-60's counted days
-inline and had gone stale by three, which is why durations belong in dated
-briefs and not in register rows.**
+the weekly opportunity scan (**T-123 to T-125 added**; **T-98 reworded and
+re-dated** after a control-host test showed the cause is the session's network
+policy rather than a per-site block). **Three routines wrote this register on
+2026-11-02** — the intake (T-120–T-122, T-94 closed), the daily brief (T-52 and
+T-60 corrected), and the scan. **52 of the 125 rows are Awaiting Owner**, and
+**75 of the 104 open rows are past due.** **Fourteen rows are Critical and open,
+unchanged.** **Eight approval packets pending; none raised since 2026-10-29.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
