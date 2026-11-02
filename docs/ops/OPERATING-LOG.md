@@ -7931,4 +7931,105 @@ side.**
 
 ---
 
-## Next entry: OL-0080
+## OL-0080 — 2026-11-02 · Daily brief: a Meta phish got more dangerous the day the business started paying Meta
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-11-02T10:51:25Z**. **Thirty-first scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`a5f7508`**; `HEAD` equal to origin; **no `src/`, no
+  `package.json`**; clean. **70 tracked files, not 28** — **eighteenth run
+  reporting it**, T-85 step 3.
+- **No skeleton commit** — the intake committed at **10:27:16Z, 24 minutes
+  earlier**, and this run's only gathering was one live calendar read. **Seventh
+  time this judgement has been recorded.**
+- **Sources** Google Calendar, read live; the register, the approvals file, git
+  history. **Not reached** Stripe, PayPal's connector, bookipay, Square.
+- **New tasks** none. **T-52 and T-60 descriptions corrected.** **No packet
+  raised.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### The one finding no earlier brief could have made
+
+**Neither half is new; the combination is.**
+
+**T-52** has been Critical and Awaiting Owner since 2026-10-12: a
+**credential-harvesting email impersonating Meta**, received
+**2026-10-09T10:32:00Z**, thread `1a120384795bc4cf`, **still unread at 24.01
+days.** **T-120**, raised by this morning's intake: **on 2026-10-31 the business
+paid Meta Platforms for an advertising line item**, and `ventures.md` had
+recorded paid advertising as "never used" until today.
+
+**Why the pairing changes the risk.** **A Meta credential phish is dangerous in
+proportion to how plausible Meta billing mail is to its recipient.** Three days
+ago Meta mail here was unsolicited; **today genuine Meta invoices, payment
+failures and account warnings are expected mail** — and **Meta Ads billing is
+precisely what advertiser-targeted credential phishing imitates**, because an ad
+account with a stored payment method is the prize.
+
+**Stated with its limits.** **What is established:** the phish is unread and a
+Meta billing relationship now exists. **What is not asserted:** that they are
+connected, that the phish was targeted, or that anything is compromised. **The
+phish predates the ad spend by 22 days, so spray is far likelier than aim.**
+**The action was always the same — get it out of the inbox — and the cost of
+being wrong went up while the cost of acting did not.** **Mail state is the
+owner's; this register may not modify it and would not delete evidence anyway.**
+
+### A register row that counted days inline, and rotted
+
+**T-60's description read "11 days past a 7-day deadline."** **Written
+2026-10-30; wrong by three days today** because a weekend passed. **A hard-coded
+duration in a register row goes stale every day it is not rewritten.**
+
+**Corrected to the deadline date, which does not rot**, and **the rule is worth
+keeping: durations belong in briefs, which are dated, not in register rows,
+which are not.** **T-60 was the only row that counted days inline**, so the
+defect was one row wide — but it was wrong in a Critical row for three days.
+
+### Money, and a delta that is calendar rather than neglect
+
+**Nothing came in over the weekend; the last money in was $400.00 on 2026-10-29,
+3.43 days ago.** **Out: $99.98 of HP Tuners credits (10-30) and $10.58 to Meta
+(11-01), both succeeded; a sixth Shopify subscription failure (11-01), amount
+withheld under A-19.**
+
+**$210.54 of spend is now known where last week none was.** Four credits in
+seven days against $2,100.00 charged is **9.5% — a period ratio, not a job
+margin**, since #1001's credit consumption is unknown.
+
+**Overdue went 66 of 95 to 75 of 101. All nine of the increase came from three
+days of weekend passing.** **Recorded explicitly, because "overdue up nine"
+would be true and misleading in the same breath** — the mistake T-116 exists
+for.
+
+### The diary, eighth time, and a sharper way to say it
+
+**Calendar read live: empty through 2026-11-10.**
+
+**The margin complaint is now precise instead of general.** Order #1001 has **a
+verified revenue line — $499.18 retained — and a known input cost of $49.99 per
+credit**, and **still no margin, because the credits it consumed and the hours
+it took are both unrecorded.** **Two of the three inputs to a margin now exist.
+The diary is the missing one.**
+
+### Counts
+
+**122 tasks** · 50 Awaiting Owner · **75 of 101 open rows past due** ·
+**fourteen Critical and open**, unchanged — **T-117 left the list on Friday when
+it was corrected and nothing replaced it.** **Eight packets pending, none raised
+since 2026-10-29.**
+
+### The honest summary
+
+**The weekend brought no money, no enquiry and no customer**, and **this brief's
+own contribution is two modest things**: that a phishing email became more
+dangerous the day a billing relationship opened, and that a row counting days
+inline had gone stale by three.
+
+**Nine of today's eleven decisions cost a sentence each.** **Two of them — T-110
+and T-52 — get more expensive by waiting rather than staying still, and both are
+now at the point where the delay is the only thing left to explain.**
+
+---
+
+## Next entry: OL-0081
