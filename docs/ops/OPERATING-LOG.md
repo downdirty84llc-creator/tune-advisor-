@@ -7777,4 +7777,158 @@ anything.**
 
 ---
 
-## Next entry: OL-0079
+## OL-0079 — 2026-11-02 · Six failures not four, PayPal works, and the cost side finally has a number
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-11-02T10:20:56Z**. **Thirtieth scheduled firing to reach a session with
+  the repository attached.** Class A throughout.
+- **Checkout** tip **`4fbfbe7`** at start, **`cbd153c`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **69
+  tracked files, not 28** — **seventeenth run reporting it**, T-85 step 3.
+- **Window** since OL-0076, **2026-10-30T10:20Z → 2026-11-02T10:20Z**, **72
+  hours.**
+- **Counts** **79 threads estimated** · 11 actionable · **0 new leads** (ninth
+  run) · **0 drafts** (tenth run) · **3 new tasks** (T-120–T-122) · **1 task
+  closed Done with evidence** · **4 descriptions corrected.**
+- **Thirteen items fetched individually** because T-102 is Accepted Risk.
+- **Operator** Claude (agent), cqvhy6 session
+
+### T-119's question, answered, and a counting error of this register's own
+
+**T-119 predicted this intake would be the first run able to see Friday's
+subscription attempt, about 70 hours late. It was.** **Two more failures:
+2026-10-30T12:01:09Z and 2026-11-01T13:09:14Z**, both naming **PayPal** as the
+failed primary method, both against the **same invoice**, whose billing cycle
+still reads **OCT 22**. **Next attempt 2026-11-03.**
+
+**Comparing the notices exposes the error.** Shopify prints a timeline of
+**exactly four attempts and renumbers them every time** — the 10-28 notice calls
+Oct 28 the "4th attempt", the 10-30 notice calls Oct 30 the "4th attempt", the
+11-01 notice calls Nov 1 the "4th attempt". **It is a rolling window, not a
+running total.** **The 2026-10-29 intake read it as cumulative and reported "the
+fourth failure."**
+
+**Counting the notices settles it: six since 2026-10-22** — Oct 22, 24, 26, 28,
+30 and Nov 1. **Six attempts, six failures, eleven days on one unpaid invoice.
+T-89 corrected.**
+
+**Sixth member of the instrument-defect family, and the second of the shape _a
+field that looks like a count and is not_**, after `discountedTotalSet`
+reporting a pre-discount total. **A number beside the word "attempt" was taken
+as the number of attempts.**
+
+### T-117 was wrong and is corrected three days after this register raised it
+
+**T-117 was raised Critical on 2026-10-30 under "DD84 has no working payment
+instrument." That is false.**
+
+| When                 | What                                       | Instrument           | Outcome       |
+| -------------------- | ------------------------------------------ | -------------------- | ------------- |
+| 2026-10-24T22:19:31Z | HP Tuners — 2 credits, **$99.98**          | A Visa card          | **Succeeded** |
+| 2026-10-30T18:38:14Z | HP Tuners — 2 credits, **$99.98**          | **A different Visa** | **Succeeded** |
+| 2026-11-01T04:54:32Z | **Meta Platforms — $10.58**, line item Ads | **PayPal**           | **Succeeded** |
+| 10-30, 11-01         | Shopify subscription                       | **PayPal**           | **Failed**    |
+
+**PayPal paid Meta hours before Shopify reported PayPal failing on the same
+day.** **Same account, same day, one through and one refused.**
+
+**The diagnosis narrows usefully rather than collapsing:** **it is not that the
+business cannot pay for things — three instruments work — it is that the
+specific billing agreement between Shopify and this PayPal account does not
+execute.** An expired authorisation or a broken mandate is a far more fixable
+problem than insolvency, **and this register spent three days implying the
+latter.** **T-117 corrected from Critical to High and reworded.**
+
+### T-94 closed with evidence, and the cost side opens
+
+**T-94 has asked since 2026-10-24 what the HP Tuners credits cost. Both receipts
+are now read:** **$99.98 on 2026-10-24 and $99.98 on 2026-10-30, two universal
+credits each.** **$199.96 for four credits; $49.99 per credit.**
+
+**That is the first direct cost input this record has ever held**, after five
+reviews reporting none was knowable. **T-94 moves to Done.**
+
+**$199.96 against $2,100.00 charged in the same period is 9.5%** — **a period
+cost-to-revenue ratio, not a job margin.** **How many credits order #1001
+consumed is not known and is not guessed, so #1001 still has no margin.**
+
+**The purchase pattern is worth recording:** **$700.00 arrived 10-24 and credits
+were bought twelve minutes later; $400.00 arrived 10-29 and credits were bought
+the next day.** **Money in, inputs bought — the first time this record has been
+able to watch that happen.**
+
+**T-118 said no expense in the period had a known amount; that is now partly
+false** — $210.54 is known, the Manus renewal and a supplier shipment are not.
+**Corrected rather than left standing.**
+
+### Paid advertising, which the registry said had never been used
+
+**`ventures.md` recorded paid advertising as "Never used. No account, no budget,
+no approval."** **A PayPal receipt dated 2026-11-01 shows $10.58 paid to Meta
+Platforms against a line item reading "Ads", transaction dated 2026-10-31.**
+
+**Flagged rather than resolved, per the routine's instruction.** **The row is
+struck and updated with the date and the evidence.** **What is not established
+and is not asserted: whether a campaign is live, what it promotes, the budget,
+or whether $10.58 is a trial or a threshold charge on something larger** — Meta
+bills on spend thresholds, so the amount settles none of it. **T-120.**
+
+**Two channels appeared in four days after three months of `UNKNOWN`** — Reddit
+on 10-29, Meta on 10-31. **Neither has produced a lead.**
+
+### Three smaller findings
+
+**A second bank account exists that this register never recorded** — a statement
+for an account whose digits differ from the known one, 2026-10-31T19:46:16Z,
+with an advisors statement and a trade confirmation alongside. **The register
+has assumed one business account throughout. Digits withheld, no figure under
+A-19. T-121.**
+
+**The third DD84 repository has a database, and it has been switched off.**
+Supabase sent "going to be paused" then "has been paused" for a project named
+after that repository. **T-101 flagged the repository on 2026-10-27 and nothing
+was opened then; nothing was opened now.** **A paused free-tier project is
+routine inactivity, not an incident** — recorded because **the register did not
+know this venture had infrastructure at all. T-122.**
+
+**The owner cancelled a subscription and asked for a refund of an earlier
+charge** on 2026-10-30, and the provider confirmed. **Owner action, recorded as
+such and not re-reported as agent work.**
+
+### No leads, and the query that proves it
+
+**Ninth consecutive run with no inbound enquiry, and the Reddit prospect has not
+replied in 3.53 days.** **A targeted search for person-to-person mail across the
+72 hours returned nothing from any customer or prospect** — **run and empty, not
+assumed.**
+
+### What was withheld
+
+Under §5: **the business's full postal address and telephone number**, which
+appear on both supplier invoices; the HP Tuners serial number; **three card
+digit-sets**; two customers' and one prospect's names and addresses; a notice
+concerning a minor. **Noted because TikTok's outstanding requirement (T-100) is
+precisely a proof-of-address document — the owner has several in his inbox, and
+this register must not be the place that holds one.** Under A-19: every
+account-level figure, and the subscription amount.
+
+### Counts after this run
+
+**122 tasks** · **14 Critical and open**, down one — **T-117 corrected to
+High.** **18 Done.** **Eight approval packets pending; none raised.**
+
+### The honest summary
+
+**Three of this run's four main findings are corrections to things this register
+asserted in the last four days:** the failure count, the no-working-instrument
+claim, and the no-known-costs claim. **The fourth is a spend category the
+registry said did not exist.**
+
+**The useful net: the business can pay for things, one specific billing
+agreement cannot, and for the first time there is a real number on the cost
+side.**
+
+---
+
+## Next entry: OL-0080

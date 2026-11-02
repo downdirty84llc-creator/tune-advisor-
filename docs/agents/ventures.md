@@ -333,17 +333,17 @@ not predictions. This is enforced in code and copy, not just a footer.
 
 ## Channels
 
-| Channel                     | State                                                                                                                           | Verified              |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| **Manus front door**        | **Live. The entry point for everything. Traffic and conversion unread**                                                         | 2026-08-13 _(stated)_ |
-| Shopify storefront          | Live as a checkout behind the front door; transacting capability unproven                                                       | 2026-08-03            |
-| Stripe + bookipay invoicing | Live, dormant 11 months                                                                                                         | 2026-08-03            |
-| Organic search              | **Unknown.** 7 visits/180d _to Shopify_; the front door's own search traffic                                                    |                       |
-|                             | has never been read                                                                                                             | 2026-08-13            |
-| Social                      | Minimal (16 visits / 180 days _to Shopify_). Accounts `UNKNOWN`                                                                 | 2026-08-03            |
-| Email                       | Effectively unused (1 visit / 180 days _to Shopify_). No list size known                                                        | 2026-08-03            |
-| Paid advertising            | **Never used. No account, no budget, no approval**                                                                              | 2026-08-03            |
-| **Reddit — outbound**       | **First identified channel. The owner cold-approached a 5.3 owner from a Reddit post on 2026-10-29. One message, no reply yet** | **2026-10-30**        |
+| Channel                     | State                                                                                                                                                                                    | Verified              |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| **Manus front door**        | **Live. The entry point for everything. Traffic and conversion unread**                                                                                                                  | 2026-08-13 _(stated)_ |
+| Shopify storefront          | Live as a checkout behind the front door; transacting capability unproven                                                                                                                | 2026-08-03            |
+| Stripe + bookipay invoicing | Live, dormant 11 months                                                                                                                                                                  | 2026-08-03            |
+| Organic search              | **Unknown.** 7 visits/180d _to Shopify_; the front door's own search traffic                                                                                                             |                       |
+|                             | has never been read                                                                                                                                                                      | 2026-08-13            |
+| Social                      | Minimal (16 visits / 180 days _to Shopify_). Accounts `UNKNOWN`                                                                                                                          | 2026-08-03            |
+| Email                       | Effectively unused (1 visit / 180 days _to Shopify_). No list size known                                                                                                                 | 2026-08-03            |
+| Paid advertising            | ~~**Never used. No account, no budget, no approval**~~ → **USED from 2026-10-31**: $10.58 to Meta Platforms, line item "Ads", paid by PayPal. **No campaign, budget or result is known** | **2026-11-02**        |
+| **Reddit — outbound**       | **First identified channel. The owner cold-approached a 5.3 owner from a Reddit post on 2026-10-29. One message, no reply yet**                                                          | **2026-10-30**        |
 
 **The channel that produced the paying customers is still `UNKNOWN`.** Nobody
 recorded it. Establishing it is worth more than most campaigns — ask them.
@@ -354,6 +354,19 @@ recorded it. Establishing it is worth more than most campaigns — ask them.
 matching logs, cam specs, injector part number, fuel type, base fuel pressure
 and wideband status. **It is the first outbound sales message anywhere in this
 record and the first channel anyone chose on purpose.**
+
+**And a second channel appeared two days later, this one paid.** **On 2026-10-31
+the business paid $10.58 to Meta Platforms against a line item reading "Ads"**,
+by PayPal, funded from the business checking account. **The row above read
+"never used, no account, no budget, no approval" and is struck.** **What is
+known is the payment. What is not known — and is not guessed — is whether a
+campaign is live, what it promotes, what the budget is, or whether $10.58 is a
+trial or a threshold charge on something larger.** **Meta bills on spend
+thresholds, so the amount settles none of those. T-120.**
+
+**Two channels in four days, after three months of `UNKNOWN`.** **Neither has
+produced a lead yet** — the Reddit prospect has not replied, and nothing
+attributes any enquiry to an advertisement.
 
 **What that does and does not establish.** **It establishes that Reddit is a
 channel DD84 uses** — one message, sent, dated, with a script. **It establishes
