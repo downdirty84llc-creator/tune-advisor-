@@ -122,7 +122,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-86  | Pinterest publishing mostly failing; one failure announced as success                         | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-29   |
 | T-87  | Ledger production deploys failing on main — recorded, not touched                             | ops        | Normal       | **Awaiting Owner**       | Owner | none yet                          | 2026-10-30   |
 | T-88  | A $450 payment arrived and nobody knows which job it paid for                                 | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-26   |
-| T-89  | Shopify billing has failed SIX times; "4th attempt" is a rolling label                        | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix                          | 2026-10-24   |
+| T-89  | Shopify billing has failed SEVEN times; same invoice unpaid 12 days                           | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix                          | 2026-10-24   |
 | T-90  | A Colbert building quote sits outside the register, amount unread                             | real est.  | Normal       | Planned                  | Agent | A to read                         | 2026-10-27   |
 | T-91  | Shopify first sale — $530.31 paid out; his reply still unread                                 | sales      | **Critical** | **In Verification**      | Agent | A to report                       | 2026-10-28   |
 | T-92  | A second unattributed payment — $700, memo "mecanic tune", from a company                     | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-28   |
@@ -133,7 +133,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
-| T-100 | TikTok Shop rejected the application for a proof-of-address document                          | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-100 | TikTok proof-of-address submitted 2026-11-02; decision due 11-04 to 11-05                     | sales      | **High**     | **In Verification**      | Agent | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -152,29 +152,32 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
 | T-117 | Only the Shopify/PayPal billing agreement fails; three instruments work                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-118 | Cost side opened: $210.54 now known, Manus and a shipment still not                           | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
-| T-119 | Every routine fires before the band in which the subscription is charged                      | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
+| T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
 | T-120 | Meta Ads spend exists; the registry says advertising was never used                           | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
 | T-121 | A second bank account and an advisors account the register never recorded                     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-122 | The third repository has a Supabase project and it has been paused                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-123 | Does remote ECU calibration qualify as fleet "maintenance" for DOAS enrollment?               | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-124 | Is DD84 a Jackson County Chamber member, and is there a 2026 grant cycle?                     | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-125 | The scan scoring method has no stated direction for "time sensitivity"                        | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-09   |
+| T-126 | A lender reports a live loan application this register has no record of                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
+| T-127 | Vercel free tier at 75%; projects auto-pause if it is exceeded                                | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
+| T-128 | A Pinterest board names DD84; the registry records social accounts as UNKNOWN                 | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-09   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **18 Done** · 1 No Action · **2 Accepted Risk** · 6 In Verification · 6
-In Progress · **3 Awaiting Approval** · **52 Awaiting Owner** · 6 Blocked · 29
-Planned · 2 Backlog. **125 tasks.** Recounted mechanically with `^\| T-\d+\s*\|`
-— **not the two-digit pattern, see the note below** — last **2026-11-02**, at
-the weekly opportunity scan (**T-123 to T-125 added**; **T-98 reworded and
-re-dated** after a control-host test showed the cause is the session's network
-policy rather than a per-site block). **Three routines wrote this register on
-2026-11-02** — the intake (T-120–T-122, T-94 closed), the daily brief (T-52 and
-T-60 corrected), and the scan. **52 of the 125 rows are Awaiting Owner**, and
-**75 of the 104 open rows are past due.** **Fourteen rows are Critical and open,
-unchanged.** **Eight approval packets pending; none raised since 2026-10-29.**
+Counts: **18 Done** · **2 No Action** · **2 Accepted Risk** · 7 In Verification
+· 6 In Progress · **3 Awaiting Approval** · **52 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **128 tasks.** Recounted mechanically with
+`^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
+**2026-11-03**, at the Tuesday intake (**T-126 to T-128 added**; **T-119 closed
+No Action because the seventh subscription attempt falsified its midday-band
+premise**; **T-100 moved to In Verification after the owner submitted the
+proof-of-address document**; **T-89 corrected to seven failures**). **52 of the
+128 rows are Awaiting Owner**, and **81 of the 106 open rows are past due.**
+**Fourteen rows are Critical and open, unchanged.** **Eight approval packets
+pending; none raised since 2026-10-29.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

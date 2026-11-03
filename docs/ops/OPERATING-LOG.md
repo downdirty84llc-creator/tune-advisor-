@@ -8158,4 +8158,164 @@ for attention.**
 
 ---
 
-## Next entry: OL-0082
+## OL-0082 — 2026-11-03 · A task this register opened on Friday was falsified by the first run that could test it
+
+- **Routine** `/dd84-inbox-intake`, fired by **"DD84 Inbox and Lead Intake
+  (repo-attached)"** (`trig_01UdMtZvf1BdVuYoucd6UY7N`) at
+  **2026-11-03T10:20:24Z**. **Thirty-third scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`f54201d`** at start, **`c0bc6cb`** after the skeleton
+  commit; `HEAD` equal to origin; **no `src/`, no `package.json`**; clean. **72
+  tracked files, not 28** — **twentieth run reporting it**, T-85 step 3.
+- **Window** since OL-0079, **2026-11-02T10:20Z → 2026-11-03T10:20Z**.
+- **Counts** **35 threads of an estimated 35**, plus a 25-thread narrowed sweep
+  · 9 actionable · **0 new leads** (tenth run) · **0 drafts** (eleventh run) ·
+  **3 new tasks** (T-126–T-128) · **1 task closed No Action** · **1 task moved
+  to In Verification** · **1 description corrected.**
+- **Eleven items fetched individually** because T-102 is Accepted Risk.
+- **Operator** Claude (agent), cqvhy6 session
+
+### T-119 is wrong, and the run that could test it was the one that killed it
+
+**T-119 was opened on 2026-10-30 on the premise that every Shopify subscription
+attempt lands between 12:02Z and 12:39Z, so every routine fires before the band
+and the failure is reported about 24 hours late.** **The seventh attempt failed
+at 2026-11-03T00:19:33Z — twelve hours outside the band — and this run saw it
+the same morning.**
+
+**The band was a six-point coincidence, not a schedule.** **T-119 closes as No
+Action with the evidence**, because **there is no defect of the shape it
+describes.**
+
+**And the shape of the error is the part worth keeping.** **This is the second
+time in four days that this register built a schedule from six timestamps and
+had the seventh break it.** The first was the card-toggling **"60-second
+windows, exactly an hour apart, a person does not do that"** — which eleven
+dated notices then demolished. **Six points are enough to see a shape and not
+enough to call it a schedule.** **Recorded as a habit to watch rather than a new
+task**, because a task would be the third instance of the same over-reach.
+
+**What is unchanged and worsening: seven attempts, seven failures, same invoice,
+billing cycle still OCT 22 — twelve days unpaid, next attempt 2026-11-05.**
+**PayPal named as the failed primary method for the fourth notice running.**
+**The rolling-label defect persists: this notice calls the seventh attempt the
+"4th".**
+
+### PayPal worked a third time in three days
+
+| When                 | Payee          | Amount         | Outcome       |
+| -------------------- | -------------- | -------------- | ------------- |
+| 2026-11-01T04:54:32Z | Meta Platforms | **$10.58**     | **Succeeded** |
+| 2026-11-02T19:08:00Z | GitHub, Inc.   | **$10.00**     | **Succeeded** |
+| 2026-11-03T00:19:33Z | Shopify        | withheld, A-19 | **Failed**    |
+
+**Three successes against seven consecutive failures on the same account.**
+**T-117's correction is triple-confirmed: the instrument is not broken, the
+billing agreement is** — **which makes the fix re-authorising one agreement
+rather than finding a new way to pay.**
+
+### TikTok moved, and it was the owner
+
+**T-100 has been Awaiting Owner since 2026-10-26 for one proof-of-address
+document.** **It went in on 2026-11-02T12:28:51Z**, acknowledged with _"expect
+an update within 48-72 hours"_ — **so a decision is due between
+2026-11-04T12:28Z and 2026-11-05T12:28Z.** **T-100 moves to In Verification:
+nothing is left for the owner and nothing for an agent but to wait.**
+
+**The more interesting half is the Printify install at 13:03:28Z.**
+**`ventures.md` records Printify as DD84's print-on-demand merchandise supplier
+at $18.77–$64.68**, so **this channel is being set up to sell merchandise, not
+tuning** — a different proposition from the storefront, whose only sale ever was
+a **$550 service.** **Recorded as a channel fact and not evaluated: whether
+merchandise belongs on TikTok is a growth question, and this is Torque's record,
+not Rev's.**
+
+### A loan application this register has never recorded
+
+**2026-11-02T15:39:23Z, flagged important, from a consumer lender's do-not-reply
+address: "important information regarding your recent application", with nothing
+in the body but a link to a third-party document-delivery platform.** **The link
+is withheld — it carries an opaque object id tied to one person's application.**
+
+**Established: a lender says the owner has a live application and a decision
+document is waiting. Nothing in this register records any loan application, to
+anyone, ever.** **Not established and not asserted: business or personal, what
+for, what amount, what decision.** The personal greeting and consumer-lender
+sender **point personal, and that is an inference.**
+
+**The email's shape cuts both ways and both are stated.** A one-line body with a
+"click to view" link to an unfamiliar domain **is the pattern credential
+phishing uses**, and this inbox holds an unread credential phish at **24.99
+days** (T-52). **Against that: the sender domain matches marketing from the same
+company on two prior days, and the link host is a real document platform used by
+genuine lenders.** **On balance more likely genuine — and the safe action is
+identical either way: reach the lender through a channel already trusted rather
+than through the link.**
+
+**Why it is an operations finding.** **Yesterday's scan ranked an SBA microloan
+second and explicitly declined to recommend it, on the grounds that debt against
+this balance sheet is the riskiest item on the list.** **If an application is
+already live, that assessment was written without a material fact. T-126.**
+
+### Four access events on one Monday, with one explanation
+
+**Stripe "unrecognized device" at 14:28:25Z — an Android phone, Atlanta, 9:28
+local; Vercel "new sign-in" at 20:15:04Z, Atlanta; a Supabase OAuth approval;
+and the Plaid grant of 10-30.** **All four fit the owner working through his own
+platforms on the Monday morning he also filed the TikTok documents.** **No task
+raised: each has an innocent explanation and together they have one.** **IP
+addresses and the Stripe dispute link are withheld.**
+
+**The one access-shaped item in this inbox with no innocent explanation remains
+T-52.**
+
+### Two smaller findings, both about things the register does not know it has
+
+**The other venture's infrastructure is degrading on free tiers in two places.**
+**Vercel: 75% of the free Fluid Active CPU allowance used, and "if you exceed
+the included free usage, your projects will be automatically paused."**
+**Supabase has already paused `dd84-ai-tuning`.** **Three Vercel domains are
+already misconfigured (T-115).** **Nothing opened. T-127.**
+
+**A Pinterest notification names a board "Down Dirty 84 | Remote ECU Tuning &
+Holley EFI".** **`ventures.md` records social accounts as `UNKNOWN`.** **A board
+of that exact name is strong evidence of a DD84 account — but a recommendation
+email is not proof of ownership, so it is flagged rather than written into the
+registry as fact. T-128.**
+
+**And two GitHub CI failures on the third repository**, on a pull request titled
+**"Windows calibration studio — Repair checkout readiness and profile
+confirmation integrity"** — **a DD84 product under active development that this
+register knows nothing about.** Folded into T-101 and T-122; **nothing opened.**
+
+### No leads, and the query that proves it
+
+**Tenth consecutive run with no inbound enquiry.** **A narrowed sweep excluding
+every automated sender returned 25 threads and not one was from a person** — all
+marketing. **Run and empty, not assumed.** **The Reddit prospect has not replied
+in 4.53 days and no chase is drafted.**
+
+### What was withheld
+
+Under §5: the Stripe sign-in's IP address and dispute link, the lender's
+document link, the owner's and customers' names, two notices concerning minors,
+and card digits. Under A-19: the subscription amount and every account-level
+figure. **Reported in full under A-13: both PayPal payments, because they are
+costs with sources.**
+
+### Counts after this run
+
+**128 tasks** · **14 Critical and open**, unchanged. **18 Done, 2 No Action** —
+recounted mechanically, not carried from the draft, which had said 19. **Eight
+approval packets pending; none raised since 2026-10-29.**
+
+### The honest summary
+
+**The best thing in this window is that the owner cleared T-100's blocker
+himself and a TikTok decision is now 24 to 48 hours away.** **The most useful
+thing this run did was kill one of its own tasks** — and notice that it has now
+twice mistaken six timestamps for a schedule.
+
+---
+
+## Next entry: OL-0083
