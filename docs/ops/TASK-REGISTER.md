@@ -177,7 +177,14 @@ premise**; **T-100 moved to In Verification after the owner submitted the
 proof-of-address document**; **T-89 corrected to seven failures**). **52 of the
 128 rows are Awaiting Owner**, and **81 of the 106 open rows are past due.**
 **Fourteen rows are Critical and open, unchanged.** **Eight approval packets
-pending; none raised since 2026-10-29.**
+pending; none raised since 2026-10-29.** **Re-read at the 2026-11-03 daily
+brief: 128 tasks unchanged, 81 of the 106 open rows now past due, six of the
+increase being agent-proposed dates that fell today or yesterday rather than new
+work.** **All fourteen Critical rows are overdue — the newest by four days, the
+oldest by seventy-five — and exactly two of the fourteen carry a date someone
+outside this register set: T-60's expired platform deadline and T-89's running
+billing cycle.** **The other twelve are agent-proposed, which is the distinction
+the daily overdue count flatters itself by leaving implicit.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

@@ -8318,4 +8318,109 @@ twice mistaken six timestamps for a schedule.
 
 ---
 
-## Next entry: OL-0083
+## OL-0083 — 2026-11-03 · Daily brief: one order channel opens as the other is warned about staying open
+
+- **Routine** `/dd84-daily-brief`, fired by **"DD84 Daily Command Brief
+  (repo-attached)"** (`trig_01Uw62JeMqdK6DaLatfk3BXX`) at
+  **2026-11-03T10:51:24Z**. **Thirty-fourth scheduled firing to reach a session
+  with the repository attached.** Class A throughout.
+- **Checkout** tip **`be94dab`**; `HEAD` equal to origin; **no `src/`, no
+  `package.json`**; clean. **73 tracked files, not 28** — **twenty-first run
+  reporting it**, T-85 step 3.
+- **No skeleton commit** — the intake committed at **10:26:32Z, 25 minutes
+  earlier**, and this run's only gathering was one live calendar read. **Eighth
+  time recorded.**
+- **Sources** Google Calendar, read live; the register, the approvals file.
+  **Not reached** Stripe, PayPal's connector, bookipay, Square.
+- **New tasks** none. **No packet raised.**
+- **Operator** Claude (agent), cqvhy6 session
+
+### Two real deadlines inside 48 hours, and they point opposite ways
+
+**Almost every date in this register is agent-proposed. Two in the next 48 hours
+are not.**
+
+| When                                      | What                                       | Whose date    |
+| ----------------------------------------- | ------------------------------------------ | ------------- |
+| **2026-11-04T12:28Z → 2026-11-05T12:28Z** | TikTok Shop's decision on the resubmission | **TikTok's**  |
+| **2026-11-05**                            | The eighth Shopify subscription attempt    | **Shopify's** |
+
+**Together they say something worth stating plainly: DD84 is opening a second
+order channel in the same week its first one is being warned about staying
+open.**
+
+**TikTok** has the proof-of-address document in, **Printify installed**, and a
+decision **1.07 to 2.07 days away.** **Shopify** has **seven consecutive failed
+attempts on one invoice, unpaid since 2026-10-22 — twelve days** — and its own
+notice says to add a backup **"so your store stays open if this happens
+again."** **That store holds the only settled revenue DD84 has ever taken.**
+
+**The asymmetry is the finding.** **The channel that has proved it can sell
+something is the one at risk; the channel being configured has never sold
+anything, for a product line that has never sold anything either.** **No
+judgement is offered on whether merchandise is the right bet — that is Rev's
+question, not this record's.** **The operational point is narrow: one of these
+needs a working billing agreement and an amount withheld under A-19; the other
+needs nothing from anybody for 48 hours.**
+
+**The gate caught that sentence before this entry committed** — it originally
+named the subscription amount. **Fourth instance of that figure slipping in as a
+casual aside, and the third the gate stopped rather than a reading.** **It keeps
+happening because the number is small and memorable, which is exactly why a
+pattern-matching gate beats vigilance.**
+
+**And the fix is now exact rather than guessed.** **PayPal paid Meta on 11-01
+and GitHub on 11-02 and failed Shopify on 11-03 — one account, three days.** **A
+re-authorisation, not a hunt for a new card.**
+
+### Every Critical row is overdue, and only two of the dates belong to anyone outside this register
+
+**Fourteen Critical and open. The newest is four days past its date; the oldest
+is seventy-five.** T-11 at 75 days and T-13 at 68 have been Blocked since
+August, **so their age is a property of the gate rather than of neglect.**
+
+**The standing caveat matters more as the list ages, and is worth sharpening:
+exactly two of the fourteen carry a date someone outside this register set** —
+**T-60's seven-day platform deadline, which expired, and T-89's billing cycle,
+which is running.** **The other twelve are agent-proposed, and a row four days
+past a date an agent chose is not the same kind of fact as a platform
+deadline.** **Recorded because this register publishes an overdue count every
+day and the count flatters itself if that distinction is left implicit.**
+
+### Money, and the diary consequence stated with numbers
+
+**Nothing in for 4.41 days.** **Out: $10.00 to GitHub by PayPal, succeeded; the
+seventh Shopify failure, amount withheld under A-19.**
+
+**Known spend since 2026-10-24 is $220.54** — $199.96 of credits, $10.58 of ad
+spend, $10.00 to GitHub. **Credits alone are 9.5% of the $2,100.00 charged,
+which is a period ratio and not a job margin.**
+
+**Calendar read live: empty through 2026-11-11, ninth consecutive check.** **The
+margin position for order #1001, stated as a table rather than a complaint:
+revenue known ($499.18 retained), unit input cost known ($49.99 per credit),
+credits consumed unknown, hours unknown.** **Two of four inputs exist, and the
+two missing ones are quantities nobody recorded at the time and that cannot be
+reconstructed later.**
+
+### Counts
+
+**128 tasks** · 52 Awaiting Owner · **81 of 106 open rows past due**, up from 75
+of 104 — **six of the increase are agent-proposed dates that fell today or
+yesterday; none is new work.** **Fourteen Critical and open, unchanged.**
+**Eight packets pending, none raised in six days.** **A-23 is 8.70 days old and
+remains the only one of the eight with nothing wrong with it.**
+
+### The honest summary
+
+**A quiet day and a real result: no money in, no enquiry, nothing broke, and the
+only money event was a $10.00 payment that worked.**
+
+**One thing improved without an agent touching it** — T-100's blocker was
+cleared by the owner on 2026-11-02 and now waits on TikTok. **T-100 was
+deliberately kept out of today's top three: it needs nothing from anybody for 48
+hours, and it is the most consequential thing happening this week.**
+
+---
+
+## Next entry: OL-0084
