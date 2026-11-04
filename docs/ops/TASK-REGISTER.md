@@ -159,32 +159,40 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-123 | Does remote ECU calibration qualify as fleet "maintenance" for DOAS enrollment?               | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-124 | Is DD84 a Jackson County Chamber member, and is there a 2026 grant cycle?                     | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-125 | The scan scoring method has no stated direction for "time sensitivity"                        | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-09   |
-| T-126 | A lender reports a live loan application this register has no record of                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
+| T-126 | A lender now contradicts itself on an application this register cannot find                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-127 | Vercel free tier at 75%; projects auto-pause if it is exceeded                                | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-128 | A Pinterest board names DD84; the registry records social accounts as UNKNOWN                 | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-09   |
+| T-129 | A bank at-or-below-zero alert whose grace-period clause expires 2026-11-04                    | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
+| T-130 | A card auto-draft scheduled 2026-11-09 on a different account                                 | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-131 | October Shopify Balance statements exist; this register is scope-denied                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
+| T-132 | Three connectors changed tool parameter names mid-session                                     | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-10   |
+| T-133 | A sender supplied a Date header the mail API returns unparsed                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-10   |
+| T-134 | The 2026-11-03 intake missed an unread account sign-in notice                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-06   |
+| T-135 | Unsent loan drafts: one to a 504 lender, four matching a fraud pattern                        | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **18 Done** · **2 No Action** · **2 Accepted Risk** · 7 In Verification
-· 6 In Progress · **3 Awaiting Approval** · **52 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **128 tasks.** Recounted mechanically with
+Counts: **18 Done** · **2 No Action** · **2 Accepted Risk** · 10 In Verification
+· 6 In Progress · **3 Awaiting Approval** · **56 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **135 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-03**, at the Tuesday intake (**T-126 to T-128 added**; **T-119 closed
-No Action because the seventh subscription attempt falsified its midday-band
-premise**; **T-100 moved to In Verification after the owner submitted the
-proof-of-address document**; **T-89 corrected to seven failures**). **52 of the
-128 rows are Awaiting Owner**, and **81 of the 106 open rows are past due.**
-**Fourteen rows are Critical and open, unchanged.** **Eight approval packets
-pending; none raised since 2026-10-29.** **Re-read at the 2026-11-03 daily
-brief: 128 tasks unchanged, 81 of the 106 open rows now past due, six of the
-increase being agent-proposed dates that fell today or yesterday rather than new
-work.** **All fourteen Critical rows are overdue — the newest by four days, the
-oldest by seventy-five — and exactly two of the fourteen carry a date someone
+**2026-11-04**, at the Wednesday intake (**T-129 to T-135 added**; **T-126
+retitled, because the lender that reported an application contradicted itself
+about it within 2h38m on 2026-11-03**). **56 of the 135 rows are Awaiting
+Owner**, and **85 of the 113 open rows are past due** — up from 81 of 106, where
+**four of the increase are rows whose agent-proposed dates fell on 2026-11-03
+(T-108, T-112, T-116, T-118) and none is new work.** **Fourteen rows are
+Critical and open and every one is overdue — the newest by five days and the
+oldest by seventy-six.** **Exactly two of the fourteen carry a date someone
 outside this register set: T-60's expired platform deadline and T-89's running
-billing cycle.** **The other twelve are agent-proposed, which is the distinction
-the daily overdue count flatters itself by leaving implicit.**
+billing cycle** — the distinction the daily overdue count flatters itself by
+leaving implicit. **Eight approval packets pending; none raised since
+2026-10-29.** **Three of the seven rows added on 2026-11-04 are this platform's
+own instruments or its own reporting accuracy rather than the business needing
+anything — T-132, T-133 and T-134; the business rows are T-129, T-130, T-131 and
+T-135.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

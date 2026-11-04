@@ -8423,4 +8423,203 @@ hours, and it is the most consequential thing happening this week.**
 
 ---
 
-## Next entry: OL-0084
+## OL-0084 — 2026-11-04 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake, fired 2026-11-04T10:20:38Z. **Window:** since OL-0082, 2026-11-03T10:20Z
+-> 2026-11-04T10:20Z. **Brief:** `docs/ops/briefs/2026-11-04-inbox-intake.md`.
+
+**Start from the trigger, end from this commit** — T-116. **Skeleton committed
+before gathering at `361e0b1`, twentieth application of OL-0050's repair.**
+
+**Checkout, contract item 0:** tip `3aa7f1c`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **74 tracked files against the prompt's expected 28 —
+twenty-second run reporting that drift, T-85 step 3.**
+
+### What the window held
+
+**55 threads estimated, 50 returned on one page, three targeted sweeps, 13 items
+fetched individually** because T-102 is Accepted Risk and the thread list
+supplies neither dates nor read state.
+
+**Both watch items carried in from the 2026-11-03 brief are still pending and
+neither moved.** Nothing from TikTok since 2026-11-02, so the decision window
+that opens at 12:28Z today has not produced anything early. No eighth
+subscription attempt; the latest billing-failure notice is still the seventh, at
+2026-11-03T00:19:33Z, and **the invoice has now been unpaid since 2026-10-22 —
+thirteen days.**
+
+**No inbound enquiry — eleventh consecutive run. No new order; the live store
+holds one, #1001, PAID and FULFILLED. No customer reply. Calendar read live and
+empty through 2026-11-12 — tenth consecutive empty check.**
+
+### The finding that led the brief
+
+**A bank at-or-below-zero alert arrived at 2026-11-03T15:36:55Z, unread, and its
+body carries a grace-period clause whose next-business-day deadline is
+2026-11-04T23:59 Eastern Time, which is 2026-11-05T04:59Z — tonight.** **Amount
+withheld under A-19, account digits withheld, thread `1a1a20e6e98409e5`.**
+
+**Stated with its limits rather than as a confirmed fee.** The notice describes
+a mechanism; **it does not confirm enrolment in that mechanism and does not
+confirm that any fee is pending.** **It also carries the statutory
+debt-collection line, which makes it a different class of document from the
+balance alerts this register has logged before** — the reason T-129 was opened
+rather than folding it into T-71.
+
+### Two links this run declined to draw
+
+**First.** A scheduled card auto-draft for 2026-11-09 arrived sixteen hours
+later, at 2026-11-04T07:30:55Z, thread `1a1a577d2d280752`. **It would read well
+to say the account is at or below zero and a draft is coming against it.** **The
+two notices name different accounts; the digit-sets do not match.** **So this
+register does not know whether that draft will clear, and says so.** T-130.
+
+**Second.** Two card-state notices landed 61 minutes 40 seconds apart — on at
+13:00:58Z, off at 14:02:38Z — and in Eastern Time the day reads: card on 8:00,
+card off 9:02, balance snapshot 10:16, alert sent 10:36. **T-104's original
+theory was "60-second windows, exactly an hour apart" and eleven dated notices
+falsified it.** **These are the thirteenth and fourteenth notices, and one
+near-hourly gap does not revive a theory eleven points killed.** **Recorded as
+four timestamps in order, with no mechanism asserted** — because this register
+has twice built a causal story out of adjacent timestamps and been wrong both
+times.
+
+### A-19's boundary, decided the broad way on purpose
+
+**The scheduled draft figure was withheld.** A-19 names "a balance, an overdraft
+amount, a declined-payment amount or any account-level figure," and a scheduled
+auto-draft against a business credit card discloses that card's position. **The
+narrow reading — a vendor's payment amount rather than an account balance — is
+the exact reading that put a forbidden figure into two files on 2026-10-30 and
+produced A-24.** **Withheld on the broad reading, and the reasoning written down
+so the next run does not relitigate it.**
+
+### The October record exists and no agent here can open it
+
+**Shopify published October 2026 Balance statements at 2026-11-03T13:08:29Z,
+unread.** **This run attempted a live read and was refused:** access denied for
+`shopifyPaymentsAccount`, requiring `read_shopify_payments` or
+`read_shopify_payments_accounts`. **Fourth confirmation of that denial, and
+confirmed against the live API this run rather than carried forward.**
+
+**Why it was raised High.** The register carries three payers, **$1,550.00
+between them, none attributed and none acknowledged**, and an all-time revenue
+figure whose August baseline rests on a basis recorded nowhere, so **only order
+#1001's $499.18 has ever been traced to the cent.** **Not claimed: that this
+statement contains those three payments** — they were not Shopify orders.
+**Claimed: an authoritative October record now exists, it is one owner click,
+and this register is scope-denied from it.** T-131.
+
+### T-126 gained evidence and still has no answer
+
+**The lender that reported an application contradicted itself within 2 hours 38
+minutes on 2026-11-03** — no offer could be matched at 18:04:40Z, a preliminary
+approval from an earlier application at 20:42:41Z. **Both promotional, both
+unread, and a sender that says both things in one evening is not a reliable
+narrator about either.** **T-126 retitled accordingly.**
+
+**What actually moved it came from the draft folder, not the inbox:** an unsent
+message dated **2026-09-29 addressed to a Georgia certified development
+corporation's loans team**, which is the SBA 504 channel, **and four unsent
+messages to free-mail accounts using lender-style display names.** **Addresses
+withheld under §5.** **Two separate findings, not merged:** the institutional
+draft bears on T-126 and on the opportunity scan that ranked an SBA microloan
+second while declining to recommend it; **the four free-mail drafts match the
+advance-fee loan-fraud pattern, which is the owner's judgement and not this
+register's.** **Nothing is alleged about any recipient.** T-135.
+
+### Instrument defects: a seventh member, and the first an outsider controls
+
+**A phishing message returned `date` as `2026.11.03-11.22.03` and `internalDate`
+as `0`.** Every other message fetched this run returned a proper RFC 3339 date
+and a real ordering key. **The sender supplied a Date header the API did not
+parse.** **This register timestamps and orders everything it reports, and a
+hostile sender can hand it a message with no usable timestamp.** **Seventh
+member of the instrument-defect family and the first that is attacker-supplied
+rather than accidental.** T-133.
+
+**Separately, four call signatures across three connectors changed under this
+run** — Gmail's thread search and message fetch, Calendar's event list, and a
+now-deprecated Shopify field. **Each failed on the first attempt and succeeded
+on the corrected retry, so no section of the brief is degraded** — but
+**invocations recorded in earlier briefs are no longer all valid, and an
+unattended routine firing against the old names fails its gathering step rather
+than degrading gracefully.** T-132.
+
+### This run's correction of the previous one
+
+**An account sign-in notice dated 2026-11-02T20:15:04Z falls inside the
+2026-11-03 intake's window, not this one.** **That run reported "35 of an
+estimated 35" threads reviewed and did not report this item.** **The item is
+low-severity** — Atlanta, Georgia, mobile Chrome on Android, consistent with the
+owner's own phone and the business's own state; **IP address and tokenised links
+withheld; whose device it was cannot be confirmed from here.** **The miss is the
+finding, not the sign-in**, and it is recorded against this platform rather than
+left implicit. T-134.
+
+### A second correction, this one inside this run
+
+**The brief's closing section first said four of the seven new rows were the
+register auditing itself and then named three.** **Four are the business —
+T-129, T-130, T-131, T-135 — and three are this platform: T-132, T-133, T-134.**
+**Caught before the commit, and recorded because an arithmetic slip in the
+sentence that grades a run's own honesty is worth noticing.**
+
+### Withheld, and on whose authority
+
+**No account-level figure appears anywhere in this entry or the brief, under
+A-19** — and where a figure existed and was declined, both files say
+**"withheld, A-19"** rather than "not available", because the figure was
+available and the run declined to publish it.
+
+**Also withheld:** three account digit-sets, the owner's personal name, an IP
+address, a notification's tokenised links, a vendor firmware release's package
+filenames and download URL, a phishing subject's opaque token, and **roughly
+sixteen third-party personal names stuffed into one phishing message's Bcc
+field.**
+
+**That last one is a §5 judgement and is flagged as one.** Those people are not
+DD84 customers, **so A-13's customer rule does not literally reach them** — and
+**§5 says a new category of sensitive material needs its own decision rather
+than a judgement call.** **Publishing sixteen unrelated people's names harvested
+from a phish into a public repository would be a fresh exposure of third
+parties.** **Withheld, in the shape A-19 was made in: publish the finding,
+withhold the material, say which.**
+
+### Boundaries held
+
+**No message opened, labelled, read, trashed or replied to — mail state is the
+owner's. Nothing sent; this routine has never sent and must not start. No draft
+created; the standing backlog is unchanged at 15, newest 2026-10-26. Nothing
+written into `docs/growth/`** — the Pinterest account's name and its feed's
+total lack of automotive signal are recorded as operational observations, **and
+what to do about a dormant social account is Rev's question.** **The other
+repository, the Vercel dashboard and the paused Supabase project were not
+opened.**
+
+### Counts
+
+**135 tasks** · 56 Awaiting Owner · **85 of 113 open rows past due**, up from 81
+of 106, where **all four of the increase are rows whose agent-proposed dates
+fell on 2026-11-03 — T-108, T-112, T-116, T-118 — and none is new work.**
+**Fourteen Critical and open, every one overdue, newest by five days and oldest
+by seventy-six; exactly two carry a date set outside this register.** **Eight
+packets pending, none raised since 2026-10-29 — seven days.** **A-23 is now 9.7
+days old and remains the only one of the eight with nothing wrong with it.**
+
+### The honest summary
+
+**A quiet window with one real deadline in it.** No enquiry, no order, no
+customer reply, no appointment — **and a bank notice whose grace-period clause
+expires tonight, which is the first outside-set deadline this register has
+carried that falls on the day of the run reporting it.**
+
+**T-110 is unchanged and now in its fifth brief: a power revision went out to a
+customer whose thread carries the owner's own instruction not to add power until
+the oil-pressure issue was confirmed clear, and the clearance is not in the
+thread. Nothing is alleged about the car. One sentence closes it.**
+
+---
+
+## Next entry: OL-0085
