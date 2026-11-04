@@ -8622,4 +8622,172 @@ thread. Nothing is alleged about the car. One sentence closes it.**
 
 ---
 
-## Next entry: OL-0085
+## OL-0085 — 2026-11-04 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), fired 2026-11-04T10:51:18Z. **Brief:**
+`docs/ops/briefs/2026-11-04-daily-brief.md`.
+
+**Start from the trigger, end from this commit** — T-116.
+
+**No skeleton commit.** Today's intake committed at **10:36:20Z, fifteen minutes
+before this run started**, and this run's gathering was one live calendar read,
+one mail sweep and the records on disk. **Ninth time this judgement has been
+recorded.**
+
+**Checkout, contract item 0:** tip `aa13481`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **75 tracked files against the prompt's expected 28 —
+twenty-third run reporting that drift, T-85 step 3.**
+
+### The finding: the register's deadline picture changed overnight, and not because the business did anything
+
+**Yesterday's brief could find exactly two dates in this register that someone
+outside it had set.** **This morning's intake found two more and both were
+already running.**
+
+| When                                                  | What                                     | Whose        | Task  |
+| ----------------------------------------------------- | ---------------------------------------- | ------------ | ----- |
+| **Tonight — 2026-11-04T23:59 ET / 2026-11-05T04:59Z** | A bank grace-period clause               | The bank's   | T-129 |
+| **12:28Z today → 2026-11-05T12:28Z**                  | TikTok Shop's decision                   | TikTok's     | T-100 |
+| **2026-11-05**                                        | The eighth subscription billing attempt  | Shopify's    | T-89  |
+| **2026-11-09**                                        | A card auto-draft on a different account | The issuer's | T-130 |
+
+**Four live outside-set dates and one already expired (T-60), where yesterday
+there were two. Three of the four fall inside 48 hours.**
+
+**The cause is recorded because it flatters nobody.** **The business did not get
+busier.** **Two of these four were true yesterday and this register had not read
+the mail that said so** — the bank alert sat unread for nineteen hours. **The
+deadlines did not appear this morning; the knowledge of them did.**
+
+**T-129 is the first deadline this register has carried that was set outside it
+and falls on the day of the run reporting it.** **Stated with its limits: the
+notice describes a grace-period mechanism, does not confirm enrolment in it, and
+does not confirm a pending fee.** **Amount withheld under A-19; thread
+`1a1a20e6e98409e5`.**
+
+### This run corrected the run that preceded it by fifteen minutes
+
+**T-135, opened at this morning's intake, was already in the register twice.**
+
+| Already open | Since      | Days past | What it says                                                 |
+| ------------ | ---------- | --------- | ------------------------------------------------------------ |
+| **T-42**     | 2026-10-10 | **25**    | "Fifteen unsent drafts, five of them to likely loan fraud"   |
+| **T-58**     | 2026-10-14 | **21**    | "SBA 504 — send the Georgia CDC draft and ask two questions" |
+
+**T-135 is closed No Action as a duplicate.** Nothing in it was new except the
+lender's self-contradiction, **which was already on T-126.**
+
+**On the count that looked like a disagreement and was not.** The intake said
+four fraud-pattern drafts; **T-42 says five.** **Both are correct and count
+different things: five drafts to four distinct free-mail addresses, one address
+appearing twice.** **The defect was failing to say which unit was being
+counted.**
+
+**The failure behind the failure, which is the part worth keeping.** **The
+intake did read the register — mechanically, to recount 135 rows — and did not
+read it for prior coverage of its own findings.** It made **zero
+cross-references to T-42, T-58, T-71, T-73, T-83 or T-36**, every one of which
+the new rows sit on top of. **A recount is not a read**, and that distinction is
+now on the record because the mechanical recount was itself introduced as a fix
+for an earlier defect and quietly replaced the reading it was meant to support.
+
+**Three surviving rows were re-attached to their parents:**
+
+- **T-129** — retitled to name it as **T-71's dated deadline**, not a separate
+  overdraft finding. T-71 has read "The account is overdrawn" since 2026-10-16
+  and is the row A-19 was raised from. **The new thing is the dated clause, not
+  the overdraft.**
+- **T-130** — retitled as **a fourth dated outflow under T-73**, on the card
+  **T-83** already names.
+- **T-131** — retitled to cite **T-36**, the standing "no readable path to
+  DD84's own revenue figures" gap it is the first readable month-end document
+  against.
+
+**Net: seven rows added this morning, one withdrawn the same hour, three of the
+six that stand now naming the rows they belong to.** **T-132, T-133 and T-134
+stand as raised; they are this platform's own defects and have no parents.**
+
+### A second, smaller internal inconsistency fixed
+
+**T-118's title recorded $210.54.** The current known spend since 2026-10-24 is
+**$220.54** — $199.96 of credits, $10.58 of Meta ad spend, $10.00 to GitHub —
+and the title predated the GitHub payment. **The figure has been removed from
+the title rather than updated**, on the rule T-60 taught: **a number or a
+duration written into a register row rots, while a dated brief does not.**
+
+### What the day held
+
+**Nothing came in — nothing in 5.41 days, the last inbound being $400.00 on
+2026-10-29. Nothing went out today.** **Calendar read live and empty through
+2026-11-13 — eleventh consecutive empty check.** **No eighth subscription
+attempt and nothing from TikTok; its window opens at 12:28Z, one hour and
+thirty-seven minutes after this run started.**
+
+**Fourteen Critical rows, every one overdue, newest five days and oldest
+seventy-six. Ten await the owner, two are Blocked on A-07 and A-13-adjacent
+decisions since August, two are agents'.** **Twelve of the fourteen carry
+agent-proposed dates and two carry outside-set ones — unchanged from yesterday;
+what changed sits outside the Critical list, in T-129 and T-130.**
+
+**Three payers, $1,550.00 between them, still unattributed and unacknowledged,
+oldest now 13.45 days.** **The one new lever on that is T-131: October Balance
+statements published 2026-11-03, unopened, and this register scope-denied from
+them.**
+
+**Customer ages are yesterday's measured figures advanced by one day and the
+brief says so** — **"an age carried forward" is a member of this register's
+instrument-defect family, so the provenance is stated rather than implied.**
+**The basis was re-verified this morning: no customer wrote and no waiting
+customer replied, so nothing changed hands and only the clock moved.**
+
+### Top three, and what was displaced
+
+**1. The grace-period clause expiring tonight (T-129, T-71). 2. Re-authorise the
+subscription billing agreement before tomorrow (T-89, T-117) — seven failures,
+thirteen days unpaid, diagnosis unchanged for three days. 3. One sentence on the
+oil pressure (T-110), fifth brief running; nothing is alleged about the car.**
+
+**T-52 was third yesterday at 23 days and is third-equal today at 23 days. It
+did not improve and it did not worsen — it was displaced by a deadline that
+expires tonight, and that is said rather than left implicit.** **T-100 is again
+deliberately excluded: it needs nothing from anybody.**
+
+### A-17 vindicated a third time
+
+**This morning's intake met a phishing message carrying roughly sixteen
+unrelated third-party personal names in its Bcc field and withheld every one**,
+as a **§5 judgement on a category A-13 does not reach** — those people are not
+DD84 customers. **That is the shape A-19 was made in and the reason A-17
+exists.**
+
+### Boundaries held
+
+**Nothing sent, nothing published to a customer, nothing charged, no live system
+changed. Mail state untouched. No pull request, no other branch, no other
+repository. Nothing written into `docs/growth/`.** **No account-level figure
+appears in this entry or the brief, under A-19, and where a figure was declined
+both files say "withheld, A-19" rather than "not available".**
+
+### Counts
+
+**135 tasks** · 55 Awaiting Owner · **85 of 112 open rows past due**, up from 81
+of 106, where **all four of the increase are rows whose agent-proposed dates
+fell on 2026-11-03 and none is new work.** **T-135's withdrawal is why the open
+count is 112 rather than 113.** **Fourteen Critical and open, every one
+overdue.** **Eight packets pending, none raised since 2026-10-29 — seven days.**
+**A-23 is 9.70 days old and remains the only one of the eight with nothing wrong
+with it.**
+
+### The honest summary
+
+**Yesterday was a quiet day and this brief said so. Today is not quiet, and
+nothing the business did made it busy — a routine read the mail.**
+
+**One row fewer than this morning claimed, which is the better outcome: the work
+in T-135 was already tracked for twenty-five and twenty-one days, and what was
+missing was not a task but an answer.**
+
+---
+
+## Next entry: OL-0086

@@ -151,7 +151,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                   | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
 | T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
 | T-117 | Only the Shopify/PayPal billing agreement fails; three instruments work                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
-| T-118 | Cost side opened: $210.54 now known, Manus and a shipment still not                           | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
+| T-118 | Cost side opened: Manus and a shipment still not quantified                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
 | T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
 | T-120 | Meta Ads spend exists; the registry says advertising was never used                           | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
 | T-121 | A second bank account and an advisors account the register never recorded                     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
@@ -162,37 +162,44 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-126 | A lender now contradicts itself on an application this register cannot find                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-127 | Vercel free tier at 75%; projects auto-pause if it is exceeded                                | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-128 | A Pinterest board names DD84; the registry records social accounts as UNKNOWN                 | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-09   |
-| T-129 | A bank at-or-below-zero alert whose grace-period clause expires 2026-11-04                    | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
-| T-130 | A card auto-draft scheduled 2026-11-09 on a different account                                 | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
-| T-131 | October Shopify Balance statements exist; this register is scope-denied                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
+| T-129 | T-71's account: a grace-period clause expiring 2026-11-04 tonight                             | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
+| T-130 | A fourth dated outflow (T-73) on the card T-83 names, due 2026-11-09                          | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-131 | October Shopify Balance statements exist; scope-denied (T-36)                                 | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
 | T-132 | Three connectors changed tool parameter names mid-session                                     | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-10   |
 | T-133 | A sender supplied a Date header the mail API returns unparsed                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-10   |
 | T-134 | The 2026-11-03 intake missed an unread account sign-in notice                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-06   |
-| T-135 | Unsent loan drafts: one to a 504 lender, four matching a fraud pattern                        | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
+| T-135 | Unsent loan drafts — DUPLICATE of T-42 and T-58, withdrawn                                    | finance    | High         | No Action (accepted)     | Agent | A to report                       | 2026-11-06   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **18 Done** · **2 No Action** · **2 Accepted Risk** · 10 In Verification
-· 6 In Progress · **3 Awaiting Approval** · **56 Awaiting Owner** · 6 Blocked ·
+Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 10 In Verification
+· 6 In Progress · **3 Awaiting Approval** · **55 Awaiting Owner** · 6 Blocked ·
 30 Planned · 2 Backlog. **135 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-04**, at the Wednesday intake (**T-129 to T-135 added**; **T-126
-retitled, because the lender that reported an application contradicted itself
-about it within 2h38m on 2026-11-03**). **56 of the 135 rows are Awaiting
-Owner**, and **85 of the 113 open rows are past due** — up from 81 of 106, where
-**four of the increase are rows whose agent-proposed dates fell on 2026-11-03
-(T-108, T-112, T-116, T-118) and none is new work.** **Fourteen rows are
-Critical and open and every one is overdue — the newest by five days and the
-oldest by seventy-six.** **Exactly two of the fourteen carry a date someone
-outside this register set: T-60's expired platform deadline and T-89's running
-billing cycle** — the distinction the daily overdue count flatters itself by
-leaving implicit. **Eight approval packets pending; none raised since
-2026-10-29.** **Three of the seven rows added on 2026-11-04 are this platform's
-own instruments or its own reporting accuracy rather than the business needing
-anything — T-132, T-133 and T-134; the business rows are T-129, T-130, T-131 and
-T-135.**
+**2026-11-04**, at the Wednesday daily brief. **T-129 to T-135 were added at
+that morning's intake and the daily brief withdrew one of them the same hour:
+T-135 is closed No Action as a duplicate of T-42 ("fifteen unsent drafts, five
+of them to likely loan fraud", open since 2026-10-10) and T-58 ("send the
+Georgia CDC draft", open since 2026-10-14).** **The intake had recounted the
+register without reading it for prior coverage, and made no cross-reference to
+T-42, T-58, T-71, T-73, T-83 or T-36 — a recount is not a read.** **The three
+surviving business rows now name their parents: T-129 is T-71's dated deadline,
+T-130 is a fourth dated outflow under T-73 on the card T-83 names, and T-131 is
+the first readable month-end document against T-36's standing gap.** **T-118's
+title had its figure removed** — it read $210.54, written before a $10.00
+payment was known, and **a figure in a register row rots while a dated brief
+does not, which is the rule T-60 taught.** **55 of the 135 rows are Awaiting
+Owner**, and **85 of the 112 open rows are past due** — up from 81 of 106, where
+**all four of the increase are rows whose agent-proposed dates fell on
+2026-11-03 (T-108, T-112, T-116, T-118) and none is new work.** **Fourteen rows
+are Critical and open and every one is overdue — the newest by five days and the
+oldest by seventy-six; exactly two carry a date someone outside this register
+set (T-60, T-89).** **Four live outside-set dates now exist across all
+priorities — T-129 tonight, T-100 opening 2026-11-04T12:28Z, T-89 on 2026-11-05
+and T-130 on 2026-11-09 — where yesterday the register could find two.** **Eight
+approval packets pending; none raised since 2026-10-29.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
