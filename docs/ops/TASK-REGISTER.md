@@ -137,7 +137,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
-| T-104 | Cards switched off 13+ times at irregular gaps — now with a cost                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-104 | Cards toggled 18 times; deliberate practice or fault? One sentence                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-105 | A-22 chases a supplier who answered 8 days ago; two replies unread                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-22 DEFER**                    | 2026-10-30   |
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record                        | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350                        | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -185,25 +185,25 @@ Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 10 In Verificat
 · 6 In Progress · **4 Awaiting Approval** · **61 Awaiting Owner** · 6 Blocked ·
 30 Planned · 2 Backlog. **142 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-05**, at the Thursday intake (**T-136 to T-142 added; A-25 raised**).
-**Each new row was checked against the existing rows before it was written and
-carries the parent it sits on** — the correction the 2026-11-04 daily brief made
-when it found T-135 duplicating T-42 and T-58, and withdrew it. **T-89 now reads
-EIGHT failures with the ninth attempt stated by the platform as 2026-11-07;
-T-104 reads 13+ switch-offs and now has an observed cost; T-66 is corrected to
-say the form works and nobody reads it, after the owner tested it end to end on
-2026-11-04.** **61 of the 142 rows are Awaiting Owner**, and **88 of the 119
-open rows are past due.** **Sixteen rows are Critical and open — and for the
-first time since this count began, not all of them are overdue: fourteen are,
-the newest by six days and the oldest by seventy-seven, while T-136 and T-137
-fall due 2026-11-06.** **T-137 is the first Critical row ever opened against
-this register's own description of the business rather than against the
-business**: it asks whose bank account T-71, T-129 and T-136 have been
-reporting, because the account carries an obligation that is not DD84's. **Five
-live outside-set dates now exist: T-89 on 2026-11-07, T-100 closing
-2026-11-05T12:28Z, T-138 on 2026-11-07, T-136's unknown sixty-day clock, and
-T-141 on 2027-02-01.** **Nine approval packets pending; A-25 is the first raised
-since 2026-10-29.**
+**2026-11-05**, at the Thursday daily brief; **no rows were added or closed by
+it.** **The Thursday intake added T-136 to T-142 and raised A-25**, each row
+checked against the existing rows first and naming the parent it sits on — the
+correction the 2026-11-04 daily brief made when it withdrew T-135 as a duplicate
+of T-42 and T-58. **T-104 now reads 18 toggles and asks the question the daily
+brief surfaced: deliberate practice or fault, answerable in one sentence, which
+would also reframe T-139's declined business transaction as a predictable cost
+rather than a mystery.** **61 of the 142 rows are Awaiting Owner**, and **88 of
+the 119 open rows are past due.** **Sixteen rows are Critical and open and, for
+the first time since this count began, not all are overdue: fourteen are —
+newest six days, oldest seventy-seven — while T-136 and T-137 fall due
+2026-11-06.** **Fourteen aged into that list over seventy-seven days; two
+arrived in one morning's mail, and T-137 is the first Critical row ever opened
+against this register's own description of the business rather than against the
+business.** **Five live outside-set dates: T-100 closing 2026-11-05T12:28Z, T-89
+on 2026-11-07, T-130 on 2026-11-09, T-136's unknown sixty-day clock, and T-141
+on 2027-02-01 — where on 2026-11-03 this register could find two, and all three
+it gained were sitting unread in an inbox rather than caused by the business.**
+**Nine approval packets pending.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

@@ -9075,4 +9075,173 @@ it was describing.**
 
 ---
 
-## Next entry: OL-0087
+## OL-0087 — 2026-11-05 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), fired 2026-11-05T10:50:53Z. **Brief:**
+`docs/ops/briefs/2026-11-05-daily-brief.md`.
+
+**Start from the trigger, end from this commit** — T-116.
+
+**No skeleton commit.** Today's intake committed at **10:32:16Z, nineteen
+minutes before this run started**; gathering was one live calendar read, one
+sweep of the 31-minute gap since the intake's cut-off, and the records on disk.
+**Tenth time this judgement has been recorded.**
+
+**Checkout, contract item 0:** tip `a1b0da3`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **77 tracked files against the prompt's expected 28 —
+twenty-fifth run reporting that drift, T-85 step 3.**
+
+### The day's finding is a correction of this register
+
+**The intake nineteen minutes earlier found that the account T-71 has reported
+as DD84's position since 2026-10-16 carries an obligation that is not DD84's.**
+This brief leads on it because **A-19 — the rule governing every cash figure in
+this repository — was raised from T-71**, and every "withheld, A-19", every cash
+review and **yesterday's own top priority** were written treating that account
+as the business's. **No run ever verified that it was.**
+
+**The rule held and the register's confidence did not.** **Every forbidden
+figure stayed out across twenty days; what was wrong was the subject of the
+sentence.** **Every particular remains withheld and A-25 was raised rather than
+decided**, because §5 makes a new category of sensitive material a packet and
+**neither A-13 nor A-19 reaches the owner's personal obligations.** T-137, A-25.
+
+### The clause that outranks yesterday's deadline
+
+**The grace period expired at 2026-11-05T04:59Z and resolved as far as mail can
+show** — one uncovered transaction named, **shown PAID at zero fee**, and **no
+overdraft-fee notice has arrived.** **Evidence, not proof**: fees post in
+nightly processing and the balance is not visible from mail, so **whether a fee
+was charged is unknown, and unknown is not zero.**
+
+**The larger clause is the sixty-day charge-off**, with closure reported to a
+banking reporting agency. **Three fees at the bank's published $35 are bounded
+and survivable; a charge-off is not, and DD84 is pursuing SBA 504 financing.**
+**This register cannot compute the deadline and will not guess: the clock starts
+from the date the account first became overdrawn, and T-71's 2026-10-16 is when
+this register noticed, not when the overdraft began** — **the error T-60 was
+corrected for.** T-136.
+
+### Card toggling: eighteen points, a cost, and a hypothesis offered as one
+
+**Two more notices arrived in the 31 minutes between the intake's cut-off and
+this run** — on at 2026-11-05T10:33:58Z, off at 10:34:28Z, **a 30-second gap**,
+following 2m31s on 11-04 and 61m40s on 11-03.
+
+**Eighteen notices, gaps from 29 seconds to 36 hours, and this brief proposes no
+schedule** — two earlier attempts to read one out of these timestamps were
+falsified.
+
+**What is new is a cost**: the Business Debit Card declined on 2026-11-04 with
+the bank's own reason being that the card was off. **Different digit-set from
+the toggled card**, so at least two cards are in off-state behaviour.
+
+**And the obvious reading is recorded explicitly as a hypothesis.** **Repeated
+on-then-off ordering seconds apart is what it looks like when someone unlocks a
+card for one transaction and locks it again.** **If so, T-104 is a deliberate
+security practice rather than a fault, and T-139 is a predictable cost of it
+rather than a mystery.** **Offered for one sentence of confirmation, not as a
+finding, because this register has twice built a mechanism out of timestamps and
+been wrong.** **T-104 retitled to carry that question.**
+
+### The count that changed shape, and the number that moved most
+
+**Sixteen Critical and open; for the first time since this count began, not all
+are overdue.** **Fourteen are — newest six days, oldest seventy-seven — and
+T-136 and T-137 fall due 2026-11-06.** **Fourteen rows aged in over
+seventy-seven days; two arrived in a single morning's mail.**
+
+**Outside-set dates went from two on 2026-11-03 to five today** — T-100 closing
+2026-11-05T12:28Z, T-89 on 2026-11-07, T-130 on 2026-11-09, T-136's unknown
+sixty-day clock, and T-141 on 2027-02-01. **Not one of the three gained came
+from the business doing anything; all three were sitting unread in an inbox.**
+**That is the whole case for the routines, and it is stated once rather than
+celebrated.**
+
+### Ordering the top three, and saying what lost
+
+**Four things deserved three places.** **A-25 was placed under decisions rather
+than in the top three because answering it changes what T-136 and T-71 mean
+rather than being separate work.** **The three were ranked by what is
+irreversible.**
+
+**1. T-110 — one sentence on the oil pressure, sixth brief running.** **It is
+the only open item in this register that touches a customer's engine rather than
+an account, it costs one sentence, and it has been outranked by financial
+administration five times.** **This brief stopped displacing it and said so.**
+**2. T-136 — establish when the account first became overdrawn.** **3. T-89 /
+T-117 — re-authorise the billing agreement before the ninth attempt on
+2026-11-07**, the diagnosis having held for five consecutive notices.
+
+**T-52 is displaced rather than improved — 24 days unread, one click — and that
+is said plainly, because a brief that silently drops an item is worse than one
+that admits the item lost.** **T-100 is again excluded as needing nothing from
+anybody; its window closes about ninety minutes after this run started and
+nothing has arrived. If it closes undecided, that is itself the finding and
+tomorrow's intake is the run that sees it.**
+
+### Money, appointments, customers
+
+**Nothing in for 6.41 days — last inbound $400.00 on 2026-10-29. Nothing settled
+out.** **Known spend since 2026-10-24 remains $220.54, because nothing in the
+last two days settled.** **Calendar read live and empty through 2026-11-14 —
+twelfth consecutive empty check.**
+
+**Three payers, $1,550.00, still unattributed and unacknowledged, oldest now
+14.45 days.** **The October Balance statement remains the only unused lever and
+is unopened; this register is scope-denied from it, so there is no agent
+substitute.** **Customer ages are yesterday's measured figures advanced by one
+day with the provenance stated** — **an age carried forward is a known
+instrument defect — and the basis was re-verified nineteen minutes ago by the
+intake.**
+
+**Twelfth consecutive run with no inbound enquiry**, with the explicit
+accounting that two arrivals yesterday were not leads: the owner's own form test
+and an unsolicited pitch. **Nothing is alleged about that sender.**
+
+### A-17 gained a deadline
+
+**Google Play requires a trader-status declaration by 2027-02-01, and declaring
+as a trader publishes a phone number and address on the store page** — **exactly
+the material A-17 exists to protect.** **A platform may therefore require public
+disclosure of what a rule here withholds. That is the owner's decision and
+emphatically not an agent's.** T-141.
+
+### A-24 earned its keep again
+
+**Yesterday's intake named the bill amount in its own section heading as
+shorthand, and the leak gate refused the commit** — **fifth time that figure has
+entered a draft as an aside, fourth time the gate caught it rather than a
+reading.**
+
+### Boundaries held
+
+**Nothing sent, nothing published to a customer, nothing charged, no live system
+changed. Mail state untouched. No pull request, no other branch, no other
+repository. Nothing written into `docs/growth/`.** **No account-level figure
+appears in this entry or the brief, under A-19; the bank's published fee rates
+are reported in full because a published fee schedule is not an account-level
+figure.** **No row was added or closed by this run** — the brief's one register
+change is T-104's retitling.
+
+### Counts
+
+**142 tasks** · 61 Awaiting Owner · 4 Awaiting Approval · **88 of 119 open rows
+past due.** **Sixteen Critical and open, fourteen overdue.** **Nine packets
+pending; A-25 raised today is the first since 2026-10-29.** **A-23 is 10.70 days
+old and remains the only one of the nine with nothing wrong with it.**
+
+### The honest summary
+
+**By every measure of business activity this was as quiet as yesterday: no
+customer, no order, no money, no appointment in nine days.** **What filled it
+was fourteen notices from banks and platforms, and the two that matter are
+clauses rather than events.**
+
+**The cheapest thing on the whole list is still one sentence about oil pressure
+that has waited six days and six briefs.**
+
+---
+
+## Next entry: OL-0088
