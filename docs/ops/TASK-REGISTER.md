@@ -99,7 +99,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-63  | Two Shopify account-verification codes, cause unexplained                                     | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-13   |
 | T-64  | A second live tuning job — ANSWERED 2026-10-29 after 15.94d; still unpriced                   | service    | **Critical** | **In Verification**      | Agent | **A-21** (A-20 moot)              | 2026-10-14   |
 | T-65  | A Shopify customer account with zero orders, unrecorded                                       | sales      | Normal       | Planned                  | Agent | A to read                         | 2026-10-16   |
-| T-66  | A real Lexus enquiry sat 23 days; the contact form was never read                             | sales      | **High**     | **Awaiting Owner**       | Owner | **A-21 via T-84** (A-20 deferred) | 2026-10-15   |
+| T-66  | A real Lexus enquiry sat 23 days; the form works, nobody reads it                             | sales      | **High**     | **Awaiting Owner**       | Owner | **A-21 via T-84** (A-20 deferred) | 2026-10-15   |
 | T-67  | Two more loan-fraud "application" emails, 16 minutes apart                                    | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-15   |
 | T-68  | MFA switched off on the Zoho account now holding Ledger support                               | compliance | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-10-16   |
 | T-69  | Four Routine prompts contradict the checkout guard in version control                         | ops        | Normal       | **Blocked**              | Owner | S-01 (Class A)                    | 2026-10-15   |
@@ -122,7 +122,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-86  | Pinterest publishing mostly failing; one failure announced as success                         | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-29   |
 | T-87  | Ledger production deploys failing on main — recorded, not touched                             | ops        | Normal       | **Awaiting Owner**       | Owner | none yet                          | 2026-10-30   |
 | T-88  | A $450 payment arrived and nobody knows which job it paid for                                 | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-26   |
-| T-89  | Shopify billing has failed SEVEN times; same invoice unpaid 12 days                           | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix                          | 2026-10-24   |
+| T-89  | Shopify billing has failed EIGHT times; ninth attempt 2026-11-07                              | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix                          | 2026-10-24   |
 | T-90  | A Colbert building quote sits outside the register, amount unread                             | real est.  | Normal       | Planned                  | Agent | A to read                         | 2026-10-27   |
 | T-91  | Shopify first sale — $530.31 paid out; his reply still unread                                 | sales      | **Critical** | **In Verification**      | Agent | A to report                       | 2026-10-28   |
 | T-92  | A second unattributed payment — $700, memo "mecanic tune", from a company                     | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-28   |
@@ -137,7 +137,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
-| T-104 | Card switched off 11 times in 8 days at irregular gaps — not a schedule                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-104 | Cards switched off 13+ times at irregular gaps — now with a cost                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-105 | A-22 chases a supplier who answered 8 days ago; two replies unread                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-22 DEFER**                    | 2026-10-30   |
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record                        | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350                        | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -169,37 +169,41 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-133 | A sender supplied a Date header the mail API returns unparsed                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-10   |
 | T-134 | The 2026-11-03 intake missed an unread account sign-in notice                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-06   |
 | T-135 | Unsent loan drafts — DUPLICATE of T-42 and T-58, withdrawn                                    | finance    | High         | No Action (accepted)     | Agent | A to report                       | 2026-11-06   |
+| T-136 | 60-day charge-off clause; the clock start date is unknown here                                | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
+| T-137 | T-71's account carries a personal obligation; whose account is it?                            | finance    | **Critical** | **Awaiting Approval**    | Owner | **A-25**                          | 2026-11-06   |
+| T-138 | A second recurring charge of the bill amount approved 2026-11-04                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
+| T-139 | A business card was declined because it was off — T-104 has a cost                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
+| T-140 | Google Ads exists, unrecorded, with a "destination not working" block                         | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-141 | A Google Play developer account is unrecorded; deadline 2027-02-01                            | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
+| T-142 | A live auth token reached this inbox from the other venture app                               | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 10 In Verification
-· 6 In Progress · **3 Awaiting Approval** · **55 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **135 tasks.** Recounted mechanically with
+· 6 In Progress · **4 Awaiting Approval** · **61 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **142 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-04**, at the Wednesday daily brief. **T-129 to T-135 were added at
-that morning's intake and the daily brief withdrew one of them the same hour:
-T-135 is closed No Action as a duplicate of T-42 ("fifteen unsent drafts, five
-of them to likely loan fraud", open since 2026-10-10) and T-58 ("send the
-Georgia CDC draft", open since 2026-10-14).** **The intake had recounted the
-register without reading it for prior coverage, and made no cross-reference to
-T-42, T-58, T-71, T-73, T-83 or T-36 — a recount is not a read.** **The three
-surviving business rows now name their parents: T-129 is T-71's dated deadline,
-T-130 is a fourth dated outflow under T-73 on the card T-83 names, and T-131 is
-the first readable month-end document against T-36's standing gap.** **T-118's
-title had its figure removed** — it read $210.54, written before a $10.00
-payment was known, and **a figure in a register row rots while a dated brief
-does not, which is the rule T-60 taught.** **55 of the 135 rows are Awaiting
-Owner**, and **85 of the 112 open rows are past due** — up from 81 of 106, where
-**all four of the increase are rows whose agent-proposed dates fell on
-2026-11-03 (T-108, T-112, T-116, T-118) and none is new work.** **Fourteen rows
-are Critical and open and every one is overdue — the newest by five days and the
-oldest by seventy-six; exactly two carry a date someone outside this register
-set (T-60, T-89).** **Four live outside-set dates now exist across all
-priorities — T-129 tonight, T-100 opening 2026-11-04T12:28Z, T-89 on 2026-11-05
-and T-130 on 2026-11-09 — where yesterday the register could find two.** **Eight
-approval packets pending; none raised since 2026-10-29.**
+**2026-11-05**, at the Thursday intake (**T-136 to T-142 added; A-25 raised**).
+**Each new row was checked against the existing rows before it was written and
+carries the parent it sits on** — the correction the 2026-11-04 daily brief made
+when it found T-135 duplicating T-42 and T-58, and withdrew it. **T-89 now reads
+EIGHT failures with the ninth attempt stated by the platform as 2026-11-07;
+T-104 reads 13+ switch-offs and now has an observed cost; T-66 is corrected to
+say the form works and nobody reads it, after the owner tested it end to end on
+2026-11-04.** **61 of the 142 rows are Awaiting Owner**, and **88 of the 119
+open rows are past due.** **Sixteen rows are Critical and open — and for the
+first time since this count began, not all of them are overdue: fourteen are,
+the newest by six days and the oldest by seventy-seven, while T-136 and T-137
+fall due 2026-11-06.** **T-137 is the first Critical row ever opened against
+this register's own description of the business rather than against the
+business**: it asks whose bank account T-71, T-129 and T-136 have been
+reporting, because the account carries an obligation that is not DD84's. **Five
+live outside-set dates now exist: T-89 on 2026-11-07, T-100 closing
+2026-11-05T12:28Z, T-138 on 2026-11-07, T-136's unknown sixty-day clock, and
+T-141 on 2027-02-01.** **Nine approval packets pending; A-25 is the first raised
+since 2026-10-29.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

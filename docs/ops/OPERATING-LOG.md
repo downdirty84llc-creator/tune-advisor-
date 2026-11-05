@@ -8790,4 +8790,289 @@ missing was not a task but an answer.**
 
 ---
 
-## Next entry: OL-0086
+## OL-0086 — 2026-11-05 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake (repo-attached), fired 2026-11-05T10:20:57Z. **Window:** since OL-0084,
+2026-11-04T10:20Z -> 2026-11-05T10:20Z. **Brief:**
+`docs/ops/briefs/2026-11-05-inbox-intake.md`.
+
+**Start from the trigger, end from this commit** — T-116. **Skeleton committed
+before gathering at `6bbad0f`, twenty-first application of OL-0050's repair**;
+the last commit was 23.4 hours old, so unlike yesterday's daily brief this run
+had a full window to lose.
+
+**Checkout, contract item 0:** tip `105603b`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **76 tracked files against the prompt's expected 28 —
+twenty-fourth run reporting that drift, T-85 step 3.**
+
+### All three carried-in questions were answered
+
+**65 threads estimated, 50 returned on one page, two targeted sweeps, 14
+material items — every one fetched individually under T-102.**
+
+| Carried in                             | Answer                                                                             |
+| -------------------------------------- | ---------------------------------------------------------------------------------- |
+| Did anything follow the grace period?  | **Yes** — an insufficient-funds notice with a fee exposure and a far larger clause |
+| Did the eighth billing attempt happen? | **Yes, 2026-11-05T00:20:29Z, failed. Ninth stated as 2026-11-07**                  |
+| Did TikTok decide?                     | **No.** Window closes 2026-11-05T12:28Z                                            |
+
+### The grace period: mechanism confirmed, one bounded exposure, one much larger clause
+
+**Insufficient-funds notice, 2026-11-04T19:03:41Z, unread, thread
+`1a1a7f2138253561`.** It confirms the deadline the 2026-11-04 brief published —
+**balance positive by 11:59 p.m. Eastern on 11/04/2026** — and **names one
+uncovered transaction, shown as PAID with a zero fee.**
+
+**Yesterday's brief said the earlier alert "describes a mechanism, does not
+confirm enrolment in that mechanism, and does not confirm that any fee is
+pending." The mechanism engaged and is now named**, and the exposure is bounded:
+**$35 per overdraft to a maximum of three.** **Those are the bank's published
+fee rates and are reported in full; the balance, the transaction amount and the
+account digits are withheld under A-19.**
+
+**Stated as a limit rather than left to inference: whether the balance went
+positive before the deadline is not visible from mail, so whether any fee was
+charged is unknown.** **No fee notice arrived in this window — evidence, not
+proof**, since the notice says fees post during nightly processing.
+
+**The clause that outranks it.** **"If your account is overdrawn and the
+overdraft isn't resolved after 60 days from the date the account first became
+overdrawn, we'll close and charge off your account. The closure will be reported
+to Early Warning Services."** **A grace period costs at most three fees; a
+charge-off closes the account and creates a record that follows a business into
+every future account application — and DD84 is pursuing SBA 504 financing.**
+
+**The register cannot compute the deadline and says so.** **The clock starts
+from the date the account first became overdrawn, which is unknown here. T-71
+has read "the account is overdrawn" since 2026-10-16, but that is when this
+register noticed** — **conflating the two is the error T-60 was corrected for.**
+T-136.
+
+### The finding that is about this register rather than the business
+
+**The one transaction the balance did not cover is plainly a personal
+obligation, not a business expense.** **Servicer, amount, payment identifier and
+payer name all withheld.**
+
+**T-71 has reported "the account is overdrawn" as DD84's position since
+2026-10-16, and A-19 — the rule governing every cash figure in this repository —
+was raised from T-71.** **Every "withheld, A-19", every cash-review section and
+yesterday's top priority treated that account as the business's.** **No run ever
+verified that it was.**
+
+**Not claimed: that the account is personal rather than business.** A
+**Business** Debit Card on a different digit-set was declined in this same
+window, so more than one card and possibly more than one account are in play.
+**Not claimed that anything improper occurred** — mixed accounts are ordinary
+for single-member LLCs. **Not claimed which reported figures are affected**,
+because that depends on facts only the owner has.
+
+**§5 says a new category of sensitive material is a packet, not a judgement
+call.** **A-13 reaches DD84's revenue figures; A-19 reaches the business's cash
+position; neither reaches the owner's personal debts or a mortgage servicer's
+identity.** **So the finding is published without any particular and A-25 is
+raised** — **the second time a rule has been found not to reach what a run
+walked into, and the same shape A-19 itself was made in.** T-137, A-25.
+
+**A-25 asks three one-sentence questions:** whose account it is; whether this
+register may state that it carries a non-business obligation without naming
+anything; and which reported positions need re-describing. **Option C is
+recommended** — ownership plus the bare existence of a non-business obligation,
+no particular of any kind.
+
+### The eighth failure, and a second obligation of the same size
+
+**Eighth failure 2026-11-05T00:20:29Z, unread, thread `1a1a9142049e3e79`, amount
+withheld. The platform states the ninth attempt: 2026-11-07.** **Billing cycle
+still OCT 22 — fourteen days unpaid — and PayPal is named as the failed primary
+for the fifth consecutive notice**, which is T-117's diagnosis holding a fifth
+time.
+
+**Second confirmation of the rolling four-item window.** The notice calls this
+the 4th attempt and lists four dates (Oct 30, Nov 1, Nov 3, Nov 5). **The
+register's count of eight stands; the label is a display artefact, not a
+disagreement.** **First time that defect has been observed twice.**
+
+**A distinction drawn deliberately, because the register got burned on its
+opposite.** **The attempts run every two days and the next date is stated by the
+platform, not inferred. T-119 died because six timestamps were read as a
+schedule. A stated date is a fact; an inferred cadence is a guess.**
+
+**Then the part that may have changed the size of the problem.** **Eleven hours
+before the eighth failure, on 2026-11-04T13:31:56Z, a recurring charge was
+approved on the same store — an app subscription, monthly, whose amount is
+identical to the failing invoice.** Thread `1a1a6c25a7f044e3`, and it has been
+read. **The amount is withheld under A-19 for a stated reason: it is the same
+figure A-24 exists to redact, so publishing it as an app price would publish
+what A-19 forbids.**
+
+**Three readings; the run chose none.** The failing invoice's cycle starts OCT
+22 and the app was installed 2026-11-02, **so "the same obligation
+re-authorised" is close to excluded by the dates.** **Between "two obligations
+that coincide in amount" and "a second obligation added on top of the unpaid
+first", nothing observed separates them** — **and the difference is whether the
+store's monthly obligation doubled on 2026-11-04 while none of it is being
+paid.** The billing page would settle it; that is an owner click. T-138.
+
+**A trap avoided and named.** **It would read well to say a Shopify charge
+succeeded while the invoice failed, so the rail works. That would be wrong:
+"approved" means the merchant accepted the charge, not that money moved** — the
+body says the first recurring charge "will apply today". **No settlement is
+evidenced, so this is not evidence about T-117 either way.**
+
+**And the gate refused this run's first commit.** **The brief's own section
+heading named the bill amount as shorthand** — **the fifth time that figure has
+entered a draft as a casual aside and the fourth time the gate caught it rather
+than a reading.** **It keeps happening because the number is small, memorable
+and genuinely useful shorthand, which is precisely the argument for a check that
+exits non-zero over a reader who means well.** **The gate scans added lines
+only, so the pre-existing occurrences in historical files were not touched and
+remain what A-24 exists to decide.**
+
+### T-104 has a cost for the first time
+
+| When                     | What                                                           |
+| ------------------------ | -------------------------------------------------------------- |
+| **2026-11-04T18:16:34Z** | **A Business Debit Card transaction DECLINED — "card is off"** |
+| **2026-11-04T23:07:27Z** | A Debit Card turned **on**                                     |
+| **2026-11-04T23:09:58Z** | Turned **off**, **2 minutes 31 seconds later**                 |
+
+**T-104 recorded eleven switch-offs in eight days with no explanation and no
+observed consequence. There is now a consequence.** **What the declined
+transaction was is not stated.**
+
+**The blur the register must not make: the declined card and the toggled card
+are different digit-sets.** **This is not "the toggled card got declined" — it
+is at least two cards in off-state behaviour, one of which cost a business
+transaction.** That widens T-104 rather than explaining it. **And the gap series
+is now decisively irregular — 2m31s one day after 61m40s, the fifteenth and
+sixteenth notices.** T-139.
+
+### Two Google platforms the verified registry does not know about
+
+**`docs/agents/ventures.md` records no Google Ads account and no Google Play
+developer account.** Its advertising row, corrected 2026-11-02, names **Meta
+only**.
+
+**Google Ads.** A campaign named **"Automotive ECM Tuning"** exists and **one
+asset group is disapproved under the policy "Destination not working."**
+**Customer ID and campaign ID withheld — the customer ID is formatted exactly
+like a telephone number and the leak gate treats it as one.** **Two things
+follow, and only one is about advertising: a second unrecorded ad platform (the
+gap T-120 opened for Meta), and a third-party report of a site fault that
+corroborates T-115, T-103 and T-33.** **A disapproved asset group is not
+serving, so this is lost opportunity and not wasted spend** — stated rather than
+blurred. T-140.
+
+**Google Play.** **A trader-status declaration is required by 2027-02-01**, and
+the notice states the consequence verbatim: **"you won't be able to submit app
+updates, and your developer profile and all apps will be removed from Google
+Play globally."** **An entirely unrecorded platform holding DD84 apps, carrying
+the furthest-out outside-set deadline the register tracks.**
+
+**It also lands on A-17.** **Declaring as a trader requires a public phone
+number, and the notice says "your phone number and address will be displayed
+publicly on Google Play."** **This register withholds exactly that material
+under A-17.** **So a platform may require public disclosure of what a rule here
+protects — the owner's decision, emphatically not an agent's.** T-141.
+
+### The contact form was tested, and its own notification is unread
+
+**The form submission in this window is the owner's own test**, labelled
+`DD84-WEB-20261104-INTAKE-A` and reading "INTERNAL WEBSITE DELIVERY TEST ONLY …
+This is not a customer lead, booking, quote request, or order." **Submitted
+2026-11-04T12:19:23Z; the optional email copy arrived as a second thread.** **It
+passes: form, notification and copy all delivered.**
+
+**It does not close T-66, and the reason matters.** **T-66 is not "the form is
+broken" — it reads "a real Lexus enquiry sat 23 days; the contact form was never
+read." The defect is an unwatched inbox.** **The test's own notification is
+sitting unread**, which demonstrates T-66 rather than fixing it. **T-66's title
+is corrected to say the form works and nobody reads it.**
+
+**One operational detail recorded: the live form carries a media-release consent
+field.** **DD84 has no testimonial library and inventing one is disqualifying;
+this form collects the permission that would legitimately build one.** **The
+fact is recorded; the decision is the owner's and Rev's, and nothing is written
+into `docs/growth/`.**
+
+### A live credential arrived and was withheld
+
+**The other venture's production application sent a signup email-confirmation to
+the DD84 business address on 2026-11-04T17:14:32Z; it has been read.** **The
+link carried a live authentication token. It is withheld, with the backing
+project identifier, under the rule that credentials and tokens never enter this
+repository.**
+
+**Scoped narrowly on purpose.** **The Georgia Opportunity Ledger is a separate
+business with its own repository and record; its operations are not DD84's and
+none are written here.** **The DD84 fact is only that someone completed a signup
+to that application using DD84's business email, and whether that was intended
+is a one-sentence question.**
+
+**One row it does not falsify.** **T-122 records a paused Supabase project
+belonging to the third repository. The project backing this confirmation is a
+different one and is plainly serving** — **said explicitly so the next run does
+not "correct" a row that is still right.** T-142.
+
+### Leads, and the accounting for two things that are not leads
+
+**Zero new leads — twelfth consecutive run.** **Two arrivals could be mistaken
+for one and the accounting is explicit, because "never invent a lead" is the
+rule optimism breaks most easily:** the owner's own form test, which says in its
+body that it is not a lead; and **an unsolicited inbound pitch — "Can I share
+something important I notice about your store?" — with no vehicle, engine,
+transmission, modification, location, service or urgency.** **Nothing is alleged
+about that sender.** **No draft was prepared for either; this routine has never
+sent and must not start.**
+
+**The live store was not re-read.** The 2026-11-04 intake read it 24 hours ago —
+one order, #1001, PAID and FULFILLED — and **no new-order notification arrived
+in this window, which is the basis for reporting no change rather than a fresh
+read.** **The calendar likewise was not re-read**; both runs on 2026-11-04 read
+it live and empty through 2026-11-13 and no calendar notification arrived.
+**Reporting an unread calendar as empty would be an estimate, which is forbidden
+— so the basis is stated.**
+
+### Withheld, and on whose authority
+
+**No account-level figure appears in this entry or the brief, under A-19.**
+Where a figure existed and was declined both say **"withheld, A-19"** and not
+"not available". **The bank's published fee rates are reported in full, because
+a published fee schedule is not an account-level figure.**
+
+**Also withheld:** a balance, a transaction amount, a bill amount, an app
+subscription price, three card or account digit-sets, a mortgage servicer, a
+payment identifier, the owner's personal name, a Google Ads customer ID and
+campaign ID, **a live authentication token**, and a Supabase project identifier
+belonging to the other venture.
+
+### Counts
+
+**142 tasks** · 61 Awaiting Owner · 4 Awaiting Approval · **88 of 119 open rows
+past due.** **Sixteen Critical and open — and for the first time since this
+count began, not all are overdue: fourteen are, newest six days and oldest
+seventy-seven, while T-136 and T-137 fall due 2026-11-06.** **Fourteen rows aged
+into that list over seventy-seven days; two arrived in a single morning's mail,
+and one of them is about this register rather than the business.** **Nine
+packets pending; A-25 is the first raised since 2026-10-29.**
+
+### The honest summary
+
+**The heaviest window this register has recorded, and almost none of it is
+business activity.** **No customer wrote, no order arrived, no money came in for
+the sixth day running.** **Fourteen material notices from banks and platforms,
+and the two most important are clauses rather than events: a sixty-day
+charge-off with reporting attached, and a personal obligation on an account this
+register has described as the business's for twenty days.**
+
+**The second is a correction of this register, not a discovery about the
+business.** **A-19 was raised from T-71, and T-71's account turns out to carry
+something A-19 was never written to consider.** **The rule still worked — every
+figure stayed out. What failed was the register's confidence about whose account
+it was describing.**
+
+---
+
+## Next entry: OL-0087

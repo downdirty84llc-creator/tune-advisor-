@@ -50,15 +50,22 @@ and actual result.
 | A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending** (premise false — DEFER) | T-82 T-105                         |
 | A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                         | T-95                               |
 | A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
+| A-25 | Whose account is the one this register reports as the business's?           | G     | **Pending**                         | T-137, T-71, T-129, T-136          |
 
-**Eight packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23 and
-A-24.** **A-24 was raised on 2026-10-29 by the run that caused it** — the intake
-published a declined-payment amount on a reading of A-19 that was wrong,
-corrected its own two files within the hour, and **raised a packet for the ten
-it may not edit on its own judgement.** **A-23 was added to this board in the
-same write as its packet** — the first time since the 2026-10-12 note that a
-packet and its row have landed together, which is what the thirteen counts below
-were asking for.
+**Nine packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23,
+A-24 and A-25.** **A-25 was raised on 2026-11-05 by the intake that found the
+cause** — the run met a personal obligation drafting from the account T-71 has
+reported as DD84's position since 2026-10-16, **recognised that neither A-13 nor
+A-19 reaches it, published the finding without any particular, and raised a
+packet** rather than deciding on its own judgement which account the register
+has been describing. **That is the shape A-19 itself was made in, and it is the
+second time a rule has been found not to reach what a run walked into.** **A-24
+was raised on 2026-10-29 by the run that caused it** — the intake published a
+declined-payment amount on a reading of A-19 that was wrong, corrected its own
+two files within the hour, and **raised a packet for the ten it may not edit on
+its own judgement.** **A-23 was added to this board in the same write as its
+packet** — the first time since the 2026-10-12 note that a packet and its row
+have landed together, which is what the thirteen counts below were asking for.
 
 > **Two answered 2026-10-29.** **A-19 — APPROVED, Option C**: record the shape
 > of a cash position, never the figure, with the thread ID that holds it.
@@ -2270,3 +2277,80 @@ carries a dated note of what was removed and why; the log records the edit; and
 
 **Response** — _awaiting owner._ **Affected records** — T-109. **Actual result**
 — _not yet executed._
+
+---
+
+## A-25 — Whose account is the one this register reports as the business's?
+
+**Decision requested** — **Which entity owns the bank account that T-71, T-129
+and T-136 describe, and whether this register may record that the account
+carries an obligation that is not DD84's.** Three sub-questions, each answerable
+in a sentence:
+
+1. **Is that account DD84's, the owner's personally, or used for both?**
+2. **May this register state that it carries a non-business obligation**,
+   without naming the obligation, the counterparty or any amount?
+3. **Which of DD84's reported positions, if any, need re-describing** because
+   they were written on the assumption that the account was the business's?
+
+**Business objective** — **So that every cash statement this register makes is
+about the entity it names.** DD84 is pursuing SBA 504 financing, and a lender
+reading this public record should find claims that are true of the business.
+
+**Source and context** — **On 2026-11-04T19:03:41Z an insufficient-funds notice
+arrived naming the one transaction the account's balance had not covered. That
+transaction is plainly a personal obligation, not a business expense.** The
+notice is unread; thread `1a1a7f2138253561`.
+
+**T-71 has read "the account is overdrawn" since 2026-10-16 and is the row A-19
+was raised from.** Every "withheld, A-19" in this repository, every cash review
+section, and the top priority of the 2026-11-04 daily brief treated that account
+as the business's position. **No run ever verified that it was.**
+
+**The same account also sits behind T-129 (the grace-period clause that expired
+2026-11-05T04:59Z) and T-136 (the sixty-day charge-off clause).** **A Business
+Debit Card on a different digit-set was declined in the same window**, so more
+than one card, and possibly more than one account, is in play.
+
+**Recommended plan** — **Option C: answer sub-question 1, and let this register
+record only the ownership and the bare existence of a non-business obligation,
+with no particular of any kind.** The finding is already published in that form
+in `docs/ops/briefs/2026-11-05-inbox-intake.md`, which treats it as a §5 new
+category pending this decision.
+
+**Alternatives** —
+
+| Option | What it permits                                                                  | Cost                                                                                                           |
+| ------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **A**  | Record nothing; strike the finding and describe the account only as "an account" | **The register keeps making cash claims whose subject it cannot name.** Cheapest to write and the least honest |
+| **B**  | Record ownership and the obligation's nature (e.g. "a mortgage")                 | Names a category of the owner's personal finances in a public repository                                       |
+| **C**  | **Record ownership and the bare existence of a non-business obligation**         | **Enough to qualify every future cash statement; discloses nothing identifiable**                              |
+| **D**  | Record everything the notice contained                                           | **Rejected.** Publishes a servicer, an amount and a payment identifier. Not offered seriously                  |
+
+**Cost and cash impact** — **None. This is a wording and scope decision.** No
+money moves and no system changes.
+
+**Risks and safeguards** — **The risk of answering is a small, bounded
+disclosure: that an account connected to DD84's reporting carries something that
+is not DD84's.** **The risk of not answering is larger and already realised:
+this repository is public, and it currently contains twenty days of statements
+about "the account" that may be about the wrong entity.** Under every option but
+D, no amount, counterparty or identifier is ever written.
+
+**Systems affected** — `docs/ops/TASK-REGISTER.md` (T-71, T-129, T-136, T-137),
+`docs/ops/briefs/` where cash position is described, `docs/agents/ventures.md`
+if the account is named there, and every future cash review.
+
+**Customer/public impact** — **None on customers.** **Public impact is the point
+of the packet**: the repository is world-readable by A-13.
+
+**Success test** — **Every statement in `docs/ops/` about an overdrawn account
+names which entity's account it is**, or says explicitly that ownership is
+undetermined; **no servicer, amount or payment identifier appears anywhere**;
+and **T-71, T-129 and T-136 each carry a dated note saying what was assumed
+before 2026-11-05 and what is known after.**
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-137, T-71, T-129,
+T-136. **Actual result** — _not yet executed._
