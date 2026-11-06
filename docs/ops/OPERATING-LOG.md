@@ -9244,4 +9244,179 @@ that has waited six days and six briefs.**
 
 ---
 
-## Next entry: OL-0088
+## OL-0088 — 2026-11-06 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake (repo-attached), fired 2026-11-06T10:20:54Z. **Window:** since OL-0086,
+2026-11-05T10:20Z -> 2026-11-06T10:20Z. **Brief:**
+`docs/ops/briefs/2026-11-06-inbox-intake.md`.
+
+**Start from the trigger, end from this commit** — T-116. **Skeleton committed
+before gathering at `995f6e9`, twenty-second application of OL-0050's repair.**
+
+**Checkout, contract item 0:** tip `3a5149a`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **78 tracked files against the prompt's expected 28 —
+twenty-sixth run reporting that drift, T-85 step 3.**
+
+### Both carried-in questions answered, one against the business
+
+**201 threads estimated, 50 returned on one page, 13 material items each fetched
+individually under T-102.** **The estimate is inflated by a retail-site signup
+the owner made on 2026-11-05 and the promotional flood after it — recorded so
+the number is not read as business activity.**
+
+**TikTok rejected the application a second time at 2026-11-05T13:04:11Z**, on
+the same proof-of-address document, **thirty-six minutes after the decision
+window TikTok itself had given closed at 12:28Z.** The rejection has been read;
+the follow-up pressing for correction is unread.
+
+**TikTok's stated reason is that it could not verify the document's
+authenticity, with an instruction to resubmit an unedited original.** **Nothing
+is alleged about the document or the owner and this register will not allege it:
+a failed automated authenticity check is not evidence of alteration** — phone
+cameras enhance by default, scanners sharpen, messaging apps recompress. **What
+is established is that the check failed twice on the same document class and
+that the platform's own instruction names the likely fix.**
+
+**The escalation path is documented rather than guessed: review in Seller
+Center, appeal, manual review by intake form, seller support group.** **T-100
+moves from In Verification to Awaiting Owner and is raised to Critical.** **It
+was correct to leave it alone for 48 hours — it genuinely needed nothing — and
+three briefs called it the most consequential thing this week. It resolved
+against the business.**
+
+**No overdraft-fee notice has arrived, now through one nightly processing.**
+**That is the best news in the run and it is still evidence rather than proof:
+the balance is not visible from mail.**
+
+### Three of this run's findings correct this register
+
+**First, yesterday's intake overstated Google Play.** A notice of
+2026-11-06T00:33:32Z says the developer account **"is at risk of being closed
+because it's not being used"** and **"Fix this before December 6, 2026."**
+**Yesterday called it "a platform holding DD84 apps"; the evidence now points to
+no published app at all**, the earlier notice's "all apps" being boilerplate
+this register read as an inventory. **T-141 is narrowed to trader status alone
+and T-143 carries the nearer, harder deadline** — a trader declaration is a
+form, while "publish an app or an update" is a release. **Both requirements
+touch A-17, which has been pending since 2026-10-19: the closure remedy needs a
+verified phone number and the trader declaration needs a public one.**
+
+**Second, the card question is answered and the register's framing was wrong
+twice.** This window holds the whole cycle in order: **a card declined at
+2026-11-05T22:56:33Z "as your card is off", that same card turned on at
+23:03:41Z, and turned off again sixty seconds later.** **Yesterday's brief said
+the declined card and the toggled card were different digit-sets — true of the
+2026-11-04 decline, not true of this one.** And **a reminder of
+2026-11-06T03:06:20Z says a Business Debit Card has been off "as you requested…
+on 11/02/2026"** — **four days of sustained deliberate state, which is not
+toggling and which explains T-139's decline completely.**
+
+**The lesson is about how T-104's theory was killed.** The theory was "60-second
+windows, exactly an hour apart." **The periodicity is dead and stays dead; the
+short-window half has now recurred three times — 30 seconds, 60 seconds, 2m31s —
+and now has a mechanism behind it.** **Killing a compound claim entirely when
+only one half was wrong cost four days of treating a deliberate practice as an
+unexplained anomaly.**
+
+**Third, and the one worth keeping: the owner called the bank on 2026-11-04** —
+the day the grace-period clause expired — **and the only evidence is a
+satisfaction survey that arrived 2026-11-05T23:02:49Z.** **Yesterday's daily
+brief made that clause its second priority and reported T-129, T-71 and T-136 as
+awaiting an owner who had already called.**
+
+**That is the mirror of the instruction not to re-report an owner action as
+agent work: do not report owner inaction when a third party is quietly
+evidencing action.** **What the call concerned is not stated and is not
+inferred. T-129 and T-136 are annotated with the shape and stay Awaiting Owner,
+because "a call happened" is not "the matter is closed."**
+
+### The Stripe key is the other venture's, and the trap is named
+
+**A secret-key notification arrived 2026-11-05T13:15:02Z, unread.** **The
+account is the Georgia Opportunity Ledger's and the key is named for that
+application's production runtime.** **The partial key, the account identifier
+and the message identifier are withheld — a partial live key is still a
+credential fragment.**
+
+**T-11 has been Critical and Blocked for seventy-eight days on creating DD84's
+Stripe products and prices. A careless run would have recorded this as movement
+on T-11. It is not DD84's account and tells this register nothing about
+DD84's.**
+
+**The one narrow DD84 interest: the key is named for a Netlify runtime, while
+T-115 and T-127 put that application on Vercel — and T-115 is a DD84 row about a
+DD84 subdomain on that project.** **If the host moved, the subdomain may have
+moved with it.** T-145.
+
+**The larger observation is about this mailbox, not either application.**
+**Second cross-venture security notification in two days** — a live signup token
+yesterday, a production payment key today. **The two businesses are deliberately
+separate in their repositories and are not separate in this inbox**, where every
+production alert for one lands in the other's mailbox and this register has to
+withhold it. T-142 extended.
+
+### Also in the window
+
+**A selfie sign-in method was added to the primary Google account at
+2026-11-06T01:39:05Z and the notice is unread.** That account holds the business
+mailbox, the advertising account, the Play developer account and the Drive. **If
+the owner added it nothing follows; if not it is what an intruder would add.
+This register cannot tell which and will not guess** — it is in the urgent list
+for what it gates, not because anything is alleged. T-144.
+
+**$0.04 was deposited into the store's Balance account on 2026-11-05.** **Two
+readings and neither is chosen: a verification micro-deposit from linking an
+external account, or a residual payout.** **The amount is published because the
+$530.31 payout from this same Balance account was published under A-13, so a
+deposit into it is the same category; A-19 governs the bank account A-25 is
+about.** **The reasoning is written down so the boundary is auditable rather
+than relitigated.** **And it ends a line repeated for six days: "nothing in" is
+no longer strictly true.** **The Friday cash review, firing about thirty minutes
+after this run, reads the payment systems and is where it reconciles.**
+
+**Not in this window and not reported as though they were: the ninth billing
+attempt (2026-11-07) and the card auto-draft (2026-11-09).** **Neither has
+happened.**
+
+### Leads and drafts
+
+**Zero new leads — thirteenth consecutive run.** **One arrival could be mistaken
+for one: an SEO pitch asking about "more repair jobs", subject-lined for a city
+in another country, offering to rank businesses first on a chatbot.** **It fills
+none of the spec's fields and the mismatched geography marks it as a templated
+mass mailing. Nothing is alleged about the sender beyond what it says.**
+
+**No draft prepared, and the TikTok appeal is deliberately not drafted:** it
+would mean writing an explanation, on the owner's behalf, about the authenticity
+of a document this register has never seen and must not characterise. **The path
+is laid out instead.**
+
+### Counts
+
+**145 tasks** · 65 Awaiting Owner · 4 Awaiting Approval · **90 of 122 open rows
+past due.** **Eighteen Critical and open: fifteen overdue (newest seven days,
+oldest seventy-eight), T-136 and T-137 due today, T-143 not yet due.** **Nine
+packets pending.** **Three new rows, each checked against the register first and
+naming its parent — T-143 against T-141, T-144 against T-52's family, T-145
+against T-115 and T-127 — and seven existing rows updated rather than
+duplicated.**
+
+### The honest summary
+
+**The channel three briefs called the most consequential thing this week
+resolved against the business, and the best news in the run is an absence — no
+fee notice, through one nightly processing.**
+
+**Three findings corrected this register rather than reporting the business**,
+and the third is the one to keep: **a satisfaction survey was the only evidence
+that the owner had called the bank on the day a clause expired.** **Without it,
+two briefs would have gone on reporting silence.** **This register is good at
+recording what it can see and has no way to see an owner acting outside the
+systems it reads** — a limit of the instrument, not a failure of the owner, and
+worth saying plainly in a record that publishes an Awaiting Owner count every
+day.
+
+---
+
+## Next entry: OL-0089

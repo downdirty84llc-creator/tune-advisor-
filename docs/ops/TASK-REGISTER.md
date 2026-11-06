@@ -133,11 +133,11 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
-| T-100 | TikTok proof-of-address submitted 2026-11-02; decision due 11-04 to 11-05                     | sales      | **High**     | **In Verification**      | Agent | A to report                       | 2026-10-30   |
+| T-100 | TikTok rejected a 2nd time on the proof-of-address document                                   | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
-| T-104 | Cards toggled 18 times; deliberate practice or fault? One sentence                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-104 | Card unlock-transact-relock cycle observed; purpose unconfirmed                               | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-105 | A-22 chases a supplier who answered 8 days ago; two replies unread                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-22 DEFER**                    | 2026-10-30   |
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record                        | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350                        | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -172,38 +172,43 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-136 | 60-day charge-off clause; the clock start date is unknown here                                | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
 | T-137 | T-71's account carries a personal obligation; whose account is it?                            | finance    | **Critical** | **Awaiting Approval**    | Owner | **A-25**                          | 2026-11-06   |
 | T-138 | A second recurring charge of the bill amount approved 2026-11-04                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
-| T-139 | A business card was declined because it was off — T-104 has a cost                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
+| T-139 | A business card off on purpose since 2026-11-02 declined a payment                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
 | T-140 | Google Ads exists, unrecorded, with a "destination not working" block                         | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
-| T-141 | A Google Play developer account is unrecorded; deadline 2027-02-01                            | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
-| T-142 | A live auth token reached this inbox from the other venture app                               | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-141 | Google Play trader status due 2027-02-01; publishes a phone (A-17)                            | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
+| T-142 | Two ventures' security mail lands in one inbox; 2 instances in 2 days                         | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-143 | Google Play will close the developer account 2026-12-06 for non-use                           | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-20   |
+| T-144 | A selfie sign-in method was added to the primary Google account                               | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-145 | The Ledger's runtime key names Netlify; T-115 puts it on Vercel                               | ops        | Normal       | **Awaiting Owner**       | Owner | A to diagnose                     | 2026-11-12   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 10 In Verification
-· 6 In Progress · **4 Awaiting Approval** · **61 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **142 tasks.** Recounted mechanically with
+Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 9 In Verification
+· 6 In Progress · **4 Awaiting Approval** · **65 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **145 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-05**, at the Thursday daily brief; **no rows were added or closed by
-it.** **The Thursday intake added T-136 to T-142 and raised A-25**, each row
-checked against the existing rows first and naming the parent it sits on — the
-correction the 2026-11-04 daily brief made when it withdrew T-135 as a duplicate
-of T-42 and T-58. **T-104 now reads 18 toggles and asks the question the daily
-brief surfaced: deliberate practice or fault, answerable in one sentence, which
-would also reframe T-139's declined business transaction as a predictable cost
-rather than a mystery.** **61 of the 142 rows are Awaiting Owner**, and **88 of
-the 119 open rows are past due.** **Sixteen rows are Critical and open and, for
-the first time since this count began, not all are overdue: fourteen are —
-newest six days, oldest seventy-seven — while T-136 and T-137 fall due
-2026-11-06.** **Fourteen aged into that list over seventy-seven days; two
-arrived in one morning's mail, and T-137 is the first Critical row ever opened
-against this register's own description of the business rather than against the
-business.** **Five live outside-set dates: T-100 closing 2026-11-05T12:28Z, T-89
-on 2026-11-07, T-130 on 2026-11-09, T-136's unknown sixty-day clock, and T-141
-on 2027-02-01 — where on 2026-11-03 this register could find two, and all three
-it gained were sitting unread in an inbox rather than caused by the business.**
-**Nine approval packets pending.**
+**2026-11-06**, at the Friday intake (**T-143 to T-145 added; seven existing
+rows updated rather than duplicated**). **T-100 left In Verification for
+Awaiting Owner and was raised to Critical: TikTok rejected the application a
+second time on 2026-11-05, on the same proof-of-address document, thirty-six
+minutes after the decision window it had itself given closed.** **T-141 was
+narrowed to the trader-status deadline alone and T-143 carries the nearer and
+harder one — the developer account is closed on 2026-12-06 unless contact
+details are verified AND an app or update is published.** **That notice also
+corrects this register: the 2026-11-05 intake called it "a platform holding DD84
+apps" and the evidence now points to no published app at all, "all apps" in the
+earlier notice being boilerplate this register read as an inventory.** **T-104
+and T-139 record that the unlock-transact-relock cycle was observed end to end
+and that a business card has been off on purpose since 2026-11-02 — so the four
+days spent treating a deliberate practice as an unexplained anomaly came from
+killing a compound claim entirely when only its periodicity half was wrong.**
+**T-142 records that two instances in two days make this one mailbox the place
+the two ventures are no longer separate.** **65 of the 145 rows are Awaiting
+Owner**, and **90 of the 122 open rows are past due.** **Eighteen rows are
+Critical and open: fifteen overdue (newest seven days, oldest seventy-eight),
+T-136 and T-137 due today, and T-143 not yet due.** **Nine approval packets
+pending.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
