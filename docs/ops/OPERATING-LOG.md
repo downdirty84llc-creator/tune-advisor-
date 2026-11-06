@@ -9419,4 +9419,157 @@ day.
 
 ---
 
-## Next entry: OL-0089
+## OL-0089 — 2026-11-06 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), fired 2026-11-06T10:51:02Z. **Brief:**
+`docs/ops/briefs/2026-11-06-daily-brief.md`.
+
+**Start from the trigger, end from this commit** — T-116.
+
+**No skeleton commit.** Today's intake committed at **10:28:16Z, twenty-three
+minutes before this run**; gathering was one live calendar read, one sweep of
+the 31-minute gap since the intake's cut-off, and the records on disk.
+**Eleventh time this judgement has been recorded.**
+
+**Checkout, contract item 0:** tip `767f464`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **79 tracked files against the prompt's expected 28 —
+twenty-seventh run reporting that drift, T-85 step 3.**
+
+### A second PayPal automatic payment is failing, and it is not the tracked one
+
+**A PayPal notice arrived 2026-11-06T10:47:33Z — twenty-seven minutes after the
+intake's cut-off and four minutes before this run started, already read.**
+Thread `1a1b0788e877e854`. **"We've tried to process your automatic payment
+several times, and it is now past the original due date."**
+
+**The careless reading is that PayPal is confirming the Shopify failure. It is
+not, and the difference is the finding.** **The payee is an overseas software
+vendor, not Shopify; the amount is a different figure; the due date is today
+rather than a cycle from 2026-10-22; and two cycles are outstanding.**
+**Amounts, the outstanding balance and the billing-agreement identifier are
+withheld under A-19** — an outstanding balance is literally a balance, and
+publishing the monthly figure plus "two cycles" would reconstruct it.
+
+### T-117 was this register's own confident diagnosis and it was too strong
+
+**T-117 read "Only the Shopify/PayPal billing agreement fails; three instruments
+work."** It was raised Critical 2026-11-02, corrected to High 2026-11-03, and
+**cited as holding in five consecutive briefs** on the evidence that PayPal paid
+Meta on 2026-11-01 and GitHub on 2026-11-02 while failing Shopify on 2026-11-03.
+
+**Those payments remain facts. The inference drawn from them does not survive a
+second unrelated agreement failing on the same instrument.** **T-117 is
+corrected rather than closed** — the distinction matters, because the successful
+payments are still evidence about the instrument's general health and only the
+"only one agreement" claim is withdrawn.
+
+### The hypothesis that would retire four rows, labelled as one
+
+**Four rows this register has been treating separately, put together for the
+first time:** T-71's overdrawn account, T-139's business card deliberately off
+since 2026-11-02, T-104's repeated unlock-and-relock within seconds, and T-89's
+eight Shopify failures naming PayPal as the failed primary.
+
+**If PayPal's funding source is a card that is off, or an account at or below
+zero, all four have one cause.** **That is the first single explanation this
+register has had for any of them.**
+
+**It is labelled a hypothesis and the reason is recorded: the last two
+mechanisms built this way were both wrong** — the card-toggling schedule and
+T-119's midday billing band. **What would settle it is PayPal's funding-source
+setting: one owner click, and unreadable from here because PayPal's connector
+needs re-authentication while its mail remains the best evidence source this
+register has.** T-146.
+
+**And the useful shape of today is subtraction rather than addition.** **One new
+row, one corrected row, and a hypothesis that might retire four mysteries** —
+against three days in which the register went from two outside-set deadlines to
+six. **A register that only ever adds rows is not learning.**
+
+### The instrument that found it
+
+**The item landed four minutes before this run and twenty-seven minutes after
+the intake closed its window.** **Second time in three days the daily brief's
+gap sweep has caught something material** — the other was two card notices on
+2026-11-05. **One query, and it is earning its place.**
+
+### Money, appointments, customers
+
+**Four cents in on 2026-11-05 to the store's Balance account, nature unstated,
+two readings and neither chosen.** **The amount is published because the $530.31
+payout from that same account was published under A-13; A-19 governs the bank
+account A-25 is about.** **"Nothing in" is retired as a phrase: the last inbound
+that was revenue remains $400.00 on 2026-10-29, eight days.**
+
+**Still no overdraft-fee notice, now through two nightly processings since the
+grace period expired.** **Best news in the register, still evidence rather than
+proof.**
+
+**Three dated money facts now run at once:** the second PayPal agreement past
+due today, the ninth Shopify attempt tomorrow, and the card auto-draft on
+2026-11-09. **Known spend since 2026-10-24 remains $220.54 because nothing has
+settled.**
+
+**The Friday cash review had not fired when this run was written** — scheduled
+11:10Z, nineteen minutes later. **It reads the payment systems; this run read
+mail and the records, and everything in the money section is a mail observation
+awaiting that reconciliation.**
+
+**Calendar read live and empty through 2026-11-15 — thirteenth consecutive empty
+check.** **Three payers, $1,550.00, unacknowledged, oldest now 15.45 days; the
+October Balance statement is still the only unused lever and still unopened.**
+**Customer ages are the 2026-11-04 measured figures advanced by two days with
+the provenance stated, the basis re-verified by the intake twenty-three minutes
+earlier.**
+
+### Ordering the top three, and keeping a promise made yesterday
+
+**T-110 stays first, in its eighth brief.** **Yesterday's brief put it first and
+said financial administration had displaced it five times.** **Nothing arrived
+and nothing changed, so demoting it today for a finance finding would be exactly
+the pattern that brief named.** **It is the only open item touching a customer's
+engine rather than an account and it costs one sentence.**
+
+**Second: check what funds PayPal, before tomorrow's ninth attempt.** **Third:
+A-25**, which stopped being only a wording question this morning — **the
+funding-source hypothesis cannot be tested while it is undetermined which
+accounts and cards are the business's.**
+
+**What lost, said rather than dropped: T-143 (Google Play closes the account
+2026-12-06) is the nearest irreversible platform deadline and is thirty days
+out, so it loses to things costing one sentence or one click; T-52 is 25 days
+unread and has been displaced every day this week; T-100 needs a
+resubmit-appeal-or-stop decision and can wait a day where tomorrow's billing
+attempt cannot.**
+
+### Boundaries held
+
+**Nothing sent, nothing published to a customer, nothing charged, no live system
+changed. Mail state untouched. No pull request, no other branch, no other
+repository. Nothing written into `docs/growth/`.** **No account-level figure in
+this entry or the brief, under A-19.** **One row added and two corrected;
+nothing closed.**
+
+### Counts
+
+**146 tasks** · 66 Awaiting Owner · 4 Awaiting Approval · **90 of 123 open rows
+past due.** **Eighteen Critical and open: fifteen overdue (newest seven days,
+oldest seventy-eight), T-136 and T-137 due today, T-143 not yet due.** **T-100
+joined that list today because an outside party acted, not because it rotted.**
+**Nine packets pending.**
+
+### The honest summary
+
+**Still quiet by every measure of business activity — thirteenth run with no
+enquiry, eighth day since revenue, thirteenth empty calendar check — and the
+quiet is no longer the whole picture.**
+
+**Today's finding corrected this register's own diagnosis and replaced it with
+one testable question.** **That is a better day's work than three new rows would
+have been, and the cheapest item on the list is still one sentence about oil
+pressure in its eighth brief.**
+
+---
+
+## Next entry: OL-0090

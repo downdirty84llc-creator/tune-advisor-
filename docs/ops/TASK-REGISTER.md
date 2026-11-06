@@ -106,7 +106,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-70  | Colbert parcel capped at 380 gpd design flow without public water                             | real est.  | **High**     | **Awaiting Owner**       | Owner | A to research                     | 2026-10-17   |
 | T-71  | The account is overdrawn; "two payments declined" is now five or more                         | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-19 Option C**                 | 2026-10-16   |
 | T-72  | A store enquiry asked if DD84 is open; unread 56 hours                                        | sales      | **High**     | **Awaiting Owner**       | Owner | C to send                         | 2026-10-19   |
-| T-73  | Three dated outflows; amounts withheld under A-19, thread IDs held                            | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-20   |
+| T-73  | Five dated outflows; amounts withheld under A-19, thread IDs held                             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-20   |
 | T-74  | A third party says a Melio account exists; message does not hold together                     | finance    | Normal       | **Awaiting Owner**       | Owner | A to verify                       | 2026-10-22   |
 | T-75  | A new Shopify theme was published and nobody checked the storefront                           | service    | **High**     | Planned                  | Agent | A to diagnose                     | 2026-10-21   |
 | T-76  | Four account-access notices in four hours across four providers                               | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-21   |
@@ -150,7 +150,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown                       | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                   | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
 | T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
-| T-117 | Only the Shopify/PayPal billing agreement fails; three instruments work                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
+| T-117 | Two PayPal agreements now fail; "only one" no longer holds — T-146                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-118 | Cost side opened: Manus and a shipment still not quantified                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
 | T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
 | T-120 | Meta Ads spend exists; the registry says advertising was never used                           | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
@@ -179,36 +179,36 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-143 | Google Play will close the developer account 2026-12-06 for non-use                           | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-20   |
 | T-144 | A selfie sign-in method was added to the primary Google account                               | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-145 | The Ledger's runtime key names Netlify; T-115 puts it on Vercel                               | ops        | Normal       | **Awaiting Owner**       | Owner | A to diagnose                     | 2026-11-12   |
+| T-146 | A 2nd PayPal auto-payment fails; what funds PayPal? (T-117 too strong)                        | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 9 In Verification
-· 6 In Progress · **4 Awaiting Approval** · **65 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **145 tasks.** Recounted mechanically with
+· 6 In Progress · **4 Awaiting Approval** · **66 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **146 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-06**, at the Friday intake (**T-143 to T-145 added; seven existing
-rows updated rather than duplicated**). **T-100 left In Verification for
-Awaiting Owner and was raised to Critical: TikTok rejected the application a
-second time on 2026-11-05, on the same proof-of-address document, thirty-six
-minutes after the decision window it had itself given closed.** **T-141 was
-narrowed to the trader-status deadline alone and T-143 carries the nearer and
-harder one — the developer account is closed on 2026-12-06 unless contact
-details are verified AND an app or update is published.** **That notice also
-corrects this register: the 2026-11-05 intake called it "a platform holding DD84
-apps" and the evidence now points to no published app at all, "all apps" in the
-earlier notice being boilerplate this register read as an inventory.** **T-104
-and T-139 record that the unlock-transact-relock cycle was observed end to end
-and that a business card has been off on purpose since 2026-11-02 — so the four
-days spent treating a deliberate practice as an unexplained anomaly came from
-killing a compound claim entirely when only its periodicity half was wrong.**
-**T-142 records that two instances in two days make this one mailbox the place
-the two ventures are no longer separate.** **65 of the 145 rows are Awaiting
-Owner**, and **90 of the 122 open rows are past due.** **Eighteen rows are
-Critical and open: fifteen overdue (newest seven days, oldest seventy-eight),
-T-136 and T-137 due today, and T-143 not yet due.** **Nine approval packets
-pending.**
+**2026-11-06**, at the Friday daily brief (**T-146 added; T-117 and T-73
+corrected**). **T-146 records that a second, unrelated PayPal automatic payment
+went past due on 2026-11-06 with two cycles outstanding, to a payee that is not
+Shopify.** **T-117 is corrected rather than closed: it read "only the
+Shopify/PayPal billing agreement fails" and was cited as holding in five
+consecutive briefs on the evidence that PayPal paid two other merchants either
+side of a Shopify failure.** **Those payments remain facts; the inference that
+only one agreement is affected does not survive a second one failing.** **The
+hypothesis T-146 carries — that one funding source behind PayPal would explain
+T-71's overdrawn account, T-139's card deliberately off since 2026-11-02,
+T-104's unlock-relock cycle and T-89's eight failures at once — is labelled a
+hypothesis, because the last two mechanisms this register built out of adjacent
+facts were both wrong.** **T-73 now reads five dated outflows.** **66 of the 146
+rows are Awaiting Owner**, and **90 of the 123 open rows are past due.**
+**Eighteen rows are Critical and open: fifteen overdue (newest seven days,
+oldest seventy-eight), T-136 and T-137 due today, T-143 not yet due.** **Six
+live outside-set dates, the nearest being the ninth Shopify billing attempt on
+2026-11-07.** **Nine approval packets pending; A-25 stopped being only a wording
+question today, because the funding-source hypothesis cannot be tested while it
+is undetermined which accounts and cards are the business's.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
