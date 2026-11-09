@@ -1,5 +1,36 @@
 # DD84 weekly revenue and cash review — 2026-11-06
 
+> ## ⚠ INTERRUPTED — THIS REVIEW WAS NEVER COMPLETED
+>
+> **Annotated 2026-11-09 by the Monday intake (OL-0090).**
+>
+> **A worker restart — the eighth this session — hit this run after the skeleton
+> below committed at `3a039d6` and before it had read anything.** **The ten
+> `_gathering_` placeholders below are original and no figure under them was
+> ever gathered** — a text search finds eleven, because this sentence names the
+> token too.\*\*
+>
+> **There is no operating-log entry for this run.** The log runs OL-0089 →
+> OL-0090 with nothing between, and that absence is deliberate: **no entry is
+> written for a run that did not happen.**
+>
+> **It was annotated rather than completed, and the reasoning matters.** The
+> review's period was the week to Friday 2026-11-06. **Reading the payment
+> systems on Monday would put Monday's figures under a Friday heading**, and the
+> standing rule re-verifies figures against the live system — it does not
+> license backdating them. **The next scheduled review is 2026-11-13 and its
+> period covers this gap.**
+>
+> **What survived is the point.** OL-0050's repair preserved the contract-item-0
+> verification, the four standing owner decisions, the note disqualifying this
+> run's own 95-day-old baseline, and the reasoning for committing a skeleton
+> when the daily brief sixteen minutes earlier had declined one. **None of that
+> had to be re-derived.**
+>
+> **The week's money events were not lost either** — they were caught by the
+> 2026-11-09 intake's 72-hour window, which found the Shopify invoice settled
+> after nine failures and a fourth unattributed payer.
+
 Run at **2026-11-06T11:12Z**, Friday. Scheduled 11:10Z. Class A: **reads payment
 systems, moves no money.** Period: **the week since the 2026-10-30 review.**
 

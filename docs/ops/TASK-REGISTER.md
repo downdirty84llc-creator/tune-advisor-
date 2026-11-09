@@ -86,7 +86,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-50  | HP Tuners Do Not Sell List — partner obligation                                               | compliance | Normal       | **Awaiting Owner**       | Owner | A to read                         | 2026-10-12   |
 | T-51  | Third-party contact details in a public repository                                            | compliance | Normal       | **Awaiting Owner**       | Owner | **A-17 pending**                  | 2026-10-13   |
 | T-52  | A Meta credential phish, unread — and the business now pays Meta for ads                      | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-12   |
-| T-53  | Purchase proposal on the Colbert parcel — no reply in six days                                | real est.  | **High**     | **Awaiting Owner**       | Owner | C to follow up                    | 2026-10-13   |
+| T-53  | Colbert parcel — the realtor chased 2026-11-08 and it is unread                               | real est.  | **High**     | **Awaiting Owner**       | Owner | C to follow up                    | 2026-10-13   |
 | T-54  | Three HP Tuners credit orders in three days, amounts unread                                   | finance    | Normal       | Planned                  | Owner | A to read                         | 2026-10-14   |
 | T-55  | Chime is a payment channel absent from the venture registry                                   | finance    | Normal       | Planned                  | Owner | A to read                         | 2026-10-14   |
 | T-56  | USDA B&I loan guarantee — confirm FY27 authority and rural test                               | real est.  | Normal       | Planned                  | Agent | A to research                     | 2026-10-19   |
@@ -122,9 +122,9 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-86  | Pinterest publishing mostly failing; one failure announced as success                         | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-29   |
 | T-87  | Ledger production deploys failing on main — recorded, not touched                             | ops        | Normal       | **Awaiting Owner**       | Owner | none yet                          | 2026-10-30   |
 | T-88  | A $450 payment arrived and nobody knows which job it paid for                                 | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-26   |
-| T-89  | Shopify billing has failed EIGHT times; ninth attempt 2026-11-07                              | ops        | **Critical** | **Awaiting Owner**       | Owner | E to fix                          | 2026-10-24   |
+| T-89  | Shopify billing: SETTLED 2026-11-08 after 9 failures and 18 days                              | ops        | **Critical** | Done                     | Agent | E to fix                          | 2026-10-24   |
 | T-90  | A Colbert building quote sits outside the register, amount unread                             | real est.  | Normal       | Planned                  | Agent | A to read                         | 2026-10-27   |
-| T-91  | Shopify first sale — $530.31 paid out; his reply still unread                                 | sales      | **Critical** | **In Verification**      | Agent | A to report                       | 2026-10-28   |
+| T-91  | Storefront sale — paid out; the owner replied to him 2026-11-08                               | sales      | **Critical** | **In Verification**      | Agent | A to report                       | 2026-10-28   |
 | T-92  | A second unattributed payment — $700, memo "mecanic tune", from a company                     | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-28   |
 | T-93  | A customer was written to by someone this register cannot identify                            | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-28   |
 | T-94  | HP Tuners credits: $99.98 on 10-24 and 10-30 — $49.99 per credit                              | finance    | Normal       | **Done**                 | Agent | A to read                         | 2026-10-29   |
@@ -133,11 +133,11 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
-| T-100 | TikTok rejected a 2nd time on the proof-of-address document                                   | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-100 | TikTok rejection re-sent 2026-11-07, identical — re-send or new?                              | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
-| T-104 | Card unlock-transact-relock cycle observed; purpose unconfirmed                               | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-104 | Card toggled on all four days 11-06 to 11-09; one more decline                                | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-105 | A-22 chases a supplier who answered 8 days ago; two replies unread                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-22 DEFER**                    | 2026-10-30   |
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record                        | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350                        | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -150,7 +150,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown                       | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                   | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
 | T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
-| T-117 | Two PayPal agreements now fail; "only one" no longer holds — T-146                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
+| T-117 | The agreement that failed 9 times began working without a new card                            | finance    | **High**     | Done                     | Agent | A to report                       | 2026-11-02   |
 | T-118 | Cost side opened: Manus and a shipment still not quantified                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
 | T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
 | T-120 | Meta Ads spend exists; the registry says advertising was never used                           | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-04   |
@@ -179,36 +179,42 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-143 | Google Play will close the developer account 2026-12-06 for non-use                           | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-20   |
 | T-144 | A selfie sign-in method was added to the primary Google account                               | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-145 | The Ledger's runtime key names Netlify; T-115 puts it on Vercel                               | ops        | Normal       | **Awaiting Owner**       | Owner | A to diagnose                     | 2026-11-12   |
-| T-146 | A 2nd PayPal auto-payment fails; what funds PayPal? (T-117 too strong)                        | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
+| T-146 | Funding-source hypothesis gained support: $350 in 11-06, paid 11-08                           | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
+| T-147 | A fourth payer sent $350.00 — the list price — unattributed                                   | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-10   |
+| T-148 | A 7-message commission negotiation is unread; a % of claimed $20k                             | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-10   |
+| T-149 | A truck maker's tech support sent ~7MB; T-123 fleet question is live                          | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-13   |
+| T-150 | An OpenAI account, an open support case, an out-of-state sign-in                              | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **18 Done** · **3 No Action** · **2 Accepted Risk** · 9 In Verification
-· 6 In Progress · **4 Awaiting Approval** · **66 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **146 tasks.** Recounted mechanically with
+Counts: **20 Done** · **3 No Action** · **2 Accepted Risk** · 9 In Verification
+· 6 In Progress · **4 Awaiting Approval** · **68 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **150 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-06**, at the Friday daily brief (**T-146 added; T-117 and T-73
-corrected**). **T-146 records that a second, unrelated PayPal automatic payment
-went past due on 2026-11-06 with two cycles outstanding, to a payee that is not
-Shopify.** **T-117 is corrected rather than closed: it read "only the
-Shopify/PayPal billing agreement fails" and was cited as holding in five
-consecutive briefs on the evidence that PayPal paid two other merchants either
-side of a Shopify failure.** **Those payments remain facts; the inference that
-only one agreement is affected does not survive a second one failing.** **The
-hypothesis T-146 carries — that one funding source behind PayPal would explain
-T-71's overdrawn account, T-139's card deliberately off since 2026-11-02,
-T-104's unlock-relock cycle and T-89's eight failures at once — is labelled a
-hypothesis, because the last two mechanisms this register built out of adjacent
-facts were both wrong.** **T-73 now reads five dated outflows.** **66 of the 146
-rows are Awaiting Owner**, and **90 of the 123 open rows are past due.**
-**Eighteen rows are Critical and open: fifteen overdue (newest seven days,
-oldest seventy-eight), T-136 and T-137 due today, T-143 not yet due.** **Six
-live outside-set dates, the nearest being the ninth Shopify billing attempt on
-2026-11-07.** **Nine approval packets pending; A-25 stopped being only a wording
-question today, because the funding-source hypothesis cannot be tested while it
-is undetermined which accounts and cards are the business's.**
+**2026-11-09**, at the Monday intake (**T-147 to T-150 added; seven rows
+updated; T-89 and T-117 closed Done**). **T-89 is the first Critical row in this
+register to close on evidence rather than on a date: the 2026-10-22 Shopify
+invoice settled on 2026-11-08 after nine failures and eighteen days, confirmed
+from both the platform's and the payment provider's side, total due zero.**
+**T-117 closes with it — the agreement that failed nine times began working on
+the same instrument without a new card.** **T-146 records that the
+funding-source hypothesis gained circumstantial support (a $350.00 Zelle receipt
+on 2026-11-06, the ninth attempt failing 11-07, the tenth clearing 11-08) and
+that the corroboration which looked strongest was backwards: a PayPal notice
+reading "transferred money to your bank" is a withdrawal, not a top-up.** **T-91
+and T-53 record owner and counterparty actions this register could not see — the
+owner replied to the order #1001 customer on 2026-11-08, evidenced only by a
+sent-state flag, and the Colbert realtor chased on the same day and is unread.**
+**T-100 records that the 2026-11-07 TikTok pair is textually identical to the
+2026-11-05 pair and carries the same wall-clock minute, so the mail cannot
+distinguish a re-send from a third rejection.** **68 of the 150 rows are
+Awaiting Owner**, and **97 of the 125 open rows are past due.** **Nineteen rows
+are Critical and open: sixteen overdue (newest ten days, oldest eighty-one),
+T-147 and T-148 due 2026-11-10, T-143 not yet due.** **Four payers have now sent
+$1,900.00 between them with none attributed and none acknowledged.** **Nine
+approval packets pending.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

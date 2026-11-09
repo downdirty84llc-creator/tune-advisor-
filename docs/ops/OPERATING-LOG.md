@@ -9572,4 +9572,177 @@ pressure in its eighth brief.**
 
 ---
 
-## Next entry: OL-0090
+## OL-0090 — 2026-11-09 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake (repo-attached), fired 2026-11-09T10:21:18Z. **Window:** since OL-0088,
+2026-11-06T10:20Z -> 2026-11-09T10:20Z — **72 hours, because the weekend has no
+scheduled runs.** **Brief:** `docs/ops/briefs/2026-11-09-inbox-intake.md`.
+
+**Start from the trigger, end from this commit** — T-116. **Skeleton committed
+before gathering at `241fc4d`, twenty-fourth application of OL-0050's repair.**
+
+**Checkout, contract item 0:** tip `3a039d6`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **81 tracked files against the prompt's expected 28 —
+twenty-ninth run reporting that drift, T-85 step 3.**
+
+### The Friday cash review was interrupted, and the repair worked
+
+**A worker restart — the eighth this session — hit the 2026-11-06 cash and
+revenue review after its skeleton committed at `3a039d6` and before it had read
+anything.** **OL-0050's repair preserved the contract-item-0 verification, the
+four standing owner decisions, the note disqualifying that run's own 95-day-old
+baseline, and the reasoning for committing a skeleton when the daily brief
+sixteen minutes earlier had declined one.** **None of it had to be re-derived.**
+
+**What it left behind mattered more than what it lost.** The file sat on the
+branch with ten `_gathering_` placeholders and **no operating-log entry**, so
+the log ran OL-0089 with nothing after it. **A brief with placeholders reads as
+finished to anyone who does not reach the bottom, and an unlogged run is
+invisible to every count this register publishes.**
+
+**It has been annotated rather than completed, with a dated interruption notice
+at its head.** **Reading the payment systems today would have put Monday's
+figures under a Friday heading; the standing rule re-verifies figures against
+the live system and does not license backdating them.** **No log entry is
+written for a run that did not happen, and that absence is recorded in the
+annotation rather than papered over.** **The 2026-11-13 review covers the
+period, and this window caught the week's money events anyway.**
+
+### The first unambiguously good finding in two weeks
+
+**The 2026-10-22 Shopify invoice is settled, confirmed from both sides.**
+**Shopify, 2026-11-09T00:15:41Z: "You've been charged for your bill… Total due
+$0.00 USD," itemised, with a PDF invoice attached.** **PayPal, for a transaction
+dated 2026-11-08: "You paid … to Shopify Inc."** **Nine failures from 2026-10-22
+to 2026-11-07, then the tenth attempt cleared — eighteen days.**
+
+**T-89 closes Done, and it is the first Critical row in this register to close
+on evidence rather than on a date.** **T-117 closes with it: the agreement that
+failed nine times began working on the same instrument, without a new card.**
+
+**A new A-19 question, answered conservatively.** **The settled amount is the
+same figure A-24 is pending on**, because an earlier run published it as a
+declined-payment amount. **As a settled vendor subscription cost it is the
+category this register publishes in full; it stays withheld anyway, because
+publishing it as a settlement would publish the number the owner is still being
+asked to decide about.** **The withholding lapses when A-24 is answered, and
+that is written down so it is not treated as permanent.** **Known spend is
+therefore not restated this run rather than restated wrongly.**
+
+### A fourth payer, at the published list price
+
+**A Zelle payment of $350.00 was received 2026-11-06 into the account T-71
+describes.** **Payer name and confirmation code withheld; the amount is
+published as revenue under A-13, consistent with the $450.00, $700.00 and
+$400.00 receipts already here.**
+
+**$350.00 is exactly the published price of the basic Mopar rung.** **A-21 has
+been pending on three prices for one class of work — $350 published, $250
+actually sold, $300 quoted — and a customer has now paid the published one.**
+**Nothing in this window attributes it, so there are four payers, $1,900.00
+between them, none attributed and none acknowledged.** T-147.
+
+### The funding-source hypothesis gained support, and the best-looking corroboration was backwards
+
+**Friday's T-146 hypothesis was that one funding source behind PayPal would
+explain T-71, T-139, T-104 and T-89 at once.** **The sequence now reads: $350.00
+in on 11-06, ninth attempt fails 11-07, tenth clears 11-08** — nine failures
+while the account was reported at or below zero, success two days after funds
+landed. **Consistent with it, and a two-day correlation rather than a
+mechanism.** **The funding-source setting would still settle it: one owner
+click, unreadable here while that connector needs re-authentication.**
+
+**And the corroboration that looked strongest is the wrong one.** **A PayPal
+notice of 2026-11-06 reads "you transferred money from your PayPal account to
+your bank."** **It would read beautifully as a top-up before the successful
+attempt. It is a withdrawal out of PayPal, with a fee, two days before the bill
+cleared.** **Amount, fee and transaction identifier withheld, because a transfer
+total discloses the balance.** **Recorded because the convenient reading would
+have been backwards.**
+
+### TikTok sent the same rejection again and the mail cannot say whether it is new
+
+**A second pair arrived 2026-11-07, both unread, textually identical to the
+2026-11-05 pair apart from tracking links — and the follow-up carries the same
+wall-clock minute, 13:11:53Z, on both days.** **Either the owner resubmitted and
+was rejected on the same ground, or TikTok re-sent on a schedule; the identical
+minute is consistent with the second and neither message carries a submission
+date.** **Seller Center shows the state — one owner click.** **Nothing is
+alleged about the document, for the third brief running.** T-100.
+
+### Two owner actions this register could not see
+
+**The owner replied to the order #1001 customer on 2026-11-08T13:54:20Z**,
+evidenced only by a message in the SENT state. **T-91 has read "his datalog
+still unread" since 2026-10-28.** **The reply is not quoted and the customer is
+not named.**
+
+**And a reminder on 2026-11-08 re-confirmed the 2026-11-04 call to the bank.**
+
+**Second time in four days that a third party incidentally evidenced the owner
+acting outside the systems this register reads — a survey, and a sent-state
+flag.** **This register publishes an Awaiting Owner count every day and cannot
+see action by phone, in a banking app, or in a thread whose bodies it does not
+read.** **A limit of the instrument, not a failure of the owner.**
+
+### Four new rows, each against a parent
+
+**T-147** — the fourth payer, against T-88, T-92 and T-113, and bearing on A-21.
+**T-148** — **a seven-message commission negotiation, unread**, in which a
+percentage of a claimed $20,000 over thirty days is being discussed. **Nothing
+is established about whether DD84 agreed to anything, who the counterparty is,
+or whether the figure is a forecast or a pitch; the free-mail sender and round
+number are the shape of a speculative approach and nothing is alleged.** **It is
+urgent because A-21 is pending on pricing authority and a revenue share is a
+pricing commitment.** **T-149** — a commercial truck manufacturer's technical
+support sent roughly seven megabytes of documents, read; **the attachments were
+not opened and their names are withheld, because manufacturer service
+documentation is the internal technical material §5 forbids.** **It does not
+answer T-123's fleet-eligibility question — that is contractual, not technical —
+but it makes it live.** **T-150** — an OpenAI account with an admin portal, an
+open support case under investigation, and a sign-in placed in another state;
+**nothing alleged, since relays and carriers misplace locations routinely**, and
+it is the fourth platform `ventures.md` does not record, after Google Ads and
+Google Play.
+
+### Leads, and three things that are not leads
+
+**Zero new leads — fourteenth consecutive run.** **The accounting needed care
+this week: a $350.00 payment is money without an enquiry, a commission
+negotiation is a proposed revenue share, an SEO pitch is still subject-lined for
+a city in another country, and a manufacturer's technical pack is inbound vendor
+support.** **Recording the payment as a lead would invent the enquiry that never
+arrived.**
+
+**No draft prepared, and two were deliberately declined.** **The realtor's "have
+you heard anything back?" needs an answer about a land purchase that only the
+owner can give, and a holding reply would commit the business to a timeline
+nobody set.** **The commission thread needs the owner to say first whether
+anything has been agreed; drafting into a seven-message negotiation whose
+history this register has not read could contradict a commitment already made.**
+
+### Counts
+
+**150 tasks** · 68 Awaiting Owner · **97 of 125 open rows past due.** **Nineteen
+Critical and open: sixteen overdue (newest ten days, oldest eighty-one), T-147
+and T-148 due 2026-11-10, T-143 not yet due.** **Two rows closed Done on
+evidence.** **Nine packets pending.**
+
+### The honest summary
+
+**Good news for the first time in two weeks, and it closed a Critical row on
+evidence rather than letting it rot.**
+
+**Against it: four new rows, a fourth payer who sent money with no enquiry
+behind it, and a seven-message negotiation about a share of claimed future sales
+running unread while the pricing decision it would bind sits open.**
+
+**Two convenient readings were available and both were wrong — a PayPal
+"transfer to your bank" that was a withdrawal, and a second TikTok rejection
+indistinguishable from the first down to the minute.** **Recording what the
+evidence does not support is most of what this register is for.**
+
+---
+
+## Next entry: OL-0091
