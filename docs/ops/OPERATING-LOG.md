@@ -10021,4 +10021,118 @@ and both readings of it survive the rejection unchanged.
 
 ---
 
-## Next entry: OL-0093
+## OL-0093 — 2026-11-09 · Three instruction-file defects closed, and one of them was mine
+
+- **Timestamp** 2026-11-09T11:05:00Z
+- **Task** T-44, T-116, T-125 (**all three In Verification**) · **Approval**
+  S-01 (Class A: correcting the agents' own instruction files). **Nothing sent,
+  published, spent, or changed in a live system.**
+- **Action** Rewrote the intake's discovery step, made the run timestamps read
+  rather than estimated across all six routines, and recovered the scan's
+  classification bands and time-sensitivity direction from the canonical source.
+- **Tool** `gh api` on the canonical Ledger repository + `base64 -d`; `Edit`,
+  `Bash` (`git`, `python3`, `prettier`); `Gmail` not used.
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** T-44 Planned since 2026-10-15; T-116 and T-125 In Progress as
+  diagnoses. Four scans had reported the missing bands and refused to invent
+  them.
+- **After** Seven files changed, six of them command files. All three tasks In
+  Verification — **an edited instruction file is not evidence that a run obeys
+  it.**
+
+### T-44 — a broad query that fills a page has not covered the window
+
+The intake opened with one query. On 2026-10-08 that query returned **25 threads
+and not one from a human**; a second query, `category:primary`, then surfaced a
+live customer tuning job and a state-agency permit response — **the two most
+valuable items in the mailbox, both inside the window the first query had
+supposedly covered.** About 201 inbox threads arrive every two days here and
+most are marketing, so a page of 25 by recency is a page of marketing.
+
+Discovery is now six queries in order: `category:primary`, `is:important`,
+`in:sent` (threads DD84 spoke last on), the two Superhuman triage labels,
+**`list_drafts`** — which is how T-42's fourteen unsent drafts were found, by a
+tool the routine had never been told to call — and a general sweep **last**.
+
+**The generalisable rule, now written into the file:** a full page is not a
+finished search. Paginate or narrow; never conclude "nothing found" from a query
+that returned its maximum. **This is the same error as a green Routine run that
+committed nothing** — a result that looks like an answer and is actually a
+limit.
+
+### T-116 — every brief for three months stated a time it had not read
+
+"Run at <UTC>" was printed from the model's sense of when the run ended, not
+from a clock. All six routines now print **two read timestamps**: start taken
+from `date -u` at the beginning, finish taken when the output file is written.
+**If only the start was read, print only the start.**
+
+**This is small and it is not cosmetic.** A brief is evidence;
+`OPERATING-LOG.md` is the thing a task is Done against. **A fabricated timestamp
+in an evidence file is a fabrication however harmless the number is**, and the
+rule that a figure without a source is a defect does not carve out clocks. **One
+read timestamp is worth more than a plausible span.**
+
+### T-125 — the bands existed, and the gap was made by my own edit
+
+The file promised "the classification bands that follow from the total" and
+never stated them. **Four consecutive scans reported it and correctly refused to
+invent a threshold**, ranking by total and leaving entries unlabelled. That
+refusal was right and it is why nothing has to be undone.
+
+**The gap was made on 2026-10-14, by OL-0045 — this session's own work.** That
+edit removed the pointer to `src/lib/scoring/score.ts`, which defined the bands,
+and declared the command file the specification. **It cut the source and kept
+the promise.** Removing a dangling reference to a deleted file was right;
+failing to notice that the deleted file was carrying a definition the text still
+relied on was not.
+
+**Recovered, not invented.** Read today from `CLASSIFICATION_BANDS` on `main` in
+`downdirty84llc-creator/georgia-opportunity-ledger`: **85–100 Immediate Action ·
+70–84 Strong Opportunity · 55–69 Worth Investigating · 40–54 Limited or
+Specialized · 0–39 Information Only.**
+
+**Why that source is legitimate here.** The components and maxima in this file
+already came from that method and are declared fixed; completing the method from
+the same place is recovery rather than guessing. **No Ledger data was read and
+this routine reads none** — a published scoring formula is not the other
+business's records, and the separation CLAUDE.md §0 protects is of code and
+data, not of arithmetic this file already embeds. The owner may overrule any
+threshold.
+
+**And the axis had no direction.** `time sensitivity 15` never said whether
+sooner scores higher. Now stated: **15 is a closing deadline, limited supply or
+first-come-first-served; 3 is a rolling programme with no deadline** — not 0,
+because an evergreen programme is still actionable.
+
+**This overturns the 2026-11-02 reading, which was the opposite.** That scan
+took higher to mean "the window better favours acting now", under which a
+rolling programme scored high; under the recovered rule it scores 3 of 15. **So
+that scan's time-sensitivity scores are not comparable with today's, and the
+next scan must say so rather than rank old and new entries against each other.**
+
+**The reason this costs almost nothing is that the scan wrote its reading down
+and invited being overruled.** An undocumented assumption would have left four
+weeks of scores silently incomparable. **Stating a judgement you had to make is
+what makes it cheap to reverse** — the single most reusable thing in this entry.
+
+### The threshold that read two ways
+
+"Create due diligence tasks for anything above the 'worth investigating' band"
+meant **55** or **70** depending on whether "above" included the band. Now
+stated as a number: **55 or above.** Prose about a boundary is a boundary nobody
+can check.
+
+### Why all three stay In Verification
+
+**None of this is evidence yet.** T-44 closes when an intake surfaces a live
+customer thread from query 1 rather than a follow-up query. T-116 closes when a
+brief's stated finish time can be checked against its commit time. T-125 closes
+when a scan prints bands and says which axis direction it used. **Editing the
+instruction is the cheap half; a run obeying it is the half that counts** —
+which is the lesson T-69 is still sitting on, where the four firing prompts have
+contradicted `docs/ops/README.md` since 2026-10-14.
+
+---
+
+## Next entry: OL-0094

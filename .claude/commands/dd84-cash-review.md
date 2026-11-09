@@ -70,7 +70,7 @@ Write to `docs/ops/briefs/YYYY-MM-DD-cash-review.md` and print in the reply:
 
 ```
 # DD84 cash and revenue review — <period>
-Run at <UTC>. Systems reached: <list>. Not reached: <list or "none">.
+Run <UTC start, read> to <UTC finish, read>. Systems reached: <list>. Not reached: <list or "none">.
 Every figure below names its system. A system not reached produces
 "not available", never an estimate.
 
@@ -108,6 +108,14 @@ whether it needs an approval packet.
 
 ## Not checked this run
 ```
+
+> **Both timestamps are read, never estimated.** Take the start time from the
+> clock (`date -u`) at the start of the run and the finish time from the clock
+> when the output file is written. **Do not state a range whose second half you
+> did not read**, and do not infer a finish time from how long the run felt.
+> Every brief from 2026-08-06 to 2026-11-03 stated a run-end time it had
+> estimated (T-116). **One read timestamp is worth more than a plausible span**:
+> if only the start was read, print only the start.
 
 ## The cash position: shape, not figure
 

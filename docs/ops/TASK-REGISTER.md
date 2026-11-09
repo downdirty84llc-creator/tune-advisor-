@@ -77,7 +77,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-41  | Five r/LSSwapTheWorld lead candidates, none contacted                                         | sales      | Normal       | Planned                  | Owner | C to contact                      | not set      |
 | T-42  | Fifteen unsent drafts, five of them to likely loan fraud                                      | ops        | High         | **Awaiting Owner**       | Owner | none yet                          | 2026-10-10   |
 | T-43  | `downdirty84llc.com` is live and absent from the venture registry                             | ops        | Normal       | Planned                  | Owner | A to prepare                      | not set      |
-| T-44  | One inbox query is not an intake; fix the routine's search                                    | ops        | Normal       | Planned                  | Agent | A to prepare                      | 2026-10-15   |
+| T-44  | One inbox query is not an intake; fix the routine's search                                    | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-10   |
 | T-45  | GREC will not interpret the law; the licensing question is open                               | compliance | High         | Blocked                  | Owner | A-06 covers it                    | 2026-10-16   |
 | T-46  | Webador annual invoice will auto-charge; amount unknown                                       | finance    | Normal       | **Awaiting Owner**       | Owner | E if cancelled                    | 2026-10-12   |
 | T-47  | Two Google Business Profiles for one business                                                 | ops        | Normal       | Planned                  | Owner | A to prepare                      | not set      |
@@ -149,7 +149,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-113 | A third unattributed Zelle — $400.00, memo "Tune"; matches the Lexus floor                    | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown                       | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                   | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
-| T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
+| T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-10   |
 | T-117 | The agreement that failed 9 times began working without a new card                            | finance    | **High**     | Done                     | Agent | A to report                       | 2026-11-02   |
 | T-118 | Cost side opened: Manus and a shipment still not quantified                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
 | T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
@@ -158,7 +158,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-122 | The third repository has a Supabase project and it has been paused                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-123 | Does remote ECU calibration qualify as fleet "maintenance" for DOAS enrollment?               | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-124 | Is DD84 a Jackson County Chamber member, and is there a 2026 grant cycle?                     | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
-| T-125 | The scan scoring method has no stated direction for "time sensitivity"                        | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-09   |
+| T-125 | Scan scoring: no band thresholds, and no direction for "time sensitivity"                     | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-16   |
 | T-126 | A lender now contradicts itself on an application this register cannot find                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-127 | Vercel free tier at 75%; projects auto-pause if it is exceeded                                | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-128 | A Pinterest board names DD84; the registry records social accounts as UNKNOWN                 | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-09   |
@@ -6517,3 +6517,37 @@ has listed DD84's liabilities, and no routine asks for one.**
 > rather than idleness.** A-20 (three messages), A-22 (one), A-23 (one) **cover
 > every person who can be written to.** The two who cannot are the $450 and $700
 > payers, **because nobody knows what either payment bought.**
+
+---
+
+> ## T-44, T-116 and T-125 — fixed in the instruction files, 2026-11-09
+>
+> All three were agent-owned diagnoses that had been sitting as findings. Full
+> record in **OL-0093**; each stays **In Verification** until a scheduled run
+> demonstrates it, because an edited instruction file is not evidence that a run
+> obeys it.
+>
+> **T-44 — the intake's discovery step is now six targeted queries**, in order:
+> `category:primary`, `is:important`, `in:sent`, the two Superhuman triage
+> labels, `list_drafts`, then a general sweep last. With a standing rule that
+> **a broad query returning a full page has filled the page, not covered the
+> window** — paginate or narrow, never conclude. **Verify on the next intake:
+> the live customer threads should come out of query 1, not a follow-up query.**
+>
+> **T-116 — all six routines now print two read timestamps** instead of "Run at
+> <UTC>": start read from the clock at the beginning, finish read when the
+> output file is written. **If only the start was read, print only the start.**
+> Verify by comparing a brief's stated finish against its commit time.
+>
+> **T-125 — the bands existed and were recovered, not invented.** 85–100
+> Immediate Action, 70–84 Strong Opportunity, 55–69 Worth Investigating, 40–54
+> Limited or Specialized, 0–39 Information Only; and **time sensitivity now
+> states its direction — higher is more urgent, a rolling programme scores 3 of
+> 15, not 0.** The due-diligence task threshold is stated as **55 or above**,
+> because "above the 'worth investigating' band" read as either 55 or 70.
+>
+> **One consequence to carry forward:** the direction now written down is the
+> **opposite** of the reading the 2026-11-02 scan used, so **that scan's time
+> sensitivity scores are not comparable with today's.** The next scan must say
+> so rather than rank old and new entries together. That scan stated its reading
+> explicitly so it could be overruled, which is the only reason this is cheap.

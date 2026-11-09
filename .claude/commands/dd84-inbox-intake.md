@@ -38,9 +38,36 @@ State the window used in the output.
 
 ## Procedure
 
-1. **Discover.** Pull the thread list for the window. Include threads where DD84
-   sent last and the customer has not replied — a silent thread is a follow-up,
-   not a closed one.
+1. **Discover — several targeted queries, never one broad one.** Run all of
+   these, in this order, and say in the output which ran and what each returned:
+
+   | #   | Query                                             | Why                                                                                    |
+   | --- | ------------------------------------------------- | -------------------------------------------------------------------------------------- |
+   | 1   | `category:primary` + the window                   | Humans. **This is the one that finds customers**                                       |
+   | 2   | `is:important` + the window                       | Gmail's own signal, which disagrees with recency usefully                              |
+   | 3   | `in:sent` + the window                            | Threads **DD84 spoke last on** — a silent thread is a follow-up, not a closed one      |
+   | 4   | `label:[Superhuman]/AI/Respond` and `.../Waiting` | Already triaged as needing something                                                   |
+   | 5   | `list_drafts`                                     | **The draft backlog.** T-42 was fourteen unsent drafts the routine had never asked for |
+   | 6   | A general sweep of the window                     | Last, and only to catch what the five missed                                           |
+
+   > **Why this is a list and not a single query.** On 2026-10-08 the run opened
+   > with `in:inbox newer_than:2d`, got 25 threads, and **not one was from a
+   > human.** A second query, `category:primary`, surfaced a live customer
+   > tuning job and a state-agency permit response — **the two most valuable
+   > items in the mailbox, both inside the window the first query had supposedly
+   > covered.** About 201 inbox threads arrive every two days here and the great
+   > majority are marketing, so **a page of 25 sorted by recency is a page of
+   > marketing.** The mailbox holds tens of thousands of threads, most unread.
+   >
+   > **A broad query that returns a full page has not covered the window — it
+   > has filled the page.** Reporting "no customer threads" off the back of one
+   > is the failure this routine's contract calls worse than having no routine
+   > (T-44).
+
+   **Paginate rather than trust one page.** If a query returns a full page,
+   either narrow it or fetch the next page; **never conclude from a full page
+   that there is nothing further.**
+
 2. **Validate.** Confirm the sender's identity against existing customer records
    before merging anything. Spec §9: **merge only on verified identity**. Two
    people with the same first name and similar vehicles are two people. Check
@@ -88,7 +115,7 @@ Write to `docs/ops/briefs/YYYY-MM-DD-inbox-intake.md` and print in the reply:
 
 ```
 # DD84 inbox intake — <date>
-Run at <UTC>. Window: <window>. Accounts scanned: <list>. Not reached: <list or "none">.
+Run <UTC start, read> to <UTC finish, read>. Window: <window>. Accounts scanned: <list>. Not reached: <list or "none">.
 Threads reviewed: <n>. Actionable: <n>. No-action: <n>.
 
 ## Urgent — read first
@@ -117,6 +144,14 @@ One line each.
 
 ## Not checked this run
 ```
+
+> **Both timestamps are read, never estimated.** Take the start time from the
+> clock (`date -u`) at the start of the run and the finish time from the clock
+> when the output file is written. **Do not state a range whose second half you
+> did not read**, and do not infer a finish time from how long the run felt.
+> Every brief from 2026-08-06 to 2026-11-03 stated a run-end time it had
+> estimated (T-116). **One read timestamp is worth more than a plausible span**:
+> if only the start was read, print only the start.
 
 ## Where it writes
 
