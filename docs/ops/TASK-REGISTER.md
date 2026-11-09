@@ -333,7 +333,7 @@ this table is part of the write.** Evidence: OL-0028.
 | A seeded or live database               | T-06                                                                                           |
 | A readable payment system               | T-36                                                                                           |
 | Owner approval (A-15 — the drafts)      | T-38, T-39                                                                                     |
-| Owner approval (A-18 — one chase)       | T-64                                                                                           |
+| ~~Owner approval (A-18 — one chase)~~   | ~~T-64~~ — **A-18 REJECTED 2026-11-09.** T-64 now waits on **A-21** (pricing)                  |
 | Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                                                       |
 | Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15)                                 |
 | Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained)                                   |

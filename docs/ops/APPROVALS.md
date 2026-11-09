@@ -1521,7 +1521,7 @@ otherwise clean.**
 
 ## A-18 — Send one technical follow-up to a live customer, 11 days silent
 
-**Status: PENDING — raised 2026-10-13 by the first `/dd84-followup` run.**
+**Status: REJECTED — owner, 2026-11-09. Nothing was ever sent.**
 
 **Decision requested** — Approval to send **one** message: a technical follow-up
 to the customer on Gmail thread `1a0e402cdcf75731` (the 2018 Challenger R/T),
@@ -1606,9 +1606,73 @@ the floor.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting the owner._
+**Response** — **REJECT**, owner, **2026-11-09**: "Reject A-18". **This is the
+answer Torque recommended** in the superseded note below, on 2026-10-14, and it
+is the right one — it was simply never given until now.
 
-**Actual result** — **not executed, and it must not be executed as written.**
+**Affected records** — T-64. **A-20 and A-21 are untouched**: see below, because
+that distinction is the whole reason this rejection is safe.
+
+**Actual result** — **Nothing was sent, on any day, by any session.** The
+message never existed outside `docs/ops/briefs/2026-10-13-followup.md`; no Gmail
+draft was ever created for it, so there was nothing that could go out by
+accident during the 27 days it sat pending. **Rejecting it changes no system and
+reaches no customer.**
+
+### Verified in Gmail before recording this, and it is more moot than the note below says
+
+Thread `1a0e402cdcf75731` read at **2026-11-09T10:30Z**: **31 messages.**
+
+| When                     | What                                                                   |
+| ------------------------ | ---------------------------------------------------------------------- |
+| 2026-10-02T20:06:05Z     | DD84 spoke last — the state this packet was written against            |
+| 2026-10-13T15:39:45Z     | **The customer sent the datalog**, 4h05m after this packet was written |
+| **2026-10-29T14:14:56Z** | **The owner replied by hand**, with a ~1.9 MB attachment               |
+| 2026-10-29T14:16:51Z     | A second owner message, same minute-and-a-half                         |
+| since                    | **Nothing.** The customer has not replied in 11 days                   |
+
+**So the packet was obsolete twice over.** It asks the customer to flash a
+revision, say how the car starts, and send a datalog — **he did all three on
+10-13** — and then **the owner answered him directly on 10-29**, which is the
+conversation this packet existed to restart. Sending it today would have been a
+27-day-old chase into a thread the owner had already moved forward himself.
+
+### What rejecting this does NOT reject
+
+**A-18 is one message to one recipient.** It is not the follow-up policy and not
+this customer's job.
+
+- **A-20** (three customer follow-ups) is **DEFERRED**, owner 2026-10-29, "price
+  the jobs first" — **that is the live successor path and it stays exactly as it
+  is.**
+- **A-21** (set the price on two delivered jobs) is **PENDING**, and it is the
+  decision A-18's own body called "worth more than this one". **It still is.**
+  Two delivered jobs, tune files sent on both, and **no written mention of money
+  anywhere in either thread.** Rejecting a stale chase does not move that an
+  inch, and nothing here should be read as closing it.
+- **T-64** stays **In Verification** on A-21, not on this packet.
+
+### A new clock started, and it is not this packet's to answer
+
+The owner's 10-29 reply has gone **11 days** without an answer. **That is a
+genuine follow-up condition** — and it belongs to **A-20**, which the owner
+deliberately deferred behind pricing. **Recorded, not acted on**, and no new
+packet is raised for it: a third packet about the same customer while A-20 and
+A-21 are both open would be noise, not diligence.
+
+### Why a 27-day-old approval request was the real defect
+
+**This packet was correct when raised and wrong four hours later**, and it then
+sat pending for 27 days while the ground moved twice. **A drafted outbound
+message has a shelf life** — the lesson A-15 learned the cheap way, where two
+words had to be fixed after 13 days, and this one learned the expensive way by
+becoming unsendable.
+
+**The safeguard that held:** the message was never placed in Gmail as a draft.
+Had it been, 27 days of pending would have been 27 days of something sendable
+sitting next to a send button. **Keeping drafts in the brief file rather than
+the mail account is what made this rejection cost nothing**, and it should stay
+the default.
 
 > **SUPERSEDED 2026-10-14 by the facts it was built on.** The customer replied
 > at **2026-10-13T15:39:45Z** — _"this is the log from a hour+ drive"_, with a

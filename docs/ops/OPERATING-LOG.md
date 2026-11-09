@@ -9572,4 +9572,93 @@ pressure in its eighth brief.**
 
 ---
 
-## Next entry: OL-0090
+## OL-0090 — 2026-11-09 · A-18 rejected: a chase that went stale four hours after it was raised, and sat pending for 27 days
+
+- **Timestamp** 2026-11-09T10:35:00Z
+- **Task** T-64 · **Approval** **A-18, REJECTED** by the owner 2026-11-09
+  ("Reject A-18"). **This matches Torque's own recommendation of 2026-10-14.**
+- **Action** Verified the thread in Gmail, confirmed the packet was obsolete
+  twice over, recorded the rejection, and corrected the blocked-on table that
+  still listed T-64 as waiting on it.
+- **Tool** `mcp__Gmail__get_thread` ×1 (metadata only); `Edit`; `git`.
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** A-18 PENDING 27 days, carrying a message that must not be sent.
+  Blocked-on table listing T-64 against A-18.
+- **After** A-18 **REJECTED**. **Nothing sent, no system touched, no customer
+  reached.** T-64 unchanged — still In Verification on A-21.
+
+### Verified rather than inherited
+
+Thread `1a0e402cdcf75731`, read today: **31 messages.** DD84 spoke last at
+2026-10-02T20:06:05Z, which is the state the packet was written against. **The
+customer sent the datalog at 2026-10-13T15:39:45Z** — four hours and five
+minutes after the packet was written. **The owner then replied by hand at
+2026-10-29T14:14:56Z and again at 14:16:51Z**, the first carrying a ~1.9 MB
+attachment.
+
+**The register's shorthand for this was "ANSWERED 2026-10-29", which is
+ambiguous** — three packets were answered that day too. It was read against
+Gmail rather than guessed, and it means the owner answered the customer. **The
+live system beats the document**, and here the document was merely terse rather
+than wrong.
+
+### The packet was obsolete twice over
+
+It asks the customer to flash the revision, report how the car starts, and send
+a datalog. **He did all three on 10-13.** Then **the owner restarted the
+conversation himself on 10-29** — the exact outcome the packet existed to
+produce. Sending it today would have been a 27-day-old chase into a thread the
+owner had already moved forward.
+
+### Rejecting one message is not rejecting the job
+
+Recorded explicitly in the packet, because a rejection is the easiest thing in
+this record to read too widely:
+
+- **A-20** (three follow-ups) stays **DEFERRED** — owner, 10-29, "price the jobs
+  first". That is the live successor path.
+- **A-21** (price the two delivered jobs) stays **PENDING**, and it is the
+  decision A-18's own body called worth more than itself. **Two delivered jobs,
+  tune files sent on both, no written mention of money in either thread.** This
+  rejection does not touch it.
+- **T-64** was already pointing at A-21. Only the blocked-on table still said
+  A-18, and that is now struck through rather than deleted.
+
+### A new clock, recorded and deliberately not acted on
+
+**The owner's 10-29 reply has gone 11 days unanswered.** That is a real
+follow-up condition by any threshold anyone here has proposed — and it belongs
+to **A-20**, which the owner deferred behind pricing on purpose. **No third
+packet was raised.** A third open packet about one customer, while two are
+already open on him, would be noise dressed as diligence; the right move is for
+A-21 to be answered and A-20 to follow.
+
+### The actual defect was the shelf life, not the judgement
+
+The routine that raised this did everything right: it found a job the register
+did not know existed, refused to chase for payment it could not confirm, refused
+to set a first price, and refused to offer a diagnosis from three videos. **Then
+the facts moved four hours later and the packet sat for 27 days.**
+
+**A drafted outbound message has a shelf life.** A-15 learned that cheaply — two
+words had to be corrected after 13 days, a greeting and a weekday that had come
+to point at the wrong date. **A-18 learned it expensively, by becoming
+unsendable.** The general rule this record keeps rediscovering: **a document
+that asserts something about the present goes stale, whether it is a file count,
+a weekday, a cash figure or a drafted email.**
+
+### The safeguard that made this cost nothing
+
+**The message was never placed in Gmail as a draft.** It lived only in
+`docs/ops/briefs/2026-10-13-followup.md`. Had it been a real draft, 27 days of
+pending would have been 27 days of something sendable sitting beside a send
+button, in an account that already carried a 14-draft backlog nobody was
+reading.
+
+**Keeping drafts in the brief file rather than the mail account is why rejecting
+this changed nothing**, and it should stay the default. The routine offered to
+place them in the account on request and was right not to do it unasked.
+
+---
+
+## Next entry: OL-0091
