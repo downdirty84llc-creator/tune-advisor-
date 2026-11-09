@@ -9843,4 +9843,182 @@ shared counter with no locking.**
 
 ---
 
-## Next entry: OL-0092
+## OL-0092 — 2026-11-09 · A-21 approved, and one of its four rows bills for a file that was never sent
+
+- **Timestamp** 2026-11-09, interactive session. **Not a routine.**
+- **Task** T-37, T-64 · **Approval** **A-21 — APPROVE**, owner 2026-11-09
+  ("approve A-21"). Recording it is Class B; **no send, no invoice, no Shopify
+  change.**
+- **Action** Re-read both customer threads in full before recording the
+  approval, found row 1's premise contradicted, recorded the approval with that
+  row held as an invoice, and corrected five stale facts in the register.
+- **Tool** `mcp__Gmail__get_thread` ×2 (29 and 31 messages),
+  `mcp__Gmail__get_message` ×1, `Read`, `Edit`, `git`.
+- **Operator** Claude (agent), on the owner's instruction.
+- **Checkout** — base **`241fc4d`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+- **Reached** Gmail, read-only. **Not reached** Stripe (no MCP server), PayPal
+  (needs re-authentication) — so **the billing position is still unconfirmable,
+  which A-21's own risk block already said.**
+
+### Why both threads were read before recording an approval
+
+**A-21's recommended plan told the executor to**: _"On T-64, read the unread log
+first: it may close the job at $350 or open a diagnostic, and quoting before
+reading it risks quoting the wrong thing."_ **That instruction was followed, and
+it caught the error on the other job.**
+
+### Row 1 prices work that has not been delivered
+
+**Thread `1a1082503004a073`, all 29 messages read.** A-21 prices T-37 at **$349,
+`DD84-HOLLEY-REMOTE-NA`, "Remote NA Base Tune — _work delivered_"**.
+
+**No calibration has ever been sent on T-37.** DD84's own words,
+**2026-10-06T11:59:19Z**: _"I made some changes to a new tune file I created to
+see if it corrects the issue. **Before I send it over**, please complete the
+following checklist."_ The checklist came back **2026-10-12**; DD84 answered
+with a spark-plug recommendation; **the file has not gone out.** **T-37's own
+register entry says it from the other side** — its objective is to "decide
+whether the revised tune file **can go out**."
+
+**So the delivered work on T-37 is diagnostic, not calibration**: a wideband/O2
+determination, a readiness checklist, an injector and plug review, across 29
+messages. **That is row 1a's $149 rung, which is already in the packet.**
+
+**Row 1 is adopted as a price and held as an invoice.** The $349 is not disputed
+— **the word "delivered" is.** It becomes a forward quote.
+
+**Corrected arithmetic: $350 is invoiceable today, not $699.** The two readings
+— bill T-37's $149 determination now, or hold T-37 entirely — are written into
+A-21 as options and **deliberately not chosen, because which is right is a
+billing judgement and not a fact.**
+
+### Row 2 is wrong in the other direction
+
+**Thread `1a0e402cdcf75731`, all 31 messages read.** A-21 prices T-64 at the
+Mopar **Basic** rung on "≥2 tune files". **It is at least seven.** The seventh
+went out **2026-10-29T14:14:56Z** — a week after the packet was written —
+**carrying an attachment and no covering message at all**, just a quoted chain.
+Every earlier revision carried a sentence saying what changed and what to send
+back.
+
+**Seven revisions against the entry rung is the strongest case in this record
+for the higher Mopar rungs**, and **it stays declined**, because the published
+copy still defines no scope difference between $350, $450 and $650. **Not
+inferred — escalated to T-84.** The packet's refusal to infer was right; what
+has changed is that the question is now worth the owner's time.
+
+### The silence has reversed on both jobs, and the register had it backwards
+
+**A-18 and A-20 were both written around "a customer waiting on DD84".** On the
+evidence today:
+
+- **T-64** — customer last wrote **2026-10-13**, DD84 last wrote **2026-10-29**.
+  **DD84 is waiting**, 11 days, on an acknowledgement of a file it delivered —
+  **plausibly because that delivery said nothing.**
+- **T-37** — DD84 last wrote **2026-10-12T20:39:11Z**, not the
+  **2026-10-07T13:24Z** the register recorded. **28 days.** And the customer's
+  final word was that a replacement wideband was inbound: _"Going to swap it to
+  see if it is the smoking gun."_ **The contradiction this task is blocked on
+  may already be settled on his bench and unreported.**
+
+**Five stale facts corrected**: T-37's last-contact timestamp, its message count
+(22 → 29), its "waiting is correct here" framing, T-64's "datalog still unread",
+and T-64's "still unpriced".
+
+### What this says about the price being the blocker
+
+**T-37's entry has claimed since 2026-10-13 that "the blocker is not the
+connector — nobody set a price."** A price now exists and **the job did not
+move.** The file is unsent because the wideband determination was never closed,
+and **nobody has asked him whether the new sensor fixed it.** **The price was
+necessary and was not sufficient**, and saying so is more useful than recording
+A-21 as having unblocked two jobs when it unblocked one.
+
+### Nothing was sent, and nothing could be
+
+**A-21 authorises a price to appear in a customer message. A-20 holds the
+messages and is DEFERRED.** So no send is authorised, and none happened.
+**A-20's deferral condition is now met** — the owner deferred it to price the
+jobs, and the jobs are priced — **so A-20 is the next decision**; its three
+drafts are 19 days old, carry no price, and on A-15's evidence need re-reading
+before any send.
+
+### What was deliberately not done
+
+- **No invoice raised, no payment link created, no money moved.** Class E and
+  not in this packet.
+- **No message sent, replied to, drafted or edited.** The approval covers
+  amounts, not sends.
+- **No higher Mopar rung applied** to T-64 despite seven revisions, and **no
+  $399 applied** to T-37 — both would be inferring a scope the published copy
+  does not define. **A-21 refused to infer them and so does this.**
+- **Row 1 was not quietly rewritten to $149.** The owner approved $349 for a
+  base tune; the finding is that it is not yet billable, not that the price is
+  wrong. **Changing an approved number on an agent's reading would be the error
+  this record exists to catch.**
+- **No further calibration proposed into T-64's open hard-crank fault**, per
+  A-21's own safeguard.
+- **No customer name, email address, phone number or tune-file name written here
+  or in the register**, under §5 — the two Gmail thread IDs are the pointers,
+  and they are not identity.
+
+### Noticed in passing, not acted on: 42 tasks are a row and nothing else
+
+Checking that this session's two row edits had not duplicated anything turned up
+a contiguous gap: **`TASK-REGISTER.md` holds 146 summary rows and 104 detail
+sections. T-105 through T-146 — every task raised after T-104 — exist as a
+summary row with no section below it.** No section is missing from the summary;
+the gap is entirely one-directional and entirely recent.
+
+**It is pre-existing** — the same counts hold at `241fc4d`, before this
+session's edits — **and it is not fixed here.** Writing 42 sections would mean
+inventing objectives, sources and next actions for work this session did not do
+and cannot source. **Recorded so the next run finds it as a measurement rather
+than rediscovering it as a surprise**, and so that anyone reading a row in that
+range knows there is no detail behind it. **A row is not a task under §4**: the
+standard requires an objective, a source, an owner and a success test, and rows
+T-105–T-146 carry none of them.
+
+### Class held
+
+Gmail **read only**: three read calls, **no send, reply, forward, label,
+archive, trash or draft of any kind.** No charge, refund, invoice, payout or
+fulfilment. **No bank, card, Square or payment action.** **Shopify not called
+and not modified.** No Supabase tool. No GitHub write. **No scheduled task
+created, changed, fired or deleted.** `docs/growth/` untouched. **No cash figure
+written** (A-19) — the amounts here are prices and revenue, which A-13 permits.
+
+- **Needs the owner** — **A-20 first**, because its condition is met and three
+  counterparties are still silent; **then one question to the C10 customer**
+  (did the replacement wideband fix the AFR fault — it decides whether T-37's
+  $349 is ever billable); **then invoice T-64's $350**, the only amount
+  invoiceable today, **with the one-line message the 2026-10-29 send omitted.**
+  **T-84** now carries a real question rather than a tidy-up: seven revisions
+  sold at the entry rung. Then **A-25**, **A-24**, **A-22**, **A-23**, **A-17**,
+  **A-07**.
+
+### Written against `241fc4d`, landed on `84f25f1`
+
+**A-18 was rejected by the owner while this entry was being written**, in
+OL-0090 above. Three consequences, all handled rather than left:
+
+- **This entry was numbered OL-0090, then OL-0091, and is now OL-0092** —
+  renumbered twice, because two sibling runs took each number in turn while it
+  was being written. **Sixth and seventh numbering collisions in this record**,
+  same cause as the other five.
+- **A-18 is off this entry's owner list**, where it had read "close it".
+- **A-18's board row and the pending count lagged the rejection**, and **the
+  sibling's Monday intake fixed both in OL-0091 before this landed** — the
+  fourteenth instance of the board lagging its own packets, caught within the
+  hour by the next run rather than by this one. **The fix is theirs, not this
+  entry's.** The only change made here was dropping A-21 from the count, which
+  is what this approval changed.
+
+**The rejection is independent of this work and does not touch it.** A-18 was
+the single Challenger follow-up; **A-21 prices the job A-18 would have chased**,
+and both readings of it survive the rejection unchanged.
+
+---
+
+## Next entry: OL-0093

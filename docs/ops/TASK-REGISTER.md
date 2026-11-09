@@ -70,7 +70,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-34  | CI is failing on `main` in `downdirty84-ai-tuning`                                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-13   |
 | T-35  | Three stale pull requests, one from the superseded branch                                     | ops        | High         | **Awaiting Owner**       | Owner | none yet                          | not set      |
 | T-36  | No readable path to DD84's own revenue figures                                                | finance    | High         | Planned                  | Agent | A to prepare                      | 2026-10-15   |
-| T-37  | The C10 customer — Terminator X Max AFR fault                                                 | service    | High         | **In Progress**          | Owner | **A-21** (A-20 deferred)          | 2026-10-10   |
+| T-37  | The C10 customer — AFR fault; priced $349/$149, nothing delivered to invoice                  | service    | High         | **In Progress**          | Owner | **A-21 row 1 held**               | 2026-10-10   |
 | T-38  | GDOT access review — right-in/right-out on the Colbert site                                   | real est.  | High         | **In Progress**          | Owner | A-15 sent                         | 2026-10-28   |
 | T-39  | Reschedule the missed Georgia SBDC session                                                    | finance    | Normal       | **In Progress**          | Owner | A-15 sent                         | 2026-10-28   |
 | T-40  | Google Play developer account at risk of closure                                              | ops        | Normal       | Planned                  | Owner | A to diagnose                     | 2026-12-06   |
@@ -97,7 +97,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-61  | Square turns offline payments on by default in two days                                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-15   |
 | T-62  | Vercel reports three misconfigured domains on one project                                     | ops        | Normal       | Planned                  | Agent | A to read                         | 2026-10-16   |
 | T-63  | Two Shopify account-verification codes, cause unexplained                                     | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-13   |
-| T-64  | A second live tuning job — ANSWERED 2026-10-29 after 15.94d; still unpriced                   | service    | **Critical** | **In Verification**      | Agent | **A-21** (A-20 moot)              | 2026-10-14   |
+| T-64  | A second live tuning job — priced $350; 7th revision sent 10-29, unacknowledged               | service    | **Critical** | **In Verification**      | Agent | **A-21 approved**                 | 2026-10-14   |
 | T-65  | A Shopify customer account with zero orders, unrecorded                                       | sales      | Normal       | Planned                  | Agent | A to read                         | 2026-10-16   |
 | T-66  | A real Lexus enquiry sat 23 days; the form works, nobody reads it                             | sales      | **High**     | **Awaiting Owner**       | Owner | **A-21 via T-84** (A-20 deferred) | 2026-10-15   |
 | T-67  | Two more loan-fraud "application" emails, 16 minutes apart                                    | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-15   |
@@ -1784,10 +1784,41 @@ all-time**, which rules out an order-based sale and says nothing about this job.
 connector.** Even a working Stripe would return nothing, **because nobody set a
 price.** That has been this task's next action since 2026-10-13.
 
-- **Status unchanged: Awaiting Owner** · **Next action** — **price it**, then
-  send **A-20 draft 2**. **If the owner wants the offered datalog review billed,
-  draft 2 should be deferred until the price exists** — that caveat is in the
-  packet.
+### Priced 2026-11-09 under A-21 — and the re-read found this entry stale three ways
+
+**A-21 is approved. The price exists**: `DD84-HOLLEY-REMOTE-NA` at **$349** for
+the base tune, `DD84-TUNE-MECH-DIAG-REMOTE` at **$149** for the determination.
+**But the $349 cannot be invoiced, because nothing has been delivered on this
+job.** A full re-read of the thread on 2026-11-09 found DD84's own words at
+2026-10-06T11:59:19Z: _"I made some changes to a new tune file I created to see
+if it corrects the issue. **Before I send it over**, please complete the
+following checklist."_ **It never went over.** The variance and the two billing
+readings are in A-21's Actual-result block.
+
+**This entry was stale three ways**, all found in the same read:
+
+1. **"DD84 sent last 2026-10-07T13:24Z" is wrong.** DD84 sent last
+   **2026-10-12T20:39:11Z**, a spark-plug recommendation. **28 days ago.**
+2. **"22 messages" is wrong.** The thread holds **29**.
+3. **"Waiting is correct here; this task is not about chasing him" is no longer
+   true.** It was written when the customer was on a work trip with a checklist
+   outstanding. **He returned, completed the checklist on 2026-10-12, and
+   reported a replacement wideband inbound** — _"Going to swap it to see if it
+   is the smoking gun."_ **So the contradiction this task is blocked on may
+   already be settled on his bench and simply unreported**, and the next action
+   is a question, not a wait.
+
+**The blocker was never the price.** That claim has been in this entry since
+2026-10-13 and **the price did not unblock it**: the file is still unsent
+because the wideband determination was never closed, and nobody has asked him
+whether the new sensor fixed it. **One question settles both.**
+
+- **Status unchanged: Awaiting Owner** · **Next action** — **ask whether the
+  replacement wideband resolved the AFR fault.** That answer decides whether the
+  created-but-unsent calibration can go out, which decides whether the $349 is
+  billable at all. **Then** A-20 draft 2, which is deferred and 19 days old.
+  **Billing the $149 determination now is a live option and is the owner's** —
+  A-21, reading 1.
 
 ## T-38 — GDOT access review: right-in/right-out on the Colbert shop site
 
@@ -3708,9 +3739,41 @@ under A-20** — it acknowledges the log and commits to a date the owner fills i
 **and it asks for no money**, because Stripe and PayPal are both unreachable and
 **there is no invoice for either to confirm.**
 
-- **Status unchanged: Awaiting Owner** · **Next action** — unchanged: **read the
-  log, reject A-18, price the job.** **A-20 draft 1 is ready to send and cannot
-  be sent from here.**
+### Priced 2026-11-09 under A-21 — and the direction of the silence has reversed
+
+**A-21 is approved and this job is the one that is invoiceable: $350**,
+`DD84-MOPAR-TUNE-BASIC`, for work plainly delivered. **It is the only amount in
+this register that could be invoiced today.**
+
+**Three of the four "what does not change" claims above are no longer true**,
+and the re-read on 2026-11-09 establishes why:
+
+- **The log was read, and answered.** DD84 replied on **2026-10-29T14:14:56Z**
+  with a **seventh calibration revision** attached. The log is not unread.
+- **The silence has reversed.** The customer last wrote
+  **2026-10-13T15:39:45Z**; DD84 last wrote **2026-10-29T14:16:51Z**. **DD84 is
+  now the party waiting**, 11 days, on an acknowledgement of a file it
+  delivered.
+- **A-18 is now moot twice over**, not once: it asks for a log the customer
+  already sent, **and** that log has since been answered with a revision.
+
+**The 2026-10-29 revision went out with no covering message** — an attachment on
+a quoted chain, no instruction to flash it, no question. **Every one of the six
+earlier revisions carried a sentence telling him what changed and what to send
+back.** That is a plausible reason for 11 days of silence that has nothing to do
+with the customer: **he may not know the file is a file, or that anything is
+expected of him.**
+
+**A-21 priced this at the _Basic_ rung on "≥2 tune files". It is seven.** The
+packet declined to infer a higher rung because the published copy defines no
+scope difference between $350, $450 and $650 — **that stays declined here**, but
+seven revisions against the entry rung makes it a question worth answering
+rather than a question already closed. → **T-84**.
+
+- **Status: Awaiting Owner** · **Next action** — **a one-line message that the
+  revision was sent and what it changed**, which is what the 10-29 send omitted;
+  **invoice $350**; **close A-18**. **No further calibration into the open
+  hard-crank fault** — that is A-21's own safeguard and it still binds.
 
 ## T-65 — A Shopify customer account with zero orders, unrecorded
 

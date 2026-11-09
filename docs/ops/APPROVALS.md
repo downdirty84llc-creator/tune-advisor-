@@ -46,13 +46,13 @@ and actual result.
 | A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **REJECTED** — owner, 2026-11-09    | T-64                               |
 | A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Approved, Option C**              | T-71                               |
 | A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Deferred** — price first          | T-37 T-64 T-66                     |
-| A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                         | T-37 T-64 T-84 T-107               |
+| A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Approved** — row 1 held           | T-37 T-64 T-84 T-107               |
 | A-22 | Send one holding reply to the supercharger supplier                         | C     | **Pending** (premise false — DEFER) | T-82 T-105                         |
 | A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                         | T-95                               |
 | A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
 | A-25 | Whose account is the one this register reports as the business's?           | G     | **Pending**                         | T-137, T-71, T-129, T-136          |
 
-**Eight packets are with the owner: A-07, A-10, A-17, A-21, A-22, A-23, A-24 and
+**Seven packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24 and
 A-25.** **A-18 was REJECTED by the owner on 2026-11-09**, which is the answer
 Torque recommended on 2026-10-14 and the first packet the owner has answered
 since A-19 and A-20 on 2026-10-29. **The board row and this count were corrected
@@ -74,6 +74,36 @@ the ten it may not edit on its own judgement.** **A-23 was added to this board
 in the same write as its packet** — the first time since the 2026-10-12 note
 that a packet and its row have landed together, which is what the thirteen
 counts below were asking for.
+
+> **A-21 answered 2026-11-09 — APPROVED, and one row of it had to be held on
+> execution.** The four prices are adopted. **Row 1's $349 was priced as "work
+> delivered" on T-37 and nothing has been delivered there**: a re-read of all 29
+> messages shows DD84 created a calibration and said _"before I send it over"_ —
+> and never sent it. So **$350, not $699, is invoiceable today**, the $349
+> becomes a forward quote, and the reading of whether to bill T-37's $149
+> diagnosis now is in the packet as two options, undecided. **Row 2 is wrong the
+> other way: seven revisions on T-64, not two**, the seventh sent 2026-10-29
+> with no covering message — which makes the higher Mopar rungs (T-84) a live
+> question rather than a declined one.
+>
+> **A-20 is still DEFERRED and nothing was sent.** A-21 supplies amounts; A-20
+> holds the messages. **The deferral's condition is now met — a price exists —
+> so A-20 is the next decision**, and its drafts are 19 days old and carry no
+> price, so they need both before they go.
+
+**A-25 was raised on 2026-11-05 by the intake that found the cause** — the run
+met a personal obligation drafting from the account T-71 has reported as DD84's
+position since 2026-10-16, **recognised that neither A-13 nor A-19 reaches it,
+published the finding without any particular, and raised a packet** rather than
+deciding on its own judgement which account the register has been describing.
+**That is the shape A-19 itself was made in, and it is the second time a rule
+has been found not to reach what a run walked into.** **A-24 was raised on
+2026-10-29 by the run that caused it** — the intake published a declined-payment
+amount on a reading of A-19 that was wrong, corrected its own two files within
+the hour, and **raised a packet for the ten it may not edit on its own
+judgement.** **A-23 was added to this board in the same write as its packet** —
+the first time since the 2026-10-12 note that a packet and its row have landed
+together, which is what the thirteen counts below were asking for.
 
 > **Two answered 2026-10-29.** **A-19 — APPROVED, Option C**: record the shape
 > of a cash position, never the figure, with the thread ID that holds it.
@@ -1967,8 +1997,11 @@ twice.**
 
 ## A-21 — Set the price on two delivered jobs, and authorise quoting it
 
-**Status: PENDING — raised 2026-10-22, at the owner's explicit request ("price
-T-37 and T-64").**
+**Status: APPROVED — owner, 2026-11-09 ("approve A-21"). Rows 1a, 2 and 2a
+adopted as priced. ROW 1 ADOPTED AS A PRICE BUT HELD AS AN INVOICE** — its "work
+delivered" premise is contradicted by the thread; see the variance in the
+Actual-result block. Raised 2026-10-22 at the owner's explicit request ("price
+T-37 and T-64"); **eighteen days open.**
 
 **Decision requested** — Two things, separable:
 
@@ -2070,8 +2103,95 @@ A-20 recorded ~187 and ~207 hours on 2026-10-21; both have advanced by one day.
 reading the store, each traceable to a live SKU; and the next action on each job
 is a send rather than a question.
 
-**Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-84.
-**Actual result** — _not yet executed._
+**Response** — **APPROVE**, owner **2026-11-09**: _"approve A-21."_ Taken as
+approval of the packet as written — all four rows and the recommended plan.
+
+**Limits** — Adopts the four prices, each traceable to a live ACTIVE Shopify
+variant. **Authorises a price to appear in a customer message; it does not
+authorise the message.** A-20 holds the replies and is **DEFERRED**, so **no
+send is authorised by this approval.** It does not authorise a discount, a
+credit, a higher Mopar rung, a power figure, a turnaround, or any further
+calibration sold into T-64's open fault. **Shopify is not modified.**
+
+**Affected records** — T-37, T-64, T-84, T-107.
+
+**Actual result** — **Prices recorded. Nothing invoiced, nothing sent. One row
+is held, and the reason is a fact this packet got wrong.**
+
+### Variance found on execution: row 1's "work delivered" is not delivered
+
+**Both threads were re-read in full on 2026-11-09 before recording this** — the
+execution standard in §11, and the packet's own instruction to read T-64's log
+first. **Thread `1a1082503004a073`, all 29 messages: DD84 has never sent a
+calibration on T-37.**
+
+The thread's own words, 2026-10-06T11:59:19Z: _"I made some changes to a new
+tune file I created to see if it corrects the issue. **Before I send it over**,
+please complete the following checklist."_ The checklist came back on
+2026-10-12, DD84 replied with a spark-plug recommendation, and **the file still
+has not gone out.** **T-37's own register entry says the same thing from the
+other side** — its objective is to "decide whether the revised tune file **can
+go out**".
+
+**So row 1 bills $349 for a Remote NA Base Tune that does not exist in the
+customer's hands.** What _has_ been delivered on T-37 is 29 messages of
+diagnostic work: a wideband/O2 determination, a readiness checklist, an injector
+and plug review. **That is row 1a's $149 diagnostic rung, which is already in
+this packet.**
+
+**Row 1 is therefore adopted as the price of the base tune and held as an
+invoice.** It becomes a **forward quote** — work to be done — not a bill for
+work done. Nothing about the $349 figure is disputed; only the word "delivered".
+
+**The arithmetic the packet states is affected and is corrected here rather than
+left standing:**
+
+| Packet said                          | Thread shows                                                                |
+| ------------------------------------ | --------------------------------------------------------------------------- |
+| **$699** delivered-work total        | **$350** delivered and invoiceable today — T-64 only                        |
+| T-37 $349 "work delivered"           | **Nothing delivered.** A created, unsent file; $349 is a forward quote      |
+| T-64 "work delivered, ≥2 tune files" | **Seven revisions**, the latest **2026-11-09 − 11 days**, after this packet |
+
+**Row 2 is the opposite error and is understated.** T-64 has had **at least
+seven** calibration revisions, not two; the seventh went out on
+**2026-10-29T14:14:56Z**, a week after this packet was written, **with no
+covering message at all** — an attachment on a quoted chain. **Seven revisions
+against the Mopar _Basic_ rung is the strongest case in this record for the
+higher rungs the packet declined to infer**, and it stays declined here, because
+the published copy still defines no scope difference. **It is now a question
+worth the owner answering** (T-84).
+
+**What this changes for the owner, stated as the two readings and not chosen:**
+
+1. **Bill the diagnosis.** Invoice T-64 at **$350** and T-37 at **$149** for the
+   determination already performed — **$499 today** — and hold the $349 as a
+   quote for the calibration when it goes out.
+2. **Hold T-37 entirely.** Invoice T-64 at **$350** and quote T-37 at **$349 +
+   $149** when the wideband question is settled. **Nothing billed on T-37 until
+   something is delivered.**
+
+**Which of those is right is a billing judgement, not a fact**, so it is not
+decided here. **Reading 1 is the one the packet's own rows support**; reading 2
+is the conservative one and is defensible if the owner judges the diagnosis to
+be pre-sale work.
+
+### Two state corrections found in the same re-read
+
+- **T-37's recorded "DD84 sent last 2026-10-07T13:24Z" is 5 days stale.** DD84
+  sent last **2026-10-12T20:39:11Z**; the thread is **29 messages**, not the 22
+  recorded. **The customer's last word was that a replacement wideband was
+  inbound** — so the contradiction this task is blocked on **may already be
+  resolved on his bench and unreported.** **28 days silent.**
+- **T-64's customer has been silent since 2026-10-13**, and **DD84 spoke last on
+  2026-10-29** — so the A-18/A-20 framing of "customer waiting on DD84" has
+  reversed: **DD84 is now the one waiting**, with a seventh revision delivered
+  and unacknowledged for 11 days.
+
+**Success test: partly met.** A price exists on both jobs, each traceable to a
+live SKU, without reading the store. **But "the next action on each job is a
+send rather than a question" is not met**, and not for want of a price: on T-37
+the next action is a question — _did the new wideband fix it_ — and on T-64 it
+is an acknowledgement DD84 is owed, not one it owes.
 
 ---
 
