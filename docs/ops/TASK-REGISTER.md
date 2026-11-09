@@ -44,7 +44,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-08  | Remove the phantom integration-test glob from the Vitest config                               | ledger     | Normal       | Done                     | Agent | S-01                              | 2026-08-02   |
 | T-09  | Close the PostgREST filter injection in the opportunity fallback                              | ledger     | High         | Done                     | Agent | S-01                              | 2026-08-02   |
 | T-10  | Correct the test counts and integration-suite claim in CLAUDE.md                              | ops        | Normal       | Done                     | Agent | S-01                              | 2026-08-05   |
-| T-11  | Create Stripe products and prices and run the test-payment matrix                             | finance    | Critical     | Blocked                  | Owner | A-05 approved                     | 2026-08-20   |
+| T-11  | Stripe products and prices — the 11-09 notice is NOT this (T-151)                             | finance    | Critical     | Blocked                  | Owner | A-05 approved                     | 2026-08-20   |
 | T-12  | Record the sample-data exclusion rule in CLAUDE.md                                            | ops        | Normal       | Done                     | Agent | A-03                              | 2026-07-31   |
 | T-13  | Commission legal review of the ten legal and policy documents                                 | compliance | Critical     | Blocked                  | Owner | A-06 approved                     | 2026-08-27   |
 | T-14  | Wire virus scanning to `attachments.scan_status`                                              | ledger     | High         | Awaiting Approval        | Owner | **A-07 pending**                  | 2026-09-03   |
@@ -66,7 +66,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-30  | Unattended Ledger subscriber-email Routine — cannot be removed                                | ops        | High         | **Accepted Risk**        | Owner | A-12 accepted                     | 2026-09-25   |
 | T-31  | Consolidate the two diverged operating records onto one branch                                | ops        | High         | Done                     | Agent | owner decision                    | 2026-09-25   |
 | T-32  | Both repositories are public, and the venture registry is in one                              | compliance | High         | **No Action** (accepted) | Owner | A-13 closed                       | 2026-10-08   |
-| T-33  | Establish what `dd84-api` is, and why it is failing on Render                                 | ops        | High         | Planned                  | Agent | A to diagnose                     | 2026-10-10   |
+| T-33  | dd84-api exited with status 1 on 2026-11-09 — first dated instance                            | ops        | High         | Planned                  | Agent | A to diagnose                     | 2026-10-10   |
 | T-34  | CI is failing on `main` in `downdirty84-ai-tuning`                                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-13   |
 | T-35  | Three stale pull requests, one from the superseded branch                                     | ops        | High         | **Awaiting Owner**       | Owner | none yet                          | not set      |
 | T-36  | No readable path to DD84's own revenue figures                                                | finance    | High         | Planned                  | Agent | A to prepare                      | 2026-10-15   |
@@ -133,11 +133,11 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
-| T-100 | TikTok rejection re-sent 2026-11-07, identical — re-send or new?                              | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-100 | TikTok rejection sent 3x on a two-day cadence — a re-send, likely                             | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
-| T-104 | Card toggled on all four days 11-06 to 11-09; one more decline                                | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-104 | Card locking spans 3 cards at 2 issuers; an ad charge declined 11-09                          | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-105 | A-22 chases a supplier who answered 8 days ago; two replies unread                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-22 DEFER**                    | 2026-10-30   |
 | T-106 | $31.13 of GA and county sales tax collected; no registration on record                        | legal      | **High**     | **Awaiting Owner**       | Owner | G to confirm                      | 2026-11-02   |
 | T-107 | A $100 credit code sold the $350 Mopar rung at $250; A-21 assumes $350                        | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -169,7 +169,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-133 | A sender supplied a Date header the mail API returns unparsed                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-10   |
 | T-134 | The 2026-11-03 intake missed an unread account sign-in notice                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-06   |
 | T-135 | Unsent loan drafts — DUPLICATE of T-42 and T-58, withdrawn                                    | finance    | High         | No Action (accepted)     | Agent | A to report                       | 2026-11-06   |
-| T-136 | 60-day charge-off clause; the clock start date is unknown here                                | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
+| T-136 | The charge-off clock; the 11-09 alert may read at zero, not below                             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-06   |
 | T-137 | T-71's account carries a personal obligation; whose account is it?                            | finance    | **Critical** | **Awaiting Approval**    | Owner | **A-25**                          | 2026-11-06   |
 | T-138 | A second recurring charge of the bill amount approved 2026-11-04                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
 | T-139 | A business card off on purpose since 2026-11-02 declined a payment                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-07   |
@@ -184,39 +184,39 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-148 | A 7-message commission negotiation is unread; a % of claimed $20k                             | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-10   |
 | T-149 | A truck maker's tech support sent ~7MB; T-123 fleet question is live                          | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-13   |
 | T-150 | An OpenAI account, an open support case, an out-of-state sign-in                              | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
+| T-151 | A 3rd Stripe account "Merry Market by DD84" pays into A-25's account                          | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** first                    | 2026-11-10   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **20 Done** · **3 No Action** · **2 Accepted Risk** · 9 In Verification
-· 6 In Progress · **4 Awaiting Approval** · **68 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **150 tasks.** Recounted mechanically with
+· 6 In Progress · **4 Awaiting Approval** · **69 Awaiting Owner** · 6 Blocked ·
+30 Planned · 2 Backlog. **151 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-09**, at the Monday intake (**T-147 to T-150 added; seven rows
-updated; T-89 and T-117 closed Done**). **T-89 is the first Critical row in this
-register to close on evidence rather than on a date: the 2026-10-22 Shopify
-invoice settled on 2026-11-08 after nine failures and eighteen days, confirmed
-from both the platform's and the payment provider's side, total due zero.**
-**T-117 closes with it — the agreement that failed nine times began working on
-the same instrument without a new card.** **T-146 records that the
-funding-source hypothesis gained circumstantial support (a $350.00 Zelle receipt
-on 2026-11-06, the ninth attempt failing 11-07, the tenth clearing 11-08) and
-that the corroboration which looked strongest was backwards: a PayPal notice
-reading "transferred money to your bank" is a withdrawal, not a top-up.** **T-91
-and T-53 record owner and counterparty actions this register could not see — the
-owner replied to the order #1001 customer on 2026-11-08, evidenced only by a
-sent-state flag, and the Colbert realtor chased on the same day and is unread.**
-**T-100 records that the 2026-11-07 TikTok pair is textually identical to the
-2026-11-05 pair and carries the same wall-clock minute, so the mail cannot
-distinguish a re-send from a third rejection.** **68 of the 150 rows are
-Awaiting Owner**, and **97 of the 125 open rows are past due.** **Nineteen rows
-are Critical and open: sixteen overdue (newest ten days, oldest eighty-one),
-T-147 and T-148 due 2026-11-10, T-143 not yet due.** **Four payers have now sent
-$1,900.00 between them with none attributed and none acknowledged.** **Eight
-approval packets pending, not nine: A-18 was REJECTED by the owner on
-2026-11-09** — recorded by a sibling session whose push won, and the answer
-Torque recommended on 2026-10-14. **T-64 now waits on A-21 alone.**
+**2026-11-09**, at the Monday daily brief (**T-151 added; five rows updated**).
+**T-151 records that a third Stripe account, named "Merry Market by DD84", can
+receive funds as of 2026-11-09 and pays out to the same bank account T-71,
+T-129, T-136 and A-25 concern — so A-25 stopped being a wording question and
+acquired a live money consequence.** **That trading name is not in
+`docs/agents/ventures.md`, and the account is the third Stripe account evidenced
+in five days, none of them recorded there.** **T-11 is explicitly NOT advanced
+by it: a payments profile that other businesses can send funds to is not
+products, prices and a test-payment matrix, and this is the second Stripe notice
+in five days for an account T-11 does not concern.** **T-104 records that the
+card locking spans three cards at two issuers and that an issuer's own notice
+names the cardholder as the locker, with an advertising charge declined on
+2026-11-09 — so the deliberate-practice reading is now well supported and one
+sentence from confirmed.** **T-33 has its first dated failure after thirty days:
+`dd84-api` exited with status 1 on 2026-11-09.** **T-100 records a third
+identical TikTok send on a two-day cadence, which makes a scheduled re-send the
+better-supported reading.** **T-136 records that the 2026-11-09 balance alert
+may read at zero rather than below it, which bears on whether the charge-off
+clock still runs; the figure is withheld under A-19 with the thread ID.** **69
+of the 151 rows are Awaiting Owner**, and **97 of the 126 open rows are past
+due.** **Twenty rows are Critical and open: sixteen overdue (newest ten days,
+oldest eighty-one), T-147, T-148 and T-151 due 2026-11-10, T-143 not yet due.**
+**Eight approval packets pending after A-18's rejection.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

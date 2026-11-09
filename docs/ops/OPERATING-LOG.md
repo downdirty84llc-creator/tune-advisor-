@@ -9843,4 +9843,131 @@ shared counter with no locking.**
 
 ---
 
-## Next entry: OL-0092
+## OL-0092 — 2026-11-09 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), **fired 2026-11-09T10:51:11Z and reached the session at
+15:29:42Z — a wait of four hours thirty-nine minutes** across a sequence of
+worker restarts. **Brief:** `docs/ops/briefs/2026-11-09-daily-brief.md`.
+
+**Start time is the trigger's, per T-116, and the delay is stated rather than
+smoothed:** the gathering is this afternoon's and the morning it was scheduled
+for is four and a half hours past. **The Monday opportunity scan was queued
+behind it.**
+
+**No skeleton commit** — the intake committed at 10:32:59Z and this run's
+gathering was one live calendar read, one mail sweep and the records on disk.
+**Twelfth time this judgement has been recorded.**
+
+**Checkout, contract item 0:** tip `06ed090`, HEAD equal to origin, no `src/`,
+no `package.json`, clean. **82 tracked files against the prompt's expected 28 —
+thirtieth run reporting that drift, T-85 step 3.**
+
+### A third Stripe account went live, under a trading name the registry does not carry
+
+**2026-11-09T11:39:21Z, unread: "Your Stripe profile can now receive funds…
+Funds are deposited into your payout account at WELLS FARGO BANK ending
+[withheld]."** **15:20:01Z, read: a new secret key for the same account.** **The
+account is named "Merry Market by DD84".** **Account identifiers, the profile
+username, the message identifier and the payout digits are all withheld.**
+
+**It is explicitly not T-11, and that is the trap.** **T-11 has been Critical
+and Blocked for eighty-one days on products, prices and a test-payment matrix
+for the tuning store.** **A payments profile that other businesses can send
+funds to is not a checkout with products and prices.** **This is the second
+Stripe notice in five days for an account T-11 does not concern — 2026-11-05's
+was the other venture's, today's is a third, distinct from both.** **Three
+Stripe accounts are now evidenced and `ventures.md` records none.**
+
+**"Merry Market by DD84" is not a trading name in the verified registry.**
+**Established: the account exists, can receive funds, and pays out to the bank
+account this register has been describing. Not established: what it sells, or
+whether it is the merchandise channel the Printify and TikTok work has been
+building toward.** **The name suggests it and this register does not assume
+it.**
+
+**The payout destination is the finding that matters.** **It is the same account
+as T-71, T-129, T-136 and A-25.** **A-25 was raised 2026-11-05 after the
+register found a personal obligation drafting from an account it had been
+reporting as the business's; four days later a live payments profile deposits
+business receipts into it.** **Every answer to A-25 now has a consequence for
+where money lands, not only for how this register words its sentences.** T-151.
+
+### The card practice reached a third card at a second issuer
+
+**2026-11-09T11:32:09Z, unread: "You locked your card: It was declined… Let's
+unlock your card ending [withheld]. Then you can retry your GOOGLE \*Facebook
+purchase."** **A different issuer from the bank whose cards T-104 and T-139
+track.**
+
+**Three consequences.** **The deliberate-practice reading of T-104 is now well
+supported: an issuer's own notice names the cardholder as the locker, and the
+practice spans at least three cards across two issuers, so it is a habit rather
+than a per-card accident — intent still unconfirmed, one sentence from
+confirmed.** **The casualty was an advertising charge, which is a different
+failure from T-140's disapproved asset group and is not merged with it, though a
+locked card declining ad billing is a plausible reason an ad account would stop
+working.** **And it fits T-146's funding-source hypothesis without confirming
+it: if cards are routinely locked, anything drawing on them fails on a schedule
+nobody tracks.**
+
+### T-33 has its first dated failure after thirty days
+
+**2026-11-09T15:17:07Z, unread: "We recently detected a server failure for
+`dd84-api`: Exited with status 1."** **T-33 has been open since 2026-10-10
+recording that failures were happening; it has never had one with a timestamp
+and an exit status.** **It sits in the cluster T-140 corroborated — a DD84
+subdomain among misconfigured domains, the front door on a backup card, a
+disapproved ad destination, and now a service exiting non-zero.** **Whether they
+are one fault or four is not established.**
+
+### The two-day cadence settles this morning's ambiguity
+
+**TikTok's identical rejection has now arrived three times — 2026-11-05,
+2026-11-07 and 2026-11-09 — two days apart each time, same stated reason.**
+**This morning's intake said the mail could not distinguish a re-send from a
+fresh rejection and that the identical wall-clock minute was consistent with a
+re-send.** **A third instance on the same cadence makes the re-send reading
+clearly better supported.** **Not proof — Seller Center remains the only
+authority — but the register should stop treating each arrival as a new
+decision.** **Nothing is alleged about the document, for the fourth brief
+running.**
+
+### A figure withheld even though publishing it would read better
+
+**The balance alert fired again at 2026-11-09T14:50:52Z.** **Its own threshold
+wording is "at or below zero", and that is the shape published.** **Whether the
+account is now AT zero rather than BELOW it is not cosmetic: T-136's sixty-day
+clock runs "from the date the account first became overdrawn", and an account no
+longer overdrawn may have stopped or reset it.** **The figure is withheld under
+A-19 with the thread ID, and the significance is stated so the owner knows which
+question one click answers.** **Publishing the number would have made a cleaner
+sentence; the shape plus the thread ID is what A-19 permits.**
+
+### Counts
+
+**151 tasks** · 69 Awaiting Owner · **97 of 126 open rows past due.** **Twenty
+Critical and open: sixteen overdue (newest ten days, oldest eighty-one), T-147,
+T-148 and T-151 due 2026-11-10, T-143 not yet due.** **Eight packets pending
+after A-18's rejection** — the first packet the owner has answered since
+2026-10-29, recorded this morning by a sibling session.
+
+### The honest summary
+
+**Three days ago this brief said the quiet was no longer the whole picture
+because unread mail kept adding deadlines. Today the quiet broke the other way:
+money infrastructure moved.**
+
+**A payments profile went live under an unrecorded trading name, routing
+receipts into an account whose ownership is an open packet. A card at a second
+issuer declined an advertising charge because the owner had locked it. A service
+the register has asked about for thirty days failed with a timestamp. And two
+Critical rows closed on evidence this morning rather than rotting.**
+
+**Two careless readings were declined: today's Stripe notice is not T-11, and
+the balance figure stayed withheld even where publishing it would have read
+better.**
+
+---
+
+## Next entry: OL-0093
