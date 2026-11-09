@@ -334,10 +334,38 @@ read.** **The window still has six days to run, so this is not yet stale by the
 
 **The file now carries a dated interruption notice at its head.** **It keeps its
 skeleton, its four standing owner decisions and its reasoning, and it no longer
-reads as a finished brief.** **No operating-log entry is written for the
-interrupted run** — **OL-0089 remains the last entry before this one, and the
-absence is itself recorded here rather than papered over with a retrospective
+reads as a finished brief.**
+
+**No operating-log entry is written for the interrupted run and there never will
+be** — **no entry is written for a run that did not happen.** **So the Friday
+review appears in no log entry at all, and its annotation is the only record of
+it.** **The absence is recorded rather than papered over with a retrospective
 entry nobody ran.**
+
+## This run lost a push, and found a correction while merging
+
+**The push was rejected: a sibling session had already pushed its own OL-0090.**
+**Theirs records a real owner decision — A-18 REJECTED on 2026-11-09, which is
+the answer Torque itself recommended on 2026-10-14 and the first packet the
+owner has answered since A-19 and A-20 on 2026-10-29.**
+
+**Their entry stands and this one renumbered to OL-0091**, per the convention
+settled the third time this happened: **the session that loses the push
+renumbers.** **Fourth instance, and the OL counter remains shared with no
+locking.** **The merge was clean apart from the log: both sides' register edits
+survived — their blocked-on correction putting T-64 behind A-21, and this run's
+four new rows and two closures.**
+
+**And the merge surfaced a defect neither session would have seen alone.**
+**Their run updated A-18's packet thoroughly — Status, Response, Actual result,
+with the Gmail thread re-read and the packet shown to be obsolete twice over —
+and did not update the board row or the pending count.** **For a few minutes
+`APPROVALS.md` said REJECTED in the packet and Pending in the table.**
+
+**Both derived places are now corrected and the correction is attributed: the
+decision is the owner's, the thorough packet work is the sibling run's, and only
+the two places that restate it were touched here.** **Eight packets pending, not
+nine.**
 
 ## Carried forward, unchanged
 

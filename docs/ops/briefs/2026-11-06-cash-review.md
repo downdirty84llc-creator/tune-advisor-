@@ -2,7 +2,7 @@
 
 > ## ⚠ INTERRUPTED — THIS REVIEW WAS NEVER COMPLETED
 >
-> **Annotated 2026-11-09 by the Monday intake (OL-0090).**
+> **Annotated 2026-11-09 by the Monday intake (OL-0091).**
 >
 > **A worker restart — the eighth this session — hit this run after the skeleton
 > below committed at `3a039d6` and before it had read anything.** **The ten
@@ -10,9 +10,10 @@
 > ever gathered** — a text search finds eleven, because this sentence names the
 > token too.\*\*
 >
-> **There is no operating-log entry for this run.** The log runs OL-0089 →
-> OL-0090 with nothing between, and that absence is deliberate: **no entry is
-> written for a run that did not happen.**
+> **There is no operating-log entry for this run, and there never will be.**
+> **No entry is written for a run that did not happen** — so the Friday review
+> appears in no log entry at all, and this notice is the only record of it.
+> **OL-0090 and OL-0091 are both dated 2026-11-09 and neither is this run.**
 >
 > **It was annotated rather than completed, and the reasoning matters.** The
 > review's period was the week to Friday 2026-11-06. **Reading the payment

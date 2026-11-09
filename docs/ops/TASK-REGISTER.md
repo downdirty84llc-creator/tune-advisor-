@@ -213,8 +213,10 @@ distinguish a re-send from a third rejection.** **68 of the 150 rows are
 Awaiting Owner**, and **97 of the 125 open rows are past due.** **Nineteen rows
 are Critical and open: sixteen overdue (newest ten days, oldest eighty-one),
 T-147 and T-148 due 2026-11-10, T-143 not yet due.** **Four payers have now sent
-$1,900.00 between them with none attributed and none acknowledged.** **Nine
-approval packets pending.**
+$1,900.00 between them with none attributed and none acknowledged.** **Eight
+approval packets pending, not nine: A-18 was REJECTED by the owner on
+2026-11-09** — recorded by a sibling session whose push won, and the answer
+Torque recommended on 2026-10-14. **T-64 now waits on A-21 alone.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
@@ -339,7 +341,7 @@ this table is part of the write.** Evidence: OL-0028.
 | A seeded or live database               | T-06                                                                                           |
 | A readable payment system               | T-36                                                                                           |
 | Owner approval (A-15 — the drafts)      | T-38, T-39                                                                                     |
-| Owner approval (A-18 — one chase)       | T-64                                                                                           |
+| ~~Owner approval (A-18 — one chase)~~   | ~~T-64~~ — **A-18 REJECTED 2026-11-09.** T-64 now waits on **A-21** (pricing)                  |
 | Owner decision                          | T-41, T-42, T-43, T-46, T-47, T-49, T-50                                                       |
 | Owner action — a platform deadline      | **T-60** (Reddit, ~2026-10-19), **T-61** (Square, ~2026-10-15)                                 |
 | Owner action — security                 | **T-63** (two Shopify verification codes, cause unexplained)                                   |

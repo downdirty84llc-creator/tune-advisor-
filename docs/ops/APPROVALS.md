@@ -43,7 +43,7 @@ and actual result.
 | A-15 | Send two prepared replies — GDOT District 1, and the Georgia SBDC           | C     | **Approved** (both sent)            | T-38 T-39                          |
 | A-16 | Redact customer identity from the append-only log and a sealed packet       | B     | **Approved** (executed)             | T-48                               |
 | A-17 | Decide on twelve third-party people's contact details in a public repo      | G     | **Pending**                         | T-51                               |
-| A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **Pending** (superseded)            | T-64                               |
+| A-18 | Send one technical follow-up to a live customer, 11 days silent             | C     | **REJECTED** — owner, 2026-11-09    | T-64                               |
 | A-19 | May DD84's cash position be recorded in this public repository?             | G     | **Approved, Option C**              | T-71                               |
 | A-20 | Send three customer follow-ups: two live jobs and one stalled enquiry       | C     | **Deferred** — price first          | T-37 T-64 T-66                     |
 | A-21 | Set the price on two delivered jobs, and authorise quoting it               | C/E   | **Pending**                         | T-37 T-64 T-84 T-107               |
@@ -52,20 +52,28 @@ and actual result.
 | A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
 | A-25 | Whose account is the one this register reports as the business's?           | G     | **Pending**                         | T-137, T-71, T-129, T-136          |
 
-**Nine packets are with the owner: A-07, A-10, A-17, A-18, A-21, A-22, A-23,
-A-24 and A-25.** **A-25 was raised on 2026-11-05 by the intake that found the
-cause** — the run met a personal obligation drafting from the account T-71 has
-reported as DD84's position since 2026-10-16, **recognised that neither A-13 nor
-A-19 reaches it, published the finding without any particular, and raised a
-packet** rather than deciding on its own judgement which account the register
-has been describing. **That is the shape A-19 itself was made in, and it is the
-second time a rule has been found not to reach what a run walked into.** **A-24
-was raised on 2026-10-29 by the run that caused it** — the intake published a
-declined-payment amount on a reading of A-19 that was wrong, corrected its own
-two files within the hour, and **raised a packet for the ten it may not edit on
-its own judgement.** **A-23 was added to this board in the same write as its
-packet** — the first time since the 2026-10-12 note that a packet and its row
-have landed together, which is what the thirteen counts below were asking for.
+**Eight packets are with the owner: A-07, A-10, A-17, A-21, A-22, A-23, A-24 and
+A-25.** **A-18 was REJECTED by the owner on 2026-11-09**, which is the answer
+Torque recommended on 2026-10-14 and the first packet the owner has answered
+since A-19 and A-20 on 2026-10-29. **The board row and this count were corrected
+on 2026-11-09 by the Monday intake (OL-0091): the run that recorded the
+rejection updated the packet's Status, Response and Actual result thoroughly and
+did not update the board, so for a few minutes this file said REJECTED in the
+packet and Pending in the table.** **The decision is the owner's; only the two
+derived places were corrected here.** **A-25 was raised on 2026-11-05 by the
+intake that found the cause** — the run met a personal obligation drafting from
+the account T-71 has reported as DD84's position since 2026-10-16, **recognised
+that neither A-13 nor A-19 reaches it, published the finding without any
+particular, and raised a packet** rather than deciding on its own judgement
+which account the register has been describing. **That is the shape A-19 itself
+was made in, and it is the second time a rule has been found not to reach what a
+run walked into.** **A-24 was raised on 2026-10-29 by the run that caused it** —
+the intake published a declined-payment amount on a reading of A-19 that was
+wrong, corrected its own two files within the hour, and **raised a packet for
+the ten it may not edit on its own judgement.** **A-23 was added to this board
+in the same write as its packet** — the first time since the 2026-10-12 note
+that a packet and its row have landed together, which is what the thirteen
+counts below were asking for.
 
 > **Two answered 2026-10-29.** **A-19 — APPROVED, Option C**: record the shape
 > of a cash position, never the figure, with the thread ID that holds it.
@@ -1521,7 +1529,7 @@ otherwise clean.**
 
 ## A-18 — Send one technical follow-up to a live customer, 11 days silent
 
-**Status: PENDING — raised 2026-10-13 by the first `/dd84-followup` run.**
+**Status: REJECTED — owner, 2026-11-09. Nothing was ever sent.**
 
 **Decision requested** — Approval to send **one** message: a technical follow-up
 to the customer on Gmail thread `1a0e402cdcf75731` (the 2018 Challenger R/T),
@@ -1606,9 +1614,73 @@ the floor.
 
 **Reply with: APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
-**Response** — _awaiting the owner._
+**Response** — **REJECT**, owner, **2026-11-09**: "Reject A-18". **This is the
+answer Torque recommended** in the superseded note below, on 2026-10-14, and it
+is the right one — it was simply never given until now.
 
-**Actual result** — **not executed, and it must not be executed as written.**
+**Affected records** — T-64. **A-20 and A-21 are untouched**: see below, because
+that distinction is the whole reason this rejection is safe.
+
+**Actual result** — **Nothing was sent, on any day, by any session.** The
+message never existed outside `docs/ops/briefs/2026-10-13-followup.md`; no Gmail
+draft was ever created for it, so there was nothing that could go out by
+accident during the 27 days it sat pending. **Rejecting it changes no system and
+reaches no customer.**
+
+### Verified in Gmail before recording this, and it is more moot than the note below says
+
+Thread `1a0e402cdcf75731` read at **2026-11-09T10:30Z**: **31 messages.**
+
+| When                     | What                                                                   |
+| ------------------------ | ---------------------------------------------------------------------- |
+| 2026-10-02T20:06:05Z     | DD84 spoke last — the state this packet was written against            |
+| 2026-10-13T15:39:45Z     | **The customer sent the datalog**, 4h05m after this packet was written |
+| **2026-10-29T14:14:56Z** | **The owner replied by hand**, with a ~1.9 MB attachment               |
+| 2026-10-29T14:16:51Z     | A second owner message, same minute-and-a-half                         |
+| since                    | **Nothing.** The customer has not replied in 11 days                   |
+
+**So the packet was obsolete twice over.** It asks the customer to flash a
+revision, say how the car starts, and send a datalog — **he did all three on
+10-13** — and then **the owner answered him directly on 10-29**, which is the
+conversation this packet existed to restart. Sending it today would have been a
+27-day-old chase into a thread the owner had already moved forward himself.
+
+### What rejecting this does NOT reject
+
+**A-18 is one message to one recipient.** It is not the follow-up policy and not
+this customer's job.
+
+- **A-20** (three customer follow-ups) is **DEFERRED**, owner 2026-10-29, "price
+  the jobs first" — **that is the live successor path and it stays exactly as it
+  is.**
+- **A-21** (set the price on two delivered jobs) is **PENDING**, and it is the
+  decision A-18's own body called "worth more than this one". **It still is.**
+  Two delivered jobs, tune files sent on both, and **no written mention of money
+  anywhere in either thread.** Rejecting a stale chase does not move that an
+  inch, and nothing here should be read as closing it.
+- **T-64** stays **In Verification** on A-21, not on this packet.
+
+### A new clock started, and it is not this packet's to answer
+
+The owner's 10-29 reply has gone **11 days** without an answer. **That is a
+genuine follow-up condition** — and it belongs to **A-20**, which the owner
+deliberately deferred behind pricing. **Recorded, not acted on**, and no new
+packet is raised for it: a third packet about the same customer while A-20 and
+A-21 are both open would be noise, not diligence.
+
+### Why a 27-day-old approval request was the real defect
+
+**This packet was correct when raised and wrong four hours later**, and it then
+sat pending for 27 days while the ground moved twice. **A drafted outbound
+message has a shelf life** — the lesson A-15 learned the cheap way, where two
+words had to be fixed after 13 days, and this one learned the expensive way by
+becoming unsendable.
+
+**The safeguard that held:** the message was never placed in Gmail as a draft.
+Had it been, 27 days of pending would have been 27 days of something sendable
+sitting next to a send button. **Keeping drafts in the brief file rather than
+the mail account is what made this rejection cost nothing**, and it should stay
+the default.
 
 > **SUPERSEDED 2026-10-14 by the facts it was built on.** The customer replied
 > at **2026-10-13T15:39:45Z** — _"this is the log from a hour+ drive"_, with a
