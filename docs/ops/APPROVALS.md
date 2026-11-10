@@ -51,29 +51,35 @@ and actual result.
 | A-23 | Reply to the first inbound enquiry in five runs                             | C     | **Pending**                         | T-95                               |
 | A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
 | A-25 | Whose account is the one this register reports as the business's?           | G     | **Pending**                         | T-137, T-71, T-129, T-136          |
+| A-26 | Reply to two unanswered inbound enquiries, in one decision                  | C     | **Pending**                         | T-152, T-95                        |
 
-**Seven packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24 and
-A-25.** **A-18 was REJECTED by the owner on 2026-11-09**, which is the answer
-Torque recommended on 2026-10-14 and the first packet the owner has answered
-since A-19 and A-20 on 2026-10-29. **The board row and this count were corrected
-on 2026-11-09 by the Monday intake (OL-0091): the run that recorded the
-rejection updated the packet's Status, Response and Actual result thoroughly and
-did not update the board, so for a few minutes this file said REJECTED in the
-packet and Pending in the table.** **The decision is the owner's; only the two
-derived places were corrected here.** **A-25 was raised on 2026-11-05 by the
-intake that found the cause** — the run met a personal obligation drafting from
-the account T-71 has reported as DD84's position since 2026-10-16, **recognised
-that neither A-13 nor A-19 reaches it, published the finding without any
-particular, and raised a packet** rather than deciding on its own judgement
-which account the register has been describing. **That is the shape A-19 itself
-was made in, and it is the second time a rule has been found not to reach what a
-run walked into.** **A-24 was raised on 2026-10-29 by the run that caused it** —
-the intake published a declined-payment amount on a reading of A-19 that was
-wrong, corrected its own two files within the hour, and **raised a packet for
-the ten it may not edit on its own judgement.** **A-23 was added to this board
-in the same write as its packet** — the first time since the 2026-10-12 note
-that a packet and its row have landed together, which is what the thirteen
-counts below were asking for.
+**Eight packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25 and
+A-26.** **A-26 was raised on 2026-11-10 by the Tuesday intake and it
+deliberately covers two enquiries rather than one** — a second inbound enquiry
+arrived while A-23, the approval to reply to the first, had been pending fifteen
+days. **Queueing a second packet beside an unanswered one would make two things
+to not answer instead of one**, so A-26 asks for a single decision and A-23 is
+left Pending because an agent does not answer its own packet. **A-18 was
+REJECTED by the owner on 2026-11-09**, which is the answer Torque recommended on
+2026-10-14 and the first packet the owner has answered since A-19 and A-20 on
+2026-10-29. **The board row and this count were corrected on 2026-11-09 by the
+Monday intake (OL-0091): the run that recorded the rejection updated the
+packet's Status, Response and Actual result thoroughly and did not update the
+board, so for a few minutes this file said REJECTED in the packet and Pending in
+the table.** **The decision is the owner's; only the two derived places were
+corrected here.** **A-25 was raised on 2026-11-05 by the intake that found the
+cause** — the run met a personal obligation drafting from the account T-71 has
+reported as DD84's position since 2026-10-16, **recognised that neither A-13 nor
+A-19 reaches it, published the finding without any particular, and raised a
+packet** rather than deciding on its own judgement which account the register
+has been describing. **That is the shape A-19 itself was made in, and it is the
+second time a rule has been found not to reach what a run walked into.** **A-24
+was raised on 2026-10-29 by the run that caused it** — the intake published a
+declined-payment amount on a reading of A-19 that was wrong, corrected its own
+two files within the hour, and **raised a packet for the ten it may not edit on
+its own judgement.** **A-23 was added to this board in the same write as its
+packet** — the first time since the 2026-10-12 note that a packet and its row
+have landed together, which is what the thirteen counts below were asking for.
 
 > **A-21 answered 2026-11-09 — APPROVED, and one row of it had to be held on
 > execution.** The four prices are adopted. **Row 1's $349 was priced as "work
@@ -2546,3 +2552,108 @@ before 2026-11-05 and what is known after.**
 
 **Response** — _awaiting owner._ **Affected records** — T-137, T-71, T-129,
 T-136. **Actual result** — _not yet executed._
+
+---
+
+## A-26 — Reply to two unanswered inbound enquiries, in one decision
+
+**Status: PENDING — raised 2026-11-10 by `/dd84-inbox-intake`.**
+
+**Decision requested** — Approval to send **two messages**, one per enquirer:
+**thread `1a1c2da539737cb0`** (new, 2026-11-10) and **thread
+`1a174388c7b0c461`** (A-23's enquirer, 2026-10-25). **Both texts are in
+`docs/ops/briefs/2026-11-10-inbox-intake.md` and
+`docs/ops/briefs/2026-10-26-inbox-intake.md` respectively, unchanged.**
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT.**
+
+**This packet exists because A-23 did not get answered.** It is not a
+replacement for it and it does not touch its status. **If the owner would rather
+answer A-23 and this one separately, that is a complete response** — the point
+of combining them is only that **two prospective customers are now waiting and
+one decision can release both.**
+
+**Nothing in either message needs filling in.** **Neither carries a bracket:
+there is no date to promise and no price to set**, because in one case the
+vehicle is unknown and in the other the engine management is.
+
+**Business objective** — **Two enquiries, nothing sent to either.** The older
+one has been unread for **sixteen days** and the approval to answer it pending
+for **fifteen**. **`ventures.md` still records DD84's enquiry source as
+`UNKNOWN` while three paying jobs arrived through it unseen**; both drafts ask
+how the enquirer found DD84, and **that question has now gone unasked twice.**
+
+**Source and context**
+
+| Enquiry    | Received                 | Thread             | State                                                                                  |
+| ---------- | ------------------------ | ------------------ | -------------------------------------------------------------------------------------- |
+| **New**    | **2026-11-10T00:27:18Z** | `1a1c2da539737cb0` | **Unread.** One line. Subject "1946 cadillac tune"; asks whether DD84 is near Savannah |
+| **A-23's** | 2026-10-25T17:57:58Z     | `1a174388c7b0c461` | **Still unread, still one message** — re-verified this run with `get_thread`           |
+
+**Identities withheld under §5; the thread IDs are the pointers.**
+
+**Recommended plan** — **Send both.** Each confirms the business exists, states
+that calibration is delivered **remotely**, lists the §8.1 fields DD84 needs
+before it can say anything useful, asks how they found DD84, and **stops.**
+
+**The new draft carries one thing A-23's does not**, and it is the reason it is
+not a copy: **a 1946 Cadillac on its original drivetrain has no electronic
+engine management and there would be nothing to tune.** The draft says so
+plainly and asks what engine and management are fitted. **Saying nothing about
+it risks a quote request for work that cannot exist; asserting a swap risks
+describing a car nobody has seen.**
+
+**Alternatives considered**
+
+- **Answer only the new enquiry.** **Rejected.** It would leave the older one
+  unanswered for a seventeenth day while answering someone who wrote last night,
+  and **the older enquirer asked first.**
+- **Answer only the older one, since A-23 already covers it.** **Rejected** for
+  the same reason in reverse, and it leaves a live enquiry cooling.
+- **Quote something, in either message.** **Rejected outright.** No vehicle
+  detail in one, no engine management in the other, and **A-21's row 1 is
+  already held because it priced work that was never delivered** — pricing a job
+  this register cannot describe repeats that exactly.
+- **Close both as probable noise.** **Possible and not recommended.** Each costs
+  one message to test, **the funnel has produced two enquiries in sixteen
+  days**, and a 1946 Cadillac with a modern engine fitted is a high-value
+  calibration job, not a nuisance.
+- **Create Gmail drafts so the owner can send with one click.** **Rejected on
+  purpose.** A draft sitting in the account is one mis-click from a Class C
+  action taken without approval. **The text stays in the repository until the
+  owner says send.**
+
+**Cost and cash impact** — **None.** No price, no discount, no commitment, no
+spend. **The upside is two qualified leads and the first evidence of which
+channel produces DD84's customers.**
+
+**Risks and safeguards**
+
+- **No price, no turnaround, no promise of a result, and no power figure** in
+  either message.
+- **No capability claimed beyond what `ventures.md` lists** — remote ECU and EFI
+  calibration, diagnostics and PCM services.
+- **Neither draft assumes what the vehicle is or what has been done to it.**
+- **Neither asks for an address or any personal detail** beyond what the
+  enquirer already volunteered.
+- **If either enquirer turns out to want an unsupported platform or a
+  safety-critical job, that escalates before anything is accepted** (§8.2).
+- **The remote-delivery statement may end the new enquiry.** That is accepted:
+  **it is true, and finding out in message one costs less than finding out after
+  a quote.**
+
+**Systems affected** — **None.** Two Gmail threads if approved. **No labels, no
+read-state changes, no CRM record** — this register has none.
+
+**Customer and public impact** — **Two prospective customers get an answer.**
+**Nothing is sent under this packet until approved**, and **neither thread has
+been marked read**, so the owner's inbox still shows both as needing attention.
+
+**Success test** — A reply exists in each thread; and for each, either the §8.1
+fields come back or the lead is closed with a recorded reason. **Secondary and
+arguably worth more: `ventures.md`'s enquiry-source field stops reading
+`UNKNOWN` for at least one customer.**
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-152, T-95. **Actual
+result** — _not yet executed._

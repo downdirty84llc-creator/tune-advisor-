@@ -133,7 +133,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
-| T-100 | TikTok rejection sent 3x on a two-day cadence — a re-send, likely                             | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
+| T-100 | TikTok rejected the 11-02 proof of address as unverifiable — not a re-send                    | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-102 | The Gmail thread list no longer returns dates or read state — confirmed                       | ops        | Normal       | **Accepted Risk**        | Agent | A to diagnose                     | 2026-10-29   |
 | T-103 | The website front door renewed on a backup card; primary refused                              | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -185,42 +185,66 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-149 | A truck maker's tech support sent ~7MB; T-123 fleet question is live                          | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-13   |
 | T-150 | An OpenAI account, an open support case, an out-of-state sign-in                              | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
 | T-151 | A 3rd Stripe account "Merry Market by DD84" pays into A-25's account                          | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** first                    | 2026-11-10   |
+| T-152 | A second inbound enquiry: a 1946 Cadillac, and a question about Savannah                      | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-26 pending**                  | 2026-11-11   |
+| T-153 | A card declined for insufficient funds — not for being deliberately off                       | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-11   |
+| T-154 | Netlify credits exhausted: production deploys paused; cycle resets 2026-12-02                 | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-13   |
+| T-155 | Shopify payouts move to two business days for sales after 2026-11-09                          | finance    | Normal       | Planned                  | Agent | A to verify                       | 2026-11-17   |
+| T-156 | An "AI Executive Automation System" spec was drafted outside this repo                        | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
+| T-157 | Cold outreach cites DD84's real /contact page on a fabricated prior chain                     | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-13   |
+| T-158 | Kalshi: a new sign-in, a new passkey, and Google account data shared                          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
+| T-159 | Personal third-party mail arrives in the business inbox — §5 judgement                        | ops        | Normal       | **Awaiting Owner**       | Owner | **§5 — packet if kept**           | 2026-11-13   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **20 Done** · **3 No Action** · **2 Accepted Risk** · 9 In Verification
-· 6 In Progress · **4 Awaiting Approval** · **69 Awaiting Owner** · 6 Blocked ·
-30 Planned · 2 Backlog. **151 tasks.** Recounted mechanically with
+Counts: **20 Done** · **3 No Action** · **2 Accepted Risk** · 12 In Verification
+· 4 In Progress · **5 Awaiting Approval** · **74 Awaiting Owner** · 6 Blocked ·
+31 Planned · 2 Backlog. **159 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-09**, at the Monday daily brief (**T-151 added; five rows updated**).
-**T-151 records that a third Stripe account, named "Merry Market by DD84", can
-receive funds as of 2026-11-09 and pays out to the same bank account T-71,
-T-129, T-136 and A-25 concern — so A-25 stopped being a wording question and
-acquired a live money consequence.** **That trading name is not in
-`docs/agents/ventures.md`, and the account is the third Stripe account evidenced
-in five days, none of them recorded there.** **T-11 is explicitly NOT advanced
-by it: a payments profile that other businesses can send funds to is not
-products, prices and a test-payment matrix, and this is the second Stripe notice
-in five days for an account T-11 does not concern.** **T-104 records that the
-card locking spans three cards at two issuers and that an issuer's own notice
-names the cardholder as the locker, with an advertising charge declined on
-2026-11-09 — so the deliberate-practice reading is now well supported and one
-sentence from confirmed.** **T-33 has its first dated failure after thirty days:
-`dd84-api` exited with status 1 on 2026-11-09.** **T-100 records a third
-identical TikTok send on a two-day cadence, which makes a scheduled re-send the
-better-supported reading.** **T-136 records that the 2026-11-09 balance alert
-may read at zero rather than below it, which bears on whether the charge-off
-clock still runs; the figure is withheld under A-19 with the thread ID.** **69
-of the 151 rows are Awaiting Owner**, and **97 of the 126 open rows are past
-due.** **Twenty rows are Critical and open: sixteen overdue (newest ten days,
-oldest eighty-one), T-147, T-148 and T-151 due 2026-11-10, T-143 not yet due.**
-**Seven approval packets pending: the owner answered two on 2026-11-09 — A-18
-rejected and A-21 approved with row 1 held — the first packets answered since
-2026-10-29, both recorded by a sibling session.** **A-21's row 1 is held because
-it prices T-37's work as delivered and no calibration has ever been sent on
-T-37, so three customer sends are unblocked and one invoice is not.**
+**2026-11-10**, at the Tuesday inbox intake (**T-152 to T-159 added; T-100's
+title corrected**). **THE RECOUNT CAUGHT THE PREVIOUS COUNTS LINE WRONG, AND IT
+IS WORTH MORE THAN ANY ROW ADDED TODAY.** The 2026-11-09 line read **9 In
+Verification · 6 In Progress · 30 Planned** for the same 151 rows. **The true
+figures were 12, 4 and 29.** **The three errors offset exactly — plus three,
+minus two, minus one — so the total of 151 was right by luck**, which is
+precisely the failure the note below was written about: _"Had the line been
+written as 99 + 3 it would have been right by luck and the broken pattern would
+have shipped."_ **Three buckets were wrong for a day and nothing detected it
+except recounting from the rows instead of adjusting yesterday's figures.**
+**The lesson is not that the pattern failed — it did not. The per-bucket counts
+were simply never recounted, only the total was.** From now the recount prints
+every bucket and the total is checked against their sum. **T-152 is the run's
+finding: a second inbound customer enquiry, a 1946 Cadillac, asking whether DD84
+is near Savannah — and the first enquiry, T-95, is still a single unread message
+sixteen days on with A-23 pending fifteen.** **A-26 is raised to cover both
+enquiries in one decision rather than queue a second packet beside an unanswered
+one.** **T-100's title is corrected and its leading hypothesis withdrawn.** It
+read _"sent 3x on a two-day cadence — a re-send, likely"_; TikTok's 2026-11-09
+rejection names a specific defect — the authenticity of the proof-of-address
+document — and that document was submitted on 2026-11-02, **after T-100 was
+raised**, so this instance cannot be a re-send of anything. The cadence
+observation about the earlier three stands; the inference drawn from it does
+not. **T-153 is the first decline in this register attributable to there being
+no money rather than to a card being deliberately off**, and it is on a
+different card from the one T-139 names — amount and digits withheld under A-19,
+thread ID held. **T-154 puts a dated cliff on infrastructure: a Netlify team
+under the owner's handle has exhausted its credits, production deploys and Agent
+Runners are paused, and the billing cycle resets 2026-12-02.** **T-156 records
+an "AI Executive Automation System" specification drafted outside this
+repository with no approval trail beside the two that have one.** **T-158 is the
+fourth account-access event in eight days after T-134, T-144 and T-150, and the
+one that matters is that Google account data was released to a third party — the
+primary Google account is the account this whole record reads from.** **74 of
+the 159 rows are Awaiting Owner**, and **104 of the 134 open rows are past
+due.** **Twenty-two rows are Critical and open: sixteen overdue (newest four
+days, oldest eighty-two), T-147, T-148 and T-151 due 2026-11-10, T-152 and T-153
+due 2026-11-11, T-143 due 2026-11-20.** **Eight approval packets pending, A-26
+being the new one.** The owner answered two on 2026-11-09 — **A-18 rejected and
+A-21 approved with row 1 held** — the first packets answered since 2026-10-29,
+both recorded by a sibling session. **A-21's row 1 is held because it prices
+T-37's work as delivered and no calibration has ever been sent on T-37, so three
+customer sends are unblocked and one invoice is not.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

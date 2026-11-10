@@ -10282,4 +10282,147 @@ real work.**
 
 ---
 
-## Next entry: OL-0095
+## OL-0095 — 2026-11-10 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake (repo-attached), **fired 2026-11-10T10:20Z.** **Window: since OL-0091,
+2026-11-09T10:20Z → 2026-11-10T10:20Z, 24 hours.** **T-116: the end time is this
+entry's commit.**
+
+**Checkout, contract item 0:** tip `3ecfa3a`, `HEAD` equal to origin, no `src/`,
+no `package.json`, clean, **83 tracked files at checkout — not the 28 the prompt
+expects, thirty-first run reporting it, T-85 step 3.** The brief file this run
+wrote makes 84.
+
+**Skeleton committed before gathering at `6792f78`** — OL-0050's repair,
+**twenty-fifth application.** The last commit was minutes old, and the test
+applied was **the size of what a restart would destroy, not the age of the last
+commit**: a 24-hour mail sweep is substantial. **The skeleton also recorded,
+before any mail was read, that Monday's opportunity scan is owed and will be run
+immediately after this intake** — so the commitment is on the record
+independently of how this run ended.
+
+### What the run found
+
+| #   | Finding                                                                                               | Evidence                                                                    | Record                    |
+| --- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------- |
+| 1   | **A second inbound customer enquiry** — a 1946 Cadillac, asking whether DD84 is near Savannah         | `1a1c2da539737cb0`, 2026-11-10T00:27:18Z, unread, confirmed by `get_thread` | **T-152**, **A-26**       |
+| 2   | **The first enquiry is still unread sixteen days on; A-23 pending fifteen**                           | `1a174388c7b0c461` re-verified: one message, `UNREAD`                       | T-95, A-23                |
+| 3   | **TikTok rejected the proof-of-address document submitted 2026-11-02 as unverifiable**                | `1a1c0752da9e8853` 13:17:45Z; `1a1c13fb62fa28c8` 16:58:59Z                  | **T-100 corrected**       |
+| 4   | **A card declined for insufficient funds, not for being off**                                         | `1a1c2e1abfc51a95`, 2026-11-10T06:18:22Z — amount and digits withheld, A-19 | **T-153**                 |
+| 5   | **Netlify credits exhausted; production deploys and Agent Runners paused; cycle resets 2026-12-02**   | `1a1c0f2b0a62815a`, 2026-11-09T15:34:52Z, read in full                      | **T-154**                 |
+| 6   | **Shopify payouts move to two business days for sales after 2026-11-09**                              | `1a1c3846f51ad9f1`, 2026-11-10T03:33:17Z                                    | **T-155**                 |
+| 7   | **An "AI Executive Automation System" specification was drafted outside this repository**             | `1a1c120b43706f19`, 2026-11-09T16:26:19Z, `SENT`                            | **T-156**                 |
+| 8   | **Cold outreach citing DD84's real `/contact` page on a fabricated prior chain**                      | `1a1bff09465849fc`, 2026-11-09T10:52:44Z                                    | **T-157**                 |
+| 9   | **A new Kalshi sign-in, a new passkey, and Google account data shared**                               | `1a1c101f80005f61`, `1a1c102159f08340`, `1a1c102cf3319284` — 54 seconds     | **T-158**                 |
+| 10  | **Personal third-party mail in the business inbox**                                                   | **Withheld entirely, including the thread IDs** — §5                        | **T-159**                 |
+| 11  | **A second ad charge declined on the same locked card** — `GOOGLE *YouTube`, after `GOOGLE *Facebook` | `1a1c2e149bedcc9c`, 2026-11-10T06:18:11Z                                    | T-104, T-140 — no new row |
+| 12  | **The business card turned back on at 10:15:50Z and off again at 10:16:51Z**                          | `1a1c0b0cc551697f`, `1a1c283d3e8c521e` — 61 seconds                         | T-139 — no new row        |
+
+### The three carried-in questions, answered by absence
+
+**All three closed as "nothing arrived", which is reported as a verified absence
+and not as an assumption.**
+
+- **T-130, the 2026-11-09 card auto-draft:** **no notice in either direction.**
+  The row is a day past due with the same question. **The mail channel cannot
+  answer it** — the figure is in an account, and PayPal needs re-authentication
+  while Stripe, Chime, bookipay, Square, Melio and Capital on Tap have no MCP
+  server at all.
+- **T-33, `dd84-api`:** **one failure, 2026-11-09T15:17:07Z, no second in the
+  following nineteen hours, and no recovery notice from Render.** **Silence is
+  not recovery**; the row stays Planned and unverified.
+- **T-129 / T-136, the overdraft fee:** **still none.** The 11-09 intake
+  reported five days and four nightly processings; one more night makes it **six
+  and five.** The balance alert that re-fired 2026-11-09T14:50:52Z was **already
+  reported by the 11-09 daily brief** and is not re-counted here.
+
+### Two corrections, and the second is the more valuable
+
+**First, T-100's leading hypothesis is withdrawn.** The row read _"sent 3x on a
+two-day cadence — a re-send, likely"_ since 2026-10-30. **TikTok's 2026-11-09
+rejection names a specific defect — the authenticity of the proof-of-address
+document — and the 2026-11-03 daily brief records that document being submitted
+on 2026-11-02, after T-100 was raised.** **A mechanical re-send cannot name a
+document submitted after it**, and the two 2026-11-09 messages 3h41m apart are
+differently worded. **The cadence observation about the earlier three stands;
+the inference drawn from it does not.** **Not claimed:** that the document was
+forged or defective — that is TikTok's assertion, and what the required
+correction is sits behind a seller portal no connector reaches.
+
+**Second, the mechanical recount caught the previous counts line wrong.** The
+2026-11-09 line read **9 In Verification · 6 In Progress · 30 Planned** for the
+same 151 rows. **The true figures were 12, 4 and 29.** **The three errors offset
+exactly — plus three, minus two, minus one — so the total of 151 was right by
+luck.** That is the failure the register's own boxed note already describes:
+_"Had the line been written as 99 + 3 it would have been right by luck and the
+broken pattern would have shipped."_ **The regex was not at fault. The
+per-bucket figures had simply never been recounted — only the total had.** The
+recount now prints every bucket and checks the total against their sum.
+
+### Register and approvals
+
+**T-152 to T-159 added — eight rows. T-100's title corrected.** **159 tasks: 20
+Done · 3 No Action · 2 Accepted Risk · 12 In Verification · 4 In Progress · 5
+Awaiting Approval · 74 Awaiting Owner · 6 Blocked · 31 Planned · 2 Backlog.**
+**104 of the 134 open rows are past due. Twenty-two rows are Critical and open:
+sixteen overdue, newest four days and oldest eighty-two.**
+
+**A-26 appended, Class C, Pending.** It seeks approval to send **two** messages
+— one per enquirer — **in one decision.** **A-23 is left Pending and
+untouched**: the agent recorded that its stated premise ("the only new enquiry
+since 2026-10-19") has been overtaken, and **an agent does not answer its own
+packet.** **The board row and the derived pending count were updated from seven
+to eight, which are the only two places an agent may edit here.**
+
+**Two owner actions of 2026-11-09 are carried, not claimed: A-18 rejected and
+A-21 approved with row 1 held**, both recorded by a sibling session.
+
+### Boundaries held
+
+**Sent nothing. Created no Gmail draft** — deliberately, because a draft in the
+account is one mis-click from a Class C action. **Changed no mail state:**
+nothing marked read, labelled, archived, starred or moved, so both enquiries
+still show as needing an answer in the owner's inbox. **Published no cash
+figure** — no balance, no overdraft amount, no declined amount, no outflow
+amount, no credit score, **and not the Shopify bill amount even though the
+invoice has settled and a published vendor fee schedule would ordinarily be
+reportable under A-13, because it is the exact figure A-24 is pending on.**
+**Published no customer or third-party identity.** **Withheld two threads
+entirely, thread IDs included** — a deliberate departure from A-19's mechanism,
+because A-19's bargain is that a thread ID carries no content, and **that holds
+for the owner's own bank balance but not for a third party's private affairs,
+where the pointer is the exposure.** Per §5 that is an approval question, so
+**T-159 asks the owner whether the category should be recorded at all.**
+**Opened no link from an unsolicited message. Asserted no mechanism from
+adjacent timestamps** — not for the two declines eleven seconds apart, not for
+Printify's TikTok-score campaign between the two TikTok messages, and not for
+the Netlify notice landing in the same second as the previous brief's commit.
+**Wrote nothing into `docs/growth/`. Did not touch the Ledger repository.**
+**Pushed only to `claude/claude-md-docs-cqvhy6`; opened no pull request.**
+
+### Not reached
+
+**Google Calendar** (the daily brief's section, 10:50Z), **the Shopify store**
+(no order notice in the window; the 11-09 intake ran the live GraphQL check),
+**Google Drive**, **the TikTok seller portal**, **Render**, **Netlify**,
+**Upwork and Freelancer** (one message's body sits behind the platform), and
+**PayPal**, which needs re-authentication. **The manufacturer attachments on
+T-149 were deliberately not opened, as on 2026-11-09.** **Two read promotional
+threads in the window were not individually read** — the read-mail pass excluded
+the promotions category and its result count exceeded the threads it listed by
+two. **That gap is named rather than papered over.**
+
+### Still owed when this entry commits
+
+**The weekly Georgia opportunity scan fired 2026-11-09T11:26:06Z and has not
+run.** `docs/ops/briefs/` holds scans dated 2026-10-19, 2026-10-26 and
+2026-11-02 and then stops. **It runs immediately after this commit, dated
+2026-11-10 and recording that it fired a day earlier**, because the next
+scheduled scan is 2026-11-16 and skipping would leave a fortnight uncovered —
+and **backdating a heading to a day the work did not happen on is the error the
+2026-11-06 cash-review annotation was written to avoid.**
+
+---
+
+## Next entry: OL-0096
