@@ -70,14 +70,14 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-34  | CI is failing on `main` in `downdirty84-ai-tuning`                                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-13   |
 | T-35  | Three stale pull requests, one from the superseded branch                                     | ops        | High         | **Awaiting Owner**       | Owner | none yet                          | not set      |
 | T-36  | No readable path to DD84's own revenue figures                                                | finance    | High         | Planned                  | Agent | A to prepare                      | 2026-10-15   |
-| T-37  | The C10 customer — Terminator X Max AFR fault                                                 | service    | High         | **In Progress**          | Owner | **A-21** (A-20 deferred)          | 2026-10-10   |
+| T-37  | The C10 customer — AFR fault; priced $349/$149, nothing delivered to invoice                  | service    | High         | **In Progress**          | Owner | **A-21 row 1 held**               | 2026-10-10   |
 | T-38  | GDOT access review — right-in/right-out on the Colbert site                                   | real est.  | High         | **In Progress**          | Owner | A-15 sent                         | 2026-10-28   |
 | T-39  | Reschedule the missed Georgia SBDC session                                                    | finance    | Normal       | **In Progress**          | Owner | A-15 sent                         | 2026-10-28   |
 | T-40  | Google Play developer account at risk of closure                                              | ops        | Normal       | Planned                  | Owner | A to diagnose                     | 2026-12-06   |
 | T-41  | Five r/LSSwapTheWorld lead candidates, none contacted                                         | sales      | Normal       | Planned                  | Owner | C to contact                      | not set      |
 | T-42  | Fifteen unsent drafts, five of them to likely loan fraud                                      | ops        | High         | **Awaiting Owner**       | Owner | none yet                          | 2026-10-10   |
 | T-43  | `downdirty84llc.com` is live and absent from the venture registry                             | ops        | Normal       | Planned                  | Owner | A to prepare                      | not set      |
-| T-44  | One inbox query is not an intake; fix the routine's search                                    | ops        | Normal       | Planned                  | Agent | A to prepare                      | 2026-10-15   |
+| T-44  | One inbox query is not an intake; fix the routine's search                                    | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-10   |
 | T-45  | GREC will not interpret the law; the licensing question is open                               | compliance | High         | Blocked                  | Owner | A-06 covers it                    | 2026-10-16   |
 | T-46  | Webador annual invoice will auto-charge; amount unknown                                       | finance    | Normal       | **Awaiting Owner**       | Owner | E if cancelled                    | 2026-10-12   |
 | T-47  | Two Google Business Profiles for one business                                                 | ops        | Normal       | Planned                  | Owner | A to prepare                      | not set      |
@@ -97,7 +97,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-61  | Square turns offline payments on by default in two days                                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-15   |
 | T-62  | Vercel reports three misconfigured domains on one project                                     | ops        | Normal       | Planned                  | Agent | A to read                         | 2026-10-16   |
 | T-63  | Two Shopify account-verification codes, cause unexplained                                     | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-13   |
-| T-64  | A second live tuning job — ANSWERED 2026-10-29 after 15.94d; still unpriced                   | service    | **Critical** | **In Verification**      | Agent | **A-21** (A-20 moot)              | 2026-10-14   |
+| T-64  | A second live tuning job — priced $350; 7th revision sent 10-29, unacknowledged               | service    | **Critical** | **In Verification**      | Agent | **A-21 approved**                 | 2026-10-14   |
 | T-65  | A Shopify customer account with zero orders, unrecorded                                       | sales      | Normal       | Planned                  | Agent | A to read                         | 2026-10-16   |
 | T-66  | A real Lexus enquiry sat 23 days; the form works, nobody reads it                             | sales      | **High**     | **Awaiting Owner**       | Owner | **A-21 via T-84** (A-20 deferred) | 2026-10-15   |
 | T-67  | Two more loan-fraud "application" emails, 16 minutes apart                                    | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-15   |
@@ -149,7 +149,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-113 | A third unattributed Zelle — $400.00, memo "Tune"; matches the Lexus floor                    | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown                       | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                   | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
-| T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-03   |
+| T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-10   |
 | T-117 | The agreement that failed 9 times began working without a new card                            | finance    | **High**     | Done                     | Agent | A to report                       | 2026-11-02   |
 | T-118 | Cost side opened: Manus and a shipment still not quantified                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
 | T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
@@ -158,7 +158,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-122 | The third repository has a Supabase project and it has been paused                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-123 | Does remote ECU calibration qualify as fleet "maintenance" for DOAS enrollment?               | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
 | T-124 | Is DD84 a Jackson County Chamber member, and is there a 2026 grant cycle?                     | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
-| T-125 | The scan scoring method has no stated direction for "time sensitivity"                        | ops        | Normal       | In Progress              | Agent | A to diagnose                     | 2026-11-09   |
+| T-125 | Scan scoring: no band thresholds, and no direction for "time sensitivity"                     | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-16   |
 | T-126 | A lender now contradicts itself on an application this register cannot find                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-127 | Vercel free tier at 75%; projects auto-pause if it is exceeded                                | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-128 | A Pinterest board names DD84; the registry records social accounts as UNKNOWN                 | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-09   |
@@ -216,7 +216,11 @@ clock still runs; the figure is withheld under A-19 with the thread ID.** **69
 of the 151 rows are Awaiting Owner**, and **97 of the 126 open rows are past
 due.** **Twenty rows are Critical and open: sixteen overdue (newest ten days,
 oldest eighty-one), T-147, T-148 and T-151 due 2026-11-10, T-143 not yet due.**
-**Eight approval packets pending after A-18's rejection.**
+**Seven approval packets pending: the owner answered two on 2026-11-09 — A-18
+rejected and A-21 approved with row 1 held — the first packets answered since
+2026-10-29, both recorded by a sibling session.** **A-21's row 1 is held because
+it prices T-37's work as delivered and no calibration has ever been sent on
+T-37, so three customer sends are unblocked and one invoice is not.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
@@ -1784,10 +1788,41 @@ all-time**, which rules out an order-based sale and says nothing about this job.
 connector.** Even a working Stripe would return nothing, **because nobody set a
 price.** That has been this task's next action since 2026-10-13.
 
-- **Status unchanged: Awaiting Owner** · **Next action** — **price it**, then
-  send **A-20 draft 2**. **If the owner wants the offered datalog review billed,
-  draft 2 should be deferred until the price exists** — that caveat is in the
-  packet.
+### Priced 2026-11-09 under A-21 — and the re-read found this entry stale three ways
+
+**A-21 is approved. The price exists**: `DD84-HOLLEY-REMOTE-NA` at **$349** for
+the base tune, `DD84-TUNE-MECH-DIAG-REMOTE` at **$149** for the determination.
+**But the $349 cannot be invoiced, because nothing has been delivered on this
+job.** A full re-read of the thread on 2026-11-09 found DD84's own words at
+2026-10-06T11:59:19Z: _"I made some changes to a new tune file I created to see
+if it corrects the issue. **Before I send it over**, please complete the
+following checklist."_ **It never went over.** The variance and the two billing
+readings are in A-21's Actual-result block.
+
+**This entry was stale three ways**, all found in the same read:
+
+1. **"DD84 sent last 2026-10-07T13:24Z" is wrong.** DD84 sent last
+   **2026-10-12T20:39:11Z**, a spark-plug recommendation. **28 days ago.**
+2. **"22 messages" is wrong.** The thread holds **29**.
+3. **"Waiting is correct here; this task is not about chasing him" is no longer
+   true.** It was written when the customer was on a work trip with a checklist
+   outstanding. **He returned, completed the checklist on 2026-10-12, and
+   reported a replacement wideband inbound** — _"Going to swap it to see if it
+   is the smoking gun."_ **So the contradiction this task is blocked on may
+   already be settled on his bench and simply unreported**, and the next action
+   is a question, not a wait.
+
+**The blocker was never the price.** That claim has been in this entry since
+2026-10-13 and **the price did not unblock it**: the file is still unsent
+because the wideband determination was never closed, and nobody has asked him
+whether the new sensor fixed it. **One question settles both.**
+
+- **Status unchanged: Awaiting Owner** · **Next action** — **ask whether the
+  replacement wideband resolved the AFR fault.** That answer decides whether the
+  created-but-unsent calibration can go out, which decides whether the $349 is
+  billable at all. **Then** A-20 draft 2, which is deferred and 19 days old.
+  **Billing the $149 determination now is a live option and is the owner's** —
+  A-21, reading 1.
 
 ## T-38 — GDOT access review: right-in/right-out on the Colbert shop site
 
@@ -3708,9 +3743,41 @@ under A-20** — it acknowledges the log and commits to a date the owner fills i
 **and it asks for no money**, because Stripe and PayPal are both unreachable and
 **there is no invoice for either to confirm.**
 
-- **Status unchanged: Awaiting Owner** · **Next action** — unchanged: **read the
-  log, reject A-18, price the job.** **A-20 draft 1 is ready to send and cannot
-  be sent from here.**
+### Priced 2026-11-09 under A-21 — and the direction of the silence has reversed
+
+**A-21 is approved and this job is the one that is invoiceable: $350**,
+`DD84-MOPAR-TUNE-BASIC`, for work plainly delivered. **It is the only amount in
+this register that could be invoiced today.**
+
+**Three of the four "what does not change" claims above are no longer true**,
+and the re-read on 2026-11-09 establishes why:
+
+- **The log was read, and answered.** DD84 replied on **2026-10-29T14:14:56Z**
+  with a **seventh calibration revision** attached. The log is not unread.
+- **The silence has reversed.** The customer last wrote
+  **2026-10-13T15:39:45Z**; DD84 last wrote **2026-10-29T14:16:51Z**. **DD84 is
+  now the party waiting**, 11 days, on an acknowledgement of a file it
+  delivered.
+- **A-18 is now moot twice over**, not once: it asks for a log the customer
+  already sent, **and** that log has since been answered with a revision.
+
+**The 2026-10-29 revision went out with no covering message** — an attachment on
+a quoted chain, no instruction to flash it, no question. **Every one of the six
+earlier revisions carried a sentence telling him what changed and what to send
+back.** That is a plausible reason for 11 days of silence that has nothing to do
+with the customer: **he may not know the file is a file, or that anything is
+expected of him.**
+
+**A-21 priced this at the _Basic_ rung on "≥2 tune files". It is seven.** The
+packet declined to infer a higher rung because the published copy defines no
+scope difference between $350, $450 and $650 — **that stays declined here**, but
+seven revisions against the entry rung makes it a question worth answering
+rather than a question already closed. → **T-84**.
+
+- **Status: Awaiting Owner** · **Next action** — **a one-line message that the
+  revision was sent and what it changed**, which is what the 10-29 send omitted;
+  **invoice $350**; **close A-18**. **No further calibration into the open
+  hard-crank fault** — that is A-21's own safeguard and it still binds.
 
 ## T-65 — A Shopify customer account with zero orders, unrecorded
 
@@ -6454,3 +6521,37 @@ has listed DD84's liabilities, and no routine asks for one.**
 > rather than idleness.** A-20 (three messages), A-22 (one), A-23 (one) **cover
 > every person who can be written to.** The two who cannot are the $450 and $700
 > payers, **because nobody knows what either payment bought.**
+
+---
+
+> ## T-44, T-116 and T-125 — fixed in the instruction files, 2026-11-09
+>
+> All three were agent-owned diagnoses that had been sitting as findings. Full
+> record in **OL-0093**; each stays **In Verification** until a scheduled run
+> demonstrates it, because an edited instruction file is not evidence that a run
+> obeys it.
+>
+> **T-44 — the intake's discovery step is now six targeted queries**, in order:
+> `category:primary`, `is:important`, `in:sent`, the two Superhuman triage
+> labels, `list_drafts`, then a general sweep last. With a standing rule that
+> **a broad query returning a full page has filled the page, not covered the
+> window** — paginate or narrow, never conclude. **Verify on the next intake:
+> the live customer threads should come out of query 1, not a follow-up query.**
+>
+> **T-116 — all six routines now print two read timestamps** instead of "Run at
+> <UTC>": start read from the clock at the beginning, finish read when the
+> output file is written. **If only the start was read, print only the start.**
+> Verify by comparing a brief's stated finish against its commit time.
+>
+> **T-125 — the bands existed and were recovered, not invented.** 85–100
+> Immediate Action, 70–84 Strong Opportunity, 55–69 Worth Investigating, 40–54
+> Limited or Specialized, 0–39 Information Only; and **time sensitivity now
+> states its direction — higher is more urgent, a rolling programme scores 3 of
+> 15, not 0.** The due-diligence task threshold is stated as **55 or above**,
+> because "above the 'worth investigating' band" read as either 55 or 70.
+>
+> **One consequence to carry forward:** the direction now written down is the
+> **opposite** of the reading the 2026-11-02 scan used, so **that scan's time
+> sensitivity scores are not comparable with today's.** The next scan must say
+> so rather than rank old and new entries together. That scan stated its reading
+> explicitly so it could be overruled, which is the only reason this is cheap.

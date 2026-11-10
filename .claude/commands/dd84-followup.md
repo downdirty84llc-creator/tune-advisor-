@@ -84,7 +84,7 @@ Write to `docs/ops/briefs/YYYY-MM-DD-followup.md` and print in the reply:
 
 ```
 # DD84 follow-up queue — <date>
-Run at <UTC>. Payment systems confirmed against: <list>. Not reached: <list>.
+Run <UTC start, read> to <UTC finish, read>. Payment systems confirmed against: <list>. Not reached: <list>.
 Candidates: <n>. Drafted: <n>. Held for payment confirmation: <n>.
 
 ## Money on the table
@@ -108,6 +108,14 @@ system and what would confirm it.
 
 ## Not checked this run
 ```
+
+> **Both timestamps are read, never estimated.** Take the start time from the
+> clock (`date -u`) at the start of the run and the finish time from the clock
+> when the output file is written. **Do not state a range whose second half you
+> did not read**, and do not infer a finish time from how long the run felt.
+> Every brief from 2026-08-06 to 2026-11-03 stated a run-end time it had
+> estimated (T-116). **One read timestamp is worth more than a plausible span**:
+> if only the start was read, print only the start.
 
 ## Where it writes
 

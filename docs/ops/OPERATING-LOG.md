@@ -9843,7 +9843,299 @@ shared counter with no locking.**
 
 ---
 
-## OL-0092 — 2026-11-09 daily command brief
+## OL-0092 — 2026-11-09 · A-21 approved, and one of its four rows bills for a file that was never sent
+
+- **Timestamp** 2026-11-09, interactive session. **Not a routine.**
+- **Task** T-37, T-64 · **Approval** **A-21 — APPROVE**, owner 2026-11-09
+  ("approve A-21"). Recording it is Class B; **no send, no invoice, no Shopify
+  change.**
+- **Action** Re-read both customer threads in full before recording the
+  approval, found row 1's premise contradicted, recorded the approval with that
+  row held as an invoice, and corrected five stale facts in the register.
+- **Tool** `mcp__Gmail__get_thread` ×2 (29 and 31 messages),
+  `mcp__Gmail__get_message` ×1, `Read`, `Edit`, `git`.
+- **Operator** Claude (agent), on the owner's instruction.
+- **Checkout** — base **`241fc4d`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+- **Reached** Gmail, read-only. **Not reached** Stripe (no MCP server), PayPal
+  (needs re-authentication) — so **the billing position is still unconfirmable,
+  which A-21's own risk block already said.**
+
+### Why both threads were read before recording an approval
+
+**A-21's recommended plan told the executor to**: _"On T-64, read the unread log
+first: it may close the job at $350 or open a diagnostic, and quoting before
+reading it risks quoting the wrong thing."_ **That instruction was followed, and
+it caught the error on the other job.**
+
+### Row 1 prices work that has not been delivered
+
+**Thread `1a1082503004a073`, all 29 messages read.** A-21 prices T-37 at **$349,
+`DD84-HOLLEY-REMOTE-NA`, "Remote NA Base Tune — _work delivered_"**.
+
+**No calibration has ever been sent on T-37.** DD84's own words,
+**2026-10-06T11:59:19Z**: _"I made some changes to a new tune file I created to
+see if it corrects the issue. **Before I send it over**, please complete the
+following checklist."_ The checklist came back **2026-10-12**; DD84 answered
+with a spark-plug recommendation; **the file has not gone out.** **T-37's own
+register entry says it from the other side** — its objective is to "decide
+whether the revised tune file **can go out**."
+
+**So the delivered work on T-37 is diagnostic, not calibration**: a wideband/O2
+determination, a readiness checklist, an injector and plug review, across 29
+messages. **That is row 1a's $149 rung, which is already in the packet.**
+
+**Row 1 is adopted as a price and held as an invoice.** The $349 is not disputed
+— **the word "delivered" is.** It becomes a forward quote.
+
+**Corrected arithmetic: $350 is invoiceable today, not $699.** The two readings
+— bill T-37's $149 determination now, or hold T-37 entirely — are written into
+A-21 as options and **deliberately not chosen, because which is right is a
+billing judgement and not a fact.**
+
+### Row 2 is wrong in the other direction
+
+**Thread `1a0e402cdcf75731`, all 31 messages read.** A-21 prices T-64 at the
+Mopar **Basic** rung on "≥2 tune files". **It is at least seven.** The seventh
+went out **2026-10-29T14:14:56Z** — a week after the packet was written —
+**carrying an attachment and no covering message at all**, just a quoted chain.
+Every earlier revision carried a sentence saying what changed and what to send
+back.
+
+**Seven revisions against the entry rung is the strongest case in this record
+for the higher Mopar rungs**, and **it stays declined**, because the published
+copy still defines no scope difference between $350, $450 and $650. **Not
+inferred — escalated to T-84.** The packet's refusal to infer was right; what
+has changed is that the question is now worth the owner's time.
+
+### The silence has reversed on both jobs, and the register had it backwards
+
+**A-18 and A-20 were both written around "a customer waiting on DD84".** On the
+evidence today:
+
+- **T-64** — customer last wrote **2026-10-13**, DD84 last wrote **2026-10-29**.
+  **DD84 is waiting**, 11 days, on an acknowledgement of a file it delivered —
+  **plausibly because that delivery said nothing.**
+- **T-37** — DD84 last wrote **2026-10-12T20:39:11Z**, not the
+  **2026-10-07T13:24Z** the register recorded. **28 days.** And the customer's
+  final word was that a replacement wideband was inbound: _"Going to swap it to
+  see if it is the smoking gun."_ **The contradiction this task is blocked on
+  may already be settled on his bench and unreported.**
+
+**Five stale facts corrected**: T-37's last-contact timestamp, its message count
+(22 → 29), its "waiting is correct here" framing, T-64's "datalog still unread",
+and T-64's "still unpriced".
+
+### What this says about the price being the blocker
+
+**T-37's entry has claimed since 2026-10-13 that "the blocker is not the
+connector — nobody set a price."** A price now exists and **the job did not
+move.** The file is unsent because the wideband determination was never closed,
+and **nobody has asked him whether the new sensor fixed it.** **The price was
+necessary and was not sufficient**, and saying so is more useful than recording
+A-21 as having unblocked two jobs when it unblocked one.
+
+### Nothing was sent, and nothing could be
+
+**A-21 authorises a price to appear in a customer message. A-20 holds the
+messages and is DEFERRED.** So no send is authorised, and none happened.
+**A-20's deferral condition is now met** — the owner deferred it to price the
+jobs, and the jobs are priced — **so A-20 is the next decision**; its three
+drafts are 19 days old, carry no price, and on A-15's evidence need re-reading
+before any send.
+
+### What was deliberately not done
+
+- **No invoice raised, no payment link created, no money moved.** Class E and
+  not in this packet.
+- **No message sent, replied to, drafted or edited.** The approval covers
+  amounts, not sends.
+- **No higher Mopar rung applied** to T-64 despite seven revisions, and **no
+  $399 applied** to T-37 — both would be inferring a scope the published copy
+  does not define. **A-21 refused to infer them and so does this.**
+- **Row 1 was not quietly rewritten to $149.** The owner approved $349 for a
+  base tune; the finding is that it is not yet billable, not that the price is
+  wrong. **Changing an approved number on an agent's reading would be the error
+  this record exists to catch.**
+- **No further calibration proposed into T-64's open hard-crank fault**, per
+  A-21's own safeguard.
+- **No customer name, email address, phone number or tune-file name written here
+  or in the register**, under §5 — the two Gmail thread IDs are the pointers,
+  and they are not identity.
+
+### Noticed in passing, not acted on: 42 tasks are a row and nothing else
+
+Checking that this session's two row edits had not duplicated anything turned up
+a contiguous gap: **`TASK-REGISTER.md` holds 146 summary rows and 104 detail
+sections. T-105 through T-146 — every task raised after T-104 — exist as a
+summary row with no section below it.** No section is missing from the summary;
+the gap is entirely one-directional and entirely recent.
+
+**It is pre-existing** — the same counts hold at `241fc4d`, before this
+session's edits — **and it is not fixed here.** Writing 42 sections would mean
+inventing objectives, sources and next actions for work this session did not do
+and cannot source. **Recorded so the next run finds it as a measurement rather
+than rediscovering it as a surprise**, and so that anyone reading a row in that
+range knows there is no detail behind it. **A row is not a task under §4**: the
+standard requires an objective, a source, an owner and a success test, and rows
+T-105–T-146 carry none of them.
+
+### Class held
+
+Gmail **read only**: three read calls, **no send, reply, forward, label,
+archive, trash or draft of any kind.** No charge, refund, invoice, payout or
+fulfilment. **No bank, card, Square or payment action.** **Shopify not called
+and not modified.** No Supabase tool. No GitHub write. **No scheduled task
+created, changed, fired or deleted.** `docs/growth/` untouched. **No cash figure
+written** (A-19) — the amounts here are prices and revenue, which A-13 permits.
+
+- **Needs the owner** — **A-20 first**, because its condition is met and three
+  counterparties are still silent; **then one question to the C10 customer**
+  (did the replacement wideband fix the AFR fault — it decides whether T-37's
+  $349 is ever billable); **then invoice T-64's $350**, the only amount
+  invoiceable today, **with the one-line message the 2026-10-29 send omitted.**
+  **T-84** now carries a real question rather than a tidy-up: seven revisions
+  sold at the entry rung. Then **A-25**, **A-24**, **A-22**, **A-23**, **A-17**,
+  **A-07**.
+
+### Written against `241fc4d`, landed on `84f25f1`
+
+**A-18 was rejected by the owner while this entry was being written**, in
+OL-0090 above. Three consequences, all handled rather than left:
+
+- **This entry was numbered OL-0090, then OL-0091, and is now OL-0092** —
+  renumbered twice, because two sibling runs took each number in turn while it
+  was being written. **Sixth and seventh numbering collisions in this record**,
+  same cause as the other five.
+- **A-18 is off this entry's owner list**, where it had read "close it".
+- **A-18's board row and the pending count lagged the rejection**, and **the
+  sibling's Monday intake fixed both in OL-0091 before this landed** — the
+  fourteenth instance of the board lagging its own packets, caught within the
+  hour by the next run rather than by this one. **The fix is theirs, not this
+  entry's.** The only change made here was dropping A-21 from the count, which
+  is what this approval changed.
+
+**The rejection is independent of this work and does not touch it.** A-18 was
+the single Challenger follow-up; **A-21 prices the job A-18 would have chased**,
+and both readings of it survive the rejection unchanged.
+
+---
+
+## OL-0093 — 2026-11-09 · Three instruction-file defects closed, and one of them was mine
+
+- **Timestamp** 2026-11-09T11:05:00Z
+- **Task** T-44, T-116, T-125 (**all three In Verification**) · **Approval**
+  S-01 (Class A: correcting the agents' own instruction files). **Nothing sent,
+  published, spent, or changed in a live system.**
+- **Action** Rewrote the intake's discovery step, made the run timestamps read
+  rather than estimated across all six routines, and recovered the scan's
+  classification bands and time-sensitivity direction from the canonical source.
+- **Tool** `gh api` on the canonical Ledger repository + `base64 -d`; `Edit`,
+  `Bash` (`git`, `python3`, `prettier`); `Gmail` not used.
+- **Operator** Claude (agent), cqvhy6 session
+- **Before** T-44 Planned since 2026-10-15; T-116 and T-125 In Progress as
+  diagnoses. Four scans had reported the missing bands and refused to invent
+  them.
+- **After** Seven files changed, six of them command files. All three tasks In
+  Verification — **an edited instruction file is not evidence that a run obeys
+  it.**
+
+### T-44 — a broad query that fills a page has not covered the window
+
+The intake opened with one query. On 2026-10-08 that query returned **25 threads
+and not one from a human**; a second query, `category:primary`, then surfaced a
+live customer tuning job and a state-agency permit response — **the two most
+valuable items in the mailbox, both inside the window the first query had
+supposedly covered.** About 201 inbox threads arrive every two days here and
+most are marketing, so a page of 25 by recency is a page of marketing.
+
+Discovery is now six queries in order: `category:primary`, `is:important`,
+`in:sent` (threads DD84 spoke last on), the two Superhuman triage labels,
+**`list_drafts`** — which is how T-42's fourteen unsent drafts were found, by a
+tool the routine had never been told to call — and a general sweep **last**.
+
+**The generalisable rule, now written into the file:** a full page is not a
+finished search. Paginate or narrow; never conclude "nothing found" from a query
+that returned its maximum. **This is the same error as a green Routine run that
+committed nothing** — a result that looks like an answer and is actually a
+limit.
+
+### T-116 — every brief for three months stated a time it had not read
+
+"Run at <UTC>" was printed from the model's sense of when the run ended, not
+from a clock. All six routines now print **two read timestamps**: start taken
+from `date -u` at the beginning, finish taken when the output file is written.
+**If only the start was read, print only the start.**
+
+**This is small and it is not cosmetic.** A brief is evidence;
+`OPERATING-LOG.md` is the thing a task is Done against. **A fabricated timestamp
+in an evidence file is a fabrication however harmless the number is**, and the
+rule that a figure without a source is a defect does not carve out clocks. **One
+read timestamp is worth more than a plausible span.**
+
+### T-125 — the bands existed, and the gap was made by my own edit
+
+The file promised "the classification bands that follow from the total" and
+never stated them. **Four consecutive scans reported it and correctly refused to
+invent a threshold**, ranking by total and leaving entries unlabelled. That
+refusal was right and it is why nothing has to be undone.
+
+**The gap was made on 2026-10-14, by OL-0045 — this session's own work.** That
+edit removed the pointer to `src/lib/scoring/score.ts`, which defined the bands,
+and declared the command file the specification. **It cut the source and kept
+the promise.** Removing a dangling reference to a deleted file was right;
+failing to notice that the deleted file was carrying a definition the text still
+relied on was not.
+
+**Recovered, not invented.** Read today from `CLASSIFICATION_BANDS` on `main` in
+`downdirty84llc-creator/georgia-opportunity-ledger`: **85–100 Immediate Action ·
+70–84 Strong Opportunity · 55–69 Worth Investigating · 40–54 Limited or
+Specialized · 0–39 Information Only.**
+
+**Why that source is legitimate here.** The components and maxima in this file
+already came from that method and are declared fixed; completing the method from
+the same place is recovery rather than guessing. **No Ledger data was read and
+this routine reads none** — a published scoring formula is not the other
+business's records, and the separation CLAUDE.md §0 protects is of code and
+data, not of arithmetic this file already embeds. The owner may overrule any
+threshold.
+
+**And the axis had no direction.** `time sensitivity 15` never said whether
+sooner scores higher. Now stated: **15 is a closing deadline, limited supply or
+first-come-first-served; 3 is a rolling programme with no deadline** — not 0,
+because an evergreen programme is still actionable.
+
+**This overturns the 2026-11-02 reading, which was the opposite.** That scan
+took higher to mean "the window better favours acting now", under which a
+rolling programme scored high; under the recovered rule it scores 3 of 15. **So
+that scan's time-sensitivity scores are not comparable with today's, and the
+next scan must say so rather than rank old and new entries against each other.**
+
+**The reason this costs almost nothing is that the scan wrote its reading down
+and invited being overruled.** An undocumented assumption would have left four
+weeks of scores silently incomparable. **Stating a judgement you had to make is
+what makes it cheap to reverse** — the single most reusable thing in this entry.
+
+### The threshold that read two ways
+
+"Create due diligence tasks for anything above the 'worth investigating' band"
+meant **55** or **70** depending on whether "above" included the band. Now
+stated as a number: **55 or above.** Prose about a boundary is a boundary nobody
+can check.
+
+### Why all three stay In Verification
+
+**None of this is evidence yet.** T-44 closes when an intake surfaces a live
+customer thread from query 1 rather than a follow-up query. T-116 closes when a
+brief's stated finish time can be checked against its commit time. T-125 closes
+when a scan prints bands and says which axis direction it used. **Editing the
+instruction is the cheap half; a run obeying it is the half that counts** —
+which is the lesson T-69 is still sitting on, where the four firing prompts have
+contradicted `docs/ops/README.md` since 2026-10-14.
+
+---
+
+## OL-0094 — 2026-11-09 daily command brief
 
 **Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
 (repo-attached), **fired 2026-11-09T10:51:11Z and reached the session at
@@ -9968,6 +10260,26 @@ Critical rows closed on evidence this morning rather than rotting.**
 the balance figure stayed withheld even where publishing it would have read
 better.**
 
+### The fifth numbering collision, and what the losing push found this time
+
+**This entry was written as OL-0092 and renumbered to OL-0094 after a sibling
+session won the push with two entries of its own** — **OL-0092, the owner's
+APPROVAL of A-21**, and **OL-0093, three instruction-file defects closed.**
+**Their entries stand; this one moved, per the convention: the session that
+loses the push renumbers.** **Fifth instance.**
+
+**And losing the push caught a stale claim before it published.** **This brief
+was written at 15:30Z listing A-21 as pending and T-64 as still unpriced; the
+owner approved A-21 at about 15:31Z**, a minute later, **so the brief would have
+published a packet as open that had just been answered.** **The sections
+concerned were corrected during the merge, and the approval is attributed to the
+owner rather than reported as this run's work.**
+
+**Twice now a lost push has improved the record rather than only costing a
+renumber** — this morning's found an approvals board contradicting its own
+packet. **Two instances is not a case for racing, but the merge step is doing
+real work.**
+
 ---
 
-## Next entry: OL-0093
+## Next entry: OL-0095

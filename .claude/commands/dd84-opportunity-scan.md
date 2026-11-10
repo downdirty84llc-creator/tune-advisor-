@@ -78,8 +78,53 @@ because scores are compared across candidates and across weeks and a method that
 drifts makes every past score meaningless:
 
 financial value 25 · accessibility 20 · time sensitivity 15 · source reliability
-15 · capital requirement 10 · complexity 10 · risk 5 — and the classification
-bands that follow from the total.
+15 · capital requirement 10 · complexity 10 · risk 5 — total 100.
+
+### The classification bands
+
+| Total  | Band                       |
+| ------ | -------------------------- |
+| 85–100 | **Immediate Action**       |
+| 70–84  | **Strong Opportunity**     |
+| 55–69  | **Worth Investigating**    |
+| 40–54  | **Limited or Specialized** |
+| 0–39   | **Information Only**       |
+
+> **Recovered 2026-11-09, not invented.** Until today this file said "and the
+> classification bands that follow from the total" and never stated them. **Four
+> consecutive scans reported the gap and correctly refused to invent a
+> threshold**, ranking entries by total and leaving them unlabelled.
+>
+> **The gap was made by the 2026-10-14 edit to this file** (OL-0045). That edit
+> removed the pointer to `src/lib/scoring/score.ts`, which had defined the
+> bands, and declared this file the specification — **cutting the source while
+> keeping the promise.** The thresholds above are read from
+> `CLASSIFICATION_BANDS` in that same file on `main` in
+> `downdirty84llc-creator/georgia-opportunity-ledger`, today.
+>
+> **Why taking them from there is consistent and not a cross-business leak.**
+> The components and maxima in this file already came from that method; this
+> completes the method from the same place rather than guessing. **No Ledger
+> data was read and none is read by this routine** — a published scoring formula
+> is not the other business's records. **The owner may overrule any threshold**;
+> until then these are the bands.
+
+### Time sensitivity — higher means more urgent
+
+**15 is a closing deadline, limited supply, or first-come-first-served. 3 is a
+rolling programme with no deadline** — not 0, because an evergreen programme is
+still actionable and zeroing it would push genuinely useful finds below their
+real worth.
+
+> **This overturns the reading used on 2026-11-02**, which took higher to mean
+> "the window better favours acting now" — under which a rolling programme
+> scored **high**. Under this rule it scores **3 of 15**. That scan **stated its
+> reading explicitly so it could be overruled** (T-125), which is why the
+> correction is cheap. **Scores from 2026-11-02 and earlier are not comparable
+> with scores from today on this axis**, and the next scan should say so rather
+> than rank old and new entries against each other as though they were.
+> Direction read from `scoreTimeSensitivity` in the canonical file, same source
+> as the bands.
 
 Three rules this routine holds to:
 
@@ -115,9 +160,12 @@ Three rules this routine holds to:
    total — a total nobody can audit is a number nobody should act on.
 5. **Rank** by realistic revenue and cash preservation, then strategic fit, then
    owner effort. State what each candidate would actually take from the owner.
-6. **Create due diligence tasks** for anything above the "worth investigating"
-   band, with the deadline as the due date and a reminder set earlier than the
-   deadline, not on it.
+6. **Create due diligence tasks** for anything scoring **55 or above** — the
+   Worth Investigating band and up — with the deadline as the due date and a
+   reminder set earlier than the deadline, not on it. **The threshold is stated
+   as a number because the old wording, "above the 'worth investigating' band",
+   read either as 55 or as 70** depending on whether "above" included the band
+   itself.
 7. **Prepare a packet** for anything requiring outreach, an application, a
    commitment or a spend. That is where this routine stops.
 8. **Document.** Update the register, append the run entry.
@@ -129,7 +177,7 @@ reply:
 
 ```
 # DD84 Georgia opportunity scan — <date>
-Run at <UTC>. Since: <date of last scan>. Sources searched: <list>.
+Run <UTC start, read> to <UTC finish, read>. Since: <date of last scan>. Sources searched: <list>.
 Not searched: <list>.
 New: <n>. Updated: <n>. Expired or withdrawn: <n>. Duplicates merged: <n>.
 
@@ -161,6 +209,14 @@ Where two sources disagree, or where the primary source could not be reached.
 
 ## Not checked this run
 ```
+
+> **Both timestamps are read, never estimated.** Take the start time from the
+> clock (`date -u`) at the start of the run and the finish time from the clock
+> when the output file is written. **Do not state a range whose second half you
+> did not read**, and do not infer a finish time from how long the run felt.
+> Every brief from 2026-08-06 to 2026-11-03 stated a run-end time it had
+> estimated (T-116). **One read timestamp is worth more than a plausible span**:
+> if only the start was read, print only the start.
 
 ## Where it writes
 

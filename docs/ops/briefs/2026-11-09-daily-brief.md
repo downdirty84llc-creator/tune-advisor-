@@ -179,27 +179,27 @@ sixteen overdue, T-147, T-148 and T-151 due tomorrow, and T-143 not yet due** �
 T-151 was opened by this run, which is why the open count rises by one and the
 Critical count by one.\*\*
 
-| Task      | Days past    | Status                | What                                                            |
-| --------- | ------------ | --------------------- | --------------------------------------------------------------- |
-| **T-11**  | **81**       | **Blocked**           | **Stripe products and prices — and today's notice is NOT this** |
-| **T-13**  | **74**       | **Blocked**           | Legal review of the policy documents                            |
-| **T-52**  | **28**       | Awaiting Owner        | **The Meta credential phish — unread**                          |
-| **T-64**  | **26**       | **In Verification**   | **A-18 rejected 2026-11-09; now waits on A-21 alone**           |
-| **T-71**  | **24**       | Awaiting Owner        | **The account — and Stripe now pays into it**                   |
-| **T-60**  | **21**       | Awaiting Owner        | The platform account flag, deadline expired                     |
-| **T-73**  | **20**       | Awaiting Owner        | Five dated outflows                                             |
-| **T-88**  | **14**       | Awaiting Owner        | $450 unattributed                                               |
-| **T-91**  | **12**       | **In Verification**   | **The owner replied to him 2026-11-08**                         |
-| **T-92**  | **12**       | Awaiting Owner        | $700 unattributed                                               |
-| **T-100** | **10**       | Awaiting Owner        | **TikTok — third identical send; re-send now likelier**         |
-| **T-103** | **10**       | Awaiting Owner        | The front door on a backup card                                 |
-| **T-105** | **10**       | Awaiting Owner        | A-22 would chase a supplier who answered                        |
-| **T-110** | **10**       | Awaiting Owner        | **A power revision with an uncleared oil-pressure gate**        |
-| **T-136** | **3**        | Awaiting Owner        | **The charge-off clock — and the balance may be at zero**       |
-| **T-137** | **3**        | **Awaiting Approval** | **Whose account — A-25, and Stripe now pays into it**           |
-| **T-147** | **tomorrow** | Awaiting Owner        | A fourth payer sent the list price                              |
-| **T-148** | **tomorrow** | Awaiting Owner        | The unread commission negotiation                               |
-| **T-143** | **not yet**  | Awaiting Owner        | Google Play closes the account 2026-12-06                       |
+| Task      | Days past    | Status                | What                                                                   |
+| --------- | ------------ | --------------------- | ---------------------------------------------------------------------- |
+| **T-11**  | **81**       | **Blocked**           | **Stripe products and prices — and today's notice is NOT this**        |
+| **T-13**  | **74**       | **Blocked**           | Legal review of the policy documents                                   |
+| **T-52**  | **28**       | Awaiting Owner        | **The Meta credential phish — unread**                                 |
+| **T-64**  | **26**       | **In Verification**   | **PRICED at $350 — A-21 approved 2026-11-09. Revision unacknowledged** |
+| **T-71**  | **24**       | Awaiting Owner        | **The account — and Stripe now pays into it**                          |
+| **T-60**  | **21**       | Awaiting Owner        | The platform account flag, deadline expired                            |
+| **T-73**  | **20**       | Awaiting Owner        | Five dated outflows                                                    |
+| **T-88**  | **14**       | Awaiting Owner        | $450 unattributed                                                      |
+| **T-91**  | **12**       | **In Verification**   | **The owner replied to him 2026-11-08**                                |
+| **T-92**  | **12**       | Awaiting Owner        | $700 unattributed                                                      |
+| **T-100** | **10**       | Awaiting Owner        | **TikTok — third identical send; re-send now likelier**                |
+| **T-103** | **10**       | Awaiting Owner        | The front door on a backup card                                        |
+| **T-105** | **10**       | Awaiting Owner        | A-22 would chase a supplier who answered                               |
+| **T-110** | **10**       | Awaiting Owner        | **A power revision with an uncleared oil-pressure gate**               |
+| **T-136** | **3**        | Awaiting Owner        | **The charge-off clock — and the balance may be at zero**              |
+| **T-137** | **3**        | **Awaiting Approval** | **Whose account — A-25, and Stripe now pays into it**                  |
+| **T-147** | **tomorrow** | Awaiting Owner        | A fourth payer sent the list price                                     |
+| **T-148** | **tomorrow** | Awaiting Owner        | The unread commission negotiation                                      |
+| **T-143** | **not yet**  | Awaiting Owner        | Google Play closes the account 2026-12-06                              |
 
 **T-89 and T-117 left this list today by closing Done on evidence** — the first
 Critical row in this register to close that way rather than by rotting.
@@ -246,21 +246,31 @@ a lead and nothing is alleged about either sender.**
 
 ## 9. Approvals pending
 
-**Eight packets, down from nine: A-07, A-10, A-17, A-21, A-22, A-23, A-24 and
-A-25.**
+**Seven packets, down from nine over one morning: A-07, A-10, A-17, A-22, A-23,
+A-24 and A-25.** **The owner answered two today — A-18 rejected and A-21
+approved — the first packets answered since 2026-10-29, and both were recorded
+by a sibling session rather than by this run.**
 
 - **A-18 — REJECTED by the owner, 2026-11-09.** **The first packet answered
   since A-19 and A-20 on 2026-10-29, and it matches Torque's own recommendation
   of 2026-10-14.** **Recorded by a sibling session; nothing was ever sent, on
-  any day, by any session.** **T-64 now waits on A-21 alone.**
+  any day, by any session.**
 - **A-25 — four days old and materially more urgent than when raised.** **A live
   Stripe payments profile now deposits into the account whose ownership the
   packet asks about.** **Option C recommended: ownership plus the bare existence
   of a non-business obligation, no particular.**
-- **A-21 — the gate.** $350 published, $250 sold, $300 quoted — **and on
-  2026-11-06 a customer paid the published price.** **T-64 still unpriced, and
-  T-148's commission negotiation is a pricing commitment waiting behind the same
-  undecided authority.**
+- **A-21 — APPROVED by the owner, 2026-11-09, with row 1 held.** **This brief
+  was written at 15:30Z listing A-21 as pending; the owner approved it about a
+  minute later, and the claim was corrected during the merge rather than
+  published.** **T-64 is now priced at $350** — and **on 2026-11-06 a customer
+  paid that same published price**, which is the ladder's list rung. **Row 1 is
+  held and that is the useful part: the sibling run re-read all 29 messages of
+  the other thread before recording the approval and found the row prices work
+  as delivered when no calibration has ever been sent** — DD84's own words,
+  2026-10-06: _"Before I send it over, please complete the following
+  checklist."_ **So three sends are unblocked and one invoice is not.**
+  **T-148's commission negotiation no longer waits on undecided pricing
+  authority; it waits on whether anything was agreed.**
 - **A-22 — DEFER.** The supplier's two replies are unread at **19.41 and 35.59
   days.**
 - **A-23 — now 14.70 days.** One reply, **nothing to fill in.** **Still the only
@@ -301,22 +311,48 @@ and T-148 fall due tomorrow and are tomorrow's.**
 
 ## 11. Decisions the owner needs
 
-| Decision                                                                  | Cost to answer                                                  |
-| ------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| **T-110 — oil pressure on the Challenger**                                | **One sentence.** Ninth brief                                   |
-| **A-25 — whose account is it?**                                           | **One sentence**, and Stripe now pays into it                   |
-| **T-104 — is the card locking deliberate?**                               | **One sentence**, and it reframes four rows                     |
-| **T-151 — what is "Merry Market by DD84"?**                               | **One sentence.** The registry has no trading name by that name |
-| **T-136 — when did the account first become overdrawn, and is it still?** | **One click.** The alert may now read at zero rather than below |
-| **T-148 — has anything been agreed on a revenue share?**                  | **One sentence.** Seven messages are unread                     |
-| **T-147 / T-88 / T-92 / T-113 — what did the four payments buy?**         | **Four sentences**, and four customers get acknowledged         |
-| **T-53 — the realtor is waiting**                                         | An answer about the parcel, or a date                           |
-| **T-131 — the October statement nobody has opened**                       | **One click**, the only unused lever on $1,900.00               |
-| **T-52 — the Meta phish**                                                 | **One click.** 28 days                                          |
-| **T-143 — Google Play, by 2026-12-06**                                    | Verify contact details **and** publish an app or update         |
-| **T-33 — what is `dd84-api`?**                                            | It failed again today, with a timestamp                         |
-| **A-21, with $350 / $250 / $300 in view**                                 | One decision; three sends and a revenue share wait behind it    |
-| **A-23**                                                                  | **A yes.** 14.70 days                                           |
+| Decision                                                                  | Cost to answer                                                       |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **T-110 — oil pressure on the Challenger**                                | **One sentence.** Ninth brief                                        |
+| **A-25 — whose account is it?**                                           | **One sentence**, and Stripe now pays into it                        |
+| **T-104 — is the card locking deliberate?**                               | **One sentence**, and it reframes four rows                          |
+| **T-151 — what is "Merry Market by DD84"?**                               | **One sentence.** The registry has no trading name by that name      |
+| **T-136 — when did the account first become overdrawn, and is it still?** | **One click.** The alert may now read at zero rather than below      |
+| **T-148 — has anything been agreed on a revenue share?**                  | **One sentence.** Seven messages are unread                          |
+| **T-147 / T-88 / T-92 / T-113 — what did the four payments buy?**         | **Four sentences**, and four customers get acknowledged              |
+| **T-53 — the realtor is waiting**                                         | An answer about the parcel, or a date                                |
+| **T-131 — the October statement nobody has opened**                       | **One click**, the only unused lever on $1,900.00                    |
+| **T-52 — the Meta phish**                                                 | **One click.** 28 days                                               |
+| **T-143 — Google Play, by 2026-12-06**                                    | Verify contact details **and** publish an app or update              |
+| **T-33 — what is `dd84-api`?**                                            | It failed again today, with a timestamp                              |
+| **T-37 — row 1 of A-21 bills for a file never sent**                      | **Send the calibration, or re-price the row.** The approval holds it |
+| **A-23**                                                                  | **A yes.** 14.70 days                                                |
+
+## 12. This run lost a push, and the merge caught a claim a minute old
+
+**The push was rejected: a sibling session had pushed two entries of its own —
+the owner's APPROVAL of A-21, and three instruction-file defects closed.**
+**Their entries stand and this one renumbered to OL-0094, per the convention:
+the session that loses the push renumbers. Fifth instance.**
+
+**The merge caught a stale claim before it published.** **This brief was written
+at 15:30Z listing A-21 as pending and T-64 as still unpriced. The owner approved
+A-21 at about 15:31Z** — one minute later. **Six places in this file said the
+wrong thing and were corrected during the merge; the approval is attributed to
+the owner, not reported as this run's work.**
+
+**That is twice today a lost push improved the record rather than only costing a
+renumber** — this morning's found an approvals board contradicting its own
+packet. **Two instances is not a case for racing, but the merge step is doing
+real work, and a register with two sessions writing to it needs that step to be
+more than a formality.**
+
+**One thing the sibling found is worth repeating here because it is a customer
+fact, not a bookkeeping one.** **A-21's row 1 prices T-37's work as delivered,
+and no calibration has ever been sent on T-37** — DD84's own words of
+2026-10-06: _"Before I send it over, please complete the following checklist."_
+**The owner's approval holds that row rather than invoicing it.** **Three sends
+are unblocked; one invoice is not.**
 
 ## 12. Not a quiet day, and the shape of it has changed
 
@@ -341,6 +377,6 @@ the thread ID are what A-19 permits, and the significance can be stated without
 the number.**
 
 **The honest shape of it:** **twenty Critical rows, sixteen overdue and three
-due tomorrow; eight packets with the owner, one of which acquired a live money
+due tomorrow; seven packets with the owner, one of which acquired a live money
 consequence this morning; six outside-set deadlines; and the cheapest thing on
 the list is still one sentence about oil pressure, now in its ninth brief.**
