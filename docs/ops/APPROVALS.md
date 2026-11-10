@@ -52,34 +52,41 @@ and actual result.
 | A-24 | Redact a declined-payment figure from ten historical files                  | B + G | **Pending**                         | T-109                              |
 | A-25 | Whose account is the one this register reports as the business's?           | G     | **Pending**                         | T-137, T-71, T-129, T-136          |
 | A-26 | Reply to two unanswered inbound enquiries, in one decision                  | C     | **Pending**                         | T-152, T-95                        |
+| A-27 | Allow five hosts so primary sources can be validated                        | G     | **Pending**                         | T-98                               |
 
-**Eight packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25 and
-A-26.** **A-26 was raised on 2026-11-10 by the Tuesday intake and it
-deliberately covers two enquiries rather than one** — a second inbound enquiry
-arrived while A-23, the approval to reply to the first, had been pending fifteen
-days. **Queueing a second packet beside an unanswered one would make two things
-to not answer instead of one**, so A-26 asks for a single decision and A-23 is
-left Pending because an agent does not answer its own packet. **A-18 was
-REJECTED by the owner on 2026-11-09**, which is the answer Torque recommended on
-2026-10-14 and the first packet the owner has answered since A-19 and A-20 on
-2026-10-29. **The board row and this count were corrected on 2026-11-09 by the
-Monday intake (OL-0091): the run that recorded the rejection updated the
-packet's Status, Response and Actual result thoroughly and did not update the
-board, so for a few minutes this file said REJECTED in the packet and Pending in
-the table.** **The decision is the owner's; only the two derived places were
-corrected here.** **A-25 was raised on 2026-11-05 by the intake that found the
-cause** — the run met a personal obligation drafting from the account T-71 has
-reported as DD84's position since 2026-10-16, **recognised that neither A-13 nor
-A-19 reaches it, published the finding without any particular, and raised a
-packet** rather than deciding on its own judgement which account the register
-has been describing. **That is the shape A-19 itself was made in, and it is the
-second time a rule has been found not to reach what a run walked into.** **A-24
-was raised on 2026-10-29 by the run that caused it** — the intake published a
-declined-payment amount on a reading of A-19 that was wrong, corrected its own
-two files within the hour, and **raised a packet for the ten it may not edit on
-its own judgement.** **A-23 was added to this board in the same write as its
-packet** — the first time since the 2026-10-12 note that a packet and its row
-have landed together, which is what the thirteen counts below were asking for.
+**Nine packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
+A-26 and A-27.** **A-27 was raised on 2026-11-10 by the owed Monday opportunity
+scan, and it is the first packet in this file whose approved action the agent
+can carry out in a single tool call.** T-98 has been reported by four
+consecutive scans as "no page could be fetched"; this run read the cause from
+`get_environment` rather than inferring it — **the environment's allowed-hosts
+list is empty** — and the remedy is five named hosts. **A-26 was raised on
+2026-11-10 by the Tuesday intake and it deliberately covers two enquiries rather
+than one** — a second inbound enquiry arrived while A-23, the approval to reply
+to the first, had been pending fifteen days. **Queueing a second packet beside
+an unanswered one would make two things to not answer instead of one**, so A-26
+asks for a single decision and A-23 is left Pending because an agent does not
+answer its own packet. **A-18 was REJECTED by the owner on 2026-11-09**, which
+is the answer Torque recommended on 2026-10-14 and the first packet the owner
+has answered since A-19 and A-20 on 2026-10-29. **The board row and this count
+were corrected on 2026-11-09 by the Monday intake (OL-0091): the run that
+recorded the rejection updated the packet's Status, Response and Actual result
+thoroughly and did not update the board, so for a few minutes this file said
+REJECTED in the packet and Pending in the table.** **The decision is the
+owner's; only the two derived places were corrected here.** **A-25 was raised on
+2026-11-05 by the intake that found the cause** — the run met a personal
+obligation drafting from the account T-71 has reported as DD84's position since
+2026-10-16, **recognised that neither A-13 nor A-19 reaches it, published the
+finding without any particular, and raised a packet** rather than deciding on
+its own judgement which account the register has been describing. **That is the
+shape A-19 itself was made in, and it is the second time a rule has been found
+not to reach what a run walked into.** **A-24 was raised on 2026-10-29 by the
+run that caused it** — the intake published a declined-payment amount on a
+reading of A-19 that was wrong, corrected its own two files within the hour, and
+**raised a packet for the ten it may not edit on its own judgement.** **A-23 was
+added to this board in the same write as its packet** — the first time since the
+2026-10-12 note that a packet and its row have landed together, which is what
+the thirteen counts below were asking for.
 
 > **A-21 answered 2026-11-09 — APPROVED, and one row of it had to be held on
 > execution.** The four prices are adopted. **Row 1's $349 was priced as "work
@@ -2657,3 +2664,112 @@ arguably worth more: `ventures.md`'s enquiry-source field stops reading
 
 **Response** — _awaiting owner._ **Affected records** — T-152, T-95. **Actual
 result** — _not yet executed._
+
+---
+
+## A-27 — Allow five hosts so this record can validate a primary source
+
+**Status: PENDING — raised 2026-11-10 by `/dd84-opportunity-scan`.**
+
+**Decision requested** — Approval to add **five exact hostnames** to this
+session's cloud environment's **Allowed domains** list, leaving **Allow package
+managers** ticked and the access level at **Limited**. **APPROVE / APPROVE WITH
+CHANGES / DEFER / REJECT.**
+
+| Host               | What it unblocks                                                                  |
+| ------------------ | --------------------------------------------------------------------------------- |
+| `dca.georgia.gov`  | Rural Zone terms and designations, SSBCI programme pages — **T-97, T-98**         |
+| `doas.ga.gov`      | State purchasing, supplier registration, statewide contracts — **T-123, T-160**   |
+| `dor.georgia.gov`  | Form IT-RZ, the authoritative Rural Zone credit caps — resolves a logged conflict |
+| `www.sba.gov`      | 504, 7(a) and microloan terms — `CLAUDE.md` records DD84 pursuing 504             |
+| `rules.sos.ga.gov` | The Georgia Administrative Code, where SSBCI's figures are actually binding       |
+
+**Why this is a packet and not just a tool call.** **The agent can make this
+change**: `update_environment` is available, the environment is editable from
+this session, and the call shows the owner a confirmation card. **But this
+routine fires unattended, and an approval card shown to nobody is not a
+decision** — it would sit unanswered exactly as A-10 and A-23 have. **This
+packet is the durable record; approving it authorises the agent to make the
+call, which will itself ask for confirmation.** That is a deliberate
+double-gate, not an oversight.
+
+**Business objective** — **Five consecutive scans have been unable to open a
+single primary source.** The command file requires validating the issuing body's
+own page and confirming the deadline there before scoring, and **not one
+candidate in five weeks has met that bar.** **Every score carries an
+artificially capped source-reliability component**, several carry unresolved
+conflicts between an issuer's own documents, and **this scan withdrew a
+candidate that had been scored into the wrong state** — a failure a single page
+fetch would have caught on 2026-11-02.
+
+**Source and context** — **Read from `get_environment` this run, not inferred:**
+
+```
+network: { "type": "limited", "allow_mcp_servers": true,
+           "allow_package_managers": true, "allowed_hosts": [] }
+```
+
+**The list is empty.** Package registries and MCP server hosts are permitted
+separately, which is why every connector in this session works while no public
+web page can be opened. **A control host, `example.com`, fails identically** —
+which four scans established and this one explains.
+
+**Recommended plan** — **Add exactly those five hosts. Nothing else changes.**
+Keep the access level **Limited**, keep **Allow package managers** ticked, add
+no wildcard. **The agent then re-runs the candidate records that currently carry
+capped source reliability and publishes corrected scores with the read
+timestamps the method asks for.**
+
+**Alternatives considered**
+
+- **Unrestricted network access.** **Rejected.** It would work and it is far
+  more than this needs. **Five government hosts is the smallest change that
+  fixes the defect**, and a public repository is not the place to widen a
+  container's reach for convenience.
+- **A wildcard such as `*.georgia.gov`.** **Rejected** — the tool refuses
+  patterns, and the width of a wildcard is a settings decision rather than an
+  agent's.
+- **Leave it, and keep reporting the ceiling honestly.** **This is a genuine
+  option and it has been the behaviour for five scans.** It is rejected now
+  because **the cost stopped being theoretical**: a candidate was scored into
+  the wrong state, and two of an issuer's own documents disagree on figures with
+  no way to tell which is current.
+- **Add more hosts — USDA, TCSG, county sites.** **Deferred, not rejected.**
+  These five cover every candidate currently scored. **Scope creep in a
+  permissions request is its own risk**, and more can be asked for later with
+  evidence.
+
+**Cost and cash impact** — **None. No spend, no subscription, no fee.** The cost
+is the owner's attention for one confirmation.
+
+**Risks and safeguards**
+
+- **It widens what this container can reach.** Mitigated by **five exact
+  hostnames, all state or federal government sites, no wildcard, level left
+  Limited.**
+- **It applies to every future session on this environment, not only this one**
+  — the environment is personal and `applies_to` says so. **That is the point:
+  the fix should outlast this run.**
+- **No credential is involved.** **Nothing is saved to the environment but
+  hostnames**, and no API key is requested by this packet.
+- **It cannot make the agent publish or spend.** Fetching a page is a read.
+  **Every approval boundary in §4 stands unchanged.**
+- **It is reversible in one step** — the same settings page removes a host.
+
+**Systems affected** — **The cloud environment's network policy, and nothing in
+this repository.** **No repository, branch, website, account, integration or
+customer record is touched.**
+
+**Customer and public impact** — **None.** No customer, no publication, no
+outbound message.
+
+**Success test** — **A scan brief states a deadline, with the UTC time it was
+read, from the issuing body's own page** — which no brief in this record has
+ever done. **Secondary: the DCA/DOR Rural Zone cap conflict and the SSBCI
+loan-limit conflict are resolved to one figure each, or shown to be genuinely
+contradictory at source.**
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response** — _awaiting owner._ **Affected records** — T-98, T-97, T-123,
+T-160, T-161. **Actual result** — _not yet executed._

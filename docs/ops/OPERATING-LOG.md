@@ -10425,4 +10425,240 @@ and **backdating a heading to a day the work did not happen on is the error the
 
 ---
 
-## Next entry: OL-0096
+## OL-0096 — the owed 2026-11-09 Georgia opportunity scan, run 2026-11-10
+
+**Routine:** `/dd84-opportunity-scan`, Class A. **Trigger:** DD84 Weekly Georgia
+Opportunity Scan (repo-attached), **fired 2026-11-09T11:26:06Z.** **Run from
+2026-11-10T10:40:22Z, read from the clock; end time is this entry's commit, per
+T-116.** **Since: 2026-11-02 — eight days, not seven.**
+
+**Why it is dated 2026-11-10 and not 2026-11-09.** **The scan fired on Monday
+and did not run**: its notification was read in the same turn as the Monday
+daily brief's, both having waited about four and a half hours through worker
+restarts, and **the turn ended after the brief and before the scan.** **No
+skeleton was written on 2026-11-09**, so unlike the 2026-11-06 cash review there
+is no orphaned file — only a gap in the series. **It is dated the day the work
+happened and records that it fired a day earlier, because backdating a heading
+to a day the work did not happen on is the error the cash-review annotation was
+written to avoid.** **It was run rather than written off because the next
+scheduled scan is 2026-11-16 and skipping would have left a fortnight
+uncovered.**
+
+**Checkout, contract item 0:** tip `70230a3`, `HEAD` equal to origin, no `src/`,
+no `package.json`, clean, **84 tracked files — not the 28 the prompt expects,
+thirty-second run reporting it, T-85 step 3.**
+
+**Skeleton committed before research at `34f707f`** — OL-0050's repair,
+**twenty-sixth application.** The intake had committed minutes earlier; **the
+test applied was the size of what a restart would destroy**, and an instrument
+test, a deduplication pass over four prior scans and six extended searches is
+substantial.
+
+### Source classes searched, so the next run knows what was not
+
+**Searched:** public Georgia funding and procurement sources via `WebSearch`
+(six extended queries); **Gmail** for grant, procurement, SBDC, SBA and chamber
+mail since 2026-11-02; **the operating record** — `TASK-REGISTER.md` and all
+four prior scan briefs, which is the whole of this routine's duplicate check;
+and **the session's own network configuration** via `get_environment`.
+
+**Not searched:** **every primary source — no page was fetched by any tool.**
+**Google Drive**, so owner criteria and financing assumptions are unconfirmed.
+**The Georgia Procurement Registry**, **GA@WORK Marketplace itself**, **DCA's
+SSBCI pages**, **the Jackson County Development Authority and City of
+Jefferson**, and **county surplus-property and local RFP postings** — a source
+class the command file lists that was skipped in favour of validating what four
+prior scans had already found.
+
+### T-98: the cause, read rather than inferred
+
+**`get_environment` reports the environment's network as `limited` with
+`allowed_hosts: []` — an empty list.** Package registries and MCP server hosts
+are permitted separately, **which is why every connector in this session works
+while no public web page can be opened**, and why a control host failed for four
+consecutive scans.
+
+| Instrument                                                                  | Result                                                       |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `WebFetch` on `example.com`, `doas.ga.gov`, `www.dca.ga.gov`, `www.sba.gov` | **`getaddrinfo ENOTFOUND`** on all four                      |
+| `curl` on `example.com` and `doas.ga.gov`                                   | **`curl: (56) CONNECT tunnel failed, response 403`** on both |
+| `getent hosts example.com`                                                  | **no container DNS**                                         |
+| Proxy status endpoint                                                       | **answered** — the proxy itself is reachable                 |
+
+**The 2026-10-26 reading is confirmed, not superseded: two different failures.**
+`curl` reaches the proxy and is refused; WebFetch never reaches it. **A
+momentary reading of `curl`'s `http_code: 000` as "curl no longer reaches the
+proxy either" was wrong and was caught by the verbose error before publication**
+— the brief records the correct finding, not the convenient one.
+
+**T-98 moves to Awaiting Approval under A-27**, and its title is corrected from
+the symptom to the fact. **A-27 asks for five exact hostnames** —
+`dca.georgia.gov`, `doas.ga.gov`, `dor.georgia.gov`, `www.sba.gov`,
+`rules.sos.ga.gov` — **and it is the first packet in this record whose approved
+action the agent can carry out in a single `update_environment` call.**
+**`update_environment` was deliberately not called:** this routine fires
+unattended, and **an approval card shown to nobody is not a decision.**
+
+### Candidates
+
+| #   | Candidate                                                | Score      | Band                       | Record                 |
+| --- | -------------------------------------------------------- | ---------- | -------------------------- | ---------------------- |
+| 1   | **GA@WORK Marketplace for Suppliers registration**       | **64/100** | **Worth Investigating**    | **T-160**              |
+| 2   | **Georgia SSBCI — Credit Guaranty / Loan Participation** | **40/100** | **Limited or Specialized** | none — below threshold |
+
+**64 equals the highest score this routine has ever recorded** (Georgia SBDC
+advisory, 2026-10-12). **It is also the only candidate in five scans that costs
+nothing, commits nothing and opens a revenue channel rather than a liability** —
+every financing entry found to date is debt against the cash shape T-71
+describes, and each has been argued against on that ground.
+
+**T-160 is a task and not a packet, deliberately.** Registering is an
+application, so the agent does not do it — **and the form needs a Tax ID, a
+gross-receipts figure and an NIGP code selection that only the owner holds.**
+**A packet whose approved action the agent still could not execute is a worse
+instrument than a task.** **Its NIGP code depends on T-123, which is past due:
+registering under the wrong code is worse than not registering.**
+
+**SSBCI is promoted from "scored but held" and then argued against.** The
+2026-11-02 scan left it unscored for want of an official page; DCA's own
+documents appeared in results this run, though none was fetched. **It is
+lender-side — DD84 cannot apply at all — DCA publishes no lender roster, and
+DCA's own materials conflict on the loan limits.** Risk scored 1 of 5.
+
+### The scan's most consequential finding: a candidate was in the wrong state
+
+**T-124 is withdrawn, not deleted.** The 2026-11-02 scan scored a "Jackson
+County Chamber small-business grant" at 42/100 from
+`jcchamber.com/small-business-grant-application/` and placed it in **Jefferson,
+Georgia — DD84's own county.** **Two targeted searches this run put that domain
+in Pascagoula, Mississippi**: a Pascagoula post-office box on its contact page,
+a self-description as the Mississippi Gulf Coast, its own member directory at a
+URL containing `pascagoula`, and a Chevron sponsorship consistent with a
+refinery town. **No Jackson County chamber in Jefferson, Georgia appears under
+that domain.**
+
+**So the 2026-11-02 correction was half right.** It was right that the "2026" in
+the first snippet was wrong and right to refuse to publish a deadline that did
+not exist. **It was wrong to reject Chevron and wrong to place the page in
+Georgia.** **The $3,000 cap, the membership rule and the October cycle are
+probably all accurate about Mississippi.**
+
+**The mechanism, because it will recur: an aggregator gave a county name without
+a state, and a county name that exists in at least five states was resolved to
+the one the reader already had in mind.** **The 11-02 run tested the date and
+not the place, because the place was never in the search result — the reader
+supplied it.** A separate true-looking fact, that a Jackson County chamber is
+registered as a charity in Jefferson, GA, is about a different organisation at a
+different domain, **and it is what made the misreading feel confirmed.**
+
+**What it cost: T-124 told the owner to make a phone call that would have gone
+to Mississippi.** **Nothing was spent and no one was contacted**, because the
+next action was always the owner's and the owner has not acted on it. **T-161
+asks the surviving question at the right domain** — does Jackson County, GA or
+the City of Jefferson run a programme at all? **This run searched and found
+none, which is a negative finding rather than a gap.**
+
+### The other business's product is scoring the same opportunities
+
+**Four alerts from the Georgia Opportunity Ledger's own alert address arrived in
+DD84's inbox on 2026-11-06** and were read as DD84 mail, which is a source this
+routine is told to check. **No Supabase tool was called. No Ledger repository,
+database or deployment was touched. Nothing found anywhere in this scan becomes
+a Ledger record, and nothing was written into `docs/growth/`.**
+
+**It corroborates the band recovery, which was not sought.** The alerts label
+scores of **41, 43 and 46** as **"Limited or Specialized"** — exactly the 40–54
+band recovered on 2026-11-09. **That is the first evidence from outside this
+repository that the recovered thresholds are the ones in use**, after four scans
+correctly refused to invent them.
+
+**And it shows two runs of the same published method disagreeing by up to ten
+points** — the Ledger scores SBA 504 at 41 where this register said 47, and SBA
+microloans at 46 where this register said 56. **The Ledger's numbers are not
+adopted and nothing is re-scored from them: a competing scoring run is not an
+issuing body.** Two known causes could produce it — this register's
+time-sensitivity direction changed on 2026-11-02 and its source reliability has
+been capped by T-98 for five scans. **What cannot be claimed is that either set
+is right.**
+
+### Other changes recorded
+
+- **Supplier registration route changed**: Team Georgia Marketplace → **GA@WORK
+  Marketplace for Suppliers, since 2026-07-01**, so the 2026-10-19 entry's next
+  action pointed at a retired system. **DOAS's own Procurement Manual V12 still
+  names the old one** — a conflict, logged.
+- **Rural Zone: the 2027 designation application closed 2026-08-14**, 88 days
+  ago, with no later cycle published; **a local news report questions whether
+  the programme continues at all**; and **no Jackson County or Jefferson
+  community appears on any Rural Zone list found.** **None of this corrects the
+  2026-10-26 Elberton entry** — that entry was built on relocating into a
+  designated zone and said so. **A reading that treated it as a correction was
+  considered and rejected.** **Not re-scored**, because its limiting components
+  were already employment and capital. **T-97 is unmoved and is the owner's.**
+- **The SBA microloan entry is not re-scored either**, and that is a decision:
+  ACE lends **from $15,000**, which argues risk down except that risk is already
+  at its floor, while "open to owners banks turn down" argues accessibility up.
+  **Moving a number a point or two on search-synthesis evidence would imply a
+  precision this routine does not have.**
+- **`ventures.md`'s all-time revenue figure is 99 days old** (verified
+  2026-08-03) against a 30-day re-verification rule. **It is not quoted as a
+  current figure and no score depends on it.**
+
+### T-125 closes Done
+
+**The classification bands were recovered 2026-11-09 and the time-sensitivity
+direction corrected 2026-11-02. This scan is the first run to apply both** —
+every entry is banded and a rolling programme scores 3 of 15 rather than high.
+**This entry is the evidence.** **Scores from 2026-11-02 and earlier are not
+comparable with later ones on that axis**, and the brief says so rather than
+ranking old and new against each other.
+
+### Register
+
+**T-160 and T-161 added. T-124 withdrawn No Action. T-125 closed Done. T-98
+moved to Awaiting Approval with its title corrected.** **161 tasks: 21 Done · 4
+No Action · 2 Accepted Risk · 11 In Verification · 4 In Progress · 6 Awaiting
+Approval · 73 Awaiting Owner · 6 Blocked · 32 Planned · 2 Backlog.** **103 of
+the 134 open rows are past due. Twenty-two rows are Critical and open: sixteen
+overdue, newest four days and oldest eighty-two.** **Nine approval packets
+pending.** **The recount now prints every bucket and checks the total against
+their sum**, which is the change OL-0095 called for after it found the
+2026-11-09 counts line wrong in three buckets whose errors offset exactly.
+
+### Boundaries held
+
+**No `mcp__Supabase__*` call — a flat prohibition, not a read-only allowance.**
+**Nothing of the Georgia Opportunity Ledger's was touched** beyond reading four
+alert emails it sent to DD84's own inbox. **Nothing written into
+`docs/growth/`.** **No source, agency, broker, lender or chamber contacted; no
+application, expression of interest or offer submitted; no capital committed and
+nothing signed.** **`update_environment` not called.** **Nothing scored that
+could not be opened, and no deadline stated as validated** — every entry carries
+a capped source-reliability component with the reason named. **No assumption
+presented as a source fact**: every candidate has separate **Stated by source**
+and **Assumed by Torque** blocks, and every neutral-for-unknown component says
+so. **No midpoint quoted** — the SSBCI figures are published as the conflicting
+ranges they are. **The withdrawn candidate's original entry stays in its own
+brief**, annotated rather than deleted. **Pushed only to
+`claude/claude-md-docs-cqvhy6`; no pull request.**
+
+**One more thing this run did, and it belongs in the log because it is a
+recurrence.** **The leak gate refused this commit on the first attempt: one real
+string and nineteen false positives.** The real one was **the other venture's
+alert email address** — §5 bars email addresses as a class, the string is not in
+this repository today, and it was removed rather than argued about, because the
+finding needs no address. The nineteen were **the words "Jackson County"**,
+matched by a pattern written to guard the withheld court-date notice. **Jackson
+County is DD84's own county and this scan's central finding is about
+distinguishing it from a Jackson County in Mississippi** — so the gate was
+blocking exactly what the record exists to publish. **This is the same mistake
+as the Gmail thread-ID pattern on 2026-11-09**: a term the record is required to
+publish does not belong in the gate. **The pattern was narrowed with a comment
+saying why so a later run does not re-add it**, and the three phrases that
+actually distinguish the withheld notice remain in the gate and are not
+reproduced here — listing a leak gate's patterns in a public record works
+against the gate.
+
+---
+
+## Next entry: OL-0097

@@ -131,7 +131,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-95  | The first inbound enquiry in five runs, unqualified and unread                                | sales      | **High**     | **Awaiting Approval**    | Owner | **A-23 pending**                  | 2026-10-27   |
 | T-96  | The business site has new indexing failures on duplicate canonicals                           | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-10-30   |
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
-| T-98  | WebFetch resolves no host, control included; the session network policy is the cause          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
+| T-98  | The environment allows no hosts at all; allowed_hosts is empty                                | ops        | **High**     | **Awaiting Approval**    | Owner | **A-27**                          | 2026-11-09   |
 | T-99  | Is any Georgia fleet or vehicle-repair solicitation actually open?                            | sales      | Normal       | Blocked                  | Agent | A to read                         | 2026-11-09   |
 | T-100 | TikTok rejected the 11-02 proof of address as unverifiable — not a re-send                    | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
 | T-101 | A third DD84 repository exists with failing CI, unknown to this register                      | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-10-30   |
@@ -157,8 +157,8 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-121 | A second bank account and an advisors account the register never recorded                     | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-122 | The third repository has a Supabase project and it has been paused                            | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-123 | Does remote ECU calibration qualify as fleet "maintenance" for DOAS enrollment?               | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
-| T-124 | Is DD84 a Jackson County Chamber member, and is there a 2026 grant cycle?                     | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                       | 2026-11-09   |
-| T-125 | Scan scoring: no band thresholds, and no direction for "time sensitivity"                     | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-16   |
+| T-124 | WITHDRAWN: the jcchamber.com grant is in Pascagoula, Mississippi                              | sales      | Normal       | No Action (accepted)     | Owner | A to report                       | 2026-11-09   |
+| T-125 | Scan scoring: bands recovered, direction corrected, both applied                              | ops        | Normal       | Done                     | Agent | S-01 (Class A)                    | 2026-11-16   |
 | T-126 | A lender now contradicts itself on an application this register cannot find                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-05   |
 | T-127 | Vercel free tier at 75%; projects auto-pause if it is exceeded                                | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-06   |
 | T-128 | A Pinterest board names DD84; the registry records social accounts as UNKNOWN                 | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-09   |
@@ -193,58 +193,64 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-157 | Cold outreach cites DD84's real /contact page on a fabricated prior chain                     | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-13   |
 | T-158 | Kalshi: a new sign-in, a new passkey, and Google account data shared                          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
 | T-159 | Personal third-party mail arrives in the business inbox — §5 judgement                        | ops        | Normal       | **Awaiting Owner**       | Owner | **§5 — packet if kept**           | 2026-11-13   |
+| T-160 | Register DD84 in GA@WORK Marketplace; NIGP code depends on T-123                              | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-14   |
+| T-161 | Does Jackson County GA or Jefferson run a small-business programme?                           | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-16   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **20 Done** · **3 No Action** · **2 Accepted Risk** · 12 In Verification
-· 4 In Progress · **5 Awaiting Approval** · **74 Awaiting Owner** · 6 Blocked ·
-31 Planned · 2 Backlog. **159 tasks.** Recounted mechanically with
-`^\| T-\d+\s*\|` — **not the two-digit pattern, see the note below** — last
-**2026-11-10**, at the Tuesday inbox intake (**T-152 to T-159 added; T-100's
-title corrected**). **THE RECOUNT CAUGHT THE PREVIOUS COUNTS LINE WRONG, AND IT
-IS WORTH MORE THAN ANY ROW ADDED TODAY.** The 2026-11-09 line read **9 In
-Verification · 6 In Progress · 30 Planned** for the same 151 rows. **The true
-figures were 12, 4 and 29.** **The three errors offset exactly — plus three,
-minus two, minus one — so the total of 151 was right by luck**, which is
-precisely the failure the note below was written about: _"Had the line been
-written as 99 + 3 it would have been right by luck and the broken pattern would
-have shipped."_ **Three buckets were wrong for a day and nothing detected it
-except recounting from the rows instead of adjusting yesterday's figures.**
-**The lesson is not that the pattern failed — it did not. The per-bucket counts
-were simply never recounted, only the total was.** From now the recount prints
-every bucket and the total is checked against their sum. **T-152 is the run's
-finding: a second inbound customer enquiry, a 1946 Cadillac, asking whether DD84
-is near Savannah — and the first enquiry, T-95, is still a single unread message
-sixteen days on with A-23 pending fifteen.** **A-26 is raised to cover both
-enquiries in one decision rather than queue a second packet beside an unanswered
-one.** **T-100's title is corrected and its leading hypothesis withdrawn.** It
-read _"sent 3x on a two-day cadence — a re-send, likely"_; TikTok's 2026-11-09
-rejection names a specific defect — the authenticity of the proof-of-address
-document — and that document was submitted on 2026-11-02, **after T-100 was
-raised**, so this instance cannot be a re-send of anything. The cadence
-observation about the earlier three stands; the inference drawn from it does
-not. **T-153 is the first decline in this register attributable to there being
-no money rather than to a card being deliberately off**, and it is on a
-different card from the one T-139 names — amount and digits withheld under A-19,
-thread ID held. **T-154 puts a dated cliff on infrastructure: a Netlify team
-under the owner's handle has exhausted its credits, production deploys and Agent
-Runners are paused, and the billing cycle resets 2026-12-02.** **T-156 records
-an "AI Executive Automation System" specification drafted outside this
-repository with no approval trail beside the two that have one.** **T-158 is the
-fourth account-access event in eight days after T-134, T-144 and T-150, and the
-one that matters is that Google account data was released to a third party — the
-primary Google account is the account this whole record reads from.** **74 of
-the 159 rows are Awaiting Owner**, and **104 of the 134 open rows are past
+Counts: **21 Done** · **4 No Action** · **2 Accepted Risk** · 11 In Verification
+· 4 In Progress · **6 Awaiting Approval** · **73 Awaiting Owner** · 6 Blocked ·
+32 Planned · 2 Backlog. **161 tasks.** Recounted mechanically with
+`^\| T-\d+\s*\|`, **every bucket printed and the total checked against their
+sum** — **not the two-digit pattern, see the note below** — last **2026-11-10**,
+at the owed Monday opportunity scan (**T-160 and T-161 added; T-124 withdrawn,
+T-125 closed Done, T-98 moved to Awaiting Approval**). **The per-bucket check is
+new today and it exists because the recount caught the 2026-11-09 counts line
+wrong.** That line read **9 In Verification · 6 In Progress · 30 Planned** for
+151 rows whose true figures were **12, 4 and 29**; **the three errors offset
+exactly, so the total was right by luck.** **The regex was never at fault — the
+buckets had simply never been recounted, only the total had.** Caught by the
+Tuesday intake, OL-0095. **T-124 is withdrawn rather than deleted, and it is the
+scan's most consequential finding.** The 2026-11-02 scan scored a "Jackson
+County Chamber small-business grant" at 42/100 and placed it in **Jefferson,
+Georgia — DD84's own county**. **`jcchamber.com` is the Jackson County Chamber
+of Commerce in Pascagoula, Mississippi**, which its own member directory and a
+Pascagoula post-office box confirm. **T-124 told the owner to make a phone call
+that would have gone to the wrong state.** The mechanism is recorded in the
+brief: **an aggregator gave a county name without a state, and a county name
+that exists in at least five states was resolved to the one the reader already
+had in mind** — the 11-02 run tested the date and not the place, because the
+place was never in the result. **T-161 asks the surviving question at the right
+domain: does Jackson County, GA or the City of Jefferson run a programme at all?
+This run searched and found none.** **T-125 closes Done.** The classification
+bands were recovered 2026-11-09 and the time-sensitivity direction corrected
+2026-11-02; **the 2026-11-10 scan is the first run to apply both**, and OL-0096
+carries the evidence. **Scores from 2026-11-02 and earlier are not comparable
+with later ones on the time-sensitivity axis.** **T-98 moves to Awaiting
+Approval under A-27, and its title is corrected to the fact rather than the
+symptom.** `get_environment` reports the session's network as `limited` with
+**`allowed_hosts: []`** — **an empty list, so no public web host is reachable by
+any tool**, which is why a control host failed for four consecutive scans. **It
+is the first time T-98 has had a remedy an agent can execute**: A-27 asks for
+five named hosts, and approving it authorises a single `update_environment`
+call. **T-160 is the scan's one qualifying candidate** — GA@WORK Marketplace
+supplier registration at **64/100**, equal to the highest score this routine has
+recorded — **and it is a task rather than a packet because the form needs a Tax
+ID, a gross-receipts figure and an NIGP code only the owner holds; a packet
+whose approved action the agent still could not execute is a worse instrument
+than a task.** **Its NIGP code depends on T-123, which is past due.** **73 of
+the 161 rows are Awaiting Owner**, and **103 of the 134 open rows are past
 due.** **Twenty-two rows are Critical and open: sixteen overdue (newest four
 days, oldest eighty-two), T-147, T-148 and T-151 due 2026-11-10, T-152 and T-153
-due 2026-11-11, T-143 due 2026-11-20.** **Eight approval packets pending, A-26
-being the new one.** The owner answered two on 2026-11-09 — **A-18 rejected and
-A-21 approved with row 1 held** — the first packets answered since 2026-10-29,
-both recorded by a sibling session. **A-21's row 1 is held because it prices
-T-37's work as delivered and no calibration has ever been sent on T-37, so three
-customer sends are unblocked and one invoice is not.**
+due 2026-11-11, T-143 due 2026-11-20.** **Nine approval packets pending: A-07,
+A-10, A-17, A-22, A-23, A-24, A-25, A-26 and A-27.** The owner answered two on
+2026-11-09 — **A-18 rejected and A-21 approved with row 1 held** — the first
+packets answered since 2026-10-29, both recorded by a sibling session. **A-21's
+row 1 is held because it prices T-37's work as delivered and no calibration has
+ever been sent on T-37, so three customer sends are unblocked and one invoice is
+not.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
