@@ -10818,4 +10818,155 @@ activity.**
 
 ---
 
-## Next entry: OL-0098
+## OL-0098 — 2026-11-09 · A-28 raised: the drafts A-21's prices were meant to ride on had gone stale, and one repeats a question already asked
+
+- **Timestamp** threads read and drafts written **2026-11-09**; **committed
+  2026-11-10** after nine commits landed in between. **Ages below are as
+  measured on 11-09 and are one day older now** — not re-stamped.
+- **Numbered OL-0093 and A-26 when written; landed as OL-0098 and A-28.** Two
+  sibling runs took both numbers while this was in progress. **Eighth log
+  collision and fifth packet collision in this record.** Upstream's A-26 is a
+  different decision on different threads (T-152, T-95) and **nothing here
+  overlaps it**; this packet took the next free number rather than displacing
+  it.
+- **Task** T-37, T-64, T-66 · **Approval** **S-01** (Class A — drafting and
+  packet preparation). **Nothing sent. No draft placed in the mail account.**
+- **Action** Read all three follow-up threads in full, found two of A-20's three
+  drafts contradicted by events and the third repeating an unanswered question,
+  raised **A-28** with all three revised, and recommended closing A-20 as
+  superseded.
+- **Tool** `mcp__Gmail__get_thread` ×3 (31, 29 and 2 messages), `Read`, `Edit`,
+  `git`.
+- **Checkout** — base **`553de76`**, `HEAD` equal to
+  `origin/claude/claude-md-docs-cqvhy6`, **no `src/` and no `package.json`.**
+- **Reached** Gmail, read-only. **Not reached** Stripe, PayPal — **so the $350
+  A-26 would quote still cannot be collected through any system this session can
+  see.**
+
+### Why this was the next thing to do
+
+**A-21 approved the prices. A-20 was supposed to carry them to the customers and
+it was deferred for exactly that reason** — _"price the jobs first."_ When A-21
+landed, the deferral's condition was met and A-20 became sendable in principle
+on the same day. **So the obvious next step was to check it could actually be
+sent. It could not.**
+
+### Two of three drafts had stopped being true, and the third had never been useful
+
+| Draft        | Says                                          | Thread says                                                        |
+| ------------ | --------------------------------------------- | ------------------------------------------------------------------ |
+| **1 — T-64** | _"I'll come back to you"_ with the crank data | **DD84 came back 2026-10-29** with a seventh calibration           |
+| **2 — T-37** | _"how's it running since the last file?"_     | **There was no last file.** Nothing has ever been sent on that job |
+| **3 — T-66** | _"are you still looking at that?"_            | **DD84 asked that on 2026-10-08.** No answer in **32 days**        |
+
+**Draft 2 is the one worth noticing, because it dates the error.** A-21 priced
+T-37 as "work delivered" on 2026-10-22 and that was wrong. **A-20 had already
+assumed a delivered file on 2026-10-21** — _"since the last file"_. **The same
+mistake was in the record a day before the packet that repeated it**, and
+neither caught it until both threads were read end to end. **Reading the
+destination is what found it; nothing in the register would have.**
+
+### The finding that was not in the record at all
+
+**The Lexus prospect asked one question 55 days ago and has never been told the
+answer.** His own words, 2026-09-15: _"please let me know what the steps are and
+**what price range** this is for this to be remotely"_, wanted _"asap"_. DD84
+replied once, 23 days later, and **deferred the price** pending a support check.
+
+**The range existed the whole time.** T-66's own entry records **Toyota/Lexus
+custom ECU tuning at $400–$650**, and **§5 says ranges stay ranges** — so a
+range was always sayable. **What blocked a useful reply was never the price
+list; it was that nobody connected the published range to the question.**
+
+**A-20 draft 3 would have been the second unanswered "are you still there" on
+that thread.** → **A-28 draft 3R gives him the range as a range**, states
+plainly that platform support for a 2016 RC 350 / 2GR-FSE is unconfirmed, and
+**refuses to promise a particular sound**, because a decel-pop calibration is an
+exhaust-character change and selling it as a result would be the kind of promise
+§5 forbids.
+
+**One fact an agent cannot supply**: whether that car is remotely flashable with
+DD84's tooling. **Not in `ventures.md`, not in the thread.** Inventing it would
+be inventing the product, so **3R is held on the owner answering it** — and if
+the answer is no, a one-line decline beats a third chase.
+
+### A-20 recommended for closure, not rejection
+
+**Same disposition A-18 got, for the same reason, and it is now twice in one
+record**: a packet that was right when raised and wrong by the time it could be
+sent. **The nineteen days it spent deferred are what did it**, and **the
+deferral was still the right call** — pricing first was correct; the drafts
+simply aged inside it. **Recorded as superseded rather than rejected** because
+rejecting it would imply the work was wrong.
+
+**One thing deliberately not tidied:** A-20's Actual-result block says the Lexus
+enquirer is _"~21 days stalled"_. **That was true on 2026-10-29 and is 32 days
+now, and it is left as written.** Re-stamping an age inside a block to match a
+later reading is how a record stops showing when it learned things.
+
+### The board row was written in the same edit as the packet
+
+**Fifteenth time would have been easy.** A-28's row went into the table in the
+same write as its body — **the second time since the 2026-10-12 note that this
+has happened, and the first immediately after a session logged the count saying
+it keeps not happening.** The count stands at fourteen.
+
+### Re-verified on 2026-11-10 before committing, because of what landed in between
+
+**Nine commits arrived while this was unpushed**, one of them titled _"the owner
+answered a customer 8 minutes before this register asked permission to"_ — the
+third recorded instance of a packet being invalidated by the owner acting
+directly. **That is exactly the failure this entry is about**, so all three
+threads were re-checked before pushing rather than assumed:
+
+- **A targeted search over the last two days found no new message on any of the
+  three.** The only recent hits were two of the owner's own contact-form system
+  tests, unrelated to these jobs.
+- **So all three drafts are still accurate**, and the ages are one day longer.
+
+**The sibling's case was T-152 and T-95, not these threads** — but checking cost
+one search and the alternative was asking the owner to approve a message already
+sent. **A packet that was right when raised and wrong when answered is the one
+thing this packet exists to stop; it would be absurd to ship it stale.**
+
+### What was deliberately not done
+
+- **Nothing sent, and no draft created in the mail account.** All three live in
+  A-28 only. **Class C is the owner's.**
+- **No price quoted on T-37's draft.** A-21 adopted $349 and $149 there and left
+  which applies undecided; **2R carries neither, because quoting one would
+  choose a reading for the owner.**
+- **No single figure quoted to the Lexus prospect** — a published range, as a
+  range, under §5.
+- **No platform capability asserted** for the 2GR-FSE.
+- **No invoice raised and no collection attempted.** The $350 is quotable under
+  A-21 and **still has no working channel to be paid through** (T-36).
+- **1R-a was recommended but not chosen.** It differs from A-21's own safeguard,
+  which said a no-price message should go first; **the packet states both
+  instructions, explains why they do not actually conflict, and leaves the
+  variant to the owner.**
+- **No power figure, turnaround, date or outcome promised in any of the three
+  drafts.**
+
+### Class held
+
+Gmail **read only**: three thread reads, **no send, reply, forward, label,
+archive, trash or draft.** No charge, refund, invoice, payout or fulfilment.
+**No bank, card or payment action.** Shopify not called. No Supabase tool. No
+GitHub write. **No scheduled task touched.** `docs/growth/` untouched. **No cash
+figure** (A-19). **No customer name, email address or phone number written** —
+except the Lexus prospect's **first name, which appears in A-28 draft 3R because
+the message is addressed to him**; the thread ID remains the pointer and no
+address, surname or number is recorded.
+
+- **Needs the owner** — **A-26, per draft**, and it is the only packet on the
+  board with money attached to a send: **1R-a carries the $350**, the one
+  invoiceable amount in this record. **3R additionally needs one fact from him**
+  — is a 2016 RC 350 (2GR-FSE) remotely flashable. Then **A-21's T-37 reading**
+  (bill the $149 determination now, or hold), **T-84** (seven revisions sold at
+  the entry rung), and the rest: **A-25**, **A-24**, **A-22**, **A-23**,
+  **A-17**, **A-07**, **A-10**.
+
+---
+
+## Next entry: OL-0099

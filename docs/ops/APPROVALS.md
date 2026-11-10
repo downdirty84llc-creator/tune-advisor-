@@ -53,11 +53,12 @@ and actual result.
 | A-25 | Whose account is the one this register reports as the business's?           | G     | **Pending**                         | T-137, T-71, T-129, T-136          |
 | A-26 | Reply to two unanswered inbound enquiries, in one decision                  | C     | **Pending**                         | T-152, T-95                        |
 | A-27 | Allow five hosts so primary sources can be validated                        | G     | **Pending**                         | T-98                               |
+| A-28 | Three follow-ups revised to the facts, and close A-20 as superseded         | C     | **Pending**                         | T-37 T-64 T-66, closes A-20        |
 
-**Nine packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
-A-26 and A-27.** **A-27 was raised on 2026-11-10 by the owed Monday opportunity
-scan, and it is the first packet in this file whose approved action the agent
-can carry out in a single tool call.** T-98 has been reported by four
+**Ten packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
+A-26, A-27 and A-28.** **A-27 was raised on 2026-11-10 by the owed Monday
+opportunity scan, and it is the first packet in this file whose approved action
+the agent can carry out in a single tool call.** T-98 has been reported by four
 consecutive scans as "no page could be fetched"; this run read the cause from
 `get_environment` rather than inferring it — **the environment's allowed-hosts
 list is empty** — and the remedy is five named hosts. **A-26 was raised on
@@ -87,6 +88,40 @@ reading of A-19 that was wrong, corrected its own two files within the hour, and
 added to this board in the same write as its packet** — the first time since the
 2026-10-12 note that a packet and its row have landed together, which is what
 the thirteen counts below were asking for.
+
+> **A-28 was raised on 2026-11-09 and its row was written in the same edit** —
+> the second time since the 2026-10-12 note that a packet and its row have
+> landed together, and **the first time a session has done it immediately after
+> logging the count that says it keeps not happening.** Fourteen instances is
+> enough reminders.
+>
+> **A-28 is the packet that makes A-21's money reachable.** A-21 set the prices;
+> **A-20's drafts were supposed to carry them and cannot** — two of its three
+> state things the threads contradict, and the third repeats a question the
+> prospect was already asked and has not answered for 32 days. **A-28 revises
+> all three to the facts and recommends closing A-20 as superseded**, the same
+> disposition A-18 got and for the same reason. **A-18 was REJECTED by the owner
+> on 2026-11-09**, which is the answer Torque recommended on 2026-10-14 and the
+> first packet the owner has answered since A-19 and A-20 on 2026-10-29. **The
+> board row and this count were corrected on 2026-11-09 by the Monday intake
+> (OL-0091): the run that recorded the rejection updated the packet's Status,
+> Response and Actual result thoroughly and did not update the board, so for a
+> few minutes this file said REJECTED in the packet and Pending in the table.**
+> **The decision is the owner's; only the two derived places were corrected
+> here.** **A-25 was raised on 2026-11-05 by the intake that found the cause** —
+> the run met a personal obligation drafting from the account T-71 has reported
+> as DD84's position since 2026-10-16, **recognised that neither A-13 nor A-19
+> reaches it, published the finding without any particular, and raised a
+> packet** rather than deciding on its own judgement which account the register
+> has been describing. **That is the shape A-19 itself was made in, and it is
+> the second time a rule has been found not to reach what a run walked into.**
+> **A-24 was raised on 2026-10-29 by the run that caused it** — the intake
+> published a declined-payment amount on a reading of A-19 that was wrong,
+> corrected its own two files within the hour, and **raised a packet for the ten
+> it may not edit on its own judgement.** **A-23 was added to this board in the
+> same write as its packet** — the first time since the 2026-10-12 note that a
+> packet and its row have landed together, which is what the thirteen counts
+> below were asking for.
 
 > **A-21 answered 2026-11-09 — APPROVED, and one row of it had to be held on
 > execution.** The four prices are adopted. **Row 1's $349 was priced as "work
@@ -2006,6 +2041,32 @@ drafts were written to prevent is that the jobs become unbillable by age, and
 **deferring does not pause that clock; it accepts it in exchange for not quoting
 twice.**
 
+**Superseded 2026-11-09, and recommended for closure — see A-28.** The
+deferral's condition was met when A-21 was approved, so these three drafts
+became sendable in principle on the same day. **A re-read of all three threads
+found that two of them had stopped being true while they waited**, and the third
+repeats a question the prospect had already been asked:
+
+- **Draft 1** says DD84 is _"going through the crank and no-start data now"_ and
+  will _"come back to you"_. **DD84 came back on 2026-10-29** with a seventh
+  calibration. The message would deny a delivery it made.
+- **Draft 2** asks _"how's it running since the last file?"_ **There was no last
+  file.** Nothing has ever been sent on T-37 — **the same error A-21 row 1 made,
+  and it was in this draft three weeks before that packet repeated it.**
+- **Draft 3** asks _"are you still looking at that?"_ **DD84 asked that on
+  2026-10-08** and has had no answer in 32 days.
+
+**This is the A-18 shape a second time: a packet right when raised and wrong by
+the time it could be sent.** The nineteen days it spent deferred are what did
+it. **A-28 carries all three revised to the facts**; the recommendation here is
+**CLOSE as superseded, not reject** — the drafts were correct work, and the
+deferral that made them stale was the right call on the information available.
+
+**The Lexus age in the paragraph above is left as written** — **~21 days was
+true on 2026-10-29 and is 32 days on 2026-11-09.** Only the Response and
+Actual-result blocks may be edited, and re-stamping an age inside one to match a
+later reading is how a record stops showing when it learned things.
+
 ---
 
 ## A-21 — Set the price on two delivered jobs, and authorise quoting it
@@ -2786,3 +2847,242 @@ contradictory at source.**
 
 **Response** — _awaiting owner._ **Affected records** — T-98, T-97, T-123,
 T-160, T-161. **Actual result** — _not yet executed._
+
+## A-28 — Three follow-ups revised to the facts, and close A-20 as superseded
+
+**Status: PENDING — raised 2026-11-09, after A-21's approval made A-20's drafts
+sendable in principle and a full re-read of all three threads showed two of them
+are no longer true.**
+
+> **Raised as A-26, landed as A-28, committed 2026-11-10.** Two sibling runs
+> minted A-26 and A-27 while this was being written; **this packet took the next
+> free number on landing rather than displacing either.** Upstream's A-26 is a
+> different decision about different threads (T-152, T-95) and **nothing here
+> overlaps it.** Fifth packet-numbering collision in this file.
+>
+> **Every age below was measured on 2026-11-09 and is one day older now**: the
+> Lexus thread is **33 days** since DD84's last message and **56 days** since
+> the enquiry, T-64 is **12 days** since DD84's own last send, T-37 is **29
+> days**. **The figures are not re-stamped** — they say when they were taken,
+> which is the convention A-20's own block is left under. **All three threads
+> were re-checked on 2026-11-10 before this was committed and none has moved**,
+> so every draft below is still accurate.
+
+**Decision requested** — Two things, separable:
+
+1. **Close A-20 as superseded**, not rejected on merit. Its drafts were right
+   when written on 2026-10-21; **events have since contradicted two of the
+   three.**
+2. **Approve the revised drafts below, per draft.** **Class C — an agent cannot
+   send.** Draft 1R carries a price under A-21; draft 3R would be the first
+   price DD84 has ever quoted this prospect.
+
+**Business objective** — Convert A-21's approved prices into the only two
+invoiceable amounts in this record, and stop a third counterparty being chased
+with a question he has already been asked twice.
+
+**Source and context** — All three threads read in full on 2026-11-09:
+`1a0e402cdcf75731` (31 messages), `1a1082503004a073` (29), `1a0a565f802fc60b`
+(2). Ages recomputed from stored timestamps on the same read.
+
+### Why A-20's drafts cannot be sent as written
+
+| Draft        | A-20 says                                                                    | The thread says                                                                                                          |
+| ------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **1 — T-64** | _"I'm going through the crank and no-start data now… I'll come back to you"_ | **DD84 already came back — 2026-10-29**, with a seventh calibration attached. The message would deny a delivery was made |
+| **1 — T-64** | _"has anything changed on it since the last log?"_                           | **DD84 changed something**: it sent a new file. The question reads as if nothing happened                                |
+| **2 — T-37** | _"how's it running since the last file?"_                                    | **There was no last file.** Nothing has ever been sent on T-37 — the same error A-21 row 1 made                          |
+| **2 — T-37** | _"DD84 does not yet know what the job costs"_                                | **It does now** — $349 / $149, A-21                                                                                      |
+| **3 — T-66** | _"are you still looking at that?"_                                           | **DD84 asked exactly that on 2026-10-08**: _"Are you still looking into remote tuning?"_ — unanswered for 32 days        |
+
+**Draft 3 is the one worth dwelling on, because it repeats the A-18 failure in a
+new place.** A-18 asked a customer for a file he had already sent. **Draft 3
+asks a prospect a question he has already been asked and has not answered.**
+Sending it would be the second unanswered "are you still there" on one thread,
+and **neither of them answers the only question he ever asked.**
+
+### What that prospect actually asked for, 55 days ago
+
+His enquiry, **2026-09-15T14:08:37Z**, in his own words: a mild burble and decel
+pop tune, _"nothing crazy"_, **"please let me know what the steps are and what
+price range this is for this to be remotely"** — and he wanted it _"asap"_.
+
+**DD84 has replied once, 23 days later, and deferred the price**: _"We'll first
+confirm whether your setup is supported, then explain the available options and
+total cost before you purchase anything."_ **That was a reasonable reply. It
+answered a question he did not ask and withheld the one he did.**
+
+**A range exists and has existed the whole time.** `ventures.md` prices
+**Toyota/Lexus custom ECU tuning at $400–$650**. **Ranges stay ranges** under
+§5, and a range is precisely what he asked for — so **the thing blocking a
+useful reply was never the price list.**
+
+### The drafts
+
+Each is **sent verbatim or not at all.** None is in the mail account; they live
+in this packet only.
+
+#### Draft 1R — T-64, the Challenger · thread `1a0e402cdcf75731`
+
+**Two variants, because A-21 and the owner's own sequencing disagree.**
+
+**1R-a — substantive reply and the invoice together _(recommended)_**
+
+> I sent you a revised file on the 29th and I didn't say much with it, so this
+> is the part I owe you.
+>
+> That revision carried the VE corrections plus the startup changes aimed at the
+> hard-crank. What I need to know is whether you've flashed it, and how it
+> cranks now — cold, and after it's been sitting. A short log covering two or
+> three start cycles would tell me more than anything else at this point.
+>
+> On the tuning work to date, that's **$350** for the custom ECU calibration
+> work on the car. The hard-crank question is separate and I haven't billed
+> anything for it — if it turns out to need a proper determination rather than
+> another calibration pass, that's a **$149** review and I'd tell you before
+> starting it.
+>
+> Mark Down Dirty 84 LLC
+
+**1R-b — substantive reply only, price follows his answer**
+
+> Identical to 1R-a with the two pricing paragraphs removed.
+
+**Which to choose.** **A-21's own safeguard says 1R-b**: _"Quoting a price nine
+days late, after silence, may read as opportunistic. Safeguard: the A-20 drafts,
+which carry no price, go first; the price follows the substantive reply."_ **The
+owner's sequencing on 2026-10-29 said the opposite** — _"price the jobs first"_
+— and A-20 was deferred for exactly that reason.
+
+**Those two instructions are not actually in conflict, and the distinction is
+worth naming**: "price the jobs first" settled **when the price is set**, not
+**when it is uttered to the customer.** Both are satisfied by either variant.
+**1R-a is recommended on a different ground** — the silence since 2026-10-29 is
+DD84's, and a second message that again says nothing about money would make the
+eventual invoice the third contact rather than the second.
+
+**What 1R commits DD84 to** — reviewing one more startup log, and **a $149
+determination only if the owner starts one.** **No power figure, no turnaround,
+no claim the hard-crank is fixed, and no further calibration sold into that
+fault** — A-21's safeguard, still binding.
+
+#### Draft 2R — T-37, the C10 · thread `1a1082503004a073`
+
+> Checking in on the C10. Last we spoke you had another wideband on the way —
+> did you get it swapped, and did the AFR settle down once it was in?
+>
+> That's the thing holding this up at my end. The file I built for it is ready
+> to go, but I'm not sending a calibration while the sensor reading it is in
+> question. If the new one has sorted the signal out, send me a fresh log and
+> I'll finish it off.
+>
+> Mark Down Dirty 84 LLC
+
+**No price.** Not an oversight: **A-21 adopted $349 and $149 on this job and
+left which applies undecided**, because nothing has been delivered. **Quoting
+either before the owner picks a reading would be choosing for him.** The moment
+he does, one sentence is added.
+
+**What 2R commits DD84 to** — reviewing one datalog, and finishing a calibration
+that already exists if the sensor question clears. **It does not claim the fault
+is diagnosed, does not repeat the OEM-sensor assertion the customer's own check
+contradicted, and promises no result.**
+
+#### Draft 3R — T-66, the Lexus enquirer · thread `1a0a565f802fc60b`
+
+**Not another "are you still there".** This one answers his question.
+
+> James, following up properly this time — you asked what the price range is and
+> I didn't give you one, so here it is.
+>
+> Custom ECU tuning on the Toyota/Lexus platforms runs **$400–$650** depending
+> on what the car needs. **That's a range, not a quote for your car**, and
+> there's one thing I have to confirm before I can turn it into a number: that
+> your 2016 RC 350 with the 2GR-FSE can be flashed remotely with the tools I
+> use. I'd rather check that than take your money and find out afterwards.
+>
+> On the burble and decel pop specifically — I can tell you honestly that it is
+> an exhaust-character change, not a power change, and some setups take to it
+> better than others. I won't promise you a particular sound.
+>
+> If you're still interested, tell me what's been done to the exhaust and
+> whether it's ever been tuned, and I'll come back with either a number or a
+> straight no.
+>
+> Mark Down Dirty 84 LLC
+
+**This is the only draft of the three that changes DD84's position rather than
+asking for information**, and it does so in three bounded ways: **it gives a
+published range as a range**, it says plainly that platform support is
+unconfirmed, and **it refuses to promise a sound.**
+
+**The owner must settle one fact before 3R can go**: whether a 2016 RC 350
+(2GR-FSE) is remotely flashable with DD84's tooling. **An agent cannot establish
+that** — it is not in `ventures.md`, not in the thread, and inventing it would
+be inventing a capability. **If the answer is no, 3R is replaced by a one-line
+decline**, which is a better outcome than a third chase.
+
+**Alternatives considered**
+
+- **Send A-20's three drafts as approved and deferred.** **Rejected** — two
+  state things the threads contradict, and the third repeats an unanswered
+  question. **This is the A-18 shape: a packet that was right when raised and
+  wrong by the time it could be sent.**
+- **Send nothing until A-21's T-37 reading is chosen.** Rejected: it holds up 1R
+  and 3R, which do not depend on it.
+- **Quote $349 on T-37 now.** **Rejected** — nothing has been delivered there;
+  see A-21's variance block.
+- **Quote a single figure to the Lexus enquirer instead of the range.**
+  **Rejected under §5** — ranges stay ranges, and the rung boundary is T-84's
+  open question.
+- **Bundle the $149 determination into 1R as work already started.** Rejected:
+  it has not started, and billing a determination nobody has performed is the
+  error A-21 row 1 made.
+
+**Cost and cash impact** — **$350 becomes invoiceable on 1R-a** and is the only
+amount in this record that can be billed today. **$149 on each job is contingent
+and not billed by this packet.** The Lexus range is **$400–$650 and is not
+revenue until the platform question is answered** — **not counted, not forecast,
+and deliberately not totalled.**
+
+**Risks and safeguards**
+
+- **1R admits DD84 sent a file with no explanation.** That is the point: the
+  alternative is a customer who has had a file sitting unflashed for eleven days
+  because nobody told him what it was.
+- **2R stops short of a diagnosis** because the wideband contradiction is still
+  open — DD84 asserted an OEM sensor was required and the customer's own check
+  said it already was one. **The draft asks rather than re-asserts.**
+- **3R's durability caveat is deliberate.** A decel-pop calibration puts
+  combustion into the exhaust; **saying some setups take to it better than
+  others is the honest version and is not a disclaimer to be edited out.**
+- **No message promises a power figure, a turnaround, a date, or a result**, and
+  none mentions emissions equipment.
+- **Three counterparties, three messages, no attachments.**
+
+**Systems affected** — Gmail only, three threads. **No payment system, no
+Shopify change, no calendar, no live site.**
+
+**Customer and public impact** — Three people receive one message each.
+**Nothing public.** **Nothing is sent under this packet without an explicit
+approval per draft.**
+
+**Success test** — Each approved draft is sent verbatim and verified by
+re-reading its thread afterwards; **T-64 produces either a flashed-and-logged
+answer or a reason it has not been flashed**; T-37 produces a yes/no on the
+wideband; **T-66 produces a reply or a close** — and the Lexus prospect has, for
+the first time in 55 days, been told a number.
+
+**What this packet does NOT cover** — invoicing or collecting the $350 (no
+payment system is reachable: Stripe has no MCP server, PayPal needs
+re-authentication), choosing A-21's T-37 reading, setting a Mopar rung above
+Basic (T-84), the store enquirer (T-72), the shipping enquirer (T-81), or any
+review request.
+
+**Reply with, per draft: APPROVE (1R-a or 1R-b) / APPROVE (2R) / APPROVE (3R,
+and the platform answer) / DEFER / REJECT** — and **CLOSE A-20** or say to keep
+it open.
+
+**Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-66, and
+A-20. **Actual result** — _not yet executed. Nothing has been sent and no draft
+exists in the mail account._
