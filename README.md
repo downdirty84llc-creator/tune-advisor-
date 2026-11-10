@@ -15,10 +15,11 @@ diagnostics, PCM services, digital tuning tools and merchandise.
 > on `main`. **Its source tree was deleted from this branch on 2026-09-25**
 > after every file was compared against the canonical copy; nothing was lost.
 >
-> **The repository's default branch still holds the old copy.** Only this branch
-> (`claude/claude-md-docs-cqvhy6`) is clean, so the repository's front page
-> still shows a Next.js application. That is a pending owner action, not an
-> oversight.
+> **Default branch corrected on 2026-11-10.**
+> `claude/claude-md-docs-cqvhy6` is now the default, so the repository's front
+> page shows the DD84 agent platform. The legacy Ledger branches remain
+> unchanged for history and recovery; do not develop or deploy those old copies.
+> The maintained Ledger application is in the separate repository linked above.
 
 ---
 

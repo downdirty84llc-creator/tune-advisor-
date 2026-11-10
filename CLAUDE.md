@@ -33,11 +33,12 @@ canonical repository: the six recovered migrations differ only inside
 ones are byte-identical once comments are stripped. Nothing was lost. The
 evidence is in `docs/ops/OPERATING-LOG.md` OL-0016.
 
-> **The repository's default branch still carries the old Ledger copy.**
-> `claude/georgia-opportunity-ledger-kfpt4c` is the default and cannot be
-> deleted while it holds that position, so a visitor landing on the repository
-> root still sees a Next.js application. Only this branch is clean. Changing the
-> default branch is an owner action — see `docs/ops/` T-29.
+> **Default branch corrected on 2026-11-10.**
+> `claude/claude-md-docs-cqvhy6` is now the default; GitHub Settings and the
+> repository API both confirm it. The previous default,
+> `claude/georgia-opportunity-ledger-kfpt4c`, and every other branch were retained
+> unchanged. This resolves the default-setting issue described in `docs/ops/`
+> T-29 without deleting history or changing the branch named by the routines.
 
 **Do not push Ledger code here, and do not push DD84 material there.** The two
 businesses are separate and the separation is deliberate. The Ledger
@@ -242,8 +243,9 @@ beats the document, including this one.**
 
 Work on `claude/claude-md-docs-cqvhy6`; push with
 `git push -u origin claude/claude-md-docs-cqvhy6`. Do not open a pull request
-unless asked. Do not push to the default branch, which still holds the retired
-Ledger copy.
+unless asked. This is now the default branch; its name has not changed.
+Do not develop or deploy the retired Ledger copies on
+`claude/georgia-opportunity-ledger-kfpt4c` or `main`.
 
 Commit messages describe what changed and why, in plain prose. Say what a change
 cost or risked, and record the alternative that was rejected.
