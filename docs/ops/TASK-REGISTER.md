@@ -149,7 +149,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-113 | A third unattributed Zelle — $400.00, memo "Tune"; matches the Lexus floor                    | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-114 | A Plaid grant gives a third party bank access; which service is unknown                       | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-02   |
 | T-115 | A DD84 subdomain is among three misconfigured domains on the Ledger project                   | ops        | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-04   |
-| T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | **In Verification**      | Agent | S-01 (Class A)                    | 2026-11-10   |
+| T-116 | Every brief states a run-end time it estimated rather than read                               | ops        | Normal       | Done                     | Agent | S-01 (Class A)                    | 2026-11-10   |
 | T-117 | The agreement that failed 9 times began working without a new card                            | finance    | **High**     | Done                     | Agent | A to report                       | 2026-11-02   |
 | T-118 | Cost side opened: Manus and a shipment still not quantified                                   | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-03   |
 | T-119 | The midday-band premise was a six-point coincidence; the 7th attempt broke it                 | ops        | Normal       | **No Action (accepted)** | Agent | A to diagnose                     | 2026-11-04   |
@@ -185,7 +185,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-149 | A truck maker's tech support sent ~7MB; T-123 fleet question is live                          | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-13   |
 | T-150 | An OpenAI account, an open support case, an out-of-state sign-in                              | ops        | High         | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
 | T-151 | A 3rd Stripe account "Merry Market by DD84" pays into A-25's account                          | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** first                    | 2026-11-10   |
-| T-152 | A second inbound enquiry: a 1946 Cadillac, and a question about Savannah                      | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-26 pending**                  | 2026-11-11   |
+| T-152 | 2nd enquiry: ANSWERED BY THE OWNER 2026-11-10T10:32:19Z                                       | sales      | **High**     | In Verification          | Owner | **A-26 row 1 moot**               | 2026-11-11   |
 | T-153 | A card declined for insufficient funds — not for being deliberately off                       | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                       | 2026-11-11   |
 | T-154 | Netlify credits exhausted: production deploys paused; cycle resets 2026-12-02                 | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-13   |
 | T-155 | Shopify payouts move to two business days for sales after 2026-11-09                          | finance    | Normal       | Planned                  | Agent | A to verify                       | 2026-11-17   |
@@ -194,63 +194,67 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-158 | Kalshi: a new sign-in, a new passkey, and Google account data shared                          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
 | T-159 | Personal third-party mail arrives in the business inbox — §5 judgement                        | ops        | Normal       | **Awaiting Owner**       | Owner | **§5 — packet if kept**           | 2026-11-13   |
 | T-160 | Register DD84 in GA@WORK Marketplace; NIGP code depends on T-123                              | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-14   |
-| T-161 | Does Jackson County GA or Jefferson run a small-business programme?                           | sales      | Normal       | Planned                  | Agent | A to diagnose                     | 2026-11-16   |
+| T-161 | HELD: which county? ventures.md records none — see T-164                                      | sales      | Normal       | Blocked                  | Agent | A to diagnose                     | 2026-11-16   |
+| T-162 | The owner answered the new enquirer 8 min before A-26 asked to                                | ops        | Normal       | In Verification          | Agent | A to diagnose                     | 2026-11-13   |
+| T-163 | A quote including travel was promised; no travel charge exists                                | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1 first              | 2026-11-11   |
+| T-164 | ventures.md records no location; the register asserts a county                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                       | 2026-11-12   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **21 Done** · **4 No Action** · **2 Accepted Risk** · 11 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **73 Awaiting Owner** · 6 Blocked ·
-32 Planned · 2 Backlog. **161 tasks.** Recounted mechanically with
+Counts: **22 Done** · **4 No Action** · **2 Accepted Risk** · 12 In Verification
+· 4 In Progress · **5 Awaiting Approval** · **75 Awaiting Owner** · 7 Blocked ·
+31 Planned · 2 Backlog. **164 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, **every bucket printed and the total checked against their
-sum** — **not the two-digit pattern, see the note below** — last **2026-11-10**,
-at the owed Monday opportunity scan (**T-160 and T-161 added; T-124 withdrawn,
-T-125 closed Done, T-98 moved to Awaiting Approval**). **The per-bucket check is
-new today and it exists because the recount caught the 2026-11-09 counts line
-wrong.** That line read **9 In Verification · 6 In Progress · 30 Planned** for
-151 rows whose true figures were **12, 4 and 29**; **the three errors offset
-exactly, so the total was right by luck.** **The regex was never at fault — the
-buckets had simply never been recounted, only the total had.** Caught by the
-Tuesday intake, OL-0095. **T-124 is withdrawn rather than deleted, and it is the
-scan's most consequential finding.** The 2026-11-02 scan scored a "Jackson
-County Chamber small-business grant" at 42/100 and placed it in **Jefferson,
-Georgia — DD84's own county**. **`jcchamber.com` is the Jackson County Chamber
-of Commerce in Pascagoula, Mississippi**, which its own member directory and a
-Pascagoula post-office box confirm. **T-124 told the owner to make a phone call
-that would have gone to the wrong state.** The mechanism is recorded in the
-brief: **an aggregator gave a county name without a state, and a county name
-that exists in at least five states was resolved to the one the reader already
-had in mind** — the 11-02 run tested the date and not the place, because the
-place was never in the result. **T-161 asks the surviving question at the right
-domain: does Jackson County, GA or the City of Jefferson run a programme at all?
-This run searched and found none.** **T-125 closes Done.** The classification
-bands were recovered 2026-11-09 and the time-sensitivity direction corrected
-2026-11-02; **the 2026-11-10 scan is the first run to apply both**, and OL-0096
-carries the evidence. **Scores from 2026-11-02 and earlier are not comparable
-with later ones on the time-sensitivity axis.** **T-98 moves to Awaiting
-Approval under A-27, and its title is corrected to the fact rather than the
-symptom.** `get_environment` reports the session's network as `limited` with
-**`allowed_hosts: []`** — **an empty list, so no public web host is reachable by
-any tool**, which is why a control host failed for four consecutive scans. **It
-is the first time T-98 has had a remedy an agent can execute**: A-27 asks for
-five named hosts, and approving it authorises a single `update_environment`
-call. **T-160 is the scan's one qualifying candidate** — GA@WORK Marketplace
-supplier registration at **64/100**, equal to the highest score this routine has
-recorded — **and it is a task rather than a packet because the form needs a Tax
-ID, a gross-receipts figure and an NIGP code only the owner holds; a packet
-whose approved action the agent still could not execute is a worse instrument
-than a task.** **Its NIGP code depends on T-123, which is past due.** **73 of
-the 161 rows are Awaiting Owner**, and **103 of the 134 open rows are past
+sum** — last **2026-11-10**, at the daily command brief (**T-162 to T-164 added;
+T-152 and T-161 corrected, T-116 closed Done**). **The brief's finding is that
+the owner answered a customer eight minutes before this register asked
+permission to.** **At 2026-11-10T10:32:19Z the owner replied to the enquirer on
+thread `1a1c2da539737cb0` himself.** The intake read that thread at about 10:27Z
+— one message, unread, true when read — and **committed at 10:39:59Z still
+saying so, raising A-26 to ask for approval to reply.** **So the claim was true
+when read and false by seven minutes when committed.** **This is the third owner
+action this register could not see** — after a bank call on 2026-11-04 evidenced
+only by a satisfaction survey and a reply on 2026-11-08 evidenced only by a
+sent-state flag — **and the first to invalidate a live packet.** **A-26 row 1 is
+overtaken and row 2 is not**: the 2026-10-25 enquirer is still a single unread
+message, re-verified at 10:58Z. **The fix is not more re-reads of everything but
+re-verifying the one or two facts a packet's request rests on immediately before
+committing it** — which the brief did for T-95 and the intake did not do for
+T-152. **T-162 records it.** **T-163 is Critical and is the day's second
+priority: a quote including travel has been promised to a customer and no
+travel, mileage or call-out charge exists anywhere in `ventures.md`'s
+catalogue.** **A-21's row 1 is already held for pricing work that was never
+delivered, so this is the second live pricing gap on the same packet.** **The
+agent's own A-26 draft is corrected in the same breath**: it said the work "is
+delivered remotely — the car stays with you", but **the registry lists Holley
+EFI Tuning Services as "remote and in-person", $275–$599, verified 2026-10-22.**
+**In-person is in the catalogue, so the draft described a narrower business than
+the record supports** and would have told a prospective customer something less
+than true. **T-164 and the holding of T-161 are the second geography error in
+this family inside an hour, and this one is the agent's.** **`ventures.md`
+records no city, county or address at all** — checked this run. The 2026-11-02
+scan wrote "Jefferson, Georgia — DD84's own county", and **T-161, created forty
+minutes earlier, asked about Jackson County and the City of Jefferson.** **The
+owner's own words today are "I'm based in the Hull, GA area", and Hull is not in
+Jackson County** — it is also adjacent to the Colbert parcel the 2026-10-26 scan
+was evaluating, which corroborates it. **Yesterday's scan withdrew a candidate
+because a county name without a state was resolved to the state the reader
+already had in mind; T-161 then resolved a county name to the county the record
+already had in mind.** **Neither location is confirmed — an LLC's registered
+address can differ from where its owner works — so T-161 is Blocked rather than
+rewritten, because guessing Madison County would repeat the error in a third
+direction.** **T-116 closes Done.** Every brief from 2026-08-06 to 2026-11-03
+stated a run-end time it had estimated; **the 2026-11-10 daily brief reads both
+timestamps from the clock and is the evidence**, recorded in OL-0097. **75 of
+the 164 rows are Awaiting Owner**, and **103 of the 136 open rows are past
 due.** **Twenty-two rows are Critical and open: sixteen overdue (newest four
-days, oldest eighty-two), T-147, T-148 and T-151 due 2026-11-10, T-152 and T-153
+days, oldest eighty-two), T-147, T-148 and T-151 due 2026-11-10, T-153 and T-163
 due 2026-11-11, T-143 due 2026-11-20.** **Nine approval packets pending: A-07,
-A-10, A-17, A-22, A-23, A-24, A-25, A-26 and A-27.** The owner answered two on
-2026-11-09 — **A-18 rejected and A-21 approved with row 1 held** — the first
-packets answered since 2026-10-29, both recorded by a sibling session. **A-21's
-row 1 is held because it prices T-37's work as delivered and no calibration has
-ever been sent on T-37, so three customer sends are unblocked and one invoice is
-not.**
+A-10, A-17, A-22, A-23, A-24, A-25, A-26 and A-27.** **A-21's row 1 is held
+because it prices T-37's work as delivered and no calibration has ever been sent
+on T-37, so three customer sends are unblocked and one invoice is not.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

@@ -2663,7 +2663,20 @@ arguably worth more: `ventures.md`'s enquiry-source field stops reading
 **APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
 **Response** — _awaiting owner._ **Affected records** — T-152, T-95. **Actual
-result** — _not yet executed._
+result** — **ROW 1 IS OVERTAKEN. The owner replied to the new enquirer himself
+at 2026-11-10T10:32:19Z, eight minutes before this packet was committed at
+10:39:59Z.** The intake had read that thread at about 10:27Z as one unread
+message, which was true when read and false when committed. **Row 1 needs no
+decision and nothing was sent under it.** **Row 2 is unaffected and still live:
+the 2026-10-25 enquirer is a single unread message, re-verified
+2026-11-10T10:58Z, sixteen days on.** **This Response field is deliberately left
+as awaiting owner — an agent does not answer its own packet, and nothing above
+is a response.** **One correction to the draft row 2 carries: it says the work
+"is delivered remotely — the car stays with you", but `ventures.md` lists Holley
+EFI Tuning Services as "remote and in-person", $275–$599, verified 2026-10-22.**
+**In-person is in the catalogue, so that sentence describes a narrower business
+than the record supports and should be struck before either message is sent.**
+Recorded by the 2026-11-10 daily brief — T-162, T-163, OL-0097.
 
 ---
 

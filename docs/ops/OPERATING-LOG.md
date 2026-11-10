@@ -10661,4 +10661,161 @@ against the gate.
 
 ---
 
-## Next entry: OL-0097
+## OL-0097 — 2026-11-10 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), **scheduled 10:50:00Z, fired 2026-11-10T10:55:11Z, reached the
+session at about 10:56Z.** **Run 10:57:24Z to 10:59:29Z, both read from the
+clock.**
+
+**Checkout, contract item 0:** tip `db9a791`, `HEAD` equal to origin, **no
+`src/`** — the prompt's reset condition was checked and not met, so nothing was
+reset — no `package.json`, clean, **85 tracked files, not the 28 the prompt
+expects; thirty-third run reporting it, T-85 step 3.**
+
+**No skeleton, and the reasoning is recorded rather than left to look
+inconsistent with the two runs before it.** The intake and the scan both
+committed skeletons this morning. **This run did not, because the test is the
+size of what a restart would destroy and almost nothing here would be lost**:
+the register and approvals had been read, recounted and committed minutes
+earlier, and the rest was one calendar read, one mail check, one store read and
+two GitHub reads. **Thirteenth "no skeleton" judgement.**
+
+### The finding: the owner answered a customer eight minutes before this register asked permission to
+
+**At 2026-11-10T10:32:19Z the owner replied to the new enquirer himself on
+thread `1a1c2da539737cb0`.** **That is an owner action and it is not claimed as
+agent work.**
+
+| Time (UTC)    | What                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
+| **10:22:21Z** | Intake skeleton committed, `6792f78`                                                                    |
+| **~10:27Z**   | The intake read the thread: **one message, `UNREAD`** — true when read                                  |
+| **10:32:19Z** | **The owner replied to the enquirer**                                                                   |
+| **10:39:59Z** | **Intake committed, `70230a3`**, still saying unread, **and raising A-26 to ask for approval to reply** |
+| 10:41:18Z     | Scan skeleton, `34f707f`                                                                                |
+| 10:56:39Z     | Scan committed, `db9a791`                                                                               |
+
+**So the intake's claim was true when read and false by seven minutes when
+committed, and A-26 asked permission to send a reply that had gone out eight
+minutes earlier.** **Third instance of this family** — a bank call on 2026-11-04
+evidenced only by a satisfaction survey, a reply on 2026-11-08 evidenced only by
+a sent-state flag — **and the first to invalidate a live packet.**
+
+**A-26 row 1 is overtaken; row 2 is not.** **The 2026-10-25 enquirer is still a
+single unread message, re-verified at 10:58Z, sixteen days on.** **The packet's
+Actual result field records the overtaking; its Response field is deliberately
+left as awaiting owner, because an agent does not answer its own packet.**
+**A-26 was not withdrawn**, because half of it is exactly as live as it was.
+
+**The lesson is about freshness, not about the owner.** **A register that reads
+a mailbox and then spends eleven minutes writing is publishing a past state.**
+The fix is not more re-reads of everything; **it is re-verifying the one or two
+facts a packet's request actually rests on immediately before committing it** —
+which this brief did for T-95 and the intake did not do for T-152. **T-162.**
+
+### Two corrections to work committed in the preceding forty minutes
+
+**First, the agent's own A-26 draft understated DD84's catalogue.** The draft
+says the work "is delivered remotely — the car stays with you". **`ventures.md`
+lists Holley EFI Tuning Services as "remote and in-person", $275–$599, verified
+2026-10-22.** **In-person is in the catalogue**, so the owner's "I can travel
+depending on the job" is consistent with the registry rather than a departure
+from it — **and the draft described a narrower business than the record
+supports, which if sent would have told a prospective customer something less
+than true.** **The real gap is narrower: there is no travel, mileage or call-out
+charge anywhere in the catalogue, and a quote including travel has now been
+promised to a customer.** **T-163, Critical** — **the second live pricing gap on
+A-21, whose row 1 is already held for pricing work that was never delivered.**
+
+**Second, the register has been asserting a county it has no source for, and
+this error is the agent's own, made forty minutes earlier.** **`ventures.md`
+records no city, county or address at all** — checked this run. The 2026-11-02
+scan wrote "Jefferson, Georgia — DD84's own county", and **T-161, created in
+OL-0096, asked whether Jackson County, GA or the City of Jefferson runs a
+small-business programme.** **The owner's own words today are "I'm based in the
+Hull, GA area." Hull is not in Jackson County** — and it is adjacent to the
+Colbert parcel the 2026-10-26 scan was evaluating, which corroborates it.
+
+**The symmetry is the point.** **OL-0096 withdrew a candidate because a county
+name without a state had been resolved to the state the reader already had in
+mind. T-161 then resolved a county name to the county the record already had in
+mind.** **Neither location is confirmed: "based in the Hull area" is what the
+owner told a customer, and an LLC's registered address can differ from where its
+owner works.** **T-161 is Blocked rather than rewritten, because guessing
+Madison County would repeat the error in a third direction.** **T-164 asks for
+the one fact that settles it.**
+
+### Connectors
+
+**Reached:** Gmail; **Google Calendar** — **no events at all for 2026-11-10 or
+2026-11-11**, a read and not an omission; **Shopify** — **one order on the store
+ever, `#1001`, 2026-10-23, `$550.00`, PAID and FULFILLED, no new orders**;
+**GitHub** — **three open pull requests, all based on `dd84/main`, none from or
+to the working branch** (`#5` 97 days, `#4` 56 days, `#1` 46 days, already
+tracked by T-35) and **zero workflow runs on `claude/claude-md-docs-cqvhy6`.**
+
+**Not reached:** **Stripe — no MCP server exists**, with three Stripe accounts
+now evidenced and none readable; **PayPal — needs re-authentication**; **Google
+Drive — not read**; **bank, card and lender accounts — no connector for any of
+them**, only their mail notices; **`read_shopify_payments` — denied**, confirmed
+live 2026-11-04. **Unpaid invoices were therefore not checked, and "no unpaid
+invoices" is not claimed.**
+
+### Register
+
+**T-162, T-163 and T-164 added. T-152 corrected to In Verification at High —
+answered by the owner, so no longer Critical. T-161 Blocked. T-116 closed
+Done.** **164 tasks: 22 Done · 4 No Action · 2 Accepted Risk · 12 In
+Verification · 4 In Progress · 5 Awaiting Approval · 75 Awaiting Owner · 7
+Blocked · 31 Planned · 2 Backlog.** **103 of the 136 open rows are past due.
+Twenty-two rows are Critical and open: sixteen overdue, newest four days and
+oldest eighty-two.** **Nine packets pending.**
+
+**T-116 closes Done on this entry's own evidence.** Every brief from 2026-08-06
+to 2026-11-03 stated a run-end time it had estimated; **this brief read both
+timestamps from the clock, and the routine was due today.**
+
+### Boundaries held
+
+**Sent nothing, replied to nothing, created no draft.** **The one reply that
+went out today was the owner's.** **Read the calendar and did not touch it** —
+no event created, moved, confirmed or declined. **Changed no mail state**, so
+the 2026-10-25 enquiry still shows unread in the owner's inbox. **Answered,
+withdrew or re-statused no packet** — only A-26's Actual result, which is the
+agent's own field. **Did not re-report an owner action as agent work.**
+**Published no cash figure**: no balance, overdraft, declined or outflow amount,
+no credit score, and **not the Shopify bill amount, which stays out because it
+is the exact figure A-24 is pending on.** **Order `#1001`'s `$550.00` and the
+catalogue prices are revenue figures, permitted under A-13.** **Published no
+customer or third-party identity.** **Withheld two further notices entirely,
+thread IDs included** — personal family-account mail concerning a minor, which
+arrived again at 10:46Z; **T-159 asks whether the category should be recorded at
+all, and until it is answered the pointer is itself the exposure.** **Wrote
+nothing into `docs/growth/`. Did not touch the other repository. Pushed only to
+`claude/claude-md-docs-cqvhy6`; no pull request.**
+
+**Two things happened at the leak gate and both belong here.** **First, the
+control assertion caught a latent defect in the gate itself.** The gate scans
+only lines added relative to origin via `git diff`, **which does not show
+untracked files** — so **a brief written without a skeleton commit was invisible
+to it entirely.** The intake and the scan had both committed skeletons, so their
+briefs were tracked and scanned; **this one was not, and the gate would have
+reported clean on a file it had never read.** **The control — a check that must
+match text known to be present — failed closed and stopped the run.** The gate
+now stages first and diffs `--cached`, with a comment saying why. **A gate that
+silently scans nothing is worse than no gate, because it reports clean.**
+**Second, the repaired gate then refused the brief once, correctly**: it matched
+a bare zero-dollar amount in the Shopify row. **That was a verified revenue
+zero, which A-13 permits — but the string is identical to the account balance
+A-19 withholds**, so publishing it would make a text search for the withheld
+figure hit this file. **Rewritten as "Nothing — no new orders" rather than
+argued into an exception.**
+
+**A quiet day, said plainly: no appointments, no new orders, no new enquiry
+since last night's.** **The day's value is three short owner actions, not
+activity.**
+
+---
+
+## Next entry: OL-0098
