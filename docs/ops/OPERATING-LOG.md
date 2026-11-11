@@ -11149,4 +11149,100 @@ papered over.**
 
 ---
 
-## Next entry: OL-0100
+## OL-0100 — 2026-11-11 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), **scheduled 10:50:00Z, fired 2026-11-11T10:50:41Z, reached the
+session within about ten seconds.** **Run 10:50:59Z to 10:52:17Z, both read from
+the clock.**
+
+**Checkout, contract item 0:** tip `dff7b5a`, `HEAD` equal to origin, **no
+`src/`** — the prompt's reset condition was checked and not met — no
+`package.json`, clean, **87 tracked files, not the 28 the prompt expects;
+thirty-fifth run reporting it, T-85 step 3.**
+
+**No skeleton, thirteenth such judgement.** **The test is the size of what a
+restart would destroy**: the register and approvals had been read, recounted and
+committed twenty minutes earlier by OL-0099, and the rest was one calendar read,
+a 31-minute mail check, one store read and one GitHub read.
+
+### A quiet day, and the quiet is itself the reading
+
+**No appointments** for 2026-11-11 or 2026-11-12 — a second consecutive empty
+calendar, read not assumed. **No new Shopify orders**; one order on the store
+ever. **No new mail at all since 10:20Z** — Gmail returned six threads for the
+31 minutes since OL-0099's window closed and **every one was already in that
+intake.** **And for the first time in the recent run, no decline notice, no
+balance alert and no overdraft fee in twenty-four hours.**
+
+**Three open pull requests re-verified**: 98, 57 and 47 days, all based on
+`dd84/main`, **none touching the working branch.** T-35 unchanged, no new row.
+
+### Top three, and why these three
+
+1. **Price what has already been offered in writing — T-166 with T-163.**
+   **Seven parties hold DD84 offers the catalogue cannot quote against**: the
+   six companies approached on 2026-11-10 and the customer told he would get "a
+   quote including travel". **A-21's row 1 is held because it priced work never
+   delivered; this is the same failure from the other direction — a promise made
+   before a price exists.**
+2. **The oil-pressure gate, T-110.** **Critical, twelve days overdue, and the
+   thirteenth consecutive brief carrying it.** **§8.2 escalates a
+   safety-critical fault before anything else is published, and repeating it a
+   thirteenth time is not escalation — it is the register running out of ways to
+   say it.** It is kept in the top three for that reason rather than rotated out
+   for something newer.
+3. **A-26 row 2 — the enquirer at seventeen days.** Last week's enquirer got an
+   answer in ten hours; this one has had none since 2026-10-25.
+
+**T-153 is Critical, due today, and deliberately not in the top three**: nothing
+the owner does today changes it, because the account is unreadable from here and
+the figure is already in his inbox. **T-171's Stripe deadline is nine days out
+and sits in Watching.**
+
+### The structural finding, stated once
+
+**172 tasks · 81 Awaiting Owner · 109 of 143 open rows past due · 24 Critical
+and open, 19 of them overdue · 10 packets pending — the most this record has
+ever carried · and 11 rows falling due tomorrow, 8 of them created in the last
+two days.**
+
+**The register is generating work faster than it is being answered.** **That is
+a finding about the register as much as about the owner: a queue nobody can
+clear stops being a queue and becomes a backlog that hides the urgent items
+inside it.** **It is not this routine's place to triage the owner's priorities,
+and it did not** — but **the brief says plainly that its top three are a choice
+among twenty-four Critical rows and that the other twenty-one are not less real
+for being left out.** **No row was closed, downgraded or quietly dropped to make
+the list shorter.**
+
+### Register
+
+**No rows added and none changed.** **Nothing this run found was new** — the
+31-minute mail window was empty, the calendar and store returned verified
+nothings, and the pull requests were unchanged. **A daily brief that adds no
+rows is the correct output for a day with no new facts**, and inventing one to
+look productive is the failure this record exists to avoid.
+
+### Boundaries held
+
+**Sent nothing, replied to nothing, created no draft.** **Read the calendar and
+did not touch it.** **Changed no mail state**, so the seventeen-day enquiry, the
+blocked delivery, the sixteen credit alerts and the two declines all still show
+unread. **Answered, withdrew or re-statused no packet, and did not touch A-28**,
+which is a sibling session's. **Did not re-report an owner action as agent
+work** — not the six approaches, the default-branch change, the contact-form
+test or the reply to the Cadillac enquirer. **Did not claim an agent sent the
+six approaches, nor that one did not; T-165 asks, and this session has never
+called a send tool.** **Published no cash figure** — no balance, overdraft,
+declined or outflow amount, no credit score, and **not the Shopify bill amount,
+which is the figure A-24 is pending on.** Order `#1001`'s `$550.00` and the
+catalogue prices are revenue figures, permitted under A-13. **Published no
+customer or third-party identity and no phone number**, A-17 being pending on
+that category. **Wrote nothing into `docs/growth/`. Did not touch the Ledger
+repository. Pushed only to `claude/claude-md-docs-cqvhy6`; no pull request.**
+**Did not estimate either timestamp.**
+
+---
+
+## Next entry: OL-0101
