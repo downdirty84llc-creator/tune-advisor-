@@ -10969,4 +10969,184 @@ address, surname or number is recorded.
 
 ---
 
-## Next entry: OL-0099
+## OL-0099 — 2026-11-11 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake (repo-attached), **fired 2026-11-11T10:21:15Z and reached the session
+within about ten seconds** — the fastest delivery in this record, against waits
+of four and a half hours last week. **Run from 2026-11-11T10:21:34Z, read from
+the clock; end time is this entry's commit, per T-116.** Window: **since
+OL-0095, 2026-11-10T10:20Z → 2026-11-11T10:20Z.**
+
+### Contract item 0 failed for the first time in thirty-four runs
+
+**`HEAD` was not equal to origin.** Local tip `de5f7ef`, origin `9d70854`, **two
+commits ahead.** **The prompt's remedy is `git reset --hard`, and it is keyed to
+`src/` existing — `src/` was absent, so the condition was not met.** **`HEAD`
+was a strict ancestor of origin**, verified with `git merge-base --is-ancestor`,
+so the correct action was a **fast-forward merge**, which keeps both sides'
+work. **A reset would have looked identical here only because the tree was
+clean, and reaching for it by reflex is how a divergent branch gets discarded.**
+Merged to `9d70854`. **86 tracked files, not the 28 the prompt expects;
+thirty-fourth run reporting it, T-85 step 3.** **Skeleton committed before
+gathering at `0845adb` — OL-0050's repair, twenty-seventh application.**
+
+### Two arrivals, neither this run's work
+
+**`90b97de`, authored from the owner's own address: the repository's default
+branch was switched to `claude/claude-md-docs-cqvhy6`**, with `CLAUDE.md` and
+`README.md` corrected to say so. **`9d70854`, a sibling session: A-28 raised** —
+three customer follow-ups revised to the facts — **and A-20 recommended for
+closure as superseded.** **The sibling renumbered A-26 → A-28 and OL-0093 →
+OL-0098 after losing the push; the convention held.** **A-28's findings are the
+sibling's and are not re-reported here.**
+
+### The finding: a working day the register could not see
+
+**On 2026-11-10 the owner sent six partnership and referral approaches to six
+companies in twenty-three minutes**, then signed in to Google and GitHub from a
+new machine, changed the default branch, tested the website contact form, and
+followed up on one approach.
+
+| Time (UTC) | Target                                           | Outcome                                                        |
+| ---------- | ------------------------------------------------ | -------------------------------------------------------------- |
+| 12:39:34Z  | A European-platform tuner                        | Ticket opened                                                  |
+| 12:39:38Z  | **HP Tuners** sales — referral, TDN and training | Auto-response; no human reply yet                              |
+| 12:40:01Z  | A Ford performance dealer's build programme      | **BLOCKED — never delivered**                                  |
+| 12:47:09Z  | **Holley**'s support desk                        | Request received                                               |
+| 13:01:48Z  | A late-model GM calibration shop                 | **Declined 14:10Z; followed up 17:54Z; declined again 18:07Z** |
+| 13:02:06Z  | A dyno manufacturer                              | Auto-acknowledged                                              |
+
+**Read as the owner's own sending, with the evidence laid out so it can be
+checked**: each message is first person and signed as owner with a personal
+phone number; the voice matches the 2026-11-10T10:32:19Z reply the 11-10 daily
+brief already attributed to him; **a new-device GitHub verification at 12:57:33Z
+precedes his own default-branch commit at 13:40:37Z**; **no packet authorises
+partner outreach and no log entry records any of it**; and **this session has
+never called a send tool.** **What the mail cannot settle is stated as
+unsettled** — Gmail metadata cannot distinguish an account's owner from an agent
+using it. **T-165 is In Verification and asks the owner directly, because if an
+agent sent any of the six that is a Class C breach and must be said plainly
+rather than absorbed.**
+
+### T-166: the catalogue conflict the routine requires be flagged
+
+**The outbound offers five things `ventures.md` does not price**: PCM **cloning
+and replacement matching** (the catalogue has unlock, removal and reinstall);
+**scheduled remote dyno support**; **staff training as a named service** (the
+nearest is the Performance Shop Tuning Support Session); **travel,
+transportation and lodging**; and **revision limits and licensing terms.**
+
+**The travel line is a pattern now, not an observation.** **T-163 was raised
+Critical on 2026-11-10 because a customer was promised "a quote including
+travel"; this outbound promises travel, transportation and lodging to
+prospective partners as well. Three commitments in two days, no rate anywhere.**
+**Four of the six approaches are live, so a conversion forces a price to be
+invented under time pressure — which is how A-21's row 1 came to price work that
+had never been delivered.** **Nothing was priced here and no range was reduced
+to a midpoint.** **Not claimed: that DD84 cannot do these things** — the
+catalogue is a price list, not a limit on competence; the finding is that six
+companies hold written offers the record cannot quote against. **One item is a
+check and not a finding: the outbound links a "Build examples" page, and
+`ventures.md` records three paying customers and no testimonial library.** **The
+page was not opened and nothing is asserted about it** — it is noted in T-166
+for `/dd84-site-monitor`.
+
+### The rest
+
+- **T-167: one of the six was blocked by the receiving server and never
+  delivered**, and the bounce sat unread for 22 hours beside five friendly
+  acknowledgements. **Not claimed: why it was blocked**, or that it should be
+  resent — that needs an address the register does not have.
+- **T-168: the shop that declined twice.** **No draft was prepared and that is a
+  recommendation**: DD84's own approach offered "reply 'no further contact' and
+  I will respect that", and two refusals is that offer being taken. **A third
+  message would be the worst outbound in this record.**
+- **T-169: sixteen identical credit alerts in sixty-five minutes — one event,
+  not sixteen.** **The eighth member of the instrument-defect family; a
+  notification count is not an event count.** **The alert names no account and
+  states no direction**, and the portal has no connector, **so the finding is
+  the shape and nothing more.** Bears on T-136 and A-25.
+- **T-170: four services saw new-device sign-ins in one afternoon** — Google,
+  GitHub, Shopify and two OpenAI business-email verifications six minutes apart,
+  **the second meaning the first was not used.** **Fifth to eighth access event
+  in nine days after T-134, T-144, T-150 and T-158, and none has ever been
+  confirmed by the owner.** One row asks about all of them.
+- **T-171: Stripe hides all secret key values from 2026-11-20**, nine days out,
+  and **a second new secret key was created 2026-11-10T16:11:33Z** — the second
+  in two days. **Three Stripe accounts are evidenced and none is readable
+  here**, so which account either key belongs to is unknown. **No key value
+  appears anywhere in this record.**
+- **T-172: the website contact form delivered on the owner's own test** at
+  14:16:13Z, routed as a training enquiry and marked for human review. **This
+  narrows T-157 — a cold-outreach claim that `/contact` had a fault — without
+  opening the stranger's link.** It does not clear the page: a rendering or
+  mobile fault would not show in a successful submission.
+- **No new inbound lead.** **The Cadillac enquirer has not replied in 24
+  hours**, and **the 2026-10-25 enquirer is still a single unread message at
+  seventeen days**, with A-26 row 2 still awaiting approval. **The six outbound
+  approaches are not filed as leads** — a lead is someone who approached DD84,
+  and filing prospecting as inbound demand is how a funnel comes to look
+  healthier than it is.
+- **No drafts prepared, with a reason given for each omission** rather than an
+  empty section.
+
+### T-29 closes Done, on live evidence
+
+**`get_file_contents` with no `ref` returned `README.md` from `0845adb`**, this
+run's own skeleton commit and the tip of this branch. **GitHub serves the
+default branch when no ref is given, so the default is now this branch**, and
+the content is the DD84 platform README rather than the Next.js application that
+stood at the repository root for seven weeks. **Verified against the live system
+rather than accepted from the commit message, because `CLAUDE.md`'s own rule is
+that the live system beats the document, including itself.** **Both legacy
+Ledger branches still exist**, so nothing was deleted to achieve it — what A-11
+was narrowed to protect. **A-11 is not closed by this run**: its scope was
+wider, and changing a packet's status on an inference is what this record does
+not do.
+
+### Register
+
+**T-165 to T-172 added; T-29 closed Done.** **172 tasks: 23 Done · 4 No Action ·
+2 Accepted Risk · 14 In Verification · 4 In Progress · 5 Awaiting Approval · 81
+Awaiting Owner · 6 Blocked · 31 Planned · 2 Backlog.** **109 of the 143 open
+rows are past due. Twenty-four rows are Critical and open: nineteen overdue,
+newest one day and oldest eighty-three.** **Ten packets pending.**
+
+### Boundaries held
+
+**Sent nothing, replied to nothing, forwarded nothing, created no Gmail draft**
+— **every outbound message in this window predates the run and is the owner's.**
+**Changed no mail state**, so the blocked-delivery notice, the sixteen credit
+alerts and the two declines all still show unread where the owner will find
+them. **Did not claim the owner's work as the register's.** **Did not resolve
+the catalogue conflict silently.** **Did not count sixteen notifications as
+sixteen events.** **Published no credential** — two one-time verification codes,
+two support ticket numbers, a vendor customer ID and every Stripe key value are
+withheld. **Published no individual's name, email address or phone number**: not
+the six targets' staff, not either enquirer, **and not the owner's own phone
+number from his signature**, because A-17 has been pending on this category
+since 2026-10-14 and the brief behaves as though it were approved in the strict
+direction. **Withheld three personal threads entirely, thread IDs included** —
+family notices concerning a minor, and a food order carrying a home-area
+address; T-159 asks whether the category should be recorded at all. **Opened no
+link from an unsolicited message.** **Wrote nothing into `docs/growth/`** — the
+partnership campaign is commercial and would interest Rev, and `docs/ops/` is
+what was operated. **Did not touch A-28. Did not touch the Ledger repository.
+Pushed only to `claude/claude-md-docs-cqvhy6`; no pull request.**
+
+### The coverage gap, named
+
+**The unread sweep estimated 201 threads and returned 50 on its first page; a
+second page token exists and was not followed.** **Three targeted passes were
+run instead** — personal-category and important mail with promotions excluded,
+the four outbound threads individually, and the carried-in threads by ID — **and
+every thread named in the brief was confirmed with `get_thread` or
+`get_message`, as T-102 requires.** **About 150 threads in the window were not
+individually read.** They are promotional by every available signal, **but "it
+looked promotional" is not "it was read", and the gap is stated rather than
+papered over.**
+
+---
+
+## Next entry: OL-0100
