@@ -11245,4 +11245,174 @@ repository. Pushed only to `claude/claude-md-docs-cqvhy6`; no pull request.**
 
 ---
 
-## Next entry: OL-0101
+## OL-0101 — 2026-11-12 inbox and lead intake
+
+**Routine:** `/dd84-inbox-intake`, Class A. **Trigger:** DD84 Inbox and Lead
+Intake (repo-attached), **fired 2026-11-12T10:21:20Z and reached the session
+within about twenty seconds.** **Run from 10:21:48Z, read from the clock; end
+time is this entry's commit, per T-116.** Window: **since OL-0099,
+2026-11-11T10:20Z → 2026-11-12T10:20Z.**
+
+**Checkout, contract item 0:** tip `43d63a9`, `HEAD` equal to origin, no `src/`
+— the reset condition was checked and not met — no `package.json`, clean, **88
+tracked files, not the 28 the prompt expects; thirty-sixth run reporting it,
+T-85 step 3.** No incoming commits. **Skeleton committed before gathering at
+`ba318f7` — OL-0050's repair, twenty-eighth application.**
+
+### The correction: six became thirty-two, and the error was this register's
+
+**OL-0099 reported six owner partnership approaches on 2026-11-10. The real
+number is thirty-two.**
+
+| Query                                        | Result         |
+| -------------------------------------------- | -------------- |
+| `in:sent after:2026/11/10 before:2026/11/11` | **36 threads** |
+| the same, `subject:DD84`                     | **32 threads** |
+
+The other four are a Georgia SBDC message, one further approach under a
+different subject, one personal reply (withheld) and the reply to the Cadillac
+enquirer. **One of the thirty-two is a resend of a bounced message to a second
+contact at the same company, so thirty-two distinct organisations.** **The burst
+ran 12:38:2xZ to 13:02:03Z — about one message every forty-five seconds, plainly
+template-driven.** **Describing it as six hand-written approaches understated it
+by a factor of five.**
+
+**The cause was the query, not the mail.** **OL-0099 searched `in:inbox`, and an
+outbound message appears in the inbox only if it drew a reply or a bounce.**
+Twenty-five drew neither inside that window. **"Six" was an artefact of the
+question, and it was published twice as a headline with a rate derived from
+it.**
+
+**T-173 records the defect: the ninth in the instrument family and the first
+caused by an agent's choice of query rather than a tool's behaviour.** Silent
+Gmail truncation, a too-narrow window, T-102's missing dates, the task-ID
+recount, `discountedTotalSet`, Shopify's rolling attempt window, a
+sender-supplied `Date` header and sixteen notifications for one event were all
+things a tool did. **This one is counting sends with a receipts query.** **To
+count what was sent, search the sent mailbox.**
+
+**Worth naming precisely: OL-0099 declared its own coverage gap as ~150 unread
+threads — and the error was not in that gap at all.** **No amount of further
+inbox paging would have found it**, because the missing messages were never in
+the inbox. **A stated gap in the right mailbox is not protection against
+searching the wrong one.**
+
+### T-167 was never true, and the owner had already fixed it
+
+**OL-0099 said one approach was blocked by the receiving server and that the
+bounce had sat unread for 22 hours with "the owner has no reason to know".**
+**He resent it to a different contact at the same company at
+2026-11-10T17:53:22Z** — five hours after the bounce, the same afternoon, **and
+seventeen hours before the row was written.** **T-167 moves to No Action,
+overtaken before it existed, with the resend credited to the owner.**
+
+**This is the second row or packet in three days to ask for something already
+done** — A-26 row 1 was the first, on 2026-11-10. **Both have the same root: a
+register that reads receipts and infers sends.**
+
+### The campaign's result so far — T-174
+
+| Outcome at 2026-11-12T10:20Z                            | Count   |
+| ------------------------------------------------------- | ------- |
+| Substantive human replies, **both declines**            | **2**   |
+| Automated ticket acknowledgements (incl. **HP Tuners**) | **3**   |
+| Support ticket raised by web form (**Holley**)          | **1**   |
+| Bounced, since resent                                   | **1**   |
+| **No response of any kind**                             | **~25** |
+
+**Both declines gave identical reasoning: an established shop with its own
+in-house calibrator and its own dyno does not need a remote one.** The second
+arrived 2026-11-11T17:06:02Z (`1a1c577fdcee050f`, unread). **Two data points are
+not a verdict and twenty-five have said nothing at one day old** — **but the two
+that answered answered the same way, and that is worth knowing before a third
+wave.** **Targets span the United States, the United Kingdom, the Netherlands
+and Australia: an international campaign, which the register did not know
+yesterday.** **Not claimed: that the campaign failed, that the targets were
+poorly chosen, or any conversion rate** — the denominator is approaches and
+there are no deals either way.
+
+**What changed for T-166 is scale, not text.** **Five capabilities the catalogue
+does not price — travel and lodging, PCM cloning and replacement matching,
+remote dyno support, staff training, revision and licensing terms — went to
+thirty-two companies, not six.** **T-163's travel rate is the price on an offer
+held by thirty-two organisations and one customer.** T-163 was due 2026-11-11;
+T-166 is due 2026-11-12.
+
+### The rest
+
+- **T-175: the card that declined for insufficient funds on 2026-11-10 was
+  turned off on 2026-11-11T12:35:48Z** (`1a1ca9b7b46e4d2c`, digits and amounts
+  withheld). **Fourth card-state change in the register.** **Recorded as a shape
+  with no story attached** — securing a card after a decline, consolidating onto
+  one card and stopping a recurring charge are all consistent with the notice,
+  and the mail does not distinguish them. **T-153 stays open: turning a card off
+  does not answer what the decline revealed.**
+- **No overdraft fee at eight days and seven nightly processings; no balance
+  alert for a second day; no decline.** **The claim is that the mail reported
+  nothing, not that nothing happened** — the account is unreadable from here.
+- **T-169 unchanged: the sixteen credit alerts were not followed by a
+  seventeenth**, consistent with one event reported sixteen times and
+  inconsistent with sixteen separate changes.
+- **Stripe: a sub-processor update effective 2026-11-10 (no action for DD84),
+  and the key-value deadline now eight days out — T-171.**
+- **No new inbound lead.** **The Cadillac enquirer has not replied in
+  forty-eight hours**, and **the 2026-10-25 enquirer is a single unread message
+  at eighteen days** with A-26 row 2 still pending.
+- **No drafts prepared**, with a reason for each omission. **The Cadillac thread
+  is the first where a chase would be defensible on the one-business-day
+  threshold — and it is the owner's own thread and his own question, so a second
+  DD84 message would talk over him.** Recommended instead that he decide.
+
+### Method change, and the gap it leaves
+
+**Three passes this run: the sent mailbox for 2026-11-10 — the pass OL-0099
+should have made — personal and important inbox mail for the window, and a
+money-and-platform keyword pass.** **A full unread sweep was not run**; the
+budget went where the error was. **That leaves the same ~150 promotional threads
+unread across both days, and it is a deliberate trade rather than an
+oversight.** **One message timestamped 2026-11-12T10:22:20Z was excluded as two
+minutes outside the window**, and is named so a later run does not mistake its
+absence for a miss.
+
+### Register
+
+**T-173, T-174 and T-175 added. T-165 retitled from six to thirty-two. T-167
+withdrawn No Action.** **175 tasks: 23 Done · 5 No Action · 2 Accepted Risk · 15
+In Verification · 4 In Progress · 5 Awaiting Approval · 82 Awaiting Owner · 6
+Blocked · 31 Planned · 2 Backlog.** **112 of the 145 open rows are past due.
+Twenty-four Critical and open, twenty-one overdue, newest one day and oldest
+eighty-four.** **Ten packets pending.**
+
+**A second instrument lesson, smaller but the same shape.** **The leak gate
+missed a third-party company name and the run's own verification pass caught
+it.** The gate's name-based pattern list was written on 2026-11-11, **before
+this counterparty existed in the record**, and a verbatim quotation of the
+decline carried the name straight past it. **The name is elided and the pattern
+added with a comment saying why it was missed.** **A name-based gate is only as
+current as the day it was written, so the verification pass must test for this
+run's own counterparties by name rather than merely re-running the gate.**
+**Like the main correction, this was a defect in the question asked rather than
+in a tool.**
+
+### Boundaries held
+
+**Sent nothing, replied to nothing, created no draft** — **all thirty-three
+outbound messages of 2026-11-10 are the owner's, and this session has never
+called a send tool.** **Changed no mail state**: the second decline, the
+card-off notice and the eighteen-day enquiry all still show unread. **Did not
+soften the correction, and did not blame a tool for it — the query was mine.**
+**Published no individual's name, email address or phone number: thirty-two
+third-party business addresses passed through this run and none is in the
+file**, A-17 being pending on exactly that category. **Published no cash
+figure** — no balance, overdraft, declined or outflow amount, and **not the
+Shopify bill amount, which is the figure A-24 is pending on.** **Asserted no
+reason for the card being turned off.** **Did not file outbound approaches as
+leads**, because filing thirty-two of them as pipeline would make an empty
+funnel look full. **Wrote nothing into `docs/growth/`** — a thirty-two-target
+international campaign is Rev's commercial territory, and `docs/ops/` is what
+was operated. **Did not touch A-28, the Ledger repository, or any branch but
+`claude/claude-md-docs-cqvhy6`. No pull request.**
+
+---
+
+## Next entry: OL-0102

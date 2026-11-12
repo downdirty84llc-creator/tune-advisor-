@@ -198,81 +198,82 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-162 | The owner answered the new enquirer 8 min before A-26 asked to                                | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-13   |
 | T-163 | A quote including travel was promised; no travel charge exists                                | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1 first         | 2026-11-11   |
 | T-164 | ventures.md records no location; the register asserts a county                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
-| T-165 | Six owner partnership approaches on 11-10; no packet, no log entry                            | sales      | **High**     | In Verification          | Agent | A to confirm                 | 2026-11-12   |
+| T-165 | 32 owner partnership approaches on 11-10, not the 6 first reported                            | sales      | **High**     | In Verification          | Agent | A to confirm                 | 2026-11-12   |
 | T-166 | The outbound offers five capabilities the catalogue does not price                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** family              | 2026-11-12   |
-| T-167 | One of six approaches was blocked and never delivered                                         | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
+| T-167 | NEVER TRUE: the owner resent it 2026-11-10T17:53, before the row                              | sales      | **High**     | No Action (accepted)     | Owner | A to report                  | 2026-11-12   |
 | T-168 | A shop declined twice after a follow-up; close the referral?                                  | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
 | T-169 | A payment status changed: 16 identical alerts, one event                                      | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25** first               | 2026-11-12   |
 | T-170 | Four new-device sign-ins in one afternoon; 5th-8th in nine days                               | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
 | T-171 | Stripe hides all secret key values 2026-11-20; 2nd key in 2 days                              | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-19   |
 | T-172 | The website contact form delivered on the owner 11-10 test                                    | ops        | Normal       | In Verification          | Agent | A to verify                  | 2026-11-13   |
+| T-173 | Counting sends with an inbox query: 2 false rows in 3 days                                    | ops        | **High**     | In Verification          | Agent | A to diagnose                | 2026-11-13   |
+| T-174 | 32 approaches: 2 declines on in-house capability, ~25 silent                                  | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
+| T-175 | The insufficient-funds card was turned off 2026-11-11                                         | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **23 Done** · **4 No Action** · **2 Accepted Risk** · 14 In Verification
-· 4 In Progress · **5 Awaiting Approval** · **81 Awaiting Owner** · 6 Blocked ·
-31 Planned · 2 Backlog. **172 tasks.** Recounted mechanically with
+Counts: **23 Done** · **5 No Action** · **2 Accepted Risk** · 15 In Verification
+· 4 In Progress · **5 Awaiting Approval** · **82 Awaiting Owner** · 6 Blocked ·
+31 Planned · 2 Backlog. **175 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, **every bucket printed and the total checked against their
-sum** — last **2026-11-11**, at the Wednesday inbox intake (**T-165 to T-172
-added; T-29 closed Done**). **The run's finding is a working day the register
-could not see.** **On 2026-11-10 the owner sent six partnership and referral
-approaches to six companies between 12:39Z and 13:02Z**, signed in to Google and
-GitHub from a new machine between 12:54Z and 12:57Z, **changed the repository's
-default branch at 13:40Z**, tested the website contact form at 14:16Z, and
-followed up on one approach at 17:54Z. **None of it is agent work and none of it
-is claimed as such.** **No packet authorises partner outreach and no log entry
-records it**; the messages are first person, signed as owner with a personal
-phone number, in the voice the 11-10 daily brief already attributed to him, and
-the GitHub device verification at 12:57Z precedes his own default-branch commit.
-**This session has never called a send tool.** **What the mail cannot settle is
-stated as unsettled: T-165 is In Verification and asks the owner whether the six
-were his, because if an agent sent any of them that is a Class C breach and must
-be said plainly.** **T-166 is the conflict flag the routine requires, and it is
-Critical.** The outbound offers **five things `ventures.md` does not price**:
-PCM cloning and replacement matching, scheduled remote dyno support, staff
-training as a named service, **travel, transportation and lodging**, and
-revision limits and licensing terms. **The travel line has become a pattern
-rather than an observation — T-163 was raised Critical on 2026-11-10 because a
-customer was promised a quote including travel, and this outbound promises
-travel to prospective partners as well. Three commitments, no rate.** **If any
-of the four live approaches converts, a price has to be invented under time
-pressure, which is how A-21's row 1 came to price work that had never been
-delivered.** **No price was invented here and no range reduced to a midpoint.**
-**T-167 is the one nobody could have noticed: one of the six was blocked by the
-receiving server and never delivered**, and the bounce sat unread for 22 hours
-among the other five friendly acknowledgements. **T-168 records a shop declining
-twice — once after a DD84 follow-up — and recommends closing the referral rather
-than sending a third message; drafting one would have been the worst outbound in
-this record.** **T-169 is the eighth member of the instrument-defect family:
-sixteen identical credit alerts arrived in sixty-five minutes and they are one
-event, not sixteen.** A notification count is not an event count. **The alert
-names no account and states no direction**, and the detail sits behind a portal
-with no connector, **so the finding is the shape and nothing more** — it bears
-on T-136's charge-off clock and on A-25. **T-171 is a dated deadline on a live
-payment system: Stripe hides all secret key values from 2026-11-20, nine days
-out, and a second new secret key was created on 2026-11-10 — the second in two
-days, on one of three evidenced Stripe accounts, none readable from here.**
-**T-29 closes Done, and on live evidence rather than a commit message.**
-`get_file_contents` with no `ref` returned `README.md` from this branch's tip,
-and GitHub serves the default branch when no ref is given — **so the default is
-now `claude/claude-md-docs-cqvhy6` and the repository root shows the DD84 agent
-platform instead of the Next.js application that stood there for seven weeks.**
-**Both legacy Ledger branches still exist**, so nothing was deleted to achieve
-it, which is what A-11 was narrowed to protect. **A-11 is NOT closed by this
-run**: its scope was wider, and changing a packet's status on an inference is
-what this record does not do. **T-172 records a smaller verified positive — the
-owner's own contact-form test delivered, which narrows T-157 without opening a
-stranger's link.** **81 of the 172 rows are Awaiting Owner**, and **109 of the
-143 open rows are past due.** **Twenty-four rows are Critical and open: nineteen
-overdue (newest one day, oldest eighty-three), T-153 and T-163 due 2026-11-11,
-T-166 due 2026-11-12, T-171 due 2026-11-19, T-143 due 2026-11-20.** **Ten
-approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24, A-25, A-26, A-27
-and A-28** — **A-28 is a sibling session's, raised 2026-11-10, and is not
-re-reported here as this run's work.** **A-26 row 1 was overtaken by the owner's
-own reply on 2026-11-10; row 2 is still live and its enquirer is a single unread
-message at seventeen days.**
+sum** — last **2026-11-12**, at the Thursday inbox intake (**T-173 to T-175
+added; T-165 retitled, T-167 withdrawn**). **THE RUN'S FINDING IS A CORRECTION
+TO ITS OWN PREDECESSOR, AND IT IS THE LARGEST IN THIS RECORD.** **The 2026-11-11
+intake reported six owner partnership approaches on 2026-11-10. The real number
+is thirty-two.** **The cause was the query, not the mail: that run searched
+`in:inbox`, and an outbound message appears in the inbox only if it drew a reply
+or a bounce.** Twenty-five of the thirty-two drew neither, **so they were
+invisible to the instrument and "six" was an artefact of the question rather
+than a fact about the world** — published twice as a headline, with a rate
+derived from it. **The sent mailbox gives 36 threads for that day, 32 of them
+carrying "DD84" in the subject**, plus a Georgia SBDC message, one further
+approach under a different subject, one personal reply and the reply to the
+Cadillac enquirer. **Roughly thirty-two messages in twenty-four minutes, about
+one every forty-five seconds — template-driven sending, understated by a factor
+of five.** **T-165's title is corrected rather than the row replaced.** **T-173
+is the defect itself and it is the ninth in the instrument family — the first
+caused by an agent's choice of query rather than a tool's behaviour.** The
+others were things a tool did; **this one is counting sends with a receipts
+query.** **It produced two false rows in three days.** **T-167 is the second: it
+said a blocked approach had sat unread for 22 hours with "the owner has no
+reason to know" — he had resent it to a second contact at the same company at
+2026-11-10T17:53:22Z, five hours after the bounce and seventeen hours before the
+row was written.** **T-167 was never true and moves to No Action, with the
+resend credited to the owner.** **A-26 row 1 on 2026-11-10 was the first of the
+pair.** Both have one root: **a register that reads receipts and infers sends.**
+**T-174 is the campaign's own result, and it changes T-166's stakes rather than
+T-166's text.** **Two substantive replies, both declines, both on identical
+reasoning — an established shop with its own calibrator and its own dyno does
+not need a remote one.** Three automated ticket acknowledgements, one bounce
+since resent, **and about twenty-five with no response of any kind at one day
+old.** **Targets span the United States, the United Kingdom, the Netherlands and
+Australia: an international campaign, which the register did not know.** **Not
+claimed: that it failed, that the targets were poorly chosen, or any conversion
+rate.** **What did change is scale — T-166's five uncatalogued capabilities,
+travel and lodging among them, are now known to have been offered to thirty-two
+companies rather than six, so T-163's travel rate is the price on an offer held
+by thirty-two organisations and one customer.** **T-163 was due 2026-11-11;
+T-166 is due 2026-11-12.** **T-175: the card that declined for insufficient
+funds on 2026-11-10 was turned off on 2026-11-11** — the fourth card-state
+change in the register, recorded as a shape with no story attached, because
+securing a card after a decline, consolidating onto one card and stopping a
+recurring charge are all consistent with the same notice. **T-153 stays open:
+turning a card off does not answer what the decline revealed.** **Two absences
+worth more than they look.** **No overdraft fee at eight days and seven nightly
+processings, and no balance alert for a second day** — but the account is
+unreadable from this session, so the claim is that the mail reported nothing,
+not that nothing happened. **And T-169's sixteen identical credit alerts were
+not followed by a seventeenth**, which is consistent with one event reported
+sixteen times and inconsistent with sixteen separate changes. **82 of the 175
+rows are Awaiting Owner**, and **112 of the 145 open rows are past due.**
+**Twenty-four rows are Critical and open: twenty-one overdue (newest one day,
+oldest eighty-four), T-166 due 2026-11-12, T-171 due 2026-11-19, T-143 due
+2026-11-20.** **Ten approval packets pending: A-07, A-10, A-17, A-22, A-23,
+A-24, A-25, A-26, A-27 and A-28**, the last a sibling session's. **A-26 row 2's
+enquirer is a single unread message at eighteen days, and the 1946 Cadillac
+enquirer has not replied in forty-eight hours.**
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
