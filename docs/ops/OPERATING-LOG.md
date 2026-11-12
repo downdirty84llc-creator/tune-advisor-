@@ -11415,4 +11415,105 @@ was operated. **Did not touch A-28, the Ledger repository, or any branch but
 
 ---
 
-## Next entry: OL-0102
+## OL-0102 — 2026-11-12 daily command brief
+
+**Routine:** `/dd84-daily-brief`, Class A. **Trigger:** DD84 Daily Command Brief
+(repo-attached), **scheduled 10:50:00Z, fired 2026-11-12T10:50:41Z, reached the
+session within about ten seconds.** **Run 10:50:58Z to 10:54:11Z, both read from
+the clock.**
+
+**Checkout, contract item 0:** tip `d5866c5`, `HEAD` equal to origin, no `src/`
+— the reset condition was checked and not met — no `package.json`, clean, **89
+tracked files, not the 28 the prompt expects; thirty-seventh run reporting it,
+T-85 step 3.** **No skeleton, fourteenth such judgement**: the registers had
+been read, recounted and committed twenty-five minutes earlier by OL-0101.
+
+### A quiet day, said plainly
+
+**No appointments** for 2026-11-12 or 2026-11-13 — a third consecutive empty
+calendar, read not assumed. **No new Shopify orders**; one order on the store
+ever. **Nothing material since 10:20Z**: Gmail returned seven threads for the
+31-minute gap, six already in OL-0101 and the seventh a software release
+notification with no DD84 relevance. **Three pull requests re-verified
+unchanged** at 99, 58 and 47 days, none touching the working branch.
+
+**No rows added and none changed.** **A brief that adds no rows is the correct
+output for a day with no new facts**, and inventing one to look productive is
+the failure this record exists to avoid.
+
+### Top three, and why
+
+1. **Price what has already been offered — T-166 (Critical, due today) with
+   T-163 (Critical, a day overdue).** **Yesterday this was a seven-party
+   problem; OL-0101 established the real scale at thirty-two companies plus one
+   customer.** **A-21's row 1 is held for the mirror of this failure — a price
+   set after the work; this is a price owed before it.**
+2. **T-110, the oil-pressure gate.** **Critical, thirteen days overdue, and the
+   fifteenth consecutive brief carrying it.** **Fifteen briefs is no longer a
+   reminder; it is evidence that repetition is not working.** Kept rather than
+   rotated out because §8.2 escalates a safety-critical fault — **and the brief
+   says plainly that if the answer is that there is nothing to answer, that
+   sentence closes it too.**
+3. **A-26 row 2 — the enquirer at nineteen days.**
+
+**T-165 is due today and is one word, and it is deliberately in Needs a decision
+rather than the top three**: it costs almost nothing and blocks no revenue,
+**but it is the only item that can formally establish that a Class C boundary
+held, and at thirty-two messages rather than six the unclosed question is five
+times larger than it was yesterday.**
+
+### The queue
+
+| Measure           | 2026-11-11 | 2026-11-12          |
+| ----------------- | ---------- | ------------------- |
+| Tasks             | 172        | **175**             |
+| Awaiting Owner    | 81         | **82**              |
+| Open and past due | 109 of 143 | **112 of 145**      |
+| Critical and open | 24         | **24** (21 overdue) |
+| Packets pending   | 10         | **10**              |
+
+**The backlog did not grow much, and that is the first time this week** — two
+rows closed yesterday against three added. **The oldest open Critical row is
+eighty-four days.**
+
+**A-17's cost is now concrete and is recorded as such**: it has been pending
+since 2026-10-14, and **thirty-two third-party business addresses passed through
+yesterday's intake and every one had to be withheld** — correct under a pending
+packet, unnecessary under an answered one.
+
+### One calibration point
+
+**OL-0101 declared its coverage gap honestly: three targeted passes, no full
+unread sweep, about 150 promotional threads unread.** **A platform notice — a
+host adding subprocessors on 2026-11-20 — arrived inside that window and inside
+that gap, and this brief found it.** **It is minor, which is the useful part:
+the declared gap had something real in it, and it was small.** **That is
+evidence the trade was reasonable, not evidence it was free.**
+
+**Two platform changes land on 2026-11-20 — Stripe hiding all secret key values
+and that host's subprocessor addition. No link is asserted between them**; they
+are recorded as two dates that coincide.
+
+### Boundaries held
+
+**Sent nothing, replied to nothing, created no draft.** **Read the calendar and
+did not touch it.** **Changed no mail state**, so the nineteen-day enquiry, the
+second decline and the card-off notice all still show unread. **Answered,
+withdrew or re-statused no packet, and did not touch A-28.** **Did not re-report
+an owner action as agent work** — not the thirty-two approaches, the card turned
+off, or the resend of the bounced message. **Did not restate yesterday's
+correction as though it were today's finding**: the thirty-two figure is used
+where it changes a priority and credited to the intake that established it.
+**Published no cash figure** — and **not the Shopify bill amount, which is the
+figure A-24 is pending on.** Order `#1001`'s `$550.00` and the catalogue prices
+are revenue figures, permitted under A-13. **Published no customer or
+third-party identity and no phone number.** **Did not triage the backlog for the
+owner**: the top three are named as a choice among twenty-four Critical rows,
+and **no row was closed, downgraded or dropped to shorten the list.** **Wrote
+nothing into `docs/growth/`. Did not touch the Ledger repository. Pushed only to
+`claude/claude-md-docs-cqvhy6`; no pull request.** **Did not estimate either
+timestamp.**
+
+---
+
+## Next entry: OL-0103
