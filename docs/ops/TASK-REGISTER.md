@@ -210,46 +210,52 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-174 | 32 approaches: 2 declines on in-house capability, ~25 silent                                  | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
 | T-175 | The insufficient-funds card was turned off 2026-11-11                                         | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
 | T-176 | Transport basis: no per-mile rate — at cost until A-27 unblocks it                            | finance    | Normal       | Blocked                  | Agent | **A-27** first               | 2026-11-20   |
+| T-177 | A customer tune file arrived with no message — scope unknown                                  | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
+| T-178 | A GitHub App asks the owner for more account access                                           | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
+| T-179 | A 2nd card declined for being off — T-139 repeating, 6 days on                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139** first              | 2026-11-13   |
+| T-180 | The insufficient-funds card is back on after 3+ cycles 11-12                                  | finance    | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
+| T-181 | 3 third-party sign-ins used the business identity in 29 min                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
+| T-182 | The Cadillac enquirer is 3 days silent — chase or close?                                      | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 15 In Verification
-· 4 In Progress · **5 Awaiting Approval** · **81 Awaiting Owner** · 7 Blocked ·
-31 Planned · 2 Backlog. **176 tasks.** Recounted mechanically with
+· 4 In Progress · **5 Awaiting Approval** · **87 Awaiting Owner** · 7 Blocked ·
+31 Planned · 2 Backlog. **182 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-13** (**T-163 closed Done, T-166 corrected, T-176 added**).
-**T-163 is closed because the owner instructed the rate directly** — "set a
-travel rate for T-163" — **and that instruction is the authority for it.**
-**Pricing is Class E, so this is recorded as a live pricing change made on
-instruction, not as an agent's own decision.** **Three on-site lines are now in
-`ventures.md`: a $599 minimum booked scope before travel, $75/hr transit time
-each way door to door, and transport, lodging and subsistence at cost.** **Every
-figure is anchored to a price already on that ladder and none is invented**:
-$599 is the top of the existing Holley in-person band, so no new ceiling is
-introduced, and $75 is the ladder's lowest unit price, which is what transit
-should take because it is time the owner cannot sell but is not skilled work.
-**Travel is charged on top of the minimum, as the campaign message already
-described it, and on a grouped day transit and lodging are charged once and
-apportioned.** **There is deliberately no per-mile figure, and that is the part
-worth keeping.** A standard business mileage rate is an external published
-figure that changes annually; **T-98 means no page can be fetched from here and
-A-27 asks for the hosts that would fix it**, and `CLAUDE.md` says a number
-without a source is a defect. **Quoting a mileage rate from memory would have
-been precisely the defect this record exists to catch**, so transport is a
-receipted pass-through until a source can be read. **T-176 carries it, Blocked
-behind A-27.** **The rates are stated tax-inclusive like every other line on the
-ladder — $75/hr yields $70.75 at the 6% recorded on order #1001 — and no
-position is taken on whether travel time is taxable at all, which is T-106's
-unanswered question.** **T-166's count drops from five uncatalogued capabilities
-to four.** Travel and lodging is priced; **PCM cloning and replacement matching,
-scheduled remote dyno support, staff training as a named service, and revision
-and licensing terms are not**, and thirty-two companies hold written offers
-covering them. **81 of the 176 rows are Awaiting Owner**, and **121 of the 145
-open rows are past due.** **Twenty-three rows are Critical and open.** **Ten
-approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24, A-25, A-26, A-27
-and A-28**, the last a sibling session's.
+last **2026-11-13** (**T-177 to T-182 added by the inbox intake**). **87 of the
+182 rows are Awaiting Owner**, **121 of the 151 open rows are past due**, and
+**twenty-four rows are Critical and open** — one more than yesterday, and the
+new one is T-177. **Ten approval packets pending: A-07, A-10, A-17, A-22, A-23,
+A-24, A-25, A-26, A-27 and A-28**, the last a sibling session's.
+
+**T-177 is the only new Critical and it is new work, not a repeat.** A customer
+sent an HP Tuners calibration file to the business inbox at 2026-11-13T01:16:02Z
+with **no message attached to it** — no fault described, no scope, no question.
+**That is DD84's exact service arriving unprompted and sitting unanswered**, and
+it is the first inbound tune file the register has ever carried. **The file was
+not downloaded, not opened and will never be committed**: `CLAUDE.md` §5 forbids
+tune files here and a customer's file is covered at least as firmly as DD84's
+own. A reply is drafted in the 11-13 intake and **not sent** — sending is Class
+C.
+
+**T-179 is T-139 happening again.** A business card deliberately kept off was
+presented for payment on 2026-11-12 and declined for being off. **T-139 asked
+why that keeps happening on 2026-11-07 and is six days unanswered.** **T-180
+records the other half:** the card that declined for insufficient funds on
+2026-11-10, and that T-175 recorded as turned off on 11-11, **was turned back on
+and is on** — at least three on/off cycles on 2026-11-12, with the exact count
+unreadable because two alerts carry the same timestamp and the same text, which
+is T-169's duplication defect recurring.
+
+**T-178 is an owner decision no agent may take.** A GitHub App already installed
+on the owner's account is requesting additional permissions. **Account
+permissions are Class G**, the request does not say which permissions it wants,
+and the settings page that would say is unreachable from here (T-98). **The same
+account carries both this public repository and the Ledger's**, and a grant is
+not scoped to whichever repository prompted it.
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used

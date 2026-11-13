@@ -11610,4 +11610,179 @@ engine.
 
 ---
 
-## Next entry: OL-0104
+## OL-0104 — 2026-11-13 inbox and lead intake
+
+**Run 2026-11-13T10:53Z–11:30Z.** Routine fired 10:27:16Z against a 10:20Z
+schedule. **Window 2026-11-12T10:20Z → 2026-11-13T10:20Z.** Class A: nothing
+sent, no label applied, no mail state changed, no live system touched. **Brief:
+`docs/ops/briefs/2026-11-13-inbox-intake.md`.**
+
+### Contract item 0
+
+`HEAD` equals `origin/claude/claude-md-docs-cqvhy6`, **no `src/`**, no
+`package.json`, clean status, **91 tracked files against the 28 the prompt
+expects — thirty-eighth run reporting that drift.** The prompts are stale, not
+the tree; T-85 step 3 carries it. **The tell the prompt actually relies on, a
+`src/` directory on a wrong pointer, is sound and was checked.**
+
+### The skeleton earned its keep
+
+**A worker restart killed this run mid-sweep.** The skeleton committed at
+`57f4338` before the mail sweep survived it, and the checkout came back intact
+at that commit. **Twenty-ninth application of OL-0050 and the first time the
+protection was needed rather than merely prudent** — every prior application was
+insurance that went unclaimed. The rule stands as written: the test is the size
+of what a restart would destroy, not the age of the last commit.
+
+**One cost to record honestly: the Shopify read was discarded by the restart and
+had to be made again.** It returned the same thing both times, but the second
+call is the one this entry rests on. **No figure here was carried over from a
+reading taken before the restart.**
+
+### A tune file arrived and nobody has answered it — T-177
+
+**2026-11-13T01:16:02Z, thread `1a1d27a193e37041`.** A customer-supplied HP
+Tuners calibration file, subject **"90 Chevy 1500 LS2"**, about 1.06 MB, with a
+message body of five words of phone signature and **nothing else** — no fault,
+no scope, no question, no price asked.
+
+**The file was not downloaded, not opened, not described and will never be
+committed here.** `CLAUDE.md` §5 forbids tune files in this repository without
+qualification and **a customer's file is covered at least as firmly as DD84's
+own**. The sender's name and address are withheld under A-17. The thread ID is
+the pointer; the inbox holds everything else.
+
+**This is the highest-value item the intake has found in weeks and it is the
+business's exact service**, arriving unprompted: a 1990 GM truck with an LS2
+swap and a calibration already in hand. **Unanswered nine hours thirty-seven
+minutes at the sweep.**
+
+**What is deliberately not concluded.** Whether this is an existing customer, a
+prospect, a continuation of a conversation that started off email, or a file
+sent to the wrong address. **Nothing in the mail says**, and a reply that
+assumes any of them can be wrong in public. **The draft in §1 of the brief asks
+four scoping questions, quotes no price, promises no power figure, names no
+turnaround, and does not claim the file has been read.** It is **not sent** —
+sending is Class C.
+
+### Nothing was sent in the window, and that was checked properly
+
+**`in:sent` for the window returns zero.** **T-173's lesson applied and then
+tested:** an empty result is also what a broken query returns, so the same
+mailbox was queried over three days and returned **thirty-six threads, newest
+2026-11-11T14:33:35Z**. **The tool works; the mailbox is quiet.** So the
+thirty-two partnership approaches of 2026-11-10 drew no follow-up on 11-12 and
+neither did anything else.
+
+### Two cards, two different stories — T-179 and T-180
+
+**The alerts distinguish two cards by last-four digits. Both sets are
+withheld.**
+
+**Card A**, the one that declined for insufficient funds on 2026-11-10 and that
+T-175 recorded as turned off on 2026-11-11T12:35:48Z — **identity confirmed by
+matching the withheld digits against thread `1a1ca9b7b46e4d2c`** — was toggled
+through **nine notices on 2026-11-12** across threads `1a1cfeb16bf3083f` and
+`1a1cfeb9356aed59`, ending **on** at 22:28:04Z. **So the 11-11 turn-off was
+reversed the next day.**
+
+**The number of real events is not readable and was not invented.** Two of the
+nine notices carry the **same second and the same text** — T-169's duplication
+defect, which turned one credit event into sixteen alerts, recurring on a
+different alert type. **What is asserted: at least three on/off cycles and a
+final state of on. What is not: whether the 13:34–13:35 flurry is three toggles
+in thirty-one seconds or re-deliveries of the 13:20:51 and 13:21:23 pair.**
+
+**Card B**, a different card, **declined at 2026-11-12T13:30:56Z for being off**
+(thread `1a1cff4504a6617b`). **No amount appears in the alert** — so nothing was
+withheld under A-19 here, there was nothing to withhold, and the distinction is
+worth stating because "no figure published" and "no figure existed" are
+different facts.
+
+**This is T-139 repeating six days after it was raised and never answered.**
+
+**No mechanism is asserted for the sequence** — card A off 13:21:23, card B
+declined 13:30:56, card A on 13:34:54. Juggling two cards against one payment,
+coincidence, and a retry on the wrong card all fit those three timestamps
+equally, and **the mail does not choose between them.**
+
+**T-153 is clarified without being answered:** the two declines on record now
+have different reasons on different cards, one for no money and one for being
+off. **The register did not have that distinction yesterday.**
+
+### An app is asking the owner for more access — T-178
+
+**2026-11-13T04:00:54Z, thread `1a1d310ca392deff`.** A GitHub App already
+installed on the owner's account requests **updated permissions**, naming an
+installation ID and a settings URL, and stating that ignoring it preserves
+current permissions.
+
+**No agent may touch this.** Account permissions are Class G. **The notice does
+not say which permissions are wanted** and the settings page that would say is
+unreachable — T-98: the allowed-hosts list is empty, and A-27 asks for the five
+hosts that would begin to fix it. **The same account holds both this public
+repository and the Ledger's, which the 2026-09-16 standing decision keeps
+separate, and a permission grant is not scoped to whichever repository prompted
+it.** The recommendation is to read the permission diff on the settings page
+before accepting; **the brief cannot read it for him and says so.**
+
+### The business identity signed in to three third parties — T-181
+
+**2026-11-12 between 12:44:36Z and 13:13:43Z**, threads `1a1cfc9e273ae569`,
+`1a1cfe380e493fd0` and `1a1cfe48b69d5572`. **The three services are withheld:
+A-13 covers what was exposed on 2026-10-08 and does not reach these, and at
+least one is not a business matter.** **"Withheld" is the honest word — the
+names were read and not published**, which is a different claim from not being
+available, and A-19's rule about that distinction is general enough to apply.
+
+**The operational point survives the withholding.** One Google account is the
+single identity behind Gmail, Calendar, Drive, the Shopify login and GitHub.
+**T-170 already records eight new-device sign-ins in nine days.** T-181 asks
+whether the business identity is the right one for third-party sign-ins — not
+what the owner signs in to.
+
+### Carried-in questions
+
+**Answered:** the Cadillac enquirer has **not** replied — enquiry
+2026-11-10T00:27:18Z, owner's reply 10:32:19Z, **silent three days** (T-182
+raised); **none** of the silent partnership approaches replied; **no seventeenth
+credit alert** — T-169's thread is still sixteen.
+
+**Still open:** the 2026-10-25 enquirer is **nineteen days unanswered**, now the
+longest silence on the books; **no overdraft fee alert** arrived — which is not
+the same as no fee.
+
+### Reads and refusals
+
+**Reached:** Gmail inbox (~68 threads over two pages, eight opened in full),
+Gmail sent, Gmail drafts (**17 outstanding**, newest 2026-11-10T12:41Z, none
+created in the window), Shopify (**one order, unchanged** — #1001, 2026-10-23,
+$550.00, paid and fulfilled, **customer name withheld**), Google Calendar (**no
+events** 11-12 → 11-20).
+
+**Not reached:** Stripe (no MCP server exists at all), PayPal (needs
+re-authentication), bank, Square, Chime, Melio and Capital on Tap (no connector
+exists for any), and **any public web page** (T-98).
+
+**Run condition:** the connector set disconnected and reconnected twice during
+this run. **Every figure above comes from a call that returned in this
+session.**
+
+### Withheld
+
+Both cards' last-four digits · the names of three third-party services · **the
+tune file itself** · the 11-13 enquirer's name and address · the Cadillac
+enquirer's · the Shopify customer's name · a support ticket number. **No cash
+figure appears in the brief or in this entry**, and this run says plainly that
+that is because none was readable rather than because one was suppressed.
+
+### Register
+
+**T-177 to T-182 added. 182 tasks**, recounted mechanically with every bucket
+printed and the total checked against their sum. **87 Awaiting Owner · 121 of
+151 open rows past due · twenty-four Critical and open**, one more than
+yesterday and the new one is T-177. **Ten packets pending.**
+
+---
+
+## Next entry: OL-0105
