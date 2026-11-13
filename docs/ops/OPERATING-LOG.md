@@ -11516,4 +11516,98 @@ timestamp.**
 
 ---
 
-## Next entry: OL-0103
+## OL-0103 — the on-site travel rate, set on owner instruction
+
+**Not a routine.** **The owner instructed it directly in this session: "set a
+travel rate for T-163".** **Pricing is Class E under `CLAUDE.md` §4, and the
+instruction is the authority** — this entry records a live pricing change made
+on instruction, not an agent pricing decision. **No approval packet was raised,
+because the approval authority gave the instruction.**
+
+**Checkout:** tip `75b8def`, `HEAD` equal to origin, clean.
+
+### Why a rate was owed
+
+**DD84 promised travel pricing in writing to thirty-three parties before any
+rate existed.** One customer was told on 2026-11-10 he would get "a quote
+including travel"; **thirty-two companies were offered "a minimum booked scope
+plus travel time, transportation and lodging" in the campaign of the same day**
+(OL-0101 established that count, correcting OL-0099's six). **The catalogue
+priced none of it**, and **Holley EFI work was listed at the same `$275–$599`
+whether remote or in person — so in-person work has been absorbing travel at no
+charge.**
+
+### What was set, and what each figure is anchored to
+
+| Component                                       | Rate                   | Anchor                                                                                                |
+| ----------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Minimum booked on-site scope, before travel** | **$599**               | **The top of the existing Holley in-person band** — introduces no new ceiling                         |
+| **Transit time, each way, door to door**        | **$75/hr**             | **The ladder's lowest unit price.** Transit is time the owner cannot sell, but it is not skilled work |
+| **Transport, lodging, subsistence**             | **at cost, receipted** | **Deliberately not a figure — see below**                                                             |
+
+**Travel is charged on top of the minimum**, which is how the campaign message
+already described it. **On a grouped or multi-vehicle day, transit and lodging
+are charged once and apportioned, never once per vehicle.** **Three rows added
+to `ventures.md`'s ladder with an Addition note carrying this reasoning.**
+
+### The per-mile figure was refused on purpose
+
+**A standard business mileage rate is an external published figure that changes
+annually.** **T-98 records that this environment's allowed-hosts list is empty
+and no page can be fetched; A-27 asks for the five hosts that would fix it.**
+**`CLAUDE.md` says a number without a source is a defect, and that figures are
+re-verified against the live system before being quoted.** **Quoting a mileage
+rate from memory would have been exactly the defect this record exists to
+catch.** **Receipted pass-through is correct until a source can be read**, and
+is how most single-operator businesses bill it anyway. **T-176 carries the
+transport basis, Blocked behind A-27.**
+
+### Tax, stated so the 2026-10-29 error is not repeated
+
+**Every other price on this ladder is tax-inclusive and that went unstated for
+weeks.** **These rates are stated tax-inclusive on the same basis**, so `$75/hr`
+yields **`$70.75`** at the 6% recorded on order #1001. **Whether travel time is
+taxable at all is NOT established** — T-106 records that nothing here says the
+business has registered for or remitted the tax it collects, and **no position
+is taken on it.**
+
+### What this changes and what it does not
+
+**T-163 closes Done on this entry's evidence.** **T-166 drops from five
+uncatalogued capabilities to four**: PCM cloning and replacement matching,
+scheduled remote dyno support, staff training as a named service, and revision
+and licensing terms remain unpriced, **and thirty-two companies hold written
+offers covering them.** **T-176 added.**
+
+**What was NOT done.** **No price on any existing line was changed** — the
+ladder's figures are untouched and only new lines were added. **Nothing was sent
+to any customer or prospect**, so the thirty-three parties holding the promise
+have not been quoted; **that is still a Class C act needing its own approval.**
+**No live storefront price was altered**: Shopify was not written to, and these
+rates exist in the registry, not in the store. **No position taken on tax, no
+mileage figure invented, and no day rate assumed for the owner** — what would
+change these figures is recorded rather than guessed.
+
+### A third instrument lesson, from the gate's own control
+
+**The leak gate refused this change set, and it was right to — but for the wrong
+reason.** Its control asserted that the text `A-19` appeared in every batch of
+added lines, as proof the pattern engine was running. **That held only because
+every brief discusses cash withholding. A pricing change does not, so the
+control failed on the first change set of a different kind.**
+
+**A control must not depend on what the change set happens to say.** It is
+replaced with two checks that do not: **the diff must be non-empty** (which
+catches the untracked-file class of failure found on 2026-11-11), and **the
+pattern engine must match a synthetic fixture the gate hands itself**, which
+proves the regexes run without reference to repository content.
+
+**Third instrument lesson in three days, and all three are the same shape: the
+defect was in the question asked, not in the tool.** Counting sends with a
+receipts query (T-173); a name-based gate only as current as the day it was
+written; and now a liveness control that tested the content rather than the
+engine.
+
+---
+
+## Next entry: OL-0104

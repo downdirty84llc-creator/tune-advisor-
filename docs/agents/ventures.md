@@ -202,9 +202,64 @@ note below.
 | Adjacent   | Holley EFI fuse-blowing & power-loss diagnostic                      | $125 / $250 / $350 | 2026-10-22     |
 | Adjacent   | Dodge/Mopar PCM unlock, removal, reinstall                           | $75–$300           | **2026-10-29** |
 | Recurring  | Performance Shop Tuning Support Session                              | $150 / $250 / $350 | 2026-10-22     |
+| On-site    | Minimum booked scope for an on-site visit, before travel             | $599               | **2026-11-13** |
+| On-site    | Travel transit time, each way, door to door                          | $75/hr             | **2026-11-13** |
+| On-site    | Transport, lodging and subsistence                                   | at cost            | **2026-11-13** |
 | Digital    | Holley EFI calibrations, LS swap toolkit, cam-swap pack, calculators | $39.99–$399        | not re-checked |
 | Licence    | Professional Shop Licence — GM toolkit                               | $399               | not re-checked |
 | Merch      | Print-on-demand apparel and decor                                    | $18.77–$64.68      | not re-checked |
+
+#### Addition, 2026-11-13 — the on-site travel rate, and what it is NOT built from
+
+**Set on the owner's direct instruction ("set a travel rate for T-163"), which
+is the authority for it.** Pricing is Class E; this is recorded as a live
+pricing change made on instruction, not as an agent's own decision. **T-163 is
+closed by it.**
+
+**Why it was needed.** **DD84 promised travel pricing in writing to thirty-three
+parties before any rate existed** — one customer told he would get "a quote
+including travel" on 2026-11-10, and thirty-two companies offered "a minimum
+booked scope plus travel time, transportation and lodging" in the campaign of
+the same day. **The catalogue priced none of it, and Holley EFI work was listed
+at the same `$275–$599` whether remote or in person, so in-person work has been
+absorbing travel at no charge.**
+
+**Each figure is anchored to a price already on this ladder. Nothing is
+invented:**
+
+| Component                           | Rate                   | Anchor                                                                                                                                                                                                                   |
+| ----------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Minimum booked on-site scope**    | **$599**               | **The top of the existing Holley in-person band.** Introduces no new ceiling — below it, a day away does not cover itself                                                                                                |
+| **Transit time, each way**          | **$75/hr**             | **The lowest unit price on this ladder** (Wiring & EFI diagnostics entry, Check Engine deposit). Transit is time the owner cannot sell, but it is not skilled work, so it takes the floor rate rather than a tuning rate |
+| **Transport, lodging, subsistence** | **at cost, receipted** | **Deliberately not a figure.** See below                                                                                                                                                                                 |
+
+**Travel is charged ON TOP of the minimum**, which is how the campaign message
+already described it. **On a grouped or multi-vehicle day, transit and lodging
+are charged once and apportioned**, never once per vehicle.
+
+**Why there is no per-mile figure, and this is the important part.** **A
+standard business mileage rate is an external published figure that changes
+annually. This session cannot fetch one** — T-98: the environment's
+allowed-hosts list is empty and no page can be opened; **A-27 asks for the five
+hosts that would fix it.** **`CLAUDE.md` says a number without a source is a
+defect and that figures are re-verified against the live system before being
+quoted**, so **quoting a mileage rate from memory would have been exactly the
+defect this record exists to catch.** **Receipted pass-through is correct until
+a source can be read**, and it is also how most single-operator businesses bill
+it.
+
+**Tax, stated so the 2026-10-29 error is not repeated.** **Every other price on
+this ladder is tax-inclusive** and that was unstated for weeks. **These rates
+are stated tax-inclusive on the same basis**, so `$75/hr` yields **`$70.75`** at
+the 6% recorded on order #1001. **Whether travel time is taxable at all in this
+jurisdiction is NOT established here** — T-106 already records that nothing in
+this register says the business has registered for or remitted the tax it
+collects, and **no position is taken on it.**
+
+**What would change these figures:** the owner's own day rate, if he has one; a
+published mileage rate once A-27 unblocks fetching; and a decision on whether
+lodging is passed through at cost or marked up. **T-176 carries the transport
+basis.**
 
 #### Correction, 2026-10-29 — the ladder's list prices are not what anybody paid
 

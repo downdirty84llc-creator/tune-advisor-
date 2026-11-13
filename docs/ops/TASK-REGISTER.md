@@ -196,10 +196,10 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-160 | Register DD84 in GA@WORK Marketplace; NIGP code depends on T-123                              | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-161 | HELD: which county? ventures.md records none — see T-164                                      | sales      | Normal       | Blocked                  | Agent | A to diagnose                | 2026-11-16   |
 | T-162 | The owner answered the new enquirer 8 min before A-26 asked to                                | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-13   |
-| T-163 | A quote including travel was promised; no travel charge exists                                | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1 first         | 2026-11-11   |
+| T-163 | DONE: on-site travel rate set 2026-11-13 on owner instruction                                 | sales      | **High**     | Done                     | Owner | Owner instruction            | 2026-11-11   |
 | T-164 | ventures.md records no location; the register asserts a county                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
 | T-165 | 32 owner partnership approaches on 11-10, not the 6 first reported                            | sales      | **High**     | In Verification          | Agent | A to confirm                 | 2026-11-12   |
-| T-166 | The outbound offers five capabilities the catalogue does not price                            | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** family              | 2026-11-12   |
+| T-166 | The outbound offers 4 more capabilities the catalogue does not price                          | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** family              | 2026-11-12   |
 | T-167 | NEVER TRUE: the owner resent it 2026-11-10T17:53, before the row                              | sales      | **High**     | No Action (accepted)     | Owner | A to report                  | 2026-11-12   |
 | T-168 | A shop declined twice after a follow-up; close the referral?                                  | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
 | T-169 | A payment status changed: 16 identical alerts, one event                                      | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25** first               | 2026-11-12   |
@@ -209,71 +209,47 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-173 | Counting sends with an inbox query: 2 false rows in 3 days                                    | ops        | **High**     | In Verification          | Agent | A to diagnose                | 2026-11-13   |
 | T-174 | 32 approaches: 2 declines on in-house capability, ~25 silent                                  | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
 | T-175 | The insufficient-funds card was turned off 2026-11-11                                         | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
+| T-176 | Transport basis: no per-mile rate — at cost until A-27 unblocks it                            | finance    | Normal       | Blocked                  | Agent | **A-27** first               | 2026-11-20   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **23 Done** · **5 No Action** · **2 Accepted Risk** · 15 In Verification
-· 4 In Progress · **5 Awaiting Approval** · **82 Awaiting Owner** · 6 Blocked ·
-31 Planned · 2 Backlog. **175 tasks.** Recounted mechanically with
-`^\| T-\d+\s*\|`, **every bucket printed and the total checked against their
-sum** — last **2026-11-12**, at the Thursday inbox intake (**T-173 to T-175
-added; T-165 retitled, T-167 withdrawn**). **THE RUN'S FINDING IS A CORRECTION
-TO ITS OWN PREDECESSOR, AND IT IS THE LARGEST IN THIS RECORD.** **The 2026-11-11
-intake reported six owner partnership approaches on 2026-11-10. The real number
-is thirty-two.** **The cause was the query, not the mail: that run searched
-`in:inbox`, and an outbound message appears in the inbox only if it drew a reply
-or a bounce.** Twenty-five of the thirty-two drew neither, **so they were
-invisible to the instrument and "six" was an artefact of the question rather
-than a fact about the world** — published twice as a headline, with a rate
-derived from it. **The sent mailbox gives 36 threads for that day, 32 of them
-carrying "DD84" in the subject**, plus a Georgia SBDC message, one further
-approach under a different subject, one personal reply and the reply to the
-Cadillac enquirer. **Roughly thirty-two messages in twenty-four minutes, about
-one every forty-five seconds — template-driven sending, understated by a factor
-of five.** **T-165's title is corrected rather than the row replaced.** **T-173
-is the defect itself and it is the ninth in the instrument family — the first
-caused by an agent's choice of query rather than a tool's behaviour.** The
-others were things a tool did; **this one is counting sends with a receipts
-query.** **It produced two false rows in three days.** **T-167 is the second: it
-said a blocked approach had sat unread for 22 hours with "the owner has no
-reason to know" — he had resent it to a second contact at the same company at
-2026-11-10T17:53:22Z, five hours after the bounce and seventeen hours before the
-row was written.** **T-167 was never true and moves to No Action, with the
-resend credited to the owner.** **A-26 row 1 on 2026-11-10 was the first of the
-pair.** Both have one root: **a register that reads receipts and infers sends.**
-**T-174 is the campaign's own result, and it changes T-166's stakes rather than
-T-166's text.** **Two substantive replies, both declines, both on identical
-reasoning — an established shop with its own calibrator and its own dyno does
-not need a remote one.** Three automated ticket acknowledgements, one bounce
-since resent, **and about twenty-five with no response of any kind at one day
-old.** **Targets span the United States, the United Kingdom, the Netherlands and
-Australia: an international campaign, which the register did not know.** **Not
-claimed: that it failed, that the targets were poorly chosen, or any conversion
-rate.** **What did change is scale — T-166's five uncatalogued capabilities,
-travel and lodging among them, are now known to have been offered to thirty-two
-companies rather than six, so T-163's travel rate is the price on an offer held
-by thirty-two organisations and one customer.** **T-163 was due 2026-11-11;
-T-166 is due 2026-11-12.** **T-175: the card that declined for insufficient
-funds on 2026-11-10 was turned off on 2026-11-11** — the fourth card-state
-change in the register, recorded as a shape with no story attached, because
-securing a card after a decline, consolidating onto one card and stopping a
-recurring charge are all consistent with the same notice. **T-153 stays open:
-turning a card off does not answer what the decline revealed.** **Two absences
-worth more than they look.** **No overdraft fee at eight days and seven nightly
-processings, and no balance alert for a second day** — but the account is
-unreadable from this session, so the claim is that the mail reported nothing,
-not that nothing happened. **And T-169's sixteen identical credit alerts were
-not followed by a seventeenth**, which is consistent with one event reported
-sixteen times and inconsistent with sixteen separate changes. **82 of the 175
-rows are Awaiting Owner**, and **112 of the 145 open rows are past due.**
-**Twenty-four rows are Critical and open: twenty-one overdue (newest one day,
-oldest eighty-four), T-166 due 2026-11-12, T-171 due 2026-11-19, T-143 due
-2026-11-20.** **Ten approval packets pending: A-07, A-10, A-17, A-22, A-23,
-A-24, A-25, A-26, A-27 and A-28**, the last a sibling session's. **A-26 row 2's
-enquirer is a single unread message at eighteen days, and the 1946 Cadillac
-enquirer has not replied in forty-eight hours.**
+Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 15 In Verification
+· 4 In Progress · **5 Awaiting Approval** · **81 Awaiting Owner** · 7 Blocked ·
+31 Planned · 2 Backlog. **176 tasks.** Recounted mechanically with
+`^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
+last **2026-11-13** (**T-163 closed Done, T-166 corrected, T-176 added**).
+**T-163 is closed because the owner instructed the rate directly** — "set a
+travel rate for T-163" — **and that instruction is the authority for it.**
+**Pricing is Class E, so this is recorded as a live pricing change made on
+instruction, not as an agent's own decision.** **Three on-site lines are now in
+`ventures.md`: a $599 minimum booked scope before travel, $75/hr transit time
+each way door to door, and transport, lodging and subsistence at cost.** **Every
+figure is anchored to a price already on that ladder and none is invented**:
+$599 is the top of the existing Holley in-person band, so no new ceiling is
+introduced, and $75 is the ladder's lowest unit price, which is what transit
+should take because it is time the owner cannot sell but is not skilled work.
+**Travel is charged on top of the minimum, as the campaign message already
+described it, and on a grouped day transit and lodging are charged once and
+apportioned.** **There is deliberately no per-mile figure, and that is the part
+worth keeping.** A standard business mileage rate is an external published
+figure that changes annually; **T-98 means no page can be fetched from here and
+A-27 asks for the hosts that would fix it**, and `CLAUDE.md` says a number
+without a source is a defect. **Quoting a mileage rate from memory would have
+been precisely the defect this record exists to catch**, so transport is a
+receipted pass-through until a source can be read. **T-176 carries it, Blocked
+behind A-27.** **The rates are stated tax-inclusive like every other line on the
+ladder — $75/hr yields $70.75 at the 6% recorded on order #1001 — and no
+position is taken on whether travel time is taxable at all, which is T-106's
+unanswered question.** **T-166's count drops from five uncatalogued capabilities
+to four.** Travel and lodging is priced; **PCM cloning and replacement matching,
+scheduled remote dyno support, staff training as a named service, and revision
+and licensing terms are not**, and thirty-two companies hold written offers
+covering them. **81 of the 176 rows are Awaiting Owner**, and **121 of the 145
+open rows are past due.** **Twenty-three rows are Critical and open.** **Ten
+approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24, A-25, A-26, A-27
+and A-28**, the last a sibling session's.
 
 > **Recount with `^\| T-\d+\s*\|`, not `^\| T-\d\d \|`.** The register crossed
 > into three-digit task IDs today, and **the pattern every prior run used
