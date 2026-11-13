@@ -11785,4 +11785,101 @@ yesterday and the new one is T-177. **Ten packets pending.**
 
 ---
 
-## Next entry: OL-0105
+## OL-0105 — 2026-11-13 daily command brief
+
+**Run 2026-11-13T11:35Z–11:55Z.** Routine fired 10:50:38Z against a 10:50Z
+schedule. Class A: nothing sent, nothing published, nothing charged, no live
+system changed. **Brief: `docs/ops/briefs/2026-11-13-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `0f14495`, no `src/`, no
+`package.json`, clean, **91 tracked files against the prompt's 28 — thirty-ninth
+run reporting the drift.**
+
+**No skeleton, and the judgement is recorded rather than assumed.** The
+expensive input — the mail sweep — was already committed as the 11-13 intake at
+`0f14495`. **What a restart would destroy here is the composition of a file
+whose every input is on the remote: minutes, not an hour.** OL-0050's test says
+no. **Fifteenth "no skeleton" judgement recorded with its reason.**
+
+### Appointments and money
+
+**No calendar events 2026-11-12 → 2026-11-20.** The calendar answered and is
+empty — **zero appointments booked in the next week**, not "none readable".
+
+**Money moved cannot be answered from a payment system and was not estimated.**
+Shopify: one order, unchanged. Stripe: **no MCP server exists at all.** PayPal:
+needs re-authentication. Bank, Square, Chime, Melio, Capital on Tap: **no
+connector exists for any.** The only money event visible was a card declined for
+being off, **and that alert carries no amount.** The August baseline of
+**$3,507.86 across ten invoices and three customers** is stale by the 30-day
+rule and **this brief deliberately did not pre-empt the cash review** scheduled
+for 11:10Z the same day.
+
+### The finding: approval is the bottleneck, not work
+
+**Five customer-facing items are waiting and four of them wait on an approval
+decision rather than on anything being done.**
+
+- **T-66** — a real Lexus enquiry, **asked for a price range fifty-five days ago
+  and never got one.** Waiting on A-28 draft 3.
+- **T-95** — an enquirer from 2026-10-26, **never answered. Eighteen days.**
+  Waiting on A-23.
+- **T-37** — the C10 customer, live job, priced, nothing delivered to invoice.
+- **T-64** — a second live job, **seventh revision sent 10-29, unacknowledged.**
+- **T-177** — today's tune file, **unanswered.**
+
+**Two pending packets now reduce to one live question.** A-23 asks to reply to
+one enquirer; A-26 asks to reply to two, **and its first row was overtaken when
+the owner answered that person himself on 2026-11-10** (T-162). **So A-23 and
+A-26 both now come down to: may DD84 answer the person who wrote in on
+2026-10-26?** **T-177 would require a third packet of the same shape and the
+pattern guarantees a fourth.**
+
+**The per-person approval packet was right when enquiries were rare and is now
+the thing losing them.** **A-29 raised:** standing authority to send **one
+acknowledgement** per new enquirer — acknowledgement and scoping questions only,
+**no price, no date, no power figure, no second message, no outbound contact**,
+every message published in the brief and the log before it goes, withdrawable in
+a sentence. **A-23 and A-26 close with it if approved.**
+
+### What this run refused to report as agent-blocked work
+
+**A-18 was REJECTED by the owner on 2026-11-09.** T-64's follow-up is not
+waiting on a decision that has not been made — **a decision was made, and it was
+no.** Reporting it as owner-delay would be a lie about who holds what.
+
+**T-11 and T-13 are the mirror image.** Both Critical, **overdue 85 and 78
+days**, and both carry an approval that was granted — A-05 and A-06. **Neither
+is blocked on the owner.** T-11 needs a Stripe MCP server that does not exist;
+T-13 needs a paid legal engagement. **The register has them as Blocked and that
+is correct**, and the brief says so explicitly rather than letting the age imply
+neglect.
+
+### Register and board
+
+**182 tasks**, recounted mechanically with every bucket printed and the total
+checked against their sum. **T-177 moved from Awaiting Owner to Awaiting
+Approval behind A-29**, so **86 Awaiting Owner and 6 Awaiting Approval.** **121
+of 151 open rows past due. Twenty-four Critical and open. Eleven rows due
+today.**
+
+**Eleven packets pending** — A-07, A-10, A-17, A-22, A-23, A-24, A-25, A-26,
+A-27, A-28 and the new A-29. **A-22 should be closed rather than answered: its
+premise is false and the packet itself says so.**
+
+### Priorities put to the owner
+
+**One: answer the tune file** — the draft is written and needs one word. **Two:
+decide whether DD84 answers people who write to it** — A-29, which retires the
+whole class rather than one instance. **Three: say why cards deliberately kept
+off keep being presented for payment** — T-139, asked 2026-11-07, repeated
+2026-11-12, six days unanswered.
+
+**This was not a quiet day and the brief says so.** Four real events in
+twenty-four hours after a week of complaining that nothing arrived — and
+equally, **no payment, no booking, no invoice, no customer reply and nothing
+sent.**
+
+---
+
+## Next entry: OL-0106

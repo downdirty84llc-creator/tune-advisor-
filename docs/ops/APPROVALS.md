@@ -54,6 +54,7 @@ and actual result.
 | A-26 | Reply to two unanswered inbound enquiries, in one decision                  | C     | **Pending**                         | T-152, T-95                        |
 | A-27 | Allow five hosts so primary sources can be validated                        | G     | **Pending**                         | T-98                               |
 | A-28 | Three follow-ups revised to the facts, and close A-20 as superseded         | C     | **Pending**                         | T-37 T-64 T-66, closes A-20        |
+| A-29 | Standing authority to acknowledge inbound enquiries                         | C     | **Pending**                         | T-177, T-95, T-66                  |
 
 **Ten packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
 A-26, A-27 and A-28.** **A-27 was raised on 2026-11-10 by the owed Monday
@@ -3086,3 +3087,81 @@ it open.
 **Response** — _awaiting owner._ **Affected records** — T-37, T-64, T-66, and
 A-20. **Actual result** — _not yet executed. Nothing has been sent and no draft
 exists in the mail account._
+
+---
+
+## A-29 — Standing authority to acknowledge an inbound enquiry
+
+**Status: PENDING — raised 2026-11-13 by `/dd84-daily-brief`.**
+
+**Decision requested** — A **standing** authority to send **one acknowledgement
+message** to any person who writes to the business address asking about work,
+without a separate approval packet per person. **APPROVE / APPROVE WITH CHANGES
+/ DEFER / REJECT.**
+
+**Business objective** — Stop losing enquirers to the approval queue. **Three
+people have now written in and not been answered**: one on 2026-10-26 (T-95,
+**eighteen days**), one whose price-range question is **fifty-five days** old
+(T-66), and one who sent a calibration file at 2026-11-13T01:16Z with no message
+(T-177). **None of them is waiting on work. All three are waiting on permission
+to say hello.**
+
+**Source and context** — **A-23 asks to reply to one enquirer. A-26 asks to
+reply to two, and its first row was overtaken when the owner answered that
+person himself on 2026-11-10** (T-162). **So two pending packets now reduce to
+the same single live question.** T-177 would make a third packet of the same
+shape, and the pattern guarantees a fourth. **The per-person packet is the wrong
+unit** — it was right when enquiries were rare, and enquiries are no longer
+rare.
+
+**Recommended plan** — Authorise, as a standing rule, **one message per new
+enquirer** containing only: acknowledgement that the message arrived; questions
+needed to scope the work (vehicle, combination, controller, symptom, datalog,
+remote or in person); and a statement that **cost and timing will follow before
+any work starts**. **Each message is still written into the run's brief and
+named in the operating log before it goes.**
+
+**What this does NOT authorise** — **Quoting any price**, naming any turnaround,
+promising any power figure, offering a discount, accepting a job, scheduling
+anything, sending a second message to the same person, contacting anyone who did
+not write in first, or any outbound marketing. **All of those remain Class C or
+Class E, one decision at a time.** **This is the first reply and nothing after
+it.**
+
+**Alternatives considered** — (a) **Answer A-23 and A-26 and keep the per-person
+packet.** Clears the backlog, leaves the mechanism that created it, and a fourth
+packet arrives next week. (b) **Reject and let enquiries go unanswered.**
+Consistent, and the record should then stop raising packets for them rather than
+raising them and leaving them open. (c) **Narrow the standing authority to a
+fixed template with no free text.** Safer still, and worse — a tune-file enquiry
+and a Lexus price question need different questions asked.
+
+**Cost and cash impact** — **None.** No money is spent, committed, quoted or
+collected under this packet. The expected effect is on revenue, not cost, and
+**no figure is forecast here because none can be sourced.**
+
+**Risks and safeguards** — **The risk is a wrong or premature answer going out
+without review.** Safeguards: no price and no date may appear; every message is
+published in the brief and the log, so a bad one is visible the same day; the
+authority covers **one** message, so a conversation that develops comes back for
+approval; and it can be withdrawn in a sentence. **The counter-risk is already
+realised** — eighteen days, fifty-five days, and a prospect who sent a file and
+heard nothing.
+
+**Systems affected** — Gmail send only. **No Shopify change, no pricing change,
+no calendar write, no live site change, no customer data stored anywhere new.**
+
+**Customer and public impact** — Each new enquirer receives one message. **No
+public post. Nothing on the storefront. Nothing in a review or listing.**
+
+**Success test** — Within seven days of approval: **every inbound enquiry has a
+reply timestamped under twenty-four hours from arrival**; **no reply contains a
+price, a date or a power figure**; and **T-95, T-66 and T-177 each carry either
+an answer or a documented close.** **A-23 and A-26 close as superseded.**
+
+**Reply with: APPROVE / APPROVE WITH CHANGES (and the limits) / DEFER / REJECT**
+— and say whether **A-23 and A-26 close with it**.
+
+**Response** — _awaiting owner._ **Affected records** — T-177, T-95, T-66,
+T-152, and A-23, A-26. **Actual result** — _not yet executed. Nothing has been
+sent and no draft exists in the mail account._

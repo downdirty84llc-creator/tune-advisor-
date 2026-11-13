@@ -128,7 +128,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-92  | A second unattributed payment — $700, memo "mecanic tune", from a company                     | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-10-28   |
 | T-93  | A customer was written to by someone this register cannot identify                            | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-10-28   |
 | T-94  | HP Tuners credits: $99.98 on 10-24 and 10-30 — $49.99 per credit                              | finance    | Normal       | **Done**                 | Agent | A to read                    | 2026-10-29   |
-| T-95  | The first inbound enquiry in five runs, unqualified and unread                                | sales      | **High**     | **Awaiting Approval**    | Owner | **A-23 pending**             | 2026-10-27   |
+| T-95  | The first inbound enquiry in five runs, unqualified and unread                                | sales      | **High**     | **Awaiting Approval**    | Owner | **A-23; now A-29**           | 2026-10-27   |
 | T-96  | The business site has new indexing failures on duplicate canonicals                           | ops        | Normal       | Planned                  | Agent | A to diagnose                | 2026-10-30   |
 | T-97  | Rural Zone credits need two employees DD84 has never had                                      | real est.  | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-02   |
 | T-98  | The environment allows no hosts at all; allowed_hosts is empty                                | ops        | **High**     | **Awaiting Approval**    | Owner | **A-27**                     | 2026-11-09   |
@@ -210,7 +210,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-174 | 32 approaches: 2 declines on in-house capability, ~25 silent                                  | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
 | T-175 | The insufficient-funds card was turned off 2026-11-11                                         | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
 | T-176 | Transport basis: no per-mile rate — at cost until A-27 unblocks it                            | finance    | Normal       | Blocked                  | Agent | **A-27** first               | 2026-11-20   |
-| T-177 | A customer tune file arrived with no message — scope unknown                                  | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
+| T-177 | A customer tune file arrived with no message — scope unknown                                  | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-29** first               | 2026-11-13   |
 | T-178 | A GitHub App asks the owner for more account access                                           | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-179 | A 2nd card declined for being off — T-139 repeating, 6 days on                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139** first              | 2026-11-13   |
 | T-180 | The insufficient-funds card is back on after 3+ cycles 11-12                                  | finance    | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
@@ -222,14 +222,17 @@ ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 15 In Verification
-· 4 In Progress · **5 Awaiting Approval** · **87 Awaiting Owner** · 7 Blocked ·
+· 4 In Progress · **6 Awaiting Approval** · **86 Awaiting Owner** · 7 Blocked ·
 31 Planned · 2 Backlog. **182 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-13** (**T-177 to T-182 added by the inbox intake**). **87 of the
-182 rows are Awaiting Owner**, **121 of the 151 open rows are past due**, and
-**twenty-four rows are Critical and open** — one more than yesterday, and the
-new one is T-177. **Ten approval packets pending: A-07, A-10, A-17, A-22, A-23,
-A-24, A-25, A-26, A-27 and A-28**, the last a sibling session's.
+last **2026-11-13** (**T-177 to T-182 added by the inbox intake; T-177 moved to
+Awaiting Approval behind A-29 by the daily brief**). **86 of the 182 rows are
+Awaiting Owner**, **121 of the 151 open rows are past due**, and **twenty-four
+rows are Critical and open** — one more than yesterday, and the new one is
+T-177. **Eleven approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24,
+A-25, A-26, A-27, A-28 and A-29** — A-28 a sibling session's, **A-29 raised by
+this run** to replace the per-enquirer packet with a standing authority to
+acknowledge an inbound enquiry.
 
 **T-177 is the only new Critical and it is new work, not a repeat.** A customer
 sent an HP Tuners calibration file to the business inbox at 2026-11-13T01:16:02Z
