@@ -11882,4 +11882,185 @@ sent.**
 
 ---
 
-## Next entry: OL-0106
+## OL-0106 — 2026-11-13 weekly cash and revenue review
+
+**Period 2026-11-06T11:28Z → 2026-11-13T11:28Z**, the seven days ending at the
+run start. **Run 11:28:02Z → 11:39:33Z, both read from the clock, never
+estimated (T-116).** Routine fired 11:13:00Z against an 11:10Z schedule.
+**Brief: `docs/ops/briefs/2026-11-13-cash-review.md`.**
+
+**Class A. No money moved.** No refund, charge, invoice, payment link,
+subscription change or price change. **No write tool was called on any payment
+system.**
+
+**Contract item 0:** `HEAD` equals origin at `8a7dfa6`, no `src/`, no
+`package.json`, clean, **91 tracked files against the prompt's 28 — fortieth run
+reporting the drift.**
+
+**Thirtieth application of OL-0050, and the second today that was not
+theoretical.** **A worker restart hit this session twice** — once mid-sweep
+during the intake and once during this review's own mail pass — **and both times
+the tree came back at the skeleton commit.** The rule has stopped being
+insurance and started being load-bearing.
+
+### Revenue: one system readable, and it says zero
+
+**Shopify, read 11:31Z:
+`orders 0, gross_sales 0, net_sales 0, taxes 0, total_sales 0` for the period.**
+`list-orders` confirms exactly one order all time, #1001 of 2026-10-23, nothing
+since.
+
+**The total is partial and is labelled partial.** **Stripe has no MCP server at
+all**, PayPal needs re-authentication, and no bank connector exists — **and all
+three October payments arrived by routes none of those three covers**: two bank
+transfers and one storefront order. **So "revenue this week" cannot be answered,
+and was not estimated.**
+
+### A fourth gate lesson, and an overclaim caught inside it
+
+**The leak gate refused this review on six matches of the literal a bank balance
+alert uses — and all six were revenue zeros, which A-13 permits.** **A pattern
+matches a string, not its category**, so the gate could not tell a zero balance
+from zero revenue. **The fix was to drop the literal rather than weaken the
+pattern**, since "zero" and "nil" say the same thing and leave one strict rule
+standing.
+
+**Then the first draft of that paragraph overclaimed the result, and the
+overclaim is the more useful half of this entry.** It said the literal now
+appears nowhere in this record. **It appears in nine pre-existing files**, every
+one a revenue or ad-spend zero, and the gate never saw them because **it scans
+added lines only.** **The invariant is forward-only: from today that literal is
+not written for a revenue figure, so a new occurrence in new text is a balance.
+It says nothing about the nine, which stay exactly as they are** — this log is
+append-only and a historical revenue zero is not a leak.
+
+**Same shape as the three gate lessons before it: the defect was in what was
+asked of the instrument, not in the instrument.** And the same shape as T-173
+and T-184 — **a reading is only as good as the question put to it.**
+
+**Recurring revenue is nil and the basis is structural, not weekly: DD84 has no
+recurring product.** Every rung on the catalogue is per-job. **A business with
+no recurring line has to re-win every dollar**, and 405 days of nothing followed
+by $1,700 in four days followed by three silent weeks is what that looks like.
+
+### The finding: there are no receivables, and that is worse than overdue ones
+
+**T-185.** **DD84 is carrying $699 of priced work and has issued no invoice for
+any of it** — $349 on T-37, where nothing has been delivered to invoice, and
+$350 on T-64, whose seventh revision went out on 2026-10-29 and has not been
+acknowledged in fifteen days.
+
+**An uninvoiced job is worse than an overdue one.** An overdue invoice ages,
+appears in a receivables table and can be chased. **Unbilled work does none of
+those and simply never becomes money.** Thirty and thirty-four days
+respectively.
+
+**This run did not issue them.** Invoicing is Class E, and no payment system is
+reachable to issue one from even with approval.
+
+### Two amounts withheld, for two different reasons, and the asymmetry is stated
+
+**The storefront platform's monthly charge** (paid 2026-11-08 after nine
+declines over eighteen days, T-89, already Done) **is withheld because A-24 is
+pending on that exact figure.** **Publishing it now because it has since been
+paid would defeat A-24 by a technicality** and pre-empt the owner's decision on
+ten other files.
+
+**The payment to a consumer-credit issuer** that left the business payment
+account on 2026-11-09 **is withheld because its category has not been decided.**
+T-137 has asked since 2026-11-06 whether that account carries a personal
+obligation and A-25 is pending. **Putting a possibly personal figure on a
+world-readable record before that is answered is a decision, not a judgement
+call** (§5). **T-183 raised.**
+
+**Neither is "not available". Both were read.** **A-30 raised** to settle the
+class: may vendor and lender outflow amounts be published here? **The
+recommendation is Option B — publish business vendor and platform charges,
+because they describe DD84's cost base, which is the category A-13 already
+accepted on the revenue side; withhold lender and card-issuer amounts until A-25
+answers.** **The cost of continued silence is concrete: this review cannot state
+DD84's weekly cost base, so it cannot say whether the business spent more than
+it earned — and it earned nothing.**
+
+### No margin figure exists anywhere, and that is a bookkeeping finding
+
+**T-186.** **Parts cost, software credits and hours are not recorded against any
+job in any system this session can read.** So every margin row is marked
+incomplete with its missing inputs named, and **no labour rate is assumed** —
+§8.5 forbids it, and **the $75/hr set on 2026-11-13 is transit time, not shop
+labour.** Using it as a labour rate would be exactly the silent substitution
+this record exists to prevent.
+
+**Order #1001 is still the only revenue in this business traced end to end:
+$550.00 charged, $19.69 fee, $31.13 tax, $530.31 paid out, $499.18 retained**,
+reconciling to the cent against the live store.
+
+**Until three inputs are recorded per job, "is this job worth doing at this
+price?" cannot be answered — which is the question the whole review exists to
+serve.**
+
+### Cash position — shape only, A-19 Option C
+
+**At or below zero on 2026-11-09** (`1a1c075a5edede41`) · **a card declined for
+insufficient funds 2026-11-10T06:18:22Z** (`1a1c2e1abfc51a95`) · **a second card
+declined for being off 2026-11-12T13:30:56Z** (`1a1cff4504a6617b`) · **a card
+toggled off and on repeatedly 11-10 to 11-12, ending on**. All read 11:33Z.
+**Every figure withheld under A-19; both cards' last-four digits and the
+account's withheld under §5. Withheld, not unavailable.**
+
+**T-136 is answered after seven days.** It asked whether the 11-09 alert reads
+_at_ zero or _below_ it. **It reads at the boundary** — the subject says "at or
+below zero" and the body resolves to zero exactly. **A zero balance is not an
+overdraft**, so a charge-off clock started from that alert counts from the wrong
+event. **The figure stays withheld even here, where shape and figure coincide**,
+because A-19 governs the class of number rather than how revealing one instance
+is.
+
+**One real cash-timing improvement:** storefront payouts move to as soon as two
+business days for transactions after 2026-11-09 (notice 2026-11-10T03:33Z).
+**T-155 confirmed as a notice and moved to In Verification — the behaviour
+cannot be confirmed without a sale, and there has been none.**
+
+### Corrections carried by this run
+
+**T-181 is corrected upward: six third-party sign-in grants in the period, not
+the three the intake found inside a 29-minute window.** The services stay
+withheld — **at least one is business infrastructure and at least one is not a
+business matter, and naming some but not others would point at the rest.**
+
+**T-184: the 2026-11-11 card entry caught the turn-off and missed a turn-on
+sixty-one seconds earlier.** **This is T-169's defect from the other side** —
+too few events recorded, rather than too many alerts for one event. The same
+instrument, read two ways, gets the count wrong in both directions.
+
+### Reconciliation, and what was not checked
+
+**No cross-system reconciliation was possible and that is stated rather than
+claimed.** Only one revenue system was readable, so there was nothing to
+double-count and nothing to match by reference.
+
+**Not checked:** Stripe (no MCP server exists; the historical $3,507.86 baseline
+came from this system and stays 102 days old), PayPal (needs re-authentication —
+**both outflows above were found in mail receipts, not in PayPal**), the bank
+(no connector; the October payments arrived here), Square, Chime, Melio and
+Capital on Tap (no connector for any), **Supermetrics — ad spend not available
+and not assumed to be zero**, and any public web page (T-98).
+
+### Register and board
+
+**T-183 to T-186 added. T-181 and T-136 retitled, T-136 and T-155 moved to In
+Verification. 186 tasks**, recounted mechanically with every bucket printed and
+the total checked against their sum. **87 Awaiting Owner · 121 of 155 open rows
+past due · twenty-five Critical and open. Twelve packets pending**, A-29 and
+A-30 both raised today.
+
+**Closing answer to the routine's own question.** **Cash position: at or below
+zero on 2026-11-09, two declines and repeated toggling across the period, the
+toggling card ending on.** **Largest overdue receivable: there isn't one — $699
+of priced work has never been invoiced, so none of it ages and none of it can be
+chased.** **The largest number in this review is money DD84 has earned the right
+to ask for and has not asked for.**
+
+---
+
+## Next entry: OL-0107

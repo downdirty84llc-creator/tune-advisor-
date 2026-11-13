@@ -169,7 +169,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-133 | A sender supplied a Date header the mail API returns unparsed                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-10   |
 | T-134 | The 2026-11-03 intake missed an unread account sign-in notice                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-06   |
 | T-135 | Unsent loan drafts — DUPLICATE of T-42 and T-58, withdrawn                                    | finance    | High         | No Action (accepted)     | Agent | A to report                  | 2026-11-06   |
-| T-136 | The charge-off clock; the 11-09 alert may read at zero, not below                             | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-06   |
+| T-136 | ANSWERED: the 11-09 alert reads AT zero, not below — not an overdraft                         | finance    | **Critical** | In Verification          | Owner | A to report                  | 2026-11-06   |
 | T-137 | T-71's account carries a personal obligation; whose account is it?                            | finance    | **Critical** | **Awaiting Approval**    | Owner | **A-25**                     | 2026-11-06   |
 | T-138 | A second recurring charge of the bill amount approved 2026-11-04                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-07   |
 | T-139 | A business card off on purpose since 2026-11-02 declined a payment                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-07   |
@@ -188,7 +188,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-152 | 2nd enquiry: ANSWERED BY THE OWNER 2026-11-10T10:32:19Z                                       | sales      | **High**     | In Verification          | Owner | **A-26 row 1 moot**          | 2026-11-11   |
 | T-153 | A card declined for insufficient funds — not for being deliberately off                       | finance    | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-11   |
 | T-154 | Netlify credits exhausted: production deploys paused; cycle resets 2026-12-02                 | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
-| T-155 | Shopify payouts move to two business days for sales after 2026-11-09                          | finance    | Normal       | Planned                  | Agent | A to verify                  | 2026-11-17   |
+| T-155 | Shopify payouts move to 2 business days — notice confirmed 11-13                              | finance    | Normal       | In Verification          | Agent | A to verify                  | 2026-11-17   |
 | T-156 | An "AI Executive Automation System" spec was drafted outside this repo                        | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
 | T-157 | Cold outreach cites DD84's real /contact page on a fabricated prior chain                     | sales      | Normal       | Planned                  | Agent | A to diagnose                | 2026-11-13   |
 | T-158 | Kalshi: a new sign-in, a new passkey, and Google account data shared                          | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
@@ -214,25 +214,66 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-178 | A GitHub App asks the owner for more account access                                           | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-179 | A 2nd card declined for being off — T-139 repeating, 6 days on                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139** first              | 2026-11-13   |
 | T-180 | The insufficient-funds card is back on after 3+ cycles 11-12                                  | finance    | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
-| T-181 | 3 third-party sign-ins used the business identity in 29 min                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
+| T-181 | The business identity granted 6 third-party sign-ins in the period                            | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
 | T-182 | The Cadillac enquirer is 3 days silent — chase or close?                                      | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
+| T-183 | An outflow to a consumer lender left the business account 11-09                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**, then A-30          | 2026-11-16   |
+| T-184 | The 11-11 record caught the card off and missed the on 61s before                             | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-16   |
+| T-185 | $699 of priced work has never been invoiced — no receivable exists                            | finance    | **Critical** | **Awaiting Owner**       | Owner | E to invoice                 | 2026-11-16   |
+| T-186 | No job records parts, credits or hours, so no margin can be computed                          | finance    | **High**     | Planned                  | Agent | A to design                  | 2026-11-20   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 15 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **86 Awaiting Owner** · 7 Blocked ·
-31 Planned · 2 Backlog. **182 tasks.** Recounted mechanically with
+Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 18 In Verification
+· 4 In Progress · **6 Awaiting Approval** · **87 Awaiting Owner** · 7 Blocked ·
+31 Planned · 2 Backlog. **186 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-13** (**T-177 to T-182 added by the inbox intake; T-177 moved to
-Awaiting Approval behind A-29 by the daily brief**). **86 of the 182 rows are
-Awaiting Owner**, **121 of the 151 open rows are past due**, and **twenty-four
-rows are Critical and open** — one more than yesterday, and the new one is
-T-177. **Eleven approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24,
-A-25, A-26, A-27, A-28 and A-29** — A-28 a sibling session's, **A-29 raised by
-this run** to replace the per-enquirer packet with a standing authority to
-acknowledge an inbound enquiry.
+last **2026-11-13**, after three routines in one session: **T-177 to T-182 from
+the inbox intake, T-177 moved behind A-29 by the daily brief, and T-183 to T-186
+from the cash review.** **87 of the 186 rows are Awaiting Owner**, **121 of the
+155 open rows are past due**, and **twenty-five rows are Critical and open.**
+**Twelve approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
+A-26, A-27, A-28, A-29 and A-30** — A-28 a sibling session's, **A-29 and A-30
+raised today.**
+
+**T-185 is the cash review's finding and the most valuable line in the
+register.** **DD84 is carrying $699 of priced work — $349 on T-37 and $350 on
+T-64 — and has never issued an invoice for any of it.** So the receivables table
+is empty, and that is worse than an overdue invoice rather than better:
+**unbilled work does not age, does not appear in a receivables report and cannot
+be chased.** It has been in that state for thirty and thirty-four days.
+
+**T-186 says why no margin figure exists anywhere in this record.** Parts cost,
+software credits and hours are not recorded against any job in any system this
+session can read. **No labour rate is assumed and none will be** — §8.5 forbids
+it, and the $75/hr set on 2026-11-13 is **transit time, not shop labour**, so
+using it as a labour rate would be exactly the silent substitution this record
+exists to prevent. **Order #1001 remains the only revenue traced end to end:
+$550.00 charged, $19.69 fee, $31.13 tax, $530.31 paid out, $499.18 retained,
+reconciling to the cent.**
+
+**T-136 is answered after seven days and the answer changes what follows from
+it.** It asked whether the 2026-11-09 balance alert reads _at_ zero or _below_
+it. **It reads at the boundary** — the alert's own subject says "at or below
+zero" and its body resolves to zero exactly. **A zero balance is not an
+overdraft**, so a charge-off clock started from that alert would be counting
+from the wrong event. **The figure stays withheld under A-19 even here, where
+the shape and the figure coincide**, because A-19 governs the class of number
+and not how revealing one instance happens to be.
+
+**T-181 is corrected upward: six third-party sign-in grants in the period, not
+the three the intake found in a 29-minute window.** The services stay withheld —
+**at least one is business infrastructure and at least one is not a business
+matter, and naming some but not others would point at the rest.**
+
+**T-183 and T-184 are small and specific.** An outflow to a consumer lender left
+the business payment account on 2026-11-09 and **whether it is a DD84 expense is
+not established** — T-137 and A-25 ask the question underneath it, and A-30 asks
+whether such amounts may be published here at all. T-184 records that the
+2026-11-11 card entry **caught the turn-off and missed a turn-on sixty-one
+seconds earlier**, which is the same reading defect as T-169 seen from the other
+side: too few events recorded, rather than too many alerts for one.
 
 **T-177 is the only new Critical and it is new work, not a repeat.** A customer
 sent an HP Tuners calibration file to the business inbox at 2026-11-13T01:16:02Z

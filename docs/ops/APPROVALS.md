@@ -55,6 +55,7 @@ and actual result.
 | A-27 | Allow five hosts so primary sources can be validated                        | G     | **Pending**                         | T-98                               |
 | A-28 | Three follow-ups revised to the facts, and close A-20 as superseded         | C     | **Pending**                         | T-37 T-64 T-66, closes A-20        |
 | A-29 | Standing authority to acknowledge inbound enquiries                         | C     | **Pending**                         | T-177, T-95, T-66                  |
+| A-30 | May vendor and lender outflow amounts be published here?                    | G     | **Pending**                         | T-183, T-109, T-46                 |
 
 **Ten packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
 A-26, A-27 and A-28.** **A-27 was raised on 2026-11-10 by the owed Monday
@@ -3165,3 +3166,86 @@ an answer or a documented close.** **A-23 and A-26 close as superseded.**
 **Response** — _awaiting owner._ **Affected records** — T-177, T-95, T-66,
 T-152, and A-23, A-26. **Actual result** — _not yet executed. Nothing has been
 sent and no draft exists in the mail account._
+
+---
+
+## A-30 — May vendor and lender outflow amounts be published in this repository?
+
+**Status: PENDING — raised 2026-11-13 by `/dd84-cash-review`.**
+
+**Decision requested** — A ruling on whether **amounts DD84 pays out** — vendor
+subscriptions, platform bills, domain renewals, lender payments — may be written
+into this public repository. **APPROVE (publish) / APPROVE WITH CHANGES (publish
+some classes, not others) / DEFER / REJECT (withhold all).**
+
+**Business objective** — Make the weekly cash review usable. **This week's
+review had to withhold two of the only real numbers it found**, for two
+different reasons, and both reasons recur every week until this is settled. **A
+cash review whose outflow column says "withheld" is a worse instrument than one
+that says what is going out.**
+
+**Source and context** — A-13 made this repository public and accepted
+**revenue** figures. A-19 Option C forbids **cash-position** figures — a
+balance, an overdraft amount, a declined-payment amount. **Outflows fall between
+the two and no decision covers them.** Concretely, this week:
+
+- **A storefront platform's monthly charge**, paid 2026-11-08 after nine
+  declines over eighteen days (T-89, Done). **Withheld because A-24 is pending
+  on that exact figure**, and publishing it now because it has since been paid
+  would defeat A-24 by a technicality.
+- **A payment to a consumer-credit issuer** from the business payment account on
+  2026-11-09. **Withheld because its category is undecided** — T-137 has asked
+  since 2026-11-06 whether that account carries a personal obligation, and A-25
+  is pending.
+- **A domain registrar's annual charge**, amount unknown since 2026-10-12
+  (T-46), which is a gap rather than a withholding.
+
+**Recommended plan — Option B, publish by class.** **Publish** the amounts of
+**business vendor and platform charges** (storefront, hosting, deploy, domain,
+software), because they describe DD84's cost base, which is the same category of
+information A-13 already accepted on the revenue side. **Withhold** any amount
+paid to a **lender, card issuer or financing company**, and any amount that
+**A-24 still covers**, until A-24 and A-25 are answered. **Each withheld line
+still carries its thread ID and the word "withheld", never "not available".**
+
+**Alternatives considered** — (a) **Publish everything.** Simplest, and it would
+put a possibly personal debt figure on a world-readable record before A-25
+establishes whose account it is. (b) **Withhold everything.** Safe, and it makes
+§5 of every cash review a list of thread IDs — the owner then reconciles his own
+business by clicking links, which is the work the review exists to do for him.
+(c) **Option B**, above: the cost base is published, the personal boundary is
+not, and the line sits where A-13 and A-19 already put it.
+
+**Cost and cash impact** — **None.** No money moves and no commitment is made.
+The effect is on what the record can tell the owner.
+
+**Risks and safeguards** — **The risk of publishing is that an outflow turns out
+to be personal**, which is why lender payments are excluded from the
+recommendation until A-25 answers. **The risk of withholding is already
+realised**: this week's review cannot state DD84's weekly cost base at all, so
+it cannot say whether the business is spending more than it earns — and it
+earned nothing this week. Safeguard either way: **account numbers, card digits,
+balances and declined-payment amounts stay out regardless, under §5 and A-19,
+and this packet does not touch them.**
+
+**Systems affected** — **None.** This is a disclosure rule for files in this
+repository.
+
+**Customer and public impact** — **No customer is named or affected.** The
+public impact is the point of the decision: approving it puts DD84's monthly
+cost base on a world-readable record, alongside the revenue figures A-13 already
+accepted.
+
+**Success test** — The next cash review's "Owed by DD84" table **carries an
+amount for every business vendor charge found, with its source**, and **no
+lender amount, balance, overdraft figure or card digit anywhere.** **T-183
+resolves to either a published business expense or a documented personal item
+excluded from the record.**
+
+**Reply with: APPROVE (publish all) / APPROVE WITH CHANGES (name the classes) /
+DEFER / REJECT** — and say whether **A-24 is answered at the same time**, since
+the storefront figure is withheld under it.
+
+**Response** — _awaiting owner._ **Affected records** — T-183, T-109, T-46,
+T-89, T-137, and A-24, A-25. **Actual result** — _not yet executed. No figure
+has been published or redacted under this packet._
