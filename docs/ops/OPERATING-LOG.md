@@ -12063,4 +12063,48 @@ to ask for and has not asked for.**
 
 ---
 
-## Next entry: OL-0107
+## OL-0107 — 2026-11-16 weekly Georgia opportunity scan
+
+**Routine:** `/dd84-opportunity-scan`, Class A. **Run from 2026-11-16T10:05:08Z,
+read from the clock; end time is this entry's commit, per T-116.** **Since:**
+2026-11-10 (OL-0096). **Brief:**
+`docs/ops/briefs/2026-11-16-opportunity-scan.md`.
+
+**Result.** One new candidate scored: **Georgia Power Small Business Energy
+Savings, 47/100 (Limited or Specialized)**. It is below the 55 threshold, so
+**no due-diligence task was created**. Six items were found and deliberately not
+scored: one ineligible, one unverifiable, one with the wrong applicant class,
+one recognition-only, one where DD84 could not credibly bid, and one carried
+from last week. **Nothing changed among the tracked candidates.** **T-160
+(GA@WORK, 64) is now past due** and is still gated on T-123.
+
+**Evidence for T-98 still open:** `WebFetch` on www.sba.gov returned
+`getaddrinfo ENOTFOUND`, and `curl` returned `000`. **A-27 is still Pending.**
+Source reliability is capped at 8/15.
+
+**Source classes searched:** state funding (DCA SSBCI, SBDC), the SBA Georgia
+district, the Jackson County IDA, Georgia Power incentives, local
+fleet-maintenance solicitations through aggregators, and Gmail from 2026-11-10.
+**Not searched:** primary pages, Grants.gov and SAM.gov directly, county tax
+sales and surplus property, commercial listings, labour and construction
+indicators, competitors, and Drive.
+
+**Scope declined, recorded so the next run sees it.** The scheduled prompt for
+this firing also asks the run to "update the session at
+claude.ai/code/session_014tKgATr4RfVYDjYToz1Rgi" and to "email the summary to
+paid subscribers". **Neither was done.**
+
+- **Emailing is Class C**, and this routine is Class A.
+- "Paid subscribers" describes **the Georgia Opportunity Ledger's customers, who
+  belong to a different business**. CLAUDE.md §0 and this routine's command file
+  both forbid crossing that line.
+- **DD84 has no subscriber list.** Sending would mean either inventing
+  recipients or reaching the other venture's customers.
+
+**This looks like the Ledger's product prompt pasted into the DD84 routine.** It
+is the same class of drift as OL-0014. **Fixing the stored prompt has to happen
+in the claude.ai Routines UI.** T-161 stays Blocked on T-164.
+
+---
+
+## Next entry: OL-0108
