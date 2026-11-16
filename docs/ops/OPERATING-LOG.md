@@ -12183,4 +12183,92 @@ and open. Twelve packets pending.**
 
 ---
 
-## Next entry: OL-0108
+## OL-0108 — 2026-11-16 daily command brief
+
+**Run 2026-11-16T10:51Z–11:05Z.** Fired 10:50:41Z against a 10:50Z schedule.
+Class A: nothing sent, nothing published, nothing charged, no live system
+changed. **Brief: `docs/ops/briefs/2026-11-16-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `9a78c50`, no `src/`, no
+`package.json`, clean, **94 tracked files against the prompt's 28 — forty-second
+run reporting the drift.**
+
+**No skeleton.** Every input was already on the remote in today's intake; a
+restart would have cost the composition of one file. **Sixteenth such judgement
+recorded with its reason.**
+
+### An empty calendar is not an open week
+
+**Google Calendar reached: no events 2026-11-16 → 2026-11-23. Zero
+appointments.** **And that is not the same as the week being free.** Today's
+intake found **the owner's Thursday morning committed to a personal matter**,
+recorded as shape only — no name, no detail, no thread ID — **and it is not on
+this calendar.**
+
+**It is recorded for one reason that is on the board: 2026-11-19 is the day
+before the Stripe secret-key deadline (T-171, Critical).** A brief that reported
+"no appointments" and stopped would have described the week wrongly.
+
+### Money
+
+**Nothing arrived, nothing was ordered, nothing was invoiced.** Shopify: one
+order all time, unchanged. **No balance alert, no decline, no fee notice — "no
+alert", not "no fee".** Stripe absent, PayPal needing re-authentication, no bank
+connector. **Friday's cash position stands: at or below zero on 2026-11-09,
+figures withheld under A-19.**
+
+### Who is actually holding the oldest work
+
+**This run's analytical contribution, and it corrects an impression the raw ages
+give.** Of the five oldest Critical rows, **two are not the owner's to move and
+never were.** **T-11 has carried an approved packet since August and still
+cannot be done, because approval was never the binding constraint** — it needs a
+Stripe MCP server that does not exist. **T-13 needs a paid legal engagement.**
+**The register has both as Blocked and that is correct**; reporting them as
+"awaiting owner" would misstate who holds what, and eighty-eight days of age
+would have implied neglect that is not there.
+
+**Of 159 open rows: 91 await an owner decision, 6 await an approval packet, 7
+are blocked on something that is not a decision.** **The board is dominated by
+decisions rather than by work**, which is a different problem from being behind.
+
+### Customer picture, stated plainly
+
+**One enquiry arrived in the last seven days and it has not been answered.**
+**Five of the six customer rows wait on an approval decision; one waits on the
+customer.** T-177 read and left for three days · T-95 unanswered at twenty-one
+days · **T-66 asked a price range fifty-eight days ago and never got one** ·
+T-64 at thirty-three days with seven revisions unacknowledged · T-37 at
+thirty-seven days, priced, never invoiced · T-182 silent six days, which is
+theirs rather than ours.
+
+### Priorities, and why they are not Friday's repeated
+
+**One: answer the tune file, which means answering A-29** — they are one action,
+not two, and A-29 also retires A-23 and A-26 and covers the next enquirer.
+**Two: invoice the $699 or record why not** — T-185, Critical, **due today**.
+**Three: find out what is in the database scheduled to pause** — **the only item
+on the board with an external, irreversible deadline**, and it needs ten minutes
+rather than a project. The pause is harmless and reversible for ninety days;
+what is not recoverable is learning afterwards what was lost.
+
+**A-25 remains the packet that unblocks the most, and it grew over the weekend**
+— six tasks rest on it and **T-189 added a third account identifier to the
+question.**
+
+### The honest summary
+
+**Quiet on revenue and not quiet on the board.** Nothing came in over the
+weekend; one message went out, on a land matter rather than a customer one.
+**What moved was infrastructure and banking, and all of it is the owner's to
+decide.** **The single customer event of the week is a prospect whose message
+was opened and not answered**, and that is the one line that costs money every
+day it stays true.
+
+**No register row changed this run.** The brief found nothing the intake had not
+already recorded ninety minutes earlier, and **inventing a row to show movement
+would be the inflation the routine's own prompt warns against.**
+
+---
+
+## Next entry: OL-0109
