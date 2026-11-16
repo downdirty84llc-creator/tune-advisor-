@@ -12063,4 +12063,124 @@ to ask for and has not asked for.**
 
 ---
 
-## Next entry: OL-0107
+## OL-0107 — 2026-11-16 inbox and lead intake
+
+**Run 2026-11-16T10:21Z–10:45Z.** Fired 10:21:20Z against a 10:20Z schedule.
+**Window 2026-11-13T10:20Z → 2026-11-16T10:20Z — seventy-two hours, the longest
+this routine has swept**, covering a full weekend. Class A: nothing sent, no
+label applied, no mail state changed, no live system touched. **Brief:
+`docs/ops/briefs/2026-11-16-inbox-intake.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `a0d5ed1` before this run's
+skeleton, no `src/`, no `package.json`, clean, **93 tracked files against the
+prompt's 28 — forty-first run reporting the drift.**
+
+**Thirty-first application of OL-0050.** Seventy-two hours is the longest window
+this routine has swept and two worker restarts hit this session on 2026-11-13.
+The skeleton went in first.
+
+### The tune file was read and not answered
+
+**T-177 changed state over the weekend, and the change is the finding rather
+than the elapsed time.** On 2026-11-13 the message carrying a customer's HP
+Tuners calibration file was **unread**. **It is read now.** Thread
+`1a1d27a193e37041` re-checked this run: still **one message**, **no reply in the
+sent mailbox**, **three days nine hours and five minutes** since it arrived.
+
+**Gmail records that a label changed, not when it changed**, so the moment it
+was read is not knowable and is not asserted. **That it was seen and left is.**
+
+**This is no longer "nobody has got to it yet", and the row was retitled to say
+so.** The draft has been written since Friday. **A-29 — the standing authority
+to acknowledge an enquiry — has been pending since Friday too.** **The brief
+does not call the owner slow**: it is a drafted message needing one word, and
+the word has not been given.
+
+### Two pieces of infrastructure began failing, and one boundary was found
+
+**T-187.** A Supabase project named for DD84's tuning work **has not seen
+sufficient activity for seven days and is scheduled for automatic pause**
+(2026-11-16T09:37:39Z, thread `1a1e3b82cde691b0`). Not paused yet. Once paused:
+**ninety days to unpause from the dashboard, then data download only.** The free
+plan makes it eligible; a paid plan stops it. **Project reference and
+organisation ID withheld** — they are the host half of an API endpoint, the
+owner has the email, and nothing here needs them.
+
+**The run deliberately did not open the project, and this is a Class A boundary
+the record had not met before.** **Inspecting it to learn what it holds would
+itself count as activity and could reset the inactivity clock.** **An observing
+routine must not change the thing it is observing**, even helpfully. The
+recommendation is therefore **not urgency** — a pause is reversible for ninety
+days and costs nothing — but **to know what is in the project before that window
+starts.** Paying to prevent the pause is Class E and is not recommended on these
+facts.
+
+**T-188.** Five misconfigured domains on one deployment project
+(2026-11-16T08:07:39Z, thread `1a1e365c3d98a816`). **Four belong to the Georgia
+Opportunity Ledger, which the 2026-09-16 standing decision keeps separate, and
+are not scored here.** **The fifth is a subdomain of DD84's own registered
+domain**, pointing at the other business's project and broken. **That record is
+DD84's whatever it serves**, so T-188 covers that one and no other.
+
+**The separation is working and showing its seam:** an asset of one business is
+lent to the other, and nothing in the registry says so.
+
+### Money: nothing in, and a third account identifier
+
+**No payment arrived and no order was placed.** Shopify re-read live at 10:33Z:
+**one order all time, #1001, unchanged.** Google Calendar reached: **no events
+2026-11-16 → 2026-11-23. Zero appointments.**
+
+**T-189 is the one that matters.** An account was **enrolled for instant
+transfers on 2026-11-14** (thread `1a1da2546a29c6fe`). **Three of the four
+payments that ended DD84's 405-day drought arrived by that rail and none is
+attributed to a job** — T-88, T-92 and T-113. **The alert names a mobile number
+and an account ending; both are withheld under §5** — and **the account ending
+is not one this record has seen before.** **A-25 has asked whose account the
+register treats as the business's since 2026-11-06, and now has a third
+identifier in play.**
+
+**T-183's lender is identified in kind but not resolved:** the 2026-11-09
+outflow went to a consumer credit card issued under a payment brand, whose
+statement became available 2026-11-14. **Whether it is a DD84 expense is still
+not established** — A-25, then A-30. **Amounts remain withheld.**
+
+**Card state unchanged in substance:** the business card **remains off since
+2026-11-10** (reminder 2026-11-14), and the other card was **turned back on
+2026-11-15T17:35:18Z** — the toggling continues. **No balance alert, no decline
+and no fee notice in the window: "no alert", not "no fee".**
+
+**T-190:** the bank asked the owner on 2026-11-16 to review his connected apps.
+**That converges with T-181's six third-party sign-in grants** from the opposite
+direction — one of them prompted by the institution rather than found by a
+routine.
+
+### What did not happen
+
+**No enquiry arrived. No customer replied. No complaint, no safety report, no
+deadline, no invoice, no quote request.** **One message was sent by the business
+in seventy-two hours** — a follow-up to a water utility on a land matter, not a
+customer thread.
+
+**Carried in and still open:** the Cadillac enquirer is **six days silent**; the
+2026-10-26 enquirer is **twenty-one days unanswered**; **the two live jobs are
+still uninvoiced** (T-185); **no seventeenth credit alert.** **Whether the owner
+acted on the app permission request (T-178) is unknown rather than no** — no
+confirmation arrived either way, and the brief says unknown.
+
+**One item withheld in full:** a personal legal matter — **no name, no detail,
+no thread ID.** **Only that the owner's Thursday morning is committed**, which
+is recorded because **2026-11-19 is the day before the Stripe key deadline
+(T-171)** and the morning is not free.
+
+### Register
+
+**T-187 to T-190 added, T-177 retitled. 190 tasks**, recounted mechanically with
+every bucket printed and the total checked against their sum. **91 Awaiting
+Owner · 135 of 159 open rows past due — fourteen more than Friday, which is
+three days passing rather than anything new going wrong · twenty-five Critical
+and open. Twelve packets pending.**
+
+---
+
+## Next entry: OL-0108

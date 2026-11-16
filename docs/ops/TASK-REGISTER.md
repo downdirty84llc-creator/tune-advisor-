@@ -210,7 +210,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-174 | 32 approaches: 2 declines on in-house capability, ~25 silent                                  | sales      | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
 | T-175 | The insufficient-funds card was turned off 2026-11-11                                         | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-13   |
 | T-176 | Transport basis: no per-mile rate — at cost until A-27 unblocks it                            | finance    | Normal       | Blocked                  | Agent | **A-27** first               | 2026-11-20   |
-| T-177 | A customer tune file arrived with no message — scope unknown                                  | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-29** first               | 2026-11-13   |
+| T-177 | READ AND NOT ANSWERED: the tune file, 3 days on                                               | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-29** first               | 2026-11-13   |
 | T-178 | A GitHub App asks the owner for more account access                                           | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-179 | A 2nd card declined for being off — T-139 repeating, 6 days on                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139** first              | 2026-11-13   |
 | T-180 | The insufficient-funds card is back on after 3+ cycles 11-12                                  | finance    | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
@@ -220,22 +220,53 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-184 | The 11-11 record caught the card off and missed the on 61s before                             | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-16   |
 | T-185 | $699 of priced work has never been invoiced — no receivable exists                            | finance    | **Critical** | **Awaiting Owner**       | Owner | E to invoice                 | 2026-11-16   |
 | T-186 | No job records parts, credits or hours, so no margin can be computed                          | finance    | **High**     | Planned                  | Agent | A to design                  | 2026-11-20   |
+| T-187 | A DD84 database is scheduled for auto-pause after 7 idle days                                 | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-18   |
+| T-188 | A DNS record on DD84 own domain is misconfigured, serving the Ledger                          | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
+| T-189 | An account was enrolled for instant transfers — a 3rd account ending                          | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25** first               | 2026-11-18   |
+| T-190 | The bank asks the owner to review connected apps — meets T-181                                | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 18 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **87 Awaiting Owner** · 7 Blocked ·
-31 Planned · 2 Backlog. **186 tasks.** Recounted mechanically with
+· 4 In Progress · **6 Awaiting Approval** · **91 Awaiting Owner** · 7 Blocked ·
+31 Planned · 2 Backlog. **190 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-13**, after three routines in one session: **T-177 to T-182 from
-the inbox intake, T-177 moved behind A-29 by the daily brief, and T-183 to T-186
-from the cash review.** **87 of the 186 rows are Awaiting Owner**, **121 of the
-155 open rows are past due**, and **twenty-five rows are Critical and open.**
-**Twelve approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
-A-26, A-27, A-28, A-29 and A-30** — A-28 a sibling session's, **A-29 and A-30
-raised today.**
+last **2026-11-16** (**T-187 to T-190 added by the inbox intake; T-177
+retitled**). **91 of the 190 rows are Awaiting Owner**, **135 of the 159 open
+rows are past due** — fourteen more than Friday, which is three days passing
+rather than anything new going wrong — and **twenty-five rows are Critical and
+open.** **Twelve approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24,
+A-25, A-26, A-27, A-28, A-29 and A-30.**
+
+**T-177 is retitled because its state changed, not its age.** The message
+carrying a customer's calibration file was **unread on 2026-11-13 and is read
+now.** The thread is still one message, no reply exists in the sent mailbox, and
+**three days and nine hours have passed.** **Gmail records that a label changed,
+not when**, so when it was read is not knowable — **but that it was seen and
+left is.** That is a different fact from "nobody has got to it yet", and the row
+should say which one it is. **The draft needs one word; A-29 is the word.**
+
+**T-187 and T-188 are infrastructure that began failing over the weekend.** A
+DD84-named database is **scheduled for automatic pause after seven idle days** —
+not paused yet, reversible for ninety days after it is, and gone after that
+except as a data download. **The run deliberately did not open the project:
+inspecting it would itself count as activity and could reset the clock, and an
+observing routine must not change what it observes.** T-188 is one misconfigured
+DNS record out of five — **the other four belong to the Georgia Opportunity
+Ledger and are not DD84's**, but the fifth sits on **DD84's own registered
+domain** and is therefore DD84's whatever it serves. **The separation is working
+and showing its seam: an asset of one business is lent to the other and nothing
+in the registry says so.**
+
+**T-189 puts a third account identifier into A-25's question.** An account was
+**enrolled for instant transfers on 2026-11-14**, and **three of the four
+payments that ended the 405-day drought arrived by that rail with none of them
+attributed to a job** (T-88, T-92, T-113). **The account ending named in the
+alert is not one this record has seen before.** **A-25 has asked whose account
+the register treats as the business's since 2026-11-06** — the digits and the
+mobile number are withheld under §5, and the question is now harder, not easier.
 
 **T-185 is the cash review's finding and the most valuable line in the
 register.** **DD84 is carrying $699 of priced work — $349 on T-37 and $350 on
