@@ -12271,4 +12271,165 @@ would be the inflation the routine's own prompt warns against.**
 
 ---
 
-## Next entry: OL-0109
+## OL-0109 — 2026-11-16 weekly Georgia opportunity scan
+
+**Started 2026-11-16T11:26:01Z, finished 11:30:15Z, both read from the clock.**
+Fired 11:25:43Z against an 11:25Z schedule. Class A: nobody contacted, nothing
+applied for, nothing committed. **Brief:
+`docs/ops/briefs/2026-11-16-opportunity-scan.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `c05a940`, no `src/`, no
+`package.json`, clean, **95 tracked files against the prompt's 28 — forty-third
+run reporting the drift.**
+
+**Method: the published 100-point method in the command file**, bands as
+recovered 2026-11-09, time sensitivity read as "higher means more urgent" so a
+rolling programme scores 3. **Scores from 2026-11-02 and earlier remain
+incomparable on that axis and the brief says so.**
+
+### T-116 caught in this run's own first draft
+
+**The brief's header originally read "Run 11:26Z–11:48Z".** **11:48 was a
+prediction.** The run had not finished, no clock had been read for it, and the
+span was plausible rather than true — **which is exactly the defect T-116
+records in every brief from 2026-08-06 to 2026-11-03.** **Four per-search
+timestamps had gone the same way.**
+
+**Corrected before the file was pushed:** start and finish are both read, the
+per-search times are removed entirely, and the brief says **why** there are none
+— the clock was not read between the searches and **inventing four would be the
+same defect in miniature.** **The correction is kept visible in the brief rather
+than quietly fixed**, because a record that only shows its caught errors after
+they ship is less useful than one that shows them before.
+
+### Instruments
+
+**T-98 re-tested live and holds, with the distinction the record already
+draws.** `get_environment` returns `allowed_hosts: []` — **still empty.**
+**`WebSearch` works and returned real results; nothing was fetched by
+anything.** **Discovery is possible; validation at source is not.** **Sixth
+consecutive scan capped on source reliability**, said in every score breakdown
+rather than once at the end.
+
+**Four `standard` searches:** statewide grants with open deadlines ·
+Athens-Clarke and Madison County local programmes · Georgia apprenticeship
+incentives for automotive employers · Georgia public-fleet diagnostic and
+calibration solicitations.
+
+### A bookkeeping question acquired a price
+
+**The finding of the run, and it is not a new opportunity — it is an old
+question becoming expensive.**
+
+**T-191: a local revolving loan fund offering $3,001 to $25,000 at 2% APR over
+thirty months**, scored **55/100, Worth Investigating**. Terms and eligibility
+read via `WebSearch` from a county government notice and the authority's own
+programme pages; **nothing fetched**; **the most recent status evidence is
+August 2025 and no 2026 window was found.**
+
+**Its first published eligibility rule is a business address inside
+Athens-Clarke County.** **T-164 has asked since 2026-11-12 what county DD84 is
+in, because `ventures.md` records no location at all.** **The owner's own words
+to an enquirer on 2026-11-10 are "the Hull, GA area", and Hull's post office is
+in Madison County** — **which is an observation about a place name and not a
+finding about where DD84 operates from.** **The record still does not know, and
+the scan refused to decide it.**
+
+**So T-164 was escalated to Critical.** It looked like bookkeeping for four
+days. **It is now the gate on the best-scoring new opportunity of the month, and
+it is one sentence to answer.**
+
+**T-192 is a second gate the same programme exposed:** the fund requires
+**current plus three previous years of occupation tax paid to the local
+government for the business's physical location**, and **nothing in this record
+says DD84 holds an occupation tax account anywhere.** **A compliance question
+the register had never asked**, worth answering whatever happens to the loan.
+
+### The other entries, and what was deliberately not scored
+
+**T-194: a $1,000–$10,000 grant closing 2026-11-30**, scored **53/100**. **Its
+source reliability is 3 of 15 on purpose** — it came from a grant aggregator,
+not the granting body's page, **which is precisely the shape of the 2026-11-02
+failure that scored a Pascagoula, Mississippi grant as Georgia's** (T-124,
+withdrawn). **Verifying it needs a fetch, which T-98 blocks and A-27 would
+unblock** — **so this is the first scan in which a pending approval has a dated
+cost: fourteen days.**
+
+**A TCSG apprenticeship employer incentive scored 36/100, Information Only.**
+Automotive is among its target sectors and its eligible costs include curriculum
+development and train-the-trainer work — **which points at T-166's unpriced
+"staff training as a named service" from the other direction, and no claim is
+made that the two connect.** **It scores low on a known gate, not an unknown
+one: DD84 has no employees and a Registered Apprenticeship Program needs an
+apprentice.**
+
+**Not scored, with reasons given:** an Atlanta city grant (**geography** — DD84
+is about seventy miles east), three programmes **already closed**, a federal
+grant whose applicant must **be** a women's business centre, and **a county
+grant that is in New York** — **the second scan running in which a county-name
+query returned the wrong state.** It was caught by the search layer and never
+reached scoring. **County names are not unique, and a county-level query needs
+the state asserted in the result rather than only in the question.**
+
+### Two findings worth as much as the ranked list
+
+**T-193 — the most useful thing in the run is a five-digit number.** **NIGP code
+99219, "Automotive and Road Equipment Testing and Calibration Services."**
+**T-160 — the highest-scoring opportunity on the books at 64/100 — has carried
+an open sub-decision about which NIGP codes to register under since
+2026-11-10.** **The code does not re-score T-160; it lowers the cost of acting
+on it.**
+
+**T-195 — five Georgia public bodies bought vehicle diagnostics and fleet repair
+between April and September 2026, and every deadline has passed.** One carried
+**an engine-diagnostic labour-rate line item**. **None was found to mention ECU
+calibration specifically, and the brief does not overstate the fit.** **DD84 saw
+none of them**, and the channel that would have surfaced them is the one sitting
+unactioned as T-160. **The case for T-160 is no longer "registration is
+generally worthwhile" but "five went past this year."**
+
+### Boundaries held
+
+**No Supabase tool was called** — a flat prohibition for this routine, and
+separately **T-187's project must not be touched at all, because reading it
+would count as activity against its pause clock.** **Nothing in `docs/growth/`
+was read or written.** **Nothing found here becomes a Ledger record**: this is
+DD84 looking for DD84's opportunities, and the Ledger is a separate business in
+a separate repository.
+
+### Two more things caught before the push, and a fifth gate lesson
+
+**The leak gate refused this scan on one match, and it was a false positive.**
+Its street-address class fired on ordinary prose — **a four-digit year followed
+by a word**, which is the same shape as a house number followed by a street
+name. **Nothing sensitive was involved.**
+
+**The pattern was not weakened.** A street-address class that misses real
+addresses is worse than one that occasionally stops a sentence, and **this is
+the fourth time the correct response has been to change the text rather than the
+gate** — after the untracked-file miss, the stale name list, and the balance
+literal that could not be told from a revenue zero. **Five gate lessons now, and
+four of them have the same shape: the instrument was asked a question it could
+not answer, and the fix belonged on the asking side.**
+
+**Separately, a script that rewrote the register's counts paragraph failed
+silently on a quoting error**, leaving the register holding **195 rows while its
+header still said 190**. **Caught by re-reading the file rather than by trusting
+the script's exit**, and corrected before anything was pushed. **It is recorded
+because the operating protocol says not to assume a tool succeeded because it
+returned** — and here it did not even return cleanly, while the rest of the same
+batch did.
+
+### Register
+
+**T-191 to T-195 added; T-164 escalated to Critical and retitled. 195 tasks**,
+recounted mechanically with every bucket printed and the total checked against
+their sum. **95 Awaiting Owner · 135 of 164 open rows past due · twenty-six
+Critical and open. Twelve packets pending.**
+
+**The decision asked for before the next scan is one sentence: what county is
+DD84's business address in?**
+
+---
+
+## Next entry: OL-0110

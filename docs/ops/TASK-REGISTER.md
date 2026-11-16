@@ -197,7 +197,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-161 | HELD: which county? ventures.md records none — see T-164                                      | sales      | Normal       | Blocked                  | Agent | A to diagnose                | 2026-11-16   |
 | T-162 | The owner answered the new enquirer 8 min before A-26 asked to                                | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-13   |
 | T-163 | DONE: on-site travel rate set 2026-11-13 on owner instruction                                 | sales      | **High**     | Done                     | Owner | Owner instruction            | 2026-11-11   |
-| T-164 | ventures.md records no location; the register asserts a county                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
+| T-164 | No location on record — now gates a $25k loan (T-191)                                         | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-12   |
 | T-165 | 32 owner partnership approaches on 11-10, not the 6 first reported                            | sales      | **High**     | In Verification          | Agent | A to confirm                 | 2026-11-12   |
 | T-166 | The outbound offers 4 more capabilities the catalogue does not price                          | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** family              | 2026-11-12   |
 | T-167 | NEVER TRUE: the owner resent it 2026-11-10T17:53, before the row                              | sales      | **High**     | No Action (accepted)     | Owner | A to report                  | 2026-11-12   |
@@ -224,21 +224,57 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-188 | A DNS record on DD84 own domain is misconfigured, serving the Ledger                          | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
 | T-189 | An account was enrolled for instant transfers — a 3rd account ending                          | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25** first               | 2026-11-18   |
 | T-190 | The bank asks the owner to review connected apps — meets T-181                                | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
+| T-191 | A 2% $25k local loan exists; eligibility turns on T-164 county                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-23   |
+| T-192 | Has DD84 ever paid occupation tax to any local government?                                    | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
+| T-193 | NIGP 99219 names DD84 exact service — carry it to T-160 form                                  | sales      | Normal       | Planned                  | Agent | **T-160** first              | 2026-11-23   |
+| T-194 | A $1k-$10k grant closes 2026-11-30; eligibility unverifiable here                             | finance    | Normal       | **Awaiting Owner**       | Owner | **A-27** blocks it           | 2026-11-23   |
+| T-195 | 5 Georgia fleet bids ran Apr-Sep 2026 and DD84 saw none of them                               | sales      | **High**     | **Awaiting Owner**       | Owner | **T-160** argument           | 2026-11-20   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 18 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **91 Awaiting Owner** · 7 Blocked ·
-31 Planned · 2 Backlog. **190 tasks.** Recounted mechanically with
+· 4 In Progress · **6 Awaiting Approval** · **95 Awaiting Owner** · 7 Blocked ·
+32 Planned · 2 Backlog. **195 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-16** (**T-187 to T-190 added by the inbox intake; T-177
-retitled**). **91 of the 190 rows are Awaiting Owner**, **135 of the 159 open
-rows are past due** — fourteen more than Friday, which is three days passing
-rather than anything new going wrong — and **twenty-five rows are Critical and
-open.** **Twelve approval packets pending: A-07, A-10, A-17, A-22, A-23, A-24,
-A-25, A-26, A-27, A-28, A-29 and A-30.**
+last **2026-11-16**, after three routines in one day: **T-187 to T-190 from the
+intake, no change from the daily brief, T-191 to T-195 from the opportunity
+scan, and T-164 escalated to Critical.** **95 of the 195 rows are Awaiting
+Owner**, **135 of the 164 open rows are past due**, and **twenty-six rows are
+Critical and open.** **Twelve approval packets pending.**
+
+**T-164 was escalated to Critical because a bookkeeping question acquired a
+price this week.** It has asked since 2026-11-12 what county DD84's business
+address is in, because **`ventures.md` records no location at all.** **The
+opportunity scan then found a local revolving loan fund offering $3,001 to
+$25,000 at 2% APR over thirty months — whose first published eligibility rule is
+a business address inside Athens-Clarke County.** **The owner's own words, to an
+enquirer on 2026-11-10, are "the Hull, GA area", and Hull's post office is in
+Madison County** — **which is an observation about a place name, not a finding
+about where DD84 operates from, and the record still does not know.** **T-191
+carries the loan; it cannot be assessed by anyone until T-164 is answered, and
+answering it is one sentence.**
+
+**T-192 is a second gate the same programme exposed, and it is worth answering
+whatever happens to the loan.** The fund requires **current plus three previous
+years of occupation tax paid to the local government for the business's physical
+location.** **Nothing in this record says DD84 holds an occupation tax account
+with any jurisdiction.** That is a compliance question the register had never
+asked.
+
+**T-193 is small and immediately useful.** **NIGP code 99219 — "Automotive and
+Road Equipment Testing and Calibration Services" — names DD84's trade almost
+exactly.** T-160, the **highest-scoring opportunity on the books at 64/100**,
+has carried an open sub-decision about which NIGP codes to register under since
+2026-11-10. **The code does not re-score T-160; it lowers the cost of acting on
+it.**
+
+**T-195 is the argument for T-160 that T-160 has been missing.** **Five Georgia
+public bodies bought vehicle diagnostics and fleet repair between April and
+September 2026 — one with an engine-diagnostic labour-rate line item — and every
+deadline has passed.** **DD84 saw none of them.** The case is no longer
+"registration is generally worthwhile" but "five went past this year."
 
 **T-177 is retitled because its state changed, not its age.** The message
 carrying a customer's calibration file was **unread on 2026-11-13 and is read
