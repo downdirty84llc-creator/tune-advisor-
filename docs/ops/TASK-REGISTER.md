@@ -169,7 +169,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-133 | A sender supplied a Date header the mail API returns unparsed                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-10   |
 | T-134 | The 2026-11-03 intake missed an unread account sign-in notice                                 | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-06   |
 | T-135 | Unsent loan drafts — DUPLICATE of T-42 and T-58, withdrawn                                    | finance    | High         | No Action (accepted)     | Agent | A to report                  | 2026-11-06   |
-| T-136 | ANSWERED: the 11-09 alert reads AT zero, not below — not an overdraft                         | finance    | **Critical** | In Verification          | Owner | A to report                  | 2026-11-06   |
+| T-136 | ANSWERED then OVERTAKEN: at zero 11-09, below zero 11-16                                      | finance    | **Critical** | Done                     | Owner | A to report                  | 2026-11-06   |
 | T-137 | T-71's account carries a personal obligation; whose account is it?                            | finance    | **Critical** | **Awaiting Approval**    | Owner | **A-25**                     | 2026-11-06   |
 | T-138 | A second recurring charge of the bill amount approved 2026-11-04                              | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-07   |
 | T-139 | A business card off on purpose since 2026-11-02 declined a payment                            | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-07   |
@@ -214,7 +214,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-178 | A GitHub App asks the owner for more account access                                           | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-179 | A 2nd card declined for being off — T-139 repeating, 6 days on                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139** first              | 2026-11-13   |
 | T-180 | The insufficient-funds card is back on after 3+ cycles 11-12                                  | finance    | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
-| T-181 | The business identity granted 6 third-party sign-ins in the period                            | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
+| T-181 | The business identity granted 8 third-party sign-ins, not 6                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
 | T-182 | The Cadillac enquirer is 3 days silent — chase or close?                                      | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-183 | An outflow to a consumer lender left the business account 11-09                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**, then A-30          | 2026-11-16   |
 | T-184 | The 11-11 record caught the card off and missed the on 61s before                             | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-16   |
@@ -229,20 +229,66 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-193 | NIGP 99219 names DD84 exact service — carry it to T-160 form                                  | sales      | Normal       | Planned                  | Agent | **T-160** first              | 2026-11-23   |
 | T-194 | A $1k-$10k grant closes 2026-11-30; eligibility unverifiable here                             | finance    | Normal       | **Awaiting Owner**       | Owner | **A-27** blocks it           | 2026-11-23   |
 | T-195 | 5 Georgia fleet bids ran Apr-Sep 2026 and DD84 saw none of them                               | sales      | **High**     | **Awaiting Owner**       | Owner | **T-160** argument           | 2026-11-20   |
+| T-196 | BELOW zero on 11-16, not at zero — T-136 overtaken in 7 days                                  | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** underneath          | 2026-11-18   |
+| T-197 | A sales channel rejected DD84 proof of address — 3rd T-164 gate                               | sales      | **Critical** | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-18   |
+| T-198 | A 5th vendor charge failed — the cost base is not fully known                                 | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30** first               | 2026-11-20   |
+| T-199 | A 3rd DD84 repository has failing CI and is not in ventures.md                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
+| T-200 | A DD84 web app with sign-in-link auth is not in ventures.md                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
+| T-201 | Merry Market now has a live site as well as a processor account                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**, T-151              | 2026-11-20   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **24 Done** · **5 No Action** · **2 Accepted Risk** · 18 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **95 Awaiting Owner** · 7 Blocked ·
-32 Planned · 2 Backlog. **195 tasks.** Recounted mechanically with
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 17 In Verification
+· 4 In Progress · **6 Awaiting Approval** · **101 Awaiting Owner** · 7 Blocked ·
+32 Planned · 2 Backlog. **201 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-16**, after three routines in one day: **T-187 to T-190 from the
-intake, no change from the daily brief, T-191 to T-195 from the opportunity
-scan, and T-164 escalated to Critical.** **95 of the 195 rows are Awaiting
-Owner**, **135 of the 164 open rows are past due**, and **twenty-six rows are
-Critical and open.** **Twelve approval packets pending.**
+last **2026-11-17** (**T-196 to T-201 added, T-136 closed Done, T-181 corrected
+upward again**). **101 of the 201 rows are Awaiting Owner**, **140 of the 169
+open rows are past due**, and **twenty-seven rows are Critical and open.**
+**Twelve approval packets pending.**
+
+**T-136 closes Done and is immediately overtaken, which is a distinction worth
+keeping.** It asked for seven days whether the 2026-11-09 balance alert read
+_at_ zero or _below_ it. **It read at zero, the 11-13 cash review recorded that
+with its thread ID, and the question is answered — so the row closes.** **The
+2026-11-16 alert reads below zero.** **T-196 carries the new state rather than
+reopening the old question**, because "was the 11-09 alert at or below zero" and
+"where is the balance now" are different questions and merging them would lose
+the first answer.
+
+**So T-71 — "the account is overdrawn", Critical since 2026-10-16 — stopped
+being a historical description this week and became current.** **No figure
+appears anywhere: withheld under A-19, with the thread ID and read time in the
+11-17 intake.** **Three charges failed in the same window and no mechanism is
+asserted from that.**
+
+**T-197 makes T-164 three gates instead of one, and that is the most expensive
+unanswered item on this board.** A sales channel **rejected DD84's seller
+application because it could not verify the authenticity of the proof-of-address
+document.** The register already had the same question blocking a $3,001–$25,000
+loan at 2% (T-191) and an occupation-tax standing requirement (T-192). **Three
+independent systems in one week, all asking what county DD84's business address
+is in** — which `ventures.md` does not record at all. **Why the document failed
+is not stated and is not inferred: a missing verifiable address and a poor scan
+are different problems with different fixes.**
+
+**T-198 changes what the weekly cash review can claim.** A fifth vendor charge
+failed, **from a payee Friday's review did not list among the four it found.**
+**So the cost base is not merely unpublished — it is not fully known**, and
+every review so far has described a subset without being able to say how large a
+subset. **The amount is withheld: a declined-payment amount is named explicitly
+by A-19, and A-30 is pending on the class.**
+
+**T-199 to T-201 are three systems the venture registry does not record** — a
+third code repository named for AI tuning, with a failing check on a pull
+request about ambiguous fuel units and calibration provenance; a web application
+with sign-in-link authentication, whose token was withheld in full and whose
+link was not followed; and **a live website for the third DD84-named brand whose
+payment processor account T-151 already records as paying into the account A-25
+asks about.** **That brand now has both, and the register still cannot say whose
+account its money lands in.**
 
 **T-164 was escalated to Critical because a bookkeeping question acquired a
 price this week.** It has asked since 2026-11-12 what county DD84's business

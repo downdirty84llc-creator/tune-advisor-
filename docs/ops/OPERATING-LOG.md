@@ -12432,4 +12432,154 @@ DD84's business address in?**
 
 ---
 
-## Next entry: OL-0110
+## OL-0110 — 2026-11-17 inbox and lead intake
+
+**Run 2026-11-17T10:21Z–10:45Z.** Fired 10:20:59Z against a 10:20Z schedule.
+**Window 2026-11-16T10:20Z → 2026-11-17T10:20Z.** Class A: nothing sent, no
+label applied, no mail state changed, no live system touched, **and no link in
+any message followed.** **Brief: `docs/ops/briefs/2026-11-17-inbox-intake.md`.**
+
+**Contract item 0:** `HEAD` equalled origin at `d0a019c` before this run's
+skeleton, no `src/`, no `package.json`, clean, **96 tracked files against the
+prompt's 28 — forty-fourth run reporting the drift.** **Thirty-second
+application of OL-0050.**
+
+**This was not a quiet day.** Six findings, one a state change in the cash
+position and one the third independent thing this week to turn on a question
+nobody has answered.
+
+### The account is below zero now, not at zero
+
+**2026-11-16T17:15:40Z**, thread `1a1e55b80d076ef8`, read 2026-11-17T10:24Z.
+**Figure withheld under A-19, account digits under §5. The shape is what
+changed.**
+
+**On 2026-11-13 this record answered T-136 after seven days: the 2026-11-09
+alert read _at_ zero, not below**, and the cash review said plainly that a zero
+balance is not an overdraft and a charge-off clock started from it would count
+from the wrong event. **The 2026-11-16 alert reads below zero.**
+
+**T-136 closes Done and is immediately overtaken, and both halves are kept.**
+The question it asked — at or below, on 11-09 — **was answered, with evidence,
+and the row closes on it.** **T-196 carries the new state rather than reopening
+the old question**, because "was that alert at or below zero" and "where is the
+balance now" are different questions, and merging them would discard the first
+answer seven days after it cost seven days to get.
+
+**T-71, Critical since 2026-10-16, stopped being a historical description and
+became current.** **Three charges failed inside this window** (§3 and §4 of the
+brief) **and no mechanism is asserted from that** — no transaction detail is
+readable from here at all.
+
+### A sales channel rejected the proof of address, and T-164 is now three gates
+
+**2026-11-16T15:25:28Z**, thread `1a1e4f69c590a063`, chased at 16:58:59Z. The
+platform's own words: **it could not verify the authenticity of the
+proof-of-address document**, and asked for an unedited original. **The
+application is rejected, not pending.** Four remediation routes are offered;
+**none was taken and no link was followed.**
+
+**T-164 has asked since 2026-11-12 what county DD84's business address is in,
+because `ventures.md` records no location at all.** **In one week it became
+three gates on three unrelated systems:** a $3,001–$25,000 loan at 2% whose
+first eligibility rule is a county (T-191) · an occupation-tax standing
+requirement tied to the physical location (T-192) · **and now a sales channel's
+identity verification (T-197).**
+
+**It is no longer a documentation gap. It is the most expensive unanswered item
+on the board.**
+
+**What is not concluded: why the document failed.** The notice describes a
+category of failure rather than stating that is what happened. **A missing
+verifiable business address and a poor scan are different problems with
+different fixes, and the mail does not distinguish them.**
+
+### The card pattern, a third time
+
+**A business card deliberately kept off was presented for payment and declined
+on 2026-11-16T14:28:19Z** — after 2026-11-12, the **third occurrence of T-139's
+pattern.** That card was then **turned off again at 18:14:19Z with a same-day
+request date**, and the other card **turned back on at 23:12:17Z.**
+
+**One inference is sound and one is not.** **It follows that the card was on at
+some point on 2026-11-16**, because an off-request was granted that day and the
+record had it off since 2026-11-10. **It does not follow that the decline caused
+the toggle or that the toggle caused anything else.** **Digits withheld.**
+**T-139 was asked on 2026-11-07 and is ten days unanswered.**
+
+### A fifth vendor, and what it does to the cash review's claims
+
+**2026-11-16T13:28:32Z**, thread `1a1e48b8ca63ff04`: a recurring charge for a
+social-media scheduling tool **could not be charged to the card on file.**
+**Amount withheld — a declined-payment amount is named explicitly by A-19 — and
+A-30 is pending on whether vendor outflow amounts may be published here.**
+
+**The finding is the payee, not the failure.** **Friday's cash review listed
+four payees it had found and said it could not state DD84's weekly cost base.**
+**This is a fifth and it was not among them.** **So the cost base is not merely
+unpublished; it is not fully known**, and every review so far has described a
+subset without being able to say how large a subset. **T-198.**
+
+### Three systems the venture registry does not record
+
+**T-199:** a third DD84 code repository, named for AI tuning, with **a failing
+check on a pull request about ambiguous fuel units and legacy calibration
+provenance.** **Stated carefully: a guardrail failing a change is, on its face,
+a guardrail working — the run's own summary records a safety-guardrail step
+succeeding.** **No claim is made about whether the calibration work behind it is
+sound**, because this record has not seen it and **would not publish it if it
+had** (§5).
+
+**T-200:** a DD84 web application with sign-in-link authentication. **The token
+was withheld in full and the link was not followed** — a one-time credential
+arriving in a mailbox an observing routine reads is exactly the thing not to
+touch.
+
+**T-201, and it is the one that matters:** a live website was verified for the
+third DD84-named brand — **the same brand whose payment processor account T-151
+records as paying into the account A-25 asks about.** **That brand now has a
+processor account and a site, and the register still cannot say whose account
+its money lands in.** **A-25 has been pending since 2026-11-06.**
+
+### Carried in
+
+**The tune file is four days nine hours unanswered**, read and left since
+2026-11-16, nothing in the sent mailbox. **T-187's database has not paused** —
+no confirmation arrived, so the ninety-day clock has not started. **T-178 is
+still unknown rather than no.** **T-185's two jobs are still uninvoiced.** **No
+enquiry, no order, no customer reply** — Shopify re-read live, one order all
+time, unchanged. **The owner sent one message in twenty-four hours, to his own
+address.**
+
+### Deadlines now inside eight days
+
+**2026-11-19** the owner's morning is committed · **2026-11-20** secret key
+values stop being readable (T-171, Critical) · **2026-11-24** workspace
+administrators to review · **2026-11-30** a grant closes (T-194). **T-171 is the
+one with an irreversible edge: after it, a value that was readable stops being
+readable.**
+
+### Withheld
+
+The balance figure · the account's last four digits · both cards' digits · the
+failed subscription amount · **a one-time sign-in token, in full** · a six-digit
+verification code · **two more third-party sign-in grants, taking T-181 to eight
+in the period rather than six** · the Shopify customer's name · **a personal
+legal matter entirely, with only the owner's committed Thursday morning
+recorded.** **Withheld, not unavailable: every item was read.**
+
+### Register
+
+**T-196 to T-201 added. T-136 closed Done. T-181 corrected upward again. 201
+tasks**, recounted mechanically with every bucket printed and the total checked
+against their sum. **101 Awaiting Owner · 140 of 169 open rows past due ·
+twenty-seven Critical and open. Twelve packets pending.**
+
+**No draft was written for any finding above.** None is a customer matter, and
+**every action they call for is the owner's own, inside a bank, a seller centre,
+a code repository or an account's permissions — systems no routine here may
+touch.**
+
+---
+
+## Next entry: OL-0111
