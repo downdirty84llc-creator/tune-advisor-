@@ -12582,4 +12582,121 @@ touch.**
 
 ---
 
-## Next entry: OL-0111
+## OL-0111 — 2026-11-17 daily command brief
+
+**Run 2026-11-17T10:52Z–11:08Z.** Fired 10:51:36Z against a 10:50Z schedule.
+Class A: nothing sent, nothing published, nothing charged, no live system
+changed. **Brief: `docs/ops/briefs/2026-11-17-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `6cacbee`, no `src/`, no
+`package.json`, clean, **97 tracked files against the prompt's 28 — forty-fifth
+run reporting the drift.** **No skeleton; eighteenth such judgement with its
+reason.**
+
+### An empty calendar, for the second day running, understating the week
+
+**Calendar re-read live: no events 2026-11-17 → 2026-11-24. Zero appointments.**
+**And the week is not free.** The owner's **Thursday morning, 2026-11-19, is
+committed** — shape only, no name, no detail, no thread ID.
+
+**It collides with the only irreversible deadline on the board.** **T-171,
+Critical: secret key values stop being readable on 2026-11-20**, and the morning
+before is spoken for. **A brief that reported "no appointments" and stopped
+would have described the week wrongly two days in a row.**
+
+### Money
+
+**Nothing in. Shopify unchanged at one order all time.** Stripe absent, PayPal
+needing re-authentication, no bank connector. **Three charges failed inside
+twenty-four hours and no mechanism is asserted from that**, because no
+transaction detail is readable here at all.
+
+**The cash position crossed a boundary.** **The 2026-11-16 alert reads below
+zero**, where the 2026-11-09 alert read at it. **Figure withheld (A-19), digits
+withheld (§5), thread ID and read time in today's intake.** **T-71, Critical
+since 2026-10-16, is current rather than historical.**
+
+### The counted finding: one packet blocks more than any other
+
+**This run's contribution is arithmetic on the register rather than a new
+fact.** Counting the open rows that name each pending packet in their blocked-on
+column:
+
+**A-25 blocks seven open rows** · A-21 four · A-28 three · A-27 three · A-29
+two.
+
+**A-25 has been pending since 2026-11-06 and grew twice this week** — the
+instant-transfer enrolment named a third account identifier (T-189), and the
+live website found today sits on a payment processor account T-151 already
+records as paying into that same account (T-201). **No other pending packet
+unblocks half as much.**
+
+### T-164, stated once properly
+
+**One unanswered question now gates three unrelated systems**: a $3,001–$25,000
+loan at 2% (T-191), the occupation-tax standing that loan requires (T-192), and
+**a sales channel's seller application, rejected** (T-197). **Raised 2026-11-12
+as a bookkeeping correction. The answer is one sentence and nothing in this
+record can supply it.**
+
+### Who holds the oldest work, said again because the ages invite the wrong reading
+
+**T-11 at +89 days and T-13 at +82 days both carry approvals granted in
+August.** **Neither is waiting on a decision.** One needs a Stripe MCP server
+that does not exist; the other needs a paid legal engagement. **The register has
+both as Blocked, not Awaiting Owner**, and the brief says so because eighty-nine
+days of age would otherwise imply neglect that is not there.
+
+**Of 169 open rows: 101 await an owner decision, 6 await a packet, 7 are blocked
+on something that is not a decision.**
+
+### Two corrections made in this run's own draft
+
+**The brief first wrote that twelve pending packets were "really nine decisions,
+one closure, and one duplicate".** **Twelve minus one closure minus one
+duplicate is ten, not nine.** Corrected before the push.
+
+**It also closed with "short of eleven short answers", a number that matched
+nothing** — the decisions table in that same brief lists six. **Corrected to
+point at the table rather than at an invented total.** **Both are the small
+arithmetic class this record has caught before, and both were caught by
+re-reading rather than by any tool.**
+
+### Register
+
+**One row changed, and only one, because the brief found nothing the intake had
+not already recorded ninety minutes earlier.** **T-155 — storefront payouts
+moving to two business days — was due today and cannot be verified**: confirming
+it needs a payout, a payout needs a sale, and there has been none since
+2026-10-23. **Rescheduled to 2026-12-15 with that reason in the row, rather than
+marked verified or left to lapse silently.**
+
+**201 tasks. 101 Awaiting Owner · 140 of 169 open rows past due · twenty-seven
+Critical and open. Twelve packets pending, of which A-22 should be closed rather
+than answered and A-26's live row is A-23 restated.**
+
+### Priorities, and one deliberate omission
+
+**One: answer T-164** — one sentence, cheapest item on a 201-row board, three
+systems blocked. **It was third yesterday and is first today because the
+evidence changed, not because the list was reshuffled.** **Two: answer A-25** —
+seven rows. **Three: act on T-171 before Friday** — the only deadline where
+waiting destroys rather than delays.
+
+**The tune file is deliberately not in the three, and the brief says why.** It
+is still the best revenue prospect on the books and still one word from an
+answer under A-29. **But it has led three briefs running, nothing about it has
+changed, and repeating it a fourth time would add nothing the owner does not
+already know.** **Stating the omission is not the same as dropping it.**
+
+### The honest summary
+
+**On revenue, today is empty: nothing in, nothing out.** **On the record it is
+not quiet** — the cash position turned negative, a sales channel was rejected, a
+third charge failed, and three systems the venture registry does not list came
+to light. **All of it is the owner's to decide and none of it needs more than a
+short answer.**
+
+---
+
+## Next entry: OL-0112
