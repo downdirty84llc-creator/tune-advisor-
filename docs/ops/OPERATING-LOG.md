@@ -12823,4 +12823,80 @@ open. Twelve packets pending.**
 
 ---
 
-## Next entry: OL-0113
+## OL-0113 — 2026-11-18 daily command brief
+
+**Run 2026-11-18T10:52Z–11:08Z.** Fired 10:51:09Z against a 10:50Z schedule.
+Class A: nothing sent, nothing published, nothing charged, no live system
+changed. **Brief: `docs/ops/briefs/2026-11-18-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `d5fc456`, no `src/`, no
+`package.json`, clean, **99 tracked files against the prompt's 28 —
+forty-seventh run reporting the drift.** **No skeleton; nineteenth such
+judgement with its reason.**
+
+### This run's contribution: the dated items, in order, for the first time
+
+**The register has been accumulating dates for weeks and no brief had put them
+on one line.** **Eight sit in the next nineteen days.** **Four are
+irreversible:** secret key values stop being readable on **2026-11-20**; a grant
+window shuts on **2026-11-30**; a developer account closes on **2026-12-06**;
+and a database pause starts a **ninety-day** recovery clock on a date nobody
+controls. The other four — a card payment attempted 11-21, a subscription
+renewing 11-24, an administrator review, a credit reset — are reversible or
+repeatable.
+
+**The distinction the brief insists on is who set each date.** **Seventeen open
+rows fall due between today and Friday, and almost every one of those dates was
+chosen by these routines rather than by anyone outside.** **That is bookkeeping
+pressure, not external pressure**, and a board that conflates the two is harder
+to read than one that names the eight dates with consequences attached. **Saying
+so is not minimising the board; it is making it legible.**
+
+**Two days are already spoken for** — this afternoon and tomorrow morning, both
+personal, shape only. **Tomorrow morning is the last working morning before the
+2026-11-20 deadline**, which is why the brief leads with Friday rather than with
+the county question.
+
+### Money and customers
+
+**Nothing in. Shopify unchanged at one order all time.** **The three-day shape,
+figures withheld: at zero 11-09, well below zero 11-16, barely below zero
+11-17** — money moved in, and four hours later a card still declined for want of
+funds. **No mechanism asserted.** **Two decline reasons live at once, separated
+by T-205.** **The known cost base went from four payees to seven this week: the
+cash review was describing four of at least seven.**
+
+**No customer row changed.** **`in:sent` returns zero — not one message left the
+business in twenty-four hours.** **The tune file is five days unanswered; the
+Lexus enquiry crossed sixty days today.** **The fourth consecutive day with
+nothing in and nothing out.**
+
+### Approvals
+
+**Twelve pending. A-25 still blocks seven open rows.** **A-30 tripled this week,
+from one row to three**, because every new vendor finding lands behind it —
+**three rows now carry amounts that were read and could not be written down.**
+**A-22 should be closed rather than answered; A-26's live row is A-23 restated;
+A-10 cannot be answered from here at all.**
+
+### A judgement stated rather than left implicit
+
+**A-25 is not in today's top three, and the brief says why.** It still blocks
+more than any other packet and is still the highest-leverage decision on the
+board. **But nothing about it is time-bound and all three items above it are** —
+a deadline two days out, a question gating three systems, and two outflows
+landing Saturday and Tuesday. **It stays in the decisions table, where it has
+been every day this week.** **Dropping it silently and demoting it with a reason
+are different acts**, and the record should show which one happened.
+
+### Register
+
+**No row changed this run.** The brief's contribution was ordering what the
+register already held, not finding anything new — **and the intake ninety
+minutes earlier had already recorded everything today's mail contained.** **205
+tasks · 105 Awaiting Owner · 141 of 173 open rows past due · twenty-eight
+Critical and open · twelve packets pending.**
+
+---
+
+## Next entry: OL-0114
