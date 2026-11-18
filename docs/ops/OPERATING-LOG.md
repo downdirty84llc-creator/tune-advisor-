@@ -12699,4 +12699,128 @@ short answer.**
 
 ---
 
-## Next entry: OL-0112
+## OL-0112 — 2026-11-18 inbox and lead intake
+
+**Run 2026-11-18T10:21Z–10:45Z.** Fired 10:20:37Z against a 10:20Z schedule.
+**Window 2026-11-17T10:20Z → 2026-11-18T10:20Z.** Class A: nothing sent, no
+label applied, no mail state changed, no live system touched, no link followed.
+**Brief: `docs/ops/briefs/2026-11-18-inbox-intake.md`.**
+
+**Contract item 0:** `HEAD` equalled origin at `9e906fd` before this run's
+skeleton, no `src/`, no `package.json`, clean, **98 tracked files against the
+prompt's 28 — forty-sixth run reporting the drift.** **Thirty-third application
+of OL-0050.**
+
+### Two facts from the same day that pull opposite ways
+
+**The three-day shape, every figure withheld under A-19: at zero on 2026-11-09 ·
+well below zero on 2026-11-16 · barely below zero on 2026-11-17.** **So money
+came in, or a charge reversed, between Monday and Tuesday.**
+
+**Four hours after that alert, a card was declined for insufficient funds.**
+
+**Both are recorded and neither is reconciled.** A deposit that landed with a
+pending charge that had not cleared produces exactly this pair; so do other
+sequences. **The mail does not choose between them and no transaction detail is
+readable from here.**
+
+**T-205 separates two decline reasons that had begun to blur.** **Insufficient
+funds on 2026-11-17 is T-153's reason recurring.** **Card-is-off on 11-12, 11-16
+and 11-17 is T-139's.** **Two distinct failure modes are live at once**, on two
+different cards, and the register now says which is which.
+
+**The toggling tightened:** the business card was turned **on at
+2026-11-17T14:49:20Z and off again at 14:52:20Z — three minutes.** **T-139 is
+eleven days unanswered.**
+
+### The first forward-looking cash finding this record has carried
+
+**T-202.** Every previous finance finding has been about something that already
+failed. **This one is about what is about to be attempted:** an automatic card
+payment **scheduled for 2026-11-21** and a software subscription **renewing
+2026-11-24**, both against an account that has read below zero for two days.
+**Amounts withheld; one notice carries no amount at all.**
+
+**It also turns a caveat into a measurement.** **Friday's cash review listed
+four payees and said it could describe a subset without knowing how large a
+subset.** **T-198 found a fifth on 11-16; that charge failed again on 11-17;
+these are a sixth and seventh.** **The review knew four of at least seven**, and
+**T-198 is retitled to carry the count rather than the one vendor.**
+
+### A tax certificate was approved, and is filed as a prompt rather than an answer
+
+**2026-11-17: an exemption certificate was approved** — **the first document in
+this record showing any tax-registration activity at all.**
+
+**T-106 has asked since late October whether DD84 registered for or remits the
+tax it collects**, with every catalogue price tax-inclusive and **$31.13 of
+order #1001 being sales tax**.
+
+**An approved exemption certificate is about not paying tax on purchases.
+Remitting tax collected on sales is a different obligation.** **Adjacent, not
+the same.** **T-203 is raised as a prompt to answer T-106 properly**, and the
+row says explicitly that it is not T-106's answer — **because the easiest error
+available here was to let a tax document close a tax question.**
+
+### A personal notice, recorded as a shape and nothing else
+
+**A transaction notification for a personal retirement savings plan arrived in
+the business inbox on 2026-11-17.** **Nothing about it is published: no amount,
+provider, plan, account or thread ID.**
+
+**It is in the record for one reason.** **A record whose job is to surface risk
+should not silently drop the one signal that a business under cash pressure may
+be drawing on personal savings.** **It is withheld because A-13 covers what was
+exposed on 2026-10-08 and does not reach personal finance**, and T-159 already
+notes that personal mail arrives here.
+
+**No connection to the balance is asserted.** It fell on the same day the
+account read below zero. **Same day is not same cause**, and this run neither
+has the link nor will guess it. **T-204 asks the owner whether this category
+belongs in the record at all** — a decision, not a judgement call.
+
+### One inference available and refused
+
+A personal appointment confirmation in this window **names a street address in a
+particular Georgia city.** **T-164 — which county DD84's business address is in,
+now gating three systems — is not answered by where its owner gets his hair
+cut.** **Treating a personal appointment as evidence of a business address would
+be exactly the sourceless assertion T-161 was raised for.** **Recorded that the
+temptation existed and was declined**, because the next run will face it too.
+
+### Carried in
+
+**The tune file is five days nine hours unanswered, and `in:sent` for the window
+returns zero — nothing at all was sent.** **T-187's database still has not
+paused**, so its ninety-day clock has not started. **Whether the rejected seller
+application was resubmitted is unknown rather than no** — no platform mail
+arrived either way. **T-178 still unknown.** **T-185's two jobs still
+uninvoiced.** **No enquiry, no order, no customer reply**; Shopify re-read live,
+one order all time, unchanged.
+
+### Also noted
+
+**A ninth third-party sign-in grant, this one to a government identity service
+from a new device — T-181 corrected upward again.** The tuning software vendor
+updated its privacy policy, noted because it is DD84's core tool vendor. **The
+other business's backup workflow is still failing, now a 42-message thread, and
+is not DD84's** (2026-09-16).
+
+### Withheld
+
+All three balance figures · the account's last four digits · both cards' digits
+· two scheduled outflow amounts · the twice-failed subscription amount · **a
+personal retirement-plan notice in full** · **a personal appointment's address,
+time and nature, leaving only that the afternoon is committed** · the Shopify
+customer's name. **Withheld, not unavailable: every item was read.**
+
+### Register
+
+**T-202 to T-205 added; T-198 and T-181 retitled. 205 tasks**, recounted
+mechanically with every bucket printed and the total checked against their sum.
+**105 Awaiting Owner · 141 of 173 open rows past due · twenty-eight Critical and
+open. Twelve packets pending.**
+
+---
+
+## Next entry: OL-0113

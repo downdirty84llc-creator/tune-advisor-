@@ -214,7 +214,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-178 | A GitHub App asks the owner for more account access                                           | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-179 | A 2nd card declined for being off — T-139 repeating, 6 days on                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139** first              | 2026-11-13   |
 | T-180 | The insufficient-funds card is back on after 3+ cycles 11-12                                  | finance    | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-16   |
-| T-181 | The business identity granted 8 third-party sign-ins, not 6                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
+| T-181 | The business identity granted 9 third-party sign-ins, not 6                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-17   |
 | T-182 | The Cadillac enquirer is 3 days silent — chase or close?                                      | sales      | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-14   |
 | T-183 | An outflow to a consumer lender left the business account 11-09                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**, then A-30          | 2026-11-16   |
 | T-184 | The 11-11 record caught the card off and missed the on 61s before                             | ops        | Normal       | In Verification          | Agent | A to diagnose                | 2026-11-16   |
@@ -231,23 +231,69 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-195 | 5 Georgia fleet bids ran Apr-Sep 2026 and DD84 saw none of them                               | sales      | **High**     | **Awaiting Owner**       | Owner | **T-160** argument           | 2026-11-20   |
 | T-196 | BELOW zero on 11-16, not at zero — T-136 overtaken in 7 days                                  | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** underneath          | 2026-11-18   |
 | T-197 | A sales channel rejected DD84 proof of address — 3rd T-164 gate                               | sales      | **Critical** | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-18   |
-| T-198 | A 5th vendor charge failed — the cost base is not fully known                                 | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30** first               | 2026-11-20   |
+| T-198 | 7 payees now known where the cash review listed 4; 1 failed twice                             | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30** first               | 2026-11-20   |
 | T-199 | A 3rd DD84 repository has failing CI and is not in ventures.md                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
 | T-200 | A DD84 web app with sign-in-link auth is not in ventures.md                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 | T-201 | Merry Market now has a live site as well as a processor account                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**, T-151              | 2026-11-20   |
+| T-202 | Two outflows scheduled 11-21 and 11-24 against a below-zero account                           | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-30**, T-198              | 2026-11-19   |
+| T-203 | A tax exemption certificate was approved — NOT T-106 answer                                   | compliance | **High**     | **Awaiting Owner**       | Owner | **T-106** first              | 2026-11-20   |
+| T-204 | A personal finance notice reached the business record — in or out?                            | ops        | Normal       | **Awaiting Owner**       | Owner | **A-13** scope               | 2026-11-23   |
+| T-205 | Two live decline reasons: no funds 11-17, card off 11-12/16/17                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139**, T-153             | 2026-11-19   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 17 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **101 Awaiting Owner** · 7 Blocked ·
-32 Planned · 2 Backlog. **201 tasks.** Recounted mechanically with
+· 4 In Progress · **6 Awaiting Approval** · **105 Awaiting Owner** · 7 Blocked ·
+32 Planned · 2 Backlog. **205 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-17** (**T-196 to T-201 added, T-136 closed Done, T-181 corrected
-upward again**). **101 of the 201 rows are Awaiting Owner**, **140 of the 169
-open rows are past due**, and **twenty-seven rows are Critical and open.**
-**Twelve approval packets pending.**
+last **2026-11-18** (**T-202 to T-205 added; T-198 and T-181 corrected
+upward**). **105 of the 205 rows are Awaiting Owner**, **141 of the 173 open
+rows are past due**, and **twenty-eight rows are Critical and open.** **Twelve
+approval packets pending.**
+
+**T-202 is the first forward-looking cash row this register has carried.** Every
+other finance finding has been about something that already failed. **This one
+is about two outflows already scheduled — one on 2026-11-21, one on 2026-11-24 —
+against an account that has read below zero for two days running.** **Amounts
+withheld under A-19 and A-30; one of the two notices carries no amount at all.**
+
+**And it closes a measurement the cash review could only state as a caveat.**
+Friday's review listed **four** payees and said it could describe a subset
+without knowing how large a subset. **T-198 found a fifth on 11-16, that charge
+failed a second time on 11-17, and T-202 adds a sixth and seventh.** **So the
+review knew four of at least seven**, and **T-198 is retitled to carry the count
+rather than the single vendor.**
+
+**T-205 separates two decline reasons that had been drifting together.** **A
+card declined for insufficient funds on 2026-11-17**, which is T-153's reason
+recurring. **A different card declined for being off on 11-12, 11-16 and
+11-17**, which is T-139's. **Two distinct failure modes are live at once**, and
+the shape of the week makes that easy to blur: **the balance read at zero on
+11-09, well below zero on 11-16, and barely below zero on 11-17** — so money
+moved in, and **four hours later a card was still refused for want of funds.**
+**No mechanism is asserted for that pair.**
+
+**T-203 is filed as a prompt, not as an answer, and the distinction is the
+point.** A tax exemption certificate **was approved** on 2026-11-17 — the first
+document in this record showing any tax-registration activity. **T-106 has asked
+since late October whether DD84 registered for or remits the tax it collects**,
+with every catalogue price tax-inclusive and $31.13 of order #1001 being sales
+tax. **An approved exemption certificate concerns not paying tax on purchases.
+Remitting tax collected on sales is a different obligation.** **Adjacent, not
+the same**, and the row says so rather than letting one stand in for the other.
+
+**T-204 asks a scope question rather than reporting a finding.** A personal
+financial notice arrived in the business inbox. **Nothing about it is published
+— no amount, provider, plan, account or thread ID.** It is in the register at
+all because **a record whose job is to surface risk should not silently drop the
+one signal that a business under cash pressure may be drawing on personal
+savings** — and it is withheld because **A-13 covers what was exposed on
+2026-10-08 and does not reach personal finance.** **Whether this category
+belongs here is a decision for the owner, which is what the row asks.** **No
+connection to the account balance is asserted: it fell on the same day, and same
+day is not same cause.**
 
 **T-136 closes Done and is immediately overtaken, which is a distinction worth
 keeping.** It asked for seven days whether the 2026-11-09 balance alert read
