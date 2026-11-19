@@ -241,19 +241,20 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-205 | Two live decline reasons: no funds 11-17, card off 11-12/16/17                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139**, T-153             | 2026-11-19   |
 | T-206 | A fully specified GM tune lead — starred, unread, unanswered                                  | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-29** first               | 2026-11-20   |
 | T-207 | A finance pitch signs one firm and sends from another domain                                  | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
+| T-208 | Gmail's result-count estimate is not a count: 201 returned for ~15 threads                    | ops        | Normal       | In Verification          | A     | A to diagnose                | 2026-11-23   |
+| T-209 | 8d 17h since any commercial outbound; the only send since went to our own inbox               | sales      | **High**     | **Awaiting Owner**       | Owner | **A-29**                     | 2026-11-20   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 17 In Verification
-· 4 In Progress · **7 Awaiting Approval** · **106 Awaiting Owner** · 7 Blocked ·
-32 Planned · 2 Backlog. **207 tasks.** Recounted mechanically with
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 18 In Verification
+· 4 In Progress · **7 Awaiting Approval** · **107 Awaiting Owner** · 7 Blocked ·
+32 Planned · 2 Backlog. **209 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-19** (**T-206 and T-207 added; T-198 and T-204 corrected**).
-**106 of the 207 rows are Awaiting Owner**, **145 of the 175 open rows are past
-due**, and **twenty-nine rows are Critical and open.** **Twelve approval packets
-pending.**
+last **2026-11-19** (**T-208 and T-209 added by the daily brief**). **107 of the
+209 rows are Awaiting Owner**, **145 of the 177 open rows are past due**, and
+**twenty-nine rows are Critical and open.** **Twelve approval packets pending.**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3

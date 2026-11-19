@@ -13021,4 +13021,105 @@ open. Twelve packets pending.**
 
 ---
 
-## Next entry: OL-0115
+## OL-0115 — 2026-11-19 daily command brief
+
+**Run 2026-11-19T10:51:17Z–10:57:38Z.** Fired 10:51:00Z against a 10:50Z
+schedule. Both times read from the clock, neither estimated (T-116). Class A:
+nothing sent, nothing published, nothing charged, no live system changed.
+**Brief: `docs/ops/briefs/2026-11-19-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `eba64fb`, no `src/`, no
+`package.json`, clean, **101 tracked files against the prompt's 28 — forty-ninth
+run reporting the drift.** **No skeleton; twentieth such judgement, same reason:
+every input was already on the remote in today's intake, so a restart would have
+destroyed the writing and none of the evidence.**
+
+### This run's contribution: measuring the silence instead of restating it
+
+**Two consecutive intakes reported `in:sent` empty for the day. That is true and
+it is nearly useless.** A one-day window cannot distinguish a quiet day from a
+stopped business. **This run widened it to twenty-one days and the shape
+appeared:**
+
+- **Last outbound to any outside party: 2026-11-13T16:41:57Z** — to a utility's
+  customer-service address, a household account matter. **5d 18h.**
+- **Last outbound to a performance-industry counterparty or customer:
+  2026-11-10T17:54:55Z. 8d 17h.**
+- **The only item carrying a `SENT` label since then is thread
+  `1a1e4f56c01bcd39`, 2026-11-16T15:24:29Z — a message the account sent to
+  itself.** One message, no outside recipient.
+
+**The accurate statement is not "nothing was sent today" but "the business has
+not contacted a commercial counterparty in eight days and seventeen hours, and
+the last thing it sent went to its own inbox."** Logged as **T-209**.
+
+**This is a sharpening, not a correction.** The intake's one-day window answered
+the question it was asked and answered it correctly. It is in this brief because
+the eight-day figure is what makes A-29 urgent and the one-day figure is not.
+**A finding that is technically true and operationally inert is worth widening
+before it is worth repeating.**
+
+### The lead
+
+**T-171 is due today and is the only item on the board with a hard, external,
+irreversible deadline that expires today**: secret key values stop being
+displayed 2026-11-20, after which the only path is rotation, which breaks
+whatever still uses the old key. **No tool in this session can do it — there is
+no Stripe connector at all, so this is a permanent gap and not an outage.** It
+takes the owner, the dashboard and a password manager.
+
+**Three items fall due today (T-171, T-202, T-205) and eleven tomorrow —
+fourteen inside forty-eight hours, on top of 145 already past due.**
+
+### Money and customers
+
+**Calendar answered and was empty**: zero events 2026-11-19 through 2026-11-26.
+A real zero, not an unreachable connector — eight days forward with no scheduled
+work. **Shopify unchanged at one order all time** (#1001, 2026-10-23, $550, paid
+and fulfilled, 27 days).
+
+**Stripe, PayPal, the bank and four other payment surfaces were not readable.**
+Everything the register knows about outflows and declines came from mail rather
+than from a payment system, which is why T-202, T-205 and T-183 are all still
+open. **Amounts withheld under A-19; the thread IDs are in the intakes that
+raised each one. Withheld, not unavailable.**
+
+**No customer row changed.** **T-206 — the best-qualified enquiry this record
+has carried — is starred, still unread, reply drafted and not sent, and falls
+due tomorrow.** **T-177 is read and unanswered.** Both wait on **A-29**, six
+days pending, which now gates three rows.
+
+### Two errors caught in this run's own draft, before push
+
+**The draft said eleven items fell due tomorrow and then called the
+forty-eight-hour total seventeen. Both were wrong**: the computed list holds
+eleven rows for 2026-11-20, so the total is fourteen. **Corrected before the
+commit, and recorded here rather than silently fixed**, because the arithmetic
+slip in a brief's own summary line is the defect this log has caught most often.
+
+### Instrument note
+
+**Gmail's `resultCountEstimate` returned 201 for a query whose actual result set
+in the window was about fifteen threads.** It estimates corpus matches, not
+results, and must never be reported as a count. This run used observed rows
+only. **Logged as T-208**, which joins T-173 (an inbox query counting sends) and
+T-184 (a reading that caught a card off and missed the on sixty-one seconds
+earlier). **Three instrument defects in the mail and payment reads inside a
+week; all three would have produced a confidently wrong number.**
+
+### Register
+
+**209 rows** (T-208, T-209 added). **145 of 177 open are past due; 29 Critical
+open; twelve packets pending.** Recounted mechanically, every bucket printed and
+the total checked against the sum.
+
+### Not done
+
+Nothing sent. No attachment downloaded, opened or described, including the two
+on T-206. No mail state changed — T-206 was observed from the thread list and
+left starred and unread exactly as found. Supabase not opened: reading it counts
+as activity against its own pause clock.
+
+---
+
+## Next entry: OL-0116
