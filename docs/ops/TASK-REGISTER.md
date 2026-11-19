@@ -231,27 +231,68 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-195 | 5 Georgia fleet bids ran Apr-Sep 2026 and DD84 saw none of them                               | sales      | **High**     | **Awaiting Owner**       | Owner | **T-160** argument           | 2026-11-20   |
 | T-196 | BELOW zero on 11-16, not at zero — T-136 overtaken in 7 days                                  | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** underneath          | 2026-11-18   |
 | T-197 | A sales channel rejected DD84 proof of address — 3rd T-164 gate                               | sales      | **Critical** | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-18   |
-| T-198 | 7 payees now known where the cash review listed 4; 1 failed twice                             | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30** first               | 2026-11-20   |
+| T-198 | One vendor charge has now failed 3 days running; 7 payees known                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30** first               | 2026-11-20   |
 | T-199 | A 3rd DD84 repository has failing CI and is not in ventures.md                                | ops        | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-20   |
 | T-200 | A DD84 web app with sign-in-link auth is not in ventures.md                                   | ops        | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 | T-201 | Merry Market now has a live site as well as a processor account                               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**, T-151              | 2026-11-20   |
 | T-202 | Two outflows scheduled 11-21 and 11-24 against a below-zero account                           | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-30**, T-198              | 2026-11-19   |
 | T-203 | A tax exemption certificate was approved — NOT T-106 answer                                   | compliance | **High**     | **Awaiting Owner**       | Owner | **T-106** first              | 2026-11-20   |
-| T-204 | A personal finance notice reached the business record — in or out?                            | ops        | Normal       | **Awaiting Owner**       | Owner | **A-13** scope               | 2026-11-23   |
+| T-204 | The personal withdrawal was PROCESSED 11-18; funds in transit                                 | ops        | Normal       | **Awaiting Owner**       | Owner | **A-13** scope               | 2026-11-23   |
 | T-205 | Two live decline reasons: no funds 11-17, card off 11-12/16/17                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139**, T-153             | 2026-11-19   |
+| T-206 | A fully specified GM tune lead — starred, unread, unanswered                                  | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-29** first               | 2026-11-20   |
+| T-207 | A finance pitch signs one firm and sends from another domain                                  | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 17 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **105 Awaiting Owner** · 7 Blocked ·
-32 Planned · 2 Backlog. **205 tasks.** Recounted mechanically with
+· 4 In Progress · **7 Awaiting Approval** · **106 Awaiting Owner** · 7 Blocked ·
+32 Planned · 2 Backlog. **207 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-18** (**T-202 to T-205 added; T-198 and T-181 corrected
-upward**). **105 of the 205 rows are Awaiting Owner**, **141 of the 173 open
-rows are past due**, and **twenty-eight rows are Critical and open.** **Twelve
-approval packets pending.**
+last **2026-11-19** (**T-206 and T-207 added; T-198 and T-204 corrected**).
+**106 of the 207 rows are Awaiting Owner**, **145 of the 175 open rows are past
+due**, and **twenty-nine rows are Critical and open.** **Twelve approval packets
+pending.**
+
+**T-206 is the best-qualified enquiry this record has ever carried, and it is
+sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3
+litre, 6L80 six-speed, a light camshaft with the spec photographed, and the goal
+in his own words** — enough to price without a single scoping question beyond
+which rung applies. **`ventures.md` carries a Core rung for GM custom ECU tuning
+at $350 / $450 / $650, verified 2026-10-29, and no conflict with the catalogue
+was found.** **Which of the three applies is Class E and this record did not
+pick it** — **T-37 is priced at $349 and T-64 at $350 against a rung whose floor
+is $350, and A-21 row 1 has been held since October over exactly that.**
+
+**Both of its messages are starred and both are still unread.** **So they were
+flagged from the list and not opened** — **a different state from T-177, which
+was read on 2026-11-16 and left.** **The register records which, because "not
+got to yet" and "seen and left" are different facts and only one of them is
+about time.**
+
+**A vehicle identification number in the message is withheld in full**: a VIN
+identifies one vehicle and through it one owner, and §5 forbids customer data
+whatever else the number is useful for. **Two attachments were not downloaded,
+not opened and not described.**
+
+**There are now two drafted replies waiting on one decision.** **A-29 was raised
+on 2026-11-13 and covers both.** **Six days pending, and the cost is now two
+prospects rather than one.**
+
+**T-207 is the second instance of a shape T-157 already named.** An unsolicited
+finance pitch opened with **a true and verifiable fact about DD84** and then
+**signed off as one firm while arriving from another firm's domain.** **That is
+not proof of anything** — a broker trading under two names, a rebrand mid-flight
+and an impersonation all look identical from here. **It is a reason not to
+engage before checking**, and no reply was drafted because this is not a
+customer.
+
+**T-204 changed from a notice to a fact:** the personal withdrawal recorded on
+2026-11-17 **was processed on 11-18 with funds in transit.** **Nothing further
+is published.** **No connection to the business account is asserted, and the
+dates do not support the obvious one** — the balance moved toward zero between
+11-16 and 11-17, **before** this processed.
 
 **T-202 is the first forward-looking cash row this register has carried.** Every
 other finance finding has been about something that already failed. **This one

@@ -12899,4 +12899,126 @@ Critical and open · twelve packets pending.**
 
 ---
 
-## Next entry: OL-0114
+## OL-0114 — 2026-11-19 inbox and lead intake
+
+**Run 2026-11-19T10:21Z–11:00Z.** Fired 10:20:37Z against a 10:20Z schedule.
+**Window 2026-11-18T10:20Z → 2026-11-19T10:20Z.** Class A: nothing sent, no
+label applied, no mail state changed, no live system touched, **no attachment
+downloaded, no link followed.** **Brief:
+`docs/ops/briefs/2026-11-19-inbox-intake.md`.**
+
+**A worker restart hit this run mid-sweep and the skeleton at `ea28eb6` held.**
+**Thirty-fourth application of OL-0050 and the third time this session it was
+actually needed**, which is now a better argument for the rule than any of the
+reasoning that preceded it.
+
+**Contract item 0:** no `src/`, no `package.json`, clean, **101 tracked files
+against the prompt's 28 — forty-eighth run reporting the drift.**
+
+### The best-qualified enquiry this record has carried, and it is unread
+
+**2026-11-18T20:40:26Z and 20:41:23Z**, threads `1a1f063dcce9cc9d` and
+`1a1f064bc8bd2fdc`.
+
+**A 2014 Chevrolet Silverado High Country · 5.3 litre · 6L80 six-speed · a light
+camshaft with the spec photographed · and the goal in the enquirer's own words:
+to get the truck running well with the new camshaft setup.** **Five lines that
+answer every field the intake specification asks for except location and
+urgency.**
+
+**This is the opposite of T-177.** That one arrived on 2026-11-13 **with a file
+and no message at all** — no fault, no scope, no question — **was read on 11-16
+and is still unanswered six days on.** **This one needs no scoping questions to
+be priceable, only the ones that decide which rung.**
+
+**Both messages are starred and both are still unread.** **Flagged from the list
+and not opened.** **That is a different state from read-and-left, and the row
+says which**, because only one of the two is a fact about time.
+
+**A VIN appears in the message and is withheld in full.** **A VIN identifies one
+vehicle and through it one owner; §5 forbids customer data whatever else the
+number is good for.** **Two attachments — a JPEG of the cam spec, and a roughly
+two-megabyte file under a subject beginning "Tune" — were not downloaded, not
+opened and not described.** **If the second is a calibration, the T-177 rule
+applies unchanged: never downloaded, never described, never committed.**
+
+**The catalogue fits and this run did not pick the rung.** `ventures.md` carries
+**GM, Ford, Dodge/Mopar custom ECU tuning at $350 / $450 / $650**, verified
+2026-10-29. **A cammed 5.3 with a 6L80 is squarely that.** **Choosing among the
+three is Class E** — and **the register already shows the cost of treating that
+casually: T-37 is priced at $349 and T-64 at $350 against a rung whose floor is
+$350, with A-21 row 1 held since October over precisely this.** **No conflict
+with the catalogue was found.**
+
+**A reply is drafted and not sent.** It asks three questions — whether the cam
+is installed and what the truck is doing wrong, what else changed with it and
+whether the transmission is stock, and whether the job is remote or in person.
+**It quotes no price, promises no power figure, names no turnaround, claims
+neither attachment has been opened, and does not guarantee the setup will run
+well** — which is the promise a tuning enquiry most invites.
+
+**T-206 raised, Critical.** **There are now two drafted replies waiting on one
+decision: A-29, raised 2026-11-13, six days pending.** **The cost of that is now
+two prospects rather than one.**
+
+### A finance pitch that does not match itself — T-207
+
+**2026-11-18T20:27:39Z**, thread `1a1f0580c8e42d75`. An unsolicited offer of
+parts or invoice financing, **opening with a true and verifiable fact about
+DD84** — that it retails a named performance-parts brand — and **signing off as
+one firm while arriving from another firm's domain.** **Both withheld.**
+
+**That is not proof of anything.** A broker trading under two names, a rebrand
+mid-flight and an impersonation are indistinguishable from here. **It is a
+reason not to engage before checking.** **T-157 already records cold outreach
+that cited DD84's real contact page on top of a fabricated prior relationship —
+same shape, second instance.** **No reply drafted; this is not a customer.**
+
+### T-204 moved from notice to fact
+
+**The personal retirement-plan withdrawal recorded on 2026-11-17 was processed
+on 2026-11-18, with funds moving by electronic transfer.** **Nothing further is
+published — no amount, provider, plan, account or thread ID.**
+
+**No connection to the business account is asserted, and the dates do not
+support the obvious one.** **Yesterday's intake recorded the balance moving from
+well below zero to barely below zero between 11-16 and 11-17 — before this
+processed.** **Stating that is the point: it is the inference a reader makes
+unprompted, and it does not fit.**
+
+### Money, cards and the rest
+
+**The same vendor charge failed a third consecutive day** (11-16, 11-17, 11-18)
+— **a pattern rather than an incident**, with **the 2026-11-21 scheduled payment
+two days out** (T-202). **The business card was turned off again on 11-18 and
+the other turned back on at 23:25:32Z.** **No balance alert and no decline
+arrived in the window — which is "no alert", not "the balance recovered".** **A
+credit score improved**; noted, no action.
+
+**Two property alerts arrived from the other business's own product.** **The
+Georgia Opportunity Ledger is a separate business (2026-09-16) and nothing from
+it is scored here** — the 2026-11-10 scan already recorded that its product
+scores the same opportunities and the numbers differ. **A prompt to add photos
+to DD84's public business listing shows that listing exists and `ventures.md`
+does not record it**; too small for a row today, noted here so the next registry
+pass can pick it up.
+
+### Carried in
+
+**T-177 is six days nine hours unanswered** and **`in:sent` returns zero for the
+second consecutive day — nothing at all left the business.** **T-187's database
+still has not paused.** **Whether the seller application was resubmitted is
+unknown rather than no.** **T-164 still unanswered, still three gates.**
+**T-185's two jobs still uninvoiced.** **No order**; Shopify re-read live, one
+order all time.
+
+### Register
+
+**T-206 and T-207 added; T-198 and T-204 corrected. 207 tasks**, recounted
+mechanically with every bucket printed and the total checked against their sum.
+**106 Awaiting Owner · 145 of 175 open rows past due · twenty-nine Critical and
+open. Twelve packets pending.**
+
+---
+
+## Next entry: OL-0115
