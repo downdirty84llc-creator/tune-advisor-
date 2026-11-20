@@ -13381,4 +13381,142 @@ and A-10 cannot be answered from here at all.
 
 ---
 
-## Next entry: OL-0118
+## OL-0118 — 2026-11-20 weekly cash and revenue review
+
+**Run 2026-11-20T11:13:14Z–11:35:59Z.** Fired 11:12:52Z against an 11:10Z
+schedule. Both times read from the clock, neither estimated (T-116). **A worker
+restart interrupted this run between two reads; the checkout was re-verified
+intact at `f6bcc16` at 11:31:19Z and the run resumed.** Class A: no money moved,
+no write tool called on any payment system. **Review:
+`docs/ops/briefs/2026-11-20-cash-review.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `f6bcc16`, no `src/`, no
+`package.json`, clean, **104 tracked files against the prompt's 28 —
+fifty-second run reporting the drift.** **Skeleton committed at `8d36ebf`:
+twenty-third application of OL-0050 and the second this week that was not
+theoretical.** The restart arrived about a minute after the skeleton would have
+been due; eight reads were what a second one would have destroyed.
+
+### The week
+
+**Nothing came in.** Shopify's in-period `ordersCount` returned **0, precision
+EXACT**; all-time **1, EXACT**, unchanged. **A second independent check
+agreed:** a money-in mail sweep over the week returned about 52 threads, **20
+reviewed, and not one was a payment received** — the only money-adjacent items
+were a Zelle enrolment, a bank marketing offer and a processor terms update.
+**Two negative reads from different systems is materially stronger than one.**
+
+**Last known money in: 2026-10-29 — 22 days before this run.**
+
+**Every confirmed movement went outward and none of them was a business
+transaction that succeeded:** four separate vendor failure notices for one
+subscription (T-198 had recorded three), three separate card declines, two
+outflows scheduled for 11-21 and 11-24. **All amounts withheld, A-19.**
+
+### One read changed its own classification, and that is the run's best moment
+
+A thread titled **"Your appointment receipt"** looked like a customer booking.
+**Against a calendar showing zero appointments for nine days it would have been
+the week's only revenue event.** Reading it showed a **personal, non-business
+purchase: money out, not revenue.**
+
+**Taking the subject line at face value would have put fictional revenue into a
+cash review**, which is the worst error this routine can make. Amount, vendor
+and service withheld; **A-32 raised**, because A-13 covers revenue, A-19 covers
+cash positions and A-30 covers vendor and lender outflows — **personal spending
+is a fourth category no decision reaches, and this repository is public.**
+
+**It is not simply omitted**, because the business/personal boundary is an open
+question here: T-137 asks whether the business account carries a personal
+obligation, A-25 has held since 2026-11-06, and T-183 records an outflow to a
+consumer lender. **A confirmed personal outflow inside the review week is direct
+evidence on an open approval**, so the shape is recorded and the detail is not.
+**T-222.**
+
+### New this period
+
+**A Zelle enrolment confirmation arrived 2026-11-14T13:00:36Z and is still
+unread** (`1a1da2546a29c6fe`). **Zelle is the rail that carried $1,550 of
+unattributed money in late October** (T-88, T-92, T-113). Whether this is a
+first enrolment, a re-enrolment or a _different_ account **is not established,
+and matters** — if it is a different account the October attribution question
+changes shape. **No mechanism asserted, no connection claimed. T-219**, under
+A-25, which now gates eight rows.
+
+### The largest overdue receivable has never been invoiced
+
+**$350 on T-64**: approved price, work delivered through seven revisions,
+unacknowledged since 2026-10-29, **37 days old — and never issued.** The invoice
+count has stood at 10 since August, so **this amount has never aged in any
+payments system and would appear in no receivables report anywhere but here.** A
+receivable nobody has billed is unbilled work that looks like one. **T-221.**
+
+**Margin stays not computable** — T-186, due today: no job record carries parts,
+credits or hours. **The $350 gross has an unknown margin, not a 100% one.**
+
+### The baseline the prompt supplies is largely unusable, and the registry knew
+
+Of its five figures, **two were already struck through in `ventures.md`** (last
+payment 2025-09-12 → 2026-10-22; 0 Shopify orders → 1) and **two cannot be
+re-verified at all** — all-time $3,507.86 and the customer count are 109 days
+old, breach the 30-day rule, and come from a system with no connector. **Only
+the Shopify order count was re-verifiable, and it has not moved.** The invoice
+count of 10 is unchanged and correctly so: none of the four recent payments was
+an invoice.
+
+### An instrument defect in this run's own output
+
+**The skeleton described the failed subscription with its amount. That breaches
+A-19** — a declined-payment amount is excluded from every file including this
+log. **Corrected in the review.**
+
+**The leak gate did not catch it.** The gate carries 22 pattern classes, caught
+the owner's own mail address this week and a bare profession noun twice, and
+**passed a declined-payment amount in silence.** So **the rule the owner wrote
+most recently is the one rule the control does not enforce**, and every run has
+been relying on judgement where it believed it had a check. **T-220.**
+
+**The figure is also already on the record in three places**, one in the log and
+two in the register — **not a new leak but exactly what A-24 has been pending on
+since 2026-11-02** (T-109: a declined-payment figure in ten files predating
+A-19). **The gate gap and A-24's pendency are one problem from two ends:**
+nothing stops the figure going in and nothing has taken the old copies out. **A
+first draft of this entry restated the amount inside the correction itself**,
+which would have leaked it twice to explain it once; the note now describes it
+without reproducing it.
+
+**This is the second gate finding in two days** — OL-0116 recorded that the
+property class needs narrowing. **Both are held for one deliberate pass with the
+synthetic-fixture self-test re-run afterwards, rather than patched while holding
+a brief**: narrowing or extending the control that guards a public repository is
+not a side effect of writing a review.
+
+**The skeleton stays in history as committed. It is the evidence that the check
+was missing, and rewriting it would destroy exactly that.**
+
+### Standing decisions honoured
+
+**The ten invoices were not reopened and the numbering gaps were not raised**
+(owner, 2026-08-07). **Shopify was treated as the back half of the funnel only**
+and `dd84tuning.com` named as the front door (owner, 2026-08-13). **The Georgia
+Opportunity Ledger does not appear in any figure here** (owner, 2026-09-16).
+**Every figure older than 30 days was re-verified or marked unverifiable.**
+
+### Register and approvals
+
+**222 rows** (T-219–T-222 added). **148 of 190 open past due; 30 Critical open;
+fourteen packets pending.** **A-32 raised.** A-25 now gates eight rows, A-29 and
+A-30 four each.
+
+### Cash position
+
+**No balance was read and none could be — there is no bank connector.** That is
+a gap, not a withholding. **The most recent shape on the record is "below zero"
+from the 2026-11-17 intake**, and four failures plus three declines read this
+run are consistent with it. **Nothing in this run re-measures it**, so stating
+it as current would be fabrication and calling it unknown would discard what was
+actually read.
+
+---
+
+## Next entry: OL-0119

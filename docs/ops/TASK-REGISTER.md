@@ -252,20 +252,25 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-216 | Four intake briefs ran without query 5; the draft backlog went unmeasured 41 days             | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-23   |
 | T-217 | At least four facility/equipment quote threads sit outside the register, not one              | real est.  | Normal       | Planned                  | Agent | A to read                    | 2026-11-23   |
 | T-218 | Two live customer rows read as in-flight but their approvals are pending                      | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-23   |
+| T-219 | A Zelle enrolment landed 11-14 and is unread; Zelle carried $1,550 unattributed               | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**                     | 2026-11-24   |
+| T-220 | The leak gate passed a declined-payment amount; A-19 is the rule it misses                    | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-24   |
+| T-221 | The largest overdue receivable, $350 on T-64, has never been invoiced                         | finance    | **High**     | **Awaiting Owner**       | Owner | **T-64**, A-21               | 2026-11-24   |
+| T-222 | A personal outflow was confirmed in the review week; category undecided                       | finance    | Normal       | **Awaiting Owner**       | Owner | **A-32**                     | 2026-11-24   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 20 In Verification
-· 4 In Progress · **7 Awaiting Approval** · **112 Awaiting Owner** · 7 Blocked ·
-34 Planned · 2 Backlog. **218 tasks.** Recounted mechanically with
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 21 In Verification
+· 4 In Progress · **7 Awaiting Approval** · **115 Awaiting Owner** · 7 Blocked ·
+34 Planned · 2 Backlog. **222 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-20** (**T-210–T-217 by the intake, T-218 by the daily brief**).
-**112 of the 218 rows are Awaiting Owner**, **148 of the 186 open rows are past
-due**, and **thirty rows are Critical and open.** **Thirteen approval packets
-pending.** **By status 126 of the 186 open rows wait on a decision; in substance
-128, because T-37 and T-64 carry agent statuses over pending packets (T-218).**
+last **2026-11-20** (**T-210–T-217 intake, T-218 daily brief, T-219–T-222 cash
+review**). **115 of the 222 rows are Awaiting Owner**, **148 of the 190 open
+rows are past due**, and **thirty rows are Critical and open.** **Fourteen
+approval packets pending.** **By status 129 of the 190 open rows wait on a
+decision; in substance 131, because T-37 and T-64 carry agent statuses over
+pending packets (T-218).**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3

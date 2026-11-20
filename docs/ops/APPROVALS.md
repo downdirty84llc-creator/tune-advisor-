@@ -57,6 +57,7 @@ and actual result.
 | A-29 | Standing authority to acknowledge inbound enquiries                         | C     | **Pending**                         | T-177, T-95, T-66                  |
 | A-30 | May vendor and lender outflow amounts be published here?                    | G     | **Pending**                         | T-183, T-109, T-46                 |
 | A-31 | What happens to the 51 unsent drafts?                                       | B + C | **Pending**                         | T-210, T-215, T-42                 |
+| A-32 | May personal, non-business outflows be recorded here?                       | G     | **Pending**                         | T-222, T-137, A-25                 |
 
 **Ten packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
 A-26, A-27 and A-28.** **A-27 was raised on 2026-11-10 by the owed Monday
@@ -3331,6 +3332,90 @@ counterparty. The two drafted customer replies are separate and sit under A-29.
 hold; the fraud-addressed five are gone; the supplier batch is either sent or
 deliberately parked with a reason; and T-42, open since 2026-10-10, can be
 closed.
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response:** _awaiting owner_
+
+**Actual result:** _not executed_
+
+---
+
+## A-32 — May personal, non-business outflows be recorded in this repository?
+
+**Status: PENDING — raised 2026-11-20 by `/dd84-cash-review`.**
+
+**Decision requested** — A ruling on whether **money DD84's owner spends on
+himself** — a personal appointment, a household purchase, a subscription that is
+not the business's — may be recorded in this public repository, and in what
+form. **APPROVE (record with amounts) / APPROVE WITH CHANGES (record the shape
+and the thread ID, no amount) / DEFER / REJECT (omit entirely).**
+
+**Business objective** — Settle the business/personal boundary in the cash
+review before it is guessed at. **This review met a confirmed personal outflow
+inside the review week and had no rule to apply**, so it published the shape and
+withheld everything else. That will recur, because the same mailbox carries both
+sets of spending and **no reading of it can tell them apart without being
+told.**
+
+**Source and context** — A-13 made this repository public and accepted
+**revenue** figures. **A-19 Option C** forbids **cash-position** figures — a
+balance, an overdraft amount, a declined-payment amount. **A-30**, pending since
+2026-11-13, asks about **vendor and lender outflows**. **Personal spending is a
+fourth category and no decision reaches it.**
+
+Concretely, this week: a thread titled "Your appointment receipt", **confirmed
+paid 2026-11-17 for an appointment on 11-18**, unread, thread
+`1a1e9fd447d1f1c8`. **It looked like a customer booking** — and against a
+calendar showing zero appointments for nine days it would have been the week's
+only revenue event. **Reading it showed a personal purchase: money out, not
+revenue.** Its amount, vendor and service are withheld pending this decision.
+
+**Why it is not simply omitted.** The business/personal boundary is itself an
+open question on this register. **T-137 asks whether the account this register
+calls the business's carries a personal obligation; A-25 has held that since
+2026-11-06; T-183 records an outflow to a consumer lender from the business
+account.** A confirmed personal outflow in the review week is **direct evidence
+on an open approval**, so omitting it entirely would hide something the owner is
+already being asked to decide.
+
+**Recommended plan — Option B: shape and thread ID, never the amount or the
+detail.** Record that a personal outflow was confirmed, on what date, with the
+Gmail thread ID — exactly the pattern A-19 Option C established for cash
+positions, and for the same reason: **the owner is one click from the detail in
+his own inbox, and the world-readable file carries none of it.** Say "withheld,
+A-32", never "not available", because the figure was read.
+
+**Alternatives considered** — (a) **Record amounts.** It would make the
+business/personal split in the cash review fully legible, and it would put the
+owner's personal purchases on a world-readable record, which no business purpose
+requires. (b) **Omit entirely.** Safe, and it means the cash review silently
+drops evidence bearing on A-25 and T-137 — and a future run, meeting the same
+thread, would face the same question with no precedent and might classify it as
+revenue. (c) **Option B**, above: the boundary is visible, the detail is not,
+and the precedent is recorded so the next run does not have to guess.
+
+**Cost and cash impact** — **None.** No money moves; this governs what is
+written down.
+
+**Risks and safeguards** — The risk of Option A is permanent and world-readable,
+and unlike a wrong figure it cannot be corrected by restating it. The risk of
+Option C is that the next run reads the same subject line, does not open it, and
+books a personal purchase as revenue — **this run came one read away from
+exactly that.** Safeguard either way: **the classification is recorded with its
+thread ID so it can be re-checked rather than re-guessed.**
+
+**Systems affected** — None. This is a recording rule for `docs/ops/`.
+
+**Customer and public impact** — No customer is involved. The public impact is
+the point of the question: this repository is world-readable by decision A-13,
+and **A-13 covered what was exposed on 2026-10-08, not the owner's personal
+spending.**
+
+**Success test** — A future cash review meeting a personal outflow applies a
+written rule instead of raising this packet again; no personal amount or vendor
+appears in any file; and the business/personal evidence that A-25 and T-137 turn
+on is still visible in the record.
 
 **APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 
