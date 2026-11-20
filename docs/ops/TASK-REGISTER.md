@@ -251,19 +251,21 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-215 | The likely-fraud counterparty of T-42 is active again: 2 inbound, 2 unsent drafts             | compliance | **High**     | **Awaiting Owner**       | Owner | **A-31**                     | 2026-11-23   |
 | T-216 | Four intake briefs ran without query 5; the draft backlog went unmeasured 41 days             | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-23   |
 | T-217 | At least four facility/equipment quote threads sit outside the register, not one              | real est.  | Normal       | Planned                  | Agent | A to read                    | 2026-11-23   |
+| T-218 | Two live customer rows read as in-flight but their approvals are pending                      | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-23   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 19 In Verification
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 20 In Verification
 · 4 In Progress · **7 Awaiting Approval** · **112 Awaiting Owner** · 7 Blocked ·
-34 Planned · 2 Backlog. **217 tasks.** Recounted mechanically with
+34 Planned · 2 Backlog. **218 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-20** (**T-210 through T-217 added by the inbox intake**). **112
-of the 217 rows are Awaiting Owner**, **148 of the 185 open rows are past due**,
-and **thirty rows are Critical and open.** **Thirteen approval packets
-pending.**
+last **2026-11-20** (**T-210–T-217 by the intake, T-218 by the daily brief**).
+**112 of the 218 rows are Awaiting Owner**, **148 of the 186 open rows are past
+due**, and **thirty rows are Critical and open.** **Thirteen approval packets
+pending.** **By status 126 of the 186 open rows wait on a decision; in substance
+128, because T-37 and T-64 carry agent statuses over pending packets (T-218).**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3

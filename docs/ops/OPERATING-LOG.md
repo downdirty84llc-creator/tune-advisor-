@@ -13275,4 +13275,110 @@ already partly gone.
 
 ---
 
-## Next entry: OL-0117
+## OL-0117 — 2026-11-20 daily command brief
+
+**Run 2026-11-20T10:51:47Z–10:55:21Z.** Fired 10:51:15Z against a 10:50Z
+schedule. Both times read from the clock, neither estimated (T-116). Class A:
+nothing sent, nothing published, nothing charged, no live system changed.
+**Brief: `docs/ops/briefs/2026-11-20-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `446f494`, no `src/`, no
+`package.json`, clean, **103 tracked files against the prompt's 28 — fifty-first
+run reporting the drift.** **No skeleton; twenty-second such judgement**, same
+reason: every input was already on the remote in today's intake.
+
+**Today's intake ran thirty minutes earlier (OL-0116) and this brief does not
+repeat it.** The 51 drafts, the fourth vendor failure, the bounced SBA enquiry
+and the second county are cited, not re-derived. **This run's job was the
+arithmetic on top.**
+
+### This run's contribution: the board is not an execution failure
+
+The routine prompt asks which items are blocked on the owner and warns against
+re-reporting an owner action as agent work. **Nobody had ever split the board
+that way.** Done mechanically from the status column:
+
+- **126 of 186 open rows — 68% — are Awaiting Owner, Awaiting Approval or
+  Blocked.** 60 are agent-actionable.
+- **28 of the 30 Critical open rows are waiting on a decision.** Two are not.
+- **103 of the 148 past-due rows are waiting on a decision.**
+
+**A register with 148 past-due rows reads like an execution failure. It is not
+one.** Four fifths of what is late is late because a question has not been
+answered, and **no amount of agent work moves any of it.** Saying that is not
+excusing the backlog; it is naming which lever moves it.
+
+### Two numbers in my own draft were wrong, and checking changed the finding
+
+**I wrote that T-11 and T-13 were the only rows with approval already granted
+and nothing done.** Checked: **there are three.** T-64 also carries "A-21
+approved" — Critical, a live customer job — and it sits in an agent status, so
+the status column never surfaces it.
+
+**I also wrote that every one of the six customer rows was "waiting on a
+decision".** By status that is false: **T-64 reads In Verification and T-37
+reads In Progress**, which looks like work in flight, while their dependency
+columns name A-21 row 1 and A-28, both pending.
+
+**The correction is better than the claim.** The status column and the
+dependency column disagree on exactly two open rows, **and both of them are live
+customer jobs** — the worst place for that disagreement to hide. So the honest
+figure is **128 of 186, 69%, decision-blocked in substance**, against 126 by
+status. A third row, T-152, names A-26 but records it moot and was answered by
+the owner directly, so it is not counted. **Logged as T-218.**
+
+**Both errors were in the direction of a tidier story**, which is the direction
+to distrust.
+
+### Appointments, money, customers
+
+**Calendar answered and was empty**: zero events 2026-11-20 to 2026-11-28.
+**Nine days forward with no scheduled work**, now confirmed from two read dates.
+
+**Shopify `ordersCount` = 1, precision EXACT** — #1001, 2026-10-23, $550, paid
+and fulfilled, **28 days unchanged.** One order in the store's whole history,
+and the count is exact rather than a sample.
+
+**Instrument note:** `list-orders` did not resolve on this run's connector
+reconnect and the count came from a GraphQL query instead — the documented
+fallback. **That makes it a real read, not "not available this run".** The
+difference between a missing tool and missing data is the difference between a
+gap and a defect, and only one of them belongs in a brief as an absence.
+
+**No customer row changed and nothing arrived.** The intake's query 1 returned
+zero. **Ten days today since anything went to a performance-industry
+counterparty.** T-206 is starred, unread, due today, reply written.
+
+### Thirteen due today, and the reconciliation
+
+**Thirteen rows fall due today; yesterday's brief said eleven.** The two extra
+are **T-209 and T-211, both created by today's own runs** — yesterday's figure
+was right for the register as it then stood. **T-171, T-202 and T-205 went past
+due overnight.**
+
+**T-171's external cutoff is today and the row was already due yesterday.**
+Whether the cutoff lands at the start or the end of today was not established,
+so the brief treats today as partly spent.
+
+### The judgement stated plainly
+
+**Today is not a quiet day and the brief says so.** Yesterday's called itself
+partly quiet and distinguished quiet from still; today qualifies for neither.
+Thirteen rows due, a deadline expiring, a fourth consecutive vendor failure with
+an outflow tomorrow, a qualified lead unanswered a second day.
+
+**What is quiet is the trading**, and that is a result rather than an absence:
+no appointments in nine days, one order ever, nothing in and nothing out.
+**Reporting that plainly is the point — but opening with "a quiet day" would
+have described the calendar instead of the business.**
+
+### Register and approvals
+
+**218 rows** (T-218 added). **148 of 186 open past due; 30 Critical open;
+thirteen packets pending.** **Eleven of the thirteen are decidable today** —
+A-22 should be closed rather than answered, its premise being recorded false,
+and A-10 cannot be answered from here at all.
+
+---
+
+## Next entry: OL-0118
