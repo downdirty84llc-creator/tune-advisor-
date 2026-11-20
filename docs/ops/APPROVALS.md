@@ -56,6 +56,7 @@ and actual result.
 | A-28 | Three follow-ups revised to the facts, and close A-20 as superseded         | C     | **Pending**                         | T-37 T-64 T-66, closes A-20        |
 | A-29 | Standing authority to acknowledge inbound enquiries                         | C     | **Pending**                         | T-177, T-95, T-66                  |
 | A-30 | May vendor and lender outflow amounts be published here?                    | G     | **Pending**                         | T-183, T-109, T-46                 |
+| A-31 | What happens to the 51 unsent drafts?                                       | B + C | **Pending**                         | T-210, T-215, T-42                 |
 
 **Ten packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
 A-26, A-27 and A-28.** **A-27 was raised on 2026-11-10 by the owed Monday
@@ -3249,3 +3250,90 @@ the storefront figure is withheld under it.
 **Response** — _awaiting owner._ **Affected records** — T-183, T-109, T-46,
 T-89, T-137, and A-24, A-25. **Actual result** — _not yet executed. No figure
 has been published or redacted under this packet._
+
+---
+
+## A-31 — What happens to the 51 unsent drafts?
+
+**Status: PENDING — raised 2026-11-20 by `/dd84-inbox-intake`.**
+
+**Decision requested** — A ruling on the **51 unsent drafts** sitting in the
+business mail account: which are sent, which are deleted, and which are left
+alone. **APPROVE (send the supplier batch) / APPROVE WITH CHANGES (send a named
+subset) / DEFER / REJECT (leave all 51 untouched).**
+
+**Business objective** — Stop the business failing at the send step. **This
+record has reported for a week that nothing is leaving DD84, and the draft list
+shows that is not a writing problem**: thirty-three supplier enquiries were
+composed on 2026-11-16 between 16:49:37Z and 16:53:11Z and none was sent. Those
+thirty-three are the supplier and dyno-vendor relationships the facility plan
+depends on. Every day they sit there is a day of lead time lost for nothing.
+
+**Source and context** — **T-42 recorded fifteen unsent drafts on 2026-10-10**,
+is Awaiting Owner, 41 days past due, and its approval column reads "none yet" —
+**no packet has ever been raised on it, which is the gap this packet closes.**
+Measured today by `list_drafts`, paginated to exhaustion:
+
+- **33 drafts to performance-industry suppliers, dyno vendors and tuning
+  firms**, all created 2026-11-16 inside four minutes.
+- **1 further supplier enquiry** created 2026-11-19 08:29:19Z.
+- **5 addressed to the counterparties T-42 called likely loan fraud**, dated
+  2026-09-30 and 2026-10-02. **That counterparty is active again** — two new
+  inbound messages sit in the Respond/Waiting label (T-215).
+- **5 self-addressed notes**, the oldest 2026-08-19, 93 days old.
+- **7 to a property agent, a carport supplier, a buildings supplier, a lender, a
+  legal-plans service and a performance shop**, between 2026-09-25 and
+  2026-10-26.
+
+**None of their bodies was read this run.** The count, the recipients' category
+and the creation times are what `list_drafts` returns; the contents are the
+owner's and reading 51 drafts to summarise them is not what this routine is for.
+
+**Recommended plan — Option B, by class, after one read.**
+
+1. **The 5 fraud-suspected drafts: delete, do not send.** T-42 called this
+   counterparty likely loan fraud seven weeks ago and it has since written twice
+   more. A reply confirms the address is live and read.
+2. **The 34 supplier and vendor enquiries: the owner reads one, then approves
+   the batch.** They were written in four minutes, so they are near-identical;
+   checking one checks the template. **Sending is Class C and stays the owner's
+   to authorise.**
+3. **The 5 self-addressed notes and the 7 older mixed drafts: leave untouched.**
+   A note to self is not a communication, and the older seven need individual
+   judgement that a batch decision would get wrong.
+
+**Alternatives considered** — (a) **Send all 51.** Fastest, and it would send
+five messages to a suspected fraud counterparty and seven stale ones whose
+premises have moved. (b) **Delete all 51 and start again.** Clean, and it
+discards thirty-four pieces of the owner's own work that are still accurate. (c)
+**Leave all 51**, the status quo, which is what T-42 has been doing for 41 days
+while the backlog tripled.
+
+**Cost and cash impact** — **None.** No money moves. No draft commits DD84 to a
+price; they are enquiries.
+
+**Risks and safeguards** — The real risk is in the supplier batch: a four-minute
+burst of near-identical messages can carry the same error 34 times. **Safeguard:
+the owner reads one before any is sent.** The second risk is reputational — 34
+near-identical enquiries arriving from one business on one day reads as a
+mail-merge. **Safeguard: send in smaller groups over several days rather than
+all at once**, which costs nothing and reads as a business working through a
+list.
+
+**Systems affected** — The business mail account's drafts folder only. No
+pricing, no live system, no customer record.
+
+**Customer and public impact** — **None of the 51 is addressed to a customer.**
+They are suppliers, vendors, service providers and the fraud-suspected
+counterparty. The two drafted customer replies are separate and sit under A-29.
+
+**Success test** — The drafts folder holds only what the owner intends it to
+hold; the fraud-addressed five are gone; the supplier batch is either sent or
+deliberately parked with a reason; and T-42, open since 2026-10-10, can be
+closed.
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response:** _awaiting owner_
+
+**Actual result:** _not executed_

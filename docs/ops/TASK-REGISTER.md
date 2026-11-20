@@ -243,18 +243,27 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-207 | A finance pitch signs one firm and sends from another domain                                  | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 | T-208 | Gmail's result-count estimate is not a count: 201 returned for ~15 threads                    | ops        | Normal       | In Verification          | A     | A to diagnose                | 2026-11-23   |
 | T-209 | 8d 17h since any commercial outbound; the only send since went to our own inbox               | sales      | **High**     | **Awaiting Owner**       | Owner | **A-29**                     | 2026-11-20   |
+| T-210 | The draft backlog is 51, not the 15 in T-42; 33 written 11-16 in four minutes                 | ops        | **High**     | **Awaiting Owner**       | Owner | **A-31**                     | 2026-11-23   |
+| T-211 | The vendor charge failed a 4th day, 11-19 23:28Z; the 11-21 outflow is tomorrow               | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-30**, T-202              | 2026-11-20   |
+| T-212 | The SBA 504 enquiry bounced 5s after sending, 2026-09-15; no redelivery                       | finance    | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
+| T-213 | A 2nd site in a 2nd county: Jefferson GA, in our own 09-15 outbound, not on record            | ops        | **High**     | **Awaiting Owner**       | Owner | **T-164**, T-191             | 2026-11-23   |
+| T-214 | Printify removed product variants 11-20 09:15Z; storefront listings unverified                | ops        | Normal       | Planned                  | Agent | A to verify                  | 2026-11-23   |
+| T-215 | The likely-fraud counterparty of T-42 is active again: 2 inbound, 2 unsent drafts             | compliance | **High**     | **Awaiting Owner**       | Owner | **A-31**                     | 2026-11-23   |
+| T-216 | Four intake briefs ran without query 5; the draft backlog went unmeasured 41 days             | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-23   |
+| T-217 | At least four facility/equipment quote threads sit outside the register, not one              | real est.  | Normal       | Planned                  | Agent | A to read                    | 2026-11-23   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 18 In Verification
-· 4 In Progress · **7 Awaiting Approval** · **107 Awaiting Owner** · 7 Blocked ·
-32 Planned · 2 Backlog. **209 tasks.** Recounted mechanically with
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 19 In Verification
+· 4 In Progress · **7 Awaiting Approval** · **112 Awaiting Owner** · 7 Blocked ·
+34 Planned · 2 Backlog. **217 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-19** (**T-208 and T-209 added by the daily brief**). **107 of the
-209 rows are Awaiting Owner**, **145 of the 177 open rows are past due**, and
-**twenty-nine rows are Critical and open.** **Twelve approval packets pending.**
+last **2026-11-20** (**T-210 through T-217 added by the inbox intake**). **112
+of the 217 rows are Awaiting Owner**, **148 of the 185 open rows are past due**,
+and **thirty rows are Critical and open.** **Thirteen approval packets
+pending.**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3

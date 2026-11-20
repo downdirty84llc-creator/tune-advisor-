@@ -13122,4 +13122,157 @@ as activity against its own pause clock.
 
 ---
 
-## Next entry: OL-0116
+## OL-0116 — 2026-11-20 inbox and lead intake
+
+**Run 2026-11-20T10:21:25Z–10:31:17Z.** Fired 10:21:03Z against a 10:20Z
+schedule. Both times read from the clock, neither estimated (T-116). Class A:
+nothing sent, nothing published, nothing charged, no live system changed, no
+label applied, no mail state modified, no attachment downloaded. **Brief:
+`docs/ops/briefs/2026-11-20-inbox-intake.md`.**
+
+**Contract item 0:** the container restarted between this run and the last, and
+the checkout came back intact: `HEAD` equals origin at `c7cd027`, no `src/`, no
+`package.json`, clean, **102 tracked files against the prompt's 28 — fiftieth
+run reporting the drift.** **Skeleton committed at `14dcaf8` before the analysis
+was written** — twenty-first application of the OL-0050 rule and the first in a
+while genuinely needed: ten Gmail queries of evidence, and a restart inside the
+last day.
+
+**Window:** `newer_than:1d`, since the previous intake at 10:21Z on 11-19. **52
+distinct threads reviewed** (query 2 → 3, query 4 → 20, query 6 → 30, one
+overlapping), **51 drafts enumerated**, **17 actionable, 35 no-action, 0 new
+leads.**
+
+### This run's contribution: query 5, which four runs had stopped asking
+
+**`list_drafts` is query 5 of the routine's own six. The briefs for 11-16,
+11-17, 11-18 and 11-19 contain no draft-backlog section.** Run today to
+exhaustion — two pages, the second with no continuation token — **the account
+holds 51 unsent drafts.**
+
+- **33 created 2026-11-16 between 16:49:37Z and 16:53:11Z**: enquiries to
+  performance-industry suppliers, dyno vendors and tuning firms. **Thirty-three
+  messages written inside four minutes and none sent.**
+- **1 created 2026-11-19 at 08:29:19Z** — about two hours before yesterday's
+  intake ran, and not picked up by it.
+- **5 still addressed to the counterparties T-42 called likely loan fraud**,
+  dated 2026-09-30 and 2026-10-02.
+- 5 self-addressed notes, oldest 2026-08-19. 7 older mixed drafts.
+
+**T-42 recorded fifteen on 2026-10-10, is 41 days past due, and its approval
+column reads "none yet" — no packet had ever been raised on it.** The backlog
+more than tripled while the routine stopped measuring it. **Logged as T-216, my
+own defect**, and **A-31 raised** to close the gap T-42 left.
+
+**Why it matters more than the count.** This record spent the week reporting
+that nothing leaves the business, and yesterday's brief measured it at nine days
+of commercial silence. **The natural inference — that no work was being done —
+was wrong.** Thirty-three supplier enquiries were composed in four minutes.
+**The business is failing at the send step and only at the send step.** That
+reframes A-29: it reads as a small permission to acknowledge an enquiry, and
+against 51 written-and-unsent messages it is the bottleneck itself.
+
+### Escalations
+
+**A vendor charge failed a fourth consecutive day.** Thread `1a1f6241c4a4f7a8`,
+**2026-11-19T23:28:44Z**, unread, subject saying "unsuccessful **again**". T-198
+recorded three (11-16, 11-17, 11-18). **Amount withheld, A-19** — a
+declined-payment amount, which is precisely A-30's open question. **The T-202
+outflow falls tomorrow.** Logged as T-211, Critical.
+
+**The SBA 504 enquiry was never delivered.** Thread `1a0a6326f2f63525`, sent
+**2026-09-15T17:51:58Z**, delivery-failure notice **17:52:03Z — five seconds
+later**, no redelivery in the thread, unactioned for 66 days. **One thread is
+not the whole pursuit and this run did not establish whether other SBA outreach
+exists** — named as the next check, not a conclusion. **The pattern is the
+finding**: the 2026-11-10 burst also contained a bounce. **Mail can be composed,
+"sent", and silently never delivered**, which is the worst failure mode for a
+business whose problem is already that nothing goes out. Logged as T-212, and a
+`DD84/Bounced` label proposed as the one label worth more than the rest
+combined.
+
+### A conflict named and not resolved
+
+**Two prospective sites in two counties.** DD84's own 2026-09-15 outbound names
+a "30x50 Dyno Facility in **Jefferson, GA**" — **Jackson County**. The register
+tracks a Colbert site — **Madison County** — across T-38, T-53, T-57, T-70,
+T-90. **Jefferson appears nowhere in the register or `ventures.md`.** The
+Colbert financing thread is titled "final corrected … Colbert scope" and the
+Jefferson thread predates it by about two months, which **suggests** Colbert
+superseded it. **Supersession was not established and nothing was changed.**
+
+**T-164 says no location is on record. It is right about `ventures.md`, and the
+mailbox shows why the gap is expensive: there are two candidate answers, not
+none.** T-191's $25,000 loan at 2% turns on county. Logged as T-213.
+
+### Corrected in my own work this run
+
+**My first instinct was to withhold the Colbert parcel identifier as a new
+sensitive category and raise a packet for it. I checked first, and it is already
+published in this register** — T-38 and T-53 carry the full address and parcel
+number. **The packet would have been spurious and would have implied a leak that
+had not happened.** Checking the record before raising a packet cost one grep.
+
+**The gate caught the owner's own mail address** in the brief's header line
+(A-17 behaves as approved in the strict direction, the owner's own details
+included). **The wording was changed, not the pattern — fifth time that was the
+right call.**
+
+**A second gate hit is a note against the gate, not against the brief.** Its
+MLS-and-property class fired twice on a **bare generic noun naming a recipient's
+profession**, with no name, firm, address or listing number anywhere near it.
+The wording was changed again — sixth time — **but the pattern is now the thing
+at fault**: it should match listing-number shapes and contact details, not an
+ordinary English word for a job. **Narrowing it is a change to the control that
+guards a public repository, so it is not a change to make in passing while
+holding a brief.** Recorded here so the next run does it deliberately, with the
+synthetic-fixture self-test re-run to prove the class still catches a real
+listing number afterwards. **Rewording around a control six times is the signal
+that the control, not the prose, needs the work.**
+
+**I nearly filed a customer thread as untracked.** A "2018 RT Challenger log"
+thread in Respond/Waiting looked like an unrecorded job; it is **T-64**. But the
+thread ID query 4 returned (`1a0e75796744dd11`, one message) is **not** the one
+the register records (`1a0e402cdcf75731`, 28 messages). **Two threads share the
+subject and the relationship was not established** — one read next run settles
+it, and guessing would have put a wrong fact in a customer record.
+
+### Also logged
+
+**T-214** — a print-on-demand supplier removed product variants,
+**2026-11-20T09:15:04Z**, an hour before this run; storefront impact **not
+verified**, which is the site monitor's read. **T-215** — the fraud-suspected
+counterparty is active again, two inbound and two unsent drafts addressed to it.
+**T-217** — T-90 says "a Colbert building quote sits outside the register";
+query 4 shows **at least four** such threads, not one.
+
+### Instrument note, continuing the week's theme
+
+**Query 1, `category:primary`, returned zero** — a real zero from the query that
+exists to find customers, not a missing connector. **Query 4 carries no window
+by design** and returned about 65 threads of which 20 were sampled; **the brief
+says 20 were reviewed and ~45 were not**, because claiming 65 after looking at
+20 is the failure this routine's contract names worse than having no routine.
+
+**`ventures.md` records three distinct customers verified 2026-08-03 — 109 days
+old, past the 30-day re-check rule.** Shopify shows one order all time and
+Stripe has no connector, so the figure could be neither confirmed nor corrected.
+**It is quoted nowhere in the brief for that reason.**
+
+### Register and approvals
+
+**217 rows** (T-210 through T-217 added). **148 of 185 open are past due; 30
+Critical open; thirteen packets pending.** Recounted mechanically, every bucket
+printed, total checked against the sum. **A-31 raised** — what happens to the 51
+unsent drafts, recommending the five fraud-addressed ones be deleted, the
+thirty-four supplier enquiries approved as a batch after the owner reads one,
+and the rest left alone.
+
+**Three rows passed their due date overnight** — T-171, T-202 and T-205, all due
+2026-11-19. **T-171's external cutoff is today**, and whether it falls at the
+start or the end of today was not established, so the brief treats today as
+already partly gone.
+
+---
+
+## Next entry: OL-0117
