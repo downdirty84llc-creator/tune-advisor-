@@ -239,7 +239,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-203 | A tax exemption certificate was approved — NOT T-106 answer                                   | compliance | **High**     | **Awaiting Owner**       | Owner | **T-106** first              | 2026-11-20   |
 | T-204 | The personal withdrawal was PROCESSED 11-18; funds in transit                                 | ops        | Normal       | **Awaiting Owner**       | Owner | **A-13** scope               | 2026-11-23   |
 | T-205 | Two live decline reasons: no funds 11-17, card off 11-12/16/17                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139**, T-153             | 2026-11-19   |
-| T-206 | A fully specified GM tune lead — starred, unread, unanswered                                  | sales      | **Critical** | **Awaiting Approval**    | Owner | **A-29** first               | 2026-11-20   |
+| T-206 | A fully specified GM tune lead — starred, unread, unanswered                                  | sales      | **Critical** | **In Verification**      | Owner | **A-21** row 1               | 2026-11-20   |
 | T-207 | A finance pitch signs one firm and sends from another domain                                  | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 | T-208 | Gmail's result-count estimate is not a count: 201 returned for ~15 threads                    | ops        | Normal       | In Verification          | A     | A to diagnose                | 2026-11-23   |
 | T-209 | 8d 17h since any commercial outbound; the only send since went to our own inbox               | sales      | **High**     | **Awaiting Owner**       | Owner | **A-29**                     | 2026-11-20   |
@@ -256,21 +256,31 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-220 | The leak gate passed a declined-payment amount; A-19 is the rule it misses                    | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-24   |
 | T-221 | The largest overdue receivable, $350 on T-64, has never been invoiced                         | finance    | **High**     | **Awaiting Owner**       | Owner | **T-64**, A-21               | 2026-11-24   |
 | T-222 | A personal outflow was confirmed in the review week; category undecided                       | finance    | Normal       | **Awaiting Owner**       | Owner | **A-32**                     | 2026-11-24   |
+| T-223 | A 2nd live job, a 2016 Ram Stage 2, was delivered 11-21 and was never on this register        | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1               | 2026-11-24   |
+| T-224 | T-206 is delivered, not a lead: calibration and a revision sent 11-20 and 11-21               | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1               | 2026-11-24   |
+| T-225 | Model year conflict: the register says 2014, the delivered calibration names 15               | sales      | **Critical** | **Awaiting Owner**       | Owner | A to verify                  | 2026-11-23   |
+| T-226 | A customer message from 11-21 23:02Z is unread after a promise to follow up                   | sales      | **Critical** | **Awaiting Owner**       | Owner | none                         | 2026-11-23   |
+| T-227 | Seven consecutive vendor failures; the 5th to 7th landed 11-20 to 11-22                       | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-30**, T-211              | 2026-11-24   |
+| T-228 | The draft backlog grew to 52 while A-31 waits; the 11-16 batch of 33 is untouched             | ops        | **High**     | **Awaiting Owner**       | Owner | **A-31**                     | 2026-11-24   |
+| T-229 | Supabase dd84-ai-tuning pause warning fired 11-23; 90 days to unpause after it                | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-24   |
+| T-230 | A platform bill was PAID 11-21 — the first outflow this month that completed                  | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30**                     | 2026-11-24   |
+| T-231 | A merchant platform now blocks on the business address T-164 says is absent                   | ops        | **High**     | **Awaiting Owner**       | Owner | **T-164**, T-213             | 2026-11-24   |
+| T-232 | A class-action settlement offers a payment if a claim is filed; deadline unread               | finance    | Normal       | **Awaiting Owner**       | Owner | **A-32**                     | 2026-11-24   |
+| T-233 | A consumer lender notice arrived 11-21; bears on whose account this is                        | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**                     | 2026-11-24   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 21 In Verification
-· 4 In Progress · **7 Awaiting Approval** · **115 Awaiting Owner** · 7 Blocked ·
-34 Planned · 2 Backlog. **222 tasks.** Recounted mechanically with
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 22 In Verification
+· 4 In Progress · **6 Awaiting Approval** · **126 Awaiting Owner** · 7 Blocked ·
+34 Planned · 2 Backlog. **233 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-20** (**T-210–T-217 intake, T-218 daily brief, T-219–T-222 cash
-review**). **115 of the 222 rows are Awaiting Owner**, **148 of the 190 open
-rows are past due**, and **thirty rows are Critical and open.** **Fourteen
-approval packets pending.** **By status 129 of the 190 open rows wait on a
-decision; in substance 131, because T-37 and T-64 carry agent statuses over
-pending packets (T-218).**
+last **2026-11-23** (**T-223–T-233 added by the intake; T-206 corrected from
+Awaiting Approval to In Verification, because the work was delivered**). **126
+of the 233 rows are Awaiting Owner**, **161 of the 201 open rows are past due**,
+and **thirty-six rows are Critical and open.** **Fourteen approval packets
+pending.** **By status 139 of the 201 open rows wait on a decision.**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3

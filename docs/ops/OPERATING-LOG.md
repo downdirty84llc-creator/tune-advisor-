@@ -13519,4 +13519,147 @@ actually read.
 
 ---
 
-## Next entry: OL-0119
+## OL-0119 — 2026-11-23 inbox and lead intake
+
+**Run 2026-11-23T10:21:34Z–10:28:15Z.** Fired 10:21:06Z against a 10:20Z
+schedule. Both times read from the clock (T-116). Class A: nothing sent,
+published, charged or changed; no label applied, no mail state modified, no
+attachment downloaded, **no Supabase tool called.** **Brief:
+`docs/ops/briefs/2026-11-23-inbox-intake.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `ba3dfc5`, no `src/`, no
+`package.json`, clean, **105 tracked files against the prompt's 28 — fifty-third
+run reporting the drift.** **Skeleton at `8a521d1`: twenty-fourth application of
+OL-0050**, on the largest evidence set any run here has gathered.
+
+**Window** `newer_than:3d`, covering the weekend. **50 distinct threads** across
+four list queries, four read in full, **52 drafts** enumerated. **21 actionable,
+17 no-action, 12 mapped to existing rows. 0 new leads.**
+
+### The headline: the owner did the work
+
+**`in:sent` returned six threads where the three previous intakes returned
+zero.** This record spent a week reporting that nothing left the business and
+measured the silence at ten days. **Over the weekend two tuning jobs were
+delivered.**
+
+**Job A — T-206 is no longer a lead.** A completed calibration went out
+**2026-11-20T13:33:56Z** with a scanner layout, and **a revised calibration for
+idle corrections 2026-11-21T16:58:52Z**. **Enquiry to delivered calibration in
+under 41 hours — the fastest turnaround in this record by a wide margin.** The
+customer has sent datalogs back on four threads; the job is in active revision.
+**T-206's row said "Awaiting Approval · A-29 first", which is now false, and is
+corrected to In Verification under A-21 row 1. T-224.**
+
+**Job B — a live job this register never knew about.** Twelve messages on
+2026-11-21 between 03:57Z and 23:02Z: **a 2016 Ram, supercharged, Stage 2,
+marked a first draft in the file naming. DD84 initiated it**, so the job existed
+outside the record before the thread started. **A third party is reviewing the
+calibration**, in a capacity not established. **"TSP", "Stage 2", "1500" and
+this customer all return zero across the register and `ventures.md`. T-223.**
+
+**Neither job carries a price, a quote or an invoice.** No rung was picked —
+Class E, and A-21 row 1 has been held since October on exactly that. **Four
+delivered jobs now have no invoice issued and the invoice count has stood at 10
+since August.**
+
+**The bottleneck this record identified was real and has partly cleared — by the
+owner doing the work himself, not by any approval being answered. Every packet
+pending on Friday is still pending.**
+
+### What the Class C gate prevented, stated plainly
+
+**A reply to the Job A customer was drafted 2026-11-18 and held for A-29. By
+2026-11-20 the owner had delivered a finished calibration.** Had that draft been
+sent it would have asked a customer for qualifying details about a job already
+being tuned — **it would have read as a business that does not know what its own
+shop is doing.**
+
+**The gate was right, and for a reason worth keeping:** the agent had better
+information about what the inbox contained, and the owner had better information
+about what was actually happening. **A-29 is not closed on this** — it still
+gates T-177 and T-95 — but its premise for T-206 is moot, the same shape as A-26
+row 1 and T-152. **The T-206 draft is withdrawn as overtaken.**
+
+### A correction to my own standing reasoning
+
+**Several briefs in this record state that Supabase was deliberately not opened
+because "reading it counts as activity against its own pause clock."**
+
+**The pause notice that arrived 2026-11-23T10:07:30Z — fourteen minutes before
+this run — says the opposite.** The pause is triggered by **insufficient**
+activity: "not seen sufficient activity for more than 7 days". **Activity
+prevents the pause; abstaining brings it on.**
+
+**The boundary was right and the reason was wrong.** Not touching a live system
+without approval is correct, and nothing was called on Supabase this run either.
+But the justification recorded beside it was a misreading of the mechanism and
+**it has been repeated across several briefs.** Project `dd84-ai-tuning` is not
+paused yet, no pause date is given, and **once paused there are 90 days to
+unpause, after which the project cannot be unpaused and only its data can be
+downloaded.** Keeping it alive is a use-it-or-pay-for-it decision and it is the
+owner's. **T-229.**
+
+### A conflict named, not resolved — and it is safety-adjacent
+
+**The register records Job A's vehicle as a 2014; the delivered calibration's
+own file naming says 15.** A filename is not authoritative and neither is a row
+transcribed from an enquiry, **but the model year selects the calibration
+base**, so this is one check that must happen before the next revision.
+**Nothing was reconciled and no fault is asserted. T-225.**
+
+### Money over the weekend
+
+**One outflow actually completed.** The storefront platform's monthly bill was
+**paid** through the payment processor on 2026-11-21. **After two weeks of
+cataloguing failures, a success is the notable event** — a failure generates a
+notice and a success usually does not, so the cost base is visible mainly where
+it breaks. **It also means the account could pay something. T-230.**
+
+**Three more vendor failure notices make seven consecutive.** A payment to a
+card issuer was received. A lender statement and a consumer-lender notice
+arrived. **The debit card was switched off, on, on and off across the weekend**,
+plus one decline carrying a stated reason — reinforcing T-205 and T-184 rather
+than adding to them. **All amounts withheld, A-19 and A-30.**
+
+**A consumer class-action settlement says a payment is available if a claim is
+filed.** Potential money in; **deadline not read**, and the category may be
+personal, so it sits beside A-32. **T-232.**
+
+**Nothing came in.** No order, no customer payment, no deposit.
+
+### T-164 stopped being an internal gap
+
+**A merchant platform now demands the business address**, titled "Action
+required". T-164 has said for eleven days that no location is on record, and
+T-213 found two candidate counties in DD84's own correspondence. **An external
+system is now blocking on it. T-231.**
+
+### Routine compliance, caught mid-run
+
+**I had run only four of the six queries and was about to write the brief.**
+Query 4 and query 6 were missing — **and T-216, logged three days ago, is the
+row recording that four consecutive intakes skipped query 5.** Running them
+before writing changed the brief materially: **query 6 is where the Supabase
+notice, the paid platform bill, the address demand and the customer's datalogs
+all came from.** None of those would have been in this brief.
+
+**Repeating the defect I had just logged would have been the worst kind of
+finding to leave in a register.**
+
+### Register and approvals
+
+**233 rows** (T-223–T-233 added, T-206 corrected). **161 of 201 open past due;
+36 Critical open; fourteen packets pending; 139 of the 201 open rows wait on a
+decision.** The draft backlog **grew to 52** while A-31 waits, with the 11-16
+batch of 33 untouched. **T-228.**
+
+### Withheld
+
+Customer names, the third party's address, every tune and datalog **filename**,
+and all amounts. Both job threads carry calibration files and datalogs; **none
+was downloaded, opened or described.**
+
+---
+
+## Next entry: OL-0120
