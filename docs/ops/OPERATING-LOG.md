@@ -13662,4 +13662,96 @@ was downloaded, opened or described.**
 
 ---
 
-## Next entry: OL-0120
+## OL-0120 — 2026-11-23 daily command brief
+
+**Run 2026-11-23T10:51:03Z–10:55:10Z.** Fired 10:50:38Z against a 10:50Z
+schedule. Both times read from the clock (T-116). Class A: nothing sent,
+published, charged or changed; **no Supabase tool called.** **Brief:
+`docs/ops/briefs/2026-11-23-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `45a78e1`, no `src/`, clean, **106
+tracked files against the prompt's 28 — fifty-fourth run reporting the drift.**
+**No skeleton; twenty-fifth such judgement** — every input was already on the
+remote in today's intake.
+
+### This run's contribution: naming where the bottleneck moved to
+
+**For a week this brief's story was that nothing left the business.** Over the
+weekend the owner delivered two tuning jobs. **The story is now one step further
+along, and the brief says so plainly: three jobs have had work delivered, one of
+them has an approved price, and none has been invoiced.** The invoice count has
+stood at 10 since August.
+
+**T-37 is the mirror image** — priced at $349 and $149 with nothing delivered to
+invoice. **So the business has delivered what it has not priced, and priced what
+it has not delivered.** That sentence is the whole finding.
+
+**A working business with a billing problem is a materially better problem than
+the one this brief described on Friday**, and saying so is not inflating a quiet
+day — it is reporting that the constraint changed.
+
+### Two numbers in my own draft were asserted rather than computed
+
+The brief compared how many rows each packet gates now against Friday. **I wrote
+A-21 as 4 → 8 and called it a doubling, and A-25 as 7 → 9.** Both Friday figures
+were remembered from an earlier run rather than read.
+
+**Checked against the register as committed on Friday (`ba3dfc5`): A-21 went 5 →
+8 and A-25 went 8 → 9.** So A-21 took on three rows, which is not a doubling,
+and the table is now derived from both commits with its source named.
+
+**The one claim that survived checking is the interesting one.** **A-29 is the
+only packet that shrank, 4 → 3** — and it shrank because **T-206 moved off it
+when the owner answered that customer himself, not because the packet was
+decided.** A packet getting smaller because the work went around it is not
+progress on the packet, and the brief says that.
+
+**Remembering a figure one run later and presenting it as a comparison is the
+defect this log has caught most often in a different costume.** Two commits were
+available and cost one command to read.
+
+### The board
+
+**201 open, 161 past due (80%), 36 Critical open, 18 due today.** **139 of 201 —
+69% — wait on a decision**; **114 of the 161 past-due rows** and **33 of the 36
+Critical rows** do too.
+
+**A-21 row 1 now gates eight rows, three of them jobs whose calibration is
+already with the customer.** Nothing else on the board has that ratio of
+consequence to effort. **A-25 is the largest block at nine.** Of fourteen
+pending packets, **A-22 should be closed rather than answered and A-10 cannot be
+answered from here, leaving twelve a person could decide today.**
+
+**Two Critical rows fall due today that need no approval at all**: **T-226**, a
+customer unread for 36 hours after being promised a follow-up, and **T-225**, a
+model-year conflict on a calibration that has already shipped. **Both are reads,
+not decisions**, which is why the brief puts them above the pricing packet in
+practice.
+
+### Reads
+
+**Calendar answered and was empty** — zero events 2026-11-23 to 2026-12-01.
+**Nine days forward with no scheduled work is a stranger result this week than
+last**, because two calibration jobs are in active revision: **the work is
+happening in a mailbox and appears on no calendar.**
+
+**Shopify: all time 1, EXACT; since Friday 0, EXACT.** #1001 is 31 days old and
+remains the only order. **One outflow completed on 11-21** (T-230, amount
+withheld under A-30); nothing came in.
+
+### Register
+
+**T-206's title was corrected with its old text struck through** — it still read
+"starred, unread, unanswered" while its status said In Verification, which is a
+board that contradicts itself. **233 rows, unchanged in count.**
+
+### The customer count is now probably wrong in the other direction
+
+`ventures.md` records three distinct customers, verified 2026-08-03, **112 days
+old and unverifiable** with Stripe and the bank unreachable. **T-223's customer
+appears nowhere in the registry**, so the figure may now _understate_ rather
+than overstate. **It is quoted nowhere in the brief for that reason.**
+
+---
+
+## Next entry: OL-0121

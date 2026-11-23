@@ -239,7 +239,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-203 | A tax exemption certificate was approved — NOT T-106 answer                                   | compliance | **High**     | **Awaiting Owner**       | Owner | **T-106** first              | 2026-11-20   |
 | T-204 | The personal withdrawal was PROCESSED 11-18; funds in transit                                 | ops        | Normal       | **Awaiting Owner**       | Owner | **A-13** scope               | 2026-11-23   |
 | T-205 | Two live decline reasons: no funds 11-17, card off 11-12/16/17                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-139**, T-153             | 2026-11-19   |
-| T-206 | A fully specified GM tune lead — starred, unread, unanswered                                  | sales      | **Critical** | **In Verification**      | Owner | **A-21** row 1               | 2026-11-20   |
+| T-206 | A GM tune lead — ~~starred, unread, unanswered~~ → DELIVERED 11-20 (T-224)                    | sales      | **Critical** | **In Verification**      | Owner | **A-21** row 1               | 2026-11-20   |
 | T-207 | A finance pitch signs one firm and sends from another domain                                  | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 | T-208 | Gmail's result-count estimate is not a count: 201 returned for ~15 threads                    | ops        | Normal       | In Verification          | A     | A to diagnose                | 2026-11-23   |
 | T-209 | 8d 17h since any commercial outbound; the only send since went to our own inbox               | sales      | **High**     | **Awaiting Owner**       | Owner | **A-29**                     | 2026-11-20   |
@@ -277,10 +277,11 @@ Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 22 In Verificat
 34 Planned · 2 Backlog. **233 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
 last **2026-11-23** (**T-223–T-233 added by the intake; T-206 corrected from
-Awaiting Approval to In Verification, because the work was delivered**). **126
-of the 233 rows are Awaiting Owner**, **161 of the 201 open rows are past due**,
-and **thirty-six rows are Critical and open.** **Fourteen approval packets
-pending.** **By status 139 of the 201 open rows wait on a decision.**
+Awaiting Approval to In Verification, and its title struck through, because the
+work was delivered**). **126 of the 233 rows are Awaiting Owner**, **161 of the
+201 open rows are past due**, and **thirty-six rows are Critical and open.**
+**Fourteen approval packets pending.** **By status 139 of the 201 open rows wait
+on a decision.**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3
