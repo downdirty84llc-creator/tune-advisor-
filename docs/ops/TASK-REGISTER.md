@@ -227,7 +227,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-191 | A 2% $25k local loan exists; eligibility turns on T-164 county                                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-23   |
 | T-192 | Has DD84 ever paid occupation tax to any local government?                                    | compliance | **High**     | **Awaiting Owner**       | Owner | A to report                  | 2026-11-23   |
 | T-193 | NIGP 99219 names DD84 exact service — carry it to T-160 form                                  | sales      | Normal       | Planned                  | Agent | **T-160** first              | 2026-11-23   |
-| T-194 | A $1k-$10k grant closes 2026-11-30; eligibility unverifiable here                             | finance    | Normal       | **Awaiting Owner**       | Owner | **A-27** blocks it           | 2026-11-23   |
+| T-194 | 11-23: aggregators say Georgia's Own is 501(c)(3)-only — recommend close                      | finance    | Normal       | **Awaiting Owner**       | Owner | **A-27** blocks it           | 2026-11-23   |
 | T-195 | 5 Georgia fleet bids ran Apr-Sep 2026 and DD84 saw none of them                               | sales      | **High**     | **Awaiting Owner**       | Owner | **T-160** argument           | 2026-11-20   |
 | T-196 | BELOW zero on 11-16, not at zero — T-136 overtaken in 7 days                                  | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-25** underneath          | 2026-11-18   |
 | T-197 | A sales channel rejected DD84 proof of address — 3rd T-164 gate                               | sales      | **Critical** | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-18   |
@@ -256,6 +256,7 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-220 | The leak gate passed a declined-payment amount; A-19 is the rule it misses                    | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-24   |
 | T-221 | The largest overdue receivable, $350 on T-64, has never been invoiced                         | finance    | **High**     | **Awaiting Owner**       | Owner | **T-64**, A-21               | 2026-11-24   |
 | T-222 | A personal outflow was confirmed in the review week; category undecided                       | finance    | Normal       | **Awaiting Owner**       | Owner | **A-32**                     | 2026-11-24   |
+| T-223 | SBA drought loan GA-20024 names all 3 counties; due "Dec. 10" — was DD84 harmed?              | finance    | Normal       | **Awaiting Owner**       | Owner | Owner answer, then packet    | 2026-12-03   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,

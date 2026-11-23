@@ -13519,4 +13519,36 @@ actually read.
 
 ---
 
-## Next entry: OL-0119
+## OL-0119 — 2026-11-23 · Opportunity scan: one new find escapes the county gate, and the prompt asks to email the Ledger's subscribers
+
+- **Routine** `/dd84-opportunity-scan`, fired by the scheduled task "DD84 Weekly
+  Georgia Opportunity Scan". Class A. **Started 2026-11-23T10:04:34Z** (read);
+  finish time is in the brief (read). **Brief:
+  `docs/ops/briefs/2026-11-23-opportunity-scan.md`.**
+- **Checkout:** branch `claude/kind-keller-tv6qzx`, created at `ba3dfc5`, which
+  equals `origin/claude/claude-md-docs-cqvhy6`. **The session's Git instructions
+  name this branch, not the one `CLAUDE.md` §6 names.** The push goes where the
+  session allows, and the owner merges or redirects it.
+- **Source classes searched:** web search (seven standard queries: grants,
+  county programmes, SBA disaster declarations, public-fleet solicitations) and
+  Gmail (8 days, funding terms; two marketing threads, nothing relevant). **Not
+  searched:** property listings, tax and auction pages, utility incentives,
+  labour and pricing data, licensed data, competitors, Grants.gov and SAM.gov
+  directly, Drive.
+- **T-98 re-tested:** `WebFetch` on `www.sba.gov` and `www.govinfo.gov` both
+  failed DNS resolution. **A-27 remains the fix.**
+- **New:** SBA drought economic injury loan GA-20024, **52/100**. Clarke,
+  Madison and Jackson counties are all named, so T-164 does not gate it.
+  Causation does. **T-223 raised** with a 2026-12-03 reminder ahead of an
+  inferred 2026-12-10 deadline.
+- **Updated:** Georgia's Own **53 → 45**. Aggregators state 501(c)(3)-only.
+  T-194 is recommended for closure.
+- **Not done:** the prompt's "email the summary to paid subscribers" (Class C;
+  also the Georgia Opportunity Ledger's audience, not DD84's) and "update the
+  session at <url>" (no tool can do it). **The routine prompt needs the owner's
+  correction in the Routines UI.**
+- **No Supabase tool called. Nothing touched the other business.**
+
+---
+
+## Next entry: OL-0120
