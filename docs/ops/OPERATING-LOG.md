@@ -13700,6 +13700,14 @@ were remembered from an earlier run rather than read.
 8 and A-25 went 8 → 9.** So A-21 took on three rows, which is not a doubling,
 and the table is now derived from both commits with its source named.
 
+**And the fix was incomplete on the first pass.** The subsection was corrected
+and **the section heading still read "the one packet that doubled"** above a
+table that now said 5 → 8. **It was caught by the post-push verification grep,
+not by re-reading the file** — which is the useful part, because the grep was
+run against the pushed remote rather than the working copy. **Correcting a claim
+means correcting every place it was made, and a heading is where a reader
+starts.** Fixed at `9a5a7e9`, one commit later.
+
 **The one claim that survived checking is the interesting one.** **A-29 is the
 only packet that shrank, 4 → 3** — and it shrank because **T-206 moved off it
 when the owner answered that customer himself, not because the packet was
