@@ -68,7 +68,7 @@ both Critical, and **neither needs an approval.**
 
 ---
 
-## 4. The decision split, and the one packet that doubled
+## 4. The decision split, and where the packets moved
 
 | Waiting on a decision | 139    | **69% of open work** |
 | --------------------- | ------ | -------------------- |
