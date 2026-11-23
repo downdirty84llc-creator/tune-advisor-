@@ -13762,4 +13762,116 @@ than overstate. **It is quoted nowhere in the brief for that reason.**
 
 ---
 
-## Next entry: OL-0121
+## OL-0121 — 2026-11-23 weekly Georgia opportunity scan
+
+**Run 2026-11-23T11:25:53Z–11:33:12Z.** Fired 11:25:36Z against an 11:25Z
+schedule. Both times read from the clock (T-116). Class A: nobody contacted,
+nothing applied for, no capital committed, **no `mcp__Supabase__*` tool
+called.** **Scan: `docs/ops/briefs/2026-11-23-opportunity-scan.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `b8e3ba0`, no `src/`, clean, **107
+tracked files against the prompt's 28 — fifty-fifth run reporting the drift.**
+No skeleton: the run is four searches and the analysis, and nothing gathered
+would have been expensive to re-gather.
+
+**Method named, as the prompt requires:** the command file's 100-point method —
+financial value 25 · accessibility 20 · time sensitivity 15 · source reliability
+15 · capital requirement 10 · complexity 10 · risk 5 — with the recovered bands.
+
+### The instrument, re-read rather than carried forward
+
+**`get_environment` at 11:26Z: `allowed_hosts` is still empty.** `WebSearch`
+works because it is a tool rather than an outbound request from this container;
+**no public page can be opened. Seventh consecutive scan with no primary source
+validated. A-27 is thirteen days pending.**
+
+**A-27's own text was checked before anything was re-raised, and it already
+settled the question this run would otherwise have asked again.** It records
+that `update_environment` exists, that the environment is editable from here,
+and that the previous run chose the packet deliberately because **"this routine
+fires unattended, and an approval card shown to nobody is not a decision."**
+**That reasoning holds, so no environment change was proposed.** Re-proposing
+would have put a second card in front of nobody and spent the owner's attention
+on a question already in his queue. **Reading the prior packet before acting
+cost one command.**
+
+### Two scored candidates, and the honest reason neither is good
+
+**SBA Economic Injury Disaster Loan, Georgia drought — 46/100, Limited or
+Specialized.** Three declarations visible: one with a deadline of
+**2027-01-04**, one whose deadline was **truncated and unreadable**, and one
+**already expired 2026-08-31**. **Source reliability scored 5 of 15** because
+`sba.gov` is the issuing body and could not be opened, and because **the search
+layer flagged its own date metadata as inconsistent with the release dates.**
+**T-234.**
+
+**Georgia Quick Start — 38/100, Information Only.** Free customised training
+from TCSG, **automotive named among its industries**, no size threshold found,
+rolling so time sensitivity is **3 not 0** per the rule. **DD84 has no employees
+on record**, so it is filed for the staffing conversation rather than as a live
+opportunity. **T-236.**
+
+**Two candidates, and the scan says two rather than padding to three.**
+
+### A correction to last week's ranked list
+
+**The 2026-11-16 scan ranked "Georgia's Own Foundation Grant" second at 53/100
+and raised T-194 to verify eligibility. This scan has that answer and it is
+unfavourable:** the programme is a **nonprofit** one, with **at least 85% of
+grants required to fall within empowering local youth**, and **no small-business
+track was found.** **DD84 is an LLC.**
+
+Its aggregators also **disagree with each other** — $1,000–$10,000 against
+$200–$5,000 — **one says the 2026-11-30 deadline actually passed in 2025**, and
+another carries a plainly wrong stored year. **A candidate whose own sources
+disagree about its award size and its year is not a candidate.**
+
+**Withdrawal recommended, not asserted** — no primary source was opened. **This
+is the second entry a scan has had to withdraw for want of a page fetch**; A-27
+cites the first, on 2026-11-02, which had been scored into the wrong state.
+**T-235.**
+
+### The structural finding, which is the useful part
+
+**One unanswered question now gates at least three funding routes** — T-191's
+$3,001–$25,000 revolving loan at 2%, the Rural Zone credit work, and this week's
+SBA EIDL — **and excludes a fourth on geography**, Invest Atlanta's rolling
+grant, because DD84's candidate sites are not in Atlanta.
+
+**T-164 was already Critical and eleven days past due. What this scan adds is
+its price: it is no longer one row, it is the gate on every geographically
+scoped funding programme in Georgia, and Georgia funding is overwhelmingly
+geographically scoped.**
+
+**T-213 reduced it from "unknown" to "one of two"** — Madison via Colbert,
+Jackson via Jefferson. **Two candidates is a question the owner answers in a
+sentence. It does not need research; it needs a decision about which site he is
+actually pursuing.** Neither county appeared in the SBA lists that could be
+read, **which is not a finding of ineligibility** because the full lists could
+not be opened.
+
+### Recorded so it is not found later as a surprise
+
+**The environment this DD84 session runs in is named "Georgia opportunity
+ledger"**, described as the default created during onboarding. **A naming
+artifact, not a leak** — no Ledger data is reachable from here and none was read
+— but `CLAUDE.md` is emphatic about the two businesses staying distinct, and the
+container DD84's operations run in carries the other one's name. **No change
+proposed; the environment works and renaming it is not this routine's call.**
+
+### What was skipped rather than reported empty
+
+**Gmail and Drive are listed sources in the command file and were not read.**
+Today's intake read the mailbox at 10:21Z and surfaced no opportunity notice,
+and a third mail pass in one morning for a different purpose was not worth its
+cost. **Stated as skipped, because "no opportunity notices" and "did not look"
+are different claims** and the second one is what happened.
+
+### Register
+
+**236 rows** (T-234–T-236 added). **161 of 204 open past due; 36 Critical open;
+fourteen packets pending; 140 of 204 wait on a decision.**
+
+---
+
+## Next entry: OL-0122

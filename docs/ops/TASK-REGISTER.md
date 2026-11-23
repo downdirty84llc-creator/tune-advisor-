@@ -267,21 +267,24 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-231 | A merchant platform now blocks on the business address T-164 says is absent                   | ops        | **High**     | **Awaiting Owner**       | Owner | **T-164**, T-213             | 2026-11-24   |
 | T-232 | A class-action settlement offers a payment if a claim is filed; deadline unread               | finance    | Normal       | **Awaiting Owner**       | Owner | **A-32**                     | 2026-11-24   |
 | T-233 | A consumer lender notice arrived 11-21; bears on whose account this is                        | finance    | **High**     | **Awaiting Owner**       | Owner | **A-25**                     | 2026-11-24   |
+| T-234 | SBA drought EIDL: 3 declarations, 1 expired, deadlines differ; county gates it                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-30   |
+| T-235 | Georgia's Own grant looks nonprofit-only; last week's #2 should be withdrawn                  | finance    | **High**     | In Verification          | A     | answers T-194                | 2026-11-30   |
+| T-236 | Quick Start offers free TCSG training and names automotive; no size threshold                 | ops        | Normal       | Planned                  | Agent | A to read                    | 2026-12-07   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 22 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **126 Awaiting Owner** · 7 Blocked ·
-34 Planned · 2 Backlog. **233 tasks.** Recounted mechanically with
+Counts: **25 Done** · **5 No Action** · **2 Accepted Risk** · 23 In Verification
+· 4 In Progress · **6 Awaiting Approval** · **127 Awaiting Owner** · 7 Blocked ·
+35 Planned · 2 Backlog. **236 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-23** (**T-223–T-233 added by the intake; T-206 corrected from
-Awaiting Approval to In Verification, and its title struck through, because the
-work was delivered**). **126 of the 233 rows are Awaiting Owner**, **161 of the
-201 open rows are past due**, and **thirty-six rows are Critical and open.**
-**Fourteen approval packets pending.** **By status 139 of the 201 open rows wait
-on a decision.**
+last **2026-11-23** (**T-223–T-233 intake, T-234–T-236 opportunity scan; T-206
+corrected from Awaiting Approval to In Verification, and its title struck
+through, because the work was delivered**). **127 of the 236 rows are Awaiting
+Owner**, **161 of the 204 open rows are past due**, and **thirty-six rows are
+Critical and open.** **Fourteen approval packets pending.** **By status 140 of
+the 204 open rows wait on a decision.**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3
