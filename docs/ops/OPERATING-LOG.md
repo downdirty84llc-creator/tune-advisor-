@@ -13874,4 +13874,142 @@ fourteen packets pending; 140 of 204 wait on a decision.**
 
 ---
 
-## Next entry: OL-0122
+## OL-0122 — 2026-11-24 inbox and lead intake
+
+**Run 2026-11-24T10:21:32Z–10:26:12Z.** Fired 10:21:02Z against a 10:20Z
+schedule. Both times read from the clock (T-116). Class A: nothing sent,
+published, charged or changed; no label applied, no mail state modified, no
+attachment downloaded. **Brief: `docs/ops/briefs/2026-11-24-inbox-intake.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `e58806d`, no `src/`, clean, **108
+tracked files against the prompt's 28 — fifty-sixth run reporting the drift.**
+**Skeleton at `352d4fd`: twenty-sixth application of OL-0050**, and this one
+carried a security notice worth protecting.
+
+**Window** `newer_than:1d`. **42 distinct threads** across five queries, **52
+drafts**. **15 actionable, 18 no-action, 9 mapped. 0 new leads.**
+
+### This run's contribution: the routine's customer query does not find customers
+
+| Query               | Window     | Result                                 |
+| ------------------- | ---------- | -------------------------------------- |
+| `category:primary`  | 1 day      | **zero**                               |
+| `category:primary`  | **7 days** | **zero**                               |
+| `category:personal` | 2 days     | **6, including the live Ram customer** |
+
+**`category:primary` matches nothing in this mailbox across a full week.** The
+command file's own table calls query 1 **"the one that finds customers"** and
+cites 2026-10-08, when it surfaced a live tuning job and a state-agency reply.
+**Whatever was true then is not true now.**
+
+**I reported its zeros as real findings twice.** On 2026-11-20: "a real zero
+from the right query, not a missing connector." On 2026-11-23: "a real zero from
+the query that exists to find humans." **Both wrong — it returns zero because it
+matches nothing, not because nothing arrived.**
+
+**What saved the conclusions was query 6**, the general sweep the command file
+ranks last and describes as "only to catch what the five missed". **It is doing
+the work query 1 is credited with**, and it is how both live jobs were found on
+11-23.
+
+**The fix is proposed and not applied.** Query 1 becomes `category:personal`, or
+more robustly a window with
+`-category:promotions -category:social -category:forums`, which does not depend
+on Gmail's category assignment staying stable. **Not applied because changing
+what an unattended routine does is the owner's call, and because the two
+candidates are not equivalent** — one trusts a category, the other distrusts all
+of them. **What this run changed without needing anyone: query 6 is now treated
+as the customer-finding query and the briefs say so.** **T-238.**
+
+**T-216 records four intakes that skipped query 5. This is worse**: not a run
+failing the spec, but the spec pointing at the wrong thing.
+
+### Urgent, and left unread deliberately
+
+**A payment processor reports a sign-in from a device it does not recognise** —
+thread `1a20a3a6463daace`, **2026-11-23T21:05:28Z, unread**. A Chrome Mobile
+browser on Android, **Atlanta, Georgia**, 16:05:25 EST.
+
+**No conclusion drawn in either direction.** An Android phone in Georgia matches
+the owner's own, and he was demonstrably working that weekend. **It is also what
+an unauthorised sign-in from the same metro area would look like.** What is
+certain: **nobody has read it**, and it is the account whose secret-key values
+T-171 says stopped being readable on 2026-11-20. **A second processor sent a
+trusted-device prompt the same day.**
+
+**Withheld, and this is the sharpest withholding this record has made:** the
+originating IP and the "I don't recognise this device" link. **That link carries
+an authentication token in its query string** — publishing it would put a live,
+single-click security action into a world-readable repository. **The gate does
+not catch a tokenised URL**, so this was judgement, not a control. **T-237.**
+
+**A third gate note, and this class now needs narrowing most.** The
+street-address class fired on **an approval-packet reference followed by an
+ordinary word**, reading the packet's number and that word as a house number. It
+fired on a four-digit year followed by a word on 11-19 too. **The matched text
+is described and not reproduced here: the first attempt at this note quoted it
+and re-tripped the gate on the sentence explaining the gate.** **This record
+writes approval-packet references constantly, so that class will keep firing on
+them** — it should match a street suffix or a ZIP shape, not a number beside a
+word. **Reworded, not weakened, as every time before; recorded against T-220
+with the property-class note from OL-0116.**
+
+### Money, and the first cost input this record has ever seen
+
+**A tooling-or-credits order was placed and completed** with the tuning-tool
+vendor — threads `1a20a53dbde17409` and `1a20a53dd733468f`. **This is the first
+observable parts-or-credits purchase anywhere in the record**, and a direct
+input to **T-186**, which says no job carries parts, credits or hours so no
+margin can be computed. **Amount not read; withheld under A-30 regardless.**
+**T-239.** DD84 is also on that vendor's **dealer** list.
+
+**The vendor whose charge has failed seven times is now following up in
+person**, not by billing robot — thread `1a208cfc96f17ebf`. **The relationship,
+not just the payment, is at stake. T-240.**
+
+**2026-11-26 is a bank holiday and deposits may be delayed** —
+`1a2094ec0c671aaf` — **and T-202's second outflow falls today. T-242.**
+
+**A marketplace seller application was rejected** with business verification
+demanded (`1a2091606403fa40`, `1a20958bff1b2724`). **Same failure mode as T-231
+arriving on a second platform, and T-164 is still the root. T-241.**
+
+**Nothing came in.** No order, no payment, no deposit.
+
+### Two closures, both the owner's doing
+
+**T-226 — Done.** The customer who had waited 36 hours was answered; `in:sent`
+carries the reply on thread `1a1ff54f9108b119` and the Ram thread
+`1a1fc4063565f71a`.
+
+**T-232 — Done.** The class-action claim form was filed; thread
+`1a2082e760e284f9` is the confirmation. **T-232 asked for exactly this.**
+
+**Two closures in one run is the most this register has recorded in weeks, and
+neither came from a packet being answered. Both came from the owner acting.**
+That is worth stating plainly in a record that has spent a fortnight counting
+what is blocked.
+
+### One call made rather than justified
+
+**Query 4 had returned an unchanged standing backlog two runs running, and it is
+unwindowed, so it could not change on today's window.** The temptation was to
+skip it and write the reason. **T-216, logged four days ago, is the row
+recording four intakes that skipped a query.** It was run: **65 threads, the
+same ten IDs as yesterday, verified rather than assumed.** One call.
+
+### Register
+
+**242 rows** (T-237–T-242 added, T-226 and T-232 closed). **178 of 208 open past
+due; 37 Critical open; fourteen packets pending; 144 of 208 wait on a
+decision.** **Drafts unchanged at 52, newest still 2026-11-21 — nothing created
+or cleared in three days while A-31 waits.**
+
+### Withheld
+
+A tokenised security URL, an originating IP address, customer names, every tune
+and datalog filename, and all amounts. **No attachment downloaded.**
+
+---
+
+## Next entry: OL-0123
