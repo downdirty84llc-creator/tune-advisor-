@@ -14012,4 +14012,93 @@ and datalog filename, and all amounts. **No attachment downloaded.**
 
 ---
 
-## Next entry: OL-0123
+## OL-0123 — 2026-11-24 daily command brief
+
+**Run 2026-11-24T10:51:46Z–10:54:44Z.** Fired 10:51:10Z against a 10:50Z
+schedule. Both times read from the clock (T-116). Class A: nothing sent,
+published, charged or changed; no Supabase tool called. **Brief:
+`docs/ops/briefs/2026-11-24-daily-brief.md`.**
+
+**Contract item 0:** `HEAD` equals origin at `13a4815`, no `src/`, clean, **109
+tracked files against the prompt's 28 — fifty-seventh run reporting the drift.**
+**No skeleton; twenty-seventh such judgement.**
+
+### This run's contribution: the backlog is mostly attention, not judgement
+
+**This brief has said for four days that about 69% of open work waits on a
+decision. True by status column, and it put the emphasis in the wrong place.**
+
+| Measure                          | Count   | Share of 208 open |
+| -------------------------------- | ------- | ----------------- |
+| Rows naming a **pending packet** | **51**  | 25%               |
+| Rows naming **no packet at all** | **157** | **75%**           |
+
+**Answering all fourteen packets clears at most 51 of 208 open rows.** The other
+157 have no decision pending: most are **Awaiting Owner with "A to report"**,
+which means the agent reported and nobody looked.
+
+**The Critical tier splits more sharply still. Of 37 Critical open rows, 21 name
+no packet, and seventeen of those twenty-one say "A to report".** So **of the
+thirty-seven most urgent items on this board, twenty-one are a reading list
+rather than a decision queue** — among them a credential phish 43 days unread
+(T-52), a secret-key cutoff that **passed on 2026-11-20** (T-171), **$699 of
+priced work never invoiced** (T-185), and a developer account closing
+**2026-12-06** (T-143).
+
+**This is the more tractable half and saying so is not softening the number.**
+178 rows are past due and that is bad. **But fourteen packets is the visible
+queue and it is the smaller one**, and a brief that leads with the packets
+invites the owner to spend judgement where attention would do.
+
+### A correction to yesterday's own arithmetic
+
+**Yesterday's brief said one delivered job carried an approved price and none
+was invoiced. It failed to cite T-185 — Critical, eight days past due, recording
+$699 of priced work never invoiced.**
+
+**$349 + $350 = $699 matches T-37's and T-64's prices exactly. That arithmetic
+is mine and not T-185's stated composition**, and it reconciles with T-221's
+separate finding that $350 is the largest single uninvoiced receivable. **The
+uninvoiced position is worse than yesterday implied**: $699 priced and
+uninvoiced, plus two delivered jobs with no price at all.
+
+**A row that is Critical and eight days past due should not need a fresh query
+to surface. It was in the register the whole time.**
+
+### One missing fact, ten rows, four platforms
+
+**T-164 is now the root of ten open rows** — T-100, T-106, T-161, T-164, T-191,
+T-197, T-213, T-231 and T-234, plus **T-241 from yesterday.** **Four separate
+platforms have now rejected DD84's address or demanded verification.** T-213
+reduced the question to one of two counties the owner has written to himself.
+
+### The lead needs nobody's permission
+
+**T-237 — the unread sign-in notice from a payment processor — is the
+highest-consequence item on the board and among the cheapest to resolve.** No
+conclusion is drawn either way; the point is that **nobody has read it**, and
+reading an email needs no approval. **It is placed above the pricing packet for
+that reason.**
+
+### Reads
+
+**Calendar answered and was empty** — zero events 2026-11-24 to 2026-12-02.
+**Third consecutive brief to report eight or nine days clear while two
+calibration jobs are in active revision.** **Shopify: all time 1, EXACT; since
+yesterday 0, EXACT** — #1001 is 32 days old.
+
+**The past-due share rose from 80% to 86% in one day**, not from new work but
+because 2026-11-23's fourteen dated rows rolled over. **Stating the cause
+matters: a six-point jump that looks like deterioration is a calendar turning
+over.**
+
+### Register
+
+**242 rows, unchanged in count by this run.** **178 of 208 open past due; 37
+Critical open; 27 Done, up two yesterday; fourteen packets pending, twelve of
+them decidable today.** **A-30 rose from 6 rows to 8** — every new money finding
+lands behind it.
+
+---
+
+## Next entry: OL-0124
