@@ -14289,4 +14289,120 @@ worth reading.
 
 ---
 
-## Next entry: OL-0125
+## OL-0125 — 2026-11-25 daily command brief
+
+**Run** 10:52:28Z–10:55:46Z, both read from the clock (T-116). Routine
+`/dd84-daily-brief`, Class A. **Nothing was sent, published, charged or
+changed.**
+
+**Checkout** `HEAD` = `origin/claude/claude-md-docs-cqvhy6` = `986516e`, no
+`src/`, clean, **111 tracked files against the prompt's 28 — fifty-ninth run
+reporting the drift** (A-10).
+
+**No skeleton.** Every input was already on the remote in today's intake
+(`986516e`, OL-0124). **No ordinal is claimed for that judgement either** — see
+OL-0124, where the record's skeleton counters were found to be two interleaved
+sequences under one phrase.
+
+**Output** `docs/ops/briefs/2026-11-25-daily-brief.md`. **No register row was
+changed by this run**; the intake 30 minutes earlier had already added
+T-243–T-253 and closed T-229 and T-240.
+
+### The calculation this brief adds
+
+**DD84's calendar is empty for eight days and six externally-imposed deadlines
+fall in the next fourteen**, each set by a counterparty: the bank holiday
+(2026-11-26, T-242), **a $1k–$10k grant closing 2026-11-30 (T-194)**, an 8%
+building-vendor increase with its lock-in window shutting 2026-12-01 (T-248), a
+deploy-credit cycle resetting 2026-12-02 (T-154), a developer account closing
+for non-use 2026-12-06 (T-143) and third-party access going default-on on an ads
+platform 2026-12-09 (T-250). Two further out: trader status 2027-02-01 (T-141)
+and the paused database's 90-day window closing about 2027-02-22 (T-245).
+
+**Not one of them is DD84 setting a date.** The business is not running a
+schedule; it is absorbing other people's. **That is the sharpest thing the
+register says today** and it is a different observation from the backlog
+arithmetic this brief has carried all week.
+
+**T-194 is singled out because it is the only clock on the board that brings
+money in** rather than letting money or access leak out, it is five days away,
+and **its eligibility cannot be verified from this session** — T-98's
+allowed-hosts list is empty and A-27 is the packet that would change that.
+
+### A security cluster of five, and not one needs a decision
+
+**T-52 (+44d, a credential phish never read, on a platform DD84 pays for ads),
+T-171 (+6d, a processor's secret keys unreadable since 2026-11-20), T-237 (+1d,
+a sign-in notice unread on day two), T-243 (due today, a second phishing
+attempt) and T-247 (due today, a third unread sign-in notice).** All five
+Critical, all five open, **none naming an approval packet, every one a read.**
+
+**Two facts were placed side by side and deliberately not joined**: the first
+phish has been unread for 44 days and a second pretext attempt arrived
+yesterday. **Whether the first going unanswered invited the second is not
+establishable from this record.** What is certain is that the account is live on
+both platforms named.
+
+### Reads
+
+**Calendar answered live at 10:53Z and was empty** — zero events 2026-11-25 to
+2026-12-03, **the fourth consecutive brief to report that** while a calibration
+job took two revisions in 24 hours.
+
+**Shopify read live at 10:53Z: 60 days show 1 order, $550 and 1 customer; the
+last four days each read zero sales and zero orders, exact.** Order #1001 is
+**33 days old** and is still the only storefront order. **Revenue figures are
+reportable in full under A-13.**
+
+**The leak gate flagged the decimal form of that zero as a possible account
+balance.** It is a revenue figure, and **A-19's line runs between what DD84
+earned and what sits in its account** — a day's sales are the former, so A-13
+permits it in full. **The wording was changed rather than the pattern**, for the
+sixth time. The decimal form already appears seven times in this log's committed
+history, all revenue or spend zeros, **but every one predates this pattern
+class, so today is the first time the gate has met the case.** It will fire on
+every future zero-revenue day. **Keep rewording; do not weaken the class.**
+
+### Customer position
+
+**Three jobs have work in a customer's hands, one has an approved price, none
+has been invoiced.** T-185 records $699 of priced work with no invoice, nine
+days past due; T-221 records $350 of that as the largest single overdue
+receivable. T-37 is still the mirror image — priced and undelivered.
+
+**Today added a third shape: T-249, a request DD84 can neither price nor
+answer**, because no catalogue rung covers it and the thread holds no address
+for the customer. **A-21 row 1 now gates five customer rows** — T-37, T-206,
+T-223, T-224, T-249 — and nine rows in all.
+
+### Approval given, nothing done
+
+**T-11 at +97 days and T-13 at +90 days, both Critical, both already approved
+(A-05, A-06); T-64 at +42 days with A-21 approved.** **The gate is open on all
+three and nobody has walked through it.** These are named separately from the
+packet queue because they are not waiting on a decision at all.
+
+### Register
+
+**253 rows, unchanged in count by this run.** **190 of 217 open past due (87%,
+up one point); 41 Critical open, up four on yesterday; 28 Done, up one; fifteen
+packets pending, thirteen decidable today.** **A-30 fell from 8 rows to 7 — not
+because it was decided but because T-240 closed when its premise was found
+false. A packet shrinking because a row was wrong is not progress.**
+
+**52 of the 217 open rows name a pending packet and 165 name none.** **Of the 41
+Critical open rows, 24 name no packet and 18 of those read "A to report".**
+**Yesterday's diagnosis holds on a second day's data**, and §5's security
+cluster is its clearest instance.
+
+### Quiet or not
+
+**The trading is quiet and now measurably so: four consecutive days of zero
+sales, exact, one order in 33 days, no appointments in eight.** **The day is not
+quiet**: two Critical rows due today, seven tomorrow, a sales channel at zero, a
+90-day recovery clock started, an unread phishing attempt in a promoted inbox
+position and a grant closing in five days.
+
+---
+
+## Next entry: OL-0126
