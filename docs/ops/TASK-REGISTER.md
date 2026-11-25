@@ -256,13 +256,13 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-220 | The leak gate passed a declined-payment amount; A-19 is the rule it misses                    | ops        | **High**     | In Verification          | A     | A to diagnose                | 2026-11-24   |
 | T-221 | The largest overdue receivable, $350 on T-64, has never been invoiced                         | finance    | **High**     | **Awaiting Owner**       | Owner | **T-64**, A-21               | 2026-11-24   |
 | T-222 | A personal outflow was confirmed in the review week; category undecided                       | finance    | Normal       | **Awaiting Owner**       | Owner | **A-32**                     | 2026-11-24   |
-| T-223 | A 2nd live job, a 2016 Ram Stage 2, was delivered 11-21 and was never on this register        | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1               | 2026-11-24   |
+| T-223 | The live Ram job hit DRAFT 6 in 4 days and full-load logs; still unpriced                     | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1               | 2026-11-26   |
 | T-224 | T-206 is delivered, not a lead: calibration and a revision sent 11-20 and 11-21               | sales      | **Critical** | **Awaiting Owner**       | Owner | **A-21** row 1               | 2026-11-24   |
 | T-225 | Model year conflict: the register says 2014, the delivered calibration names 15               | sales      | **Critical** | **Awaiting Owner**       | Owner | A to verify                  | 2026-11-23   |
 | T-226 | A customer message from 11-21 23:02Z is unread after a promise to follow up                   | sales      | **Critical** | **Done**                 | Owner | answered 11-23               | 2026-11-23   |
 | T-227 | Seven consecutive vendor failures; the 5th to 7th landed 11-20 to 11-22                       | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-30**, T-211              | 2026-11-24   |
 | T-228 | The draft backlog grew to 52 while A-31 waits; the 11-16 batch of 33 is untouched             | ops        | **High**     | **Awaiting Owner**       | Owner | **A-31**                     | 2026-11-24   |
-| T-229 | Supabase dd84-ai-tuning pause warning fired 11-23; 90 days to unpause after it                | ops        | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-24   |
+| T-229 | ~~Supabase pause warning~~ -> PAUSED 11-24; superseded by T-245                               | ops        | **Critical** | Done                     | Owner | **T-245**                    | 2026-11-24   |
 | T-230 | A platform bill was PAID 11-21 — the first outflow this month that completed                  | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30**                     | 2026-11-24   |
 | T-231 | A merchant platform now blocks on the business address T-164 says is absent                   | ops        | **High**     | **Awaiting Owner**       | Owner | **T-164**, T-213             | 2026-11-24   |
 | T-232 | A class-action settlement offers a payment if a claim is filed; deadline unread               | finance    | Normal       | **Done**                 | Owner | claim filed                  | 2026-11-24   |
@@ -270,26 +270,39 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-234 | SBA drought EIDL: 3 declarations, 1 expired, deadlines differ; county gates it                | finance    | **High**     | **Awaiting Owner**       | Owner | **T-164** first              | 2026-11-30   |
 | T-235 | Georgia's Own grant looks nonprofit-only; last week's #2 should be withdrawn                  | finance    | **High**     | In Verification          | A     | answers T-194                | 2026-11-30   |
 | T-236 | Quick Start offers free TCSG training and names automotive; no size threshold                 | ops        | Normal       | Planned                  | Agent | A to read                    | 2026-12-07   |
-| T-237 | A processor reports an unrecognised device sign-in 11-23 21:05Z, still unread                 | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-24   |
+| T-237 | A processor sign-in notice, STILL UNREAD on day 2; see also T-247                             | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-24   |
 | T-238 | category:primary matches nothing over 7 days; query 1 does not find customers                 | ops        | **Critical** | **Awaiting Owner**       | Owner | fix proposed                 | 2026-11-26   |
 | T-239 | A tooling purchase is the first observable credits cost; input to T-186                       | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30**                     | 2026-11-26   |
-| T-240 | The 7-times-failed vendor is now following up in person, not by robot                         | finance    | **High**     | **Awaiting Owner**       | Owner | **A-30**, T-227              | 2026-11-26   |
+| T-240 | ~~The 7-times-failed vendor is chasing in person~~ -> FALSE, see T-251                        | finance    | **High**     | No Action (accepted)     | Owner | **T-251**                    | 2026-11-26   |
 | T-241 | A marketplace seller application was rejected; verification demanded                          | sales      | **High**     | **Awaiting Owner**       | Owner | **T-231**, T-164             | 2026-11-26   |
 | T-242 | 2026-11-26 is a bank holiday; deposits may be delayed and an outflow is today                 | finance    | **High**     | **Awaiting Owner**       | Owner | **T-202**                    | 2026-11-24   |
+| T-243 | A 2nd phishing attempt, on a lookalike storefront domain; Gmail filed it as important         | compliance | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-25   |
+| T-244 | Merry Market's Google free listings fell 100%, 20 items to 0, in 6 hours on 11-24             | sales      | **Critical** | **Awaiting Owner**       | Owner | A to report                  | 2026-11-26   |
+| T-245 | Supabase dd84-ai-tuning is PAUSED in fact; 90-day unpause window closes ~2027-02-22           | ops        | **Critical** | **Awaiting Owner**       | Owner | **T-229**                    | 2026-11-27   |
+| T-246 | Two scanned identity documents in the inbox, OCR'd identifiers in the subject lines           | compliance | **Critical** | **Awaiting Approval**    | Owner | **A-33**                     | 2026-11-26   |
+| T-247 | A 3rd unread sign-in notice in 25h, this one a Windows device on the Google account           | compliance | **Critical** | **Awaiting Owner**       | Owner | **T-237**, T-171             | 2026-11-25   |
+| T-248 | A building vendor's 8% rise lands 2026-12-01, with a lock-in window before it                 | real est.  | **High**     | **Awaiting Owner**       | Owner | **T-164**                    | 2026-12-01   |
+| T-249 | A returning customer wants a variant the vendor declined; no rung, no recipient               | sales      | **High**     | **Awaiting Owner**       | Owner | **A-21** row 1               | 2026-11-27   |
+| T-250 | Ads-platform 3rd-party access goes default-on 2026-12-09; a settings decision                 | compliance | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-12-09   |
+| T-251 | T-240 struck: the vendor mail is a win-back after an unsubscribe, not a chase                 | finance    | **High**     | **Awaiting Owner**       | Owner | **T-240**, T-227             | 2026-11-27   |
+| T-252 | T-94 already priced credits in October, so 11-24's "first cost" claim was wrong               | finance    | Normal       | **In Verification**      | Agent | **T-94**, T-186              | 2026-11-26   |
+| T-253 | Skeleton ordinals are two counters under one name; none is derivable                          | ops        | Normal       | **In Verification**      | Agent | **T-208**                    | 2026-11-27   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
-Counts: **27 Done** · **5 No Action** · **2 Accepted Risk** · 23 In Verification
-· 4 In Progress · **6 Awaiting Approval** · **131 Awaiting Owner** · 7 Blocked ·
-35 Planned · 2 Backlog. **242 tasks.** Recounted mechanically with
+Counts: **28 Done** · **6 No Action** · **2 Accepted Risk** · 25 In Verification
+· 4 In Progress · **7 Awaiting Approval** · **137 Awaiting Owner** · 7 Blocked ·
+35 Planned · 2 Backlog. **253 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum —
-last **2026-11-24** (**T-237–T-242 added; T-226 and T-232 closed Done on
-evidence — the owner answered the waiting customer and filed the claim form**).
-**131 of the 242 rows are Awaiting Owner**, **178 of the 208 open rows are past
-due**, and **thirty-seven rows are Critical and open.** **Fourteen approval
-packets pending.** **By status 144 of the 208 open rows wait on a decision.**
+last **2026-11-25** (**T-243–T-253 added; T-229 closed Done, superseded by the
+event it warned of; T-240 closed No Action, its premise read and found false**).
+**137 of the 253 rows are Awaiting Owner**, **190 of the 217 open rows are past
+due**, and **forty-one rows are Critical and open.** **Fifteen approval packets
+pending.** **By status 151 of the 217 open rows wait on a decision — but only 52
+name a packet, and 165 name none.** **Of the 41 Critical open rows, 24 name no
+packet and 18 of those read "A to report".**
 
 **T-206 is the best-qualified enquiry this record has ever carried, and it is
 sitting unread.** A prospect sent **a 2014 Chevrolet Silverado High Country, 5.3

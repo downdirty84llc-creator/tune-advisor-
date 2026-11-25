@@ -58,6 +58,7 @@ and actual result.
 | A-30 | May vendor and lender outflow amounts be published here?                    | G     | **Pending**                         | T-183, T-109, T-46                 |
 | A-31 | What happens to the 51 unsent drafts?                                       | B + C | **Pending**                         | T-210, T-215, T-42                 |
 | A-32 | May personal, non-business outflows be recorded here?                       | G     | **Pending**                         | T-222, T-137, A-25                 |
+| A-33 | How are identity documents arriving in the inbox handled?                   | G     | **Pending**                         | T-246, A-19, A-13                  |
 
 **Ten packets are with the owner: A-07, A-10, A-17, A-22, A-23, A-24, A-25,
 A-26, A-27 and A-28.** **A-27 was raised on 2026-11-10 by the owed Monday
@@ -92,6 +93,16 @@ reading of A-19 that was wrong, corrected its own two files within the hour, and
 added to this board in the same write as its packet** — the first time since the
 2026-10-12 note that a packet and its row have landed together, which is what
 the thirteen counts below were asking for.
+
+> **Correction, 2026-11-25.** The paragraph above was written on 2026-11-10 and
+> was never updated as packets were appended. **A-26 has since been answered,
+> and A-29, A-30, A-31, A-32 and A-33 have been raised, so fifteen are pending,
+> not ten: A-07, A-10, A-17, A-21, A-22, A-23, A-24, A-25, A-27, A-28, A-29,
+> A-30, A-31, A-32 and A-33.** The count is left wrong above and corrected here
+> rather than edited in place, because the paragraph's account of why A-26 and
+> A-27 were raised is still worth reading. **A-22's premise is recorded false
+> and it should be closed rather than answered; A-10 cannot be answered from
+> inside a session at all.**
 
 > **A-28 was raised on 2026-11-09 and its row was written in the same edit** —
 > the second time since the 2026-10-12 note that a packet and its row have
@@ -3416,6 +3427,97 @@ spending.**
 written rule instead of raising this packet again; no personal amount or vendor
 appears in any file; and the business/personal evidence that A-25 and T-137 turn
 on is still visible in the record.
+
+**APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
+
+**Response:** _awaiting owner_
+
+**Actual result:** _not executed_
+
+---
+
+## A-33 — How should government identity documents arriving in the business inbox be handled?
+
+- **Decision requested** — A standing rule for what happens when a scanned
+  government identity document arrives at the business email address: what the
+  agent may record about it, and what should be done with the message itself.
+- **Business objective** — Keep identity documents out of a world-readable
+  repository and out of an inbox that is read by an automated routine every
+  weekday, without losing the operational fact that they arrived.
+- **Source and context** — `/dd84-inbox-intake`, 2026-11-25. Two scanned
+  government identity documents arrived at the business address on
+  2026-11-24T10:42Z, threads `1a20d26499a13de4` and `1a20d25980f15895`. Both
+  have been read in the mailbox. **This run recorded that they exist, withheld
+  every identifier, downloaded nothing, and raised this packet** — the same
+  sequence A-19 followed when the intake first met a bank balance.
+- **Why A-13 does not reach it** — A-13 (owner, 2026-10-08) accepted that this
+  repository is public and that **DD84's revenue figures and system
+  identifiers** may appear in it. It says nothing about identity documents. §5
+  separately forbids customer names, addresses, phone numbers and payment
+  details. **A licence number and a date of birth are at least as sensitive as
+  the things §5 already excludes, and CLAUDE.md says a new category needs its
+  own decision rather than an agent's judgement.**
+- **The exposure is not the attachments** — The sending application **put the
+  OCR'd document text into the subject line.** A licence number and a date of
+  birth are therefore visible in every inbox list view, every search result and
+  every notification preview, **without anyone opening an attachment.** Any
+  remedy that only moves the files misses this.
+- **On whose documents they are** — **Not established, and deliberately not
+  assumed.** The sending account's display name and address local part match the
+  owner's own name, which makes the owner sending himself his own documents the
+  natural reading, and the four pending verification demands (T-164, T-197,
+  T-231, T-241) the natural purpose. **Spec §9 permits a merge only on verified
+  identity and a display name is not verification.** The rule requested here
+  should hold whoever sent them.
+
+### Recommended plan
+
+**Option A — record the shape, never the content, and move the documents out.**
+By analogy to A-19 Option C: the record may say that an identity document
+arrived, on what date, and **with the thread ID**, and may say nothing else. The
+owner then moves the two messages to secure storage outside email and deletes
+them from the mailbox, which also removes the subject-line exposure.
+
+**This is the recommendation.** It matches a rule the owner has already accepted
+in a neighbouring case, it needs no new vocabulary, and it is the only option
+that addresses the subject lines.
+
+### Alternatives
+
+- **Option B — record nothing at all.** The intake passes over identity
+  documents in silence. **Rejected as the recommendation**: a routine that
+  silently skips a class of message cannot be audited, and the arrival of
+  identity documents is itself an operational fact that bears on four open
+  verification rows.
+- **Option C — record the shape and leave the messages where they are.**
+  Cheapest, and it keeps the owner's own access simple. **It leaves the licence
+  number in the subject line of a live mailbox**, which is the part of this
+  finding that is hardest to undo later.
+- **Option D — a labelling rule only.** Proposed in the brief as a stopgap, not
+  as an answer. Labels are Class B with no approved taxonomy, and a label does
+  not reduce an exposure.
+
+**Cost and cash impact** — None. No spend under any option.
+
+**Risks and safeguards** — Under A: the documents must land somewhere the owner
+can actually retrieve them before the mailbox copy goes, or a verification
+submission could be blocked by DD84's own tidying. Safeguard: **the thread ID is
+recorded first, so the message can be found again whatever is done to it.**
+Under C: the exposure persists and grows with every search of that mailbox.
+
+**Systems affected** — Gmail (deleting or moving a message is Class B and is the
+owner's to do, not this routine's). `docs/ops/` recording rules.
+
+**Customer and public impact** — If the documents are a third party's rather
+than the owner's, this is a third party's identity sitting in a business inbox
+and the duty is higher, not lower. **The public impact is the reason for the
+packet: this repository is world-readable and nothing about these documents has
+been written into it beyond their existence.**
+
+**Success test** — A future intake meeting an identity document applies a
+written rule instead of raising this packet again; no identifier from either
+document appears in any file in this repository, the append-only log included;
+and the two threads are still findable by the IDs this run recorded.
 
 **APPROVE / APPROVE WITH CHANGES / DEFER / REJECT**
 

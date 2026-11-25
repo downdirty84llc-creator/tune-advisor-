@@ -14101,4 +14101,192 @@ lands behind it.
 
 ---
 
-## Next entry: OL-0124
+## OL-0124 — 2026-11-25 inbox and lead intake
+
+**Run** 10:22:50Z–10:44:30Z, both read from the clock (T-116). Routine
+`/dd84-inbox-intake`, Class A. **Nothing was sent, forwarded, replied to,
+labelled, archived, marked or downloaded.** Window `newer_than:1d`, with two
+named diagnostic widenings to two days.
+
+**Checkout** `HEAD` = `origin/claude/claude-md-docs-cqvhy6` = `3160285`, no
+`src/`, clean, **110 tracked files against the prompt's 28 — fifty-eighth run
+reporting the drift** (A-10).
+
+**Skeleton** committed at **`7e4c898`** under OL-0050. **A worker restart landed
+after it.** The commit held and the checkout came back intact at 111 tracked
+files. The test remains the size of what a restart would destroy: this run had
+already reconstructed a nineteen-message calibration thread and read nine
+threads in full.
+
+**No ordinal is claimed for this skeleton, and the reason is a defect in this
+record.** This run was about to write "twenty-eighth application of OL-0050"
+from memory. **Checking first showed the ordinal was already taken** — an
+earlier entry in this file reads "`ba318f7` — OL-0050's repair, twenty-eighth
+application" — and that **the ordinals in this record do not form one sequence
+at all**: the highest is "thirty-fourth" while the most recent, yesterday's
+intake, says "twenty-sixth". **Two counters have been interleaved under one
+phrase for weeks.** An ordinal that cannot be derived is a number without a
+source, which §5 calls a defect, so this run states the fact and omits the
+count. **T-253.**
+
+**Output** `docs/ops/briefs/2026-11-25-inbox-intake.md`. **39 threads
+classified: 13 actionable, 3 mapped to existing rows unchanged, 23 no-action.
+New leads 0. New drafts 0.**
+
+### The live job is the finding
+
+Thread `1a1fc4063565f71a` holds nineteen messages and reconstructing it gave the
+first end-to-end picture of a DD84 delivery: **DRAFT 1 through DRAFT 6 in four
+days, each against a datalog the customer returned**, the sixth sent
+**2026-11-25T01:08:23Z** against a full-load log returned at 00:36:31Z. **Two
+revisions inside the last 24 hours. A third party relays every revision, so two
+people's time is consumed per cycle.** The job has **no price and no invoice**.
+
+**T-64 is the comparable: 7 revisions, delivered, priced at $350 with A-21
+approved, still uninvoiced.** This job is at six revisions in four days.
+**Picking a rung is Class E and was not done.** A-21 row 1 now gates nine rows.
+
+### Three unread sign-in notices, and the third is a different device class
+
+**T-237's notice was confirmed still `UNREAD` on its second day**, past due. **A
+Google-account notice reporting "a new sign-in on Windows" (`1a20d1a256cbfdb1`,
+2026-11-24T10:29:05Z) is also unread**, 13 hours after the Android one. **No
+conclusion either way: a Windows sign-in is ordinary for a business whose
+calibration software is Windows-only**, and the owner was tuning at 01:08 this
+morning. **What is certain is that three notices across three platforms are
+unread.** Withheld: the originating IP and the tokenised action links in both
+notices — each is a live single-click security action and this repository is
+world-readable. **T-247.**
+
+### A phishing attempt aimed at the storefront
+
+`1a20e57c11cfe22e`, 2026-11-24T15:51:16Z, unread. A lookalike domain, no store
+name, no order number, no link — **the reply is the payload.** **Gmail marked it
+IMPORTANT and filed it as personal.** The correct action is silence, so **no
+draft was written and that is the finding, not an omission.** **T-243.**
+
+### A sales channel went to zero, and the cause is not readable from here
+
+The Merchant Center account named for DD84's second storefront lost **100% of
+its active items, 20 to 0, between 2026-11-24 13:00 and 19:00 EST**
+(`1a2102b9147053cf`). **The connected Shopify store was read live at 10:42Z and
+holds 102 products, all but one of the first 25 active and published** — so
+nothing on that store's side obviously explains it. **The account is named for
+the other storefront and this session has no connector to it. Not available this
+run; not estimated.** **T-241 and T-231 are recorded beside it and the link is
+not asserted — adjacent timestamps are not a mechanism.** **T-244.**
+
+### The database is paused in fact, and it vindicates an earlier correction
+
+`1a20d276d1318ecd`, 2026-11-24T10:43:37Z. T-229 warned; **this is the event.**
+The vendor states the cause: **automatic pause of free-tier projects after seven
+days of inactivity.** **90 days to unpause, closing on or about 2027-02-22**,
+after which the project cannot be restored **but the data stays downloadable** —
+materially softer than "lost", and the record should say so. **OL-0119 struck
+out this record's earlier reason for not opening the project and replaced it
+with exactly this mechanism. The vendor's own notice now confirms the corrected
+reasoning was right.** Project and organisation reference strings withheld.
+**T-245**, superseding T-229, which is closed Done.
+
+### Identity documents, and a packet rather than a judgement call
+
+Two scanned government identity documents arrived at the business address
+(`1a20d26499a13de4`, `1a20d25980f15895`, 2026-11-24T10:42Z). **Every identifier
+is withheld and nothing was downloaded.** **The exposure is not the attachments:
+the sending application put the OCR'd document text into the subject line**, so
+a licence number and a date of birth are visible in every list view and search
+result without opening anything.
+
+**Whose they are is not established.** The sender's display name and address
+local part match the owner's own name, which makes his own documents the natural
+reading and the four pending verification demands the natural purpose, **but §9
+permits a merge only on verified identity and a display name is not
+verification.**
+
+**A-13 does not reach this category**, so per CLAUDE.md it is a packet. **A-33
+raised**, recommending A-19 Option C's shape — record that it arrived, with the
+thread ID, and nothing else. **T-246.**
+
+### Two corrections, both to this record's own recent claims
+
+**T-240's premise is false and the row is closed No Action.** The 11-24 intake
+read a vendor mail as a payment chase "from a named person rather than a billing
+robot". **Reading the body shows it is a win-back note from the vendor's chief
+operating officer, opening by saying DD84 recently unsubscribed and asking what
+was lacking.** It is not about the payment at all.
+
+**The correction carries a fact worth more than the one it replaces: DD84
+appears to have left that vendor.** Whether "unsubscribed" means the service was
+cancelled or only the mailing list **is not established** — and it matters,
+because **a charge failing seven times against a service already quit is not a
+collections risk.** T-227 should be re-read. **T-251.**
+
+**"The first observable parts-or-credits purchase anywhere in this record" was
+wrong.** **T-94 is closed Done and its title records two credit purchases with
+amounts, on 2026-10-24 and 2026-10-30, at a stated per-credit price.** The claim
+that survives is T-186's narrower one: credits are bought and recorded, but **no
+credit cost is attributed to any job**, so margin still cannot be computed.
+**T-252.**
+
+### A customer request no row has ever carried
+
+The "Credits" thread was read — **three days after this record named it a gap
+and promised it a read.** It carries a **returning customer** asking for a
+variant of a tune he already has, **a vendor declining to build it** ("We have
+not made this type of mod") and **handing the work back to DD84**. **No register
+row mentions this customer, this vehicle or this request.**
+
+Three consequences, none settled here: **it is not in the approved catalogue**,
+so quoting is Class E; **it converts a pass-through credit cost into DD84
+hours**, which is the hole T-186 describes; and it deserves a compliance read
+before a commercial one. **No draft was written for a concrete reason: the
+customer's address is not in the thread** — it runs between DD84 and the vendor
+and the customer is described, never copied. **There is no recipient.** Both
+vehicle identification numbers and the customer-supplied link withheld; the link
+was not followed. **T-249.**
+
+### Money
+
+**Nothing came in.** The debit card is **off again** (`1a2100696b614584`,
+2026-11-25T00:06:36Z) — **and per T-184 the matching event was looked for rather
+than half a pair reported: there is no later "turned on".** Over two days the
+sequence is **on → off → off**, two "off" notices with no "on" between them,
+which may be two cards or a duplicate. **Not established.**
+
+**No bank notice of T-202's second outflow**, which fell 2026-11-24; a full
+two-day sweep of the bank's alert address returns three card events and four
+personal stock alerts and nothing account-level. **That is an absence of notice,
+not evidence the outflow did not happen.**
+
+**A building vendor announced an 8% increase effective 2026-12-01** with a
+lock-in window before that date and a warning of another after
+(`1a210cb19bb24468`). **A second steel-building vendor in this record**; the
+existing contact is a different firm. Two attachments not downloaded. **A dated
+six-day decision landing on the facility programme T-164 gates.** **T-248.**
+Amounts withheld under A-19 and A-30; **the 8% and the "20 to 0" are not cash
+figures and are published in full.**
+
+### Drafts
+
+**52, paginated to exhaustion (50 + 2). The newest is still 2026-11-21T16:52:10Z
+— nothing created or cleared in four days.** **A-31 unanswered.** No draft was
+created in the mail account this run.
+
+### Register
+
+**253 rows. T-243–T-253 added. T-229 closed Done, superseded by the event it
+warned of; T-240 closed No Action, its premise read and found false.** **190 of
+217 open rows past due (88%, up from 86%); 41 Critical open; 28 Done; fifteen
+packets pending.** **A-21 rose from 8 rows to 9, A-30 fell from 8 to 7 as T-240
+closed, A-33 opens at 1.** **151 of 217 open rows wait on a decision by status
+but only 52 name a packet — 165 name none, and of the 41 Critical open rows 24
+name no packet with 18 reading "A to report".**
+
+**A stale sentence in `APPROVALS.md` claiming ten pending packets has been
+corrected in place-adjacent form** — a dated note beneath it rather than an
+edit, because the paragraph's account of why A-26 and A-27 were raised is still
+worth reading.
+
+---
+
+## Next entry: OL-0125
