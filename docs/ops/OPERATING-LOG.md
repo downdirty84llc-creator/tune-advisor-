@@ -14405,4 +14405,168 @@ position and a grant closing in five days.
 
 ---
 
-## Next entry: OL-0126
+## OL-0126 — 2026-11-26 inbox and lead intake
+
+**Run** 10:21:01Z–10:26:20Z, both read from the clock (T-116). Routine
+`/dd84-inbox-intake`, Class A. **Nothing was sent, forwarded, replied to,
+labelled, archived, marked or downloaded.** Window `newer_than:1d`, with three
+named diagnostic widenings.
+
+**Checkout** `HEAD` = `origin/claude/claude-md-docs-cqvhy6` = `0e79116`, no
+`src/`, clean, **112 tracked files against the prompt's 28 — sixtieth run
+reporting the drift** (A-10).
+
+**No skeleton.** The run's unique work was nine direct thread reads and one
+methodological finding, and the write-up was short enough that the exposure was
+small. **Recorded as a judgement, with no ordinal claimed** — OL-0124 explains
+why ordinals for this are no longer derivable.
+
+**Output** `docs/ops/briefs/2026-11-26-inbox-intake.md`. **46 threads
+classified: 3 actionable, 14 mapped and verified unchanged, 29 no-action. New
+leads 0. New drafts 0.** The window sweep returned 27; the two diagnostic
+widenings added 9 the window did not reach; **10 further threads were opened one
+at a time to verify read state.** 27 + 3 + 6 + 10 = 46, and 3 + 14 + 29 = 46.
+
+**Two header figures were corrected before this entry was committed.** A finish
+time had been drafted ahead of the clock — **the exact defect T-116 records, and
+the second run in two days to catch it in its own draft** — and the thread count
+had been written against the window sweep alone, omitting the diagnostic
+widenings and the ten direct reads. Both were recomputed and reconciled against
+their parts.
+
+### A quiet mailbox, and that is a real result
+
+**Three of the six queries returned zero**, including `is:important` (six
+yesterday) and `in:sent` (**the owner sent nothing in 24 hours**). Query 6 still
+returned 27 threads, so the mailbox was read correctly and the zeros are real.
+**No customer, vendor or agency wrote.**
+
+### The run's real finding: an unread list that omits unread mail
+
+**This run was one step from publishing a fabricated completion.**
+
+`is:unread newer_than:4d` returned **exactly 50 threads** against a
+`resultCountEstimate` of **207**. Four threads this register tracks — the
+processor sign-in, the Google sign-in alert, the database pause notice and the
+building vendor's lock-in offer — **were absent from that list**, which reads as
+"they have been read".
+
+**All four are still UNREAD.** Two faults compounded:
+
+1. **A full page is not the window.** Fifty results is exactly the page size, so
+   the page was filled rather than exhausted — the command file's own warning
+   about `in:inbox`, and the same family as **T-208**, where a
+   `resultCountEstimate` of 201 was read as a count of about fifteen threads.
+2. **The pagination attempt failed silently.** `pageToken: "1"` was a guess
+   rather than a token the API had issued. **It did not error; it returned the
+   identical fifty threads.** A run that trusted it would have seen one page
+   twice and called it two.
+
+**What settled it was reading each thread's labels directly.** **The rule:
+absence from an `is:unread` page is not evidence of a read; only a direct read
+is.** Had this run reported the security notice as read, it would have closed
+the highest-consequence row on the board on false evidence. **A page token must
+come from the API, never from arithmetic** — the draft count below used a real
+one. **T-254.**
+
+### Nothing has been read
+
+**Ten tracked threads verified `UNREAD` one at a time**, four of them Critical:
+the processor sign-in and **PayPal's device prompt on day three** — the second
+processor is now identified from its sender address rather than described — the
+Google Windows sign-in and the database pause notice on day two, the phishing
+attempt, the channel drop, the 8% lock-in offer, the access change, the vendor
+win-back and the credits purchase.
+
+**T-248 is the one with a clock: the 8% increase lands 2026-12-01, five days
+out, and the message offering to lock the price first has not been opened.**
+Gmail filed it under promotions, **which is how a dated commercial decision ends
+up looking like marketing.**
+
+### The live job went silent
+
+**The Ram thread read directly: still nineteen messages, still DRAFT 6 of
+2026-11-25T01:08:23Z. Nothing in either direction for 33 hours**, after six
+revisions in four days and two in the final twenty-four.
+
+**No conclusion about why.** A customer testing a calibration over a holiday
+week is ordinary and today is a bank holiday; it is also what a stall looks
+like. **What is certain is that work in a customer's hands is still unpriced and
+uninvoiced.** **T-255.**
+
+### Money
+
+**The card toggled again and both halves are on the record this time: on at
+2026-11-25T22:44:57Z, off at 22:47:46Z — two minutes forty-nine seconds.** Both
+unread. **Per T-184 the pair was looked for rather than half of it reported.**
+**T-104 records this as programmatic in 60-second windows, hourly; a 2m49s
+window is the same behaviour at a different interval**, so it is evidence for
+T-104, not a new fault. T-205 retitled; no new row.
+
+**Yesterday's brief said the card was off with no later "on". That was correct
+on what was readable at 10:53Z — the "on" landed at 22:44Z, eleven hours after
+the run. Today supersedes that reading rather than correcting it**, and the
+distinction is worth keeping: a statement true on the evidence available is not
+an error.
+
+**Nothing came in. No account-level notice appeared** in the two-day bank sweep
+— an absence of notice, not evidence of no movement.
+
+### Drafts
+
+**52, paginated to exhaustion (50 + 2) with an API-issued token. The newest is
+still 2026-11-21T16:52:10Z — nothing created or cleared in five days.** **A-31
+unanswered.**
+
+### The bank's name, and an honest limit
+
+**The verification pass caught DD84's bank by name inside a query string this
+run had written into its own brief.** **It is not a new category and A-13
+reaches it** — the bank is named in the 2026-10-08 intake, which is part of what
+the owner was shown when he accepted that this repository is public. **But two
+credential-phishing attempts are now on record, the second on 2026-11-24, and
+naming a specific business's bank in a world-readable file raises the quality of
+the next pretext against it.** Reducing exposure needs no approval, so the query
+is described rather than quoted.
+
+**What that does not achieve, and the record should say so rather than imply a
+protection it has not delivered: the name is already in at least seventeen
+committed files here, including this log in twelve places, the approvals file
+and three register rows. Today's wording retracts none of it, and nothing a
+session does can un-publish it.** The change is only a decision to stop adding
+more. **T-256**, raised as a row rather than a packet, because A-13 already
+settled the permission question — what is open is whether the owner cares, and
+he may reasonably not.
+
+### A correction to yesterday's packet arithmetic
+
+**Yesterday's brief and log said 52 of 217 open rows name a pending packet, and
+that answering all fifteen packets would clear at most 52 rows.** Both figures
+came from matching any `A-NN` in the dependency column. **That pattern also
+matches packets the owner has already answered** — A-03, A-05, A-06, A-08, A-13,
+A-15, A-16, A-19 and A-26 among them.
+
+**Counting only packets still pending: 42 of 221 open rows name one, and 179
+name none.** So **answering every pending packet clears at most 42 rows, not
+52**, and the no-decision half of the backlog is **larger** than reported rather
+than smaller. **Of the 42 Critical open rows, 28 name no pending packet —
+not 25.**
+
+**The direction of the error matters: it flattered the packet queue**, making
+the answerable half look bigger than it is and the reading-list half look
+smaller. **Same family as T-208 and T-254 — a pattern that measured something
+adjacent to what was claimed.** **T-257.**
+
+### Register
+
+**257 rows. T-254, T-255, T-256 and T-257 added; T-237, T-205, T-223 and T-248
+retitled against directly verified mail state.** **192 of 221 open rows past due
+(87%); 42 Critical open; 28 Done; fifteen packets pending.** **A-21 rose from 9
+rows to 10.** **153 of 221 open rows wait on a decision by status, 42 name a
+pending packet and 179 name none, and of the 42 Critical open rows 28 name no
+pending packet with 18 reading "A to report".** IDs were checked for duplicates
+as well as the buckets against their sum.
+
+---
+
+## Next entry: OL-0127
