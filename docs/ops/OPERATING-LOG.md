@@ -14695,4 +14695,110 @@ against their sum.
 
 ---
 
-## Next entry: OL-0128
+## OL-0128 — 2026-11-27 daily command brief
+
+**Run** 10:51:09Z–10:54:30Z, both read from the clock (T-116). Routine
+`/dd84-daily-brief`, Class A. **Nothing was sent, published, charged or
+changed.**
+
+**Checkout** `HEAD` = `origin/claude/claude-md-docs-cqvhy6` = `f34cad2`, no
+`src/`, clean, **114 tracked files against the prompt's 28 — sixty-third run
+reporting the drift** (A-10).
+
+**Skeleton committed at `8be111b` — the first this routine has ever written.**
+The standing judgement was that the daily brief needs none, because its inputs
+are already on the remote in the morning's intake. **Yesterday that judgement
+cost the whole run** (T-259): a restart ended the turn after the calendar read
+and before anything was written. **The reasoning covered inputs and not output —
+the brief's arithmetic is the product, and a restart destroys it whether or not
+its inputs survive.** So the file went up first, carrying the two live readings
+and the headline findings, and the reasoning followed.
+
+**Output** `docs/ops/briefs/2026-11-27-daily-brief.md`. **No register row was
+changed by this run**; this morning's intake had already added T-258–T-260 and
+retitled T-237, T-248 and T-255.
+
+### The two readings that can actually be taken point the same way
+
+**Shopify, read live 10:51Z: seven days to today show zero sales, zero orders
+and zero customers — exact.** **Calendar, same minute: zero events across the
+eight days to 2026-12-05**, the fourth published brief to report it and the
+fifth consecutive reading, since the lost 11-26 run took the same one.
+
+**And in the same week a credit card went over its limit** (T-258, unread).
+**In: nothing through the only channel that can be read.** The others —
+processor, bank, card issuer — have no connector or expired authorisation, and
+**unknown is not zero**: what supports the reading is that the morning's intake
+found no payment, deposit or order notice in the mail either. **That is
+evidence, not proof, and the brief says so.**
+
+**Every money figure in the brief was read from a mail body, not from an
+account.** The limit, the balance, the amount over, the card's last four and the
+merchant and amount that crossed it are withheld under A-19, A-30 and §5.
+
+### The security and money cluster is six rows
+
+T-52 at +46 days (a credential phish never read, on a platform DD84 pays for
+ads), T-171 at +8, T-237 at +3 and **unread on day four**, T-243 at +2, T-247 at
++2, and T-258 today. **Five of the six name no packet, and every one is a
+read.** T-258 names A-19 and A-30 only for publishing its figures — **reading
+the notice needs nothing.**
+
+**No causal claim is made between the phishing attempts and the breached credit
+line.** What the brief does say is that **an attacker probing a business whose
+owner is not reading his security mail is the one combination on this board
+where waiting makes things worse by itself.**
+
+### Two deadlines expire inside four days
+
+**T-194's grant closes 2026-11-30 — three days — and is still the only item on
+the board that brings money in**; its eligibility cannot be verified from here
+because the environment's allowed-hosts list is empty (T-98, A-27). **T-248's 8%
+building increase lands 2026-12-01 and the message offering to lock the current
+price has not been opened.** Neither needs a packet; both need a decision in
+time.
+
+### Arithmetic, and a claim corrected inside the draft
+
+**260 rows, 224 open, 199 past due (89%), 44 Critical open, 28 Done — unchanged
+since 2026-11-24.** **Eight rows fall due today, and every one of the eight was
+created in the last three days**: four on 11-25, three on 11-26, one this
+morning. **Not one pre-existing row matured into today.**
+
+**The draft had said "six of the eight", which the register disproved on
+checking — all eight qualify.** The weaker claim was corrected upward rather
+than published. A finish time drafted ahead of the clock was also caught and
+replaced, **the fourth consecutive day that defect has been caught in a run's
+own draft rather than after publication.**
+
+**44 of 224 open rows name a pending packet and 180 name none; of the 44
+Critical open rows 28 name no pending packet, 18 of those reading "A to
+report".** These are the corrected figures — until 2026-11-25 this brief counted
+answered packets too and overstated the gated half by ten (T-257).
+
+**A-21 gates 10 rows, A-25 9, A-30 8.** **A-30 rose from 7 to 8 the day the
+over-limit notice arrived — the third week running in which every new money
+finding has increased A-30 rather than being reported in full.**
+
+### Approval given, nothing done
+
+**T-11 at +99 days and T-13 at +92, both Critical, both already approved (A-05,
+A-06); T-64 at +44 with A-21 approved.** **T-11 crosses 100 days past due
+tomorrow.** Named separately from the packet queue because they wait on no
+decision at all.
+
+### Quiet or not
+
+**The trading is not quiet — it is zero, and now measured rather than
+inferred.** **The day is not quiet either**: eight rows due, a credit line
+breached with the notice unopened, two deadlines inside four days, six security
+and money rows unread.
+
+**What changed this week is the direction of the evidence.** This brief has
+spent a fortnight describing a business that produced work it could not bill.
+**This week it also stopped selling anything measurable and crossed a credit
+limit** — a different problem, with a clock on it that nobody set.
+
+---
+
+## Next entry: OL-0129
