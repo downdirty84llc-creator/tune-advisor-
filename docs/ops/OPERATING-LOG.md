@@ -14801,4 +14801,159 @@ limit** — a different problem, with a clock on it that nobody set.
 
 ---
 
-## Next entry: OL-0129
+## OL-0129 — 2026-11-27 weekly cash and revenue review
+
+**Run** 11:10:55Z–11:31:52Z, both read from the clock (T-116). Routine
+`/dd84-cash-review`, Class A. **No money was moved. No charge, refund, transfer,
+invoice, payment link or subscription change was initiated, and no write tool
+was called on any payment system.**
+
+**Period** the seven days to 2026-11-27. **Systems reached: Shopify** (live,
+11:11Z). **Not reached: Stripe** (no MCP server exists — permanent), **PayPal**
+(authorisation expired), **the bank, the card issuer, Square, Chime, Melio,
+Capital on Tap** (no connector), **Supermetrics** (ad spend).
+
+**Checkout** `HEAD` = `a63c5a0`, no `src/`, clean, **115 tracked files against
+the prompt's 28 — sixty-fourth run reporting the drift** (A-10).
+
+**Skeleton committed at `0057306`.** **Two worker restarts hit this run** during
+the payment reads, which are its expensive part. The daily brief learned this
+lesson yesterday by losing a whole run (T-259); this routine applied it without
+needing to repeat the loss.
+
+**A note on the finish time, because the defect reappeared in a subtler form.**
+The draft carried 11:29:40Z. The clock had been read at **11:29:07Z** and the
+stated time was rounded _forward_ from it — **a read time plus a guess is still
+a guess**, and T-116 forbids the guess, not just the absence of a read. The
+clock was read again and the genuinely read value substituted. **Fifth
+consecutive run to catch this class in its own draft.**
+
+### Closed in period: nil, and no total given
+
+**Revenue closed in the seven days, on the only system reachable, is zero sales,
+zero orders and zero customers — exact.** **No cross-system total is given,
+because one would span systems that could not be read.** The morning's intake
+found no payment notice in the mail either, which is corroboration and **not a
+substitute for reading the accounts.**
+
+**Zero is written as a word rather than a decimal throughout**, because the leak
+gate reads a decimal zero as a possible account balance and the standing fix
+(2026-11-25) is to reword rather than weaken the pattern.
+
+### What was actually re-verified, and a measurement note
+
+**Live at 11:11Z: one order in the store's lifetime — #1001, 2026-10-23, PAID,
+FULFILLED, $550.00 charged, no refunds, settled through Shopify Payments, one
+transaction over 400 days. Three customer records.**
+
+**`net_payments` reads $550.00 while the registry records the payout as
+$530.31.** **These measure different things and neither is wrong**: the
+gateway's "net" is gross less refunds, not less fees. **The retained figure is
+$499.18** — $530.31 less **$31.13** of Georgia and county sales tax, which is
+not DD84's money. Today's read agrees with the registry's charged and refund
+components.
+
+### The baseline cannot be re-verified, and the prompt is stale
+
+**$3,507.86 across 10 paid invoices was read 2026-08-03 — 116 days old**, which
+breaches the 30-day rule, **and the system holding those invoices has no
+connector.** The registry additionally records that **the basis of that figure —
+invoiced, collected or net — is written down nowhere.**
+
+**Two facts in this routine's own stored prompt are superseded.** "0 Shopify
+orders all time" is wrong — there is one, read live today. And **"last payment
+2025-09-12" was struck through in `ventures.md` and replaced with 2026-10-22**
+(verified 2026-10-23), **yet the stored prompt still quotes the old date.** A
+routine whose prompt carries a figure its own registry has corrected will keep
+re-importing the error, and **the prompt is outside what a session can change**
+(A-10). **T-261.**
+
+**Derived figures stay labelled derived and unreconciled:** charged $5,607.86,
+received $5,588.17, retained $5,557.04 — **the first four digits of each rest on
+the unverified baseline.**
+
+### No recurring revenue at all
+
+**There is no subscription, retainer or repeat billing anywhere in the record.**
+Every payment is a single transaction. **That is the structural finding behind
+the rest: a business with no recurring line must close new work every month to
+stand still, and nothing closed this week.**
+
+### The receivables table cannot be filled in, and that is the finding
+
+**No invoice has been raised for any delivered work.** T-185 states it: **$699
+of priced work has never been invoiced, so no receivable exists.** **You cannot
+age a receivable that was never created**, so the ageing columns read n/a rather
+than being filled with something plausible.
+
+**The largest overdue receivable is $350.00 on T-64** (T-221) — **overdue in the
+sense that the work was delivered 2026-10-29 and never billed**, not that an
+invoice passed its date. **The distinction matters because a collections process
+has nothing to act on.** The $699 reconciles to $349 + $350 **by my arithmetic,
+which is labelled mine and is not T-185's stated composition.** **The invoice
+count stays at 10.**
+
+### An overlap checked rather than assumed
+
+Three payments are attributed to no job: **$450.00 (10-22), $700.00 (10-24) and
+$400.00 (10-29)**. **Those sum to exactly $1,550.00, which is the unattributed
+total T-219 already records** — so they **are** that figure, not additional to
+it. **Listing them beside T-219's number would have double-counted the same
+money**, and the review says so. $700.00 matches no approved rung; $400.00 is
+exactly the floor of the Toyota/Lexus rung and T-66 is a stalled Lexus enquiry —
+**recorded as a question, not as attribution.**
+
+### Forward spend cannot be totalled
+
+**Every amount owed by DD84 in the next 30 days is either withheld under A-30 or
+was never read**: the seven-times-failed vendor charge, T-202's two passed
+outflows, the building vendor's base price, the deploy-credit cycle, an annual
+host invoice whose amount has never been read, and the 11-23 tooling purchase.
+**A-30 has been pending since 2026-11-02 and now gates eight rows.** **The 8%
+increase is publishable because a percentage is not an account-level figure; the
+base it applies to is not.**
+
+### Margin: uncomputable for every job DD84 has ever done
+
+**All four margin rows are incomplete and the missing inputs are the same four
+each time.** Credits bought are known — **$99.98 across 10-24 and 10-30 at
+$49.99 per credit** (T-94) — but **attributed to no job**, so they cannot enter
+a row. **Travel has no per-mile basis** (T-176, at cost until A-27 unblocks the
+sources) and **labour has no rate; neither is assumed.** **The blocker is a
+recording design decision (T-186), not a missing connector.**
+
+### Cash position — shape only
+
+**A-19 Option C, every figure withheld and every one read.** **A credit card is
+over its credit limit** (`1a2178c8651933a2`, 2026-11-26T11:10:14Z, **unread**);
+**a card statement and a bank statement are ready and unread**, the bank's
+subject line carrying masked digits withheld under §5; **the account was below
+zero on 2026-11-16, not at zero** (T-196); **a vendor charge has failed seven
+consecutive times** (T-227); **the debit card went on then off inside 2m49s**
+(T-205).
+
+**"Withheld, A-19" throughout — not "not available".** The limit, the balance,
+the amount over, the card digits and the merchant and amount that crossed the
+line were all read this morning and all excluded.
+
+### Register
+
+**261 rows. T-261 added by this run; T-258–T-260 came from the morning's
+intake.** **199 of 225 open rows past due (88%); 44 Critical open; 28 Done.**
+**45 of 225 open rows name a pending packet and 180 name none; of the 44
+Critical open rows 28 name no pending packet, 18 reading "A to report".** IDs
+checked for duplicates and buckets against their sum.
+
+### Owner decisions honoured
+
+**The ten invoices were not reopened** and the numbering gaps were not raised
+(owner, 2026-08-07). **`dd84tuning.com` is treated as the front door and Shopify
+as the back half of the funnel only** (owner, 2026-08-13), so **the storefront's
+zeros are not presented as total demand.** **The Georgia Opportunity Ledger is
+not reported here and no figure includes it** (owner, 2026-09-16). **Ranges
+stayed ranges** — the Toyota/Lexus rung is $400–$749 and the grant
+$1,000–$10,000, with no midpoint presented for either.
+
+---
+
+## Next entry: OL-0130

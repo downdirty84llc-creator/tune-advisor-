@@ -294,20 +294,21 @@ since 2026-10-08 `service`, `real estate` and `sales`.
 | T-258 | A credit card is OVER ITS LIMIT, 11-26 11:10Z; notice unread, figures withheld                | finance    | **Critical** | **Awaiting Owner**       | Owner | **A-19**, A-30               | 2026-11-27   |
 | T-259 | The 11-26 daily brief produced NO output: a restart killed the turn mid-run                   | ops        | **Critical** | **In Verification**      | Agent | **A-10**, T-27               | 2026-11-28   |
 | T-260 | A family Google account recovery routed here, unread; personal, unconfirmed                   | compliance | Normal       | **Awaiting Owner**       | Owner | A to report                  | 2026-11-30   |
+| T-261 | The cash-review prompt quotes a last-payment date ventures.md struck in October               | ops        | Normal       | **Awaiting Owner**       | Owner | **A-10**                     | 2026-11-30   |
 
 **T-37 to T-44 all came from one intake run** against a mailbox no routine had
 ever read. Seven of the eight concern a customer, a permit, money or a deadline,
 and **none existed in this register an hour earlier.**
 
 Counts: **28 Done** · **6 No Action** · **2 Accepted Risk** · 28 In Verification
-· 4 In Progress · **7 Awaiting Approval** · **141 Awaiting Owner** · 7 Blocked ·
-35 Planned · 2 Backlog. **260 tasks.** Recounted mechanically with
+· 4 In Progress · **7 Awaiting Approval** · **142 Awaiting Owner** · 7 Blocked ·
+35 Planned · 2 Backlog. **261 tasks.** Recounted mechanically with
 `^\| T-\d+\s*\|`, every bucket printed and the total checked against their sum,
-and IDs checked for duplicates — last **2026-11-27** (**T-258–T-260 added;
-T-237, T-248 and T-255 retitled against directly verified mail state**). **141
-of the 260 rows are Awaiting Owner**, **199 of the 224 open rows are past due**,
+and IDs checked for duplicates — last **2026-11-27** (**T-258–T-261 added;
+T-237, T-248 and T-255 retitled against directly verified mail state**). **142
+of the 261 rows are Awaiting Owner**, **199 of the 225 open rows are past due**,
 and **forty-four rows are Critical and open.** **Fifteen approval packets
-pending.** **By status 155 of the 224 open rows wait on a decision — but only 44
+pending.** **By status 156 of the 225 open rows wait on a decision — but only 45
 name a packet that is still pending, and 180 name none.** **Of the 44 Critical
 open rows, 28 name no pending packet and 18 of those read "A to report".**
 **This figure counts pending packets only; counting answered ones too overstated
