@@ -14569,4 +14569,130 @@ as well as the buckets against their sum.
 
 ---
 
-## Next entry: OL-0127
+## OL-0127 — 2026-11-27 inbox and lead intake
+
+**Run** 10:20:45Z–10:25:20Z, both read from the clock (T-116). Routine
+`/dd84-inbox-intake`, Class A. **Nothing was sent, forwarded, replied to,
+labelled, archived, marked, downloaded or followed** — the last covering the
+payment and sign-in links in the over-limit notice.
+
+**Checkout** `HEAD` = `origin/claude/claude-md-docs-cqvhy6` = `bf060f7`, no
+`src/`, clean, **113 tracked files against the prompt's 28 — sixty-second run
+reporting the drift** (A-10).
+
+**Output** `docs/ops/briefs/2026-11-27-inbox-intake.md`. **38 threads
+classified: 4 actionable, 4 mapped and verified unchanged, 30 no-action. New
+leads 0. New drafts 0.** 31 + 3 + 4 = 38, and 4 + 4 + 30 = 38.
+
+### A lost run: the 2026-11-26 daily brief produced no output
+
+**There is no 11-26 daily brief, no log entry for one and no commit.** The
+briefs directory holds that date's intake and nothing else; this log runs
+OL-0126 straight to the OL-0127 marker.
+
+**What can be established:** the run verified the checkout, read Google Calendar
+live for 2026-11-26 to 2026-12-04 and got **zero events**, then issued a Shopify
+analytics query. **A worker restart landed while that call was still awaiting
+approval.** The call never ran and the restart ended the turn before anything
+was written.
+
+**This is the A-10 and T-27 failure class with a new cause.** A-10 is about
+fired sessions having no repository attached; this session has one, which is why
+every other run this fortnight committed. **The new mode is a restart inside a
+single turn.**
+
+**The judgement that cost the run was defensible and still wrong.** The daily
+brief has skipped the skeleton for twenty-odd runs on the grounds that its
+inputs are already on the remote in the morning's intake. **That reasoning
+accounts for inputs and not for output: the brief's own arithmetic and
+conclusions are the product, and a restart destroys those whether or not their
+inputs survive.** **T-259.** The one salvageable reading — zero calendar events
+for 11-26 to 12-04, read live at 10:51Z on 11-26 — is recorded in today's brief
+**labelled as that run's reading, not re-reported as today's.**
+
+### A credit card is over its limit
+
+**Thread `1a2178c8651933a2`, 2026-11-26T11:10:14Z, UNREAD.** The issuer reports
+a card **over its credit limit**, says it **approved the purchase that crossed
+the line anyway**, and states it **charges no over-limit fee**.
+
+**Withheld: the credit limit, the current balance and pending charges, the
+amount over the limit, the card's last four digits, and the merchant and amount
+of the purchase that crossed it.** The first three are account-level figures
+under A-19 Option C, the last is an outflow amount under A-30, and card digits
+are excluded by §5 regardless. **"Withheld, A-19" — every figure was read.** The
+thread ID is one click from all of them in the owner's own inbox.
+
+**Set beside the register it is not isolated:** T-153 (a decline for
+insufficient funds, not for the card being off), T-205 (the toggling, latest
+11-25 22:44→22:47), T-227 (a vendor charge failed seven consecutive times),
+T-202 (dated outflows, the second on 11-24) and T-242 (the bank holiday). **The
+shape, with no figures: a business operating at the edge of its available
+credit, and the notice saying so is unread.** **T-258, Critical.**
+
+**Two statements also arrived unread** — a card statement and a bank statement
+notice whose subject line carries masked account digits, withheld under §5.
+**Both are direct inputs to the weekly cash review, which falls today.**
+
+### Nothing has been read, and one clock is now short
+
+**Four tracked threads opened one at a time, per T-254, every one still
+`UNREAD`:** the processor sign-in on **day four**, the phishing attempt on day
+three, the channel drop and **the 8% building rise whose lock-in window shuts
+2026-12-01 — four days** and which sits under promotions.
+
+**The useful half of T-254 was also established today.** Yesterday's rule was
+that absence from a _full_ page proves nothing. Today's two-day personal query
+**returned 7 against an estimate of 7 — not a full page — so its window is
+genuinely covered**, which makes the Ram thread's absence from it sound
+evidence. **A non-full page is evidence of absence; a full one is not.**
+
+### A second day of silence on the live job
+
+**`in:sent` returned zero for the second consecutive 24-hour period.** The last
+send was DRAFT 6 at 2026-11-25T01:08:23Z, so the Ram job has been **silent about
+57 hours**, with no inbound message either.
+
+**Still no conclusion, and the holiday reading is weaker than yesterday rather
+than stronger:** a bank holiday explains one quiet day more easily than two and
+a half. **Six revisions of delivered work still carry no price and no invoice.**
+
+### An account-recovery sequence, routed here, personal
+
+Six messages inside two minutes on 2026-11-27, all unread, all to the business
+address because it is the recovery address on a **family member's** Google
+account: a password change, a sign-in, a security alert, **"Your Google Account
+was recovered successfully" at 01:43:01Z and a second notice at 01:44:33Z**, and
+a verification code.
+
+**Classified personal**, consistent with how this record treats family-device
+notices. **Recorded anyway because account recovery plus a verification code
+landing in the business mailbox is either routine or the signature of a
+takeover, and nobody has looked.** **No conclusion either way.** **Withheld: the
+third party's address, the device name and the verification code** — the last
+because publishing a live authentication value into a world-readable repository
+would be indefensible whatever its age. **T-260**, Normal, because a child
+resetting a forgotten password is the likeliest reading.
+
+### The other venture's digest arrived here
+
+The Georgia Opportunity Ledger's **weekly source digest** (2026-11-19 to
+2026-11-25) landed in this inbox. **Recorded as one observation and nothing
+more**: it shows that platform is running and sending. **The two businesses are
+separate by the owner's decision, so nothing in the digest becomes a DD84
+record, no row was created for it, and nothing was written into
+`docs/growth/`.**
+
+### Register
+
+**260 rows. T-258, T-259 and T-260 added; T-237, T-248 and T-255 retitled
+against directly verified mail state.** **199 of 224 open rows past due (89%, up
+two points); 44 Critical open, up two; 28 Done; fifteen packets pending.** **155
+of 224 open rows wait on a decision by status, 44 name a pending packet and 180
+name none, and of the 44 Critical open rows 28 name no pending packet with 18
+reading "A to report".** IDs were checked for duplicates as well as the buckets
+against their sum.
+
+---
+
+## Next entry: OL-0128
